@@ -26,7 +26,7 @@
         .params-list li { margin-bottom: 20px; }
         .params-list strong { display: block; color: #d00; margin-bottom: 5px; font-size: 1.1rem; }
         
-        .conclusion { margin-top: 30px; font-weight: bold; border-top: 1px dotted #ccc; padding-top: 20px; font-size: 1.1rem; letter-spacing: 0.5px;}
+        .conclusion { margin-top: 30px; font-weight: bold; border-top: 1px dotted #ccc; padding-top: 20px; font-size: 1.1rem; letter-spacing: 0.5px; }
 
         .footer-wall { background: #000; color: #fff; padding: 30px; margin-top: 60px; font-size: 0.9rem; }
     </style>
@@ -78,9 +78,23 @@
                 Failsafe restriction of deep shadow tones to prevent substrate saturation and ink pooling.
             </li>
         </ul>
+    </div>
+
+    <div class="params-section" style="margin-top: 40px; border-top: 3px double #000; padding-top: 20px;">
+        <h3>Deployment Architecture & Zero-Sample Rationale</h3>
+        <p>Because PROVISION1 operates on deterministic fluid dynamics rather than stochastic, generalized approximations, <strong>this technology is not an off-the-shelf commodity. Generic software samples or evaluation trials are not issued.</strong></p>
+        
+        <p>Every deployment requires discrete, mathematical kernel calibration tailored precisely to the licensee's local mechanical infrastructure:</p>
+        <ul style="list-style: square; padding-left: 20px; margin-bottom: 20px;">
+            <li>Specific printhead chassis and voltage geometries.</li>
+            <li>Local ink-set viscosity and chemical surface tension profiles.</li>
+            <li>Target substrate weave density, absorption coefficients, and material physics.</li>
+        </ul>
+        
+        <p>Implementation is executed strictly as a specialized, non-recurring engineering (NRE) installation. We map your specific floor physics to our core engine, delivering a localized, headless C++ gateway binary that sits directly in front of your existing RIP environment.</p>
         
         <div class="conclusion">
-            Direct to RIP. Zero manual prepress.
+            Bespoke Calibration. Direct to RIP. Zero Floor Scrap.
         </div>
     </div>
 </section>
