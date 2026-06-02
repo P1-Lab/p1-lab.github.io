@@ -18,19 +18,19 @@
         .intro-text p { margin-bottom: 20px; }
         
         /* Brutalist Asset Download Callout */
-        .asset-download-box { border: 2px dashed #d00; padding: 20px; margin: 25px 0; background: #fffafb; }
-        .asset-title { font-weight: bold; color: #d00; text-transform: uppercase; letter-spacing: 0.5px; font-size: 1rem; margin-bottom: 8px; display: block; }
-        .asset-btn { display: inline-block; margin-top: 10px; color: #fff; background-color: #d00; text-decoration: none; font-weight: bold; border: 1px solid #d00; padding: 8px 20px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .asset-btn:hover { background-color: #fff; color: #d00; }
+        .asset-download-box { border: 2px dashed #000; padding: 20px; margin: 25px 0; background: #fffafb; }
+        .asset-title { font-weight: bold; color: #000; text-transform: uppercase; letter-spacing: 0.5px; font-size: 1rem; margin-bottom: 8px; display: block; }
+        .asset-btn { display: inline-block; margin-top: 10px; color: #fff; background-color: #1a1a1a; text-decoration: none; font-weight: bold; border: 1px solid #1a1a1a; padding: 8px 20px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .asset-btn:hover { background-color: #fff; color: #1a1a1a; }
 
         .image-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin: 40px 0; }
         .image-grid img { max-width: 100%; height: auto; border: 1px solid #333; display: block; background: #000; }
         .image-caption { font-size: 0.8rem; color: #555; text-transform: uppercase; margin-top: 5px; text-align: left; }
         
         .params-section h3 { margin-top: 40px; font-size: 1.2rem; text-decoration: underline; }
-        .params-list { list-style: none; padding: 0; border-left: 2px solid #d00; padding-left: 15px; }
+        .params-list { list-style: none; padding: 0; border-left: 2px solid #000; padding-left: 15px; }
         .params-list li { margin-bottom: 20px; }
-        .params-list strong { display: block; color: #d00; margin-bottom: 5px; font-size: 1.1rem; }
+        .params-list strong { display: block; color: #1a1a1a; margin-bottom: 5px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; }
         
         .conclusion { margin-top: 30px; font-weight: bold; border-top: 1px dotted #ccc; padding-top: 20px; font-size: 1.1rem; letter-spacing: 0.5px; }
 
@@ -54,7 +54,7 @@
         
         <p>The legacy choices are structurally destructive: vector tracing flattens organic texture into geometric polygons, while standard algorithmic upscaling ignores material physics—resulting in white underbase halos, capillary ink wicking, and shop-floor scrap.</p>
         
-        <p>PROVISION1 provides an automated ingest engine that stabilizes these assets at the gate. Operating entirely within the raster domain, it analyzes the file in linear light space to map and harden structural luminance boundaries before the file reaches the RIP queue. It preserves 100% of the artwork's original texture while enforcing vector-level ink containment.</p>
+        <p>PROVISION1 provides a drop-in file triage node that stabilizes these assets at the gate. Operating entirely within the raster domain, it intercepts files in a localized hot folder directory to evaluate fluid density and edge geometry—executing raster-domain boundary reconstruction or shifting integrity failures to an isolated quarantine queue. It preserves 100% of the artwork's original texture while empowering human prepress operators with vector-level ink containment.</p>
     </div>
 
     <div class="image-grid">
@@ -87,26 +87,49 @@
     </div>
 
     <div class="params-section" style="margin-top: 40px; border-top: 3px double #000; padding-top: 20px;">
-        <h3>Deployment Architecture & Zero-Sample Rationale</h3>
+        <h3>Deployment Footprint & Zero-Sample Rationale</h3>
         <p>Because PROVISION1 operates on deterministic fluid dynamics rather than stochastic, generalized approximations, <strong>this technology is not an off-the-shelf commodity. Generic software samples or evaluation trials are not issued.</strong></p>
         
-        <p>Every deployment requires discrete, mathematical kernel calibration tailored precisely to the licensee's local mechanical infrastructure:</p>
+        <p>Implementation is executed as a localized, drop-in footprint. Provision1 delivers a site-calibrated <strong>Deterministic Triage Hot Folder Node</strong> that integrates seamlessly into your existing prepress workflow without structural network re-engineering:</p>
+        
         <ul style="list-style: square; padding-left: 20px; margin-bottom: 20px;">
-            <li>Specific printhead chassis and voltage geometries.</li>
-            <li>Local ink-set viscosity and chemical surface tension profiles.</li>
-            <li>Target substrate weave density, absorption coefficients, and material physics.</li>
+            <li><strong>Ingestion Tier:</strong> Operators drop unvetted customer assets directly into the designated secure intake directory.</li>
+            <li><strong>Algorithmic Triage:</strong> The core script instantly evaluates fluid density and edge geometry—executing raster-domain boundary reconstruction or shifting integrity failures to an isolated quarantine queue.</li>
+            <li><strong>Operator Validation:</strong> Your existing staff retains complete structural oversight, passing finalized, vitrified assets to the mechanical RIP environment with zero manual tracing required.</li>
         </ul>
         
-        <p>Implementation is executed strictly as a specialized, non-recurring engineering (NRE) installation. We map your specific floor physics to our core engine, delivering a localized, headless C++ gateway binary that sits directly in front of your existing RIP environment.</p>
+        <p>Every deployment requires discrete, mathematical kernel calibration tailored precisely to the licensee's local mechanical infrastructure, accounting for specific printhead chassis geometries, local ink-set viscosity profiles, and target substrate weave density.</p>
         
         <div class="asset-download-box">
             <span class="asset-title">Financial Justification Ledger Available</span>
-            <p style="margin: 0 0 10px 0; font-size: 0.9rem; color: #333;">For enterprise print fulfillment facilities evaluating NRE cost structures, our 30-day aggregated operational impact data maps labor reclamation and scrap prevention profiles across automated high-volume production lines.</p>
+            <p style="margin: 0 0 10px 0; font-size: 0.9rem; color: #333;">For enterprise print fulfillment facilities evaluating cost structures, our 30-day aggregated operational impact data maps labor reclamation and scrap prevention profiles across automated high-volume production lines.</p>
             <a href="operational_impact_baseline_report.pdf" class="asset-btn" target="_blank">Download Baseline Report (PDF)</a>
         </div>
+    </div>
+
+    <div class="params-section" style="margin-top: 40px; border-top: 3px double #000; padding-top: 20px;">
+        <h3 style="color: #000;">Inaugural Vanguard Cohort (Limited to First 5 US Placements)</h3>
+        <p>To accelerate regional telemetry logging for our 2026 industrial baseline, Provision1 is opening exactly five (5) slots for immediate founder-level deployment. This tier bypasses CapEx committee review by compressing upfront costs into localized operational budgets:</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-family: monospace; border: 1px solid #1a1a1a;">
+            <tr style="background: #fffafb;">
+                <td style="padding: 15px; border-bottom: 1px solid #1a1a1a; width: 40%;"><strong>Vanguard NRE Fee:</strong></td>
+                <td style="padding: 15px; border-bottom: 1px solid #1a1a1a;"><strong>$14,500 USD</strong> (Flat-rate localized compilation and floor profiling. Fully amortized within 35 days of line ignition).</td>
+            </tr>
+            <tr>
+                <td style="padding: 15px; border-bottom: 1px solid #1a1a1a;"><strong>Node Licensing:</strong></td>
+                <td style="padding: 15px; border-bottom: 1px solid #1a1a1a;">$2,000 / month (First 60 days of boundary maintenance fully subsidized during initial system onboarding).</td>
+            </tr>
+            <tr style="background: #f5f5f5;">
+                <td style="padding: 15px;"><strong>Cohort Mandate:</strong></td>
+                <td style="padding: 15px;">Licensee must grant automated, anonymized error-rate data mapping to the Provision1 operational ledger.</td>
+            </tr>
+        </table>
+        
+        <p style="font-style: italic; color: #555; font-size: 0.9rem;">Current Cohort Status: Applications processed in direct chronological order of inbound contact. Once Slot 05 is finalized, baseline CapEx schedules ($45k–$65k NRE) instantly resume.</p>
 
         <div class="conclusion">
-            Bespoke Calibration. Direct to RIP. Zero Floor Scrap.
+            Triage Intercept. Local Validation. Zero Floor Scrap.
         </div>
     </div>
 </section>
