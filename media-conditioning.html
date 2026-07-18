@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVISION1 | Media Conditioning Engines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        header { margin-bottom: 3rem; }
+        h1 { font-family: var(--mono-font); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.5rem; text-transform: uppercase; color: var(--forest); }
+        .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 2.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+        
+        h2 { font-family: var(--mono-font); font-size: 1.25rem; font-weight: 800; margin-top: 4rem; margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brass); text-transform: uppercase; color: var(--forest); }
+        
+        p { margin-bottom: 1.25rem; color: #1a1a1a; }
+
+        .engine-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin: 3rem 0; }
+        .engine-block { border-left: 4px solid var(--brass); padding-left: 1.5rem; }
+        
+        .cta-btn { 
+            display: inline-block; 
+            margin-top: 1rem; 
+            color: var(--forest); 
+            background: transparent;
+            border: 1px solid var(--forest);
+            text-decoration: none; 
+            font-weight: 700; 
+            padding: 0.75rem 1.25rem; 
+            font-size: 0.85rem;
+            font-family: var(--mono-font);
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        .cta-btn:hover { background: var(--forest); color: #fff; }
+        
+        .footer-wall { border-top: 4px solid var(--forest); padding: 3rem 0; margin-top: 6rem; font-family: var(--mono-font); font-size: 0.8rem; background: #000; color: #fff; padding: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>MEDIA CONDITIONING ENGINES</span>
+    </div>
+
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <h1>PROVISION1 LABORATORY</h1>
+        </a>
+        <p class="tagline">Deterministic pipelines for forensic media vitrification.</p>
+    </header>
+
+    <section>
+        <p>Our media conditioning engines bridge the structural gap between erratic generative/legacy media and broadcast-compliant signal standards. By implementing deterministic pipelines, we remove synthetic artifacts and ensure signal integrity throughout the production chain.</p>
+    </section>
+
+    <section class="engine-grid">
+        <div class="engine-block">
+            <h2>1. The Omnibus Vitrifier</h2>
+            <p>A deterministic engine for haptic reclamation and forensic media stabilization. The Omnibus Vitrifier eradicates stochastic "shimmer" in generative AI and structural decay in legacy media by applying an "Authorship-by-Engineering" framework. Utilizing C++ signal reconstruction ("The Kiln"), 48Hz Sub-harmonic Vitrification ("The Anchor"), and Forensic Delta-Mapping ("The Deed"), the system enforces physical mass and temporal coherence, transforming volatile digital artifacts into copyright-registrable, archival-grade master assets.</p>
+            <a href="mailto:principal.p1.lab@proton.me?subject=Technical Specification Request: Omnibus Vitrifier" class="cta-btn">REQUEST SPECIFICATION</a>
+        </div>
+
+        <div class="engine-block">
+            <h2>2. Architectural Infrastructure (Video Wall Engine)</h2>
+            <p>The world's first hardware-locked generative environment for environmental stability. Operating as a closed-loop control system, this engine treats output as environmental state rather than media, ensuring temporal coherence and chromatic stability for continuous 24/7 operation in architectural, clinical, and executive deployments.</p>
+            <a href="mailto:principal.p1.lab@proton.me?subject=Technical Specification Request: Video Wall Engine" class="cta-btn">REQUEST SPECIFICATION</a>
+        </div>
+
+        <div class="engine-block">
+            <h2>3. Clean Vault Key™</h2>
+            <p>An industrial media conditioning and provenance system that transforms imagery, audio, and documents into trusted master assets by embedding attribution and authentication directly into the file. Moving beyond external metadata, cloud services, or blockchain dependencies, the system creates a persistent chain of title that remains with the asset through storage, compression, and distribution. Powered by an air-gapped, local-first hardware platform, it allows assets to serve as their own proof of origin for forensic engineering, property restoration, and compliance documentation.</p>
+            <a href="mailto:principal.p1.lab@proton.me?subject=Technical Specification Request: Clean Vault Key" class="cta-btn">REQUEST SPECIFICATION</a>
+        </div>
+
+        <div class="engine-block">
+            <h2>4. Lattice Integrity DSP</h2>
+            <p>A stateful phenomenological model for forensic remastering and asset vitrification. This engine applies deterministic physical constraint layers—such as 48Hz Sub-Resonant Anchoring and Kinetic Signal Mass recovery—to enforce structural stability onto synthetic audio, moving beyond statistical approximations to enforce the mechanical mass and magnetic hysteresis of physical transducer hardware.</p>
+            <a href="mailto:principal.p1.lab@proton.me?subject=Technical Specification Request: Lattice Integrity DSP" class="cta-btn">REQUEST SPECIFICATION</a>
+        </div>
+    </section>
+
+    <div class="footer-wall">
+        STRATEGIC POSITION: SYSTEMS ENGINEERING LABORATORY. <br>
+        SECURITY PROTOCOL: ABSOLUTE NO-SAMPLE POLICY. <br>
+        CONTACT: PRINCIPAL | 954.284.4193 | JUPITER, FL — TORONTO, ON | PRINCIPAL.P1.LAB@PROTON.ME
+    </div>
+
+</body>
+</html>
