@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROVISION1 | Product Knowledge Engineering</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>PROVISION1 | Product Knowledge Operating System™</title>
     <style>
         :root {
             --bg-color: #fdfdfd;
@@ -47,42 +44,18 @@
         h1 { font-family: var(--mono-font); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.5rem; text-transform: uppercase; color: var(--forest); }
         .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 2.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
         
-        h2 { font-family: var(--mono-font); font-size: 1.25rem; font-weight: 800; margin-top: 4rem; margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brass); text-transform: uppercase; color: var(--forest); }
+        h2 { font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); text-decoration: underline; margin-top: 4rem; margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brass); text-transform: uppercase; }
+        h3 { font-family: var(--mono-font); color: var(--forest); border-bottom: 1px solid var(--brass); padding-bottom: 5px; margin-top: 40px; }
         
-        p { margin-bottom: 1.25rem; color: #1a1a1a; }
+        p { margin-bottom: 1.25rem; }
 
-        /* Credibility Strip */
-        .credibility-strip {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 3rem 0;
-            padding: 1.5rem;
-            border: 1px solid var(--brass);
-            font-family: var(--mono-font);
-            font-size: 0.85rem;
-            background: #fdfdfd;
-        }
-        
-        .economic-grid { border: 2px solid var(--brass); background-color: #fafafa; margin: 2rem 0; }
-        .economic-header { background-color: var(--forest); color: #fff; padding: 1.5rem; font-weight: 800; font-size: 1.2rem; text-transform: uppercase; }
-        .economic-body { padding: 2rem; }
+        /* Diagram Styles */
+        .arch-diagram { margin: 3rem 0; padding: 2rem; background: #fcfcfc; border: 1px solid #ddd; }
+        .level { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .box { border: 1px solid #000; padding: 1rem; text-align: center; font-family: var(--mono-font); font-size: 0.85rem; font-weight: 600; width: 100%; max-width: 500px; background: #fff; }
+        .root-box { border: 2px solid var(--forest); background: #f0f7f0; }
+        .arrow { font-size: 1.2rem; font-weight: bold; color: var(--forest); }
 
-        .deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
-        .deliv-item { padding: 1rem; border: 1px solid var(--brass); font-family: var(--mono-font); font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; }
-        .deliv-item::before { content: "✓"; color: var(--forest); margin-right: 0.75rem; }
-
-        .arch-diagram { display: flex; flex-direction: column; align-items: center; margin: 3rem 0; font-family: var(--mono-font); text-transform: uppercase; font-size: 0.8rem; }
-        .arch-node { border: 1px solid var(--brass); padding: 1rem 1.5rem; background: #fff; font-weight: 700; width: 320px; text-align: center; }
-        .arch-node.highlight { background: var(--forest); color: #fff; border: none; padding: 0.75rem 2rem; }
-        .arch-arrow { color: var(--forest); font-size: 1.2rem; font-weight: bold; margin: 0.5rem 0; }
-        .arch-branch { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; justify-content: center; width: 100%; }
-        .arch-branch-node { border: 1px solid var(--brass); padding: 0.75rem; font-size: 0.75rem; font-weight: 700; }
-        
-        .terminal-statement { margin-top: 6rem; padding: 3rem 0; border-top: 4px solid var(--forest); border-bottom: 1px solid var(--brass); text-align: center; }
-        .terminal-statement p { font-size: 1.8rem; font-weight: 800; line-height: 1.2; text-transform: uppercase; }
-        .brand { margin-top: 2.5rem; font-family: var(--mono-font); font-size: 0.9rem; letter-spacing: 0.1em; color: var(--forest); font-weight: 700; }
-        
         .footer-wall { border-top: 4px solid var(--forest); padding: 3rem 0; margin-top: 6rem; font-family: var(--mono-font); font-size: 0.8rem; background: #000; color: #fff; padding: 30px; }
     </style>
 </head>
@@ -90,7 +63,7 @@
 
     <div class="doc-meta">
         <span>PROVISION1</span>
-        <span>PRODUCT KNOWLEDGE ENGINEERING</span>
+        <span>SYSTEMS ENGINEERING LABORATORY</span>
     </div>
 
     <header>
@@ -101,84 +74,70 @@
     </header>
 
     <section>
-        <h2>About the Laboratory</h2>
-        <p>Provision1 Laboratory is an independent systems engineering laboratory focused on the architecture of complex technical systems. Our work spans product knowledge engineering, deterministic media conditioning, and applied engineering research.</p>
-        <p>Rather than developing software for a single industry, we design reusable engineering frameworks that solve structural problems across manufacturing, media, scientific instrumentation, industrial systems, and physical computing. Our commercial engagements focus on helping organizations transform fragmented technical expertise into operational knowledge systems that improve product adoption, technical sales, and AI readiness.</p>
-    </section>
-
-    <section class="credibility-strip">
-        <div>• Hundreds of technical learning systems developed</div>
-        <div>• Twenty-five years structuring technical knowledge</div>
-        <div>• Engineering, manufacturing, scientific instrumentation, professional AV, food systems</div>
+        <h3 style="margin-top:0;">PRODUCT KNOWLEDGE OPERATING SYSTEM™</h3>
+        <p>The governed operational model from which every product interface is derived.</p>
+        <p>Every complex product exists across multiple representations: engineering specifications, regulatory requirements, training materials, dealer systems, support responses, and emerging AI interfaces. When those representations diverge, organizations lose control of their own product reality. Provision1 establishes the governed knowledge architecture from which every valid representation of the product is derived. Govern the knowledge once. Deploy it everywhere.</p>
     </section>
 
     <section>
-        <div class="economic-grid">
-            <div class="economic-header">The Hidden Cost of Product Confusion</div>
-            <div class="economic-body">
-                <p>Most product returns are not caused by defective products. They happen because the customer selected the wrong product, misunderstood the application, configured it incorrectly, or never learned how to use it successfully.</p>
-                <p><strong>Provision1 captures the product knowledge required before the purchase, not after the support call.</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Documentation Does Not Create Understanding</h2>
-        <p>Manuals explain features, but they rarely explain <em>how to successfully adopt the product</em>. Provision1 bridges the gap between engineering reality and customer success.</p>
-    </section>
-
-    <section>
-        <h2>What We Deliver</h2>
-        <p>We transform engineering knowledge into practical assets that help customers choose, deploy, operate, and support complex products. The result is a reusable product knowledge asset that supports sales, training, customer success, and future AI-assisted applications.</p>
-        
-        <div class="deliverables-grid">
-            <div class="deliv-item">Sales enablement guides</div>
-            <div class="deliv-item">Dealer certification programs</div>
-            <div class="deliv-item">Customer onboarding materials</div>
-            <div class="deliv-item">Troubleshooting resources</div>
-            <div class="deliv-item">Application guides</div>
-            <div class="deliv-item">Configuration decision tools</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Why Provision1</h2>
-        <p>We have spent more than two decades designing technical learning systems for complex products across engineering, industrial equipment, professional media, and scientific applications.</p>
-        <p>Rather than producing isolated documentation, we engineer reusable knowledge assets that support sales, customer success, dealer enablement, and future AI systems from a single structured source.</p>
-    </section>
-
-    <section>
-        <h2>How Provision1 Works</h2>
-        <p>We organize your company's dispersed product knowledge into a structured system, delivering the right information to the right audience.</p>
+        <h2>Product Reality Architecture</h2>
+        <p>Our system replaces decentralized, fragmented repositories with a unified operational model. By decoupling your knowledge from your interfaces, we treat the product as a reality independent of its various representations.</p>
         
         <div class="arch-diagram">
-            <div class="arch-node">
-                EVERYTHING YOUR COMPANY KNOWS ABOUT THE PRODUCT
-                <div style="font-size: 0.75rem; margin-top: 0.75rem; font-weight: normal; text-transform: uppercase; line-height: 1.6; color: var(--muted-text);">
-                    Engineering • Manuals • Training • Support Tickets • Field Experience • Customer Questions
-                </div>
-            </div>
-            <div class="arch-arrow">↓</div>
-            <div class="arch-node highlight">PRODUCT KNOWLEDGE SYSTEM</div>
-            <div class="arch-arrow">↓</div>
-            <div class="arch-branch">
-                <div class="arch-branch-node">SALES TOOLS</div>
-                <div class="arch-branch-node">DEALER TRAINING</div>
-                <div class="arch-branch-node">CUSTOMER EDUCATION</div>
-                <div class="arch-branch-node">SUPPORT ANSWERS</div>
+            <div class="level">
+                <div class="box">PRODUCT REALITY<br>(Engineering Facts • Physical Behavior • Regulatory Constraints)</div>
+                <div class="arrow">↓</div>
+                <div class="box root-box">PRODUCT KNOWLEDGE ROOT™<br>(Governed Truth Layer)</div>
+                <div class="arrow">↓</div>
+                <div class="box">AUTHORITATIVE PRODUCT MODEL<br>(Versioned Operational System)</div>
+                <div class="arrow">↓</div>
+                <div class="box">INTERFACE SYSTEMS<br>(AI • Manuals • Training • Field Units • Configurators)</div>
             </div>
         </div>
     </section>
 
-    <div class="terminal-statement">
-        <p>Products Become More Complex.<br>Customers Should Not.</p>
-        <div class="brand">PROVISION1</div>
-    </div>
+    <section>
+        <h2>Product Knowledge Root™</h2>
+        <p>The Root does not simply store information. It preserves the relationships, constraints, dependencies, and decisions required to derive correct operational outcomes from validated facts. While a fact may be "this amplifier outputs 500 watts," the relationship defined within the Root dictates: "Therefore, it cannot drive this speaker configuration above this specific impedance threshold."</p>
+    </section>
+
+    <section>
+        <h2>Governance Ownership</h2>
+        <p>Provision1 provides the architecture, methodology, and engineering framework required to establish and maintain this system; the organization retains ownership of its reality. Engineering defines technical reality, Regulatory defines constraints, and Product leadership defines operational intent. The Root preserves these decisions as an authoritative, version-controlled operational model.</p>
+    </section>
+
+    <section>
+    <h2>Not Another Knowledge Repository</h2>
+    <p>Provision1 is not a document management system, search engine, or RAG-based AI chatbot. Those systems organize information. They do not determine which information is authoritative. A repository answers, "Where is the information?" Provision1 answers, "What is the approved reality?" We eliminate the decentralized "invention of answers" that plagues scaling organizations.</p>
+
+    <p style="font-family: var(--mono-font); font-size:0.85rem; text-transform:uppercase; color:var(--forest);">
+        SEE THE ARCHITECTURAL DIFFERENCE:
+        <a href="competitive-landscape.html" style="color:inherit;">
+        PRODUCT KNOWLEDGE GOVERNANCE INFRASTRUCTURE — COMPETITIVE LANDSCAPE
+        </a>
+    </p>
+</section>
+
+    <section>
+        <h2>The AI Imperative</h2>
+        <p>Generative AI did not create the knowledge governance problem. It exposed it. Without a validated product knowledge foundation, AI systems amplify ambiguity, outdated information, and unsupported assumptions. An AI system without an authoritative model does not create intelligence; it creates a faster mechanism for distributing uncertainty. We provide the deterministic grounding required to ensure your AI interfaces remain bound to validated technical truth.</p>
+    </section>
+
+    <section>
+        <h2>Physical Access to Product Truth</h2>
+        <p>The Product Knowledge Operating System is not limited to digital interfaces. The same governed model can operate through dedicated physical field systems, allowing technicians, dealers, and operators to access the same validated product reality at the point of work. The future of technical support is not just another portal; it is immediate access to the approved operational reality of the product.</p>
+    </section>
+
+    <section>
+        <h2>Product Knowledge Governance Infrastructure</h2>
+        <p>Provision1 is not a documentation project, consulting engagement, or AI implementation layer. It is the governance infrastructure required to ensure that every future product interaction—human or machine—operates from an approved and validated understanding of the product.</p>
+    </section>
 
     <div class="footer-wall">
-        STRATEGIC POSITION: SYSTEMS ENGINEERING LABORATORY. <br>
-        SECURITY PROTOCOL: ABSOLUTE NO-SAMPLE POLICY. <br>
-        CONTACT: PRINCIPAL | JUPITER, FL — TORONTO, ON | PRINCIPAL.P1.LAB@PROTON.ME
+        PROVISION1 LABORATORY<br>
+        PRODUCT KNOWLEDGE GOVERNANCE INFRASTRUCTURE<br><br>
+        GOVERN THE KNOWLEDGE ONCE.<br>
+        DEPLOY IT EVERYWHERE.
     </div>
 
 </body>
