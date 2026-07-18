@@ -52,7 +52,10 @@
         /* Diagram Styles */
         .arch-diagram { margin: 3rem 0; padding: 2rem; background: #fcfcfc; border: 1px solid #ddd; }
         .level { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .stakeholder-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; width: 100%; max-width: 750px; margin-bottom: 0.5rem; }
         .box { border: 1px solid #000; padding: 1rem; text-align: center; font-family: var(--mono-font); font-size: 0.85rem; font-weight: 600; width: 100%; max-width: 500px; background: #fff; }
+        .box .sub-label { display: block; font-weight: normal; font-size: 0.75rem; color: var(--muted-text); margin-top: 4px; text-transform: none; }
+        .label-box { border: 1px dashed var(--brass); background: #fffdf5; color: var(--brass); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem; }
         .root-box { border: 2px solid var(--forest); background: #f0f7f0; }
         .arrow { font-size: 1.2rem; font-weight: bold; color: var(--forest); }
 
@@ -76,7 +79,7 @@
     <section>
         <h3 style="margin-top:0;">PRODUCT KNOWLEDGE OPERATING SYSTEM™</h3>
         <p>The governed operational model from which every product interface is derived.</p>
-        <p>Every complex product exists across multiple representations: engineering specifications, regulatory requirements, training materials, dealer systems, support responses, and emerging AI interfaces. When those representations diverge, organizations lose control of their own product reality. Provision1 establishes the governed knowledge architecture from which every valid representation of the product is derived. Govern the knowledge once. Deploy it everywhere.</p>
+        <p>Every complex product exists across multiple representations: engineering specifications, regulatory requirements, training materials, dealer systems, support responses, and emerging AI interfaces. When those representations diverge, organizations lose control of their own product reality. Provision1 establishes the governed knowledge architecture from which every authorized representation of the product is derived. Govern the knowledge once. Deploy it everywhere.</p>
     </section>
 
     <section>
@@ -85,15 +88,42 @@
         
         <div class="arch-diagram">
             <div class="level">
-                <div class="box">PRODUCT REALITY<br>(Engineering Facts • Physical Behavior • Regulatory Constraints)</div>
+                <div class="box">PRODUCT REALITY<br><span class="sub-label">(Engineering Facts • Physical Behavior • Regulatory Constraints)</span></div>
                 <div class="arrow">↓</div>
-                <div class="box root-box">PRODUCT KNOWLEDGE ROOT™<br>(Governed Truth Layer)</div>
+                <div class="box root-box">PRODUCT KNOWLEDGE ROOT™<br><span class="sub-label">(Governed Truth Layer)</span></div>
                 <div class="arrow">↓</div>
-                <div class="box">AUTHORITATIVE PRODUCT MODEL<br>(Versioned Operational System)</div>
+                <div class="box">AUTHORITATIVE PRODUCT MODEL<br><span class="sub-label">(Versioned Operational System)</span></div>
                 <div class="arrow">↓</div>
-                <div class="box">INTERFACE SYSTEMS<br>(AI • Manuals • Training • Field Units • Configurators)</div>
+                <div class="box">INTERFACE SYSTEMS<br><span class="sub-label">(AI • Manuals • Training • Field Units • Configurators)</span></div>
             </div>
         </div>
+    </section>
+
+    <section>
+        <h2>Who Requires Product Knowledge Governance?</h2>
+        <p>Provision1 is designed for organizations where product complexity has exceeded the ability of traditional documentation and communication systems to maintain alignment.</p>
+        <p>The problem typically appears when a product must be understood and supported by many groups simultaneously:</p>
+
+        <div class="arch-diagram">
+            <div class="level">
+                <div class="box label-box">PRODUCT STAKEHOLDERS</div>
+                <div class="arrow">↓</div>
+                
+                <div class="stakeholder-grid">
+                    <div class="box" style="max-width: 100%;">ENGINEERING<span class="sub-label">Technical Reality</span></div>
+                    <div class="box" style="max-width: 100%;">PRODUCT MANAGEMENT<span class="sub-label">Product Intent</span></div>
+                    <div class="box" style="max-width: 100%;">QUALITY / REGULATORY<span class="sub-label">Constraints & Compliance</span></div>
+                    <div class="box" style="max-width: 100%;">TRAINING / SUPPORT / DEALERS<span class="sub-label">Operational Experience</span></div>
+                    <div class="box" style="max-width: 100%;">FIELD TEAMS / CUSTOMERS<span class="sub-label">Real-World Use</span></div>
+                </div>
+
+                <div class="arrow">↓</div>
+                <div class="box root-box">PRODUCT KNOWLEDGE ROOT™<br><span class="sub-label">Governed Truth Layer</span></div>
+            </div>
+        </div>
+
+        <p>When these groups rely on separate interpretations of the product, inconsistency becomes inevitable. Sales promises exceed engineering reality. Support creates undocumented workarounds. Training becomes outdated. AI systems retrieve information without knowing which information is authoritative.</p>
+        <p>Provision1 creates the governance layer that aligns every participant around one approved operational model.</p>
     </section>
 
     <section>
@@ -107,16 +137,16 @@
     </section>
 
     <section>
-    <h2>Not Another Knowledge Repository</h2>
-    <p>Provision1 is not a document management system, search engine, or RAG-based AI chatbot. Those systems organize information. They do not determine which information is authoritative. A repository answers, "Where is the information?" Provision1 answers, "What is the approved reality?" We eliminate the decentralized "invention of answers" that plagues scaling organizations.</p>
+        <h2>Not Another Knowledge Repository</h2>
+        <p>Provision1 is not a document management system, search engine, or RAG-based AI chatbot. Those systems organize information. They do not determine which information is authoritative. A repository answers, "Where is the information?" Provision1 answers two questions: "What is the approved reality?" and "Who has authority to change it?" We eliminate the decentralized "invention of answers" that plagues scaling organizations.</p>
 
-    <p style="font-family: var(--mono-font); font-size:0.85rem; text-transform:uppercase; color:var(--forest);">
-        SEE THE ARCHITECTURAL DIFFERENCE:
-        <a href="competitive-landscape.html" style="color:inherit;">
-        PRODUCT KNOWLEDGE GOVERNANCE INFRASTRUCTURE — COMPETITIVE LANDSCAPE
-        </a>
-    </p>
-</section>
+        <p style="font-family: var(--mono-font); font-size:0.85rem; text-transform:uppercase; color:var(--forest); margin-top: 1.5rem;">
+            SEE THE ARCHITECTURAL DIFFERENCE:
+            <a href="competitive-landscape.html" style="color:inherit; font-weight: bold; text-decoration: underline;">
+            PRODUCT KNOWLEDGE GOVERNANCE INFRASTRUCTURE — COMPETITIVE LANDSCAPE
+            </a>
+        </p>
+    </section>
 
     <section>
         <h2>The AI Imperative</h2>
@@ -126,6 +156,12 @@
     <section>
         <h2>Physical Access to Product Truth</h2>
         <p>The Product Knowledge Operating System is not limited to digital interfaces. The same governed model can operate through dedicated physical field systems, allowing technicians, dealers, and operators to access the same validated product reality at the point of work. The future of technical support is not just another portal; it is immediate access to the approved operational reality of the product.</p>
+    </section>
+
+    <section>
+        <h2>Designed For Complex Product Organizations</h2>
+        <p>Provision1 is intended for manufacturers and operators whose products require coordination across engineering, service, training, regulatory, dealers, and field personnel.</p>
+        <p>Typical environments include industrial equipment, medical devices, aerospace systems, specialized electronics, advanced manufacturing, and other technically complex products where incorrect information creates operational cost or liability.</p>
     </section>
 
     <section>
