@@ -2,80 +2,168 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Provision1 Laboratory | Forensic & Structural Physics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVISION1 LABORATORY | Systems Engineering</title>
     <style>
-        body { font-family: 'Courier New', Courier, monospace; background-color: #fdfdfd; color: #1a1a1a; max-width: 900px; margin: 60px auto; padding: 20px; line-height: 1.6; }
-        header { border-bottom: 3px solid #000; margin-bottom: 40px; }
-        h1 { letter-spacing: -1px; margin-bottom: 5px; }
-        .tagline { font-style: italic; color: #555; margin-top: 0; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; }
-        .block { border: 1px solid #ddd; padding: 20px; background: #fff; }
-        .block h2 { margin-top: 0; font-size: 1.2rem; text-decoration: underline; }
-        .full-width { grid-column: 1 / -1; }
-        .white-papers { list-style: none; padding: 0; }
-        .white-papers li { margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 5px; }
-        .white-papers a { color: #000; text-decoration: none; font-weight: bold; }
-        .footer-wall { background: #000; color: #fff; padding: 30px; margin-top: 60px; font-size: 0.9rem; }
-        .btn { display: inline-block; margin-top: 10px; color: #d00; text-decoration: none; font-weight: bold; border: 1px solid #d00; padding: 5px 10px; }
-        .btn:hover { background-color: #d00; color: #fff; }
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        header { margin-bottom: 3rem; }
+        h1 { font-family: var(--mono-font); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.5rem; text-transform: uppercase; color: var(--forest); }
+        .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 2.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+        
+        h2 { font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); text-decoration: underline; margin-top: 4rem; margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brass); text-transform: uppercase; }
+        h3 { font-family: var(--mono-font); color: var(--forest); border-bottom: 1px solid var(--brass); padding-bottom: 5px; margin-top: 40px; }
+        h4 { font-family: var(--mono-font); color: var(--forest); margin: 2rem 0 0.5rem 0; text-transform: uppercase; font-size: 0.9rem; }
+        
+        p { margin-bottom: 1.25rem; }
+
+        .about-section { margin-bottom: 3rem; }
+        
+        .domain-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .domain-block { border-left: 4px solid var(--brass); padding-left: 1.5rem; }
+        
+        .archive-section { margin-top: 3rem; }
+        .archive-row { display: grid; grid-template-columns: 100px 1fr; margin-bottom: 2rem; }
+        .archive-year { font-family: var(--mono-font); font-weight: bold; color: var(--forest); }
+        .archive-list { list-style: none; padding: 0; margin: 0; }
+        .archive-list li { margin-bottom: 0.75rem; font-size: 1rem; }
+        .archive-link { color: #000; text-decoration: none; font-weight: 600; }
+        .archive-link:hover { color: var(--forest); text-decoration: underline; }
+        .ref-link { font-size: 0.8rem; color: var(--muted-text); font-family: var(--mono-font); }
+        
+        .btn { 
+            display: inline-block; 
+            margin-top: 1rem; 
+            color: var(--forest); 
+            background: transparent;
+            border: 1px solid var(--forest);
+            text-decoration: none; 
+            font-weight: 700; 
+            padding: 0.75rem 1.25rem; 
+            font-size: 0.85rem;
+            font-family: var(--mono-font);
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        .btn:hover { background: var(--forest); color: #fff; }
+        
+        .footer-wall { border-top: 4px solid var(--forest); padding: 3rem 0; margin-top: 6rem; font-family: var(--mono-font); font-size: 0.8rem; background: #000; color: #fff; padding: 30px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>PROVISION1 LABORATORY</h1>
-    <p class="tagline">Recovering the Past. Hardening the Future. One Universal Signal.</p>
-</header>
-
-<section class="grid">
-    <div class="block">
-        <h2>I. IP SOLVENCY & FORENSICS</h2>
-        <p>Sovereign Vitrification Engine: Establishing the Mechanical Nexus for USCO Authorship compliance and IP Title defense.</p>
-        <a href="https://sites.google.com/view/provision-one/av-forensic-abstracts" class="btn">ACCESS AUDITS</a>
-    </div>
-    <div class="block">
-        <h2>II. CLEAN VAULT KEY™</h2>
-        <p>Dual-Force Media Hardening Core: A local, hardware-gated processing suite engineered to restore structural depth and permanent chain-of-title to master video and audio archives. The system symmetrically establishes verifiable human authorship for new generative outputs while completely vitrifying and protecting legacy artistic catalogs.</p>
-        <a href="https://sites.google.com/view/provision-one/clean-vault-key" class="btn">ACCESS SUITE SPECS</a>
-    </div>
-    
-    <div class="block full-width" style="border-color: #000; background: #fffafb;">
-        <h2>III. SPATIAL TOPOLOGY KERNEL</h2>
-        <p>Pane 4 Spatial Topology Kernel: Universal Photo-to-Wireframe Ingestion. A purely deterministic, non-stochastic vision pipeline that strips color and lighting distortion to extract edge-snappable structural blueprints and clean 3D topology from uncurated flat imagery.</p>
-        <a href="Spatial_Topology_Kernel.html" class="btn" style="color: #000; border-color: #000;">ACCESS TECHNICAL REPORT</a>
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>SYSTEMS ENGINEERING LABORATORY</span>
     </div>
 
-    <div class="block full-width">
-        <h2>IV. TEXTILE VITRIFICATION</h2>
-        <p>Material-Bound File Vitrification for Digital Textile Production. Deploying the core topology engine to evaluate fluid density and edge geometry at the gate, eliminating white underbase halos and ink pooling across physical printing lines.</p>
-        <a href="textile-vitrification.html" class="btn">ACCESS REPORT</a>
-    </div>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <h1>PROVISION1 LABORATORY</h1>
+        </a>
+        <p class="tagline">Engineering systems that preserve, structure, and operationalize complex knowledge and media.</p>
+    </header>
+
+   <section class="about-section">
+    <h3>ABOUT THE LABORATORY</h3>
+    <p>Provision1 Laboratory is an applied engineering and innovation laboratory dedicated to the architecture of complex systems. We operate exclusively from first principles, organizing disparate technical data, operational variables, and physical materials into deterministic frameworks.</p>
+    <p>Across all disciplines, our methodology remains identical: we reduce systems to their primary elements and enforce rigid constraints governing structure, phase, and signal behavior. Whether architecting knowledge engines for enterprise product adoption, conditioning generative media for broadcast stability, or formulating phase-stable physical products, we replace speculative modeling with structural permanence.</p>
 </section>
 
-<section>
-    <h3>ACTIVE DISCLOSURE FEED (WHITE PAPERS)</h3>
-    <ul class="white-papers">
-        <li> <a href="https://drive.proton.me/urls/005TNDG9G4#R4ZWL6XgbGA9">Deterministic Spatial Mapping in Autonomous Swarm Robotics</a></li>
-        <li> <a href="https://drive.proton.me/urls/VQY977FNTW#zTesXOThgZ1E">The Sovereign Vitrification Engine & FAT-OS Architecture [Food Science]</a><br> reference: <a href="https://github.com/P1-Lab/Koji-Matrix-Lipid-Dispersion">https://github.com/P1-Lab/Koji-Matrix-Lipid-Dispersion</a></li>
-        <li> <a href="https://drive.proton.me/urls/WD1EWQ58CM#R2hzSQp1HyHY">Acoustic Integrity & The Reclamation of Physical Mass</a><br> reference: <a href="https://github.com/P1-Lab/sovereign-throw">https://github.com/P1-Lab/sovereign-throw</a></li>
-        <li> <a href="https://drive.proton.me/urls/SCR7NPZ0EW#Eeprc7YwvXkJ">The Architecture of Necessity: Transitioning to the Universal Chromatic Engine (UCE™) [Food Science]</a></li>
-        <li> <a href="https://drive.proton.me/urls/7BN63N9E6G#L9qcyPTgc4Ug">The Mechanical Nexus Standard: Verifiable Human Authorship in AI Media</a></li>
-        <li> <a href="https://drive.proton.me/urls/BA4NWX2PA8#yzOluyUtcjTp">ISO CG 40 47: The End of Uninsured Synthetic Production</a></li>
-        <li> <a href="https://drive.proton.me/urls/AWH5KGKT80#6vYYSufcWOaB">Spectral Insolvency: A Forensic Analysis of Neural Synthesis</a></li>
-    </ul>
-</section>
+    <section class="domain-grid">
+        <div class="domain-block">
+            <h2>KNOWLEDGE SYSTEMS</h2>
+            <p>Product Knowledge Engineering. Converting fragmented technical expertise into structured operational systems for technical manufacturers, engineering teams, and AI-ready product operations.</p>
+            <a href="knowledge-systems.html" class="btn">VIEW PLATFORM</a>
+        </div>
 
-<section class="block" style="border-color: #000; margin-top: 50px;">
-    <h2>V. THE WORKBENCH (OPEN-SOURCE)</h2>
-    <p>Public-domain forensic blueprints for fermentation appliances, food science, forensic communication tools, electromechanical instruments, and sustainable art media. A complete open-source ecosystem (The Lithic Stack & Provision1) dedicated to material integrity, deterministic physics, and zero-royalty innovation. Provided to foster technical replication, community iteration, and the liberation of high-fidelity tools.</p>
-    <a href="https://github.com/P1-Lab" class="btn">VIEW REPOSITORIES</a>
-</section>
+        <div class="domain-block">
+            <h2>MEDIA CONDITIONING ENGINES</h2>
+            <p>Deterministic forensic pipelines for media vitrification. We bridge the structural gap between erratic generative/legacy media and broadcast-compliant signal standards.</p>
+            <a href="media-conditioning.html" class="btn">VIEW ENGINE SUITE</a>
+        </div>
 
-<div class="footer-wall">
-    <strong>STRATEGIC POSITION:</strong> Pure-IP Licensing House. <br>
-    <strong>SECURITY PROTOCOL:</strong> ABSOLUTE NO-SAMPLE POLICY. <br>
-    <strong>CONTACT:</strong> Principal | 954.284.4193 | Jupiter, FL — Toronto, ON | principal.p1.lab@proton.me
-</div>
+        <div class="domain-block">
+            <h2>OPEN RESEARCH</h2>
+            <p>Public-domain forensic blueprints. Open-source research covering food science, signal processing, advanced materials, and electromechanical instrumentation.</p>
+            <a href="https://github.com/P1-Lab" class="btn">VIEW REPOSITORIES</a>
+        </div>
+    </section>
+
+    <section class="archive-section">
+        <h3>RECENT PUBLICATIONS</h3>
+        
+        <div class="archive-row">
+            <div class="archive-year">2026</div>
+            <div class="archive-content">
+                
+                <h4>Knowledge Systems</h4>
+                <ul class="archive-list">
+                    <li><a href="https://drive.proton.me/urls/7BN63N9E6G#L9qcyPTgc4Ug" class="archive-link">The Mechanical Nexus Standard: Verifiable Human Authorship in AI Media</a></li>
+                </ul>
+
+                <h4>Media Integrity</h4>
+                <ul class="archive-list">
+                    <li><a href="https://drive.proton.me/urls/BA4NWX2PA8#yzOluyUtcjTp" class="archive-link">ISO CG 40 47: The End of Uninsured Synthetic Production</a></li>
+                    <li><a href="https://drive.proton.me/urls/AWH5KGKT80#6vYYSufcWOaB" class="archive-link">Spectral Insolvency: A Forensic Analysis of Neural Synthesis</a></li>
+                </ul>
+
+                <h4>Physical Systems</h4>
+                <ul class="archive-list">
+                    <li><a href="https://drive.proton.me/urls/005TNDG9G4#R4ZWL6XgbGA9" class="archive-link">Deterministic Spatial Mapping in Autonomous Swarm Robotics</a></li>
+                    <li><a href="https://drive.proton.me/urls/WD1EWQ58CM#R2hzSQp1HyHY" class="archive-link">Acoustic Integrity & The Reclamation of Physical Mass</a><br>
+                        <a href="https://github.com/P1-Lab/sovereign-throw" class="ref-link">reference: https://github.com/P1-Lab/sovereign-throw</a></li>
+                </ul>
+
+                <h4>Food Systems</h4>
+                <ul class="archive-list">
+                    <li><a href="https://drive.proton.me/urls/VQY977FNTW#zTesXOThgZ1E" class="archive-link">The Sovereign Vitrification Engine & FAT-OS Architecture [Clean-Label Food Science]</a><br>
+                        <a href="https://github.com/P1-Lab/Koji-Matrix-Lipid-Dispersion" class="ref-link">reference: https://github.com/P1-Lab/Koji-Matrix-Lipid-Dispersion</a></li>
+                    <li><a href="https://drive.proton.me/urls/SCR7NPZ0EW#Eeprc7YwvXkJ" class="archive-link">Transitioning to the Universal Chromatic Engine (UCE™) [Clean-Label Food Science]</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-wall">
+        STRATEGIC POSITION: SYSTEMS ENGINEERING LABORATORY. <br>
+        SECURITY PROTOCOL: ABSOLUTE NO-SAMPLE POLICY. <br>
+        CONTACT: PRINCIPAL | 954.284.4193 | JUPITER, FL — TORONTO, ON | PRINCIPAL.P1.LAB@PROTON.ME
+    </div>
 
 </body>
 </html>
