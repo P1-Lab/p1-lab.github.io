@@ -49,7 +49,7 @@
         
         p { margin-bottom: 1.25rem; }
 
-        /* Diagram Styles */
+        /* Structural Configurations */
         .arch-diagram { margin: 3rem 0; padding: 2rem; background: #fcfcfc; border: 1px solid #ddd; }
         .level { display: flex; flex-direction: column; align-items: center; gap: 8px; }
         .stakeholder-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; width: 100%; max-width: 750px; margin-bottom: 0.5rem; }
@@ -58,6 +58,10 @@
         .label-box { border: 1px dashed var(--brass); background: #fffdf5; color: var(--brass); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem; }
         .root-box { border: 2px solid var(--forest); background: #f0f7f0; }
         .arrow { font-size: 1.2rem; font-weight: bold; color: var(--forest); }
+
+        .spec-list { list-style-type: none; font-family: var(--mono-font); font-size: 0.9rem; padding-left: 0.5rem; margin-bottom: 1.5rem; }
+        .spec-list li { margin-bottom: 0.4rem; display: flex; align-items: center; }
+        .spec-list li::before { content: "▪ "; color: var(--brass); margin-right: 0.75rem; font-size: 0.7rem; }
 
         .footer-wall { border-top: 4px solid var(--forest); padding: 3rem 0; margin-top: 6rem; font-family: var(--mono-font); font-size: 0.8rem; background: #000; color: #fff; padding: 30px; }
     </style>
@@ -78,8 +82,12 @@
 
     <section>
         <h3 style="margin-top:0;">PRODUCT KNOWLEDGE OPERATING SYSTEM™</h3>
-        <p>The governed operational model from which every product interface is derived.</p>
-        <p>Every complex product exists across multiple representations: engineering specifications, regulatory requirements, training materials, dealer systems, support responses, and emerging AI interfaces. When those representations diverge, organizations lose control of their own product reality. Provision1 establishes the governed knowledge architecture from which every authorized representation of the product is derived. Govern the knowledge once. Deploy it everywhere.</p>
+        <p style="font-weight: bold; font-size: 1.15rem; margin-bottom: 0.5rem;">The single operational source from which every product representation is generated and governed.</p>
+        <p style="font-family: var(--mono-font); font-size: 0.85rem; color: var(--brass); margin-bottom: 1.5rem; letter-spacing: 0.02em;">
+            Engineering. Documentation. Training. Support. Dealers. Customers. AI.
+        </p>
+        <p>Every complex product exists across multiple representations: engineering specifications, regulatory requirements, training materials, dealer systems, support responses, and emerging AI interfaces. When those representations diverge, organizations lose control of their own product reality. Provision1 establishes the governed knowledge architecture from which every authorized representation of the product is derived.</p>
+        <p style="font-family: var(--mono-font); font-size: 0.9rem; font-weight: bold; color: var(--forest); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1.25rem;">Govern the knowledge once. Deploy it everywhere.</p>
     </section>
 
     <section>
@@ -159,14 +167,33 @@
     </section>
 
     <section>
-        <h2>Designed For Complex Product Organizations</h2>
-        <p>Provision1 is intended for manufacturers and operators whose products require coordination across engineering, service, training, regulatory, dealers, and field personnel.</p>
-        <p>Typical environments include industrial equipment, medical devices, aerospace systems, specialized electronics, advanced manufacturing, and other technically complex products where incorrect information creates operational cost or liability.</p>
+        <h2>Who Needs This?</h2>
+        <p>Organizations whose products must remain technically consistent across multiple operational environments:</p>
+        
+        <ul class="spec-list">
+            <li>Engineering</li>
+            <li>Manufacturing</li>
+            <li>Regulatory</li>
+            <li>Product Management</li>
+            <li>Training</li>
+            <li>Technical Support</li>
+            <li>Dealer Networks</li>
+            <li>Field Service</li>
+            <li>Customers</li>
+            <li>AI Systems</li>
+        </ul>
     </section>
 
     <section>
-        <h2>Product Knowledge Governance Infrastructure</h2>
-        <p>Provision1 is not a documentation project, consulting engagement, or AI implementation layer. It is the governance infrastructure required to ensure that every future product interaction—human or machine—operates from an approved and validated understanding of the product.</p>
+        <h2>One Product. One Operational Model.</h2>
+        <p style="font-family: var(--mono-font); font-size: 1rem; line-height: 1.7; color: var(--forest); font-weight: bold; margin-bottom: 0;">
+            Every manual.<br>
+            Every AI response.<br>
+            Every technician.<br>
+            Every dealer.<br>
+            Every customer.<br>
+            <span style="color: var(--text-color); font-weight: normal; font-family: var(--sans-font); display: block; margin-top: 0.75rem;">Working from the same approved product reality.</span>
+        </p>
     </section>
 
     <div class="footer-wall">
