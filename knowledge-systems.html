@@ -59,6 +59,22 @@
         .root-box { border: 2px solid var(--forest); background: #f0f7f0; }
         .arrow { font-size: 1.2rem; font-weight: bold; color: var(--forest); }
 
+        .cta-btn { 
+            display: inline-block; 
+            margin-top: 1rem; 
+            color: var(--forest); 
+            background: transparent;
+            border: 1px solid var(--forest);
+            text-decoration: none; 
+            font-weight: 700; 
+            padding: 0.75rem 1.25rem; 
+            font-size: 0.85rem;
+            font-family: var(--mono-font);
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        .cta-btn:hover { background: var(--forest); color: #fff; }
+
         .spec-list { list-style-type: none; font-family: var(--mono-font); font-size: 0.9rem; padding-left: 0.5rem; margin-bottom: 1.5rem; }
         .spec-list li { margin-bottom: 0.4rem; display: flex; align-items: center; }
         .spec-list li::before { content: "✓ "; color: var(--forest); margin-right: 0.75rem; font-weight: bold; }
@@ -120,6 +136,9 @@
                         <div class="box" style="max-width: 100%; font-size: 0.8rem;">Future Applications</div>
                     </div>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; border-top: 1px dashed #ddd; padding-top: 1.5rem;">
+                <a href="knowledge-chart.html" class="cta-btn">VIEW ARCHITECTURE CHART</a>
             </div>
         </div>
     </section>
