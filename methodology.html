@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVISION1 | Exploration Methodology</title>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        header { margin-bottom: 3rem; }
+        h1 { font-family: var(--mono-font); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.5rem; text-transform: uppercase; color: var(--forest); }
+        .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 2.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+        
+        h2 { font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); text-decoration: underline; margin-top: 4rem; margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brass); text-transform: uppercase; }
+        h3 { font-family: var(--mono-font); color: var(--forest); border-bottom: 1px solid var(--brass); padding-bottom: 5px; margin-top: 40px; text-transform: uppercase; }
+        
+        p { margin-bottom: 1.25rem; }
+
+        /* Structural Configurations */
+        .arch-diagram { margin: 3rem 0; padding: 2rem; background: #fcfcfc; border: 1px solid #ddd; }
+        .stakeholder-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; width: 100%; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .box { border: 1px solid #000; padding: 1.25rem; text-align: left; font-family: var(--mono-font); font-size: 0.85rem; background: #fff; }
+        .box .box-title { color: var(--forest); text-transform: uppercase; font-weight: bold; margin-bottom: 0.5rem; display: block; }
+        
+        .spec-list { list-style-type: none; font-family: var(--mono-font); font-size: 0.85rem; padding-left: 0; margin-bottom: 1rem; }
+        .spec-list li { margin-bottom: 0.3rem; display: flex; align-items: flex-start; }
+        .spec-list li::before { content: "• "; color: var(--forest); margin-right: 0.5rem; font-weight: bold; }
+
+        .inquiry-block { border-left: 3px solid var(--forest); border: 1px solid #e2e8e2; border-left-width: 3px; background: #f4f6f4; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .inquiry-title { font-family: var(--mono-font); font-size: 0.85rem; text-transform: uppercase; color: var(--forest); font-weight: bold; margin-bottom: 0.25rem; }
+        .inquiry-question { font-family: var(--mono-font); font-size: 0.95rem; font-weight: bold; color: var(--text-color); margin-bottom: 0.5rem; }
+        .inquiry-desc { font-size: 0.85rem; color: var(--muted-text); margin-bottom: 0; }
+
+        .footer-wall { 
+            border-top: 1px solid var(--brass); 
+            padding-top: 2rem; 
+            margin-top: 6rem; 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            color: var(--muted-text); 
+            letter-spacing: 0.02em;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>SYSTEMS ENGINEERING LABORATORY</span>
+    </div>
+
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <h1>PROVISION1 LABORATORY</h1>
+        </a>
+        <p class="tagline">INSTRUMENT SYSTEMS EXPLORATION METHODOLOGY</p>
+    </header>
+
+    <section>
+        <h3 style="margin-top:0;">PHILOSOPHY OF AFFORDANCE</h3>
+        <p style="font-weight: bold; font-size: 1.15rem; margin-bottom: 0.5rem;">
+            Discovering unexplored capabilities within existing and emerging musical technologies.
+        </p>
+        <p>
+            Musical instruments are complex systems whose capabilities extend beyond their initial design context. As performance practices, recording technologies, and digital environments evolve, new possibilities emerge through unexpected combinations of physical instruments, electronic systems, and creative workflows.
+        </p>
+        <p>
+            Provision1 investigates these possibilities through structured technical exploration. Our research functions not as product critique, but as field research into technological affordances—mapping the full spectrum of possibilities a system offers beyond its primary intended use.
+        </p>
+
+        <!-- Elevated Core Principle Block -->
+        <div style="border: 1px solid var(--forest); background: #f4f6f4; padding: 1.5rem; margin: 2.5rem 0;">
+            <p style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                CORE RESEARCH PRINCIPLE
+            </p>
+            <p style="font-family: var(--mono-font); font-size: 0.9rem; color: var(--muted-text); margin-bottom: 0.75rem;">
+                Provision1 does not ask: <span style="color: var(--text-color);">"What is missing from this instrument?"</span>
+            </p>
+            <p style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--forest); margin-bottom: 0.25rem; text-transform: uppercase; font-weight: bold;">
+                WE ASK:
+            </p>
+            <p style="font-family: var(--mono-font); font-size: 1.15rem; color: var(--forest); font-weight: bold; margin-bottom: 0; line-height: 1.3;">
+                "What possibilities remain undiscovered within this instrument?"
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Methodological Framework</h2>
+        <p>Every laboratory investigation applies a four-phase methodology to systematically isolate, test, and document previously undocumented system capabilities.</p>
+
+        <div class="stakeholder-grid">
+            <div class="box">
+                <span class="box-title">1. System Characterization</span>
+                <p style="font-size: 0.8rem; margin-bottom: 0.75rem;">Studying instruments and technologies as complete operational systems across six core domains:</p>
+                <ul class="spec-list">
+                    <li>Physical response</li>
+                    <li>Performer interaction</li>
+                    <li>Signal behavior</li>
+                    <li>Electronic architecture</li>
+                    <li>Software integration</li>
+                    <li>Compositional application</li>
+                </ul>
+                <p style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 0;">Objective: Understand the complete operating environment, including behaviors not typically explored in conventional workflows.</p>
+            </div>
+
+            <div class="box">
+                <span class="box-title">2. Cross-System Exploration</span>
+                <p style="font-size: 0.8rem; margin-bottom: 0.75rem;">Investigating system behavior when integrated across modern operational environments:</p>
+                <ul class="spec-list">
+                    <li>Digital signal processing</li>
+                    <li>Sampling architectures</li>
+                    <li>Sequencing systems</li>
+                    <li>Spatial audio</li>
+                    <li>Recording workflows</li>
+                    <li>Hybrid performance systems</li>
+                </ul>
+                <p style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 0;">Objective: Reveal additional capabilities through environmental interaction rather than hardware modification.</p>
+            </div>
+
+            <div class="box">
+                <span class="box-title">3. Expressive Capability Mapping</span>
+                <p style="font-size: 0.8rem; margin-bottom: 0.75rem;">Systematic analysis of dynamic boundaries and non-standard operating paths:</p>
+                <ul class="spec-list">
+                    <li>Unexplored mechanical techniques</li>
+                    <li>Alternative performance approaches</li>
+                    <li>Unconventional signal pathways</li>
+                    <li>Emerging compositional applications</li>
+                </ul>
+                <p style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 0;">Core Query: "What else can this system become?"</p>
+            </div>
+
+            <div class="box">
+                <span class="box-title">4. Documentation &amp; Replication</span>
+                <p style="font-size: 0.8rem; margin-bottom: 0.75rem;">Translating empirical discoveries into durable technical documentation packages:</p>
+                <ul class="spec-list">
+                    <li>Technical reports</li>
+                    <li>Signal architectures</li>
+                    <li>Workflow documentation</li>
+                    <li>Reference recordings</li>
+                    <li>Repeatable methodologies</li>
+                </ul>
+                <p style="font-size: 0.75rem; color: var(--muted-text); margin-bottom: 0;">Objective: Provide repeatable technical knowledge for musicians and system architects.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Domain Applications in Practice</h2>
+        <p>This methodology shifts the core technical question away from deficiency and toward potential. The objective is not to replace existing instrument paradigms, but to reveal additional expressive and technical possibilities within them. These investigations may inform future workflows, educational approaches, or new instrument architectures, but begin with the study of existing systems.</p>
+
+        <div class="inquiry-block">
+            <div class="inquiry-title">Research Domain A: Electromechanical String Systems</div>
+            <div class="inquiry-question">"What happens when an electromechanical string instrument is examined as a DSP platform?"</div>
+            <p class="inquiry-desc">Investigating physical string resonance and transducer output as real-time control signals and excitation sources for algorithmic DSP and spatial environments.</p>
+        </div>
+
+        <div class="inquiry-block">
+            <div class="inquiry-title">Research Domain B: Dynamic Hardware Sampling Architectures</div>
+            <div class="inquiry-question">"What happens when a hardware sampler is treated as a compositional engine rather than a sample playback device?"</div>
+            <p class="inquiry-desc">Exploring real-time buffer manipulation, dynamic phase relationships, and micro-timing behavior inside hardware sequencing systems.</p>
+        </div>
+
+        <div class="inquiry-block">
+            <div class="inquiry-title">Research Domain C: Hybrid Synthesis Topologies</div>
+            <div class="inquiry-question">"What possibilities emerge when an analog/digital synthesis architecture is approached as a performance system?"</div>
+            <p class="inquiry-desc">Mapping high-resolution voice allocation, physical controller response, and direct analog signal pathways within immersive performance frameworks.</p>
+        </div>
+    </section>
+
+    <footer class="footer-wall">
+        <div>
+            <strong>PROVISION1 LABORATORY</strong><br>
+            APPLIED INSTRUMENT SYSTEMS™
+        </div>
+        <div style="text-align: right;">
+            FIELD RESEARCH INTO TECHNOLOGICAL AFFORDANCE<br>
+            AND UNEXPLORED OPERATING ENVELOPES.
+        </div>
+    </footer>
+
+</body>
+</html>
