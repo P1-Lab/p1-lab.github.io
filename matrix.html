@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Conditioning Specification & Operational Matrix | Provision1</title>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --border-color: #ddd;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* TOP DOCUMENT METADATA */
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        /* NAVIGATION BACK BUTTON */
+        .nav-back {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-back a {
+            color: var(--forest);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-back a:hover {
+            text-decoration: underline;
+        }
+
+        /* HEADER */
+        header { 
+            margin-bottom: 3rem; 
+        }
+
+        h1 { 
+            font-family: var(--mono-font); 
+            font-size: 2rem; 
+            font-weight: 800; 
+            letter-spacing: -0.03em; 
+            line-height: 1.15; 
+            margin-bottom: 0.5rem; 
+            text-transform: uppercase; 
+            color: var(--forest); 
+        }
+
+        .tagline { 
+            font-family: var(--mono-font); 
+            font-size: 0.9rem; 
+            color: var(--forest); 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.02em; 
+        }
+
+        /* SECTION HEADINGS */
+        h2 { 
+            font-family: var(--mono-font); 
+            font-size: 1.05rem; 
+            color: var(--forest); 
+            text-decoration: underline; 
+            margin-top: 3.5rem; 
+            margin-bottom: 1.5rem; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid var(--brass); 
+            text-transform: uppercase; 
+        }
+
+        /* CALLOUT / MOTIVATION BLOCK */
+        .callout-block { 
+            border-left: 3px solid var(--forest); 
+            border: 1px solid #e2e8e2; 
+            border-left-width: 3px; 
+            background: #f4f6f4; 
+            padding: 1.25rem 1.5rem; 
+            margin: 2rem 0; 
+        }
+
+        .callout-title { 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            color: var(--muted-text); 
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem; 
+            font-weight: 700;
+        }
+
+        .callout-body { 
+            font-family: var(--mono-font);
+            font-size: 0.88rem; 
+            color: var(--text-color); 
+            line-height: 1.5;
+        }
+
+        /* SPECIFICATION TABLE */
+        .spec-table, .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.85rem;
+        }
+
+        .spec-table th, .matrix-table th {
+            font-family: var(--mono-font);
+            background-color: #f4f6f4;
+            color: var(--forest);
+            text-align: left;
+            padding: 0.75rem 0.6rem;
+            border-top: 1px solid var(--forest);
+            border-bottom: 2px solid var(--brass);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.03em;
+        }
+
+        .spec-table td, .matrix-table td {
+            padding: 0.75rem 0.6rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+            line-height: 1.45;
+        }
+
+        .spec-table tr:hover, .matrix-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .spec-label {
+            font-family: var(--mono-font);
+            font-weight: 600;
+            color: var(--forest);
+        }
+
+        .check-mark {
+            font-family: var(--mono-font);
+            color: var(--forest);
+            font-weight: bold;
+        }
+
+        /* WORKFLOW STRIP */
+        .workflow-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            border: 1px solid #000;
+            padding: 1rem;
+            margin: 1.5rem 0 2.5rem 0;
+            font-family: var(--mono-font);
+            font-size: 0.78rem;
+            gap: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .workflow-step {
+            text-align: center;
+            flex: 1;
+            padding: 0.5rem;
+            background: #f4f6f4;
+            border: 1px solid var(--border-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--forest);
+            white-space: nowrap;
+        }
+
+        .workflow-arrow {
+            color: var(--brass);
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* PIPELINE DATAFLOW GRID */
+        .dataflow-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 1.5rem 0 2.5rem 0;
+            font-family: var(--mono-font);
+        }
+
+        .dataflow-node {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dataflow-header {
+            font-size: 0.7rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .dataflow-title {
+            font-size: 0.88rem;
+            color: var(--forest);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .dataflow-body {
+            font-size: 0.78rem;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        /* TWO COLUMN CONDITIONING COMPARISON */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 1.5rem 0 2.5rem 0;
+            font-family: var(--mono-font);
+        }
+
+        .comparison-card {
+            border: 1px solid #000;
+            padding: 1.25rem;
+            background: #fff;
+        }
+
+        .comparison-title {
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--brass);
+        }
+
+        .comparison-title.active {
+            color: var(--forest);
+        }
+
+        .comparison-title.pass {
+            color: var(--muted-text);
+        }
+
+        .comparison-list {
+            list-style: none;
+            font-size: 0.82rem;
+            line-height: 1.8;
+        }
+
+        .comparison-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison-list .icon-active {
+            color: var(--forest);
+            font-weight: bold;
+        }
+
+        .comparison-list .icon-pass {
+            color: #999;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        .footer-wall { 
+            border-top: 1px solid var(--brass); 
+            padding-top: 2rem; 
+            margin-top: 5rem; 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            color: var(--muted-text); 
+            letter-spacing: 0.02em;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--forest);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .dataflow-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>SYSTEMS ENGINEERING LABORATORY</span>
+    </div>
+
+    <nav class="nav-back">
+        <a href="media-conditioning.html">&larr; Back to Media Conditioning Overview</a>
+    </nav>
+
+    <header>
+        <h1>Omnibus Vitrifier™ Professional Display Conditioning Matrix</h1>
+        <p class="tagline">ENGINEERING SPECIFICATION & OPERATIONAL DEPLOYMENT MATRIX</p>
+    </header>
+
+    <!-- SECTION 1: ENGINEERING MOTIVATION -->
+    <section>
+        <div class="callout-block">
+            <div class="callout-title">ENGINEERING MOTIVATION</div>
+            <div class="callout-body">
+                Modern professional displays increasingly reveal structural deficiencies present within synthetic/AI-generated and legacy digital media. Omnibus Vitrifier™ introduces a dedicated conditioning stage between media creation and final deployment, improving structural consistency while providing integrated diagnostic visibility.
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ENGINE TECHNICAL SPECIFICATION SUMMARY -->
+    <section>
+        <h2>1. Engine Specification Summary</h2>
+
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th style="width: 35%;">Engine Function</th>
+                    <th style="width: 20%;">Implementation Scope</th>
+                    <th style="width: 45%;">Diagnostic / Output State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="spec-label">Luminance Conditioning</span></td>
+                    <td>Y-Channel Processing</td>
+                    <td>Controlled structural transition smoothing</td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Chroma Preservation</span></td>
+                    <td>Cb/Cr Direct Pass-Through</td>
+                    <td>Zero colorimetric distortion (<span class="check-mark">✓</span>)</td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Micro-Lattice Refinement</span></td>
+                    <td>High-Frequency Spatial Kernel</td>
+                    <td>Localized contrast shaping without edge overshoot</td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Residual Mapping</span></td>
+                    <td>Pixel-Domain Delta Amplification (5×)</td>
+                    <td>Quantitative transformation residual map</td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Structural Topology Extraction</span></td>
+                    <td>Gradient-Field Analysis</td>
+                    <td>Sobel-based SRN structural map</td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Processing Pipeline</span></td>
+                    <td>Controlled Execution</td>
+                    <td>Repeatable conditioning workflow (<span class="check-mark">✓</span>)</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 3: CONDITIONING & AUDIT WORKFLOW -->
+    <section>
+        <h2>2. Conditioning & Audit Workflow</h2>
+
+        <div class="workflow-strip">
+            <div class="workflow-step">Source Asset</div>
+            <span class="workflow-arrow">&rarr;</span>
+            <div class="workflow-step">Omnibus Vitrifier™</div>
+            <span class="workflow-arrow">&rarr;</span>
+            <div class="workflow-step">Audit & Deployment Master</div>
+            <span class="workflow-arrow">&rarr;</span>
+            <div class="workflow-step">Professional Display</div>
+        </div>
+
+        <div class="dataflow-grid">
+            <div class="dataflow-node">
+                <div class="dataflow-header">Stage 01</div>
+                <div class="dataflow-title">Source Asset</div>
+                <div class="dataflow-body">Original media entering the conditioning engine.</div>
+            </div>
+            <div class="dataflow-node">
+                <div class="dataflow-header">Stage 02</div>
+                <div class="dataflow-title">Structural Conditioning</div>
+                <div class="dataflow-body">Luminance-domain processing with preserved chroma and integrated refinement.</div>
+            </div>
+            <div class="dataflow-node">
+                <div class="dataflow-header">Stage 03</div>
+                <div class="dataflow-title">Engineering Audit</div>
+                <div class="dataflow-body">Delta Residual (×5) and SRN Structural Topology generated during conditioning.</div>
+            </div>
+            <div class="dataflow-node">
+                <div class="dataflow-header">Stage 04</div>
+                <div class="dataflow-title">Deployment Master</div>
+                <div class="dataflow-body">Final conditioned asset ready for professional display.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CONDITIONING SCOPE BOUNDARIES -->
+    <section>
+        <h2>3. Conditioning Scope Boundaries</h2>
+
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <div class="comparison-title active">WHAT THE ENGINE CONDITIONS</div>
+                <ul class="comparison-list">
+                    <li><span class="icon-active">&#10003;</span> Luminance Architecture</li>
+                    <li><span class="icon-active">&#10003;</span> Local Contrast Relationships</li>
+                    <li><span class="icon-active">&#10003;</span> Spatial Continuity</li>
+                    <li><span class="icon-active">&#10003;</span> Edge Topology Structure</li>
+                    <li><span class="icon-active">&#10003;</span> Gradient Organization</li>
+                    <li><span class="icon-active">&#10003;</span> Diagnostic Visibility</li>
+                    <li><span class="icon-active">&#10003;</span> Repeatable Deployment Masters</li>
+                </ul>
+            </div>
+            <div class="comparison-card">
+                <div class="comparison-title pass">WHAT IT DOES NOT CHANGE</div>
+                <ul class="comparison-list">
+                    <li><span class="icon-pass">&#10005;</span> Creative Direction</li>
+                    <li><span class="icon-pass">&#10005;</span> Spatial Composition</li>
+                    <li><span class="icon-pass">&#10005;</span> Color Grade & Chroma Data</li>
+                    <li><span class="icon-pass">&#10005;</span> Editorial Decisions</li>
+                    <li><span class="icon-pass">&#10005;</span> Source Asset Ownership</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: EXPECTED DISPLAY CHARACTERISTICS MATRIX -->
+    <section>
+        <h2>4. Expected Display Characteristics</h2>
+
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Display Platform Category</th>
+                    <th style="width: 35%;">Typical Source Challenges</th>
+                    <th style="width: 40%;">Expected Presentation After Conditioning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Sony Reference HDR</strong></td>
+                    <td>Micro-shimmer, unstable gradients, and high-frequency edge chatter become highly visible.</td>
+                    <td>More coherent luminance transitions with fully preserved chromatic relationships.</td>
+                </tr>
+                <tr>
+                    <td><strong>High-Brightness LED Walls</strong></td>
+                    <td>Pixel-level inconsistencies and synthetic texture artifacts become visually magnified.</td>
+                    <td>Improved structural continuity and smoother tonal organization across emissive surfaces.</td>
+                </tr>
+                <tr>
+                    <td><strong>Professional Projection</strong></td>
+                    <td>Compression artifacts and edge discontinuities become more apparent on large canvases.</td>
+                    <td>More consistent edge transitions and stabilized structural presentation.</td>
+                </tr>
+                <tr>
+                    <td><strong>Commercial Digital Signage</strong></td>
+                    <td>Variable source quality creates inconsistent visual presentation across deployment networks.</td>
+                    <td>Repeatable deployment characteristics across target display environments.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 6: INTEGRATOR OPERATIONAL WORKFLOW MATRIX -->
+    <section>
+        <h2>5. Operational Workflow Comparison</h2>
+
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Operational Focus</th>
+                    <th style="width: 35%;">Unconditioned Workflow</th>
+                    <th style="width: 40%;">Omnibus Vitrifier™ Workflow</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Display Consistency</strong></td>
+                    <td>Variable by incoming source state.</td>
+                    <td>Standardized, controlled conditioning step.</td>
+                </tr>
+                <tr>
+                    <td><strong>Master Preparation</strong></td>
+                    <td>Manual iterative tweaking per display target.</td>
+                    <td>Repeatable, structured conditioning pipeline.</td>
+                </tr>
+                <tr>
+                    <td><strong>Engineering Visibility</strong></td>
+                    <td>Subjective visual inspection only.</td>
+                    <td>Residual (Delta ×5) & Topology (SRN) diagnostics.</td>
+                </tr>
+                <tr>
+                    <td><strong>Process Repeatability</strong></td>
+                    <td>Operator dependent.</td>
+                    <td>Structured execution bounds.</td>
+                </tr>
+                <tr>
+                    <td><strong>Quality Documentation</strong></td>
+                    <td>None.</td>
+                    <td>Exportable audit imagery artifacts.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-wall">
+        <div>
+            <strong>PROVISION1 / OMNIBUS VITRIFIER ENGINE</strong><br>
+            REV 8.6.1
+        </div>
+        <div style="text-align: right;">
+            <div class="footer-status">
+                <span class="status-dot"></span>
+                <span>REPEATABLE CONDITIONING PIPELINE</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
