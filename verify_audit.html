@@ -39,11 +39,33 @@
             text-transform: uppercase;
             border-bottom: 2px solid var(--brass);
             padding-bottom: 0.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             display: flex;
             justify-content: space-between;
             color: var(--muted-text);
             font-weight: 600;
+        }
+
+        /* NAVIGATION BACK BUTTON */
+        .nav-back {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-back a {
+            color: var(--forest);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-back a:hover {
+            text-decoration: underline;
         }
 
         /* HEADER */
@@ -250,6 +272,10 @@
         <span>PROVISION1</span>
         <span>SYSTEMS ENGINEERING LABORATORY</span>
     </div>
+
+    <nav class="nav-back">
+        <a href="media-conditioning.html">&larr; Back to Media Conditioning Overview</a>
+    </nav>
 
     <header>
         <a href="media-conditioning.html" style="text-decoration: none; color: inherit;">
