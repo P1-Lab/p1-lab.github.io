@@ -79,6 +79,28 @@
         .inquiry-question { font-family: var(--mono-font); font-size: 0.95rem; font-weight: bold; color: var(--text-color); margin-bottom: 0.5rem; }
         .inquiry-desc { font-size: 0.85rem; color: var(--muted-text); margin-bottom: 0; }
 
+        .mission-banner {
+            border: 1px solid var(--forest);
+            background: #f4f6f4;
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .cartography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 2rem 0;
+        }
+
+        .carto-box {
+            border: 1px solid var(--brass);
+            background: #fdfcf7;
+            padding: 1.25rem;
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+        }
+
         .footer-wall { 
             border-top: 1px solid var(--brass); 
             padding-top: 2rem; 
@@ -113,13 +135,27 @@
         <p class="lead-in">Discovering latent operational knowledge within complex expressive systems.</p>
 
         <p>
-            Information about an instrument is abundant. Understanding of its complete operating envelope is scarce.
+            Information about an instrument is abundant. Understanding of its complete operating envelope is scarce. Most documentation explains what an instrument is or how it functions. Atlas Research asks a different question: What is the full observable landscape of expressive possibilities contained within the instrument, including capabilities that remain undocumented, disconnected, or unexplored?
         </p>
         <p>
-            Provision1 Atlas Research documents the observable expressive operating envelope of instruments across physical, electrical, computational, and musical domains. Complex systems often contain capabilities that remain undiscovered not because they are absent, but because they have not yet been systematically observed, characterized, and documented.
+            Provision1 Atlas Research documents the observable expressive operating envelope of instruments across physical, electrical, computational, and musical domains. The instrument is not merely an isolated commercial product; it is an entry point into a broader <strong>Capability Space</strong>. Complex systems contain capabilities that remain undiscovered not because they are absent, but because they have not yet been systematically observed, characterized, and mapped.
         </p>
+
+        <!-- Product Statement Banner -->
+        <div class="mission-banner">
+            <p style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--brass); font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                CORE RESEARCH DECLARATION
+            </p>
+            <p style="font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); font-weight: bold; margin-bottom: 0.75rem; line-height: 1.3;">
+                Manuals describe functions. Atlases describe possibilities.
+            </p>
+            <p style="font-family: var(--mono-font); font-size: 0.9rem; color: var(--text-color); margin-bottom: 0;">
+                Provision1 does not manufacture instruments, software, or effects. We manufacture navigable knowledge about their observable expressive capability.
+            </p>
+        </div>
+
         <p>
-            A material does not acquire new properties when science discovers them. The properties were always present; what changes is human orientation toward the system. The same principle applies to expressive technologies. An instrument, controller, or electronic architecture may contain unexplored behaviors that emerge only when examined across multiple domains simultaneously.
+            A material does not acquire new properties when science discovers them. The properties were always present; what changes is human orientation toward the system. The same principle applies to expressive technologies. An instrument, controller, or electronic architecture contains unexplored behaviors that emerge only when examined across multiple domains simultaneously.
         </p>
 
         <!-- Core Principle Block -->
@@ -135,6 +171,48 @@
             </p>
             <p style="font-family: var(--mono-font); font-size: 1.15rem; color: var(--forest); font-weight: bold; margin-bottom: 0; line-height: 1.3;">
                 "What observable behaviors exist within this system that have not yet been characterized?"
+            </p>
+        </div>
+    </section>
+
+    <!-- CARTOGRAPHIC FRAMEWORK SECTION -->
+    <section>
+        <h2>Cartography of Capability Space</h2>
+        <p class="lead-in">Atlas Construction as Empirical Cartography.</p>
+
+        <p>
+            Atlas construction is not technical writing, product review, or user documentation—it is <strong>cartography</strong>. Standard manuals outline operational controls; an Atlas maps physical and computational terrain. Every Atlas study systematically partitions an instrument's Capability Space into three distinct territories:
+        </p>
+
+        <div class="cartography-grid">
+            <div class="carto-box">
+                <span style="color: var(--forest); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">1. Known Territory</span>
+                <p style="font-size: 0.8rem; color: var(--text-color); margin-bottom: 0;">
+                    Documented features, standard factory specifications, intended user interfaces, and conventional playing methodologies.
+                </p>
+            </div>
+
+            <div class="carto-box">
+                <span style="color: var(--forest); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">2. Frontier Territory</span>
+                <p style="font-size: 0.8rem; color: var(--text-color); margin-bottom: 0;">
+                    Empirically observed, repeatable behaviors that remain unmapped, non-linear, or poorly understood by conventional workflows.
+                </p>
+            </div>
+
+            <div class="carto-box">
+                <span style="color: var(--brass); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">3. Unexplored Territory</span>
+                <p style="font-size: 0.8rem; color: var(--text-color); margin-bottom: 0;">
+                    Deliberately identified edge vectors, physical limits, and unverified hypotheses—defining precisely where future performers, software developers, and R&amp;D teams begin.
+                </p>
+            </div>
+        </div>
+
+        <div style="border-left: 3px solid var(--forest); background: #f4f6f4; padding: 1.25rem 1.5rem; margin: 1.5rem 0;">
+            <p style="font-family: var(--mono-font); font-size: 0.85rem; font-weight: bold; color: var(--forest); text-transform: uppercase; margin-bottom: 0.35rem;">
+                CUMULATIVE RESEARCH ARCHITECTURE
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-color); margin-bottom: 0;">
+                Knowledge within the Provision1 Atlas Research Standard (PARS) is explicitly cumulative. An Atlas does not exist in isolation; each published volume establishes a permanent operational baseline. Subsequent volumes begin from an expanded frontier, establishing PARS as an institutional framework for transferable expressive intelligence.
             </p>
         </div>
     </section>
@@ -187,7 +265,7 @@
             </div>
 
             <div class="box">
-                <span class="box-title">4. Atlas Construction &amp; Replication</span>
+                <span class="box-title">4. Atlas Construction &amp; Cartography</span>
                 <p style="font-size: 0.8rem; margin-bottom: 0.75rem;">Translating empirical discoveries into durable technical documentation packages:</p>
                 <ul class="spec-list">
                     <li>Technical reports</li>
