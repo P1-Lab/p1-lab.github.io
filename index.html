@@ -40,10 +40,33 @@
             font-weight: 600;
         }
 
-        header { margin-bottom: 3rem; }
+        header { margin-bottom: 2.5rem; }
         h1 { font-family: var(--mono-font); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.5rem; text-transform: uppercase; color: var(--forest); }
-        .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 2.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+        .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
         
+        .foundational-statement {
+            border-left: 3px solid var(--brass);
+            padding-left: 1.5rem;
+            margin-bottom: 3.5rem;
+            margin-top: 1rem;
+        }
+        .foundational-statement .thesis {
+            font-family: var(--mono-font);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--forest);
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.75rem;
+        }
+        .foundational-statement .thesis-description {
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
         h2 { font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); text-decoration: underline; margin-top: 4rem; margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brass); text-transform: uppercase; }
         h3 { font-family: var(--mono-font); color: var(--forest); border-bottom: 1px solid var(--brass); padding-bottom: 5px; margin-top: 40px; margin-bottom: 1.5rem; text-transform: uppercase; }
         h4 { font-family: var(--mono-font); color: var(--forest); margin: 2rem 0 0.5rem 0; text-transform: uppercase; font-size: 0.9rem; }
@@ -108,6 +131,16 @@
         <p class="tagline">SYSTEMS ENGINEERING FOR DETERMINISTIC TECHNICAL SYSTEMS</p>
     </header>
 
+    <section class="foundational-statement">
+        <div class="thesis">
+            Information has become abundant.<br>
+            Orientation has become scarce.
+        </div>
+        <p class="thesis-description">
+            Provision1 Laboratory develops deterministic systems that restore operational clarity, provenance, and human understanding within complex technical, media, and knowledge environments.
+        </p>
+    </section>
+
     <section class="about-section">
         <h3>ABOUT THE LABORATORY</h3>
 
@@ -121,16 +154,17 @@
         <h3>ACTIVE ENGINEERING PROGRAM</h3>
 
         <div class="domain-grid">
-    <div class="domain-block">
-        <h2>MEDIA SYSTEMS ENGINEERING</h2>
+            <div class="domain-block">
+                <h2>MEDIA SYSTEMS ENGINEERING</h2>
 
-        <p>
-        Independent engineering investigations into imaging, video, audio, and computational media systems. Our work examines signal behavior, processing architectures, and production workflows to develop deterministic engineering solutions for complex media environments.
-        </p><P>Provision1 Laboratory helps organizations solve media pipeline problems that cannot be resolved through conventional software configuration or equipment replacement.</P>
+                <p>
+                Independent engineering investigations into imaging, video, audio, and computational media systems. Our work examines signal behavior, processing architectures, and production workflows to develop deterministic engineering solutions for complex media environments.
+                </p>
+                <p>Provision1 Laboratory helps organizations solve media pipeline problems that cannot be resolved through conventional software configuration or equipment replacement.</p>
 
-        <a href="media-conditioning.html" class="btn">VIEW PROGRAM</a>
-    </div>
-</div>
+                <a href="media-conditioning.html" class="btn">VIEW PROGRAM</a>
+            </div>
+        </div>
     </section>
 
     <!-- SECTION 2: RESEARCH & DEVELOPMENT -->
@@ -139,12 +173,12 @@
 
         <div class="domain-grid">
             <div class="domain-block">
-    <h2>PERFORMANCE SYSTEMS RESEARCH</h2>
-    <p>Research into expressive systems — the physical, electronic, and computational architectures through which human intention becomes musical behavior.</p>
-    <p>Provision1 Laboratory conducts independent engineering research into advanced instruments, recording systems, digital signal processing, and contemporary workflows, investigating unexplored operating envelopes and latent capabilities within complex performance systems.</p>
-    <a href="performance-systems.html" class="btn">VIEW RESEARCH</a>
-    <a href="methodology.html" class="btn">VIEW METHODOLOGY</a>
-</div>
+                <h2>PERFORMANCE SYSTEMS RESEARCH</h2>
+                <p>Research into expressive systems — the physical, electronic, and computational architectures through which human intention becomes musical behavior.</p>
+                <p>Provision1 Laboratory conducts independent engineering research into advanced instruments, recording systems, digital signal processing, and contemporary workflows, investigating unexplored operating envelopes and latent capabilities within complex performance systems.</p>
+                <a href="performance-systems.html" class="btn">VIEW RESEARCH</a>
+                <a href="methodology.html" class="btn">VIEW METHODOLOGY</a>
+            </div>
 
             <div class="domain-block">
                 <h2>KNOWLEDGE ARCHITECTURE RESEARCH</h2>
