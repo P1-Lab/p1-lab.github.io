@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROVISION1 LABORATORY | Methodology (PARS)</title>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        header { margin-bottom: 3rem; }
+        h1 { font-family: var(--mono-font); font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.5rem; text-transform: uppercase; color: var(--forest); }
+        .tagline { font-family: var(--mono-font); font-size: 0.9rem; color: var(--forest); margin-bottom: 2.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+        
+        h2 { font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); text-decoration: underline; margin-top: 3.5rem; margin-bottom: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--brass); text-transform: uppercase; }
+        h3 { font-family: var(--mono-font); color: var(--forest); border-bottom: 1px solid var(--brass); padding-bottom: 5px; margin-top: 30px; margin-bottom: 1.25rem; text-transform: uppercase; }
+        
+        p { margin-bottom: 1.25rem; }
+
+        .lead-in {
+            font-family: var(--mono-font);
+            color: var(--forest);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-box {
+            border: 1px solid var(--forest);
+            background: #f4f6f4;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .cartography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            margin: 2rem 0;
+        }
+
+        .carto-box {
+            border: 1px solid var(--brass);
+            background: #fdfcf7;
+            padding: 1.25rem;
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+        }
+
+        .carto-box .title {
+            font-weight: bold;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-list {
+            list-style-type: none;
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-list li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .spec-list li::before {
+            content: "•";
+            color: var(--forest);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 20px;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            border: 1px solid #d0d0d0;
+            padding: 1.25rem;
+            background: #ffffff;
+            border-left: 3px solid var(--forest);
+        }
+
+        .card-title {
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            color: var(--forest);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+            display: block;
+        }
+
+        .btn { 
+            display: inline-block; 
+            margin-top: 1rem; 
+            color: var(--forest); 
+            background: transparent;
+            border: 1px solid var(--forest);
+            text-decoration: none; 
+            font-weight: 700; 
+            padding: 0.75rem 1.25rem; 
+            font-size: 0.85rem;
+            font-family: var(--mono-font);
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        .btn:hover { background: var(--forest); color: #fff; }
+
+        .footer-wall { 
+            border-top: 4px solid var(--forest); 
+            padding: 2rem; 
+            margin-top: 6rem; 
+            font-family: var(--mono-font); 
+            font-size: 0.8rem; 
+            background: #000; 
+            color: #fff; 
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>SYSTEMS ENGINEERING LABORATORY</span>
+    </div>
+
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <h1>PROVISION1 LABORATORY</h1>
+        </a>
+        <p class="tagline">SYSTEMS ENGINEERING FOR COMPLEX HUMAN-TECHNOLOGY SYSTEMS</p>
+    </header>
+
+    <section>
+        <h3>METHODOLOGY</h3>
+        <p class="lead-in">PROVISION1 ATLAS RESEARCH STANDARD (PARS)</p>
+        <p>A systematic framework for discovering, validating, and mapping the unexplored capability space of complex human-technology systems.</p>
+
+        <!-- THE PROBLEM -->
+        <div class="problem-box">
+            <p style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--brass); font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                THE CORE PROBLEM
+            </p>
+            <p style="font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); font-weight: bold; margin-bottom: 0.75rem; line-height: 1.3;">
+                Products Are Documented. Possibilities Are Not.
+            </p>
+            <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
+                Manufacturers typically document specifications, performance characteristics, operating procedures, safety parameters, approved workflows, and intended applications. However, complex human-facing systems routinely contain capabilities that emerge only through rigorous experimentation, non-standard configurations, cross-disciplinary integration, and advanced user practice.
+            </p>
+            <p style="font-size: 0.85rem; color: var(--muted-text); margin-bottom: 0;">
+                The difference is the difference between a list of applications and a map of possibility. A list tells someone that baking soda can clean, deodorize, or leaven. A capability map reveals the underlying properties that make entirely new applications possible.
+            </p>
+        </div>
+    </section>
+
+    <!-- THE PARS SOLUTION -->
+    <section>
+        <h2>The PARS Approach</h2>
+        <p>PARS converts undocumented discovery into a structured, reproducible capability map. Every investigation moves systematically through five distinct operational phases:</p>
+
+        <ul class="spec-list">
+            <li><strong>1. Capability Identification:</strong> Isolate the specific, previously undocumented behavior or capability vector being explored.</li>
+            <li><strong>2. Controlled Experimentation:</strong> Establish the precise environmental and system conditions under which the behavior emerges.</li>
+            <li><strong>3. Configuration Record:</strong> Document the exact hardware, software, environmental, and operational variables required to achieve the result.</li>
+            <li><strong>4. Technical Verification:</strong> Ensure findings remain technically verifiable, independently reproducible, and actionable across engineering, product, and creative teams.</li>
+            <li><strong>5. Capability Mapping:</strong> Assign the discovered behavior to its precise position within the broader operating envelope of the system.</li>
+        </ul>
+    </section>
+
+    <!-- THE ATLAS OUTPUT -->
+    <section>
+        <h2>The Atlas Output</h2>
+        <p>The output of a PARS study is not a conventional report or user manual. The deliverable is a structured <strong>Capability Atlas</strong>: a codified repository of verified experiments, repeatable configurations, observed behaviors, and documented capability pathways. Each documented discovery becomes a reusable knowledge asset for end users, engineering teams, educators, and future product development.</p>
+
+        <div class="cartography-grid">
+            <div class="carto-box">
+                <span class="title" style="color: var(--forest);">Layer 1 — Known Territory</span>
+                <p style="font-size: 0.8rem; margin-bottom: 0;">Established capabilities, documented factory uses, standard manufacturer guidance, and accepted operational workflows.</p>
+            </div>
+
+            <div class="carto-box">
+                <span class="title" style="color: var(--forest);">Layer 2 — Extended Territory</span>
+                <p style="font-size: 0.8rem; margin-bottom: 0;">Advanced capabilities demonstrated by expert operators but poorly documented or absent from standard user materials.</p>
+            </div>
+
+            <div class="carto-box">
+                <span class="title" style="color: var(--brass);">Layer 3 — Adjacent Territory</span>
+                <p style="font-size: 0.8rem; margin-bottom: 0;">New applications and operational behaviors revealed when the target system interacts with adjacent disciplines and tools.</p>
+            </div>
+
+            <div class="carto-box">
+                <span class="title" style="color: var(--brass);">Layer 4 — Frontier Territory</span>
+                <p style="font-size: 0.8rem; margin-bottom: 0;">Unexplored capability vectors and edge conditions identified for future empirical research and product R&amp;D.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIMENTAL RECORD -->
+    <section>
+        <h2>The Experimental Record</h2>
+        <p>Every PARS observation is recorded as a discrete research unit. Each unit captures Seven Core Data Domains:</p>
+
+        <div class="grid-2col">
+            <div class="card">
+                <span class="card-title">1. Hypothesis</span>
+                <p style="font-size: 0.85rem;">What specific capability or system behavior is being investigated?</p>
+            </div>
+            <div class="card">
+                <span class="card-title">2. Configuration</span>
+                <p style="font-size: 0.85rem;">What exact system, signal, physical, and environmental parameters were established?</p>
+            </div>
+            <div class="card">
+                <span class="card-title">3. Method</span>
+                <p style="font-size: 0.85rem;">What reproducible operational procedures were executed to induce the behavior?</p>
+            </div>
+            <div class="card">
+                <span class="card-title">4. Observation</span>
+                <p style="font-size: 0.85rem;">What observable physical, signal, or computational outputs occurred?</p>
+            </div>
+            <div class="card">
+                <span class="card-title">5. Evidence</span>
+                <p style="font-size: 0.85rem;">What calibrated physical data, audio/visual artifacts, or telemetry document the result?</p>
+            </div>
+            <div class="card">
+                <span class="card-title">6. Repeatability</span>
+                <p style="font-size: 0.85rem;">Can an independent team reproduce the precise behavior using the documented configuration?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMERCIAL KNOWLEDGE LAYER -->
+    <section>
+        <h2>Who Uses a PARS Atlas?</h2>
+        <p>Manufacturers understand how their products are designed and built. Users continuously discover what those products might become. PARS systematically connects the two.</p>
+
+        <div class="grid-2col">
+            <div class="card">
+                <span class="card-title">Creators &amp; Performers</span>
+                <p style="font-size: 0.85rem;">Understand what a system can actually achieve without spending years discovering edge behaviors independently.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-title">Product Development &amp; R&amp;D Teams</span>
+                <p style="font-size: 0.85rem;">Identify missing ecosystem opportunities, accessory development vectors, and firmware updates. The Atlas reveals not only what a product can do today, but where future ecosystem expansion is most likely to emerge.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-title">Engineers &amp; Designers</span>
+                <p style="font-size: 0.85rem;">Identify operational boundary conditions, mechanical or electrical integration limits, and cross-platform capabilities.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-title">Educators &amp; Technical Communicators</span>
+                <p style="font-size: 0.85rem;">Construct rigorous, structured technical knowledge rather than relying on fragmented forum posts or isolated tips.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INAUGURAL APPLICATION -->
+    <section>
+        <h2>Inaugural Published Application</h2>
+        <div style="border: 1px solid var(--forest); background: #f4f6f4; padding: 1.5rem; margin-top: 1rem;">
+            <p style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--brass); font-weight: bold; margin-bottom: 0.35rem; text-transform: uppercase;">
+                PROVISION1 ATLAS RESEARCH STANDARD — VOLUME 01
+            </p>
+            <p style="font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); font-weight: bold; margin-bottom: 0.75rem;">
+                Expressive Technology Systems: Mapping the Modern Electric Instrument
+            </p>
+            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+                The inaugural published PARS application demonstrates the methodology through an advanced expressive technology platform: the modern electric string instrument system. The objective is not product evaluation or comparison, but the construction of a reproducible capability map documenting the observable operating envelope of a complex human-technology system.
+            </p>
+            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+                This investigation applies the PARS framework to expressive systems, documenting the interaction between physical technique, instrument architecture, electronic signal pathways, amplification systems, digital processing, and performer workflow.
+            </p>
+            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+                The resulting Atlas demonstrates a transferable research model applicable across instruments, creative technologies, media systems, industrial tools, and other complex human-technology platforms where undocumented capability remains a barrier to adoption, education, and innovation.
+            </p>
+            <a href="performance-systems.html" class="btn">VIEW PERFORMANCE SYSTEMS</a>
+        </div>
+    </section>
+
+    <footer class="footer-wall">
+        <div>
+            <strong>PROVISION1 LABORATORY</strong><br>
+            SYSTEMS ENGINEERING RESEARCH
+        </div>
+        <div style="text-align: right;">
+            JUPITER, FL — TORONTO, ON<br>
+            PRINCIPAL.P1.LAB@PROTON.ME
+        </div>
+    </footer>
+
+</body>
+</html>
