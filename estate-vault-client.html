@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Vault Key™ | The Permanent Record of a Private Estate | Provision1</title>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --border-color: #ddd;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* TOP DOCUMENT METADATA */
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        /* NAVIGATION BAR */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-bar a {
+            color: var(--forest);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .tech-link-badge {
+            border: 1px solid var(--brass);
+            padding: 0.35rem 0.75rem;
+            background: #faf8f2;
+            color: var(--brass) !important;
+            font-size: 0.75rem;
+        }
+
+        /* HEADER / HERO */
+        header { 
+            margin-bottom: 3.5rem; 
+        }
+
+        h1 { 
+            font-family: var(--mono-font); 
+            font-size: 2.2rem; 
+            font-weight: 800; 
+            letter-spacing: -0.03em; 
+            line-height: 1.15; 
+            margin-bottom: 0.5rem; 
+            text-transform: uppercase; 
+            color: var(--forest); 
+        }
+
+        .tagline { 
+            font-family: var(--mono-font); 
+            font-size: 1rem; 
+            color: var(--forest); 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.02em; 
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-lead {
+            font-size: 1.05rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 820px;
+        }
+
+        /* SECTION HEADINGS */
+        h2 { 
+            font-family: var(--mono-font); 
+            font-size: 1.05rem; 
+            color: var(--forest); 
+            text-decoration: underline; 
+            margin-top: 3.5rem; 
+            margin-bottom: 1.5rem; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid var(--brass); 
+            text-transform: uppercase; 
+        }
+
+        /* CALLOUT BLOCK */
+        .callout-block { 
+            border-left: 3px solid var(--forest); 
+            border: 1px solid #e2e8e2; 
+            border-left-width: 3px; 
+            background: #f4f6f4; 
+            padding: 1.5rem; 
+            margin: 2rem 0; 
+        }
+
+        .callout-title { 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            color: var(--muted-text); 
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem; 
+            font-weight: 700;
+        }
+
+        .callout-body { 
+            font-size: 0.95rem; 
+            color: var(--text-color); 
+            line-height: 1.6;
+        }
+
+        .callout-body p {
+            margin-bottom: 0.75rem;
+        }
+
+        .callout-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legacy-trigger {
+            border: 1px solid var(--brass);
+            background: #faf8f2;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            font-family: var(--mono-font);
+            font-size: 0.95rem;
+            color: var(--forest);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            text-align: center;
+        }
+
+        /* GRID LAYOUTS */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 1.5rem 0 2.5rem 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 1.5rem 0 2.5rem 0;
+        }
+
+        .feature-card {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card.highlight-card {
+            border-top: 3px solid var(--brass);
+        }
+
+        .card-header {
+            font-family: var(--mono-font);
+            font-size: 0.7rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-title {
+            font-family: var(--mono-font);
+            font-size: 0.9rem;
+            color: var(--forest);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.4rem;
+        }
+
+        .card-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-color);
+        }
+
+        .card-list li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+
+        .card-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--brass);
+            font-family: var(--mono-font);
+        }
+
+        /* COMPARISON TABLE */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.85rem;
+        }
+
+        .matrix-table th {
+            font-family: var(--mono-font);
+            background-color: #f4f6f4;
+            color: var(--forest);
+            text-align: left;
+            padding: 0.75rem 0.6rem;
+            border-top: 1px solid var(--forest);
+            border-bottom: 2px solid var(--brass);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.03em;
+        }
+
+        .matrix-table td {
+            padding: 0.75rem 0.6rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+            line-height: 1.45;
+        }
+
+        .matrix-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        /* CLOSING CALLOUT */
+        .closing-box {
+            border: 1px solid #000;
+            background: #f4f6f4;
+            padding: 2rem;
+            margin: 3.5rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .closing-text {
+            font-family: var(--sans-font);
+            font-size: 1.1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .closing-highlight {
+            font-family: var(--mono-font);
+            font-size: 0.95rem;
+            color: var(--forest);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        /* TECH ARCHITECTURE BANNER */
+        .tech-banner {
+            border: 1px solid var(--brass);
+            background: #faf8f2;
+            padding: 1.25rem 1.5rem;
+            margin: 2.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tech-banner-text {
+            font-family: var(--sans-font);
+            font-size: 0.88rem;
+            color: var(--text-color);
+        }
+
+        .tech-banner-text strong {
+            font-family: var(--mono-font);
+            color: var(--forest);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.8rem;
+        }
+
+        .tech-banner-btn {
+            font-family: var(--mono-font);
+            font-size: 0.78rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            background: var(--forest);
+            padding: 0.6rem 1rem;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .tech-banner-btn:hover {
+            background: var(--brass);
+        }
+
+        /* FOOTER */
+        .footer-wall { 
+            border-top: 1px solid var(--brass); 
+            padding-top: 2rem; 
+            margin-top: 5rem; 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            color: var(--muted-text); 
+            letter-spacing: 0.02em;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--forest);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .nav-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+            .tech-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>PRIVATE ESTATE ARCHITECTURE LABORATORY</span>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="media-conditioning.html">&larr; Return to MEDIA INTEGRITY ENGINEERING Overview</a>
+        <a href="estate-vault-key-spec.html" class="tech-link-badge">Technical Architecture &amp; Specification &rarr;</a>
+    </nav>
+
+    <header>
+        <h1>Estate Vault Key™</h1>
+        <p class="tagline">The Authenticated Record of a Private Estate</p>
+        <p class="hero-lead">
+            A private preservation framework for residences, collections, and archives — creating a permanent, authenticated master record regardless of who generated the source media.
+        </p>
+    </header>
+
+    <!-- SECTION 1: THE LEGACY CONUNDRUM -->
+    <section>
+        <h2>1. Estates Endure. Scattered Information Does Not.</h2>
+        
+        <div class="callout-block">
+            <div class="callout-title">THE STEWARDSHIP REALITY</div>
+            <div class="callout-body">
+                <p>A significant private estate represents decades of intentional curation—a unique convergence of architecture, rare collections, inherited heirlooms, fine art, and personal history.</p>
+                <p>Yet the permanent record of these assets is routinely scattered across casual photography, offline paper appraisals, third-party cloud folders, and isolated family memory. Over generations, as properties transition or infrastructure changes, the documented history and context of what was created become fragmented—leaving future generations without a unified source of truth.</p>
+            </div>
+        </div>
+
+        <div class="legacy-trigger">
+            "What took a lifetime to assemble should be understood a century from now."
+        </div>
+    </section>
+
+    <!-- SECTION 2: THE FRAMEWORK -->
+    <section>
+        <h2>2. Institutional Preservation for Private Wealth</h2>
+        
+        <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Estate Vault Key™ acts as the unifying architecture layer. We do not compete with your trusted photographers, architects, or advisors; we unify, authenticate, and preserve their output into an enduring master asset.
+        </p>
+
+        <div class="grid-2">
+            <div class="feature-card">
+                <div class="card-header">Unstructured Legacy</div>
+                <div class="card-title">Fragmented Archives</div>
+                <ul class="card-list">
+                    <li>Dispersed images in temporary consumer cloud accounts</li>
+                    <li>Receipts and title documents separated from media</li>
+                    <li>Vulnerable to subscription loss and platform migration</li>
+                    <li>No embedded proof of authenticity or historical lineage</li>
+                </ul>
+            </div>
+            <div class="feature-card highlight-card">
+                <div class="card-header">Provision1 Standard</div>
+                <div class="card-title">Estate Vault Key™ Record</div>
+                <ul class="card-list">
+                    <li>Preservation-grade master assets prepared for future generations</li>
+                    <li>Embedded provenance verification bound directly into files</li>
+                    <li>Authenticated master record independent of databases</li>
+                    <li>Air-gapped physical vault under direct owner custody</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: WHAT IS PRESERVED -->
+    <section>
+        <h2>3. What Is Preserved</h2>
+
+        <div class="grid-3">
+            <!-- RESIDENCE -->
+            <div class="feature-card">
+                <div class="card-header">Domain 01</div>
+                <div class="card-title">The Residence</div>
+                <ul class="card-list">
+                    <li>Architectural design intent</li>
+                    <li>Interior spatial relationships</li>
+                    <li>Custom finishes &amp; millwork</li>
+                    <li>Structural &amp; mechanical evolution</li>
+                    <li>Landscape &amp; hardscape grounds</li>
+                    <li>Historic site records</li>
+                </ul>
+            </div>
+
+            <!-- COLLECTION -->
+            <div class="feature-card">
+                <div class="card-header">Domain 02</div>
+                <div class="card-title">The Collection</div>
+                <ul class="card-list">
+                    <li>Fine artwork &amp; sculpture</li>
+                    <li>Bespoke &amp; antique furniture</li>
+                    <li>Acoustic &amp; historic instruments</li>
+                    <li>Objects of personal significance</li>
+                    <li>Horological &amp; specialty assets</li>
+                    <li>High-value personal property</li>
+                </ul>
+            </div>
+
+            <!-- RECORD -->
+            <div class="feature-card">
+                <div class="card-header">Domain 03</div>
+                <div class="card-title">The Context</div>
+                <ul class="card-list">
+                    <li>Acquisition &amp; provenance records</li>
+                    <li>Unbroken ownership history</li>
+                    <li>Appraisals, titles, &amp; condition reports</li>
+                    <li>Ultra-high-definition capture</li>
+                    <li>Conservation notes</li>
+                    <li>Estate counsel &amp; legal documentation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FLEXIBLE CAPTURE INTEGRATION (THE THREE PATHWAYS) -->
+    <section>
+        <h2>4. Private Documentation Protocol</h2>
+
+        <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Estate Vault Key™ is engineered to integrate seamlessly with your existing trusted relationships. We do not impose arbitrary vendors on a private home; we provide the permanent preservation framework for the material you choose to include.
+        </p>
+
+        <div class="grid-3">
+            <div class="feature-card">
+                <div class="card-header">Pathway 01</div>
+                <div class="card-title">Existing Archive Integration</div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
+                    Provision1 ingests and transforms your existing assets—architectural plans, professional photography, appraisals, title records, and historical files—into a unified, authenticated master record.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-header">Pathway 02</div>
+                <div class="card-title">Preferred Partner Collaboration</div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
+                    Work with your trusted estate managers, interior designers, art specialists, or family photographers. Provision1 supplies the archival standards, guidelines, and verification infrastructure.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-header">Pathway 03</div>
+                <div class="card-title">Full Documentation Commission</div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
+                    For estates requiring new documentation, Provision1 establishes the capture specifications and coordinates qualified architectural, fine-art, and documentary specialists operating under strict privacy protocols. All resulting materials are ingested directly into the Estate Vault Key™ preservation architecture.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: THE DIFFERENTIATOR -->
+    <section>
+        <h2>5. Ordinary Archives Store Files. Estate Vault Key Preserves Continuity.</h2>
+
+        <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Most digital storage depends on external databases, software subscriptions, or central cloud platforms. When accounts lapse, logins change, or files move, the link between the asset, its history, and its authenticity breaks.
+        </p>
+
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Archival Dimension</th>
+                    <th style="width: 35%;">Conventional Storage / Cloud Archives</th>
+                    <th style="width: 40%;">Estate Vault Key™ Architecture</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Data Dependency</strong></td>
+                    <td>Requires active subscription or cloud provider login</td>
+                    <td><strong>Zero external dependency.</strong> Fully self-contained master files.</td>
+                </tr>
+                <tr>
+                    <td><strong>Authentication</strong></td>
+                    <td>Stored separately in vulnerable database logs</td>
+                    <td><strong>Embedded provenance verification</strong> bound directly into media.</td>
+                </tr>
+                <tr>
+                    <td><strong>Security &amp; Control</strong></td>
+                    <td>Hosted on public third-party servers</td>
+                    <td><strong>Air-gapped physical vault</strong> under direct family control.</td>
+                </tr>
+                <tr>
+                    <td><strong>Generational Lineage</strong></td>
+                    <td>Metadata stripped during casual file transfers</td>
+                    <td><strong>Chain of record remains intact</strong> across decades and generations.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- LINK BANNER TO TECHNICAL PAGE -->
+        <div class="tech-banner">
+            <div class="tech-banner-text">
+                <strong>Seeking underlying engineering protocols?</strong>
+                Review our technical specification detailing cryptographic file binding, local-first hardware, and forensic audit frameworks.
+            </div>
+            <a href="estate-vault-key-spec.html" class="tech-banner-btn">Examine Technical Architecture &rarr;</a>
+        </div>
+    </section>
+
+    <!-- SECTION 6: THE ESTATE VAULT DELIVERY -->
+    <section>
+        <h2>6. The Physical Vault Delivery</h2>
+
+        <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            The hardware is the secure physical vessel; the authenticated estate record is the enduring product. The completed archive is delivered as a dual physical vault system under direct family custody—completely offline and immune to cloud disruption.
+        </p>
+
+        <div class="grid-2">
+            <div class="feature-card highlight-card">
+                <div class="card-header">Vault Vault-01</div>
+                <div class="card-title">Estate Master</div>
+                <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; color: var(--text-color);">
+                    The primary, high-security authenticated archive retained directly within the principal residence or family office.
+                </p>
+                <div style="font-family: var(--mono-font); font-size: 0.72rem; color: var(--brass); font-weight: bold; text-transform: uppercase;">
+                    Family Custody &bull; Primary Reference
+                </div>
+            </div>
+
+            <div class="feature-card highlight-card">
+                <div class="card-header">Vault Vault-02</div>
+                <div class="card-title">Legacy Master</div>
+                <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; color: var(--text-color);">
+                    A secondary, fully synchronized master copy designed for secure placement with estate counsel, family offices, or institutional trustees.
+                </p>
+                <div style="font-family: var(--mono-font); font-size: 0.72rem; color: var(--brass); font-weight: bold; text-transform: uppercase;">
+                    Fiduciary Placement &bull; Redundant Security
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: VALUE TO ESTATE ADVISORS -->
+    <section>
+        <h2>7. Key Stakeholders &amp; Professional Integration</h2>
+
+        <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Prepared for collaboration alongside trusted family advisors, fiduciaries, and design specialists.
+        </p>
+
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Partner Category</th>
+                    <th style="width: 70%;">Archival Integration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Estate Owners &amp; Heirs</strong></td>
+                    <td>Provides an unassailable record of family stewardship and historical intent across generations.</td>
+                </tr>
+                <tr>
+                    <td><strong>Family Offices</strong></td>
+                    <td>Sovereign multi-generational asset tracking independent of third-party cloud security risks.</td>
+                </tr>
+                <tr>
+                    <td><strong>Estate Counsel</strong></td>
+                    <td>Definitive proof of asset existence and condition to streamline trust administration and succession.</td>
+                </tr>
+                <tr>
+                    <td><strong>Insurance Brokers</strong></td>
+                    <td>Evidentiary-grade documentation to validate high-value property coverage and expedite claims.</td>
+                </tr>
+                <tr>
+                    <td><strong>Architects &amp; Designers</strong></td>
+                    <td>Preserves spatial, structural, and material baselines prior to major renovations or property sales.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- CLOSING STATEMENT -->
+    <div class="closing-box">
+        <p class="closing-text">
+            A residence is rebuilt. A collection is sold. Ownership changes. Technology evolves. <br>
+            <strong>The record should remain.</strong>
+        </p>
+        <p class="closing-highlight">
+            Estate Vault Key™ creates the permanent verified memory of a private estate.
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-wall">
+        <div class="footer-status">
+            <span class="status-dot"></span>
+            <span>SYSTEM ACTIVE &mdash; PRIVATE ARCHIVE PRESERVATION STANDARD</span>
+        </div>
+        <div>
+            PROVISION1 &copy; 2026 ESTATE VAULT KEY™
+        </div>
+    </div>
+
+</body>
+</html>

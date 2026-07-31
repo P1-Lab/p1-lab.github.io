@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Vault Key™ Specification & Operational Matrix | Provision1</title>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --border-color: #ddd;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* TOP DOCUMENT METADATA */
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        /* NAVIGATION BACK BUTTON */
+        .nav-back {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-back a {
+            color: var(--forest);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-back a:hover {
+            text-decoration: underline;
+        }
+
+        /* HEADER */
+        header { 
+            margin-bottom: 3rem; 
+        }
+
+        h1 { 
+            font-family: var(--mono-font); 
+            font-size: 2rem; 
+            font-weight: 800; 
+            letter-spacing: -0.03em; 
+            line-height: 1.15; 
+            margin-bottom: 0.5rem; 
+            text-transform: uppercase; 
+            color: var(--forest); 
+        }
+
+        .tagline { 
+            font-family: var(--mono-font); 
+            font-size: 0.9rem; 
+            color: var(--forest); 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.02em; 
+        }
+
+        /* SECTION HEADINGS */
+        h2 { 
+            font-family: var(--mono-font); 
+            font-size: 1.05rem; 
+            color: var(--forest); 
+            text-decoration: underline; 
+            margin-top: 3.5rem; 
+            margin-bottom: 1.5rem; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid var(--brass); 
+            text-transform: uppercase; 
+        }
+
+        h3 { 
+            font-family: var(--mono-font); 
+            color: var(--forest); 
+            border-bottom: 1px solid var(--brass); 
+            padding-bottom: 5px; 
+            margin-top: 1rem; 
+            margin-bottom: 1rem; 
+            text-transform: uppercase; 
+            font-size: 0.9rem;
+        }
+
+        /* CALLOUT / MOTIVATION BLOCK */
+        .callout-block { 
+            border-left: 3px solid var(--forest); 
+            border: 1px solid #e2e8e2; 
+            border-left-width: 3px; 
+            background: #f4f6f4; 
+            padding: 1.25rem 1.5rem; 
+            margin: 2rem 0; 
+        }
+
+        .callout-title { 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            color: var(--muted-text); 
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem; 
+            font-weight: 700;
+        }
+
+        .callout-body { 
+            font-family: var(--mono-font);
+            font-size: 0.88rem; 
+            color: var(--text-color); 
+            line-height: 1.5;
+        }
+
+        .callout-body p {
+            margin-bottom: 0.75rem;
+        }
+
+        .callout-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* SPECIFICATION TABLE */
+        .spec-table, .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.85rem;
+        }
+
+        .spec-table th, .matrix-table th {
+            font-family: var(--mono-font);
+            background-color: #f4f6f4;
+            color: var(--forest);
+            text-align: left;
+            padding: 0.75rem 0.6rem;
+            border-top: 1px solid var(--forest);
+            border-bottom: 2px solid var(--brass);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.03em;
+        }
+
+        .spec-table td, .matrix-table td {
+            padding: 0.75rem 0.6rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+            line-height: 1.45;
+        }
+
+        .spec-table tr:hover, .matrix-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .spec-label {
+            font-family: var(--mono-font);
+            font-weight: 600;
+            color: var(--forest);
+        }
+
+        .check-mark {
+            font-family: var(--mono-font);
+            color: var(--forest);
+            font-weight: bold;
+        }
+
+        .state-no {
+            font-family: var(--mono-font);
+            color: #a83a3a;
+            font-weight: bold;
+        }
+
+        /* WORKFLOW DIAGRAM */
+        .workflow-container {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1.25rem;
+            margin: 1.5rem 0 2.5rem 0;
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+        }
+
+        .workflow-trunk {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .workflow-step {
+            text-align: center;
+            flex: 1;
+            padding: 0.6rem 0.4rem;
+            background: #f4f6f4;
+            border: 1px solid var(--border-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--forest);
+            font-size: 0.7rem;
+            line-height: 1.3;
+        }
+
+        .workflow-step.highlight {
+            border-color: var(--forest);
+            background: #eaf0ea;
+        }
+
+        .workflow-arrow {
+            color: var(--brass);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .workflow-split-label {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin: 0.5rem 0;
+            position: relative;
+        }
+
+        .workflow-split-label::before,
+        .workflow-split-label::after {
+            content: "";
+            display: inline-block;
+            width: 15%;
+            height: 1px;
+            background: var(--border-color);
+            vertical-align: middle;
+            margin: 0 0.5rem;
+        }
+
+        .workflow-branches {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .workflow-branch-node {
+            background: #fff;
+            border: 1px solid #000;
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--forest);
+        }
+
+        .workflow-node-sub {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 400;
+            color: var(--muted-text);
+            margin-top: 0.25rem;
+            text-transform: none;
+        }
+
+        /* PIPELINE DATAFLOW GRID */
+        .dataflow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 1.5rem 0 2.5rem 0;
+            font-family: var(--mono-font);
+        }
+
+        .dataflow-node {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 0.85rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dataflow-node.sibling-node {
+            border-top: 3px solid var(--brass);
+        }
+
+        .dataflow-header {
+            font-size: 0.68rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .dataflow-title {
+            font-size: 0.82rem;
+            color: var(--forest);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .dataflow-body {
+            font-size: 0.75rem;
+            color: var(--text-color);
+            line-height: 1.35;
+        }
+
+        /* AUDIT GRID & CARDS */
+        .audit-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            width: 100%; 
+            margin-top: 1.5rem; 
+            margin-bottom: 3rem; 
+        }
+
+        .audit-card { 
+            border: 1px solid #000; 
+            padding: 1.25rem; 
+            text-align: left; 
+            font-family: var(--mono-font); 
+            font-size: 0.85rem; 
+            background: #fff; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-number {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-title {
+            color: var(--forest);
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            border: none;
+            padding: 0;
+        }
+
+        .card-description {
+            font-family: var(--sans-font);
+            font-size: 0.85rem;
+            color: var(--text-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
+            margin-top: auto;
+        }
+
+        /* FOOTER */
+        .footer-wall { 
+            border-top: 1px solid var(--brass); 
+            padding-top: 2rem; 
+            margin-top: 5rem; 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            color: var(--muted-text); 
+            letter-spacing: 0.02em;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--forest);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .dataflow-grid {
+                grid-template-columns: 1fr;
+            }
+            .workflow-trunk {
+                flex-direction: column;
+            }
+            .workflow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>PRIVATE ESTATE ARCHITECTURE LABORATORY</span>
+    </div>
+
+    <nav class="nav-back">
+        <a href="estate-vault-client.html">&larr; Back to Estate Vault Key Overview</a>
+    </nav>
+
+    <header>
+        <h1>Estate Vault Key™</h1>
+        <p class="tagline">The Authenticated Record of a Private Estate | Technical Architecture &amp; Specification</p>
+    </header>
+
+    <!-- SYSTEM MOTIVATION -->
+    <section>
+        <div class="callout-block">
+            <div class="callout-title">THE CORE PROBLEM &amp; SYSTEM SOLUTION</div>
+            <div class="callout-body">
+                <p><strong>The Problem:</strong> Luxury estates contain millions of dollars in architecture, furnishings, collections, artwork, instruments, and physical deliverables. Yet estate documentation is typically fragmented across casual photographs, paper invoices, detached spreadsheets, vulnerable cloud folders, and insurance files. These records exist separately from the physical assets they describe.</p>
+                <p><strong>The Solution:</strong> Estate Vault Key™ creates authenticated master assets where provenance is embedded directly into the media itself. Not external metadata. Not a database dependency. Not a cloud account. The asset carries its own self-contained verification identity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: FRAGMENTED vs AUTHENTICATED MATRIX -->
+    <section>
+        <h2>1. Documented Asset State Matrix</h2>
+
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Estate Domain</th>
+                    <th style="width: 35%;">Fragmented Legacy Practice</th>
+                    <th style="width: 40%;">Estate Vault Key™ Master Asset</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Architecture</strong></td>
+                    <td>Loose CAD files &amp; cloud folders</td>
+                    <td>Conditioned &amp; authenticated structural documentation</td>
+                </tr>
+                <tr>
+                    <td><strong>Furnishings</strong></td>
+                    <td>Receipts &amp; dealer emails</td>
+                    <td>Embedded attribution master records</td>
+                </tr>
+                <tr>
+                    <td><strong>Collections</strong></td>
+                    <td>Third-party valuation spreadsheets</td>
+                    <td>Self-authenticating catalog archives</td>
+                </tr>
+                <tr>
+                    <td><strong>Artwork</strong></td>
+                    <td>Paper certificates &amp; gallery sidecars</td>
+                    <td>Visually bound chain-of-title media</td>
+                </tr>
+                <tr>
+                    <td><strong>Instruments</strong></td>
+                    <td>Manual appraisal logs</td>
+                    <td>Acoustic &amp; visual forensic records</td>
+                </tr>
+                <tr>
+                    <td><strong>Valuables</strong></td>
+                    <td>Isolated insurance policy PDFs</td>
+                    <td>Air-gapped physical vault archive</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 2: EMBEDDED ARCHITECTURE SPECIFICATION -->
+    <section>
+        <h2>2. Technical Architecture &amp; Non-Dependency Matrix</h2>
+
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th style="width: 60%;">Operational Parameter</th>
+                    <th style="width: 40%;">Estate Vault Key™ Standard</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="spec-label">Embedded asset provenance</span></td>
+                    <td><span class="check-mark">✓</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">No external database dependency</span></td>
+                    <td><span class="check-mark">✓</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">No cloud account required</span></td>
+                    <td><span class="check-mark">✓</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">No third-party verification subscription</span></td>
+                    <td><span class="check-mark">✓</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Immunity to metadata stripping</span></td>
+                    <td><span class="check-mark">✓</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Air-gapped local hardware vault</span></td>
+                    <td><span class="check-mark">✓</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 3: SYSTEM CLASSIFICATION -->
+    <section>
+        <h2>3. Estate Vault Key™ System Classification</h2>
+
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th style="width: 70%;">System Paradigm</th>
+                    <th style="width: 30%;">Vault Key State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="spec-label">Cloud database software</span></td>
+                    <td><span class="state-no">No</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">SaaS subscription tool</span></td>
+                    <td><span class="state-no">No</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Sidecar metadata container</span></td>
+                    <td><span class="state-no">No</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Public blockchain ledger</span></td>
+                    <td><span class="state-no">No</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Autonomous master asset framework</span></td>
+                    <td><span class="check-mark">Yes</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Air-gapped physical estate archive</span></td>
+                    <td><span class="check-mark">Yes</span></td>
+                </tr>
+                <tr>
+                    <td><span class="spec-label">Self-authenticating media signature</span></td>
+                    <td><span class="check-mark">Yes</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 4: SOURCE-AGNOSTIC PRESERVATION MODEL -->
+    <section>
+        <h2>4. Source-Agnostic Preservation Model</h2>
+
+        <div class="callout-block" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+            <div class="callout-body">
+                Estate Vault Key™ does not require a specific capture methodology or preferred media provider. The system is designed to preserve the highest-quality available record regardless of origin. Existing estate documentation, commissioned professional assets, institutional records, and future acquisitions can all be incorporated into the same authenticated preservation framework.
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: DELIVERABLE SPECIFICATION & DATAFLOW -->
+    <section>
+        <h2>5. Physical Archive Deliverable &amp; Dataflow Pipeline</h2>
+
+        <p style="font-size: 0.88rem; margin-bottom: 1.5rem;">
+            The system acts as an ingestion, authentication, and preservation layer that converts multi-source property data into an unalterable master archive.
+        </p>
+
+        <!-- WORKFLOW STRIP -->
+        <div class="workflow-container">
+            <div class="workflow-trunk">
+                <div class="workflow-step">Existing Estate Assets &amp; Records</div>
+                <span class="workflow-arrow">&rarr;</span>
+                <div class="workflow-step">Ingestion / Normalization</div>
+                <span class="workflow-arrow">&rarr;</span>
+                <div class="workflow-step">Authentication &amp; Provenance Binding</div>
+                <span class="workflow-arrow">&rarr;</span>
+                <div class="workflow-step highlight">Estate Vault Key™ Master Archive</div>
+            </div>
+            
+            <div class="workflow-split-label">&swarr; Dual Master Structure &searr;</div>
+
+            <div class="workflow-branches">
+                <div class="workflow-branch-node">
+                    Self-Authenticating Media
+                    <span class="workflow-node-sub">Photo, Video, Audio, &amp; PDF Masters</span>
+                </div>
+                <div class="workflow-branch-node">
+                    Encrypted Master Archive
+                    <span class="workflow-node-sub">Air-Gapped Hardware Vault Key</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DELIVERABLE COMPONENTS GRID -->
+        <div class="dataflow-grid">
+            <div class="dataflow-node">
+                <div class="dataflow-header">Deliverable 01</div>
+                <div class="dataflow-title">Authenticated Visual Records</div>
+                <div class="dataflow-body">Preservation-grade image assets from owner archives, professional photographers, architectural documentation, and other approved sources carrying embedded authentication directly within the asset.</div>
+            </div>
+            <div class="dataflow-node">
+                <div class="dataflow-header">Deliverable 02</div>
+                <div class="dataflow-title">Temporal Documentation Records</div>
+                <div class="dataflow-body">Verified moving-image assets including walkthroughs, historical footage, environmental records, and other approved video sources preserved with persistent identity.</div>
+            </div>
+            <div class="dataflow-node">
+                <div class="dataflow-header">Deliverable 03</div>
+                <div class="dataflow-title">Asset Registry &amp; Context Layer</div>
+                <div class="dataflow-body">Structured records connecting objects, ownership history, acquisition information, appraisals, and supporting documentation into the authenticated estate framework.</div>
+            </div>
+            <div class="dataflow-node sibling-node">
+                <div class="dataflow-header">Deliverable 04</div>
+                <div class="dataflow-title">Property Records</div>
+                <div class="dataflow-body">Architectural, engineering, CAD/BIM, and boundary records bound into the master estate record.</div>
+            </div>
+            <div class="dataflow-node sibling-node">
+                <div class="dataflow-header">Deliverable 05</div>
+                <div class="dataflow-title">Provenance Information</div>
+                <div class="dataflow-body">Unbroken legal, chain-of-title, and acquisition history embedded into each digital master asset.</div>
+            </div>
+            <div class="dataflow-node sibling-node">
+                <div class="dataflow-header">Deliverable 06</div>
+                <div class="dataflow-title">Encrypted Master Archive</div>
+                <div class="dataflow-body">Standalone physical hardware vault containing the complete authenticated estate record.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FORENSIC AUDIT & VERIFICATION -->
+    <section>
+        <h2>6. Forensic Audit &amp; Verification Framework</h2>
+
+        <p style="font-size: 0.88rem; margin-bottom: 1.5rem;">Every asset secured within the Estate Vault Key™ system can be audited through a forensic framework that operates completely offline without third-party reliance:</p>
+
+        <div class="audit-grid">
+            
+            <div class="audit-card">
+                <div class="card-number">Audit Module 01</div>
+                <h3 class="card-title">Structural Verification</h3>
+                <p class="card-description">Verifies that the underlying physical file geometry and signal characteristics match the original master record.</p>
+                <div class="card-meta">Signal-level integrity validation.</div>
+            </div>
+
+            <div class="audit-card">
+                <div class="card-number">Audit Module 02</div>
+                <h3 class="card-title">Continuity Analysis</h3>
+                <p class="card-description">Evaluates temporal, acoustic, or visual continuity across complex property documentation runs.</p>
+                <div class="card-meta">Multi-file sequence authentication.</div>
+            </div>
+
+            <div class="audit-card">
+                <div class="card-number">Audit Module 03</div>
+                <h3 class="card-title">Change Detection</h3>
+                <p class="card-description">Isolates micro-edits, compression artifacts, or file alterations introduced post-vaulting.</p>
+                <div class="card-meta">Non-destructive differential scan.</div>
+            </div>
+
+            <div class="audit-card">
+                <div class="card-number">Audit Module 04</div>
+                <h3 class="card-title">Tamper Visualization</h3>
+                <p class="card-description">Generates visual diagnostic overlays highlighting localized manipulation or metadata removal attempts.</p>
+                <div class="card-meta">Forensic visual evidence generation.</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 7: TARGET CLIENT DEPLOYMENT -->
+    <section>
+        <h2>7. Operational Deployment &amp; Ideal Clients</h2>
+
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Client Profile</th>
+                    <th style="width: 70%;">Primary Operational Advantage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Private Estates</strong></td>
+                    <td>Unified, air-gapped master record of real property and physical assets.</td>
+                </tr>
+                <tr>
+                    <td><strong>Family Offices</strong></td>
+                    <td>Sovereign control over legacy assets without SaaS database security vulnerabilities.</td>
+                </tr>
+                <tr>
+                    <td><strong>Collectors</strong></td>
+                    <td>Immutable provenance embedded directly into high-resolution visual documentation.</td>
+                </tr>
+                <tr>
+                    <td><strong>Luxury Property Owners</strong></td>
+                    <td>Comprehensive architectural, furnishings, and structural audit readiness.</td>
+                </tr>
+                <tr>
+                    <td><strong>Estate Attorneys</strong></td>
+                    <td>Evidentiary-grade documentation for estate planning, asset division, and trust administration.</td>
+                </tr>
+                <tr>
+                    <td><strong>Insurance Advisors</strong></td>
+                    <td>Definitive proof of asset existence, condition, and value prior to claim disputes.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer-wall">
+        <div class="footer-status">
+            <span class="status-dot"></span>
+            <span>SYSTEM ACTIVE &mdash; AIR-GAPPED HARDWARE VAULT ENFORCED</span>
+        </div>
+        <div>
+            PROVISION1 &copy; 2026 ESTATE VAULT KEY™
+        </div>
+    </div>
+
+</body>
+</html>
