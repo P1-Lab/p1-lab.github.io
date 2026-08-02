@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnibus Vitrifier™ RT — Real-Time Signal Integrity &amp; Temporal Conditioning Layer | Provision1</title>
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --border-color: #ddd;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* TOP DOCUMENT METADATA */
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        /* NAVIGATION BAR */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-bar a {
+            color: var(--forest);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .tech-link-badge {
+            background: #f4f6f4;
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 2px;
+        }
+
+        /* HEADER */
+        header { 
+            margin-bottom: 3rem; 
+        }
+
+        h1 { 
+            font-family: var(--mono-font); 
+            font-size: 2rem; 
+            font-weight: 800; 
+            letter-spacing: -0.03em; 
+            line-height: 1.15; 
+            margin-bottom: 0.5rem; 
+            text-transform: uppercase; 
+            color: var(--forest); 
+        }
+
+        .tagline { 
+            font-family: var(--mono-font); 
+            font-size: 0.9rem; 
+            color: var(--forest); 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.02em; 
+            margin-bottom: 1rem;
+        }
+
+        .hero-lead {
+            font-size: 1.05rem;
+            color: var(--text-color);
+            max-width: 800px;
+        }
+
+        /* SECTION HEADINGS */
+        h2 { 
+            font-family: var(--mono-font); 
+            font-size: 1.05rem; 
+            color: var(--forest); 
+            text-decoration: underline; 
+            margin-top: 3.5rem; 
+            margin-bottom: 1.5rem; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid var(--brass); 
+            text-transform: uppercase; 
+        }
+
+        /* CALLOUT / MOTIVATION BLOCK */
+        .callout-block { 
+            border: 1px solid #e2e8e2; 
+            border-left: 3px solid var(--forest); 
+            background: #f4f6f4; 
+            padding: 1.25rem 1.5rem; 
+            margin: 2rem 0; 
+        }
+
+        .callout-title { 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            color: var(--muted-text); 
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem; 
+            font-weight: 700;
+        }
+
+        .callout-body { 
+            font-family: var(--mono-font);
+            font-size: 0.88rem; 
+            color: var(--text-color); 
+            line-height: 1.5;
+        }
+
+        /* GRIDS & CARDS */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1.25rem;
+        }
+
+        .highlight-card {
+            border-color: var(--forest);
+            background: #fbfcfb;
+        }
+
+        .card-header {
+            font-family: var(--mono-font);
+            font-size: 0.7rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-title {
+            font-family: var(--mono-font);
+            font-size: 0.88rem;
+            color: var(--forest);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-list {
+            list-style: none;
+            font-family: var(--mono-font);
+            font-size: 0.78rem;
+            line-height: 1.6;
+        }
+
+        .card-list li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--brass);
+        }
+
+        /* SPECIFICATION TABLE */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.85rem;
+        }
+
+        .matrix-table th {
+            font-family: var(--mono-font);
+            background-color: #f4f6f4;
+            color: var(--forest);
+            text-align: left;
+            padding: 0.75rem 0.6rem;
+            border-top: 1px solid var(--forest);
+            border-bottom: 2px solid var(--brass);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.03em;
+        }
+
+        .matrix-table td {
+            padding: 0.75rem 0.6rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+            line-height: 1.45;
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+        }
+
+        .matrix-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        /* ARCHITECTURE FLOW DIAGRAM STYLES */
+        .diagram-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .diagram-box {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1.25rem;
+        }
+
+        .diagram-title {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .flow-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+        }
+
+        .flow-node {
+            background: #f4f6f4;
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--forest);
+        }
+
+        .flow-node.active-highlight {
+            background: #eaf1ea;
+            border-color: var(--forest);
+        }
+
+        .flow-connector {
+            text-align: center;
+            color: var(--brass);
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        /* WORKFLOW STRIP */
+        .workflow-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            border: 1px solid #000;
+            padding: 1rem;
+            margin: 1.5rem 0 2.5rem 0;
+            font-family: var(--mono-font);
+            font-size: 0.78rem;
+            gap: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .workflow-step {
+            text-align: center;
+            flex: 1;
+            padding: 0.5rem;
+            background: #f4f6f4;
+            border: 1px solid var(--border-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--forest);
+            white-space: nowrap;
+        }
+
+        .workflow-arrow {
+            color: var(--brass);
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* CLOSING BOX */
+        .closing-box {
+            border-top: 1px solid var(--brass);
+            border-bottom: 1px solid var(--brass);
+            padding: 2rem 0;
+            margin: 4rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .closing-text {
+            font-family: var(--mono-font);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .closing-highlight {
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            color: var(--forest);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        /* FOOTER */
+        .footer-wall { 
+            border-top: 1px solid var(--brass); 
+            padding-top: 2rem; 
+            margin-top: 3rem; 
+            font-family: var(--mono-font); 
+            font-size: 0.75rem; 
+            color: var(--muted-text); 
+            letter-spacing: 0.02em;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--forest);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .diagram-container {
+                grid-template-columns: 1fr;
+            }
+            .workflow-strip {
+                flex-direction: column;
+                align-stretch;
+            }
+            .workflow-arrow {
+                transform: rotate(90deg);
+                text-align: center;
+                margin: 0.25rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>INFRASTRUCTURE & ARCHITECTURE LABORATORY</span>
+    </div>
+
+    <nav class="nav-bar">
+        <a href="media-conditioning.html">&larr; Return to MEDIA INTEGRITY ENGINEERING Overview</a>
+        <a href="clean-vault-key-spec.html" class="tech-link-badge">Clean Vault Key™ &rarr;</a>
+    </nav>
+
+    <header>
+        <h1>Omnibus Vitrifier™ RT</h1>
+        <p class="tagline">Real-Time Signal Integrity &amp; Temporal Conditioning Layer</p>
+        <p class="hero-lead">
+            A real-time media integrity layer for professional playback systems, designed to ensure temporal and spatial consistency between decoded frames and final video output.
+        </p>
+    </header>
+
+    <!-- SECTION 1: ARCHITECTURE & CATEGORY -->
+    <section>
+        <h2>1. Architecture &amp; Category Distinction</h2>
+        
+        <div class="callout-block">
+            <div class="callout-title">PROVISION1 MEDIA INTEGRITY ARCHITECTURE</div>
+            <div class="callout-body" style="margin-bottom: 1rem;">
+                <p>The Omnibus Vitrifier™ platform spans two distinct operational tiers:</p>
+            </div>
+            <div class="grid-2" style="margin-top: 1rem;">
+                <div class="feature-card">
+                    <div class="card-header">Master Engine</div>
+                    <div class="card-title">Pre-Process (Batch Pipeline)</div>
+                    <ul class="card-list">
+                        <li>Focus: Files and Masters</li>
+                        <li>Processes source media prior to distribution</li>
+                        <li>Generates forensic audit evidence and stable deployment files</li>
+                    </ul>
+                </div>
+                <div class="feature-card highlight-card">
+                    <div class="card-header">Real-Time Engine</div>
+                    <div class="card-title">Playback Layer (RT Layer)</div>
+                    <ul class="card-list">
+                        <li>Focus: Players and Rendering Pipelines</li>
+                        <li>Operates within the live playback architecture</li>
+                        <li>Ensures signal continuity between decoded frames and final output</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <table class="matrix-table" style="margin-top: 2rem;">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Operational Attribute</th>
+                    <th style="width: 35%;">Omnibus Vitrifier™ (Master Engine)</th>
+                    <th style="width: 35%;">Omnibus Vitrifier™ RT (Real-Time Engine)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td>Pre-deployment media conditioning</td>
+                    <td><strong>Real-time playback conditioning engine</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Input Source</strong></td>
+                    <td>RAW / Generated / Archival Media</td>
+                    <td><strong>Playback Engine</strong> (Content Decoder / Media Player / Rendering Stack)</td>
+                </tr>
+                <tr>
+                    <td><strong>Core Objective</strong></td>
+                    <td>Prepare assets, reduce synthetic artifacts, build deployment masters</td>
+                    <td><strong>Maintain visual coherence, mitigate presentation variability, handle content-generation artifacts</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 2: ENGINEERING MOTIVATION -->
+    <section>
+        <h2>2. Engineering Motivation</h2>
+        
+        <div class="callout-block">
+            <div class="callout-title">REAL-TIME SIGNAL COHERENCE</div>
+            <div class="callout-body">
+                <p>Modern professional display environments increasingly expose temporal instability that exists within otherwise valid media streams. High-resolution LED systems, HDR displays, and advanced content-generation pipelines reveal frame-to-frame inconsistencies including texture movement, unstable micro-detail, and perceptual discontinuity.</p>
+                <p style="margin-top: 0.75rem;">Omnibus Vitrifier™ RT represents the proposed real-time embodiment of established conditioning methods, designed to analyze and stabilize visual coherence directly within the active playback stack.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: REAL-TIME SIGNAL PATH & ARCHITECTURE COMPARISON -->
+    <section>
+        <h2>3. Real-Time Signal Path</h2>
+
+        <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            The processing pipeline operates within the playback architecture prior to final video output, providing a conditioning stage between media decoding and display presentation.
+        </p>
+
+        <div class="diagram-container">
+            <div class="diagram-box">
+                <div class="diagram-title">Current Playback Architecture</div>
+                <div class="flow-stack">
+                    <div class="flow-node">Media File</div>
+                    <div class="flow-connector">&darr;</div>
+                    <div class="flow-node">Playback Hardware / Decoder</div>
+                    <div class="flow-connector">&darr;</div>
+                    <div class="flow-node">Display / LED Controller</div>
+                </div>
+            </div>
+
+            <div class="diagram-box" style="border-color: var(--forest); background: #fbfcfb;">
+                <div class="diagram-title" style="color: var(--forest);">Proposed Integration Architecture</div>
+                <div class="flow-stack">
+                    <div class="flow-node">Media File</div>
+                    <div class="flow-connector">&darr;</div>
+                    <div class="flow-node">Playback Hardware / Decoder</div>
+                    <div class="flow-connector">&darr;</div>
+                    <div class="flow-node active-highlight">Omnibus Vitrifier™ RT Layer</div>
+                    <div class="flow-connector">&darr;</div>
+                    <div class="flow-node">Display / LED Controller</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="workflow-strip" style="margin-top: 2rem;">
+            <div class="workflow-step">Content Decoder</div>
+            <span class="workflow-arrow">&rarr;</span>
+            <div class="workflow-step">Omnibus RT Kernel</div>
+            <span class="workflow-arrow">&rarr;</span>
+            <div class="workflow-step">Video Output Pipeline</div>
+            <div class="workflow-step" style="background: transparent; border: none; color: var(--muted-text);">Display Hardware</div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: ANALYTICAL FOUNDATION: TPM -->
+    <section>
+        <h2>4. Analytical Foundation: Temporal Persistence Mapping™</h2>
+
+        <div class="callout-block">
+            <div class="callout-title">CORE ANALYTICAL ENGINE</div>
+            <div class="callout-body">
+                <p><strong>Temporal Persistence Mapping™ (TPM)</strong> is the analytical foundation developed within the existing offline Omnibus Vitrifier™ architecture. The RT embodiment would adapt these analytical methods into a low-latency decision framework suitable for hardware-accelerated playback environments.</p>
+                <p style="margin-top: 0.75rem;">By evaluating variance vectors across sequential frames, TPM extracts objective mathematical metrics that drive structural conditioning logic in real time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: PLATFORM INTEGRATION RATIONALE -->
+    <section>
+        <h2>5. Platform Integration Rationale</h2>
+
+        <div class="callout-block" style="border-left-color: var(--forest); background: #f4f6f4;">
+            <div class="callout-title">STRATEGIC EXTENSION</div>
+            <div class="callout-body">
+                <p>Professional media playback has reached a point where file integrity alone no longer guarantees presentation integrity. Modern LED walls, HDR systems, and generated media introduce new temporal challenges after asset creation.</p>
+                <p style="margin-top: 0.75rem;">BrightSign playback platforms provide an ideal integration point for a final-mile conditioning architecture.</p>
+                <p style="margin-top: 0.75rem;"><strong>The opportunity is not to replace the playback engine. It is to extend the playback engine.</strong></p>
+            </div>
+        </div>
+
+        <div class="feature-card highlight-card" style="margin-top: 1.5rem;">
+            <div class="card-header">Initial Integration Target</div>
+            <div class="card-title">Professional Digital Signage Playback Platforms</div>
+            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-color); margin-top: 0.5rem;">
+                Initial integration targets include enterprise digital signage platforms, broadcast playback systems, and high-value display environments. Embedding the conditioning kernel directly into edge playback hardware improves consistency across demanding playback environments without altering master files.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 6: DEVELOPMENT STATUS -->
+    <section>
+        <h2>6. Development Status &amp; Roadmap</h2>
+
+        <div class="grid-2" style="margin-top: 1.5rem;">
+            <div class="feature-card">
+                <div class="card-header">Current Provision1 Technology</div>
+                <div class="card-title">Production-Ready Master Engine</div>
+                <ul class="card-list">
+                    <li>Offline master conditioning pipeline</li>
+                    <li>Frame analysis and temporal comparison</li>
+                    <li>Structural enhancement kernels</li>
+                    <li>Automated audit generation</li>
+                </ul>
+            </div>
+            <div class="feature-card highlight-card">
+                <div class="card-header">Development Objective</div>
+                <div class="card-title">Real-Time Embodiment</div>
+                <ul class="card-list">
+                    <li>Convert established conditioning algorithms into hardware-accelerated real-time playback modules</li>
+                    <li>Implement low-latency TPM metric extraction and adaptive conditioning logic</li>
+                    <li>Integrate within standard hardware-accelerated decoding pipelines</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: COMMERCIAL DEVELOPMENT MODEL -->
+    <section>
+        <h2>7. Commercial Development Model</h2>
+
+        <div class="callout-block">
+            <div class="callout-title">STRATEGIC PARTNERSHIP FRAMEWORK</div>
+            <div class="callout-body">
+                <p>Provision1 proposes a strategic engineering collaboration to develop Omnibus Vitrifier™ RT as an optional playback enhancement layer.</p>
+                <div style="margin-top: 1rem;">
+                    <ul class="card-list">
+                        <li><strong>Development partnership:</strong> Provision1 provides the conditioning architecture and analytical framework; platform partners provide playback hardware integration expertise and deployment environment.</li>
+                        <li>Exclusive technology license</li>
+                        <li>Platform integration partnership</li>
+                        <li>OEM embedded module</li>
+                        <li>Non-exclusive licensing architecture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: PROPOSED INITIAL ENGAGEMENT -->
+    <section>
+<h2>8. Strategic Integration Opportunity</h2>
+
+<div class="callout-block" style="border-left-color: var(--forest); background: #f4f6f4;">
+    <div class="callout-title">PARTNER INTEGRATION PATHWAY</div>
+    <div class="callout-body">
+        <p>
+        Omnibus Vitrifier™ RT represents a new architectural layer for professional media playback environments where content integrity must extend beyond the source file into the final presentation pipeline.
+        </p>
+
+        <p style="margin-top:0.75rem;">
+        Provision1 is establishing strategic relationships with selected technology platforms to extend Omnibus Vitrifier™ RT into professional playback hardware, edge computing environments, and advanced display systems.
+        </p>
+
+        <p style="margin-top:0.75rem;">
+        Collaboration opportunities include technical evaluation, platform integration, OEM deployment, and strategic licensing.
+        </p>
+    </div>
+</div>
+</section>
+    <!-- CLOSING STATEMENT -->
+    <div class="closing-box">
+        <p class="closing-text">
+            Conventional pipelines assume the file is the final word.<br>
+            <strong>The real-time layer ensures the presentation remains coherent.</strong>
+        </p>
+        <p class="closing-highlight">
+            Omnibus Vitrifier™ RT extends professional playback systems with a real-time media integrity layer designed for the next generation of visual environments.
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-wall">
+        <div class="footer-status">
+            <span class="status-dot"></span>
+            <span>CURRENT OMNIBUS VITRIFIER™ RT DOCUMENTATION REPRESENTS A PROPOSED ARCHITECTURE DERIVED FROM EXISTING OFFLINE CONDITIONING TECHNOLOGY. HARDWARE INTEGRATION AND REAL-TIME OPTIMIZATION WOULD BE PERFORMED IN COLLABORATION WITH SELECTED PLATFORM PARTNERS.</span>
+        </div>
+        <div>
+            PROVISION1 &copy; 2026 OMNIBUS VITRIFIER™ RT
+        </div>
+    </div>
+
+</body>
+</html>
