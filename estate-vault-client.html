@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estate Vault Key™ | The Permanent Record of a Private Estate | Provision1</title>
+    <title>Clean Vault Key™ | Trusted Media Appliance | Provision1</title>
     <style>
         :root {
             --bg-color: #fdfdfd;
@@ -81,7 +81,7 @@
 
         /* HEADER / HERO */
         header { 
-            margin-bottom: 3.5rem; 
+            margin-bottom: 2.5rem; 
         }
 
         h1 { 
@@ -90,26 +90,56 @@
             font-weight: 800; 
             letter-spacing: -0.03em; 
             line-height: 1.15; 
-            margin-bottom: 0.5rem; 
+            margin-bottom: 0.4rem; 
             text-transform: uppercase; 
             color: var(--forest); 
         }
 
-        .tagline { 
+        .sub-heading {
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-hook { 
+            border: 1px solid var(--forest);
+            background: #f4f6f4;
+            padding: 0.85rem 1.25rem;
             font-family: var(--mono-font); 
-            font-size: 1rem; 
+            font-size: 1.1rem; 
             color: var(--forest); 
             font-weight: 700; 
             text-transform: uppercase; 
             letter-spacing: 0.02em; 
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
         }
 
         .hero-lead {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--text-color);
             line-height: 1.6;
-            max-width: 820px;
+            max-width: 860px;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-quote {
+            border: 1px solid var(--brass);
+            background: #faf8f2;
+            padding: 1.25rem 1.5rem;
+            font-family: var(--mono-font);
+            font-size: 0.95rem;
+            color: var(--forest);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            text-align: center;
+            margin-top: 1rem;
         }
 
         /* SECTION HEADINGS */
@@ -146,34 +176,20 @@
         }
 
         .callout-body { 
-            font-size: 0.95rem; 
+            font-size: 1.05rem; 
             color: var(--text-color); 
             line-height: 1.6;
-        }
-
-        .callout-body p {
-            margin-bottom: 0.75rem;
-        }
-
-        .callout-body p:last-child {
-            margin-bottom: 0;
-        }
-
-        .legacy-trigger {
-            border: 1px solid var(--brass);
-            background: #faf8f2;
-            padding: 1.25rem 1.5rem;
-            margin: 2rem 0;
-            font-family: var(--mono-font);
-            font-size: 0.95rem;
-            color: var(--forest);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            text-align: center;
+            font-weight: 500;
         }
 
         /* GRID LAYOUTS */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 1.5rem 0 2.5rem 0;
+        }
+
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -211,34 +227,77 @@
 
         .card-title {
             font-family: var(--mono-font);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--forest);
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 0.75rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.4rem;
+            min-height: 2.4em;
+            display: flex;
+            align-items: center;
         }
 
-        .card-list {
+        /* BUYER LIST STYLING */
+        .buyer-box {
+            border: 1px solid var(--forest);
+            background: #f4f6f4;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .buyer-title {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            color: var(--forest);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .buyer-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
             list-style: none;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            font-weight: 600;
             color: var(--text-color);
         }
 
-        .card-list li {
-            position: relative;
-            padding-left: 1rem;
-            margin-bottom: 0.4rem;
-            line-height: 1.4;
+        .buyer-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
-        .card-list li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
+        .buyer-list li::before {
+            content: "■";
             color: var(--brass);
+            font-size: 0.65rem;
+        }
+
+        .checklist {
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .checklist li {
+            padding: 0.65rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-family: var(--sans-font);
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li strong {
             font-family: var(--mono-font);
+            color: var(--forest);
         }
 
         /* COMPARISON TABLE */
@@ -285,7 +344,7 @@
 
         .closing-text {
             font-family: var(--sans-font);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-color);
             line-height: 1.6;
             margin-bottom: 1rem;
@@ -370,8 +429,8 @@
             display: inline-block;
         }
 
-        @media (max-width: 768px) {
-            .grid-3, .grid-2 {
+        @media (max-width: 820px) {
+            .grid-4, .grid-3, .grid-2 {
                 grid-template-columns: 1fr;
             }
             .nav-bar {
@@ -391,169 +450,163 @@
 
     <div class="doc-meta">
         <span>PROVISION1</span>
-        <span>PRIVATE ESTATE ARCHITECTURE LABORATORY</span>
+        <span>TRUSTED MEDIA APPLIANCE</span>
     </div>
 
     <nav class="nav-bar">
         <a href="media-conditioning.html">&larr; Return to MEDIA INTEGRITY ENGINEERING Overview</a>
-        <a href="estate-vault-key-spec.html" class="tech-link-badge">Technical Architecture &amp; Specification &rarr;</a>
+        <a href="clean-vault-key-spec.html" class="tech-link-badge">Technical Architecture &amp; Specification &rarr;</a>
     </nav>
 
     <header>
-        <h1>Estate Vault Key™</h1>
-        <p class="tagline">The Authenticated Record of a Private Estate</p>
+        <h1>Clean Vault Key™</h1>
+        <p class="sub-heading">Trusted Media Appliance</p>
+        
+        <div class="hero-hook">
+            Create one trusted master. Use it everywhere.
+        </div>
+
         <p class="hero-lead">
-            A private preservation framework for residences, collections, and archives — creating a permanent, authenticated master record regardless of who generated the source media.
+            Clean Vault Key™ is a local appliance that creates one trusted master copy of photographs, video, audio, and documents. It prepares digital assets for long-term preservation, controlled distribution, legal documentation, and institutional archives without relying on cloud services or subscription platforms.
         </p>
+
+        <div class="hero-quote">
+            "Technology changes. Your trusted master should not."
+        </div>
     </header>
 
-    <!-- SECTION 1: THE LEGACY CONUNDRUM -->
+    <!-- SECTION 1: OPERATIONAL OUTCOME -->
     <section>
-        <h2>1. Estates Endure. Scattered Information Does Not.</h2>
+        <h2>1. Critical Assets Require Operational Certainty</h2>
         
         <div class="callout-block">
-            <div class="callout-title">THE STEWARDSHIP REALITY</div>
+            <div class="callout-title">CORE FUNCTIONAL STANDARD</div>
             <div class="callout-body">
-                <p>A significant private estate represents decades of intentional curation—a unique convergence of architecture, rare collections, inherited heirlooms, fine art, and personal history.</p>
-                <p>Yet the permanent record of these assets is routinely scattered across casual photography, offline paper appraisals, third-party cloud folders, and isolated family memory. Over generations, as properties transition or infrastructure changes, the documented history and context of what was created become fragmented—leaving future generations without a unified source of truth.</p>
+                Every processed asset becomes a trusted master suitable for archiving, duplication, and controlled distribution.
             </div>
-        </div>
-
-        <div class="legacy-trigger">
-            "What took a lifetime to assemble should be understood a century from now."
         </div>
     </section>
 
-    <!-- SECTION 2: THE FRAMEWORK -->
+    <!-- SECTION 2: TARGET BUYERS & DEPLOYMENTS -->
     <section>
-        <h2>2. Institutional Preservation for Private Wealth</h2>
+        <h2>2. Typical Buyers &amp; Deployments</h2>
         
+        <div class="buyer-box">
+            <div class="buyer-title">Typical Buyers</div>
+            <ul class="buyer-list">
+                <li>AV System Integrators</li>
+                <li>Digital Signage Providers</li>
+                <li>Museum Collection Managers</li>
+                <li>Creative Studio Owners</li>
+                <li>Engineering Documentation Managers</li>
+            </ul>
+        </div>
+
         <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-            Estate Vault Key™ acts as the unifying architecture layer. We do not compete with your trusted photographers, architects, or advisors; we unify, authenticate, and preserve their output into an enduring master asset.
+            Clean Vault Key™ provides an institutional media conditioning layer across four primary operational environments:
         </p>
 
-        <div class="grid-2">
+        <div class="grid-4">
             <div class="feature-card">
-                <div class="card-header">Unstructured Legacy</div>
-                <div class="card-title">Fragmented Archives</div>
-                <ul class="card-list">
-                    <li>Dispersed images in temporary consumer cloud accounts</li>
-                    <li>Receipts and title documents separated from media</li>
-                    <li>Vulnerable to subscription loss and platform migration</li>
-                    <li>No embedded proof of authenticity or historical lineage</li>
-                </ul>
+                <div class="card-header">Deployment 01</div>
+                <div class="card-title">Digital Signage Integrators</div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
+                    Establishes verified reference media for high-reliability commercial displays, physical installations, and playback systems.
+                </p>
             </div>
-            <div class="feature-card highlight-card">
-                <div class="card-header">Provision1 Standard</div>
-                <div class="card-title">Estate Vault Key™ Record</div>
-                <ul class="card-list">
-                    <li>Preservation-grade master assets prepared for future generations</li>
-                    <li>Embedded provenance verification bound directly into files</li>
-                    <li>Authenticated master record independent of databases</li>
-                    <li>Air-gapped physical vault under direct owner custody</li>
-                </ul>
+
+            <div class="feature-card">
+                <div class="card-header">Deployment 02</div>
+                <div class="card-title">Museums &amp; Cultural Institutions</div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
+                    Preserves historical collection captures, organizational records, and physical artifacts with platform-independent provenance.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-header">Deployment 03</div>
+                <div class="card-title">Creative Studios</div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
+                    Locks down primary photography, multitrack audio stems, and master video renders prior to client handoff or distribution.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-header">Deployment 04</div>
+                <div class="card-title">Engineering Documentation</div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
+                    Conditions CAD manifests, structural scans, site documentation, and material specs into permanent, audit-ready reference masters.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: WHAT IS PRESERVED -->
+    <!-- SECTION 3: WHAT YOU GAIN -->
     <section>
-        <h2>3. What Is Preserved</h2>
+        <h2>3. What You Gain</h2>
 
-        <div class="grid-3">
-            <!-- RESIDENCE -->
-            <div class="feature-card">
-                <div class="card-header">Domain 01</div>
-                <div class="card-title">The Residence</div>
-                <ul class="card-list">
-                    <li>Architectural design intent</li>
-                    <li>Interior spatial relationships</li>
-                    <li>Custom finishes &amp; millwork</li>
-                    <li>Structural &amp; mechanical evolution</li>
-                    <li>Landscape &amp; hardscape grounds</li>
-                    <li>Historic site records</li>
-                </ul>
-            </div>
-
-            <!-- COLLECTION -->
-            <div class="feature-card">
-                <div class="card-header">Domain 02</div>
-                <div class="card-title">The Collection</div>
-                <ul class="card-list">
-                    <li>Fine artwork &amp; sculpture</li>
-                    <li>Bespoke &amp; antique furniture</li>
-                    <li>Acoustic &amp; historic instruments</li>
-                    <li>Objects of personal significance</li>
-                    <li>Horological &amp; specialty assets</li>
-                    <li>High-value personal property</li>
-                </ul>
-            </div>
-
-            <!-- RECORD -->
-            <div class="feature-card">
-                <div class="card-header">Domain 03</div>
-                <div class="card-title">The Context</div>
-                <ul class="card-list">
-                    <li>Acquisition &amp; provenance records</li>
-                    <li>Unbroken ownership history</li>
-                    <li>Appraisals, titles, &amp; condition reports</li>
-                    <li>Ultra-high-definition capture</li>
-                    <li>Conservation notes</li>
-                    <li>Estate counsel &amp; legal documentation</li>
-                </ul>
-            </div>
+        <div class="callout-block">
+            <ul class="checklist">
+                <li><strong>✓ One trusted master copy:</strong> Verifies every master copy into a permanent original for all future use.</li>
+                <li><strong>✓ No subscription fees:</strong> Zero recurring licensing, SaaS lock-in, or ongoing seat costs.</li>
+                <li><strong>✓ Works completely offline:</strong> Executes on-site or in-studio without remote servers or internet connectivity.</li>
+                <li><strong>✓ Air-gapped operation:</strong> Ensures total physical and network data isolation during master conditioning.</li>
+                <li><strong>✓ Long-term archive ready:</strong> Standardizes media files for multi-decade preservation and evidentiary compliance.</li>
+                <li><strong>✓ Repeatable processing:</strong> Produces consistent, dependable master files every time.</li>
+                <li><strong>✓ Simple deployment:</strong> Integrates smoothly into existing local storage and capture workflows.</li>
+            </ul>
         </div>
     </section>
 
-    <!-- SECTION 4: FLEXIBLE CAPTURE INTEGRATION (THE THREE PATHWAYS) -->
+    <!-- SECTION 4: DEPLOYMENT OPTIONS -->
     <section>
-        <h2>4. Private Documentation Protocol</h2>
+        <h2>4. Deployment Options</h2>
 
         <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-            Estate Vault Key™ is engineered to integrate seamlessly with your existing trusted relationships. We do not impose arbitrary vendors on a private home; we provide the permanent preservation framework for the material you choose to include.
+            Clean Vault Key™ integrates directly into existing operations to convert raw capture media into verified masters:
         </p>
 
         <div class="grid-3">
             <div class="feature-card">
-                <div class="card-header">Pathway 01</div>
-                <div class="card-title">Existing Archive Integration</div>
+                <div class="card-header">Option 01</div>
+                <div class="card-title">Existing Archive Ingestion</div>
                 <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
-                    Provision1 ingests and transforms your existing assets—architectural plans, professional photography, appraisals, title records, and historical files—into a unified, authenticated master record.
+                    Ingests legacy asset directories, raw camera files, and legal documents—transforming unstructured files into authenticated reference masters.
                 </p>
             </div>
 
             <div class="feature-card">
-                <div class="card-header">Pathway 02</div>
-                <div class="card-title">Preferred Partner Collaboration</div>
+                <div class="card-header">Option 02</div>
+                <div class="card-title">Partner Workflow Integration</div>
                 <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
-                    Work with your trusted estate managers, interior designers, art specialists, or family photographers. Provision1 supplies the archival standards, guidelines, and verification infrastructure.
+                    Works alongside preferred AV integrators, survey teams, and production houses by enforcing baseline file conditioning standards.
                 </p>
             </div>
 
             <div class="feature-card">
-                <div class="card-header">Pathway 03</div>
-                <div class="card-title">Full Documentation Commission</div>
+                <div class="card-header">Option 03</div>
+                <div class="card-title">Automated Field Ingest</div>
                 <p style="font-size: 0.85rem; line-height: 1.45; color: var(--text-color);">
-                    For estates requiring new documentation, Provision1 establishes the capture specifications and coordinates qualified architectural, fine-art, and documentary specialists operating under strict privacy protocols. All resulting materials are ingested directly into the Estate Vault Key™ preservation architecture.
+                    Deploys local-first appliances on location to immediately lock capture media into air-gapped master formats prior to network ingest.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 5: THE DIFFERENTIATOR -->
+    <!-- SECTION 5: ARCHITECTURAL COMPARISON -->
     <section>
-        <h2>5. Ordinary Archives Store Files. Estate Vault Key Preserves Continuity.</h2>
+        <h2>5. Conventional Storage vs. Clean Vault Key™</h2>
 
         <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-            Most digital storage depends on external databases, software subscriptions, or central cloud platforms. When accounts lapse, logins change, or files move, the link between the asset, its history, and its authenticity breaks.
+            Standard storage providers host raw files; Clean Vault Key™ constructs verifiable reference masters.
         </p>
 
         <table class="matrix-table">
             <thead>
                 <tr>
                     <th style="width: 25%;">Archival Dimension</th>
-                    <th style="width: 35%;">Conventional Storage / Cloud Archives</th>
-                    <th style="width: 40%;">Estate Vault Key™ Architecture</th>
+                    <th style="width: 35%;">Conventional Cloud &amp; Local Storage</th>
+                    <th style="width: 40%;">Clean Vault Key™ Architecture</th>
                 </tr>
             </thead>
             <tbody>
@@ -563,19 +616,19 @@
                     <td><strong>Zero external dependency.</strong> Fully self-contained master files.</td>
                 </tr>
                 <tr>
-                    <td><strong>Authentication</strong></td>
-                    <td>Stored separately in vulnerable database logs</td>
-                    <td><strong>Embedded provenance verification</strong> bound directly into media.</td>
+                    <td><strong>Proof of Origin</strong></td>
+                    <td>Metadata stored separately in external databases</td>
+                    <td><strong>Proof of origin travels with the file.</strong> Bound directly into media.</td>
                 </tr>
                 <tr>
                     <td><strong>Security &amp; Control</strong></td>
                     <td>Hosted on public third-party servers</td>
-                    <td><strong>Air-gapped physical vault</strong> under direct family control.</td>
+                    <td><strong>Air-gapped physical vault</strong> under direct owner custody.</td>
                 </tr>
                 <tr>
-                    <td><strong>Generational Lineage</strong></td>
+                    <td><strong>Asset Lifecycle</strong></td>
                     <td>Metadata stripped during casual file transfers</td>
-                    <td><strong>Chain of record remains intact</strong> across decades and generations.</td>
+                    <td><strong>Authoritative reference assets</strong> designed for long-term lifecycle integrity.</td>
                 </tr>
             </tbody>
         </table>
@@ -584,93 +637,52 @@
         <div class="tech-banner">
             <div class="tech-banner-text">
                 <strong>Seeking underlying engineering protocols?</strong>
-                Review our technical specification detailing cryptographic file binding, local-first hardware, and forensic audit frameworks.
+                Review our technical specification detailing local-first hardware, file binding, and forensic audit frameworks.
             </div>
-            <a href="estate-vault-key-spec.html" class="tech-banner-btn">Examine Technical Architecture &rarr;</a>
+            <a href="clean-vault-key-spec.html" class="tech-banner-btn">Examine Technical Architecture &rarr;</a>
         </div>
     </section>
 
-    <!-- SECTION 6: THE ESTATE VAULT DELIVERY -->
+    <!-- SECTION 6: PRODUCT PAIRING ARCHITECTURE -->
     <section>
-        <h2>6. The Physical Vault Delivery</h2>
+        <h2>6. Comprehensive Media Integrity Architecture</h2>
 
         <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-            The hardware is the secure physical vessel; the authenticated estate record is the enduring product. The completed archive is delivered as a dual physical vault system under direct family custody—completely offline and immune to cloud disruption.
+            Clean Vault Key™ operates alongside Omnibus Vitrifier™ to establish a complete end-to-end master lifecycle:
         </p>
 
         <div class="grid-2">
             <div class="feature-card highlight-card">
-                <div class="card-header">Vault Vault-01</div>
-                <div class="card-title">Estate Master</div>
-                <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; color: var(--text-color);">
-                    The primary, high-security authenticated archive retained directly within the principal residence or family office.
+                <div class="card-header">Appliance 01</div>
+                <div class="card-title">Clean Vault Key™</div>
+                <p style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-color); font-weight: 600;">
+                    Creates one permanent master copy that becomes the trusted source for every future use.
                 </p>
-                <div style="font-family: var(--mono-font); font-size: 0.72rem; color: var(--brass); font-weight: bold; text-transform: uppercase;">
-                    Family Custody &bull; Primary Reference
-                </div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--muted-text);">
+                    Creates and preserves the authoritative master copy. Formats photographs, video, audio, and documents into durable, air-gapped reference originals.
+                </p>
             </div>
 
             <div class="feature-card highlight-card">
-                <div class="card-header">Vault Vault-02</div>
-                <div class="card-title">Legacy Master</div>
-                <p style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; color: var(--text-color);">
-                    A secondary, fully synchronized master copy designed for secure placement with estate counsel, family offices, or institutional trustees.
+                <div class="card-header">Appliance 02</div>
+                <div class="card-title">Omnibus Vitrifier™</div>
+                <p style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.75rem; color: var(--text-color); font-weight: 600;">
+                    Deploy that trusted master everywhere.
                 </p>
-                <div style="font-family: var(--mono-font); font-size: 0.72rem; color: var(--brass); font-weight: bold; text-transform: uppercase;">
-                    Fiduciary Placement &bull; Redundant Security
-                </div>
+                <p style="font-size: 0.85rem; line-height: 1.45; color: var(--muted-text);">
+                    Prepares media for reliable professional deployment. Creates the authoritative display copy optimized for real-time playback, presentation, and distribution.
+                </p>
             </div>
         </div>
-    </section>
-
-    <!-- SECTION 7: VALUE TO ESTATE ADVISORS -->
-    <section>
-        <h2>7. Key Stakeholders &amp; Professional Integration</h2>
-
-        <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-            Prepared for collaboration alongside trusted family advisors, fiduciaries, and design specialists.
-        </p>
-
-        <table class="matrix-table">
-            <thead>
-                <tr>
-                    <th style="width: 30%;">Partner Category</th>
-                    <th style="width: 70%;">Archival Integration</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Estate Owners &amp; Heirs</strong></td>
-                    <td>Provides an unassailable record of family stewardship and historical intent across generations.</td>
-                </tr>
-                <tr>
-                    <td><strong>Family Offices</strong></td>
-                    <td>Sovereign multi-generational asset tracking independent of third-party cloud security risks.</td>
-                </tr>
-                <tr>
-                    <td><strong>Estate Counsel</strong></td>
-                    <td>Definitive proof of asset existence and condition to streamline trust administration and succession.</td>
-                </tr>
-                <tr>
-                    <td><strong>Insurance Brokers</strong></td>
-                    <td>Evidentiary-grade documentation to validate high-value property coverage and expedite claims.</td>
-                </tr>
-                <tr>
-                    <td><strong>Architects &amp; Designers</strong></td>
-                    <td>Preserves spatial, structural, and material baselines prior to major renovations or property sales.</td>
-                </tr>
-            </tbody>
-        </table>
     </section>
 
     <!-- CLOSING STATEMENT -->
     <div class="closing-box">
         <p class="closing-text">
-            A residence is rebuilt. A collection is sold. Ownership changes. Technology evolves. <br>
-            <strong>The record should remain.</strong>
+            Create one trusted master. Use it everywhere.
         </p>
         <p class="closing-highlight">
-            Estate Vault Key™ creates the permanent verified memory of a private estate.
+            Clean Vault Key™ is the trusted media appliance.
         </p>
     </div>
 
@@ -678,10 +690,10 @@
     <div class="footer-wall">
         <div class="footer-status">
             <span class="status-dot"></span>
-            <span>SYSTEM ACTIVE &mdash; PRIVATE ARCHIVE PRESERVATION STANDARD</span>
+            <span>SYSTEM ACTIVE &mdash; TRUSTED MEDIA APPLIANCE STANDARD</span>
         </div>
         <div>
-            PROVISION1 &copy; 2026 ESTATE VAULT KEY™
+            PROVISION1 &copy; 2026 CLEAN VAULT KEY™
         </div>
     </div>
 
