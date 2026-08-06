@@ -192,6 +192,13 @@
         }
 
         /* GRID LAYOUTS */
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin: 1.5rem 0 2.5rem 0;
+        }
+
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -264,6 +271,47 @@
             left: 0;
             color: var(--brass);
             font-family: var(--mono-font);
+        }
+
+        /* DEALER FLOW PIPELINE */
+        .pipeline-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 1.5rem 0 2rem 0;
+            background: #fff;
+            border: 1px solid #000;
+            padding: 1.25rem 1rem;
+        }
+
+        .pipeline-step {
+            flex: 1;
+            text-align: center;
+        }
+
+        .pipeline-step-num {
+            font-family: var(--mono-font);
+            font-size: 0.65rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .pipeline-step-title {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            color: var(--forest);
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .pipeline-arrow {
+            font-family: var(--mono-font);
+            font-size: 1.1rem;
+            color: var(--brass);
+            font-weight: bold;
         }
 
         /* DIAGRAM STYLES */
@@ -414,23 +462,30 @@
         }
 
         @media (max-width: 768px) {
-            .grid-4, .grid-3, .grid-2, .architecture-sources {
+            .grid-5, .grid-4, .grid-3, .grid-2, .architecture-sources {
                 grid-template-columns: 1fr;
+            }
+            .pipeline-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .pipeline-arrow {
+                transform: rotate(90deg);
             }
         }
     </style>
 </head>
 <body>
 
-
+<div class="doc-nav">
+    <a href="#index">&larr; BACK TO INDEX</a>
+</div>
 
 <div class="doc-meta">
     <span>PROVISION1</span>
     <span>KNOWLEDGE ARCHITECTURE APPLICATION</span>
 </div>
-<div class="doc-nav">
-    <a href="index.html">&larr; BACK TO INDEX</a>
-</div>
+
 <header>
     <h1>Knowledge Architecture™ Application: Premium Culinary Technology Systems</h1>
     <p class="tagline">Culinary Technology Knowledge Architecture™</p>
@@ -495,9 +550,74 @@
     </div>
 </section>
 
-<!-- SECTION 3: KNOWLEDGE ARCHITECTURE PROCESS -->
+<!-- SECTION 3: APPLICATION: DEALER DECISION INTELLIGENCE -->
 <section>
-    <h2>3. Knowledge Architecture Process</h2>
+    <h2>3. Application: Dealer Decision Intelligence™</h2>
+    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+        Premium equipment dealers do not sell specifications. They translate operational requirements into system recommendations.
+    </p>
+
+    <!-- DECISION PIPELINE -->
+    <div class="pipeline-container">
+        <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 01</div>
+            <div class="pipeline-step-title">Customer Need</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 02</div>
+            <div class="pipeline-step-title">Operational Profile</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 03</div>
+            <div class="pipeline-step-title">Required Capability</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 04</div>
+            <div class="pipeline-step-title">Recommended System Configuration</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+            <div class="pipeline-step-num">Step 05</div>
+            <div class="pipeline-step-title">Expected Outcome</div>
+        </div>
+    </div>
+
+    <div class="callout-block">
+        <div class="callout-title">THE MANUFACTURER VALUE PROPOSITION</div>
+        <div class="callout-body">
+            <p>Manufacturers invest millions in hardware engineering but often struggle to capture dealer channel alignment. Providing dealers with structured Decision Intelligence delivers measurable commercial protection and performance:</p>
+            <div class="grid-5" style="margin: 1rem 0 0 0;">
+                <div class="feature-card" style="padding: 0.85rem;">
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">01. Misconfigurations</div>
+                    <p style="font-size: 0.78rem;">Fewer misconfigured equipment installations.</p>
+                </div>
+                <div class="feature-card" style="padding: 0.85rem;">
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">02. Satisfaction</div>
+                    <p style="font-size: 0.78rem;">Fewer dissatisfied end-user customers.</p>
+                </div>
+                <div class="feature-card" style="padding: 0.85rem;">
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">03. Close Rates</div>
+                    <p style="font-size: 0.78rem;">Higher close rates on premium configurations.</p>
+                </div>
+                <div class="feature-card" style="padding: 0.85rem;">
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">04. Channel Metrics</div>
+                    <p style="font-size: 0.78rem;">Stronger overall dealer network performance.</p>
+                </div>
+                <div class="feature-card" style="padding: 0.85rem;">
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">05. Brand Equity</div>
+                    <p style="font-size: 0.78rem;">Better, precise market brand representation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: KNOWLEDGE ARCHITECTURE PROCESS -->
+<section>
+    <h2>4. Knowledge Architecture Process</h2>
     <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
         Provision1 applies Knowledge Architecture Methodology™ to capture, organize, and preserve system intelligence.
     </p>
@@ -597,9 +717,9 @@
     </div>
 </div>
 
-<!-- SECTION 4: CORE DELIVERABLES -->
+<!-- SECTION 5: CORE DELIVERABLES -->
 <section>
-    <h2>4. The Deliverable</h2>
+    <h2>5. The Deliverable</h2>
     <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
         The deliverable is not another software platform. The deliverable is the structured intelligence required to improve product understanding, training, sales enablement, and customer capability:
     </p>
@@ -636,9 +756,9 @@
     </div>
 </section>
 
-<!-- SECTION 5: EXAMPLE APPLICATION AREAS -->
+<!-- SECTION 6: EXAMPLE APPLICATION AREAS -->
 <section>
-    <h2>5. Example Application Areas</h2>
+    <h2>6. Example Application Areas</h2>
 
     <div class="grid-3">
         <div class="feature-card">
@@ -673,9 +793,9 @@
     </div>
 </section>
 
-<!-- SECTION 6: OUTCOME -->
+<!-- SECTION 7: OUTCOME -->
 <section>
-    <h2>6. The Outcome</h2>
+    <h2>7. The Outcome</h2>
     <div class="callout-block">
         <div class="callout-body">
             <p>An advanced culinary system is not simply a machine. It is an accumulated body of engineering knowledge.</p>
