@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knowledge Architecture™ Application: Premium Culinary Technology Systems | Provision1</title>
+    <title>Application 01: Application Intelligence Framework™</title>
     <style>
         :root {
             --bg-color: #fdfdfd;
@@ -32,7 +32,7 @@
             margin: 0 auto;
         }
 
-        /* TOP DOCUMENT NAVIGATION & METADATA */
+        /* TOP NAVIGATION & SERIES HIERARCHY */
         .doc-nav {
             font-family: var(--mono-font);
             font-size: 0.75rem;
@@ -73,20 +73,40 @@
             margin-bottom: 3.5rem; 
         }
 
+        .series-badge {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            color: var(--brass);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
         h1 { 
             font-family: var(--mono-font); 
             font-size: 2.1rem; 
             font-weight: 800; 
             letter-spacing: -0.03em; 
             line-height: 1.15; 
-            margin-bottom: 0.5rem; 
+            margin-bottom: 0.25rem; 
             text-transform: uppercase; 
             color: var(--forest); 
         }
 
+        .doc-descriptor {
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
         .tagline { 
             font-family: var(--mono-font); 
-            font-size: 1rem; 
+            font-size: 0.95rem; 
             color: var(--forest); 
             font-weight: 700; 
             text-transform: uppercase; 
@@ -94,6 +114,7 @@
             margin-bottom: 1.25rem;
         }
 
+        /* CHANGE 1: UNDENIABLE OPERATIONAL PAIN POINT */
         .hero-lead {
             font-size: 1.05rem;
             color: var(--text-color);
@@ -101,7 +122,17 @@
             max-width: 820px;
         }
 
-        /* HOOK CALLOUT */
+        /* CHANGE 2: ACTIVE KNOWLEDGE CAPTURE */
+        .hero-sublead {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            line-height: 1.6;
+            margin-top: 0.75rem;
+            border-left: 2px solid var(--brass);
+            padding-left: 1rem;
+        }
+
+        /* CORE HERO HOOK */
         .hook-container {
             border: 2px solid var(--forest);
             background: #faf8f2;
@@ -122,12 +153,20 @@
 
         .hook-statement {
             font-family: var(--mono-font);
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--forest);
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: -0.01em;
-            line-height: 1.3;
+            line-height: 1.35;
+        }
+
+        .hook-subtext {
+            font-family: var(--sans-font);
+            font-size: 0.85rem;
+            color: var(--text-color);
+            margin-top: 0.75rem;
+            font-style: italic;
         }
 
         /* SECTION HEADINGS */
@@ -213,13 +252,6 @@
             margin: 1.5rem 0 2.5rem 0;
         }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin: 1.5rem 0 2.5rem 0;
-        }
-
         .feature-card {
             border: 1px solid #000;
             background: #fff;
@@ -252,28 +284,26 @@
             padding-bottom: 0.4rem;
         }
 
-        .card-list {
-            list-style: none;
-            font-size: 0.85rem;
-            color: var(--text-color);
-        }
-
-        .card-list li {
-            position: relative;
-            padding-left: 1rem;
-            margin-bottom: 0.4rem;
-            line-height: 1.4;
-        }
-
-        .card-list li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--brass);
+        /* CATEGORY SPECTRUM GRID */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 1rem 0;
             font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
         }
 
-        /* DEALER FLOW PIPELINE */
+        .category-item {
+            border: 1px solid var(--border-color);
+            background: #fff;
+            padding: 0.5rem 0.75rem;
+            text-align: center;
+            color: var(--muted-text);
+        }
+
+        /* PIPELINE / CHANNEL FLOW */
         .pipeline-container {
             display: flex;
             align-items: center;
@@ -352,8 +382,13 @@
             border-top: 3px solid var(--forest);
         }
 
-        .architecture-node.final {
+        .architecture-node.domain {
             border-top: 3px solid var(--brass);
+            background: #faf8f2;
+        }
+
+        .architecture-node.final {
+            border-top: 3px solid var(--forest);
             background: #f4f6f4;
         }
 
@@ -385,25 +420,32 @@
             color: var(--brass);
         }
 
-        .architecture-sources {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 8px;
-            width: 100%;
+        /* APPLICATION STUDY BOX */
+        .study-box {
+            border: 2px solid var(--brass);
+            background: #faf8f2;
+            padding: 1.75rem 2rem;
+            margin: 3rem 0 2rem 0;
         }
 
-        .source-node {
-            border: 1px solid var(--border-color);
-            background: #fff;
-            padding: 0.75rem 0.35rem;
-            text-align: center;
+        .study-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .study-title {
             font-family: var(--mono-font);
-            font-size: 0.65rem;
+            font-size: 1rem;
+            color: var(--forest);
+            font-weight: 800;
             text-transform: uppercase;
-            line-height: 1.2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+
+        .study-body {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
         /* CLOSING CALLOUT */
@@ -411,7 +453,7 @@
             border: 1px solid #000;
             background: #f4f6f4;
             padding: 2rem;
-            margin: 3.5rem 0 2rem 0;
+            margin: 2rem 0;
             text-align: center;
         }
 
@@ -428,7 +470,7 @@
             font-family: var(--mono-font);
             font-size: 0.95rem;
             color: var(--forest);
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
@@ -462,7 +504,7 @@
         }
 
         @media (max-width: 768px) {
-            .grid-5, .grid-4, .grid-3, .grid-2, .architecture-sources {
+            .grid-5, .grid-4, .grid-3, .category-grid {
                 grid-template-columns: 1fr;
             }
             .pipeline-container {
@@ -472,358 +514,349 @@
             .pipeline-arrow {
                 transform: rotate(90deg);
             }
+            .footer-wall {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="doc-nav">
-    <a href="#index">&larr; BACK TO INDEX</a>
+    <a href="index.html">&larr; BACK TO PROVISION1 SYSTEMS</a>
 </div>
 
 <div class="doc-meta">
-    <span>PROVISION1</span>
-    <span>KNOWLEDGE ARCHITECTURE APPLICATION</span>
+    <span>PROVISION1 FRAMEWORK</span>
+    <span>APPLICATION STUDY 01</span>
 </div>
 
 <header>
-    <h1>Knowledge Architecture™ Application: Premium Culinary Technology Systems</h1>
-    <p class="tagline">Culinary Technology Knowledge Architecture™</p>
-    <p class="hero-lead">
-        Premium systems are often limited not by engineering capability, but by the fragmentation of knowledge required to fully demonstrate, operate, and extend their intended performance.
-    </p>
-</header>
+    <div class="series-badge">Provision1 Application Study</div>
 
-<!-- HOOK CALLOUT -->
+    <h1>Application Intelligence Framework™</h1>
+
+    <div class="doc-descriptor">
+        A Decision Layer For Complex Equipment Sales
+    </div>
+
+    <p class="tagline">
+        Turning Technical Complexity Into Purchase Confidence
+    </p>
+
+    <p class="hero-lead">
+        Premium equipment dealers and distributors experience slower sales cycles when customers cannot translate complex equipment options into confident purchase decisions — forcing conversations toward delay, uncertainty, and price comparison.
+    </p>
+
+    <p class="hero-sublead">
+        Manufacturers provide technical documentation. Dealers provide application experience. The missing element is a structured decision layer that connects equipment capability to customer requirements.
+    </p>
+
+</header>
+<!-- CORE HERO HOOK -->
 <div class="hook-container">
-    <div class="hook-title">THE COMMERCIAL GAP</div>
+    <div class="hook-title">THE COMMERCIAL CONTRADICTION</div>
     <div class="hook-statement">
-        "The gap is not product capability. The gap is knowledge transfer."
+        "Your manuals explain HOW. Your salespeople explain WHAT. Your customers still do not understand WHY one configuration is right for their operation."
+    </div>
+    <div class="hook-subtext">
+        Provision1 transforms technical documentation into a clear customer decision layer that accelerates proposal sign-off.
     </div>
 </div>
 
-<!-- SECTION 1: THE CHALLENGE -->
 <section>
-    <h2>1. The Challenge</h2>
+    <h2>1. The Channel Challenge</h2>
     
     <div class="callout-block">
-        <div class="callout-title">THE INTEGRATION REALITY</div>
+        <div class="callout-title">THE CONVERSION GAP IN HIGH-VALUE SALES</div>
         <div class="callout-body">
-            <p>Modern premium culinary systems represent decades of engineering development. Behind every professional oven, induction platform, steam environment, or integrated cooking technology exists a complex body of knowledge: engineering intent, thermal behavior, operating parameters, chef-developed techniques, service experience, and user interaction patterns.</p>
-            <p>Yet much of this knowledge remains fragmented across engineering teams, culinary specialists, dealers, and individual experts.</p>
-            <p>A premium manufacturer may possess advanced thermal technology, sophisticated control systems, and specialized cooking capabilities—but the customer experience is often reduced to: <strong>"How do I turn it on?"</strong></p>
-            <p>The result is a significant disconnect between engineered capability and realized customer value. The most advanced systems often fail commercially at the final meter: translating engineering capability into customer confidence and repeatable outcomes.</p>
+            <p>Premium equipment sales rarely fail because customers cannot find specifications. They fail because buyers cannot confidently connect technical options to their own operational reality. When a buyer cannot understand why one configuration is correct, the conversation defaults to price.</p>
+            <p>Across dealership sales teams and independent rep networks, representatives routinely spend weeks resolving routine configuration choices. While factory technical literature accurately details capacities and compliance, it leaves the buyer to figure out the operational trade-offs on their own.</p>
+            <p>Independent equipment dealers and regional distributors often carry dozens of complex product categories without having access to factory-level application expertise on every transaction. The result is inconsistent recommendations, slower quoting, and unnecessary price competition.</p>
+            
+            <p>The challenge is amplified as organizations grow. The application knowledge held by experienced sales specialists rarely transfers efficiently to newer representatives, creating inconsistent recommendations across the sales channel. Application Intelligence Framework™ captures that reasoning structure and turns it into a repeatable sales asset.</p>
+            
+            <p>When customer reasoning stalls, high-margin package proposals sit on desks, specification cycles stretch over months, and buyers down-spec to lower-margin baseline models. Every delayed configuration decision represents lost margin and wasted sales effort.</p>
         </div>
     </div>
 </section>
 
-<!-- SECTION 2: THE HIDDEN ASSET -->
 <section>
-    <h2>2. The Hidden Asset: Accumulated System Intelligence™</h2>
+    <h2>2. The Missing Commercial Layer</h2>
     
     <div class="grid-3">
         <div class="feature-card">
-            <div class="card-header">Value Layer 01</div>
-            <div class="card-title">The Engineered System</div>
+            <div class="card-header">Layer 01</div>
+            <div class="card-title">Technical Collateral</div>
             <p style="font-size: 0.88rem; color: var(--text-color); line-height: 1.5;">
-                The physical equipment, mechanical assemblies, control interfaces, and hardware platform produced through research and manufacturing operations.
+                <strong>What the equipment does:</strong> Specifications, line sheets, utility connections, operating manuals, compliance data.
+            </p>
+        </div>
+        <div class="feature-card">
+            <div class="card-header">Layer 02</div>
+            <div class="card-title">Sales Conversation</div>
+            <p style="font-size: 0.88rem; color: var(--text-color); line-height: 1.5;">
+                <strong>What customers hear:</strong> Feature lists, general benefits, product demonstrations, and pricing proposals.
             </p>
         </div>
         <div class="feature-card highlight-card">
-            <div class="card-header">Value Layer 02</div>
-            <div class="card-title">Accumulated Intelligence</div>
+            <div class="card-header">Layer 03</div>
+            <div class="card-title">Application Intelligence Framework™</div>
             <p style="font-size: 0.88rem; color: var(--text-color); line-height: 1.5;">
-                The underlying expertise required to fully understand, operate, teach, service, and extend that system over its operational lifetime.
-            </p>
-        </div>
-        <div class="feature-card highlight-card">
-            <div class="card-header">Value Layer 03</div>
-            <div class="card-title">Capability Transfer Intelligence</div>
-            <p style="font-size: 0.88rem; color: var(--text-color); line-height: 1.5;">
-                Dealer networks require more than product specifications. They require the knowledge necessary to demonstrate, explain, and support advanced capability.
+                <strong>What is missing:</strong> The decision layer connecting customer workflow, operational constraints, and equipment configuration into a defensible purchase recommendation.
             </p>
         </div>
     </div>
 
     <div class="legacy-trigger">
-        Provision1 focuses explicitly on capturing, structuring, and preserving institutional knowledge assets.
+        Provision1 converts technical literature into buyer-facing decision assets that drive transaction velocity.
     </div>
 </section>
 
-<!-- SECTION 3: APPLICATION: DEALER DECISION INTELLIGENCE -->
 <section>
-    <h2>3. Application: Dealer Decision Intelligence™</h2>
+    <h2>3. Application Strategy</h2>
     <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-        Premium equipment dealers do not sell specifications. They translate operational requirements into system recommendations.
+        Dealer owners and sales directors do not need software integration or extended consulting. They need immediate assets that help their reps close complex equipment packages faster.
     </p>
 
-    <!-- DECISION PIPELINE -->
+    <div class="callout-block" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        <div class="callout-title">HIGH-COMPLEXITY CATEGORY SPECTRUM</div>
+        <div class="callout-body">
+            <p>Field representatives and buyers navigate trade-offs across dense equipment categories every day:</p>
+            
+            <div class="category-grid">
+                <div class="category-item">Combi Ovens</div>
+                <div class="category-item">Deck Ovens</div>
+                <div class="category-item">Blast Chillers</div>
+                <div class="category-item">Induction</div>
+                <div class="category-item">Refrigeration</div>
+                <div class="category-item">Espresso</div>
+                <div class="category-item">Gelato</div>
+                <div class="category-item">Ventilation</div>
+                <div class="category-item">Fabrication</div>
+            </div>
+
+            <p style="margin-top: 1rem;">The Application Intelligence Framework™ transforms dense technical parameters into a guided recommendation path:</p>
+        </div>
+    </div>
+
     <div class="pipeline-container">
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 01</div>
-            <div class="pipeline-step-title">Customer Need</div>
+            <div class="pipeline-step-title">Operational Inputs</div>
         </div>
         <div class="pipeline-arrow">&rarr;</div>
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 02</div>
-            <div class="pipeline-step-title">Operational Profile</div>
+            <div class="pipeline-step-title">Constraint Mapping</div>
         </div>
         <div class="pipeline-arrow">&rarr;</div>
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 03</div>
-            <div class="pipeline-step-title">Required Capability</div>
+            <div class="pipeline-step-title">Configuration Logic</div>
         </div>
         <div class="pipeline-arrow">&rarr;</div>
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 04</div>
-            <div class="pipeline-step-title">Recommended System Configuration</div>
+            <div class="pipeline-step-title">System Alignment</div>
         </div>
         <div class="pipeline-arrow">&rarr;</div>
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 05</div>
-            <div class="pipeline-step-title">Expected Outcome</div>
+            <div class="pipeline-step-title">Defensible Configuration</div>
         </div>
     </div>
 
     <div class="callout-block">
-        <div class="callout-title">THE MANUFACTURER VALUE PROPOSITION</div>
+        <div class="callout-title">OPERATIONAL IMPACT</div>
         <div class="callout-body">
-            <p>Manufacturers invest millions in hardware engineering but often struggle to capture dealer channel alignment. Providing dealers with structured Decision Intelligence delivers measurable commercial protection and performance:</p>
+            <p>Deploying the Application Intelligence Framework™ across a category delivers concrete sales improvements:</p>
             <div class="grid-5" style="margin: 1rem 0 0 0;">
                 <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">01. Misconfigurations</div>
-                    <p style="font-size: 0.78rem;">Fewer misconfigured equipment installations.</p>
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">01. Quote Velocity</div>
+                    <p style="font-size: 0.78rem;">Shorter specification cycles and faster customer sign-off.</p>
                 </div>
                 <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">02. Satisfaction</div>
-                    <p style="font-size: 0.78rem;">Fewer dissatisfied end-user customers.</p>
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">02. Higher AOV</div>
+                    <p style="font-size: 0.78rem;">Justifies advanced equipment packages without discounting.</p>
                 </div>
                 <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">03. Close Rates</div>
-                    <p style="font-size: 0.78rem;">Higher close rates on premium configurations.</p>
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">03. Rep Consistency</div>
+                    <p style="font-size: 0.78rem;">Enables newer sales reps to specify complex systems accurately.</p>
                 </div>
                 <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">04. Channel Metrics</div>
-                    <p style="font-size: 0.78rem;">Stronger overall dealer network performance.</p>
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">04. Decision Speed</div>
+                    <p style="font-size: 0.78rem;">Eliminates buyer hesitation by establishing clear operational fit.</p>
                 </div>
                 <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">05. Brand Equity</div>
-                    <p style="font-size: 0.78rem;">Better, precise market brand representation.</p>
+                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">05. Margin Protection</div>
+                    <p style="font-size: 0.78rem;">Prevents unnecessary discounting by establishing clear operational value.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SECTION 4: KNOWLEDGE ARCHITECTURE PROCESS -->
 <section>
-    <h2>4. Knowledge Architecture Process</h2>
+    <h2>4. Commercial Assets Created</h2>
     <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-        Provision1 applies Knowledge Architecture Methodology™ to capture, organize, and preserve system intelligence.
+        A complete set of sales decision assets built from existing technical collateral:
     </p>
 
-    <div class="grid-2">
+    <div class="grid-5">
         <div class="feature-card highlight-card">
-            <div class="card-header">Phase 01</div>
-            <div class="card-title">01. Knowledge Discovery</div>
-            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Identify and extract technical intelligence across key functional domain experts:</p>
-            <ul class="card-list">
-                <li>Engineering Teams</li>
-                <li>Culinary Specialists</li>
-                <li>Product Designers</li>
-                <li>Service Professionals</li>
-                <li>Training &amp; Demonstration Teams</li>
-                <li>Experienced Users</li>
-            </ul>
-            <p style="font-size: 0.8rem; color: var(--muted-text); margin-top: 0.75rem; font-family: var(--mono-font);">
-                OBJECTIVE: Uncover the underlying reasoning behind system behavior.
+            <div class="card-header">Asset 01</div>
+            <div class="card-title">Application Decision Guide</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
+                Converts technical requirements into guided recommendation pathways for sales reps and buyers.
             </p>
         </div>
-
         <div class="feature-card highlight-card">
-            <div class="card-header">Phase 02</div>
-            <div class="card-title">02. Knowledge Mapping</div>
-            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Convert fragmented expertise into structured operational relationships:</p>
-            <ul class="card-list">
-                <li>Capability &rarr; Application</li>
-                <li>Feature &rarr; Outcome</li>
-                <li>Engineering Decision &rarr; User Benefit</li>
-                <li>Operating Parameter &rarr; Culinary Result</li>
-            </ul>
+            <div class="card-header">Asset 02</div>
+            <div class="card-title">Buyer Configuration Maps</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
+                Shows customers precisely why specific equipment combinations match their operating footprint.
+            </p>
         </div>
-    </div>
-
-    <div class="grid-2">
         <div class="feature-card highlight-card">
-            <div class="card-header">Phase 03</div>
-            <div class="card-title">03. Knowledge Architecture</div>
-            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Develop a durable framework that connects:</p>
-            <ul class="card-list">
-                <li><strong>System Understanding:</strong> How the technology functions.</li>
-                <li><strong>Operational Practice:</strong> How experts achieve reliable results.</li>
-                <li><strong>Customer Capability:</strong> How users access intended performance.</li>
-            </ul>
+            <div class="card-header">Asset 03</div>
+            <div class="card-title">Premium Upgrade Logic</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
+                Explains when and why higher-tier configurations deliver measurable long-term operational value.
+            </p>
         </div>
-
         <div class="feature-card highlight-card">
-            <div class="card-header">Phase 04</div>
-            <div class="card-title">04. Knowledge Preservation</div>
-            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Create enduring institutional assets:</p>
-            <ul class="card-list">
-                <li>Customer capability pathways</li>
-                <li>Dealer education systems</li>
-                <li>Technical reference structures</li>
-                <li>Operational intelligence documents</li>
-            </ul>
+            <div class="card-header">Asset 04</div>
+            <div class="card-title">Sales Conversation Paths</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
+                Gives sales representatives structured reasoning for complex buyer objections and trade-offs.
+            </p>
+        </div>
+        <div class="feature-card highlight-card">
+            <div class="card-header">Asset 05</div>
+            <div class="card-title">Specification Translation Layer</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
+                Converts factory manuals into customer-facing decision language that drives purchase confidence.
+            </p>
         </div>
     </div>
 </section>
 
-<!-- DIAGRAM SECTION -->
+<section>
+    <h2>5. Implementation Process</h2>
+    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+        A structured build process executing entirely on top of existing product documentation:
+    </p>
+
+    <div class="grid-4">
+        <div class="feature-card">
+            <div class="card-header">Phase 01</div>
+            <div class="card-title">01. Literature Conversion</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.4;">
+                Existing manuals, brochures, and specifications analyzed and organized.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="card-header">Phase 02</div>
+            <div class="card-title">02. Framework Creation</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.4;">
+                Technical variables converted into buyer decision pathways.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="card-header">Phase 03</div>
+            <div class="card-title">03. Sales Asset Production</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.4;">
+                Customer guides, rep tools, and configuration logic produced.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="card-header">Phase 04</div>
+            <div class="card-title">04. Channel Deployment</div>
+            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.4;">
+                Delivered directly to sales teams and dealer representatives.
+            </p>
+        </div>
+    </div>
+</section>
+
 <div class="architecture-diagram">
     <div class="architecture-title">
-        SYSTEM INTELLIGENCE FLOW — FROM FRAGMENTATION TO STRUCTURED ASSET
+        COMMERCIAL FLOW — CONVERTING TECHNICAL ASSETS INTO PURCHASE DECISIONS
     </div>
 
     <div class="architecture-flow">
-        <div class="architecture-sources">
-            <div class="source-node">Engineering Teams</div>
-            <div class="source-node">Culinary Specialists</div>
-            <div class="source-node">Product Designers</div>
-            <div class="source-node">Service Professionals</div>
-            <div class="source-node">Training Teams</div>
-            <div class="source-node">Experienced Users</div>
+        <div class="architecture-node">
+            <div class="node-label">Layer 01</div>
+            <div class="node-title">Existing Technical Assets</div>
+            <div class="node-description">
+                Manuals, Spec Sheets, Catalogs, Training Materials, Line Sheets.
+            </div>
         </div>
 
         <div class="architecture-arrow">&darr;</div>
 
         <div class="architecture-node primary">
-            <div class="node-label">Provision1 Layer</div>
-            <div class="node-title">Knowledge Architecture Methodology™</div>
+            <div class="node-label">Layer 02</div>
+            <div class="node-title">Specification Translation</div>
             <div class="node-description">
-                Discovery, Mapping, Structural Modeling, and Preservation.
+                Technical Data converted into operational impact and buyer logic.
+            </div>
+        </div>
+
+        <div class="architecture-arrow">&darr;</div>
+
+        <div class="architecture-node domain">
+            <div class="node-label">Provision1 Asset</div>
+            <div class="node-title">Application Intelligence Framework™</div>
+            <div class="node-description">
+                Guided decision pathways for field reps and prospective buyers.
             </div>
         </div>
 
         <div class="architecture-arrow">&darr;</div>
 
         <div class="architecture-node final">
-            <div class="node-label">Institutional Asset</div>
-            <div class="node-title">Accumulated System Intelligence™</div>
+            <div class="node-label">Commercial Outcome</div>
+            <div class="node-title">Qualified Purchase Decision</div>
             <div class="node-description">
-                Unified knowledge assets serving engineering, dealers, service networks, and customers.
+                Accelerated quote velocity, higher option adoption, reduced sales cycle length.
             </div>
         </div>
     </div>
 </div>
 
-<!-- SECTION 5: CORE DELIVERABLES -->
-<section>
-    <h2>5. The Deliverable</h2>
-    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-        The deliverable is not another software platform. The deliverable is the structured intelligence required to improve product understanding, training, sales enablement, and customer capability:
-    </p>
-
-    <div class="grid-4">
-        <div class="feature-card">
-            <div class="card-header">Deliverable 01</div>
-            <div class="card-title">Captured Expertise</div>
-            <p style="font-size: 0.85rem; color: var(--text-color);">
-                Explicit documentation of implicit operational knowledge across teams.
-            </p>
-        </div>
-        <div class="feature-card">
-            <div class="card-header">Deliverable 02</div>
-            <div class="card-title">Structured Intelligence</div>
-            <p style="font-size: 0.85rem; color: var(--text-color);">
-                Interconnected relationships between technical specs and practical outcomes.
-            </p>
-        </div>
-        <div class="feature-card">
-            <div class="card-header">Deliverable 03</div>
-            <div class="card-title">Operational Clarity</div>
-            <p style="font-size: 0.85rem; color: var(--text-color);">
-                Clear execution paths for service teams, culinary teams, and dealers.
-            </p>
-        </div>
-        <div class="feature-card">
-            <div class="card-header">Deliverable 04</div>
-            <div class="card-title">Transferable Knowledge</div>
-            <p style="font-size: 0.85rem; color: var(--text-color);">
-                Durable institutional assets that outlast individual employee tenure.
-            </p>
-        </div>
+<div class="study-box">
+    <div class="study-header">
+        <div class="study-title">Initial Application Study</div>
     </div>
-</section>
-
-<!-- SECTION 6: EXAMPLE APPLICATION AREAS -->
-<section>
-    <h2>6. Example Application Areas</h2>
-
-    <div class="grid-3">
-        <div class="feature-card">
-            <div class="card-header">Domain 01</div>
-            <div class="card-title">Professional Culinary Equipment</div>
-            <ul class="card-list">
-                <li>Premium residential appliances</li>
-                <li>Commercial cooking systems</li>
-                <li>Specialty food equipment</li>
-            </ul>
-        </div>
-
-        <div class="feature-card">
-            <div class="card-header">Domain 02</div>
-            <div class="card-title">Food Innovation Platforms</div>
-            <ul class="card-list">
-                <li>Processing systems</li>
-                <li>Production environments</li>
-                <li>Emerging culinary technologies</li>
-            </ul>
-        </div>
-
-        <div class="feature-card">
-            <div class="card-header">Domain 03</div>
-            <div class="card-title">Hospitality Operations</div>
-            <ul class="card-list">
-                <li>Kitchen systems</li>
-                <li>Service workflows</li>
-                <li>Staff knowledge transfer</li>
-            </ul>
-        </div>
+    <div class="study-body">
+        <p style="margin-bottom: 0.75rem;">Select a single high-value equipment category. Provision1 analyzes existing technical documentation and converts operational complexity into structured decision assets for sales teams and buyers.</p>
+        <p>The result is a reusable sales decision asset designed to improve quote quality, configuration confidence, and premium package positioning before broader category expansion.</p>
     </div>
-</section>
+</div>
 
-<!-- SECTION 7: OUTCOME -->
-<section>
-    <h2>7. The Outcome</h2>
-    <div class="callout-block">
-        <div class="callout-body">
-            <p>An advanced culinary system is not simply a machine. It is an accumulated body of engineering knowledge.</p>
-            <p>Provision1 transforms that hidden expertise into a structured knowledge architecture—allowing organizations to preserve, communicate, and extend the intelligence embedded within their systems.</p>
-            <p style="margin-top: 1rem; font-weight: 600; color: var(--forest);">The result is a measurable improvement in how advanced products are demonstrated, sold, supported, and adopted.</p>
-        </div>
-    </div>
-</section>
-
-<!-- CLOSING STATEMENT -->
 <div class="closing-box">
-    <div class="callout-title" style="margin-bottom: 0.75rem;">THE ORGANIZATIONAL REALITY</div>
+    <div class="callout-title" style="margin-bottom: 0.75rem;">THE SUMMARY</div>
     <p class="closing-text">
-        "Our engineers know things. Our chefs know things. Our dealers know things. Nobody has connected it."
+        "Your technical documentation already contains the answer. Provision1 creates the decision layer that allows customers and sales teams to understand it."
     </p>
     <p class="closing-highlight">
-        Provision1 transforms scattered expert knowledge into an enduring institutional asset—allowing advanced systems to deliver the value their engineers originally intended.
+        Help customers understand the value of the right configuration before price becomes the only conversation.
     </p>
 </div>
 
-<!-- FOOTER -->
 <div class="footer-wall">
     <div class="footer-status">
         <span class="status-dot"></span>
-        <span>SYSTEM ACTIVE &mdash; KNOWLEDGE ARCHITECTURE RESEARCH™</span>
+        <span>METHODOLOGY: KNOWLEDGE ARCHITECTURE™</span>
     </div>
     <div>
-        PROVISION1 &copy; 2026 KNOWLEDGE ARCHITECTURE™
+        PROVISION1 &copy; 2026 APPLICATION INTELLIGENCE FRAMEWORK™
     </div>
 </div>
 
