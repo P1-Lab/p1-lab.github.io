@@ -13,6 +13,7 @@
             --muted-text: #666666;
             --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
             --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --border-color: #ddd;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,12 +41,33 @@
             font-weight: 600;
         }
 
-        header { margin-bottom: 3rem; }
+        header { margin-bottom: 2.5rem; }
         h1 { font-family: var(--mono-font); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.5rem; text-transform: uppercase; color: var(--forest); }
-        .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 2.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+        .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
         
-        h2 { font-family: var(--mono-font); font-size: 1.1rem; color: var(--forest); text-decoration: underline; margin-top: 4rem; margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brass); text-transform: uppercase; }
-        h3 { font-family: var(--mono-font); color: var(--forest); border-bottom: 1px solid var(--brass); padding-bottom: 5px; margin-top: 40px; margin-bottom: 1.5rem; text-transform: uppercase; }
+        .thesis-container {
+            border-left: 3px solid var(--forest);
+            padding-left: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .thesis-statement {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .target-client {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        h2 { font-family: var(--mono-font); font-size: 1.2rem; color: var(--forest); text-decoration: underline; margin-top: 1.5rem; margin-bottom: 1.25rem; text-transform: uppercase; }
+        h3 { font-family: var(--mono-font); color: var(--forest); border-bottom: 1px solid var(--brass); padding-bottom: 5px; margin-top: 45px; margin-bottom: 1.5rem; text-transform: uppercase; }
         h4 { font-family: var(--mono-font); color: var(--forest); margin: 2rem 0 0.5rem 0; text-transform: uppercase; font-size: 0.9rem; }
         
         p { margin-bottom: 1.25rem; }
@@ -60,12 +82,21 @@
             margin-bottom: 1.5rem;
         }
 
-        .about-section { margin-bottom: 3rem; }
+        .about-section { margin-bottom: 3.5rem; margin-top: 3.5rem; }
         
         .domain-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
         .domain-block { border-left: 4px solid var(--brass); padding-left: 1.5rem; }
+        .domain-block.primary-commercial { border-left: 4px solid var(--forest); background: #faf8f2; padding: 1.75rem 1.5rem; }
+        .domain-block.subordinate-commercial { border-left: 2px solid var(--brass); padding-left: 1.25rem; opacity: 0.9; }
         
-        .archive-section { margin-top: 3rem; }
+        .sub-application {
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .archive-section { margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 2rem; }
         .archive-row { display: grid; grid-template-columns: 100px 1fr; margin-bottom: 2rem; }
         .archive-year { font-family: var(--mono-font); font-weight: bold; color: var(--forest); }
         .archive-list { list-style: none; padding: 0; margin: 0; }
@@ -76,7 +107,7 @@
         
         .btn { 
             display: inline-block; 
-            margin-top: 1rem; 
+            margin-top: 0.5rem; 
             margin-right: 0.5rem;
             color: var(--forest); 
             background: transparent;
@@ -90,8 +121,14 @@
             transition: all 0.2s;
         }
         .btn:hover { background: var(--forest); color: #fff; }
-        
+        .btn-primary { background: var(--forest); color: #fff; }
+        .btn-primary:hover { background: #000; color: #fff; border-color: #000; }
+
         .footer-wall { border-top: 4px solid var(--forest); padding: 3rem 0; margin-top: 6rem; font-family: var(--mono-font); font-size: 0.8rem; background: #000; color: #fff; padding: 30px; }
+        
+        @media (max-width: 768px) {
+            .archive-row { grid-template-columns: 1fr; gap: 0.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -105,61 +142,89 @@
         <a href="index.html" style="text-decoration: none; color: inherit;">
             <h1>PROVISION1 LABORATORY</h1>
         </a>
-        <p class="tagline">SYSTEMS ENGINEERING FOR COMPLEX HUMAN-TECHNOLOGY SYSTEMS</p>
+        <p class="tagline">SYSTEMS ENGINEERING FOR KNOWLEDGE-INTENSIVE ORGANIZATIONS</p>
+        <div class="thesis-container">
+            <p class="thesis-statement">Provision1 transforms expert knowledge into durable operational systems through applied systems engineering.</p>
+            <p class="target-client">Built for manufacturers, dealer networks, and technology organizations facing complex knowledge-transfer challenges.</p>
+        </div>
     </header>
 
+    <!-- SECTION 1: PRACTICE AREAS -->
+    <section>
+        <h3>PRACTICE AREAS</h3>
+
+        <div class="domain-grid">
+            
+            <!-- 01. KNOWLEDGE ARCHITECTURE (PRIMARY COMMERCIAL PRACTICE) -->
+            <div class="domain-block primary-commercial">
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">01. PRIMARY COMMERCIAL PRACTICE</span>
+                <h2>KNOWLEDGE ARCHITECTURE™</h2>
+                <p><strong>Engineering expertise into durable organizational capability.</strong></p>
+                <p>Provision1 structures expert decision-making processes into formal knowledge architectures, turning undocumented domain knowledge into repeatable operational assets.</p>
+
+                <div class="sub-application">
+                    <h4 style="margin-top: 0;">FEATURED ENGAGEMENT: CULINARY SYSTEM INTELLIGENCE™</h4>
+                    <p>Dealer capability systems and decision architectures for premium culinary equipment networks. Converting complex equipment specifications, installation requirements, and expert operational knowledge into repeatable sales tools, training architectures, and customer decision frameworks.</p>
+                </div>
+
+                <a href="knowledge_systems_case_study.html" class="btn btn-primary">SEE THE CASE STUDY</a>
+            </div>
+
+            <!-- 02. MEDIA INTEGRITY ENGINEERING -->
+            <div class="domain-block subordinate-commercial">
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">02. SPECIALIZED TECHNOLOGY PLATFORM</span>
+                <h2 style="font-size: 1.05rem;">MEDIA INTEGRITY ENGINEERING™</h2>
+                <p style="font-size: 0.95rem;">Digital asset validation systems that stabilize, validate, and preserve media assets through AI generation, production, and distribution workflows. Forensic processing pipelines bridging the structural gap between erratic synthetic media and broadcast-compliant signal standards.</p>
+                <ul style="list-style: none; font-family: var(--mono-font); font-size: 0.8rem; margin-bottom: 1rem; color: var(--forest);">
+                    <li>— Clean Vault Key™</li>
+                    <li>— Synthetic media stabilization</li>
+                    <li>— Provenance &amp; verification systems</li>
+                </ul>
+                <a href="media-conditioning.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.75rem;">TECHNICAL OVERVIEW</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: ENGINEERING METHODOLOGY -->
     <section class="about-section">
-        <h3>ABOUT THE LABORATORY</h3>
+        <h3>ENGINEERING METHODOLOGY</h3>
 
         <p class="lead-in">APPLIED SYSTEMS ENGINEERING &amp; CAPABILITY RESEARCH.</p>
 
-        <p>Provision1 investigates how complex systems behave, how capability emerges through interaction between components, operators, and environments, and how undocumented knowledge can be transformed into repeatable engineering frameworks. We analyze complex systems at their fundamental levels, identify controlling variables, map operational relationships, and establish durable architectures for documenting, preserving, and extending system capability. Research domains include expressive systems, media integrity, physical transformation technologies, and emerging human-machine interfaces.</p>
+        <p>Provision1 studies how expertise emerges inside complex human-technology systems. By identifying the variables that govern expert performance, we engineer knowledge architectures that preserve operational capability, improve organizational performance, and make expert decision-making repeatable.</p>
     </section>
 
-    <!-- SECTION 1: COMMERCIAL MANDATE -->
+    <!-- SECTION 3: RESEARCH PLATFORMS -->
     <section>
-        <h3>ACTIVE ENGINEERING PROGRAM</h3>
+        <h3>RESEARCH PLATFORMS</h3>
 
         <div class="domain-grid">
+            
+            <!-- 03. PERFORMANCE SYSTEMS RESEARCH -->
             <div class="domain-block">
-                <h2>MEDIA INTEGRITY ENGINEERING</h2>
-                <p>Engineering systems that stabilize, validate, and preserve digital media assets through AI generation, production, and distribution workflows. Forensic processing pipelines bridging the structural gap between erratic synthetic media and broadcast-compliant signal standards.</p>
-                <a href="media-conditioning.html" class="btn">VIEW PROGRAM</a>
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">03. APPLIED RESEARCH PLATFORM</span>
+                <h2>PERFORMANCE SYSTEMS RESEARCH™</h2>
+                <p>Research into expressive systems — the physical, electronic, and computational architectures through which human intention becomes performance behavior.</p>
+                <p>The Atlas Research Series is where Provision1 develops, validates, and demonstrates its Knowledge Architecture methodology before deploying those methods into commercial environments.</p>
+                <a href="performance-systems.html" class="btn">READ THE RESEARCH</a>
+                <a href="methodology.html" class="btn">EXPLORE THE METHOD</a>
             </div>
+
+            <!-- 04. PHYSICAL TRANSFORMATION SYSTEMS -->
+            <div class="domain-block">
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">04. MATERIAL &amp; STATE CHANGE RESEARCH</span>
+                <h2>PHYSICAL TRANSFORMATION SYSTEMS™</h2>
+                <p>Research into physical transformation systems where controlled variables produce repeatable changes in material properties, state behavior, and operational yield. Current research environments investigate clean-label food systems (UCE™), preservation technologies, physical material behaviors, and vitrification engines.</p>
+                <a href="methodology_PARS.html" class="btn">EXPLORE THE METHODOLOGY</a>
+            </div>
+
         </div>
     </section>
 
-    <!-- SECTION 2: RESEARCH & DEVELOPMENT -->
-    <section>
-        <h3>RESEARCH &amp; DEVELOPMENT PROGRAMS</h3>
-
-        <div class="domain-grid">
-            <div class="domain-block">
-                <h2>PERFORMANCE SYSTEMS RESEARCH</h2>
-                <p>Research into expressive systems — the physical, electronic, and computational architectures through which human intention becomes musical behavior.</p>
-                <p>Provision1 Laboratory conducts independent engineering research into advanced instruments, recording systems, digital signal processing, and contemporary workflows, investigating unexplored operating envelopes and latent capabilities within complex performance systems.</p>
-                <a href="performance-systems.html" class="btn">VIEW RESEARCH</a>
-                <a href="methodology.html" class="btn">VIEW METHODOLOGY</a>
-            </div>
-
-            <div class="domain-block">
-                <h2>TRANSFORMATION SYSTEMS RESEARCH</h2>
-                <p>Research into physical transformation systems where controlled variables produce repeatable changes in material properties, behavior, and user capability. Current investigations include clean-label food systems, preservation technologies, and emerging culinary platforms. Current investigations examine how emerging technologies can be systematically explored, documented, and converted into transferable knowledge for creators, engineers, and product development teams.</p>
-                <a href="methodology_PARS.html" class="btn">VIEW METHODOLOGY</a>
-            </div>
-
-            <div class="domain-block">
-    <h2>KNOWLEDGE ARCHITECTURE RESEARCH™</h2>
-    <p>Research into how complex organizations preserve and transfer the intelligence embedded within advanced systems. Capturing engineering reasoning, expert knowledge, and operational practice to create enduring institutional assets.</p>
-    <a href="knowledge_systems_case_study.html" class="btn">VIEW CASE STUDY: CULINARY</a> 
-    
-</div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: ARCHIVE & OPEN REPOSITORIES -->
+    <!-- SECTION 4: PUBLICATIONS & OPEN RESEARCH -->
     <section class="archive-section">
-        <h3>RESEARCH ARCHIVE</h3>
+        <h3>PUBLICATIONS &amp; OPEN RESEARCH</h3>
         
         <div class="archive-row">
             <div class="archive-year">2026</div>
@@ -192,7 +257,7 @@
 
                 <h4>Open Laboratory Repositories</h4>
                 <p style="font-size: 0.9rem; margin-top: 0.5rem;">Public-domain forensic blueprints and open-source research covering food science, signal processing, advanced materials, and electromechanical instrumentation.</p>
-                <a href="https://github.com/P1-Lab" class="btn">VIEW REPOSITORIES</a>
+                <a href="https://github.com/P1-Lab" class="btn">OPEN REPOSITORIES</a>
 
             </div>
         </div>
