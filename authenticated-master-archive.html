@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Authenticated Master Archive™ | Provision1</title>
+<style>
+:root {
+    --bg-color: #fdfdfd;
+    --text-color: #1a1a1a;
+    --forest: #355E3B;
+    --brass: #A88A3A;
+    --muted-text: #666666;
+    --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+    --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --border-color: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--sans-font);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.doc-meta {
+    font-family: var(--mono-font);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted-text);
+    font-weight: 600;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono-font);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 2.5rem;
+}
+
+.nav-bar a {
+    color: var(--forest);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav-bar a:hover {
+    text-decoration: underline;
+}
+
+.tech-link-badge {
+    border: 1px solid var(--brass);
+    padding: 0.35rem 0.75rem;
+    background: #faf8f2;
+    color: var(--brass) !important;
+    font-size: 0.75rem;
+}
+
+header {
+    margin-bottom: 3.5rem;
+}
+
+h1 {
+    font-family: var(--mono-font);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--forest);
+}
+
+.tagline {
+    font-family: var(--mono-font);
+    font-size: 1rem;
+    color: var(--forest);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.hero-lead {
+    font-size: 1.05rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-negatives {
+    font-family: var(--mono-font);
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.75rem;
+    font-weight: 600;
+}
+
+.cta-primary {
+    display: inline-block;
+    font-family: var(--mono-font);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--forest);
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.cta-primary:hover {
+    background: var(--brass);
+}
+
+h2 {
+    font-family: var(--mono-font);
+    font-size: 1.05rem;
+    color: var(--forest);
+    text-decoration: underline;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--brass);
+    text-transform: uppercase;
+}
+
+.callout-block {
+    border: 1px solid #e2e8e2;
+    border-left: 3px solid var(--forest);
+    background: #f4f6f4;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.callout-title {
+    font-family: var(--mono-font);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--muted-text);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.callout-body {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.callout-body p {
+    margin-bottom: 0.75rem;
+}
+
+.callout-body p:last-child {
+    margin-bottom: 0;
+}
+
+.legacy-trigger {
+    border: 1px solid var(--brass);
+    background: #faf8f2;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    font-family: var(--mono-font);
+    font-size: 0.95rem;
+    color: var(--forest);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 1.5rem 0 2.5rem 0;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 1.5rem 0 2.5rem 0;
+}
+
+.feature-card {
+    border: 1px solid #000;
+    background: #fff;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card.highlight-card {
+    border-top: 3px solid var(--brass);
+}
+
+.card-header {
+    font-family: var(--mono-font);
+    font-size: 0.7rem;
+    color: var(--muted-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.card-title {
+    font-family: var(--mono-font);
+    font-size: 0.9rem;
+    color: var(--forest);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.4rem;
+}
+
+.card-list {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+.card-list li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+
+.card-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--brass);
+    font-family: var(--mono-font);
+}
+
+.establish-list {
+    list-style: none;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.establish-list li {
+    font-family: var(--mono-font);
+    font-size: 0.95rem;
+    color: var(--forest);
+    font-weight: 600;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.45;
+}
+
+.establish-list li:last-child {
+    border-bottom: none;
+}
+
+.sample-record {
+    border: 1px solid #000;
+    background: #fff;
+    margin: 1.5rem 0 2rem 0;
+    overflow: hidden;
+}
+
+.sample-record-header {
+    font-family: var(--mono-font);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    background: #f4f6f4;
+    color: var(--forest);
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.sample-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.sample-table td {
+    padding: 0.65rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+}
+
+.sample-table td:first-child {
+    font-family: var(--mono-font);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--muted-text);
+    width: 35%;
+    letter-spacing: 0.02em;
+}
+
+.sample-table tr:last-child td {
+    border-bottom: none;
+}
+
+.sample-status {
+    font-family: var(--mono-font);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--forest);
+    text-transform: uppercase;
+}
+
+.why-list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.why-list li {
+    font-family: var(--mono-font);
+    font-size: 0.95rem;
+    color: var(--forest);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.why-list li:last-child {
+    border-bottom: none;
+}
+
+.closing-box {
+    border: 1px solid #000;
+    background: #f4f6f4;
+    padding: 2rem;
+    margin: 3.5rem 0 2rem 0;
+    text-align: center;
+}
+
+.closing-text {
+    font-family: var(--sans-font);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.closing-highlight {
+    font-family: var(--mono-font);
+    font-size: 0.95rem;
+    color: var(--forest);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.footer-wall {
+    border-top: 1px solid var(--brass);
+    padding-top: 2rem;
+    margin-top: 5rem;
+    font-family: var(--mono-font);
+    font-size: 0.75rem;
+    color: var(--muted-text);
+    letter-spacing: 0.02em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--forest);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.inventory-fields {
+    font-family: var(--mono-font);
+    font-size: 0.85rem;
+    margin: 1.25rem 0;
+    color: var(--text-color);
+}
+
+.inventory-fields p {
+    margin-bottom: 0.4rem;
+}
+
+.emphasis-line {
+    font-family: var(--mono-font);
+    font-size: 0.9rem;
+    color: var(--forest);
+    font-weight: 700;
+    margin: 1.5rem 0 0.75rem 0;
+    line-height: 1.5;
+}
+
+.resilience-note {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 820px;
+    margin: 1.25rem 0 0 0;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="doc-meta">
+<span>PROVISION1</span>
+<span>COMMERCIAL OFFERING — AUTHENTICATED MASTER ARCHIVE</span>
+</div>
+
+<nav class="nav-bar">
+<a href="index.html">&larr; Return to Provision1 Overview</a>
+<span class="tech-link-badge">One-Time Preservation Offering</span>
+</nav>
+
+<header>
+<h1>The Authenticated Master Archive™</h1>
+<p class="tagline">One-time preservation of your organization's irreplaceable original media.</p>
+<p class="hero-negatives">Not a DAM. Not backup. Not cloud storage.</p>
+<p class="hero-lead">
+A permanent authenticated record of the masters your organization cannot afford to lose. We establish the authenticated master record from which your organization can preserve, reproduce, license, exhibit, publish, and verify its media.
+</p>
+<a href="#assess" class="cta-primary">Assess My Archive</a>
+</header>
+
+<section>
+<h2>1. The Problem</h2>
+<p style="font-size: 0.95rem; margin-bottom: 1rem; max-width: 820px;">
+Organizations accumulate photographs, video, scans, recordings, documents, and other original media. Over time they still have files. What they often no longer have is certainty about which files are authoritative.
+</p>
+<div class="callout-block">
+    <div class="callout-title">The Accumulation Reality</div>
+    <div class="callout-body">
+        <p>Once the original files, devices, software, or institutional context disappear, reconstruction becomes difficult or impossible. Working copies proliferate. The master becomes ambiguous.</p>
+        <p>The Authenticated Master Archive creates a controlled, authenticated preservation copy of those assets and establishes it as the organization's authoritative master record.</p>
+    </div>
+</div>
+</section>
+
+<section>
+<h2>2. How the Failure Happens</h2>
+<p style="font-size: 0.95rem; margin-bottom: 1.25rem; max-width: 820px;">
+Nobody decides to destroy the archive. It happens through ordinary operations.
+</p>
+<div class="callout-block">
+    <div class="callout-title">The Failure Usually Happens Quietly</div>
+    <div class="callout-body">
+        <p>A photographer leaves. A server is replaced. A production drive fails. A cloud account is closed. A publisher migrates DAM systems. A museum changes collection software.</p>
+        <p>A tourism organization discovers that its “original” photograph is actually a JPEG exported from a JPEG. A historic scan survives — but nobody can determine which version was the original.</p>
+        <p><strong>The organization still has files. It has simply lost certainty about which files matter.</strong></p>
+    </div>
+</div>
+<div class="legacy-trigger">
+    Preserve the original. Authenticate the master. Release copies.
+</div>
+</section>
+
+<section>
+<h2>3. Three-Step Preservation Protocol</h2>
+<div class="grid-3">
+    <div class="feature-card">
+        <div class="card-header">Step 01</div>
+        <div class="card-title">Ingest</div>
+        <p style="font-size: 0.85rem; line-height: 1.45;">
+            Original media is collected without altering the source.
+        </p>
+    </div>
+    <div class="feature-card highlight-card">
+        <div class="card-header">Step 02</div>
+        <div class="card-title">Authenticate</div>
+        <p style="font-size: 0.85rem; line-height: 1.45;">
+            Each master receives a Provision1 embedded authentication record. Cryptographic identity and preservation event are established.
+        </p>
+    </div>
+    <div class="feature-card">
+        <div class="card-header">Step 03</div>
+        <div class="card-title">Preserve</div>
+        <p style="font-size: 0.85rem; line-height: 1.45;">
+            The authenticated masters are placed into a controlled package designed to remain authoritative independently of ordinary production and distribution systems.
+        </p>
+    </div>
+</div>
+</section>
+
+<section>
+<h2>4. The Deliverable</h2>
+<p style="font-size: 0.95rem; margin-bottom: 1.25rem; max-width: 820px;">
+At the completion of the project, the organization receives an <strong>Authenticated Master Package</strong>.
+</p>
+<div class="grid-2">
+    <div class="feature-card">
+        <div class="card-header">Package Contents</div>
+        <div class="card-title">Authenticated Master Package</div>
+        <ul class="card-list">
+            <li>Original source media, preserved without alteration</li>
+            <li>Provision1 embedded authentication/signature record</li>
+            <li>Cryptographic identity of each master asset</li>
+            <li>Machine-readable asset manifest with per-asset authentication records</li>
+            <li>Source and embedded metadata retained where available</li>
+            <li>Archive-level Preservation Certificate</li>
+            <li>Documented preservation event</li>
+            <li>Documented chain of custody for the preservation process</li>
+            <li>Air-gapped Provision1 verification application</li>
+            <li>Verification instructions</li>
+        </ul>
+    </div>
+    <div class="feature-card highlight-card">
+        <div class="card-header">Ownership &amp; Verification</div>
+        <div class="card-title">What You Keep</div>
+        <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 0.25rem;">
+            The organization owns the resulting archive and retains the authenticated master media.
+        </p>
+        <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 1rem;">
+            Each master carries its Provision1 authentication record. The organization also receives an independent, air-gapped verification application capable of validating the authentication state of preserved assets without contacting Provision1 or relying on a cloud service.
+        </p>
+        <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 1rem;">
+            No subscription. No proprietary cloud. No hosted verification dependency.
+        </p>
+    </div>
+</div>
+<p class="emphasis-line">
+Each asset is independently verifiable. The customer does not need to contact Provision1 to verify an authenticated master.
+</p>
+<p class="resilience-note">
+The embedded authentication record is designed to remain recoverable from authenticated media even after ordinary downstream transformations such as compression, resizing, cropping, and format conversion.
+</p>
+</section>
+
+<section>
+<h2>5. What This Establishes</h2>
+<p style="font-size: 0.95rem; margin-bottom: 0.5rem; max-width: 820px;">
+For every preserved master, the archive can establish:
+</p>
+<ul class="establish-list">
+    <li>This is the file that was deposited.</li>
+    <li>This is the exact cryptographic identity of that file.</li>
+    <li>This is what was known about its source at the time of preservation.</li>
+    <li>This is the preservation event that established the master record.</li>
+</ul>
+<p style="font-size: 0.9rem; color: var(--muted-text); max-width: 820px;">
+This establishes an authenticated preservation record. It does not, by itself, prove historical authorship or legal ownership.
+</p>
+<p style="font-size: 0.95rem; margin-top: 1.5rem; max-width: 820px;">
+<strong>Per-asset:</strong> The Provision1 embedded authentication record identifies the authenticated master.<br>
+<strong>Per-archive:</strong> The Archive-level Preservation Certificate documents the completed preservation event—date, identified assets, and procedure.
+</p>
+</section>
+
+<section>
+<h2>6. See the Archive</h2>
+<p style="font-size: 0.95rem; margin-bottom: 1rem; max-width: 820px;">
+<strong>The authenticated master is the product.</strong> The archive is the container in which that authenticated record is preserved.
+</p>
+<div class="sample-record">
+    <div class="sample-record-header">MASTER-0001847.TIF — Sample Authenticated Master</div>
+    <table class="sample-table">
+        <tr>
+            <td>Master ID</td>
+            <td>P1-MA-0001847</td>
+        </tr>
+        <tr>
+            <td>File</td>
+            <td>IMG_1847.TIF</td>
+        </tr>
+        <tr>
+            <td>SHA-256</td>
+            <td style="font-family: var(--mono-font); font-size: 0.8rem;">a3f8c2e1… (full hash in package)</td>
+        </tr>
+        <tr>
+            <td>Authentication</td>
+            <td>Provision1 embedded signature record</td>
+        </tr>
+        <tr>
+            <td>File size</td>
+            <td>184.7 MB</td>
+        </tr>
+        <tr>
+            <td>Format</td>
+            <td>TIFF</td>
+        </tr>
+        <tr>
+            <td>Source</td>
+            <td>Institutional deposit</td>
+        </tr>
+        <tr>
+            <td>Deposit date</td>
+            <td>2026-08-12</td>
+        </tr>
+        <tr>
+            <td>Metadata</td>
+            <td>Source and embedded metadata retained where available</td>
+        </tr>
+        <tr>
+            <td>Authentication status</td>
+            <td><span class="sample-status">Verified</span></td>
+        </tr>
+    </table>
+</div>
+<p style="font-size: 0.9rem; color: var(--muted-text);">
+The full package includes the Archive-level Preservation Certificate, complete asset manifest with per-asset authentication records, and the air-gapped verification application for independent confirmation.
+</p>
+</section>
+
+<section>
+<h2>7. Example Scopes</h2>
+<p style="font-size: 0.95rem; margin-bottom: 1.25rem; max-width: 820px;">
+Every archive is scoped according to asset volume, condition, and ingest complexity.
+</p>
+<div class="grid-3">
+    <div class="feature-card">
+        <div class="card-header">Scope 01</div>
+        <div class="card-title">Foundation Archive</div>
+        <ul class="card-list">
+            <li>Up to 500 master assets</li>
+            <li>Authenticated master package</li>
+            <li>Asset manifest and verification application</li>
+        </ul>
+    </div>
+    <div class="feature-card highlight-card">
+        <div class="card-header">Scope 02</div>
+        <div class="card-title">Collection Archive</div>
+        <ul class="card-list">
+            <li>Up to 2,500 master assets</li>
+            <li>Expanded documentation of the preservation event</li>
+            <li>Multiple media types</li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <div class="card-header">Scope 03</div>
+        <div class="card-title">Institutional Archive</div>
+        <ul class="card-list">
+            <li>Large collections / multi-source ingest</li>
+            <li>On-site or controlled transfer workflow</li>
+            <li>Expanded chain-of-custody documentation</li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<section>
+<h2>8. Why Now</h2>
+<p style="font-size: 0.95rem; margin-bottom: 1rem; max-width: 820px;">
+Modern media increasingly passes through cameras, phones, editing systems, AI tools, DAMs, social platforms, cloud storage, and automated distribution systems. The original is getting harder to identify.
+</p>
+<div class="callout-block">
+    <div class="callout-title">Capture Provenance vs. Master Preservation</div>
+    <div class="callout-body">
+        <p>Provenance technologies such as C2PA are making origin and modification history increasingly important. Capture provenance can tell you where a file came from.</p>
+        <p><strong>Master preservation establishes which file your organization has chosen to preserve as authoritative.</strong></p>
+        <p>As provenance standards mature for working assets, the absence of an institutional master becomes more visible—not less.</p>
+    </div>
+</div>
+</section>
+
+<section>
+<h2>9. Why Provision1</h2>
+<p style="font-size: 0.95rem; margin-bottom: 0.75rem; max-width: 820px;">
+Because the archive should not become another system you have to maintain—and verification should not depend on us remaining available.
+</p>
+<ul class="why-list">
+    <li>No subscription</li>
+    <li>No proprietary cloud archive</li>
+    <li>No hosted verification dependency</li>
+    <li>No requirement to migrate your collection into another DAM</li>
+</ul>
+<p style="font-size: 0.95rem; max-width: 820px;">
+Provision1 establishes the authenticated master record and delivers the preservation package, including the means to verify it independently.
+</p>
+</section>
+
+<section>
+<h2>10. Designated Organizations &amp; Assets</h2>
+<div class="grid-2">
+    <div class="feature-card">
+        <div class="card-header">Sector Group 01</div>
+        <div class="card-title">Cultural &amp; Public Institutions</div>
+        <ul class="card-list">
+            <li>Tourism and destination organizations — permanent preservation of destination photography and film</li>
+            <li>Museums and cultural institutions — authenticated masters of commissioned and acquired media</li>
+            <li>Archives and historical organizations</li>
+            <li>Universities</li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <div class="card-header">Sector Group 02</div>
+        <div class="card-title">Publishing, Brands &amp; Production</div>
+        <ul class="card-list">
+            <li>Publishers — preservation of original photography, illustrations, recordings, and documentary assets</li>
+            <li>Government communications offices</li>
+            <li>Professional photographers and production organizations</li>
+            <li>Brands with irreplaceable campaign assets</li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<section id="assess">
+<h2>11. Have an Archive?</h2>
+<div class="callout-block">
+    <div class="callout-title">Request an Archive Assessment</div>
+    <div class="callout-body">
+        <p>Send a simple inventory. We will tell you what an authenticated master archive would require.</p>
+        <div class="inventory-fields">
+            <p><strong>Asset type:</strong> photographs / video / scans / audio / mixed</p>
+            <p><strong>Approximate quantity:</strong></p>
+            <p><strong>Approximate storage volume:</strong></p>
+            <p><strong>Current location:</strong> drives / server / cloud / mixed</p>
+        </div>
+        <p style="margin-top: 1rem;">
+            <a href="mailto:archive@provision1.example?subject=Archive%20Assessment%20Request" class="cta-primary">Request an Archive Assessment</a>
+        </p>
+    </div>
+</div>
+</section>
+
+<div class="closing-box">
+<p class="closing-text">
+Do not let foundational visual records decay into ambiguity.<br>
+<strong>Establish the authoritative record once.</strong>
+</p>
+<p class="closing-highlight">
+The Authenticated Master Archive™ — Definitive permanence for irreplaceable media.
+</p>
+</div>
+
+<div class="footer-wall">
+<div class="footer-status">
+<span class="status-dot"></span>
+<span>SYSTEM ACTIVE &mdash; AUTHENTICATED MASTER ARCHIVE STANDARD</span>
+</div>
+<div>
+PROVISION1 &copy; 2026 THE AUTHENTICATED MASTER ARCHIVE™
+</div>
+</div>
+
+</body>
+</html>
