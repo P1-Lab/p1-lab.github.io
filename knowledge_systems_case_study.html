@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application 01: Application Intelligence Framework™</title>
+    <title>Application 01: Dealer Application Intelligence™</title>
     <style>
         :root {
             --bg-color: #fdfdfd;
@@ -16,10 +16,10 @@
             --border-color: #ddd;
         }
 
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -32,7 +32,8 @@
             margin: 0 auto;
         }
 
-        /* TOP NAVIGATION & SERIES HIERARCHY */
+        /* TOP NAVIGATION */
+
         .doc-nav {
             font-family: var(--mono-font);
             font-size: 0.75rem;
@@ -68,9 +69,10 @@
             font-weight: 600;
         }
 
-        /* HEADER / HERO */
-        header { 
-            margin-bottom: 3.5rem; 
+        /* HEADER */
+
+        header {
+            margin-bottom: 3.5rem;
         }
 
         .series-badge {
@@ -83,15 +85,15 @@
             margin-bottom: 0.5rem;
         }
 
-        h1 { 
-            font-family: var(--mono-font); 
-            font-size: 2.1rem; 
-            font-weight: 800; 
-            letter-spacing: -0.03em; 
-            line-height: 1.15; 
-            margin-bottom: 0.25rem; 
-            text-transform: uppercase; 
-            color: var(--forest); 
+        h1 {
+            font-family: var(--mono-font);
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            color: var(--forest);
         }
 
         .doc-descriptor {
@@ -104,17 +106,16 @@
             font-weight: 600;
         }
 
-        .tagline { 
-            font-family: var(--mono-font); 
-            font-size: 0.95rem; 
-            color: var(--forest); 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 0.02em; 
+        .tagline {
+            font-family: var(--mono-font);
+            font-size: 0.95rem;
+            color: var(--forest);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
             margin-bottom: 1.25rem;
         }
 
-        /* CHANGE 1: UNDENIABLE OPERATIONAL PAIN POINT */
         .hero-lead {
             font-size: 1.05rem;
             color: var(--text-color);
@@ -122,7 +123,6 @@
             max-width: 820px;
         }
 
-        /* CHANGE 2: ACTIVE KNOWLEDGE CAPTURE */
         .hero-sublead {
             font-size: 0.95rem;
             color: var(--muted-text);
@@ -132,7 +132,8 @@
             padding-left: 1rem;
         }
 
-        /* CORE HERO HOOK */
+        /* HERO HOOK */
+
         .hook-container {
             border: 2px solid var(--forest);
             background: #faf8f2;
@@ -170,41 +171,43 @@
         }
 
         /* SECTION HEADINGS */
-        h2 { 
-            font-family: var(--mono-font); 
-            font-size: 1.05rem; 
-            color: var(--forest); 
-            text-decoration: underline; 
-            margin-top: 3.5rem; 
-            margin-bottom: 1.5rem; 
-            padding-top: 1.5rem; 
-            border-top: 1px solid var(--brass); 
-            text-transform: uppercase; 
+
+        h2 {
+            font-family: var(--mono-font);
+            font-size: 1.05rem;
+            color: var(--forest);
+            text-decoration: underline;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--brass);
+            text-transform: uppercase;
         }
 
-        /* CALLOUT BLOCK */
-        .callout-block { 
-            border-left: 3px solid var(--forest); 
-            border: 1px solid #e2e8e2; 
-            border-left-width: 3px; 
-            background: #f4f6f4; 
-            padding: 1.5rem; 
-            margin: 2rem 0; 
+        /* CALLOUT */
+
+        .callout-block {
+            border-left: 3px solid var(--forest);
+            border: 1px solid #e2e8e2;
+            border-left-width: 3px;
+            background: #f4f6f4;
+            padding: 1.5rem;
+            margin: 2rem 0;
         }
 
-        .callout-title { 
-            font-family: var(--mono-font); 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
-            color: var(--muted-text); 
+        .callout-title {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--muted-text);
             letter-spacing: 0.05em;
-            margin-bottom: 0.5rem; 
+            margin-bottom: 0.5rem;
             font-weight: 700;
         }
 
-        .callout-body { 
-            font-size: 0.95rem; 
-            color: var(--text-color); 
+        .callout-body {
+            font-size: 0.95rem;
+            color: var(--text-color);
             line-height: 1.6;
         }
 
@@ -216,21 +219,36 @@
             margin-bottom: 0;
         }
 
-        .legacy-trigger {
-            border: 1px solid var(--brass);
+        /* DEALER PROPOSITION */
+
+        .proposition-box {
+            border: 2px solid var(--brass);
             background: #faf8f2;
-            padding: 1.25rem 1.5rem;
-            margin: 2rem 0;
-            font-family: var(--mono-font);
-            font-size: 0.95rem;
-            color: var(--forest);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            text-align: center;
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
         }
 
-        /* GRID LAYOUTS */
+        .proposition-title {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .proposition-statement {
+            font-family: var(--mono-font);
+            font-size: 1.05rem;
+            color: var(--forest);
+            font-weight: 800;
+            line-height: 1.45;
+            text-transform: uppercase;
+        }
+
+        /* GRIDS */
+
         .grid-5 {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -284,26 +302,41 @@
             padding-bottom: 0.4rem;
         }
 
-        /* CATEGORY SPECTRUM GRID */
-        .category-grid {
+        /* PROJECT DEFINITION */
+
+        .project-frame {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 1rem 0;
-            font-family: var(--mono-font);
-            font-size: 0.75rem;
-            text-transform: uppercase;
+            gap: 12px;
+            margin: 1.5rem 0 2.5rem 0;
         }
 
-        .category-item {
-            border: 1px solid var(--border-color);
+        .project-cell {
+            border: 1px solid #000;
             background: #fff;
-            padding: 0.5rem 0.75rem;
-            text-align: center;
-            color: var(--muted-text);
+            padding: 1.25rem;
         }
 
-        /* PIPELINE / CHANNEL FLOW */
+        .project-cell-label {
+            font-family: var(--mono-font);
+            font-size: 0.68rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.45rem;
+        }
+
+        .project-cell-value {
+            font-family: var(--mono-font);
+            font-size: 0.88rem;
+            color: var(--forest);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.35;
+        }
+
+        /* PIPELINE */
+
         .pipeline-container {
             display: flex;
             align-items: center;
@@ -344,7 +377,81 @@
             font-weight: bold;
         }
 
-        /* DIAGRAM STYLES */
+        /* DELIVERABLES */
+
+        .deliverable-box {
+            border: 1px solid var(--brass);
+            background: #faf8f2;
+            padding: 1.75rem;
+            margin: 2rem 0;
+        }
+
+        .deliverable-header {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .deliverable-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .deliverable-item {
+            border: 1px solid var(--border-color);
+            background: #fff;
+            padding: 1rem;
+        }
+
+        .deliverable-item strong {
+            display: block;
+            font-family: var(--mono-font);
+            font-size: 0.78rem;
+            color: var(--forest);
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+        }
+
+        .deliverable-item span {
+            font-size: 0.82rem;
+            line-height: 1.45;
+        }
+
+        /* EXCLUSIVITY */
+
+        .exclusive-box {
+            border: 2px solid var(--forest);
+            background: #f4f6f4;
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .exclusive-title {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.65rem;
+            font-weight: 700;
+        }
+
+        .exclusive-statement {
+            font-family: var(--mono-font);
+            font-size: 1rem;
+            color: var(--forest);
+            font-weight: 800;
+            line-height: 1.45;
+            text-transform: uppercase;
+        }
+
+        /* ARCHITECTURE */
+
         .architecture-diagram {
             margin: 3rem 0;
             border: 1px solid var(--brass);
@@ -420,7 +527,8 @@
             color: var(--brass);
         }
 
-        /* APPLICATION STUDY BOX */
+        /* INITIAL PROJECT */
+
         .study-box {
             border: 2px solid var(--brass);
             background: #faf8f2;
@@ -448,7 +556,8 @@
             line-height: 1.6;
         }
 
-        /* CLOSING CALLOUT */
+        /* CLOSING */
+
         .closing-box {
             border: 1px solid #000;
             background: #f4f6f4;
@@ -476,13 +585,14 @@
         }
 
         /* FOOTER */
-        .footer-wall { 
-            border-top: 1px solid var(--brass); 
-            padding-top: 2rem; 
-            margin-top: 5rem; 
-            font-family: var(--mono-font); 
-            font-size: 0.75rem; 
-            color: var(--muted-text); 
+
+        .footer-wall {
+            border-top: 1px solid var(--brass);
+            padding-top: 2rem;
+            margin-top: 5rem;
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
             letter-spacing: 0.02em;
             display: flex;
             justify-content: space-between;
@@ -504,16 +614,26 @@
         }
 
         @media (max-width: 768px) {
-            .grid-5, .grid-4, .grid-3, .category-grid {
+            .grid-5,
+            .grid-4,
+            .grid-3,
+            .project-frame {
                 grid-template-columns: 1fr;
             }
+
+            .deliverable-list {
+                grid-template-columns: 1fr;
+            }
+
             .pipeline-container {
                 flex-direction: column;
                 gap: 12px;
             }
+
             .pipeline-arrow {
                 transform: rotate(90deg);
             }
+
             .footer-wall {
                 flex-direction: column;
                 gap: 1rem;
@@ -521,6 +641,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <div class="doc-nav">
@@ -528,336 +649,531 @@
 </div>
 
 <div class="doc-meta">
-    <span>PROVISION1 FRAMEWORK</span>
+    <span>PROVISION1 APPLICATION SYSTEMS</span>
     <span>APPLICATION STUDY 01</span>
 </div>
 
 <header>
-    <div class="series-badge">Provision1 Application Study</div>
+    <div class="series-badge">Provision1 Dealer Development Program</div>
 
-    <h1>Application Intelligence Framework™</h1>
+    <h1>Dealer Application Intelligence™</h1>
 
     <div class="doc-descriptor">
-        A Decision Layer For Complex Equipment Sales
+        Proprietary Sales &amp; Use-Case Systems For Equipment Dealers
     </div>
 
     <p class="tagline">
-        Turning Technical Complexity Into Purchase Confidence
+        One Product. One Customer Segment. One Dealer. One Finished Sales Tool.
     </p>
 
     <p class="hero-lead">
-        Premium equipment dealers and distributors experience slower sales cycles when customers cannot translate complex equipment options into confident purchase decisions — forcing conversations toward delay, uncertainty, and price comparison.
+        Equipment dealers do not need another product brochure. They need a better way to show a prospective customer what a piece of equipment can actually do for that customer's operation — and why buying it makes sense.
     </p>
 
     <p class="hero-sublead">
-        Manufacturers provide technical documentation. Dealers provide application experience. The missing element is a structured decision layer that connects equipment capability to customer requirements.
+        Provision1 develops finite, dealer-specific sales and application systems around selected equipment platforms. The result is a practical commercial asset that helps a dealer identify opportunities, demonstrate use cases, qualify prospects, and sell the equipment with greater confidence.
     </p>
-
 </header>
-<!-- CORE HERO HOOK -->
+
+<!-- HERO HOOK -->
+
 <div class="hook-container">
-    <div class="hook-title">THE COMMERCIAL CONTRADICTION</div>
+    <div class="hook-title">THE COMMERCIAL OPPORTUNITY</div>
+
     <div class="hook-statement">
-        "Your manuals explain HOW. Your salespeople explain WHAT. Your customers still do not understand WHY one configuration is right for their operation."
+        "You already sell the equipment. We build the sales system that helps your customer understand what else they can do with it."
     </div>
+
     <div class="hook-subtext">
-        Provision1 transforms technical documentation into a clear customer decision layer that accelerates proposal sign-off.
+        A finished, proprietary application resource designed around one product, one customer segment, and your sales territory.
     </div>
 </div>
 
 <section>
-    <h2>1. The Channel Challenge</h2>
-    
+
+    <h2>1. The Dealer Sales Problem</h2>
+
     <div class="callout-block">
-        <div class="callout-title">THE CONVERSION GAP IN HIGH-VALUE SALES</div>
+
+        <div class="callout-title">
+            PRODUCT KNOWLEDGE IS NOT THE SAME AS SALES APPLICATION INTELLIGENCE
+        </div>
+
         <div class="callout-body">
-            <p>Premium equipment sales rarely fail because customers cannot find specifications. They fail because buyers cannot confidently connect technical options to their own operational reality. When a buyer cannot understand why one configuration is correct, the conversation defaults to price.</p>
-            <p>Across dealership sales teams and independent rep networks, representatives routinely spend weeks resolving routine configuration choices. While factory technical literature accurately details capacities and compliance, it leaves the buyer to figure out the operational trade-offs on their own.</p>
-            <p>Independent equipment dealers and regional distributors often carry dozens of complex product categories without having access to factory-level application expertise on every transaction. The result is inconsistent recommendations, slower quoting, and unnecessary price competition.</p>
-            
-            <p>The challenge is amplified as organizations grow. The application knowledge held by experienced sales specialists rarely transfers efficiently to newer representatives, creating inconsistent recommendations across the sales channel. Application Intelligence Framework™ captures that reasoning structure and turns it into a repeatable sales asset.</p>
-            
-            <p>When customer reasoning stalls, high-margin package proposals sit on desks, specification cycles stretch over months, and buyers down-spec to lower-margin baseline models. Every delayed configuration decision represents lost margin and wasted sales effort.</p>
+
+            <p>
+                Manufacturers provide specifications, manuals, recipes, demonstrations, videos, brochures, and technical training. Those resources explain the equipment.
+            </p>
+
+            <p>
+                The dealer still has to answer a different question:
+                <strong>What does this equipment allow this particular customer to do?</strong>
+            </p>
+
+            <p>
+                A café owner, bakery operator, convenience-store operator, hotel, restaurant, or institutional buyer is rarely shopping for specifications. They are trying to determine whether a piece of equipment can solve a problem, add a revenue stream, reduce labor, expand a menu, fit an existing footprint, or replace another process.
+            </p>
+
+            <p>
+                That translation from equipment capability to customer opportunity is often left to the individual salesperson.
+            </p>
+
+            <p>
+                Provision1 turns that reasoning into a finished sales and application asset that can be used repeatedly by the dealer's sales organization.
+            </p>
+
         </div>
     </div>
+
 </section>
 
 <section>
-    <h2>2. The Missing Commercial Layer</h2>
-    
-    <div class="grid-3">
-        <div class="feature-card">
-            <div class="card-header">Layer 01</div>
-            <div class="card-title">Technical Collateral</div>
-            <p style="font-size: 0.88rem; color: var(--text-color); line-height: 1.5;">
-                <strong>What the equipment does:</strong> Specifications, line sheets, utility connections, operating manuals, compliance data.
-            </p>
+
+    <h2>2. The Provision1 Offer</h2>
+
+    <div class="proposition-box">
+
+        <div class="proposition-title">
+            A FINITE DEVELOPMENT PROJECT
         </div>
-        <div class="feature-card">
-            <div class="card-header">Layer 02</div>
-            <div class="card-title">Sales Conversation</div>
-            <p style="font-size: 0.88rem; color: var(--text-color); line-height: 1.5;">
-                <strong>What customers hear:</strong> Feature lists, general benefits, product demonstrations, and pricing proposals.
-            </p>
+
+        <div class="proposition-statement">
+            Provision1 takes one equipment platform and develops the customer use cases, application logic, sales pathways, and supporting decision tools required to help a specific dealer sell it more effectively.
         </div>
-        <div class="feature-card highlight-card">
-            <div class="card-header">Layer 03</div>
-            <div class="card-title">Application Intelligence Framework™</div>
-            <p style="font-size: 0.88rem; color: var(--text-color); line-height: 1.5;">
-                <strong>What is missing:</strong> The decision layer connecting customer workflow, operational constraints, and equipment configuration into a defensible purchase recommendation.
-            </p>
-        </div>
+
     </div>
 
-    <div class="legacy-trigger">
-        Provision1 converts technical literature into buyer-facing decision assets that drive transaction velocity.
-    </div>
-</section>
+    <div class="project-frame">
 
-<section>
-    <h2>3. Application Strategy</h2>
+        <div class="project-cell">
+            <div class="project-cell-label">Scope</div>
+            <div class="project-cell-value">
+                One Equipment Platform
+            </div>
+        </div>
+
+        <div class="project-cell">
+            <div class="project-cell-label">Market</div>
+            <div class="project-cell-value">
+                One Defined Customer Segment
+            </div>
+        </div>
+
+        <div class="project-cell">
+            <div class="project-cell-label">Commercial Owner</div>
+            <div class="project-cell-value">
+                One Dealer / Territory
+            </div>
+        </div>
+
+    </div>
+
     <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-        Dealer owners and sales directors do not need software integration or extended consulting. They need immediate assets that help their reps close complex equipment packages faster.
+        This is intentionally not an open-ended consulting engagement. Each project has a defined subject, defined development scope, defined deliverables, and a finished commercial output.
     </p>
 
-    <div class="callout-block" style="margin-top: 1rem; margin-bottom: 1.5rem;">
-        <div class="callout-title">HIGH-COMPLEXITY CATEGORY SPECTRUM</div>
-        <div class="callout-body">
-            <p>Field representatives and buyers navigate trade-offs across dense equipment categories every day:</p>
-            
-            <div class="category-grid">
-                <div class="category-item">Combi Ovens</div>
-                <div class="category-item">Deck Ovens</div>
-                <div class="category-item">Blast Chillers</div>
-                <div class="category-item">Induction</div>
-                <div class="category-item">Refrigeration</div>
-                <div class="category-item">Espresso</div>
-                <div class="category-item">Gelato</div>
-                <div class="category-item">Ventilation</div>
-                <div class="category-item">Fabrication</div>
+</section>
+
+<section>
+
+    <h2>3. What We Build</h2>
+
+    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+        Provision1 converts existing product knowledge into a practical sales system organized around the questions a real customer is trying to answer.
+    </p>
+
+    <div class="deliverable-box">
+
+        <div class="deliverable-header">
+            EXAMPLE DELIVERABLE SET
+        </div>
+
+        <div class="deliverable-list">
+
+            <div class="deliverable-item">
+                <strong>Customer Archetypes</strong>
+                <span>Identify the operating profiles most likely to benefit from the selected equipment platform.</span>
             </div>
 
-            <p style="margin-top: 1rem;">The Application Intelligence Framework™ transforms dense technical parameters into a guided recommendation path:</p>
+            <div class="deliverable-item">
+                <strong>Use-Case Library</strong>
+                <span>Define specific operational, menu, production, or revenue applications that can be demonstrated to prospects.</span>
+            </div>
+
+            <div class="deliverable-item">
+                <strong>Application Pathways</strong>
+                <span>Connect customer requirements to practical equipment applications and configurations.</span>
+            </div>
+
+            <div class="deliverable-item">
+                <strong>Sales Qualification Tool</strong>
+                <span>Give representatives a structured set of questions for identifying opportunities and matching applications.</span>
+            </div>
+
+            <div class="deliverable-item">
+                <strong>Customer Decision Guide</strong>
+                <span>Translate technical capability into a concise customer-facing explanation of operational fit.</span>
+            </div>
+
+            <div class="deliverable-item">
+                <strong>Sales Conversation Paths</strong>
+                <span>Provide practical reasoning for introducing new applications, handling objections, and advancing the sale.</span>
+            </div>
+
+            <div class="deliverable-item">
+                <strong>Menu / Product Concepts</strong>
+                <span>Where appropriate, develop concrete products, menu items, workflows, or application examples that demonstrate the equipment's potential.</span>
+            </div>
+
+            <div class="deliverable-item">
+                <strong>Economic Logic</strong>
+                <span>Where reliable inputs are available, connect the application to throughput, labor, footprint, capacity, or revenue considerations.</span>
+            </div>
+
         </div>
     </div>
+
+</section>
+
+<section>
+
+    <h2>4. The Development Process</h2>
+
+    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+        The project begins with the dealer's commercial objective rather than with a generic equipment study.
+    </p>
 
     <div class="pipeline-container">
+
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 01</div>
-            <div class="pipeline-step-title">Operational Inputs</div>
+            <div class="pipeline-step-title">Select Product</div>
         </div>
+
         <div class="pipeline-arrow">&rarr;</div>
+
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 02</div>
-            <div class="pipeline-step-title">Constraint Mapping</div>
+            <div class="pipeline-step-title">Define Customer</div>
         </div>
+
         <div class="pipeline-arrow">&rarr;</div>
+
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 03</div>
-            <div class="pipeline-step-title">Configuration Logic</div>
+            <div class="pipeline-step-title">Map Opportunities</div>
         </div>
+
         <div class="pipeline-arrow">&rarr;</div>
+
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 04</div>
-            <div class="pipeline-step-title">System Alignment</div>
+            <div class="pipeline-step-title">Build Assets</div>
         </div>
+
         <div class="pipeline-arrow">&rarr;</div>
+
         <div class="pipeline-step">
             <div class="pipeline-step-num">Step 05</div>
-            <div class="pipeline-step-title">Defensible Configuration</div>
+            <div class="pipeline-step-title">Deploy</div>
         </div>
+
     </div>
 
     <div class="callout-block">
-        <div class="callout-title">OPERATIONAL IMPACT</div>
+
+        <div class="callout-title">
+            THE IMPORTANT DIFFERENCE
+        </div>
+
         <div class="callout-body">
-            <p>Deploying the Application Intelligence Framework™ across a category delivers concrete sales improvements:</p>
-            <div class="grid-5" style="margin: 1rem 0 0 0;">
-                <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">01. Quote Velocity</div>
-                    <p style="font-size: 0.78rem;">Shorter specification cycles and faster customer sign-off.</p>
+
+            <p>
+                Provision1 is not simply repackaging manufacturer literature.
+            </p>
+
+            <p>
+                The development work occurs at the intersection of <strong>equipment capability, customer operation, application opportunity, and dealer sales strategy.</strong>
+            </p>
+
+            <p>
+                The output is therefore specific to the commercial problem the dealer wants to solve.
+            </p>
+
+        </div>
+    </div>
+
+</section>
+
+<section>
+
+    <h2>5. From Equipment To Sales Opportunity</h2>
+
+    <div class="architecture-diagram">
+
+        <div class="architecture-title">
+            COMMERCIAL DEVELOPMENT FLOW
+        </div>
+
+        <div class="architecture-flow">
+
+            <div class="architecture-node">
+
+                <div class="node-label">Input</div>
+
+                <div class="node-title">
+                    Equipment Platform
                 </div>
-                <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">02. Higher AOV</div>
-                    <p style="font-size: 0.78rem;">Justifies advanced equipment packages without discounting.</p>
+
+                <div class="node-description">
+                    Product specifications, technical documentation, capabilities, accessories, applications, demonstrations, and dealer knowledge.
                 </div>
-                <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">03. Rep Consistency</div>
-                    <p style="font-size: 0.78rem;">Enables newer sales reps to specify complex systems accurately.</p>
+
+            </div>
+
+            <div class="architecture-arrow">&darr;</div>
+
+            <div class="architecture-node primary">
+
+                <div class="node-label">Provision1 Analysis</div>
+
+                <div class="node-title">
+                    Customer / Application Mapping
                 </div>
-                <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">04. Decision Speed</div>
-                    <p style="font-size: 0.78rem;">Eliminates buyer hesitation by establishing clear operational fit.</p>
+
+                <div class="node-description">
+                    Identify operational problems, customer profiles, application opportunities, workflow constraints, and commercial possibilities.
                 </div>
-                <div class="feature-card" style="padding: 0.85rem;">
-                    <div class="card-title" style="font-size: 0.75rem; margin-bottom: 0.4rem;">05. Margin Protection</div>
-                    <p style="font-size: 0.78rem;">Prevents unnecessary discounting by establishing clear operational value.</p>
+
+            </div>
+
+            <div class="architecture-arrow">&darr;</div>
+
+            <div class="architecture-node domain">
+
+                <div class="node-label">Dealer Asset</div>
+
+                <div class="node-title">
+                    Sales &amp; Use-Case System
                 </div>
+
+                <div class="node-description">
+                    A finished set of customer-facing and sales-representative tools built specifically around the selected product and target market.
+                </div>
+
+            </div>
+
+            <div class="architecture-arrow">&darr;</div>
+
+            <div class="architecture-node final">
+
+                <div class="node-label">Commercial Outcome</div>
+
+                <div class="node-title">
+                    More Reasons To Buy
+                </div>
+
+                <div class="node-description">
+                    The dealer has a concrete resource for identifying prospects, demonstrating applications, creating proposals, and advancing equipment sales.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>6. Why Exclusivity Matters</h2>
+
+    <div class="exclusive-box">
+
+        <div class="exclusive-title">
+            A DEALER DOES NOT PAY FOR A GENERIC REPORT
+        </div>
+
+        <div class="exclusive-statement">
+            The commercial value is the finished resource — and the dealer's ability to use it as a proprietary sales advantage within an agreed territory.
+        </div>
+
+    </div>
+
+    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+        Where commercially appropriate, a Provision1 project can be structured with defined territorial or channel exclusivity for the resulting sales/application resource.
+    </p>
+
+    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+        That means the dealer is not simply purchasing another piece of generic marketing collateral. The dealer is commissioning a resource developed around its market, its sales organization, and its opportunity to sell the selected equipment.
+    </p>
+
+    <p style="font-size: 0.95rem;">
+        Exact ownership, licensing, reuse, exclusivity period, and related intellectual-property terms are established as part of the individual project agreement.
+    </p>
+
+</section>
+
+<section>
+
+    <h2>7. Example Application</h2>
+
+    <div class="study-box">
+
+        <div class="study-header">
+            <div class="study-title">
+                High-Speed Oven / Café Expansion Study
             </div>
         </div>
+
+        <div class="study-body">
+
+            <p style="margin-bottom: 0.75rem;">
+                A dealer sells a high-speed cooking platform but encounters customers who understand the equipment's specifications without seeing how it could create new menu or revenue opportunities within an existing operation.
+            </p>
+
+            <p style="margin-bottom: 0.75rem;">
+                Provision1 could develop a focused application system around a defined customer segment — for example, cafés seeking to add a meaningful hot-food program without building a conventional kitchen.
+            </p>
+
+            <p style="margin-bottom: 0.75rem;">
+                The project could identify target operating profiles, develop specific food and workflow applications, map the equipment's role within those operations, establish qualification questions, and produce a customer-facing sales resource that the dealer's representatives can use directly.
+            </p>
+
+            <p>
+                The result is not a generic “case study.” It is a <strong>purpose-built sales and use-case system designed to create new reasons for a customer to buy the equipment.</strong>
+            </p>
+
+        </div>
+
     </div>
+
 </section>
 
 <section>
-    <h2>4. Commercial Assets Created</h2>
-    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-        A complete set of sales decision assets built from existing technical collateral:
-    </p>
 
-    <div class="grid-5">
-        <div class="feature-card highlight-card">
-            <div class="card-header">Asset 01</div>
-            <div class="card-title">Application Decision Guide</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
-                Converts technical requirements into guided recommendation pathways for sales reps and buyers.
-            </p>
-        </div>
-        <div class="feature-card highlight-card">
-            <div class="card-header">Asset 02</div>
-            <div class="card-title">Buyer Configuration Maps</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
-                Shows customers precisely why specific equipment combinations match their operating footprint.
-            </p>
-        </div>
-        <div class="feature-card highlight-card">
-            <div class="card-header">Asset 03</div>
-            <div class="card-title">Premium Upgrade Logic</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
-                Explains when and why higher-tier configurations deliver measurable long-term operational value.
-            </p>
-        </div>
-        <div class="feature-card highlight-card">
-            <div class="card-header">Asset 04</div>
-            <div class="card-title">Sales Conversation Paths</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
-                Gives sales representatives structured reasoning for complex buyer objections and trade-offs.
-            </p>
-        </div>
-        <div class="feature-card highlight-card">
-            <div class="card-header">Asset 05</div>
-            <div class="card-title">Specification Translation Layer</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.45;">
-                Converts factory manuals into customer-facing decision language that drives purchase confidence.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <h2>5. Implementation Process</h2>
-    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-        A structured build process executing entirely on top of existing product documentation:
-    </p>
+    <h2>8. What The Dealer Receives</h2>
 
     <div class="grid-4">
-        <div class="feature-card">
-            <div class="card-header">Phase 01</div>
-            <div class="card-title">01. Literature Conversion</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.4;">
-                Existing manuals, brochures, and specifications analyzed and organized.
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">01</div>
+
+            <div class="card-title">
+                Finished Resource
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                A polished, usable sales/application asset rather than a research report.
             </p>
+
         </div>
 
-        <div class="feature-card">
-            <div class="card-header">Phase 02</div>
-            <div class="card-title">02. Framework Creation</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.4;">
-                Technical variables converted into buyer decision pathways.
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">02</div>
+
+            <div class="card-title">
+                Sales Utility
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Built for actual customer conversations, prospect qualification, demonstrations, and proposals.
             </p>
+
         </div>
 
-        <div class="feature-card">
-            <div class="card-header">Phase 03</div>
-            <div class="card-title">03. Sales Asset Production</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.4;">
-                Customer guides, rep tools, and configuration logic produced.
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">03</div>
+
+            <div class="card-title">
+                Market Specificity
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Developed around a defined product, customer segment, and commercial opportunity.
             </p>
+
         </div>
 
-        <div class="feature-card">
-            <div class="card-header">Phase 04</div>
-            <div class="card-title">04. Channel Deployment</div>
-            <p style="font-size: 0.82rem; color: var(--text-color); line-height: 1.4;">
-                Delivered directly to sales teams and dealer representatives.
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">04</div>
+
+            <div class="card-title">
+                Commercial Advantage
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Where agreed, territorial exclusivity gives the dealer a differentiated sales resource unavailable to competing dealers.
             </p>
+
         </div>
+
     </div>
+
 </section>
 
-<div class="architecture-diagram">
-    <div class="architecture-title">
-        COMMERCIAL FLOW — CONVERTING TECHNICAL ASSETS INTO PURCHASE DECISIONS
-    </div>
+<section>
 
-    <div class="architecture-flow">
-        <div class="architecture-node">
-            <div class="node-label">Layer 01</div>
-            <div class="node-title">Existing Technical Assets</div>
-            <div class="node-description">
-                Manuals, Spec Sheets, Catalogs, Training Materials, Line Sheets.
-            </div>
+    <h2>9. The First Project</h2>
+
+    <div class="callout-block">
+
+        <div class="callout-title">
+            START SMALL. BUILD SOMETHING THAT CAN BE USED.
         </div>
 
-        <div class="architecture-arrow">&darr;</div>
+        <div class="callout-body">
 
-        <div class="architecture-node primary">
-            <div class="node-label">Layer 02</div>
-            <div class="node-title">Specification Translation</div>
-            <div class="node-description">
-                Technical Data converted into operational impact and buyer logic.
-            </div>
+            <p>
+                The recommended starting point is a single equipment platform and a single customer opportunity with clear commercial potential.
+            </p>
+
+            <p>
+                Provision1 defines the development scope, required inputs, deliverables, schedule, commercial terms, and applicable IP/exclusivity structure before work begins.
+            </p>
+
+            <p>
+                The objective is a finite project that produces a finished sales resource — not an indefinite consulting relationship.
+            </p>
+
         </div>
 
-        <div class="architecture-arrow">&darr;</div>
-
-        <div class="architecture-node domain">
-            <div class="node-label">Provision1 Asset</div>
-            <div class="node-title">Application Intelligence Framework™</div>
-            <div class="node-description">
-                Guided decision pathways for field reps and prospective buyers.
-            </div>
-        </div>
-
-        <div class="architecture-arrow">&darr;</div>
-
-        <div class="architecture-node final">
-            <div class="node-label">Commercial Outcome</div>
-            <div class="node-title">Qualified Purchase Decision</div>
-            <div class="node-description">
-                Accelerated quote velocity, higher option adoption, reduced sales cycle length.
-            </div>
-        </div>
     </div>
-</div>
 
-<div class="study-box">
-    <div class="study-header">
-        <div class="study-title">Initial Application Study</div>
-    </div>
-    <div class="study-body">
-        <p style="margin-bottom: 0.75rem;">Select a single high-value equipment category. Provision1 analyzes existing technical documentation and converts operational complexity into structured decision assets for sales teams and buyers.</p>
-        <p>The result is a reusable sales decision asset designed to improve quote quality, configuration confidence, and premium package positioning before broader category expansion.</p>
-    </div>
-</div>
+</section>
 
 <div class="closing-box">
-    <div class="callout-title" style="margin-bottom: 0.75rem;">THE SUMMARY</div>
+
+    <div class="callout-title" style="margin-bottom: 0.75rem;">
+        THE PROVISION1 PROPOSITION
+    </div>
+
     <p class="closing-text">
-        "Your technical documentation already contains the answer. Provision1 creates the decision layer that allows customers and sales teams to understand it."
+        "You already have the equipment. Your manufacturer already has the specifications. We build the missing layer that shows your customer why they should buy it — and what they can do with it."
     </p>
+
     <p class="closing-highlight">
-        Help customers understand the value of the right configuration before price becomes the only conversation.
+        One product. One customer segment. One dealer. One finished sales system.
     </p>
+
 </div>
 
 <div class="footer-wall">
+
     <div class="footer-status">
         <span class="status-dot"></span>
         <span>METHODOLOGY: KNOWLEDGE ARCHITECTURE™</span>
     </div>
+
     <div>
-        PROVISION1 &copy; 2026 APPLICATION INTELLIGENCE FRAMEWORK™
+        PROVISION1 &copy; 2026 DEALER APPLICATION INTELLIGENCE™
     </div>
+
 </div>
 
 </body>
