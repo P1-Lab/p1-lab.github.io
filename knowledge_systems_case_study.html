@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Application 01: Dealer Application Intelligence™</title>
+    <title>Dealer Application Intelligence™ | Provision1</title>
 
     <style>
         :root {
@@ -12,7 +12,7 @@
             --text-color: #1a1a1a;
             --forest: #355E3B;
             --brass: #A88A3A;
-            --muted-text: #666666;
+            --muted-text: #555555;
             --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
             --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --border-color: #ddd;
@@ -78,7 +78,7 @@
         ========================================================= */
 
         header {
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
         }
 
         .series-badge {
@@ -108,34 +108,35 @@
             color: var(--muted-text);
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.9rem;
             font-weight: 600;
         }
 
         .tagline {
             font-family: var(--mono-font);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: var(--forest);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.02em;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.15rem;
         }
 
         .hero-lead {
-            font-size: 1.05rem;
+            font-size: 1.08rem;
             color: var(--text-color);
             line-height: 1.6;
-            max-width: 820px;
+            max-width: 840px;
         }
 
         .hero-sublead {
-            font-size: 0.95rem;
+            font-size: 0.94rem;
             color: var(--muted-text);
             line-height: 1.6;
             margin-top: 0.75rem;
             border-left: 2px solid var(--brass);
             padding-left: 1rem;
+            max-width: 840px;
         }
 
         /* =========================================================
@@ -145,14 +146,14 @@
         .hook-container {
             border: 2px solid var(--forest);
             background: #faf8f2;
-            padding: 1.75rem 2rem;
-            margin: 2.5rem 0;
+            padding: 1.65rem 2rem;
+            margin: 2rem 0 2.5rem 0;
             text-align: center;
         }
 
         .hook-title {
             font-family: var(--mono-font);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: var(--muted-text);
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -172,7 +173,7 @@
 
         .hook-subtext {
             font-family: var(--sans-font);
-            font-size: 0.85rem;
+            font-size: 0.86rem;
             color: var(--text-color);
             margin-top: 0.75rem;
             font-style: italic;
@@ -187,11 +188,50 @@
             font-size: 1.05rem;
             color: var(--forest);
             text-decoration: underline;
-            margin-top: 3.5rem;
-            margin-bottom: 1.5rem;
-            padding-top: 1.5rem;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            padding-top: 1.35rem;
             border-top: 1px solid var(--brass);
             text-transform: uppercase;
+        }
+
+        /* =========================================================
+           AT A GLANCE
+        ========================================================= */
+
+        .glance-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 1.5rem 0 2.5rem 0;
+        }
+
+        .glance-card {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1.1rem;
+        }
+
+        .glance-num {
+            font-family: var(--mono-font);
+            font-size: 0.68rem;
+            color: var(--muted-text);
+            margin-bottom: 0.35rem;
+        }
+
+        .glance-title {
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            color: var(--forest);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 0.45rem;
+        }
+
+        .glance-text {
+            font-size: 0.78rem;
+            line-height: 1.45;
         }
 
         /* =========================================================
@@ -199,32 +239,31 @@
         ========================================================= */
 
         .callout-block {
-            border-left: 3px solid var(--forest);
             border: 1px solid #e2e8e2;
-            border-left-width: 3px;
+            border-left: 3px solid var(--forest);
             background: #f4f6f4;
-            padding: 1.5rem;
-            margin: 2rem 0;
+            padding: 1.4rem 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .callout-title {
             font-family: var(--mono-font);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             color: var(--muted-text);
             letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.55rem;
             font-weight: 700;
         }
 
         .callout-body {
-            font-size: 0.95rem;
+            font-size: 0.93rem;
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.58;
         }
 
         .callout-body p {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.7rem;
         }
 
         .callout-body p:last-child {
@@ -232,27 +271,27 @@
         }
 
         /* =========================================================
-           PROPOSITION
+           QUESTION BOX
         ========================================================= */
 
-        .proposition-box {
+        .question-box {
             border: 2px solid var(--brass);
             background: #faf8f2;
-            padding: 1.75rem 2rem;
-            margin: 2.5rem 0;
+            padding: 1.65rem 1.8rem;
+            margin: 1.75rem 0 2rem 0;
         }
 
-        .proposition-title {
+        .question-title {
             font-family: var(--mono-font);
             font-size: 0.75rem;
             color: var(--muted-text);
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem;
             font-weight: 700;
         }
 
-        .proposition-statement {
+        .question-statement {
             font-family: var(--mono-font);
             font-size: 1.05rem;
             color: var(--forest);
@@ -262,81 +301,34 @@
         }
 
         /* =========================================================
-           PROJECT FRAME
+           QUESTION GRID
         ========================================================= */
 
-        .project-frame {
+        .question-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            margin: 1.5rem 0 2.5rem 0;
+            margin: 1.5rem 0 2rem 0;
         }
 
-        .project-cell {
-            border: 1px solid #000;
+        .question-card {
+            border: 1px solid var(--border-color);
             background: #fff;
-            padding: 1.25rem;
+            padding: 1.1rem 1.2rem;
         }
 
-        .project-cell-label {
+        .question-card strong {
+            display: block;
             font-family: var(--mono-font);
-            font-size: 0.68rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.45rem;
-        }
-
-        .project-cell-value {
-            font-family: var(--mono-font);
-            font-size: 0.88rem;
             color: var(--forest);
-            font-weight: 800;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            line-height: 1.35;
+            margin-bottom: 0.35rem;
         }
 
-        /* =========================================================
-           GRIDS
-        ========================================================= */
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin: 1.5rem 0 2.5rem 0;
-        }
-
-        .feature-card {
-            border: 1px solid #000;
-            background: #fff;
-            padding: 1.25rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .feature-card.highlight-card {
-            border-top: 3px solid var(--brass);
-        }
-
-        .card-header {
-            font-family: var(--mono-font);
-            font-size: 0.7rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.4rem;
-        }
-
-        .card-title {
-            font-family: var(--mono-font);
-            font-size: 0.9rem;
-            color: var(--forest);
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.4rem;
+        .question-card span {
+            font-size: 0.84rem;
+            line-height: 1.45;
         }
 
         /* =========================================================
@@ -345,172 +337,29 @@
 
         .opportunity-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-            margin: 1.5rem 0 2.5rem 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 1.5rem 0 2rem 0;
         }
 
         .opportunity-card {
             border: 1px solid #000;
             background: #fff;
-            padding: 1.35rem;
-        }
-
-        .opportunity-card.revenue {
-            border-top: 3px solid var(--brass);
-        }
-
-        .opportunity-label {
-            font-family: var(--mono-font);
-            font-size: 0.68rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.4rem;
+            padding: 1.1rem;
         }
 
         .opportunity-title {
             font-family: var(--mono-font);
-            font-size: 0.9rem;
+            font-size: 0.78rem;
             color: var(--forest);
             font-weight: 800;
             text-transform: uppercase;
-            line-height: 1.3;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.45rem;
         }
 
-        .opportunity-body {
-            font-size: 0.84rem;
-            line-height: 1.5;
-        }
-
-        /* =========================================================
-           EQUIPMENT CATEGORIES
-        ========================================================= */
-
-        .equipment-strip {
-            border: 1px solid #000;
-            background: #fff;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .equipment-strip-title {
-            font-family: var(--mono-font);
-            font-size: 0.72rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .equipment-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .equipment-tag {
-            border: 1px solid var(--border-color);
-            padding: 0.55rem 0.7rem;
-            font-family: var(--mono-font);
-            font-size: 0.7rem;
-            color: var(--forest);
-            text-transform: uppercase;
-            background: #faf8f2;
-        }
-
-        /* =========================================================
-           PORTFOLIO MODEL
-        ========================================================= */
-
-        .portfolio-box {
-            border: 2px solid var(--forest);
-            background: #f4f6f4;
-            padding: 1.75rem;
-            margin: 2rem 0;
-        }
-
-        .portfolio-title {
-            font-family: var(--mono-font);
-            font-size: 0.75rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .portfolio-flow {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        .portfolio-step {
-            background: #fff;
-            border: 1px solid #000;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .portfolio-step strong {
-            display: block;
-            font-family: var(--mono-font);
-            font-size: 0.75rem;
-            color: var(--forest);
-            text-transform: uppercase;
-            margin-bottom: 0.4rem;
-        }
-
-        .portfolio-step span {
-            font-size: 0.78rem;
-            line-height: 1.4;
-        }
-
-        /* =========================================================
-           PIPELINE
-        ========================================================= */
-
-        .pipeline-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 8px;
-            margin: 1.5rem 0 2rem 0;
-            background: #fff;
-            border: 1px solid #000;
-            padding: 1.25rem 1rem;
-        }
-
-        .pipeline-step {
-            flex: 1;
-            text-align: center;
-        }
-
-        .pipeline-step-num {
-            font-family: var(--mono-font);
-            font-size: 0.65rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            margin-bottom: 0.25rem;
-        }
-
-        .pipeline-step-title {
-            font-family: var(--mono-font);
-            font-size: 0.8rem;
-            color: var(--forest);
-            font-weight: bold;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-
-        .pipeline-arrow {
-            font-family: var(--mono-font);
-            font-size: 1.1rem;
-            color: var(--brass);
-            font-weight: bold;
+        .opportunity-text {
+            font-size: 0.79rem;
+            line-height: 1.45;
         }
 
         /* =========================================================
@@ -520,104 +369,88 @@
         .deliverable-box {
             border: 1px solid var(--brass);
             background: #faf8f2;
-            padding: 1.75rem;
-            margin: 2rem 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0 2rem 0;
         }
 
         .deliverable-header {
             font-family: var(--mono-font);
-            font-size: 0.75rem;
+            font-size: 0.74rem;
             color: var(--muted-text);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .deliverable-list {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 10px;
         }
 
         .deliverable-item {
             border: 1px solid var(--border-color);
             background: #fff;
-            padding: 1rem;
+            padding: 0.95rem;
         }
 
         .deliverable-item strong {
             display: block;
             font-family: var(--mono-font);
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             color: var(--forest);
             text-transform: uppercase;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.3rem;
         }
 
         .deliverable-item span {
-            font-size: 0.82rem;
-            line-height: 1.45;
+            font-size: 0.81rem;
+            line-height: 1.43;
         }
 
         /* =========================================================
-           EXCLUSIVITY
+           PROCESS
         ========================================================= */
 
-        .exclusive-box {
-            border: 2px solid var(--forest);
-            background: #f4f6f4;
-            padding: 1.75rem 2rem;
-            margin: 2.5rem 0;
+        .pipeline-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 7px;
+            margin: 1.5rem 0 1.75rem 0;
+            background: #fff;
+            border: 1px solid #000;
+            padding: 1.15rem 0.9rem;
         }
 
-        .exclusive-title {
+        .pipeline-step {
+            flex: 1;
+            text-align: center;
+        }
+
+        .pipeline-step-num {
             font-family: var(--mono-font);
-            font-size: 0.75rem;
+            font-size: 0.62rem;
             color: var(--muted-text);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.65rem;
-            font-weight: 700;
+            margin-bottom: 0.22rem;
         }
 
-        .exclusive-statement {
+        .pipeline-step-title {
+            font-family: var(--mono-font);
+            font-size: 0.76rem;
+            color: var(--forest);
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .pipeline-arrow {
             font-family: var(--mono-font);
             font-size: 1rem;
-            color: var(--forest);
-            font-weight: 800;
-            line-height: 1.45;
-            text-transform: uppercase;
-        }
-
-        /* =========================================================
-           IP BOX
-        ========================================================= */
-
-        .ip-box {
-            border: 1px solid #000;
-            background: #fff;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .ip-title {
-            font-family: var(--mono-font);
-            font-size: 0.75rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 0.65rem;
-            font-weight: 700;
-        }
-
-        .ip-body {
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .ip-body strong {
-            color: var(--forest);
+            color: var(--brass);
+            font-weight: bold;
         }
 
         /* =========================================================
@@ -625,26 +458,26 @@
         ========================================================= */
 
         .architecture-diagram {
-            margin: 3rem 0;
+            margin: 1.75rem 0 2rem 0;
             border: 1px solid var(--brass);
             background: #faf8f2;
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .architecture-title {
             font-family: var(--mono-font);
-            font-size: 0.75rem;
+            font-size: 0.73rem;
             color: var(--muted-text);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .architecture-flow {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.65rem;
             align-items: center;
         }
 
@@ -653,7 +486,7 @@
             max-width: 700px;
             border: 1px solid #000;
             background: #fff;
-            padding: 1rem 1.25rem;
+            padding: 0.85rem 1.1rem;
             text-align: center;
         }
 
@@ -673,69 +506,180 @@
 
         .node-label {
             font-family: var(--mono-font);
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--muted-text);
             text-transform: uppercase;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.25rem;
         }
 
         .node-title {
             font-family: var(--mono-font);
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             color: var(--forest);
             font-weight: bold;
             text-transform: uppercase;
         }
 
         .node-description {
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-            line-height: 1.45;
+            font-size: 0.79rem;
+            margin-top: 0.35rem;
+            line-height: 1.4;
         }
 
         .architecture-arrow {
             font-family: var(--mono-font);
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--brass);
         }
 
         /* =========================================================
-           EXAMPLE STUDIES
+           EXAMPLE STUDY
         ========================================================= */
 
         .study-box {
             border: 2px solid var(--brass);
             background: #faf8f2;
-            padding: 1.75rem 2rem;
-            margin: 2rem 0;
+            padding: 1.5rem 1.7rem;
+            margin: 1.5rem 0 2rem 0;
         }
 
         .study-header {
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.75rem;
+            padding-bottom: 0.7rem;
             margin-bottom: 1rem;
         }
 
         .study-title {
             font-family: var(--mono-font);
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: var(--forest);
             font-weight: 800;
             text-transform: uppercase;
         }
 
+        .study-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 1rem 0;
+        }
+
+        .study-cell {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 0.85rem;
+        }
+
+        .study-label {
+            font-family: var(--mono-font);
+            font-size: 0.65rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .study-value {
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
         .study-body {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
-        .study-body p {
-            margin-bottom: 0.75rem;
+        /* =========================================================
+           PORTFOLIO MODEL
+        ========================================================= */
+
+        .portfolio-box {
+            border: 2px solid var(--forest);
+            background: #f4f6f4;
+            padding: 1.5rem;
+            margin: 1.5rem 0 2rem 0;
         }
 
-        .study-body p:last-child {
-            margin-bottom: 0;
+        .portfolio-flow {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 1rem 0;
+        }
+
+        .portfolio-step {
+            background: #fff;
+            border: 1px solid #000;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .portfolio-step-number {
+            font-family: var(--mono-font);
+            font-size: 0.65rem;
+            color: var(--muted-text);
+            margin-bottom: 0.3rem;
+        }
+
+        .portfolio-step-title {
+            font-family: var(--mono-font);
+            font-size: 0.78rem;
+            color: var(--forest);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        .portfolio-final {
+            border: 2px solid var(--brass);
+            background: #faf8f2;
+            padding: 1.1rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .portfolio-final-title {
+            font-family: var(--mono-font);
+            font-size: 0.88rem;
+            color: var(--forest);
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .portfolio-final-text {
+            font-size: 0.83rem;
+            margin-top: 0.3rem;
+        }
+
+        /* =========================================================
+           RIGHTS
+        ========================================================= */
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        .rights-card {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1.25rem;
+        }
+
+        .rights-title {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--forest);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.45rem;
+        }
+
+        .rights-text {
+            font-size: 0.83rem;
+            line-height: 1.48;
         }
 
         /* =========================================================
@@ -746,17 +690,17 @@
             border: 2px solid var(--forest);
             background: #faf8f2;
             padding: 2rem;
-            margin: 3rem 0 2rem 0;
+            margin: 2.75rem 0 1.5rem 0;
             text-align: center;
         }
 
         .cta-title {
             font-family: var(--mono-font);
-            font-size: 0.75rem;
+            font-size: 0.76rem;
             color: var(--muted-text);
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.7rem;
             font-weight: 700;
         }
 
@@ -764,17 +708,41 @@
             font-family: var(--sans-font);
             font-size: 1rem;
             color: var(--text-color);
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            line-height: 1.58;
+            margin-bottom: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-highlight {
             font-family: var(--mono-font);
-            font-size: 0.95rem;
+            font-size: 0.96rem;
             color: var(--forest);
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.02em;
+            margin-bottom: 1.2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--forest);
+            color: #fff;
+            font-family: var(--mono-font);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.85rem 1.35rem;
+            text-decoration: none;
+            border: 2px solid var(--forest);
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: var(--forest);
         }
 
         /* =========================================================
@@ -784,23 +752,23 @@
         .closing-box {
             border: 1px solid #000;
             background: #f4f6f4;
-            padding: 2rem;
-            margin: 2rem 0;
+            padding: 1.6rem;
+            margin: 1.5rem 0;
             text-align: center;
         }
 
         .closing-text {
             font-family: var(--sans-font);
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-color);
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            line-height: 1.55;
+            margin-bottom: 0.8rem;
             font-style: italic;
         }
 
         .closing-highlight {
             font-family: var(--mono-font);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--forest);
             font-weight: 800;
             text-transform: uppercase;
@@ -813,10 +781,10 @@
 
         .footer-wall {
             border-top: 1px solid var(--brass);
-            padding-top: 2rem;
-            margin-top: 5rem;
+            padding-top: 1.75rem;
+            margin-top: 4rem;
             font-family: var(--mono-font);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: var(--muted-text);
             letter-spacing: 0.02em;
             display: flex;
@@ -844,20 +812,22 @@
 
         @media (max-width: 768px) {
 
-            .grid-4,
-            .project-frame,
-            .portfolio-flow,
-            .opportunity-grid {
-                grid-template-columns: 1fr;
+            .glance-grid,
+            .opportunity-grid,
+            .portfolio-flow {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .deliverable-list {
+            .deliverable-list,
+            .question-grid,
+            .study-grid,
+            .rights-grid {
                 grid-template-columns: 1fr;
             }
 
             .pipeline-container {
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
             }
 
             .pipeline-arrow {
@@ -867,6 +837,30 @@
             .footer-wall {
                 flex-direction: column;
                 gap: 1rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .glance-grid,
+            .opportunity-grid,
+            .portfolio-flow {
+                grid-template-columns: 1fr;
+            }
+
+            .hook-container,
+            .question-box,
+            .study-box,
+            .cta-box {
+                padding: 1.25rem;
             }
         }
     </style>
@@ -883,6 +877,10 @@
     <span>APPLICATION STUDY 01</span>
 </div>
 
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <header>
 
     <div class="series-badge">
@@ -894,19 +892,19 @@
     </h1>
 
     <div class="doc-descriptor">
-        Commissioned Commercial Intelligence For Equipment Dealers
+        Commissioned Commercial Research For Equipment Dealers
     </div>
 
     <p class="tagline">
-        Turn Equipment Capability Into New Customer Opportunities.
+        One Commercial Question. One Finished Commercial Asset.
     </p>
 
     <p class="hero-lead">
-        Equipment dealers already possess something extremely valuable: a portfolio of equipment platforms, manufacturers, product categories, territories, and customer relationships. What is often missing is the commercial intelligence that connects those assets to new applications, new customer segments, and new revenue opportunities.
+        You already sell the equipment. Provision1 investigates what else your customers could do with it — and turns that answer into a practical sales and application resource for your dealership.
     </p>
 
     <p class="hero-sublead">
-        Provision1 develops commissioned, dealer-specific application studies around selected equipment platforms. Each study identifies what the equipment can enable for a particular customer, operation, or commercial opportunity — and converts that reasoning into a finished sales asset the dealer can use.
+        The equipment may be an oven, food processor, blender, refrigeration platform, bakery system, cooking technology, beverage system, or another commercial platform. The study begins with the dealer's question and ends with a finished answer your sales organization can use.
     </p>
 
 </header>
@@ -918,69 +916,114 @@
 <div class="hook-container">
 
     <div class="hook-title">
-        THE DEALER OPPORTUNITY
+        THE CORE IDEA
     </div>
 
     <div class="hook-statement">
-        "You may already sell the equipment. We investigate what else your customers could do with it — and build the commercial case for doing it."
+        You may already sell the equipment. We investigate what else your customers could do with it.
     </div>
 
     <div class="hook-subtext">
-        A commissioned application study can focus on a product, a customer segment, a workflow, a market opportunity, or a potential new revenue stream.
+        Commission a focused commercial question, develop the opportunity, and turn the result into a usable dealer asset.
     </div>
 
 </div>
 
 <!-- =========================================================
-     SECTION 1
+     SECTION 1 — AT A GLANCE
 ========================================================= -->
 
 <section>
 
     <h2>
-        1. The Dealer Has A Different Problem
+        1. At A Glance
+    </h2>
+
+    <div class="glance-grid">
+
+        <div class="glance-card">
+            <div class="glance-num">01</div>
+            <div class="glance-title">Find Overlooked Applications</div>
+            <div class="glance-text">
+                Identify customer uses and operating environments that may not be obvious from conventional equipment literature.
+            </div>
+        </div>
+
+        <div class="glance-card">
+            <div class="glance-num">02</div>
+            <div class="glance-title">Create New Revenue Logic</div>
+            <div class="glance-text">
+                Investigate how equipment can support new menu programs, production capabilities, services, capacity, or revenue streams.
+            </div>
+        </div>
+
+        <div class="glance-card">
+            <div class="glance-num">03</div>
+            <div class="glance-title">Give Salespeople Something To Sell</div>
+            <div class="glance-text">
+                Convert technical capability into customer-specific applications, demonstrations, qualification questions, and sales pathways.
+            </div>
+        </div>
+
+        <div class="glance-card">
+            <div class="glance-num">04</div>
+            <div class="glance-title">Build Application Intelligence</div>
+            <div class="glance-text">
+                Each commissioned study can become part of a larger proprietary application portfolio for the dealer.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SECTION 2 — REAL PROBLEM
+========================================================= -->
+
+<section>
+
+    <h2>
+        2. The Dealer's Real Problem
     </h2>
 
     <div class="callout-block">
 
         <div class="callout-title">
-            DEALERS DO NOT NEED MORE PRODUCT LITERATURE
+            EQUIPMENT CAPABILITY IS NOT THE SAME AS COMMERCIAL OPPORTUNITY
         </div>
 
         <div class="callout-body">
 
             <p>
-                Manufacturers provide specifications, manuals, demonstrations, recipes, videos, brochures, technical training, and application support.
+                Manufacturers explain what their equipment does. They provide specifications, manuals, demonstrations, recipes, videos, accessories, and technical training.
             </p>
 
             <p>
-                Those resources explain the equipment.
-                <strong>They do not necessarily identify the next commercial opportunity for the dealer.</strong>
+                Your customer is asking a different question:
+                <strong>What can this equipment do for my operation?</strong>
             </p>
 
             <p>
-                A dealer may carry high-speed ovens, combi ovens, food processors, blenders, mixers, pressure-cooking systems, refrigeration, holding equipment, preparation systems, or multiple competing brands within the same category.
+                Can it let a café add hot food? Can a bakery increase production? Can a hotel create a new service? Can a commissary centralize preparation? Can a restaurant reduce labor? Can a convenience operation add a prepared-food program?
             </p>
 
             <p>
-                The commercial question is therefore much larger than:
-                <strong>"What does this machine do?"</strong>
+                That translation from <strong>equipment capability → customer opportunity</strong> is often left to the individual salesperson.
             </p>
 
-            <p>
-                The better questions are:
-            </p>
+        </div>
 
-            <p>
-                <strong>
-                    Who else could use it? What problem could it solve? What process could it replace? What menu could it enable? What labor could it remove? What capacity could it unlock? And most importantly — could it create an entirely new revenue stream for the customer?
-                </strong>
-            </p>
+    </div>
 
-            <p>
-                Provision1 develops the research and reasoning required to answer those questions.
-            </p>
+    <div class="question-box">
 
+        <div class="question-title">
+            THE MISSING COMMERCIAL LAYER
+        </div>
+
+        <div class="question-statement">
+            Provision1 turns that reasoning into a finished application asset your sales organization can use repeatedly.
         </div>
 
     </div>
@@ -988,331 +1031,156 @@
 </section>
 
 <!-- =========================================================
-     SECTION 2
+     SECTION 3 — COMMISSION THE QUESTION
 ========================================================= -->
 
 <section>
 
     <h2>
-        2. Commission The Question You Want Answered
+        3. Commission The Question
     </h2>
 
-    <div class="proposition-box">
+    <div class="question-box">
 
-        <div class="proposition-title">
-            A COMMISSIONED COMMERCIAL STUDY
+        <div class="question-title">
+            DON'T COMMISSION A REPORT. COMMISSION AN ANSWER.
         </div>
 
-        <div class="proposition-statement">
-            Start with a piece of equipment, a customer type, or a commercial question. Provision1 develops a focused application study designed to reveal opportunities your sales organization can actually pursue.
-        </div>
-
-    </div>
-
-    <div class="project-frame">
-
-        <div class="project-cell">
-
-            <div class="project-cell-label">
-                Equipment
-            </div>
-
-            <div class="project-cell-value">
-                One Platform / Category
-            </div>
-
-        </div>
-
-        <div class="project-cell">
-
-            <div class="project-cell-label">
-                Opportunity
-            </div>
-
-            <div class="project-cell-value">
-                One Defined Commercial Question
-            </div>
-
-        </div>
-
-        <div class="project-cell">
-
-            <div class="project-cell-label">
-                Output
-            </div>
-
-            <div class="project-cell-value">
-                Finished Dealer Asset
-            </div>
-
+        <div class="question-statement">
+            The strongest project begins with a commercial question — not a request for generic research.
         </div>
 
     </div>
 
-    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-        The study can be highly specific. It might investigate a particular customer segment, a new menu category, a labor-saving application, an underdeveloped use case, a market expansion opportunity, or a completely new way for the customer to generate revenue.
+    <p style="font-size:0.94rem; margin-bottom:1rem;">
+        A dealer can bring us a product, customer segment, sales problem, or commercial opportunity. We define the research question and build the study around the answer required.
     </p>
 
-    <p style="font-size: 0.95rem;">
-        The dealer does not have to know the answer before commissioning the study. <strong>Finding the answer is the purpose of the study.</strong>
-    </p>
+    <div class="question-grid">
+
+        <div class="question-card">
+            <strong>Market Expansion</strong>
+            <span>
+                What other customer segments could use this equipment profitably?
+            </span>
+        </div>
+
+        <div class="question-card">
+            <strong>New Revenue</strong>
+            <span>
+                What new products, services, menus, or production capabilities could it create?
+            </span>
+        </div>
+
+        <div class="question-card">
+            <strong>Labor / Workflow</strong>
+            <span>
+                Where could this platform replace labor-intensive or inefficient processes?
+            </span>
+        </div>
+
+        <div class="question-card">
+            <strong>Underused Capability</strong>
+            <span>
+                What can this equipment do that customers are not currently being shown?
+            </span>
+        </div>
+
+        <div class="question-card">
+            <strong>Customer Segment</strong>
+            <span>
+                What would this platform look like when designed specifically for hotels, bakeries, cafés, healthcare, commissaries, or other operators?
+            </span>
+        </div>
+
+        <div class="question-card">
+            <strong>Competitive Differentiation</strong>
+            <span>
+                How can the dealer give its sales team a more compelling reason to recommend this platform?
+            </span>
+        </div>
+
+    </div>
 
 </section>
 
 <!-- =========================================================
-     SECTION 3
+     SECTION 4 — WHERE OPPORTUNITY LIVES
 ========================================================= -->
 
 <section>
 
     <h2>
-        3. Where The Opportunity Can Be
+        4. Where The Opportunity Lives
     </h2>
 
-    <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-        The most interesting opportunities are often not obvious extensions of the equipment's traditional use. Provision1 looks for commercial applications that can change what the customer is able to sell, produce, or operate.
+    <p style="font-size:0.94rem; margin-bottom:1rem;">
+        The equipment is the starting point. The commercial question determines the study.
     </p>
 
     <div class="opportunity-grid">
 
-        <div class="opportunity-card revenue">
-
-            <div class="opportunity-label">
-                Revenue Expansion
+        <div class="opportunity-card">
+            <div class="opportunity-title">High-Speed Ovens</div>
+            <div class="opportunity-text">
+                Café expansion, convenience food, hotels, limited-kitchen operations, new hot-food programs.
             </div>
-
-            <div class="opportunity-title">
-                Create A New Revenue Stream
-            </div>
-
-            <div class="opportunity-body">
-                Identify products, services, menu categories, production capabilities, or customer offerings that the equipment could make commercially viable.
-            </div>
-
         </div>
 
         <div class="opportunity-card">
-
-            <div class="opportunity-label">
-                Capacity
+            <div class="opportunity-title">Combi Ovens</div>
+            <div class="opportunity-text">
+                Labor reduction, menu expansion, production kitchens, commissaries, catering, institutional foodservice.
             </div>
-
-            <div class="opportunity-title">
-                Unlock Existing Capacity
-            </div>
-
-            <div class="opportunity-body">
-                Explore how equipment can increase throughput, extend operating hours, add production capability, or make better use of an existing facility.
-            </div>
-
         </div>
 
         <div class="opportunity-card">
-
-            <div class="opportunity-label">
-                Labor
+            <div class="opportunity-title">Food Processors</div>
+            <div class="opportunity-text">
+                Prep labor, batch production, prepared foods, sauces, fillings, bakery and commissary applications.
             </div>
-
-            <div class="opportunity-title">
-                Replace Or Simplify Labor
-            </div>
-
-            <div class="opportunity-body">
-                Investigate applications where automation, speed, consistency, or workflow redesign can reduce labor dependency.
-            </div>
-
         </div>
 
         <div class="opportunity-card">
-
-            <div class="opportunity-label">
-                Market Expansion
+            <div class="opportunity-title">Commercial Blenders</div>
+            <div class="opportunity-text">
+                Beverage programs, sauces, soups, frozen products, hotel applications and new menu categories.
             </div>
-
-            <div class="opportunity-title">
-                Find New Customer Segments
-            </div>
-
-            <div class="opportunity-body">
-                Identify businesses that may not traditionally purchase the equipment but could benefit from its capabilities.
-            </div>
-
         </div>
 
         <div class="opportunity-card">
-
-            <div class="opportunity-label">
-                Menu Development
+            <div class="opportunity-title">Blast Chilling / Cooling</div>
+            <div class="opportunity-text">
+                Cook-chill, production centralization, food safety, commissary operations and capacity expansion.
             </div>
-
-            <div class="opportunity-title">
-                Turn Equipment Into Products
-            </div>
-
-            <div class="opportunity-body">
-                Develop concrete food, beverage, production, or service concepts that demonstrate what the equipment makes possible.
-            </div>
-
         </div>
 
         <div class="opportunity-card">
-
-            <div class="opportunity-label">
-                Process Replacement
+            <div class="opportunity-title">Refrigeration / Display</div>
+            <div class="opportunity-text">
+                Grab-and-go, prepared foods, merchandising, foodservice expansion and new retail-adjacent revenue.
             </div>
-
-            <div class="opportunity-title">
-                Replace An Existing Workflow
-            </div>
-
-            <div class="opportunity-body">
-                Examine whether the equipment can consolidate steps, replace another process, reduce equipment requirements, or simplify production.
-            </div>
-
         </div>
 
-    </div>
-
-</section>
-
-<!-- =========================================================
-     SECTION 4
-========================================================= -->
-
-<section>
-
-    <h2>
-        4. This Works Across The Dealer's Portfolio
-    </h2>
-
-    <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-        A dealer does not have to limit the relationship to one machine. The same development model can be applied repeatedly across categories, manufacturers, customer segments, and commercial questions.
-    </p>
-
-    <div class="equipment-strip">
-
-        <div class="equipment-strip-title">
-            EXAMPLES OF EQUIPMENT PLATFORMS THAT CAN BECOME STUDY SUBJECTS
+        <div class="opportunity-card">
+            <div class="opportunity-title">Bakery Equipment</div>
+            <div class="opportunity-text">
+                New product lines, production scaling, labor reduction and commissary opportunities.
+            </div>
         </div>
 
-        <div class="equipment-list">
-
-            <div class="equipment-tag">
-                High-Speed Ovens
+        <div class="opportunity-card">
+            <div class="opportunity-title">Vacuum / Packaging</div>
+            <div class="opportunity-text">
+                Shelf-life strategy, prep centralization, catering, grab-and-go and production workflow.
             </div>
-
-            <div class="equipment-tag">
-                Combi Ovens
-            </div>
-
-            <div class="equipment-tag">
-                Food Processors
-            </div>
-
-            <div class="equipment-tag">
-                Blenders
-            </div>
-
-            <div class="equipment-tag">
-                Mixers
-            </div>
-
-            <div class="equipment-tag">
-                Pressure-Cooking Systems
-            </div>
-
-            <div class="equipment-tag">
-                Frying Systems
-            </div>
-
-            <div class="equipment-tag">
-                Refrigeration
-            </div>
-
-            <div class="equipment-tag">
-                Holding Systems
-            </div>
-
-            <div class="equipment-tag">
-                Preparation Equipment
-            </div>
-
-            <div class="equipment-tag">
-                Beverage Systems
-            </div>
-
-            <div class="equipment-tag">
-                Specialty Equipment
-            </div>
-
         </div>
 
-    </div>
-
-    <p style="font-size: 0.95rem;">
-        A study might begin with a high-speed oven platform such as Merrychef, a combi platform such as Rational, a preparation platform such as Robot Coupe, a blending platform such as Vitamix, or another category entirely.
-    </p>
-
-    <p style="font-size: 0.95rem; margin-top: 0.75rem;">
-        The manufacturer is not the research question. <strong>The commercial opportunity is.</strong>
-    </p>
-
-</section>
-
-<!-- =========================================================
-     SECTION 5
-========================================================= -->
-
-<section>
-
-    <h2>
-        5. The Portfolio Model
-    </h2>
-
-    <div class="portfolio-box">
-
-        <div class="portfolio-title">
-            ONE COMMISSION CAN BECOME A REPEATABLE DEVELOPMENT PROGRAM
-        </div>
-
-        <div class="portfolio-flow">
-
-            <div class="portfolio-step">
-                <strong>
-                    01 — Product
-                </strong>
-                <span>
-                    Select an equipment platform with underdeveloped commercial potential.
-                </span>
+        <div class="opportunity-card">
+            <div class="opportunity-title">Cooking Platforms</div>
+            <div class="opportunity-text">
+                Induction, rapid cooking and specialized platforms that can create capabilities where conventional kitchens cannot.
             </div>
-
-            <div class="portfolio-step">
-                <strong>
-                    02 — Segment
-                </strong>
-                <span>
-                    Select the customer type or market opportunity to investigate.
-                </span>
-            </div>
-
-            <div class="portfolio-step">
-                <strong>
-                    03 — Study
-                </strong>
-                <span>
-                    Commission a focused commercial application report.
-                </span>
-            </div>
-
-            <div class="portfolio-step">
-                <strong>
-                    04 — Repeat
-                </strong>
-                <span>
-                    Apply the same intelligence model to another product or customer opportunity.
-                </span>
-            </div>
-
         </div>
 
     </div>
@@ -1320,28 +1188,11 @@
     <div class="callout-block">
 
         <div class="callout-title">
-            THE IMPORTANT COMMERCIAL EFFECT
+            NOT LIMITED TO THESE CATEGORIES
         </div>
 
         <div class="callout-body">
-
-            <p>
-                A dealer that carries multiple equipment categories may have dozens of potential study subjects.
-            </p>
-
-            <p>
-                One project could investigate a high-speed oven for independent cafés.
-                Another could investigate a combi oven for assisted living.
-                Another could investigate food preparation equipment for commissary kitchens.
-                Another could investigate blending equipment for a new beverage program.
-            </p>
-
-            <p>
-                <strong>
-                    The relationship becomes a portfolio of commissioned commercial assets rather than a one-time report.
-                </strong>
-            </p>
-
+            The relevant question is whether a piece of equipment contains commercially underdeveloped application potential. If it does, it may be a candidate for a commissioned study.
         </div>
 
     </div>
@@ -1349,254 +1200,140 @@
 </section>
 
 <!-- =========================================================
-     SECTION 6
+     SECTION 5 — WHAT YOU RECEIVE
 ========================================================= -->
 
 <section>
 
     <h2>
-        6. What We Actually Build
+        5. What You Actually Receive
     </h2>
-
-    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-        Provision1 converts research, technical information, food and process knowledge, customer analysis, and commercial reasoning into a practical application resource.
-    </p>
 
     <div class="deliverable-box">
 
         <div class="deliverable-header">
-            EXAMPLE COMMISSIONED STUDY COMPONENTS
+            EXAMPLE COMMISSIONED DELIVERABLE SET
         </div>
 
         <div class="deliverable-list">
 
             <div class="deliverable-item">
-
-                <strong>
-                    Market Opportunity Map
-                </strong>
-
+                <strong>Customer Opportunity Map</strong>
                 <span>
-                    Identify customer segments and operating environments where the equipment may have unusual or underdeveloped commercial value.
+                    Identify the operating profiles and customer environments where the application has commercial relevance.
                 </span>
-
             </div>
 
             <div class="deliverable-item">
-
-                <strong>
-                    Customer Archetypes
-                </strong>
-
+                <strong>Application Library</strong>
                 <span>
-                    Define the operating profiles most likely to benefit from the application.
+                    Concrete applications, workflows, products, menus, or operating concepts appropriate to the study.
                 </span>
-
             </div>
 
             <div class="deliverable-item">
-
-                <strong>
-                    Application Library
-                </strong>
-
+                <strong>New-Revenue Concepts</strong>
                 <span>
-                    Develop specific operational, menu, production, or service applications.
+                    Identify ways the equipment may enable additional products, services, capacity, or revenue streams.
                 </span>
-
             </div>
 
             <div class="deliverable-item">
-
-                <strong>
-                    New Revenue Opportunities
-                </strong>
-
+                <strong>Qualification Questions</strong>
                 <span>
-                    Identify products, services, programs, or workflows that could create incremental revenue.
+                    Give sales representatives a structured way to identify whether a prospect fits the opportunity.
                 </span>
-
             </div>
 
             <div class="deliverable-item">
-
-                <strong>
-                    Workflow Analysis
-                </strong>
-
+                <strong>Application Pathways</strong>
                 <span>
-                    Examine how the equipment changes production, labor, capacity, footprint, or process flow.
+                    Connect customer requirements to equipment capabilities, configurations, workflows, and applications.
                 </span>
-
             </div>
 
             <div class="deliverable-item">
-
-                <strong>
-                    Qualification Framework
-                </strong>
-
+                <strong>Demonstration Concepts</strong>
                 <span>
-                    Give sales representatives questions for recognizing prospects that fit the opportunity.
+                    Define practical demonstrations that allow the salesperson to make the opportunity tangible.
                 </span>
-
             </div>
 
             <div class="deliverable-item">
-
-                <strong>
-                    Sales Conversation Paths
-                </strong>
-
+                <strong>Sales Conversation Paths</strong>
                 <span>
-                    Provide practical ways to introduce the opportunity and connect equipment capability to customer objectives.
+                    Translate the research into practical conversations, objections, discovery points, and proposal logic.
                 </span>
-
             </div>
 
             <div class="deliverable-item">
-
-                <strong>
-                    Customer-Facing Report
-                </strong>
-
+                <strong>Economic Logic</strong>
                 <span>
-                    Produce a polished commercial document that can support demonstrations, proposals, presentations, and sales conversations.
+                    Where reliable inputs exist, connect the application to throughput, labor, capacity, footprint, or revenue considerations.
                 </span>
-
             </div>
 
         </div>
 
     </div>
 
+    <p style="font-size:0.92rem;">
+        The output is not simply a research document. It is a <strong>commercial asset designed to be used by the dealer.</strong>
+    </p>
+
 </section>
 
 <!-- =========================================================
-     SECTION 7
+     SECTION 6 — HOW IT WORKS
 ========================================================= -->
 
 <section>
 
     <h2>
-        7. The Development Process
+        6. How It Works
     </h2>
-
-    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-        The project begins with the dealer's commercial question rather than with a generic equipment study.
-    </p>
 
     <div class="pipeline-container">
 
         <div class="pipeline-step">
-            <div class="pipeline-step-num">
-                Step 01
-            </div>
-
-            <div class="pipeline-step-title">
-                Select Platform
-            </div>
+            <div class="pipeline-step-num">01</div>
+            <div class="pipeline-step-title">Define Question</div>
         </div>
 
-        <div class="pipeline-arrow">
-            &rarr;
-        </div>
+        <div class="pipeline-arrow">&rarr;</div>
 
         <div class="pipeline-step">
-            <div class="pipeline-step-num">
-                Step 02
-            </div>
-
-            <div class="pipeline-step-title">
-                Define Opportunity
-            </div>
+            <div class="pipeline-step-num">02</div>
+            <div class="pipeline-step-title">Research</div>
         </div>
 
-        <div class="pipeline-arrow">
-            &rarr;
-        </div>
+        <div class="pipeline-arrow">&rarr;</div>
 
         <div class="pipeline-step">
-            <div class="pipeline-step-num">
-                Step 03
-            </div>
-
-            <div class="pipeline-step-title">
-                Research
-            </div>
+            <div class="pipeline-step-num">03</div>
+            <div class="pipeline-step-title">Develop Applications</div>
         </div>
 
-        <div class="pipeline-arrow">
-            &rarr;
-        </div>
+        <div class="pipeline-arrow">&rarr;</div>
 
         <div class="pipeline-step">
-            <div class="pipeline-step-num">
-                Step 04
-            </div>
-
-            <div class="pipeline-step-title">
-                Develop Applications
-            </div>
+            <div class="pipeline-step-num">04</div>
+            <div class="pipeline-step-title">Build Asset</div>
         </div>
 
-        <div class="pipeline-arrow">
-            &rarr;
-        </div>
+        <div class="pipeline-arrow">&rarr;</div>
 
         <div class="pipeline-step">
-            <div class="pipeline-step-num">
-                Step 05
-            </div>
-
-            <div class="pipeline-step-title">
-                Deliver Study
-            </div>
+            <div class="pipeline-step-num">05</div>
+            <div class="pipeline-step-title">Deploy</div>
         </div>
 
     </div>
-
-    <div class="callout-block">
-
-        <div class="callout-title">
-            THE IMPORTANT DIFFERENCE
-        </div>
-
-        <div class="callout-body">
-
-            <p>
-                Provision1 is not simply repackaging manufacturer literature.
-            </p>
-
-            <p>
-                The development work occurs at the intersection of
-                <strong>equipment capability, customer operation, application opportunity, food/process knowledge, and dealer commercial strategy.</strong>
-            </p>
-
-            <p>
-                The output is therefore specific to the question the dealer wants answered.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================================================
-     SECTION 8
-========================================================= -->
-
-<section>
-
-    <h2>
-        8. From Equipment To Commercial Intelligence
-    </h2>
 
     <div class="architecture-diagram">
 
         <div class="architecture-title">
-            COMMISSIONED DEVELOPMENT FLOW
+            FROM COMMERCIAL QUESTION TO DEALER ASSET
         </div>
 
         <div class="architecture-flow">
@@ -1604,62 +1341,56 @@
             <div class="architecture-node">
 
                 <div class="node-label">
-                    Starting Point
+                    Dealer Input
                 </div>
 
                 <div class="node-title">
-                    Equipment Platform
+                    Equipment + Commercial Question
                 </div>
 
                 <div class="node-description">
-                    Product capabilities, specifications, accessories, demonstrations, manufacturer information, dealer experience, and known applications.
+                    A product, customer segment, sales challenge, underused capability, or potential new revenue stream.
                 </div>
 
             </div>
 
-            <div class="architecture-arrow">
-                &darr;
-            </div>
+            <div class="architecture-arrow">&darr;</div>
 
             <div class="architecture-node primary">
 
                 <div class="node-label">
-                    Provision1 Analysis
+                    Provision1 Development
                 </div>
 
                 <div class="node-title">
-                    Customer + Application + Market Mapping
+                    Research + Application Engineering
                 </div>
 
                 <div class="node-description">
-                    Identify operational problems, customer profiles, unmet needs, workflows, product opportunities, and commercial possibilities.
+                    Investigate the operating environment, develop applications, evaluate workflows, and translate capability into commercial opportunity.
                 </div>
 
             </div>
 
-            <div class="architecture-arrow">
-                &darr;
-            </div>
+            <div class="architecture-arrow">&darr;</div>
 
             <div class="architecture-node domain">
 
                 <div class="node-label">
-                    Commercial Development
+                    Commercial Translation
                 </div>
 
                 <div class="node-title">
-                    Application + Revenue Opportunity
+                    Sales &amp; Use-Case System
                 </div>
 
                 <div class="node-description">
-                    Determine what the customer could produce, sell, change, replace, add, or improve because the equipment is available.
+                    Organize the findings into customer profiles, applications, demonstrations, qualification logic, and sales pathways.
                 </div>
 
             </div>
 
-            <div class="architecture-arrow">
-                &darr;
-            </div>
+            <div class="architecture-arrow">&darr;</div>
 
             <div class="architecture-node final">
 
@@ -1668,11 +1399,11 @@
                 </div>
 
                 <div class="node-title">
-                    Finished Commercial Study
+                    A New Reason To Sell The Equipment
                 </div>
 
                 <div class="node-description">
-                    A proprietary or dealer-specific resource that can support prospecting, qualification, demonstrations, proposals, and sales conversations.
+                    A finished commercial resource that can be used by the dealer's sales organization in prospecting, demonstrations, proposals, and customer conversations.
                 </div>
 
             </div>
@@ -1684,13 +1415,13 @@
 </section>
 
 <!-- =========================================================
-     SECTION 9
+     SECTION 7 — EXAMPLE
 ========================================================= -->
 
 <section>
 
     <h2>
-        9. Example Commission: High-Speed Oven / Café Revenue Expansion
+        7. A Commissioned Study In Practice
     </h2>
 
     <div class="study-box">
@@ -1698,7 +1429,39 @@
         <div class="study-header">
 
             <div class="study-title">
-                Commissioned Application Study
+                High-Speed Oven / Independent Café Expansion Study
+            </div>
+
+        </div>
+
+        <div class="study-grid">
+
+            <div class="study-cell">
+                <div class="study-label">Dealer Question</div>
+                <div class="study-value">
+                    How can we sell this platform to independent cafés that cannot support a conventional hot kitchen?
+                </div>
+            </div>
+
+            <div class="study-cell">
+                <div class="study-label">Customer</div>
+                <div class="study-value">
+                    Independent cafés seeking to add meaningful hot-food capability.
+                </div>
+            </div>
+
+            <div class="study-cell">
+                <div class="study-label">Commercial Problem</div>
+                <div class="study-value">
+                    The customer sees an oven but does not necessarily see a viable new food program.
+                </div>
+            </div>
+
+            <div class="study-cell">
+                <div class="study-label">Opportunity</div>
+                <div class="study-value">
+                    Develop a practical hot-food program around the equipment's speed, footprint, workflow, and application capabilities.
+                </div>
             </div>
 
         </div>
@@ -1706,106 +1469,12 @@
         <div class="study-body">
 
             <p>
-                A dealer sells high-speed cooking equipment to cafés and small foodservice operators. Those customers understand that the equipment cooks quickly, but many still view it primarily as a faster way to perform an existing task.
+                The resulting study could identify target operating profiles, menu opportunities, production workflows, demonstration applications, qualification questions, and commercial logic.
             </p>
 
-            <p>
-                The dealer commissions Provision1 to investigate a different question:
-                <strong>Can the equipment enable a meaningful new food or revenue program for an operation that cannot justify a conventional kitchen?</strong>
+            <p style="margin-top:0.7rem;">
+                The dealer does not simply receive information about the oven. The dealer receives a <strong>purpose-built reason to introduce the oven to a new class of customer.</strong>
             </p>
-
-            <p>
-                The resulting study could examine target customer profiles, footprint limitations, menu opportunities, workflow requirements, production scenarios, labor implications, equipment utilization, and potential new offerings.
-            </p>
-
-            <p>
-                The finished report could then become a dealer sales asset used to approach cafés that previously did not consider themselves candidates for the equipment.
-            </p>
-
-            <p>
-                The value is therefore not simply that the dealer knows more about the oven.
-                <strong>The dealer now has a commercial argument for selling the oven to a different customer for a different reason.</strong>
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================================================
-     SECTION 10
-========================================================= -->
-
-<section>
-
-    <h2>
-        10. Other Questions A Dealer Could Commission
-    </h2>
-
-    <div class="opportunity-grid">
-
-        <div class="opportunity-card">
-
-            <div class="opportunity-label">
-                Combi Oven
-            </div>
-
-            <div class="opportunity-title">
-                What Can A Combi Oven Enable In Small Operations?
-            </div>
-
-            <div class="opportunity-body">
-                Investigate applications for bakeries, cafés, hotels, prepared-food operations, commissaries, or other businesses that may be underusing combi capability.
-            </div>
-
-        </div>
-
-        <div class="opportunity-card">
-
-            <div class="opportunity-label">
-                Food Preparation
-            </div>
-
-            <div class="opportunity-title">
-                Where Can Automated Preparation Replace Labor?
-            </div>
-
-            <div class="opportunity-body">
-                Examine preparation-intensive operations and identify workflows where equipment could consolidate labor or increase production capacity.
-            </div>
-
-        </div>
-
-        <div class="opportunity-card revenue">
-
-            <div class="opportunity-label">
-                Blending
-            </div>
-
-            <div class="opportunity-title">
-                Can Blending Equipment Create A New Beverage Program?
-            </div>
-
-            <div class="opportunity-body">
-                Explore beverage, dessert, nutrition, café, hospitality, or foodservice applications that could become incremental product categories.
-            </div>
-
-        </div>
-
-        <div class="opportunity-card revenue">
-
-            <div class="opportunity-label">
-                Pressure Cooking
-            </div>
-
-            <div class="opportunity-title">
-                What New Production Capability Does Pressure Cooking Unlock?
-            </div>
-
-            <div class="opportunity-body">
-                Investigate applications where speed, batch production, consistency, or process compression could support new products or service models.
-            </div>
 
         </div>
 
@@ -1814,23 +1483,28 @@
     <div class="callout-block">
 
         <div class="callout-title">
-            THE QUESTION IS NOT "WHAT DOES THE MACHINE DO?"
+            THE QUESTION CAN CHANGE
         </div>
 
         <div class="callout-body">
 
             <p>
-                The better question is:
+                The same dealer could later commission a different study:
+                <strong>the same equipment for hotels.</strong>
             </p>
 
             <p>
-                <strong>
-                    "What commercially useful thing could a customer do because they own this machine that they cannot easily do today?"
-                </strong>
+                Then another:
+                <strong>the same platform for convenience stores.</strong>
             </p>
 
             <p>
-                That is the territory of a Provision1 commissioned application study.
+                Then another equipment category:
+                <strong>a food processor for commissary production.</strong>
+            </p>
+
+            <p>
+                Each project answers a different commercial question.
             </p>
 
         </div>
@@ -1840,235 +1514,143 @@
 </section>
 
 <!-- =========================================================
-     SECTION 11
+     SECTION 8 — PORTFOLIO MODEL
 ========================================================= -->
 
 <section>
 
     <h2>
-        11. Why This Matters To A Multi-Category Dealer
+        8. The Dealer Portfolio Model
     </h2>
 
-    <div class="grid-4">
+    <div class="portfolio-box">
 
-        <div class="feature-card highlight-card">
+        <div class="callout-title">
+            BUILT FOR MULTI-CATEGORY DEALERS
+        </div>
 
-            <div class="card-header">
-                01
+        <p style="font-size:0.94rem; margin-bottom:1rem;">
+            A dealer that carries multiple equipment categories does not have to commission the same study repeatedly. The commercial questions change with the equipment, customer segment, territory, and sales objective.
+        </p>
+
+        <div class="portfolio-flow">
+
+            <div class="portfolio-step">
+                <div class="portfolio-step-number">COMMISSION 01</div>
+                <div class="portfolio-step-title">
+                    High-Speed Oven<br>
+                    + Independent Cafés
+                </div>
             </div>
 
-            <div class="card-title">
-                More Uses
+            <div class="portfolio-step">
+                <div class="portfolio-step-number">COMMISSION 02</div>
+                <div class="portfolio-step-title">
+                    Food Processor<br>
+                    + Commissary Kitchens
+                </div>
             </div>
 
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Give sales representatives more commercially relevant reasons to introduce equipment.
-            </p>
+            <div class="portfolio-step">
+                <div class="portfolio-step-number">COMMISSION 03</div>
+                <div class="portfolio-step-title">
+                    Commercial Blender<br>
+                    + Hotel Beverage Programs
+                </div>
+            </div>
 
         </div>
 
-        <div class="feature-card highlight-card">
+        <div class="portfolio-final">
 
-            <div class="card-header">
-                02
+            <div class="portfolio-final-title">
+                DEALER APPLICATION INTELLIGENCE PORTFOLIO
             </div>
 
-            <div class="card-title">
-                New Customers
+            <div class="portfolio-final-text">
+                A growing library of proprietary commercial questions, applications, customer opportunities, demonstrations, and sales assets.
             </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Identify customer segments that may not currently recognize themselves as equipment prospects.
-            </p>
-
-        </div>
-
-        <div class="feature-card highlight-card">
-
-            <div class="card-header">
-                03
-            </div>
-
-            <div class="card-title">
-                New Revenue
-            </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Find applications where equipment can enable customers to add products, services, capacity, or entire revenue streams.
-            </p>
-
-        </div>
-
-        <div class="feature-card highlight-card">
-
-            <div class="card-header">
-                04
-            </div>
-
-            <div class="card-title">
-                Portfolio Development
-            </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Build a continuing portfolio of commissioned studies across the dealer's equipment categories.
-            </p>
 
         </div>
 
     </div>
 
-</section>
-
-<!-- =========================================================
-     SECTION 12
-========================================================= -->
-
-<section>
-
-    <h2>
-        12. Why Exclusivity Matters
-    </h2>
-
-    <div class="exclusive-box">
-
-        <div class="exclusive-title">
-            THE DEALER'S COMMERCIAL ADVANTAGE
-        </div>
-
-        <div class="exclusive-statement">
-            A commissioned study can become a differentiated sales resource that competing dealers do not possess.
-        </div>
-
-    </div>
-
-    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-        Where commercially appropriate, a Provision1 project can include defined territorial, channel, customer-segment, or equipment-specific exclusivity.
-    </p>
-
-    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-        The purpose is straightforward: the dealer that commissions the development should receive a meaningful commercial advantage from having it.
-    </p>
-
-    <p style="font-size: 0.95rem;">
-        Exclusivity can be defined according to the actual commercial structure of the project rather than imposed as a generic condition.
+    <p style="font-size:0.94rem;">
+        This creates a repeatable development model: <strong>one dealer can commission multiple focused studies over time, each addressing a different commercial opportunity.</strong>
     </p>
 
 </section>
 
 <!-- =========================================================
-     SECTION 13 — IP
+     SECTION 9 — RIGHTS + ADVANTAGE
 ========================================================= -->
 
 <section>
 
     <h2>
-        13. Intellectual Property Structure
+        9. Commercial Rights &amp; Dealer Advantage
     </h2>
 
-    <div class="ip-box">
+    <div class="rights-grid">
 
-        <div class="ip-title">
-            PROJECT-SPECIFIC COMMERCIAL RIGHTS
-        </div>
+        <div class="rights-card">
 
-        <div class="ip-body">
+            <div class="rights-title">
+                Dealer-Specific Asset
+            </div>
 
-            <p style="margin-bottom: 0.75rem;">
-                Each commissioned project is governed by a written agreement establishing the permitted use of the resulting commercial resource.
-            </p>
-
-            <p style="margin-bottom: 0.75rem;">
-                <strong>Dealer-specific work product</strong> may be licensed or assigned for the agreed territory, channel, customer segment, equipment platform, and term.
-            </p>
-
-            <p style="margin-bottom: 0.75rem;">
-                <strong>Provision1 retains its underlying methodology, frameworks, development processes, general know-how, and reusable intellectual property</strong> unless otherwise agreed in writing.
-            </p>
-
-            <p>
-                This structure allows the dealer to obtain a genuine proprietary commercial asset while preserving the underlying development system that makes additional studies possible.
-            </p>
+            <div class="rights-text">
+                Each project is governed by a written agreement defining permitted use of the resulting commercial resource.
+            </div>
 
         </div>
 
-    </div>
+        <div class="rights-card">
 
-</section>
-
-<!-- =========================================================
-     SECTION 14
-========================================================= -->
-
-<section>
-
-    <h2>
-        14. What The Dealer Receives
-    </h2>
-
-    <div class="grid-4">
-
-        <div class="feature-card highlight-card">
-
-            <div class="card-header">
-                01
+            <div class="rights-title">
+                Exclusivity
             </div>
 
-            <div class="card-title">
-                Commissioned Study
+            <div class="rights-text">
+                Where appropriate, territorial, channel, customer-segment, equipment-platform, or duration-based exclusivity can be established.
             </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                A focused commercial report built around the question the dealer wants answered.
-            </p>
 
         </div>
 
-        <div class="feature-card highlight-card">
+        <div class="rights-card">
 
-            <div class="card-header">
-                02
+            <div class="rights-title">
+                Provision1 Methodology
             </div>
 
-            <div class="card-title">
-                Sales Utility
+            <div class="rights-text">
+                Provision1 retains its underlying methodologies, frameworks, development processes, general know-how, and reusable intellectual property unless otherwise agreed in writing.
             </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Structured so representatives can use the findings in prospecting, qualification, demonstrations, and proposals.
-            </p>
 
         </div>
 
-        <div class="feature-card highlight-card">
+        <div class="rights-card">
 
-            <div class="card-header">
-                03
-            </div>
-
-            <div class="card-title">
-                Application Intelligence
-            </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Concrete applications rather than another restatement of product specifications.
-            </p>
-
-        </div>
-
-        <div class="feature-card highlight-card">
-
-            <div class="card-header">
-                04
-            </div>
-
-            <div class="card-title">
+            <div class="rights-title">
                 Commercial Advantage
             </div>
 
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Where agreed, exclusivity and dealer-specific development create differentiation in the marketplace.
-            </p>
+            <div class="rights-text">
+                The dealer receives a differentiated sales resource designed around its commercial opportunity rather than generic manufacturer literature.
+            </div>
 
+        </div>
+
+    </div>
+
+    <div class="callout-block">
+
+        <div class="callout-title">
+            WHY THIS MATTERS
+        </div>
+
+        <div class="callout-body">
+            A dealer that commissions the development should have a meaningful commercial advantage from having it. The objective is not merely to possess a report. It is to possess application intelligence that helps the sales organization open conversations competitors cannot.
         </div>
 
     </div>
@@ -2076,47 +1658,33 @@
 </section>
 
 <!-- =========================================================
-     SECTION 15
+     SECTION 10 — FIRST COMMISSION + CTA
 ========================================================= -->
 
 <section>
 
     <h2>
-        15. The First Commission
+        10. Start With One Commercial Question
     </h2>
 
     <div class="callout-block">
 
         <div class="callout-title">
-            START WITH THE EQUIPMENT THAT HAS THE BIGGEST UNANSWERED QUESTION
+            THE FIRST COMMISSION
         </div>
 
         <div class="callout-body">
 
             <p>
-                A dealer does not need to commission a large program to begin.
+                The best starting point is usually a piece of equipment already in your portfolio that you believe has substantially more application or revenue potential than your customers currently understand.
             </p>
 
             <p>
-                Select one equipment platform where the sales organization suspects there is more commercial potential than the current sales materials communicate.
+                Bring us the equipment and the question. Provision1 can define the development scope, required inputs, deliverables, schedule, commercial terms, and applicable rights structure before work begins.
             </p>
 
             <p>
-                Then define the question.
-            </p>
-
-            <p>
-                <strong>
-                    Which customers are we not reaching? What new application should we investigate? What revenue stream could this equipment enable? Where is this platform being underutilized? What could we sell if the customer understood the application differently?
-                </strong>
-            </p>
-
-            <p>
-                Provision1 develops the study around that question and delivers a finished commercial resource.
-            </p>
-
-            <p>
-                If the first study produces useful intelligence, the same development model can be applied to another product, another customer segment, or another category.
+                The result is a finite project with a finished commercial output — not an indefinite consulting relationship.
             </p>
 
         </div>
@@ -2132,16 +1700,21 @@
 <div class="cta-box">
 
     <div class="cta-title">
-        WHAT EQUIPMENT IN YOUR PORTFOLIO HAS MORE COMMERCIAL POTENTIAL THAN YOUR SALES MATERIALS SHOW?
+        HAVE A PIECE OF EQUIPMENT YOUR CUSTOMERS AREN'T FULLY UNDERSTANDING?
     </div>
 
     <p class="cta-text">
-        Tell Provision1 the equipment platform, the customer segment, or simply the commercial question. We can define a focused commissioned application study around the opportunity.
+        Tell us the equipment, the customer segment, or simply the commercial problem. We can determine whether there is a worthwhile application question to investigate.
     </p>
 
     <p class="cta-highlight">
-        One question. One equipment platform. One commercial opportunity. One finished intelligence asset.
+        Commission the question. Build the answer. Put it to work.
     </p>
+
+    <!-- Replace the email address below with the preferred Provision1 contact address. -->
+    <a class="cta-button" href="mailto:principal.p1.lab@proton.me">
+        Discuss A First Commission
+    </a>
 
 </div>
 
@@ -2151,16 +1724,16 @@
 
 <div class="closing-box">
 
-    <div class="callout-title" style="margin-bottom: 0.75rem;">
+    <div class="callout-title" style="margin-bottom:0.7rem;">
         THE PROVISION1 PROPOSITION
     </div>
 
     <p class="closing-text">
-        "You already have the equipment portfolio. We investigate the commercial possibilities that are not obvious from the product literature — and turn those possibilities into usable sales intelligence."
+        "You already have the equipment. The manufacturer already has the specifications. We investigate the commercial opportunities those specifications don't necessarily reveal."
     </p>
 
     <p class="closing-highlight">
-        Find the application. Build the case. Create the reason to buy.
+        Turn equipment capability into a reason to buy.
     </p>
 
 </div>
