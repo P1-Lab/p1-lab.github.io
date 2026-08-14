@@ -340,6 +340,136 @@
         }
 
         /* =========================================================
+           OPPORTUNITY GRID
+        ========================================================= */
+
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin: 1.5rem 0 2.5rem 0;
+        }
+
+        .opportunity-card {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1.35rem;
+        }
+
+        .opportunity-card.revenue {
+            border-top: 3px solid var(--brass);
+        }
+
+        .opportunity-label {
+            font-family: var(--mono-font);
+            font-size: 0.68rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .opportunity-title {
+            font-family: var(--mono-font);
+            font-size: 0.9rem;
+            color: var(--forest);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 0.65rem;
+        }
+
+        .opportunity-body {
+            font-size: 0.84rem;
+            line-height: 1.5;
+        }
+
+        /* =========================================================
+           EQUIPMENT CATEGORIES
+        ========================================================= */
+
+        .equipment-strip {
+            border: 1px solid #000;
+            background: #fff;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .equipment-strip-title {
+            font-family: var(--mono-font);
+            font-size: 0.72rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .equipment-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .equipment-tag {
+            border: 1px solid var(--border-color);
+            padding: 0.55rem 0.7rem;
+            font-family: var(--mono-font);
+            font-size: 0.7rem;
+            color: var(--forest);
+            text-transform: uppercase;
+            background: #faf8f2;
+        }
+
+        /* =========================================================
+           PORTFOLIO MODEL
+        ========================================================= */
+
+        .portfolio-box {
+            border: 2px solid var(--forest);
+            background: #f4f6f4;
+            padding: 1.75rem;
+            margin: 2rem 0;
+        }
+
+        .portfolio-title {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .portfolio-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .portfolio-step {
+            background: #fff;
+            border: 1px solid #000;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .portfolio-step strong {
+            display: block;
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--forest);
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .portfolio-step span {
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+
+        /* =========================================================
            PIPELINE
         ========================================================= */
 
@@ -570,14 +700,14 @@
         }
 
         /* =========================================================
-           EXAMPLE STUDY
+           EXAMPLE STUDIES
         ========================================================= */
 
         .study-box {
             border: 2px solid var(--brass);
             background: #faf8f2;
             padding: 1.75rem 2rem;
-            margin: 3rem 0 2rem 0;
+            margin: 2rem 0;
         }
 
         .study-header {
@@ -598,6 +728,14 @@
             font-size: 0.9rem;
             color: var(--text-color);
             line-height: 1.6;
+        }
+
+        .study-body p {
+            margin-bottom: 0.75rem;
+        }
+
+        .study-body p:last-child {
+            margin-bottom: 0;
         }
 
         /* =========================================================
@@ -707,7 +845,9 @@
         @media (max-width: 768px) {
 
             .grid-4,
-            .project-frame {
+            .project-frame,
+            .portfolio-flow,
+            .opportunity-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -754,19 +894,19 @@
     </h1>
 
     <div class="doc-descriptor">
-        Proprietary Sales &amp; Use-Case Development For Equipment Dealers
+        Commissioned Commercial Intelligence For Equipment Dealers
     </div>
 
     <p class="tagline">
-        One Product. One Customer Segment. One Dealer. One Finished Sales System.
+        Turn Equipment Capability Into New Customer Opportunities.
     </p>
 
     <p class="hero-lead">
-        Equipment dealers do not need another product brochure. They need a better way to show a prospective customer what a piece of equipment can actually do for that customer's operation — and why buying it makes commercial sense.
+        Equipment dealers already possess something extremely valuable: a portfolio of equipment platforms, manufacturers, product categories, territories, and customer relationships. What is often missing is the commercial intelligence that connects those assets to new applications, new customer segments, and new revenue opportunities.
     </p>
 
     <p class="hero-sublead">
-        Provision1 develops finite, dealer-specific sales and application systems around selected equipment platforms. The result is a practical commercial asset that helps a dealer identify opportunities, demonstrate use cases, qualify prospects, and sell the equipment with greater confidence.
+        Provision1 develops commissioned, dealer-specific application studies around selected equipment platforms. Each study identifies what the equipment can enable for a particular customer, operation, or commercial opportunity — and converts that reasoning into a finished sales asset the dealer can use.
     </p>
 
 </header>
@@ -778,15 +918,15 @@
 <div class="hook-container">
 
     <div class="hook-title">
-        THE COMMERCIAL OPPORTUNITY
+        THE DEALER OPPORTUNITY
     </div>
 
     <div class="hook-statement">
-        "You already sell the equipment. We build the sales system that helps your customer understand what else they can do with it."
+        "You may already sell the equipment. We investigate what else your customers could do with it — and build the commercial case for doing it."
     </div>
 
     <div class="hook-subtext">
-        A finished, proprietary application resource designed around one product, one customer segment, and one dealer's commercial territory.
+        A commissioned application study can focus on a product, a customer segment, a workflow, a market opportunity, or a potential new revenue stream.
     </div>
 
 </div>
@@ -798,36 +938,47 @@
 <section>
 
     <h2>
-        1. The Dealer Sales Problem
+        1. The Dealer Has A Different Problem
     </h2>
 
     <div class="callout-block">
 
         <div class="callout-title">
-            PRODUCT KNOWLEDGE IS NOT THE SAME AS SALES APPLICATION INTELLIGENCE
+            DEALERS DO NOT NEED MORE PRODUCT LITERATURE
         </div>
 
         <div class="callout-body">
 
             <p>
-                Manufacturers provide specifications, manuals, recipes, demonstrations, videos, brochures, and technical training. Those resources explain the equipment.
+                Manufacturers provide specifications, manuals, demonstrations, recipes, videos, brochures, technical training, and application support.
             </p>
 
             <p>
-                The dealer still has to answer a different question:
-                <strong>What does this equipment allow this particular customer to do?</strong>
+                Those resources explain the equipment.
+                <strong>They do not necessarily identify the next commercial opportunity for the dealer.</strong>
             </p>
 
             <p>
-                A café owner, bakery operator, convenience-store operator, hotel, restaurant, or institutional buyer is rarely shopping for specifications. They are trying to determine whether a piece of equipment can solve a problem, add a revenue stream, reduce labor, expand a menu, fit an existing footprint, or replace another process.
+                A dealer may carry high-speed ovens, combi ovens, food processors, blenders, mixers, pressure-cooking systems, refrigeration, holding equipment, preparation systems, or multiple competing brands within the same category.
             </p>
 
             <p>
-                That translation from equipment capability to customer opportunity is often left to the individual salesperson.
+                The commercial question is therefore much larger than:
+                <strong>"What does this machine do?"</strong>
             </p>
 
             <p>
-                Provision1 turns that reasoning into a finished sales and application asset that can be used repeatedly by the dealer's sales organization.
+                The better questions are:
+            </p>
+
+            <p>
+                <strong>
+                    Who else could use it? What problem could it solve? What process could it replace? What menu could it enable? What labor could it remove? What capacity could it unlock? And most importantly — could it create an entirely new revenue stream for the customer?
+                </strong>
+            </p>
+
+            <p>
+                Provision1 develops the research and reasoning required to answer those questions.
             </p>
 
         </div>
@@ -843,17 +994,17 @@
 <section>
 
     <h2>
-        2. The Provision1 Offer
+        2. Commission The Question You Want Answered
     </h2>
 
     <div class="proposition-box">
 
         <div class="proposition-title">
-            A FINITE COMMERCIAL DEVELOPMENT PROJECT
+            A COMMISSIONED COMMERCIAL STUDY
         </div>
 
         <div class="proposition-statement">
-            Provision1 takes one equipment platform and develops the customer use cases, application logic, sales pathways, and supporting decision tools required to help a specific dealer sell it more effectively.
+            Start with a piece of equipment, a customer type, or a commercial question. Provision1 develops a focused application study designed to reveal opportunities your sales organization can actually pursue.
         </div>
 
     </div>
@@ -863,11 +1014,11 @@
         <div class="project-cell">
 
             <div class="project-cell-label">
-                Scope
+                Equipment
             </div>
 
             <div class="project-cell-value">
-                One Equipment Platform
+                One Platform / Category
             </div>
 
         </div>
@@ -875,11 +1026,11 @@
         <div class="project-cell">
 
             <div class="project-cell-label">
-                Market
+                Opportunity
             </div>
 
             <div class="project-cell-value">
-                One Defined Customer Segment
+                One Defined Commercial Question
             </div>
 
         </div>
@@ -887,11 +1038,11 @@
         <div class="project-cell">
 
             <div class="project-cell-label">
-                Commercial Owner
+                Output
             </div>
 
             <div class="project-cell-value">
-                One Dealer / Territory
+                Finished Dealer Asset
             </div>
 
         </div>
@@ -899,11 +1050,11 @@
     </div>
 
     <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-        This is intentionally not an open-ended consulting engagement. Each project has a defined subject, defined development scope, defined deliverables, and a finished commercial output.
+        The study can be highly specific. It might investigate a particular customer segment, a new menu category, a labor-saving application, an underdeveloped use case, a market expansion opportunity, or a completely new way for the customer to generate revenue.
     </p>
 
     <p style="font-size: 0.95rem;">
-        The objective is simple: create a resource that the dealer's sales organization can actually put in front of prospects and use in the field.
+        The dealer does not have to know the answer before commissioning the study. <strong>Finding the answer is the purpose of the study.</strong>
     </p>
 
 </section>
@@ -915,115 +1066,107 @@
 <section>
 
     <h2>
-        3. What We Build
+        3. Where The Opportunity Can Be
     </h2>
 
-    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-        Provision1 converts existing product knowledge into a practical sales system organized around the questions a real customer is trying to answer.
+    <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
+        The most interesting opportunities are often not obvious extensions of the equipment's traditional use. Provision1 looks for commercial applications that can change what the customer is able to sell, produce, or operate.
     </p>
 
-    <div class="deliverable-box">
+    <div class="opportunity-grid">
 
-        <div class="deliverable-header">
-            EXAMPLE DELIVERABLE SET
+        <div class="opportunity-card revenue">
+
+            <div class="opportunity-label">
+                Revenue Expansion
+            </div>
+
+            <div class="opportunity-title">
+                Create A New Revenue Stream
+            </div>
+
+            <div class="opportunity-body">
+                Identify products, services, menu categories, production capabilities, or customer offerings that the equipment could make commercially viable.
+            </div>
+
         </div>
 
-        <div class="deliverable-list">
+        <div class="opportunity-card">
 
-            <div class="deliverable-item">
-
-                <strong>
-                    Customer Archetypes
-                </strong>
-
-                <span>
-                    Identify the operating profiles most likely to benefit from the selected equipment platform.
-                </span>
-
+            <div class="opportunity-label">
+                Capacity
             </div>
 
-            <div class="deliverable-item">
-
-                <strong>
-                    Use-Case Library
-                </strong>
-
-                <span>
-                    Define specific operational, menu, production, or revenue applications that can be demonstrated to prospects.
-                </span>
-
+            <div class="opportunity-title">
+                Unlock Existing Capacity
             </div>
 
-            <div class="deliverable-item">
-
-                <strong>
-                    Application Pathways
-                </strong>
-
-                <span>
-                    Connect customer requirements to practical equipment applications and configurations.
-                </span>
-
+            <div class="opportunity-body">
+                Explore how equipment can increase throughput, extend operating hours, add production capability, or make better use of an existing facility.
             </div>
 
-            <div class="deliverable-item">
+        </div>
 
-                <strong>
-                    Sales Qualification Tool
-                </strong>
+        <div class="opportunity-card">
 
-                <span>
-                    Give representatives a structured set of questions for identifying opportunities and matching applications.
-                </span>
-
+            <div class="opportunity-label">
+                Labor
             </div>
 
-            <div class="deliverable-item">
-
-                <strong>
-                    Customer Decision Guide
-                </strong>
-
-                <span>
-                    Translate technical capability into a concise customer-facing explanation of operational fit.
-                </span>
-
+            <div class="opportunity-title">
+                Replace Or Simplify Labor
             </div>
 
-            <div class="deliverable-item">
-
-                <strong>
-                    Sales Conversation Paths
-                </strong>
-
-                <span>
-                    Provide practical reasoning for introducing new applications, handling objections, and advancing the sale.
-                </span>
-
+            <div class="opportunity-body">
+                Investigate applications where automation, speed, consistency, or workflow redesign can reduce labor dependency.
             </div>
 
-            <div class="deliverable-item">
+        </div>
 
-                <strong>
-                    Menu / Product Concepts
-                </strong>
+        <div class="opportunity-card">
 
-                <span>
-                    Where appropriate, develop concrete products, menu items, workflows, or application examples that demonstrate the equipment's potential.
-                </span>
-
+            <div class="opportunity-label">
+                Market Expansion
             </div>
 
-            <div class="deliverable-item">
+            <div class="opportunity-title">
+                Find New Customer Segments
+            </div>
 
-                <strong>
-                    Economic Logic
-                </strong>
+            <div class="opportunity-body">
+                Identify businesses that may not traditionally purchase the equipment but could benefit from its capabilities.
+            </div>
 
-                <span>
-                    Where reliable inputs are available, connect the application to throughput, labor, footprint, capacity, or revenue considerations.
-                </span>
+        </div>
 
+        <div class="opportunity-card">
+
+            <div class="opportunity-label">
+                Menu Development
+            </div>
+
+            <div class="opportunity-title">
+                Turn Equipment Into Products
+            </div>
+
+            <div class="opportunity-body">
+                Develop concrete food, beverage, production, or service concepts that demonstrate what the equipment makes possible.
+            </div>
+
+        </div>
+
+        <div class="opportunity-card">
+
+            <div class="opportunity-label">
+                Process Replacement
+            </div>
+
+            <div class="opportunity-title">
+                Replace An Existing Workflow
+            </div>
+
+            <div class="opportunity-body">
+                Examine whether the equipment can consolidate steps, replace another process, reduce equipment requirements, or simplify production.
             </div>
 
         </div>
@@ -1039,11 +1182,308 @@
 <section>
 
     <h2>
-        4. The Development Process
+        4. This Works Across The Dealer's Portfolio
+    </h2>
+
+    <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
+        A dealer does not have to limit the relationship to one machine. The same development model can be applied repeatedly across categories, manufacturers, customer segments, and commercial questions.
+    </p>
+
+    <div class="equipment-strip">
+
+        <div class="equipment-strip-title">
+            EXAMPLES OF EQUIPMENT PLATFORMS THAT CAN BECOME STUDY SUBJECTS
+        </div>
+
+        <div class="equipment-list">
+
+            <div class="equipment-tag">
+                High-Speed Ovens
+            </div>
+
+            <div class="equipment-tag">
+                Combi Ovens
+            </div>
+
+            <div class="equipment-tag">
+                Food Processors
+            </div>
+
+            <div class="equipment-tag">
+                Blenders
+            </div>
+
+            <div class="equipment-tag">
+                Mixers
+            </div>
+
+            <div class="equipment-tag">
+                Pressure-Cooking Systems
+            </div>
+
+            <div class="equipment-tag">
+                Frying Systems
+            </div>
+
+            <div class="equipment-tag">
+                Refrigeration
+            </div>
+
+            <div class="equipment-tag">
+                Holding Systems
+            </div>
+
+            <div class="equipment-tag">
+                Preparation Equipment
+            </div>
+
+            <div class="equipment-tag">
+                Beverage Systems
+            </div>
+
+            <div class="equipment-tag">
+                Specialty Equipment
+            </div>
+
+        </div>
+
+    </div>
+
+    <p style="font-size: 0.95rem;">
+        A study might begin with a high-speed oven platform such as Merrychef, a combi platform such as Rational, a preparation platform such as Robot Coupe, a blending platform such as Vitamix, or another category entirely.
+    </p>
+
+    <p style="font-size: 0.95rem; margin-top: 0.75rem;">
+        The manufacturer is not the research question. <strong>The commercial opportunity is.</strong>
+    </p>
+
+</section>
+
+<!-- =========================================================
+     SECTION 5
+========================================================= -->
+
+<section>
+
+    <h2>
+        5. The Portfolio Model
+    </h2>
+
+    <div class="portfolio-box">
+
+        <div class="portfolio-title">
+            ONE COMMISSION CAN BECOME A REPEATABLE DEVELOPMENT PROGRAM
+        </div>
+
+        <div class="portfolio-flow">
+
+            <div class="portfolio-step">
+                <strong>
+                    01 — Product
+                </strong>
+                <span>
+                    Select an equipment platform with underdeveloped commercial potential.
+                </span>
+            </div>
+
+            <div class="portfolio-step">
+                <strong>
+                    02 — Segment
+                </strong>
+                <span>
+                    Select the customer type or market opportunity to investigate.
+                </span>
+            </div>
+
+            <div class="portfolio-step">
+                <strong>
+                    03 — Study
+                </strong>
+                <span>
+                    Commission a focused commercial application report.
+                </span>
+            </div>
+
+            <div class="portfolio-step">
+                <strong>
+                    04 — Repeat
+                </strong>
+                <span>
+                    Apply the same intelligence model to another product or customer opportunity.
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="callout-block">
+
+        <div class="callout-title">
+            THE IMPORTANT COMMERCIAL EFFECT
+        </div>
+
+        <div class="callout-body">
+
+            <p>
+                A dealer that carries multiple equipment categories may have dozens of potential study subjects.
+            </p>
+
+            <p>
+                One project could investigate a high-speed oven for independent cafés.
+                Another could investigate a combi oven for assisted living.
+                Another could investigate food preparation equipment for commissary kitchens.
+                Another could investigate blending equipment for a new beverage program.
+            </p>
+
+            <p>
+                <strong>
+                    The relationship becomes a portfolio of commissioned commercial assets rather than a one-time report.
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SECTION 6
+========================================================= -->
+
+<section>
+
+    <h2>
+        6. What We Actually Build
     </h2>
 
     <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-        The project begins with the dealer's commercial objective rather than with a generic equipment study.
+        Provision1 converts research, technical information, food and process knowledge, customer analysis, and commercial reasoning into a practical application resource.
+    </p>
+
+    <div class="deliverable-box">
+
+        <div class="deliverable-header">
+            EXAMPLE COMMISSIONED STUDY COMPONENTS
+        </div>
+
+        <div class="deliverable-list">
+
+            <div class="deliverable-item">
+
+                <strong>
+                    Market Opportunity Map
+                </strong>
+
+                <span>
+                    Identify customer segments and operating environments where the equipment may have unusual or underdeveloped commercial value.
+                </span>
+
+            </div>
+
+            <div class="deliverable-item">
+
+                <strong>
+                    Customer Archetypes
+                </strong>
+
+                <span>
+                    Define the operating profiles most likely to benefit from the application.
+                </span>
+
+            </div>
+
+            <div class="deliverable-item">
+
+                <strong>
+                    Application Library
+                </strong>
+
+                <span>
+                    Develop specific operational, menu, production, or service applications.
+                </span>
+
+            </div>
+
+            <div class="deliverable-item">
+
+                <strong>
+                    New Revenue Opportunities
+                </strong>
+
+                <span>
+                    Identify products, services, programs, or workflows that could create incremental revenue.
+                </span>
+
+            </div>
+
+            <div class="deliverable-item">
+
+                <strong>
+                    Workflow Analysis
+                </strong>
+
+                <span>
+                    Examine how the equipment changes production, labor, capacity, footprint, or process flow.
+                </span>
+
+            </div>
+
+            <div class="deliverable-item">
+
+                <strong>
+                    Qualification Framework
+                </strong>
+
+                <span>
+                    Give sales representatives questions for recognizing prospects that fit the opportunity.
+                </span>
+
+            </div>
+
+            <div class="deliverable-item">
+
+                <strong>
+                    Sales Conversation Paths
+                </strong>
+
+                <span>
+                    Provide practical ways to introduce the opportunity and connect equipment capability to customer objectives.
+                </span>
+
+            </div>
+
+            <div class="deliverable-item">
+
+                <strong>
+                    Customer-Facing Report
+                </strong>
+
+                <span>
+                    Produce a polished commercial document that can support demonstrations, proposals, presentations, and sales conversations.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SECTION 7
+========================================================= -->
+
+<section>
+
+    <h2>
+        7. The Development Process
+    </h2>
+
+    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+        The project begins with the dealer's commercial question rather than with a generic equipment study.
     </p>
 
     <div class="pipeline-container">
@@ -1054,7 +1494,7 @@
             </div>
 
             <div class="pipeline-step-title">
-                Select Product
+                Select Platform
             </div>
         </div>
 
@@ -1068,7 +1508,7 @@
             </div>
 
             <div class="pipeline-step-title">
-                Define Customer
+                Define Opportunity
             </div>
         </div>
 
@@ -1082,7 +1522,7 @@
             </div>
 
             <div class="pipeline-step-title">
-                Map Opportunities
+                Research
             </div>
         </div>
 
@@ -1096,7 +1536,7 @@
             </div>
 
             <div class="pipeline-step-title">
-                Build Assets
+                Develop Applications
             </div>
         </div>
 
@@ -1110,7 +1550,7 @@
             </div>
 
             <div class="pipeline-step-title">
-                Deploy
+                Deliver Study
             </div>
         </div>
 
@@ -1130,187 +1570,11 @@
 
             <p>
                 The development work occurs at the intersection of
-                <strong>equipment capability, customer operation, application opportunity, and dealer sales strategy.</strong>
+                <strong>equipment capability, customer operation, application opportunity, food/process knowledge, and dealer commercial strategy.</strong>
             </p>
 
             <p>
-                The output is therefore specific to the commercial problem the dealer wants to solve.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================================================
-     SECTION 5
-========================================================= -->
-
-<section>
-
-    <h2>
-        5. From Equipment To Sales Opportunity
-    </h2>
-
-    <div class="architecture-diagram">
-
-        <div class="architecture-title">
-            COMMERCIAL DEVELOPMENT FLOW
-        </div>
-
-        <div class="architecture-flow">
-
-            <div class="architecture-node">
-
-                <div class="node-label">
-                    Input
-                </div>
-
-                <div class="node-title">
-                    Equipment Platform
-                </div>
-
-                <div class="node-description">
-                    Product specifications, technical documentation, capabilities, accessories, applications, demonstrations, and dealer knowledge.
-                </div>
-
-            </div>
-
-            <div class="architecture-arrow">
-                &darr;
-            </div>
-
-            <div class="architecture-node primary">
-
-                <div class="node-label">
-                    Provision1 Analysis
-                </div>
-
-                <div class="node-title">
-                    Customer / Application Mapping
-                </div>
-
-                <div class="node-description">
-                    Identify operational problems, customer profiles, application opportunities, workflow constraints, and commercial possibilities.
-                </div>
-
-            </div>
-
-            <div class="architecture-arrow">
-                &darr;
-            </div>
-
-            <div class="architecture-node domain">
-
-                <div class="node-label">
-                    Dealer Asset
-                </div>
-
-                <div class="node-title">
-                    Sales &amp; Use-Case System
-                </div>
-
-                <div class="node-description">
-                    A finished set of customer-facing and sales-representative tools built specifically around the selected product and target market.
-                </div>
-
-            </div>
-
-            <div class="architecture-arrow">
-                &darr;
-            </div>
-
-            <div class="architecture-node final">
-
-                <div class="node-label">
-                    Commercial Outcome
-                </div>
-
-                <div class="node-title">
-                    More Reasons To Buy
-                </div>
-
-                <div class="node-description">
-                    The dealer has a concrete resource for identifying prospects, demonstrating applications, creating proposals, and advancing equipment sales.
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================================================
-     SECTION 6
-========================================================= -->
-
-<section>
-
-    <h2>
-        6. Why Exclusivity Matters
-    </h2>
-
-    <div class="exclusive-box">
-
-        <div class="exclusive-title">
-            THE DEALER'S ADVANTAGE
-        </div>
-
-        <div class="exclusive-statement">
-            The commercial value is not a generic report. It is a finished sales resource developed around a specific opportunity — with exclusivity available where the project warrants it.
-        </div>
-
-    </div>
-
-    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-        Where commercially appropriate, a Provision1 project can include defined territorial or channel exclusivity for the resulting sales and application resource.
-    </p>
-
-    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
-        The purpose is straightforward: a dealer that commissions the development should have a meaningful commercial advantage from having it.
-    </p>
-
-    <p style="font-size: 0.95rem;">
-        Exclusivity can be defined by territory, dealer channel, customer segment, equipment platform, duration, or other mutually agreed boundaries.
-    </p>
-
-</section>
-
-<!-- =========================================================
-     SECTION 7 — IP
-========================================================= -->
-
-<section>
-
-    <h2>
-        7. Intellectual Property Structure
-    </h2>
-
-    <div class="ip-box">
-
-        <div class="ip-title">
-            PROJECT-SPECIFIC COMMERCIAL RIGHTS
-        </div>
-
-        <div class="ip-body">
-
-            <p style="margin-bottom: 0.75rem;">
-                Each project is governed by a written agreement establishing the permitted use of the resulting commercial resource.
-            </p>
-
-            <p style="margin-bottom: 0.75rem;">
-                <strong>Dealer-specific work product</strong> may be licensed or assigned for the agreed territory, channel, customer segment, and term.
-            </p>
-
-            <p style="margin-bottom: 0.75rem;">
-                <strong>Provision1 retains its underlying methodology, frameworks, development processes, general know-how, and reusable intellectual property</strong> unless otherwise agreed in writing.
-            </p>
-
-            <p>
-                This structure allows the dealer to receive a genuine proprietary commercial advantage without requiring Provision1 to surrender the underlying development system that makes these projects possible.
+                The output is therefore specific to the question the dealer wants answered.
             </p>
 
         </div>
@@ -1326,37 +1590,92 @@
 <section>
 
     <h2>
-        8. Example Application
+        8. From Equipment To Commercial Intelligence
     </h2>
 
-    <div class="study-box">
+    <div class="architecture-diagram">
 
-        <div class="study-header">
-
-            <div class="study-title">
-                High-Speed Oven / Café Expansion Study
-            </div>
-
+        <div class="architecture-title">
+            COMMISSIONED DEVELOPMENT FLOW
         </div>
 
-        <div class="study-body">
+        <div class="architecture-flow">
 
-            <p style="margin-bottom: 0.75rem;">
-                A dealer sells a high-speed cooking platform but encounters customers who understand the equipment's specifications without seeing how it could create new menu or revenue opportunities within an existing operation.
-            </p>
+            <div class="architecture-node">
 
-            <p style="margin-bottom: 0.75rem;">
-                Provision1 could develop a focused application system around a defined customer segment — for example, cafés seeking to add a meaningful hot-food program without building a conventional kitchen.
-            </p>
+                <div class="node-label">
+                    Starting Point
+                </div>
 
-            <p style="margin-bottom: 0.75rem;">
-                The project could identify target operating profiles, develop specific food and workflow applications, map the equipment's role within those operations, establish qualification questions, and produce a customer-facing sales resource that the dealer's representatives can use directly.
-            </p>
+                <div class="node-title">
+                    Equipment Platform
+                </div>
 
-            <p>
-                The result is not a generic “case study.” It is a
-                <strong>purpose-built sales and use-case system designed to create new reasons for a customer to buy the equipment.</strong>
-            </p>
+                <div class="node-description">
+                    Product capabilities, specifications, accessories, demonstrations, manufacturer information, dealer experience, and known applications.
+                </div>
+
+            </div>
+
+            <div class="architecture-arrow">
+                &darr;
+            </div>
+
+            <div class="architecture-node primary">
+
+                <div class="node-label">
+                    Provision1 Analysis
+                </div>
+
+                <div class="node-title">
+                    Customer + Application + Market Mapping
+                </div>
+
+                <div class="node-description">
+                    Identify operational problems, customer profiles, unmet needs, workflows, product opportunities, and commercial possibilities.
+                </div>
+
+            </div>
+
+            <div class="architecture-arrow">
+                &darr;
+            </div>
+
+            <div class="architecture-node domain">
+
+                <div class="node-label">
+                    Commercial Development
+                </div>
+
+                <div class="node-title">
+                    Application + Revenue Opportunity
+                </div>
+
+                <div class="node-description">
+                    Determine what the customer could produce, sell, change, replace, add, or improve because the equipment is available.
+                </div>
+
+            </div>
+
+            <div class="architecture-arrow">
+                &darr;
+            </div>
+
+            <div class="architecture-node final">
+
+                <div class="node-label">
+                    Dealer Asset
+                </div>
+
+                <div class="node-title">
+                    Finished Commercial Study
+                </div>
+
+                <div class="node-description">
+                    A proprietary or dealer-specific resource that can support prospecting, qualification, demonstrations, proposals, and sales conversations.
+                </div>
+
+            </div>
 
         </div>
 
@@ -1371,71 +1690,41 @@
 <section>
 
     <h2>
-        9. What The Dealer Receives
+        9. Example Commission: High-Speed Oven / Café Revenue Expansion
     </h2>
 
-    <div class="grid-4">
+    <div class="study-box">
 
-        <div class="feature-card highlight-card">
+        <div class="study-header">
 
-            <div class="card-header">
-                01
+            <div class="study-title">
+                Commissioned Application Study
             </div>
-
-            <div class="card-title">
-                Finished Resource
-            </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                A polished, usable sales/application asset rather than a research report.
-            </p>
 
         </div>
 
-        <div class="feature-card highlight-card">
+        <div class="study-body">
 
-            <div class="card-header">
-                02
-            </div>
-
-            <div class="card-title">
-                Sales Utility
-            </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Built for actual customer conversations, prospect qualification, demonstrations, and proposals.
+            <p>
+                A dealer sells high-speed cooking equipment to cafés and small foodservice operators. Those customers understand that the equipment cooks quickly, but many still view it primarily as a faster way to perform an existing task.
             </p>
 
-        </div>
-
-        <div class="feature-card highlight-card">
-
-            <div class="card-header">
-                03
-            </div>
-
-            <div class="card-title">
-                Market Specificity
-            </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Developed around a defined product, customer segment, and commercial opportunity.
+            <p>
+                The dealer commissions Provision1 to investigate a different question:
+                <strong>Can the equipment enable a meaningful new food or revenue program for an operation that cannot justify a conventional kitchen?</strong>
             </p>
 
-        </div>
+            <p>
+                The resulting study could examine target customer profiles, footprint limitations, menu opportunities, workflow requirements, production scenarios, labor implications, equipment utilization, and potential new offerings.
+            </p>
 
-        <div class="feature-card highlight-card">
+            <p>
+                The finished report could then become a dealer sales asset used to approach cafés that previously did not consider themselves candidates for the equipment.
+            </p>
 
-            <div class="card-header">
-                04
-            </div>
-
-            <div class="card-title">
-                Commercial Advantage
-            </div>
-
-            <p style="font-size: 0.82rem; line-height: 1.45;">
-                Where agreed, territorial or channel exclusivity gives the dealer a differentiated sales resource unavailable to competing dealers.
+            <p>
+                The value is therefore not simply that the dealer knows more about the oven.
+                <strong>The dealer now has a commercial argument for selling the oven to a different customer for a different reason.</strong>
             </p>
 
         </div>
@@ -1451,27 +1740,383 @@
 <section>
 
     <h2>
-        10. The First Project
+        10. Other Questions A Dealer Could Commission
     </h2>
+
+    <div class="opportunity-grid">
+
+        <div class="opportunity-card">
+
+            <div class="opportunity-label">
+                Combi Oven
+            </div>
+
+            <div class="opportunity-title">
+                What Can A Combi Oven Enable In Small Operations?
+            </div>
+
+            <div class="opportunity-body">
+                Investigate applications for bakeries, cafés, hotels, prepared-food operations, commissaries, or other businesses that may be underusing combi capability.
+            </div>
+
+        </div>
+
+        <div class="opportunity-card">
+
+            <div class="opportunity-label">
+                Food Preparation
+            </div>
+
+            <div class="opportunity-title">
+                Where Can Automated Preparation Replace Labor?
+            </div>
+
+            <div class="opportunity-body">
+                Examine preparation-intensive operations and identify workflows where equipment could consolidate labor or increase production capacity.
+            </div>
+
+        </div>
+
+        <div class="opportunity-card revenue">
+
+            <div class="opportunity-label">
+                Blending
+            </div>
+
+            <div class="opportunity-title">
+                Can Blending Equipment Create A New Beverage Program?
+            </div>
+
+            <div class="opportunity-body">
+                Explore beverage, dessert, nutrition, café, hospitality, or foodservice applications that could become incremental product categories.
+            </div>
+
+        </div>
+
+        <div class="opportunity-card revenue">
+
+            <div class="opportunity-label">
+                Pressure Cooking
+            </div>
+
+            <div class="opportunity-title">
+                What New Production Capability Does Pressure Cooking Unlock?
+            </div>
+
+            <div class="opportunity-body">
+                Investigate applications where speed, batch production, consistency, or process compression could support new products or service models.
+            </div>
+
+        </div>
+
+    </div>
 
     <div class="callout-block">
 
         <div class="callout-title">
-            START WITH ONE COMMERCIAL OPPORTUNITY
+            THE QUESTION IS NOT "WHAT DOES THE MACHINE DO?"
         </div>
 
         <div class="callout-body">
 
             <p>
-                The recommended starting point is a single equipment platform and a single customer opportunity with clear commercial potential.
+                The better question is:
             </p>
 
             <p>
-                Provision1 defines the development scope, required inputs, deliverables, schedule, commercial terms, and applicable IP/exclusivity structure before work begins.
+                <strong>
+                    "What commercially useful thing could a customer do because they own this machine that they cannot easily do today?"
+                </strong>
             </p>
 
             <p>
-                The objective is a finite project that produces a finished sales resource — not an indefinite consulting relationship.
+                That is the territory of a Provision1 commissioned application study.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SECTION 11
+========================================================= -->
+
+<section>
+
+    <h2>
+        11. Why This Matters To A Multi-Category Dealer
+    </h2>
+
+    <div class="grid-4">
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">
+                01
+            </div>
+
+            <div class="card-title">
+                More Uses
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Give sales representatives more commercially relevant reasons to introduce equipment.
+            </p>
+
+        </div>
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">
+                02
+            </div>
+
+            <div class="card-title">
+                New Customers
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Identify customer segments that may not currently recognize themselves as equipment prospects.
+            </p>
+
+        </div>
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">
+                03
+            </div>
+
+            <div class="card-title">
+                New Revenue
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Find applications where equipment can enable customers to add products, services, capacity, or entire revenue streams.
+            </p>
+
+        </div>
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">
+                04
+            </div>
+
+            <div class="card-title">
+                Portfolio Development
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Build a continuing portfolio of commissioned studies across the dealer's equipment categories.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SECTION 12
+========================================================= -->
+
+<section>
+
+    <h2>
+        12. Why Exclusivity Matters
+    </h2>
+
+    <div class="exclusive-box">
+
+        <div class="exclusive-title">
+            THE DEALER'S COMMERCIAL ADVANTAGE
+        </div>
+
+        <div class="exclusive-statement">
+            A commissioned study can become a differentiated sales resource that competing dealers do not possess.
+        </div>
+
+    </div>
+
+    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+        Where commercially appropriate, a Provision1 project can include defined territorial, channel, customer-segment, or equipment-specific exclusivity.
+    </p>
+
+    <p style="font-size: 0.95rem; margin-bottom: 1rem;">
+        The purpose is straightforward: the dealer that commissions the development should receive a meaningful commercial advantage from having it.
+    </p>
+
+    <p style="font-size: 0.95rem;">
+        Exclusivity can be defined according to the actual commercial structure of the project rather than imposed as a generic condition.
+    </p>
+
+</section>
+
+<!-- =========================================================
+     SECTION 13 — IP
+========================================================= -->
+
+<section>
+
+    <h2>
+        13. Intellectual Property Structure
+    </h2>
+
+    <div class="ip-box">
+
+        <div class="ip-title">
+            PROJECT-SPECIFIC COMMERCIAL RIGHTS
+        </div>
+
+        <div class="ip-body">
+
+            <p style="margin-bottom: 0.75rem;">
+                Each commissioned project is governed by a written agreement establishing the permitted use of the resulting commercial resource.
+            </p>
+
+            <p style="margin-bottom: 0.75rem;">
+                <strong>Dealer-specific work product</strong> may be licensed or assigned for the agreed territory, channel, customer segment, equipment platform, and term.
+            </p>
+
+            <p style="margin-bottom: 0.75rem;">
+                <strong>Provision1 retains its underlying methodology, frameworks, development processes, general know-how, and reusable intellectual property</strong> unless otherwise agreed in writing.
+            </p>
+
+            <p>
+                This structure allows the dealer to obtain a genuine proprietary commercial asset while preserving the underlying development system that makes additional studies possible.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SECTION 14
+========================================================= -->
+
+<section>
+
+    <h2>
+        14. What The Dealer Receives
+    </h2>
+
+    <div class="grid-4">
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">
+                01
+            </div>
+
+            <div class="card-title">
+                Commissioned Study
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                A focused commercial report built around the question the dealer wants answered.
+            </p>
+
+        </div>
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">
+                02
+            </div>
+
+            <div class="card-title">
+                Sales Utility
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Structured so representatives can use the findings in prospecting, qualification, demonstrations, and proposals.
+            </p>
+
+        </div>
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">
+                03
+            </div>
+
+            <div class="card-title">
+                Application Intelligence
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Concrete applications rather than another restatement of product specifications.
+            </p>
+
+        </div>
+
+        <div class="feature-card highlight-card">
+
+            <div class="card-header">
+                04
+            </div>
+
+            <div class="card-title">
+                Commercial Advantage
+            </div>
+
+            <p style="font-size: 0.82rem; line-height: 1.45;">
+                Where agreed, exclusivity and dealer-specific development create differentiation in the marketplace.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SECTION 15
+========================================================= -->
+
+<section>
+
+    <h2>
+        15. The First Commission
+    </h2>
+
+    <div class="callout-block">
+
+        <div class="callout-title">
+            START WITH THE EQUIPMENT THAT HAS THE BIGGEST UNANSWERED QUESTION
+        </div>
+
+        <div class="callout-body">
+
+            <p>
+                A dealer does not need to commission a large program to begin.
+            </p>
+
+            <p>
+                Select one equipment platform where the sales organization suspects there is more commercial potential than the current sales materials communicate.
+            </p>
+
+            <p>
+                Then define the question.
+            </p>
+
+            <p>
+                <strong>
+                    Which customers are we not reaching? What new application should we investigate? What revenue stream could this equipment enable? Where is this platform being underutilized? What could we sell if the customer understood the application differently?
+                </strong>
+            </p>
+
+            <p>
+                Provision1 develops the study around that question and delivers a finished commercial resource.
+            </p>
+
+            <p>
+                If the first study produces useful intelligence, the same development model can be applied to another product, another customer segment, or another category.
             </p>
 
         </div>
@@ -1487,15 +2132,15 @@
 <div class="cta-box">
 
     <div class="cta-title">
-        IS THERE A PRODUCT YOUR DEALERS COULD SELL DIFFERENTLY?
+        WHAT EQUIPMENT IN YOUR PORTFOLIO HAS MORE COMMERCIAL POTENTIAL THAN YOUR SALES MATERIALS SHOW?
     </div>
 
     <p class="cta-text">
-        If your sales organization has a product with more application potential than your current sales materials communicate, Provision1 can define a focused development project around the opportunity.
+        Tell Provision1 the equipment platform, the customer segment, or simply the commercial question. We can define a focused commissioned application study around the opportunity.
     </p>
 
     <p class="cta-highlight">
-        One product. One customer segment. One dealer. One finished sales system.
+        One question. One equipment platform. One commercial opportunity. One finished intelligence asset.
     </p>
 
 </div>
@@ -1511,11 +2156,11 @@
     </div>
 
     <p class="closing-text">
-        "You already have the equipment. The manufacturer already has the specifications. We build the missing commercial layer that shows your customer why they should buy it — and what they can do with it."
+        "You already have the equipment portfolio. We investigate the commercial possibilities that are not obvious from the product literature — and turn those possibilities into usable sales intelligence."
     </p>
 
     <p class="closing-highlight">
-        Turn equipment capability into a reason to buy.
+        Find the application. Build the case. Create the reason to buy.
     </p>
 
 </div>
