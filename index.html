@@ -42,9 +42,28 @@
         }
 
         header { margin-bottom: 2.5rem; }
-        h1 { font-family: var(--mono-font); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.5rem; text-transform: uppercase; color: var(--forest); }
-        .tagline { font-family: var(--mono-font); font-size: 0.95rem; color: var(--forest); margin-bottom: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
-        
+
+        h1 {
+            font-family: var(--mono-font);
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            color: var(--forest);
+        }
+
+        .tagline {
+            font-family: var(--mono-font);
+            font-size: 0.95rem;
+            color: var(--forest);
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
         .thesis-container {
             border-left: 3px solid var(--forest);
             padding-left: 1rem;
@@ -66,10 +85,34 @@
             font-weight: 500;
         }
 
-        h2 { font-family: var(--mono-font); font-size: 1.2rem; color: var(--forest); text-decoration: underline; margin-top: 1.5rem; margin-bottom: 1.25rem; text-transform: uppercase; }
-        h3 { font-family: var(--mono-font); color: var(--forest); border-bottom: 1px solid var(--brass); padding-bottom: 5px; margin-top: 45px; margin-bottom: 1.5rem; text-transform: uppercase; }
-        h4 { font-family: var(--mono-font); color: var(--forest); margin: 2rem 0 0.5rem 0; text-transform: uppercase; font-size: 0.9rem; }
-        
+        h2 {
+            font-family: var(--mono-font);
+            font-size: 1.2rem;
+            color: var(--forest);
+            text-decoration: underline;
+            margin-top: 1.5rem;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-family: var(--mono-font);
+            color: var(--forest);
+            border-bottom: 1px solid var(--brass);
+            padding-bottom: 5px;
+            margin-top: 45px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            font-family: var(--mono-font);
+            color: var(--forest);
+            margin: 2rem 0 0.5rem 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
         p { margin-bottom: 1.25rem; }
 
         .lead-in {
@@ -82,13 +125,35 @@
             margin-bottom: 1.5rem;
         }
 
-        .about-section { margin-bottom: 3.5rem; margin-top: 3.5rem; }
-        
-        .domain-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 3rem; }
-        .domain-block { border-left: 4px solid var(--brass); padding-left: 1.5rem; }
-        .domain-block.primary-commercial { border-left: 4px solid var(--forest); background: #faf8f2; padding: 1.75rem 1.5rem; }
-        .domain-block.subordinate-commercial { border-left: 2px solid var(--brass); padding-left: 1.25rem; opacity: 0.9; }
-        
+        .about-section {
+            margin-bottom: 3.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .domain-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .domain-block {
+            border-left: 4px solid var(--brass);
+            padding-left: 1.5rem;
+        }
+
+        .domain-block.primary-commercial {
+            border-left: 4px solid var(--forest);
+            background: #faf8f2;
+            padding: 1.75rem 1.5rem;
+        }
+
+        .domain-block.subordinate-commercial {
+            border-left: 2px solid var(--brass);
+            padding-left: 1.25rem;
+            opacity: 0.9;
+        }
+
         .sub-application {
             margin-top: 1.25rem;
             margin-bottom: 1.25rem;
@@ -96,41 +161,103 @@
             border-top: 1px solid var(--border-color);
         }
 
-        .archive-section { margin-top: 5rem; border-top: 1px solid var(--border-color); padding-top: 2rem; }
-        .archive-row { display: grid; grid-template-columns: 100px 1fr; margin-bottom: 2rem; }
-        .archive-year { font-family: var(--mono-font); font-weight: bold; color: var(--forest); }
-        .archive-list { list-style: none; padding: 0; margin: 0; }
-        .archive-list li { margin-bottom: 0.75rem; font-size: 1rem; }
-        .archive-link { color: #000; text-decoration: none; font-weight: 600; }
-        .archive-link:hover { color: var(--forest); text-decoration: underline; }
-        .ref-link { font-size: 0.8rem; color: var(--muted-text); font-family: var(--mono-font); }
-        
-        .btn { 
-            display: inline-block; 
-            margin-top: 0.5rem; 
+        .archive-section {
+            margin-top: 5rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .archive-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            margin-bottom: 2rem;
+        }
+
+        .archive-year {
+            font-family: var(--mono-font);
+            font-weight: bold;
+            color: var(--forest);
+        }
+
+        .archive-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .archive-list li {
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .archive-link {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .archive-link:hover {
+            color: var(--forest);
+            text-decoration: underline;
+        }
+
+        .ref-link {
+            font-size: 0.8rem;
+            color: var(--muted-text);
+            font-family: var(--mono-font);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 0.5rem;
             margin-right: 0.5rem;
-            color: var(--forest); 
+            color: var(--forest);
             background: transparent;
             border: 1px solid var(--forest);
-            text-decoration: none; 
-            font-weight: 700; 
-            padding: 0.75rem 1.25rem; 
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.75rem 1.25rem;
             font-size: 0.85rem;
             font-family: var(--mono-font);
             text-transform: uppercase;
             transition: all 0.2s;
         }
-        .btn:hover { background: var(--forest); color: #fff; }
-        .btn-primary { background: var(--forest); color: #fff; }
-        .btn-primary:hover { background: #000; color: #fff; border-color: #000; }
 
-        .footer-wall { border-top: 4px solid var(--forest); padding: 3rem 0; margin-top: 6rem; font-family: var(--mono-font); font-size: 0.8rem; background: #000; color: #fff; padding: 30px; }
-        
+        .btn:hover {
+            background: var(--forest);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--forest);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .footer-wall {
+            border-top: 4px solid var(--forest);
+            padding: 30px;
+            margin-top: 6rem;
+            font-family: var(--mono-font);
+            font-size: 0.8rem;
+            background: #000;
+            color: #fff;
+        }
+
         @media (max-width: 768px) {
-            .archive-row { grid-template-columns: 1fr; gap: 0.5rem; }
+            .archive-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="doc-meta">
@@ -142,126 +269,321 @@
         <a href="index.html" style="text-decoration: none; color: inherit;">
             <h1>PROVISION1 LABORATORY</h1>
         </a>
-        <p class="tagline">SYSTEMS ENGINEERING FOR KNOWLEDGE-INTENSIVE ORGANIZATIONS</p>
+
+        <p class="tagline">
+            SYSTEMS ENGINEERING FOR KNOWLEDGE-INTENSIVE ORGANIZATIONS
+        </p>
+
         <div class="thesis-container">
-            <p class="thesis-statement">Provision1 transforms expert knowledge into durable operational systems through applied systems engineering.</p>
-            <p class="target-client">Built for manufacturers, dealer networks, and technology organizations facing complex knowledge-transfer challenges.</p>
+            <p class="thesis-statement">
+                Provision1 transforms expert knowledge into durable operational systems through applied systems engineering.
+            </p>
+
+            <p class="target-client">
+                Built for manufacturers, dealer networks, and technology organizations facing complex knowledge-transfer challenges.
+            </p>
         </div>
     </header>
 
+
     <!-- SECTION 1: PRACTICE AREAS -->
+
     <section>
         <h3>PRACTICE AREAS</h3>
 
         <div class="domain-grid">
-            
+
             <!-- 01. KNOWLEDGE ARCHITECTURE (PRIMARY COMMERCIAL PRACTICE) -->
+
             <div class="domain-block primary-commercial">
-                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">01. PRIMARY COMMERCIAL PRACTICE</span>
+
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
+                    01. PRIMARY COMMERCIAL PRACTICE
+                </span>
+
                 <h2>KNOWLEDGE ARCHITECTURE™</h2>
-                <p><strong>Engineering expertise into durable organizational capability.</strong></p>
-                <p>Provision1 structures expert decision-making processes into formal knowledge architectures, turning undocumented domain knowledge into repeatable operational assets.</p>
+
+                <p>
+                    <strong>Engineering expertise into durable organizational capability.</strong>
+                </p>
+
+                <p>
+                    Provision1 structures expert decision-making processes into formal knowledge architectures, turning undocumented domain knowledge into repeatable operational assets.
+                </p>
 
                 <div class="sub-application">
-                    <h4 style="margin-top: 0;">FEATURED ENGAGEMENT: CULINARY SYSTEM INTELLIGENCE™</h4>
-                    <p>Dealer capability systems and decision architectures for premium culinary equipment networks. Converting complex equipment specifications, installation requirements, and expert operational knowledge into repeatable sales tools, training architectures, and customer decision frameworks.</p>
+
+                    <h4 style="margin-top: 0;">
+                        FEATURED ENGAGEMENT: CULINARY SYSTEM INTELLIGENCE™
+                    </h4>
+
+                    <p>
+                        Dealer capability systems and decision architectures for premium culinary equipment networks. Converting complex equipment specifications, installation requirements, and expert operational knowledge into repeatable sales tools, training architectures, and customer decision frameworks.
+                    </p>
+
                 </div>
 
-                <a href="knowledge_systems_case_study.html" class="btn btn-primary">SEE THE CASE STUDY</a>
+                <a href="knowledge_systems_case_study.html" class="btn btn-primary">
+                    SEE THE CASE STUDY
+                </a>
+
             </div>
 
+
             <!-- 02. MEDIA INTEGRITY ENGINEERING -->
+
             <div class="domain-block subordinate-commercial">
-                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">02. SPECIALIZED TECHNOLOGY PLATFORM</span>
-                <h2 style="font-size: 1.05rem;">MEDIA INTEGRITY ENGINEERING™</h2>
-                <p style="font-size: 0.95rem;">Digital asset validation systems that stabilize, validate, and preserve media assets through AI generation, production, and distribution workflows. Forensic processing pipelines bridging the structural gap between erratic synthetic media and broadcast-compliant signal standards.</p>
+
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
+                    02. SPECIALIZED TECHNOLOGY PLATFORM
+                </span>
+
+                <h2 style="font-size: 1.05rem;">
+                    MEDIA INTEGRITY ENGINEERING™
+                </h2>
+
+                <p style="font-size: 0.95rem;">
+                    Digital asset validation systems that stabilize, validate, and preserve media assets through AI generation, production, and distribution workflows. Forensic processing pipelines bridging the structural gap between erratic synthetic media and broadcast-compliant signal standards.
+                </p>
+
                 <ul style="list-style: none; font-family: var(--mono-font); font-size: 0.8rem; margin-bottom: 1rem; color: var(--forest);">
                     <li>— Clean Vault Key™</li>
                     <li>— Synthetic media stabilization</li>
                     <li>— Provenance &amp; verification systems</li>
                 </ul>
-                <a href="media-conditioning.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.75rem;">TECHNICAL OVERVIEW</a>
+
+                <a href="media-conditioning.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.75rem;">
+                    TECHNICAL OVERVIEW
+                </a>
+
             </div>
 
         </div>
     </section>
 
+
     <!-- SECTION 2: ENGINEERING METHODOLOGY -->
+
     <section class="about-section">
+
         <h3>ENGINEERING METHODOLOGY</h3>
 
-        <p class="lead-in">APPLIED SYSTEMS ENGINEERING &amp; CAPABILITY RESEARCH.</p>
+        <p class="lead-in">
+            APPLIED SYSTEMS ENGINEERING &amp; CAPABILITY RESEARCH.
+        </p>
 
-        <p>Provision1 studies how expertise emerges inside complex human-technology systems. By identifying the variables that govern expert performance, we engineer knowledge architectures that preserve operational capability, improve organizational performance, and make expert decision-making repeatable.</p>
+        <p>
+            Provision1 studies how expertise emerges inside complex human-technology systems. By identifying the variables that govern expert performance, we engineer knowledge architectures that preserve operational capability, improve organizational performance, and make expert decision-making repeatable.
+        </p>
+
     </section>
 
+
     <!-- SECTION 3: RESEARCH PLATFORMS -->
+
     <section>
+
         <h3>RESEARCH PLATFORMS</h3>
 
         <div class="domain-grid">
-            
+
+
             <!-- 03. PERFORMANCE SYSTEMS RESEARCH -->
+
             <div class="domain-block">
-                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">03. APPLIED RESEARCH PLATFORM</span>
-                <h2>PERFORMANCE SYSTEMS RESEARCH™</h2>
-                <p>Research into expressive systems — the physical, electronic, and computational architectures through which human intention becomes performance behavior.</p>
-                <p>The Atlas Research Series is where Provision1 develops, validates, and demonstrates its Knowledge Architecture methodology before deploying those methods into commercial environments.</p>
-                <a href="performance-systems.html" class="btn">READ THE RESEARCH</a>
-                <a href="methodology.html" class="btn">EXPLORE THE METHOD</a>
+
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
+                    03. APPLIED RESEARCH PLATFORM
+                </span>
+
+                <h2>
+                    PERFORMANCE SYSTEMS RESEARCH™
+                </h2>
+
+                <p>
+                    Research into expressive systems — the physical, electronic, and computational architectures through which human intention becomes performance behavior.
+                </p>
+
+                <p>
+                    The Atlas Research Series is where Provision1 develops, validates, and demonstrates its Knowledge Architecture methodology before deploying those methods into commercial environments.
+                </p>
+
+                <a href="performance-systems.html" class="btn">
+                    READ THE RESEARCH
+                </a>
+
+                <a href="methodology.html" class="btn">
+                    EXPLORE THE METHOD
+                </a>
+
             </div>
+
 
             <!-- 04. PHYSICAL TRANSFORMATION SYSTEMS -->
+
             <div class="domain-block">
-                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">04. MATERIAL &amp; STATE CHANGE RESEARCH</span>
-                <h2>PHYSICAL TRANSFORMATION SYSTEMS™</h2>
-                <p>Research into physical transformation systems where controlled variables produce repeatable changes in material properties, state behavior, and operational yield. Current research environments investigate clean-label food systems (UCE™), preservation technologies, physical material behaviors, and vitrification engines.</p>
-                <a href="methodology_PARS.html" class="btn">EXPLORE THE METHODOLOGY</a>
+
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
+                    04. MATERIAL &amp; STATE CHANGE RESEARCH
+                </span>
+
+                <h2>
+                    PHYSICAL TRANSFORMATION SYSTEMS™
+                </h2>
+
+                <p>
+                    Research into physical transformation systems where controlled variables produce repeatable changes in material properties, state behavior, and operational yield. Current research environments investigate clean-label food systems (UCE™), preservation technologies, physical material behaviors, and vitrification engines.
+                </p>
+
+                <a href="methodology_PARS.html" class="btn">
+                    EXPLORE THE METHODOLOGY
+                </a>
+
+            </div>
+
+
+            <!-- 05. THE ACCELERATED COOKING SYSTEMS -->
+
+            <div class="domain-block">
+
+                <span style="font-family: var(--mono-font); font-size: 0.75rem; color: var(--muted-text); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
+                    05. INDEPENDENT RESEARCH PROGRAM
+                </span>
+
+                <h2>
+                    THE ACCELERATED COOKING SYSTEMS
+                </h2>
+
+                <p>
+                    A two-volume independent research reference examining accelerated cooking and compressed food-production systems across cooking, chilling, freezing, regeneration, finishing, holding, and service.
+                </p>
+
+                <p>
+                    The study investigates equipment capability, system time, boundary conditions, failure modes, workflow consequences, and the operational effects of compressing the production cycle.
+                </p>
+
+                <a href="accelerated-cooking.html" class="btn">
+                    EXPLORE THE STUDY
+                </a>
+
             </div>
 
         </div>
+
     </section>
+
 
     <!-- SECTION 4: PUBLICATIONS & OPEN RESEARCH -->
+
     <section class="archive-section">
-        <h3>PUBLICATIONS &amp; OPEN RESEARCH</h3>
-        
+
+        <h3>
+            PUBLICATIONS &amp; OPEN RESEARCH
+        </h3>
+
         <div class="archive-row">
-            <div class="archive-year">2026</div>
+
+            <div class="archive-year">
+                2026
+            </div>
+
             <div class="archive-content">
-                
+
+
                 <h4>Knowledge Systems</h4>
+
                 <ul class="archive-list">
-                    <li><a href="https://drive.proton.me/urls/7BN63N9E6G#L9qcyPTgc4Ug" class="archive-link">The Mechanical Nexus Standard: Verifiable Human Authorship in AI Media</a></li>
+                    <li>
+                        <a href="https://drive.proton.me/urls/7BN63N9E6G#L9qcyPTgc4Ug" class="archive-link">
+                            The Mechanical Nexus Standard: Verifiable Human Authorship in AI Media
+                        </a>
+                    </li>
                 </ul>
+
 
                 <h4>Media Integrity</h4>
+
                 <ul class="archive-list">
-                    <li><a href="https://drive.proton.me/urls/BA4NWX2PA8#yzOluyUtcjTp" class="archive-link">ISO CG 40 47: The End of Uninsured Synthetic Production</a></li>
-                    <li><a href="https://drive.proton.me/urls/AWH5KGKT80#6vYYSufcWOaB" class="archive-link">Spectral Insolvency: A Forensic Analysis of Neural Synthesis</a></li>
+
+                    <li>
+                        <a href="https://drive.proton.me/urls/BA4NWX2PA8#yzOluyUtcjTp" class="archive-link">
+                            ISO CG 40 47: The End of Uninsured Synthetic Production
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://drive.proton.me/urls/AWH5KGKT80#6vYYSufcWOaB" class="archive-link">
+                            Spectral Insolvency: A Forensic Analysis of Neural Synthesis
+                        </a>
+                    </li>
+
                 </ul>
+
 
                 <h4>Physical Systems</h4>
+
                 <ul class="archive-list">
-                    <li><a href="https://drive.proton.me/urls/005TNDG9G4#R4ZWL6XgbGA9" class="archive-link">Deterministic Spatial Mapping in Autonomous Swarm Robotics</a></li>
-                    <li><a href="https://drive.proton.me/urls/WD1EWQ58CM#R2hzSQp1HyHY" class="archive-link">Acoustic Integrity &amp; The Reclamation of Physical Mass</a><br>
-                        <a href="https://github.com/P1-Lab/sovereign-throw" class="ref-link">reference: https://github.com/P1-Lab/sovereign-throw</a></li>
+
+                    <li>
+                        <a href="https://drive.proton.me/urls/005TNDG9G4#R4ZWL6XgbGA9" class="archive-link">
+                            Deterministic Spatial Mapping in Autonomous Swarm Robotics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://drive.proton.me/urls/WD1EWQ58CM#R2hzSQp1HyHY" class="archive-link">
+                            Acoustic Integrity &amp; The Reclamation of Physical Mass
+                        </a>
+                        <br>
+                        <a href="https://github.com/P1-Lab/sovereign-throw" class="ref-link">
+                            reference: https://github.com/P1-Lab/sovereign-throw
+                        </a>
+                    </li>
+
                 </ul>
+
 
                 <h4>Food Systems</h4>
+
                 <ul class="archive-list">
-                    <li><a href="https://drive.proton.me/urls/VQY977FNTW#zTesXOThgZ1E" class="archive-link">The Sovereign Vitrification Engine &amp; FAT-OS Architecture [Clean-Label Food Science]</a><br>
-                        <a href="https://github.com/P1-Lab/Koji-Matrix-Lipid-Dispersion" class="ref-link">reference: https://github.com/P1-Lab/Koji-Matrix-Lipid-Dispersion</a></li>
-                    <li><a href="https://drive.proton.me/urls/SCR7NPZ0EW#Eeprc7YwvXkJ" class="archive-link">Transitioning to the Universal Chromatic Engine (UCE™) [Clean-Label Food Science]</a></li>
+
+                    <li>
+                        <a href="https://drive.proton.me/urls/VQY977FNTW#zTesXOThgZ1E" class="archive-link">
+                            The Sovereign Vitrification Engine &amp; FAT-OS Architecture [Clean-Label Food Science]
+                        </a>
+                        <br>
+                        <a href="https://github.com/P1-Lab/Koji-Matrix-Lipid-Dispersion" class="ref-link">
+                            reference: https://github.com/P1-Lab/Koji-Matrix-Lipid-Dispersion
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://drive.proton.me/urls/SCR7NPZ0EW#Eeprc7YwvXkJ" class="archive-link">
+                            Transitioning to the Universal Chromatic Engine (UCE™) [Clean-Label Food Science]
+                        </a>
+                    </li>
+
                 </ul>
 
+
                 <h4>Open Laboratory Repositories</h4>
-                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Public-domain forensic blueprints and open-source research covering food science, signal processing, advanced materials, and electromechanical instrumentation.</p>
-                <a href="https://github.com/P1-Lab" class="btn">OPEN REPOSITORIES</a>
+
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                    Public-domain forensic blueprints and open-source research covering food science, signal processing, advanced materials, and electromechanical instrumentation.
+                </p>
+
+                <a href="https://github.com/P1-Lab" class="btn">
+                    OPEN REPOSITORIES
+                </a>
 
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- FOOTER -->
 
     <div class="footer-wall">
         STRATEGIC POSITION: SYSTEMS ENGINEERING LABORATORY. <br>
