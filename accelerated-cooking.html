@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>THE ACCELERATED COOKING SYSTEMS | PROVISION1 LABORATORY</title>
+
+    <style>
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --forest: #355E3B;
+            --brass: #A88A3A;
+            --muted-text: #666666;
+            --mono-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+            --sans-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --border-color: #ddd;
+            --soft-bg: #faf8f2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--sans-font);
+            line-height: 1.65;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .doc-meta {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--brass);
+            padding-bottom: 0.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--muted-text);
+            font-weight: 600;
+        }
+
+        header {
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-family: var(--mono-font);
+            font-size: 2.35rem;
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            line-height: 1.12;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            color: var(--forest);
+        }
+
+        .subtitle {
+            font-family: var(--mono-font);
+            font-size: 1rem;
+            color: var(--forest);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-line {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.65rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .thesis-container {
+            border-left: 4px solid var(--forest);
+            padding-left: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .thesis {
+            font-size: 1.25rem;
+            font-weight: 650;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: var(--mono-font);
+            font-size: 1.25rem;
+            color: var(--forest);
+            text-transform: uppercase;
+            margin-top: 3.5rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--brass);
+            padding-bottom: 0.45rem;
+        }
+
+        h3 {
+            font-family: var(--mono-font);
+            font-size: 1rem;
+            color: var(--forest);
+            text-transform: uppercase;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        .lead {
+            font-size: 1.08rem;
+            line-height: 1.65;
+        }
+
+        .question {
+            background: var(--soft-bg);
+            border-left: 4px solid var(--brass);
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            font-family: var(--mono-font);
+            font-weight: 700;
+            color: var(--forest);
+        }
+
+        .volume {
+            border-left: 4px solid var(--brass);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background: #fff;
+        }
+
+        .volume.primary {
+            border-left-color: var(--forest);
+            background: var(--soft-bg);
+        }
+
+        .volume-label {
+            font-family: var(--mono-font);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .volume h3 {
+            margin-top: 0;
+            font-size: 1.15rem;
+        }
+
+        .volume-question {
+            font-family: var(--mono-font);
+            color: var(--forest);
+            font-weight: 700;
+            margin: 1rem 0 1.25rem 0;
+        }
+
+        ul {
+            margin: 0 0 1.25rem 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.55rem;
+        }
+
+        .sequence {
+            font-family: var(--mono-font);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--forest);
+            background: var(--soft-bg);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .time-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        .time-card {
+            border: 1px solid var(--border-color);
+            padding: 1.15rem;
+            background: #fff;
+        }
+
+        .time-card strong {
+            display: block;
+            font-family: var(--mono-font);
+            color: var(--forest);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .scope-group {
+            margin-bottom: 2rem;
+        }
+
+        .scope-group h3 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.35rem;
+        }
+
+        .independence {
+            border: 2px solid var(--forest);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background: var(--soft-bg);
+        }
+
+        .independence strong {
+            font-family: var(--mono-font);
+            color: var(--forest);
+            text-transform: uppercase;
+        }
+
+        .participation {
+            border-left: 4px solid var(--brass);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            margin-right: 0.5rem;
+            color: var(--forest);
+            background: transparent;
+            border: 1px solid var(--forest);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.7rem 1.1rem;
+            font-size: 0.8rem;
+            font-family: var(--mono-font);
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--forest);
+            color: #fff;
+        }
+
+        .footer-wall {
+            border-top: 4px solid var(--forest);
+            padding: 2rem;
+            margin-top: 6rem;
+            font-family: var(--mono-font);
+            font-size: 0.78rem;
+            background: #000;
+            color: #fff;
+        }
+
+        .back-link {
+            font-family: var(--mono-font);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--forest);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.25rem;
+            }
+
+            h1 {
+                font-size: 1.85rem;
+            }
+
+            .doc-meta {
+                flex-direction: column;
+                gap: 0.35rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="doc-meta">
+        <span>PROVISION1</span>
+        <span>INDEPENDENT RESEARCH PROGRAM</span>
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <a href="index.html" class="back-link">
+            ← PROVISION1 LABORATORY
+        </a>
+
+        <h1 style="margin-top: 1.5rem;">
+            THE ACCELERATED<br>
+            COOKING SYSTEMS
+        </h1>
+
+        <p class="subtitle">
+            A Two-Volume Independent Research Reference
+        </p>
+
+        <div class="status-line">
+            RESEARCH PROGRAM · APPLICATION RESEARCH · PROVISION1 LABORATORY
+        </div>
+
+        <div class="thesis-container">
+            <p class="thesis">
+                Accelerated cooking is not simply a question of how fast a machine cooks.
+                It is a systems question: what happens to the entire production cycle when
+                time, labor, infrastructure, and thermal constraints are compressed?
+            </p>
+        </div>
+
+    </header>
+
+
+    <!-- WHAT IT IS -->
+
+    <section>
+
+        <h2>WHAT IT IS</h2>
+
+        <p class="lead">
+            <em>The Accelerated Cooking Systems</em> is a two-volume professional reference
+            produced through independent application research.
+        </p>
+
+        <p>
+            It examines accelerated cooking and compressed food-production systems as a
+            single technical and operational phenomenon: the technologies, processes, and
+            operating architectures that reduce cooking time, recovery time, regeneration
+            time, chilling and freezing time, preparation and handling time, labor
+            requirements, infrastructure requirements, service latency, or overall
+            production-cycle time.
+        </p>
+
+        <p>
+            The two volumes form a comprehensive research framework for understanding where
+            acceleration creates genuine system-level advantage, where it merely relocates
+            bottlenecks, and where technological capability is constrained by food,
+            equipment, infrastructure, labor, or operational reality.
+        </p>
+
+        <p>
+            The work is not an equipment catalog, buyer's guide, recipe collection,
+            manufacturer literature, sponsored editorial, or conventional
+            thought-leadership piece.
+        </p>
+
+        <p>
+            It is an independent research record of
+            <strong>capability, limitation, boundary conditions, application,
+            failure modes, and system-level consequence.</strong>
+        </p>
+
+    </section>
+
+
+    <!-- CENTRAL QUESTION -->
+
+    <section>
+
+        <h2>THE CENTRAL QUESTION</h2>
+
+        <p>
+            Most equipment literature reports the nominal performance of an individual
+            machine. A stated cooking time, recovery specification, capacity, or energy
+            figure does not necessarily describe what happens to the operation as a whole.
+        </p>
+
+        <div class="question">
+            WHAT HAPPENS WHEN ONE PART OF THE PRODUCTION SYSTEM BECOMES FASTER?
+        </div>
+
+        <p>
+            A faster cooking step may eliminate a bottleneck—or simply move it downstream.
+            It may reduce labor—or create additional handling. It may reduce footprint and
+            infrastructure—or require new chilling, storage, staging, or regeneration
+            capacity elsewhere in the operation.
+        </p>
+
+        <p>
+            The research therefore evaluates acceleration at the level of the
+            <strong>production system</strong>, not solely at the level of the appliance.
+        </p>
+
+    </section>
+
+
+    <!-- PRODUCTION SEQUENCE -->
+
+    <section>
+
+        <h2>THE PRODUCTION SEQUENCE</h2>
+
+        <p>
+            The central analytical model of the work is the complete production sequence:
+        </p>
+
+        <div class="sequence">
+            PREPARATION → COOKING → CHILLING / FREEZING → STORAGE
+            → REGENERATION → FINISHING → HOLDING → SERVICE
+        </div>
+
+        <p>
+            Acceleration at one point in this sequence is evaluated according to its
+            effect on the entire system.
+        </p>
+
+        <p>
+            The research therefore asks not simply whether a process is faster, but whether
+            the resulting operation is <strong>actually faster, more capable, more
+            flexible, more labor-efficient, or more economically useful.</strong>
+        </p>
+
+    </section>
+
+
+    <!-- TWO VOLUMES -->
+
+    <section>
+
+        <h2>THE TWO-VOLUME STUDY</h2>
+
+
+        <div class="volume primary">
+
+            <div class="volume-label">
+                VOLUME 01
+            </div>
+
+            <h3>
+                THE ACCELERATED COOKING FIELD GUIDE
+            </h3>
+
+            <p class="volume-question">
+                How fast can we cook—and what changes when we do?
+            </p>
+
+            <p>
+                Volume 01 focuses on high-speed ovens, combi systems, and other accelerated
+                thermal cooking platforms, with particular attention to compact,
+                small-footprint, ventless, and reduced-infrastructure applications.
+            </p>
+
+            <p>
+                Investigation includes:
+            </p>
+
+            <ul>
+                <li>High-speed ovens</li>
+                <li>Combi systems and combi ovens</li>
+                <li>Hybrid accelerated cooking platforms</li>
+                <li>Other accelerated thermal cooking platforms</li>
+                <li>Compact and small-footprint applications</li>
+                <li>Ventless and reduced-infrastructure applications</li>
+                <li>Regeneration, rethermalization, finishing, and holding where they interact with primary platforms</li>
+                <li>Applications in cafés, hotels, convenience and prepared-food retail, healthcare, education, and satellite operations</li>
+                <li>Boundary conditions, edge applications, and failure modes</li>
+                <li>Workflow, infrastructure, design, labor, and economic consequences</li>
+            </ul>
+
+        </div>
+
+
+        <div class="volume">
+
+            <div class="volume-label">
+                VOLUME 02
+            </div>
+
+            <h3>
+                THE EXTENDED PRODUCTION CYCLE FIELD GUIDE
+            </h3>
+
+            <p class="volume-question">
+                What else has to change for the entire production system to become faster?
+            </p>
+
+            <p>
+                Volume 02 examines the production architecture surrounding the cooking
+                event—the technologies and operating systems that determine whether a
+                faster cooking step actually produces a faster production system.
+            </p>
+
+            <p>
+                Investigation includes:
+            </p>
+
+            <ul>
+                <li>Rapid chilling and blast chilling</li>
+                <li>Rapid freezing and blast freezing</li>
+                <li>Thawing systems</li>
+                <li>Cook-chill architectures</li>
+                <li>Cook-freeze architectures</li>
+                <li>Induction cooking platforms</li>
+                <li>Pure steam systems, including connectionless steamers where relevant</li>
+                <li>Pressure cooking systems</li>
+                <li>Radiant and infrared equipment</li>
+                <li>Other complementary heating methods</li>
+                <li>Precision and controlled low-temperature systems, including sous-vide and related techniques</li>
+                <li>Automation and advanced sensing and control systems</li>
+                <li>Integrated production systems</li>
+                <li>Central-to-satellite and distributed production models</li>
+                <li>Boundary conditions, failure modes, workflow, labor, infrastructure, and economic consequences</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- EQUIPMENT SCOPE -->
+
+    <section>
+
+        <h2>SCOPE OF EQUIPMENT &amp; TECHNOLOGIES</h2>
+
+        <p>
+            The study does not begin with a fixed list of manufacturers or models.
+            Equipment and technologies enter the research according to their relevance
+            to the research question, application environment, participant questions,
+            available research access, and Application Lab protocols.
+        </p>
+
+
+        <div class="scope-group">
+
+            <h3>VOLUME 01 — PRIMARY EQUIPMENT CATEGORIES</h3>
+
+            <ul>
+                <li>High-speed ovens</li>
+                <li>Combi systems</li>
+                <li>Hybrid accelerated cooking platforms</li>
+                <li>Other accelerated thermal cooking platforms</li>
+            </ul>
+
+            <h3>RELATED APPLICATION CHARACTERISTICS</h3>
+
+            <ul>
+                <li>Compact / small-footprint platforms</li>
+                <li>Ventless systems</li>
+                <li>Reduced-infrastructure / connectionless systems</li>
+            </ul>
+
+            <h3>CONTEXTUAL REFERENCES</h3>
+
+            <ul>
+                <li>Regeneration and rethermalization equipment</li>
+                <li>Rapid finishing equipment</li>
+                <li>Holding equipment</li>
+            </ul>
+
+        </div>
+
+
+        <div class="scope-group">
+
+            <h3>VOLUME 02 — PRIMARY TECHNOLOGIES &amp; ARCHITECTURES</h3>
+
+            <ul>
+                <li>Rapid chillers / blast chillers</li>
+                <li>Rapid freezers / blast freezers</li>
+                <li>Thawing systems</li>
+                <li>Cook-chill and cook-freeze architectures</li>
+                <li>Induction cooking platforms</li>
+                <li>Pure steam systems</li>
+                <li>Pressure cooking systems</li>
+                <li>Radiant / infrared equipment</li>
+                <li>Other complementary heating methods</li>
+                <li>Precision and controlled low-temperature systems</li>
+                <li>Automation systems</li>
+                <li>Advanced sensing and control systems</li>
+                <li>Integrated production systems</li>
+            </ul>
+
+            <h3>CONTEXTUAL REFERENCES</h3>
+
+            <ul>
+                <li>High-speed, combi, and hybrid platforms from Volume 01 where they interact with extended production cycles</li>
+                <li>Holding, regeneration, and finishing equipment in multi-stage or distributed production</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- METHODOLOGY -->
+
+    <section>
+
+        <h2>RESEARCH METHODOLOGY</h2>
+
+        <p>
+            The research distinguishes between nominal equipment performance and actual
+            production-system performance.
+        </p>
+
+        <p>
+            Where appropriate, controlled Application Lab testing will distinguish five
+            separate measures of time:
+        </p>
+
+
+        <div class="time-grid">
+
+            <div class="time-card">
+                <strong>Cook Time</strong>
+                The time during which the food is actively undergoing the primary cooking event.
+            </div>
+
+            <div class="time-card">
+                <strong>Cycle Time</strong>
+                The complete equipment cycle, including programmed cooking and associated thermal events.
+            </div>
+
+            <div class="time-card">
+                <strong>Recovery Time</strong>
+                The time required for the equipment or system to return to the required operating condition.
+            </div>
+
+            <div class="time-card">
+                <strong>Operator Time</strong>
+                The actual human labor required to load, unload, monitor, handle, stage, or otherwise execute the process.
+            </div>
+
+            <div class="time-card">
+                <strong>System Time</strong>
+                The total elapsed time imposed on the production system from the relevant starting condition to the relevant finished condition.
+            </div>
+
+        </div>
+
+        <p>
+            This distinction prevents a nominal appliance cooking time from being mistaken
+            for actual production-time reduction.
+        </p>
+
+        <p>
+            Research may also examine throughput, recovery behavior, capacity utilization,
+            workflow interruption, staging requirements, infrastructure requirements,
+            product quality, holding behavior, labor displacement, and downstream effects.
+        </p>
+
+    </section>
+
+
+    <!-- APPLICATION RESEARCH -->
+
+    <section>
+
+        <h2>APPLICATION RESEARCH</h2>
+
+        <p>
+            Equipment is not evaluated solely by asking whether it can perform a specified
+            cooking task. The investigation asks what becomes possible when the technology
+            is placed inside a real production architecture.
+        </p>
+
+        <p>
+            Application research may therefore examine:
+        </p>
+
+        <ul>
+            <li>Products and processes that become operationally viable through acceleration</li>
+            <li>Applications that appear promising but fail under real operating conditions</li>
+            <li>Interactions between cooking, chilling, freezing, storage, and regeneration</li>
+            <li>Effects on labor allocation and operator dependency</li>
+            <li>Infrastructure and footprint consequences</li>
+            <li>Service latency and throughput</li>
+            <li>Distributed and satellite production models</li>
+            <li>Failure modes and boundary conditions</li>
+            <li>Economic consequences of changing the production sequence</li>
+        </ul>
+
+    </section>
+
+
+    <!-- WHY IT EXISTS -->
+
+    <section>
+
+        <h2>WHY THIS REFERENCE EXISTS</h2>
+
+        <p>
+            Commercial equipment literature answers one question well:
+        </p>
+
+        <div class="question">
+            WHAT DOES THIS MACHINE DO?
+        </div>
+
+        <p>
+            The more difficult question is:
+        </p>
+
+        <div class="question">
+            WHAT CAN AN OPERATOR ACTUALLY DO WITH IT—AND WHAT CHANGES WHEN TIME, LABOR, INFRASTRUCTURE, AND PHYSICAL CONSTRAINTS ARE REDUCED?
+        </div>
+
+        <p>
+            <em>The Accelerated Cooking Systems</em> is designed to address that second
+            question.
+        </p>
+
+        <p>
+            It connects equipment technology, food technology, operational reality,
+            kitchen design, workflow, labor, infrastructure, and economics within a
+            single systems-level framework.
+        </p>
+
+    </section>
+
+
+    <!-- INDEPENDENCE -->
+
+    <section>
+
+        <h2>INDEPENDENCE &amp; RESEARCH INTEGRITY</h2>
+
+        <div class="independence">
+
+            <p>
+                <strong>Research participation does not purchase editorial outcomes.</strong>
+            </p>
+
+            <p>
+                Participating organizations may support research, contribute questions,
+                provide technical expertise, supply equipment access, facilitate testing,
+                or provide application knowledge.
+            </p>
+
+            <p>
+                Participation does not purchase favorable findings, editorial placement,
+                predetermined conclusions, or exclusion of negative findings.
+            </p>
+
+            <p style="margin-bottom: 0;">
+                The separation between research participation and editorial outcome is
+                essential to the credibility of the work and to its long-term value as a
+                professional reference.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PARTICIPATION -->
+
+    <section>
+
+        <h2>RESEARCH PARTICIPATION</h2>
+
+        <div class="participation">
+
+            <p>
+                Manufacturers, technology organizations, dealers, food technologists,
+                operators, educators, and other qualified participants may contribute to
+                the development of the research through:
+            </p>
+
+            <ul>
+                <li>Research questions and application problems</li>
+                <li>Technical documentation and engineering information</li>
+                <li>Equipment access or temporary research equipment</li>
+                <li>Application expertise</li>
+                <li>Controlled testing opportunities</li>
+                <li>Research funding or other forms of research support</li>
+            </ul>
+
+            <p style="margin-bottom: 0;">
+                The objective is not sponsored promotion. The objective is to create a
+                controlled channel through which industry knowledge and equipment access
+                can contribute to an independent body of application research.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- VALUE -->
+
+    <section>
+
+        <h2>WHO IT SERVES</h2>
+
+        <h3>OPERATORS &amp; CHEFS</h3>
+
+        <p>
+            Evidence-based insight into where acceleration creates genuine operational
+            advantage and where it merely relocates bottlenecks.
+        </p>
+
+        <h3>KITCHEN DESIGNERS &amp; CONSULTANTS</h3>
+
+        <p>
+            Analysis of footprint, infrastructure, ventilation, workflow, production
+            sequencing, and distributed operating models.
+        </p>
+
+        <h3>EDUCATORS &amp; STUDENTS</h3>
+
+        <p>
+            A technical reference grounded in application research rather than
+            manufacturer literature alone.
+        </p>
+
+        <h3>MANUFACTURERS &amp; DEALERS</h3>
+
+        <p>
+            Independent application intelligence and a credible external reference for
+            understanding how equipment performs within real production systems.
+        </p>
+
+        <h3>FOOD TECHNOLOGISTS</h3>
+
+        <p>
+            A systems-level framework for evaluating how food properties interact with
+            accelerated thermal processes, chilling, freezing, storage, regeneration,
+            and service.
+        </p>
+
+    </section>
+
+
+    <!-- PUBLICATION -->
+
+    <section>
+
+        <h2>PUBLICATION ARCHITECTURE</h2>
+
+        <p>
+            The completed research will form two principal volumes:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Volume 01 — The Accelerated Cooking Field Guide</strong>
+            </li>
+            <li>
+                <strong>Volume 02 — The Extended Production Cycle Field Guide</strong>
+            </li>
+        </ul>
+
+        <p>
+            Together they form a core reference on accelerated cooking and compressed
+            food-production systems.
+        </p>
+
+        <p>
+            The work will be maintained through periodic editions, typically every few
+            years, incorporating new technologies, operating models, and evidence while
+            preserving the provenance and integrity of earlier editions.
+        </p>
+
+    </section>
+
+
+    <!-- CLOSING -->
+
+    <section>
+
+        <h2>THE PROPOSITION</h2>
+
+        <p class="lead">
+            Making one step faster does not necessarily make the system faster.
+        </p>
+
+        <p>
+            The purpose of this research is to determine when acceleration produces a
+            genuine system-level advantage—and when it simply moves the constraint
+            somewhere else.
+        </p>
+
+        <p>
+            That distinction is the subject of
+            <em>The Accelerated Cooking Systems.</em>
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer-wall">
+        STRATEGIC POSITION: SYSTEMS ENGINEERING LABORATORY.<br>
+        RESEARCH PROGRAM: THE ACCELERATED COOKING SYSTEMS.<br>
+        SECURITY PROTOCOL: ABSOLUTE NO-SAMPLE POLICY.<br>
+        CONTACT: PRINCIPAL.P1.LAB@PROTON.ME
+    </div>
+
+</body>
+</html>
