@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,969 +18,1394 @@
             --soft-bg: #faf8f2;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+```
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: var(--sans-font);
+        line-height: 1.65;
+        padding: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .doc-meta {
+        font-family: var(--mono-font);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        border-bottom: 2px solid var(--brass);
+        padding-bottom: 0.5rem;
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted-text);
+        font-weight: 600;
+    }
+
+    header {
+        margin-bottom: 4rem;
+    }
+
+    h1 {
+        font-family: var(--mono-font);
+        font-size: 2.35rem;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        line-height: 1.12;
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        color: var(--forest);
+    }
+
+    .subtitle {
+        font-family: var(--mono-font);
+        font-size: 1rem;
+        color: var(--forest);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        margin-bottom: 1.5rem;
+    }
+
+    .status-line {
+        font-family: var(--mono-font);
+        font-size: 0.75rem;
+        color: var(--muted-text);
+        text-transform: uppercase;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 0.65rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .thesis-container {
+        border-left: 4px solid var(--forest);
+        padding-left: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .thesis {
+        font-size: 1.28rem;
+        font-weight: 650;
+        line-height: 1.52;
+    }
+
+    h2 {
+        font-family: var(--mono-font);
+        font-size: 1.25rem;
+        color: var(--forest);
+        text-transform: uppercase;
+        margin-top: 3.5rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--brass);
+        padding-bottom: 0.45rem;
+    }
+
+    h3 {
+        font-family: var(--mono-font);
+        font-size: 1rem;
+        color: var(--forest);
+        text-transform: uppercase;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    p {
+        margin-bottom: 1.25rem;
+    }
+
+    .lead {
+        font-size: 1.08rem;
+        line-height: 1.65;
+    }
+
+    .question {
+        background: var(--soft-bg);
+        border-left: 4px solid var(--brass);
+        padding: 1.25rem 1.5rem;
+        margin: 2rem 0;
+        font-family: var(--mono-font);
+        font-weight: 700;
+        color: var(--forest);
+    }
+
+    .principle {
+        border: 2px solid var(--forest);
+        background: var(--soft-bg);
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .principle-title {
+        font-family: var(--mono-font);
+        color: var(--forest);
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+
+    .volume {
+        border-left: 4px solid var(--brass);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        background: #fff;
+    }
+
+    .volume.primary {
+        border-left-color: var(--forest);
+        background: var(--soft-bg);
+    }
+
+    .volume-label {
+        font-family: var(--mono-font);
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--muted-text);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+    }
+
+    .volume h3 {
+        margin-top: 0;
+        font-size: 1.15rem;
+    }
+
+    .volume-question {
+        font-family: var(--mono-font);
+        color: var(--forest);
+        font-weight: 700;
+        margin: 1rem 0 1.25rem 0;
+    }
+
+    ul {
+        margin: 0 0 1.25rem 1.25rem;
+    }
+
+    li {
+        margin-bottom: 0.55rem;
+    }
+
+    .sequence {
+        font-family: var(--mono-font);
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--forest);
+        background: var(--soft-bg);
+        border: 1px solid var(--border-color);
+        padding: 1rem;
+        margin: 2rem 0;
+        text-align: center;
+        line-height: 1.8;
+    }
+
+    .outcome-grid,
+    .food-grid,
+    .framework {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1.5rem 0 2rem 0;
+    }
+
+    .outcome-card,
+    .food-card,
+    .framework-item {
+        border: 1px solid var(--border-color);
+        padding: 1.15rem;
+        background: #fff;
+    }
+
+    .outcome-card strong,
+    .food-card strong {
+        display: block;
+        font-family: var(--mono-font);
+        color: var(--forest);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .food-card {
+        border-left: 4px solid var(--brass);
+    }
+
+    .food-card.primary {
+        border-left-color: var(--forest);
+        background: var(--soft-bg);
+    }
+
+    .food-card .descriptor {
+        font-family: var(--mono-font);
+        font-size: 0.76rem;
+        color: var(--muted-text);
+        text-transform: uppercase;
+        margin-bottom: 0.55rem;
+    }
+
+    .environment {
+        border-left: 3px solid var(--brass);
+        padding: 1.15rem 1.25rem;
+        margin: 1.25rem 0;
+        background: #fff;
+    }
+
+    .environment strong {
+        font-family: var(--mono-font);
+        color: var(--forest);
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 0.35rem;
+    }
+
+    .time-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1.5rem 0 2rem 0;
+    }
+
+    .time-card {
+        border: 1px solid var(--border-color);
+        padding: 1.15rem;
+        background: #fff;
+    }
+
+    .time-card strong {
+        display: block;
+        font-family: var(--mono-font);
+        color: var(--forest);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .independence {
+        border: 2px solid var(--forest);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        background: var(--soft-bg);
+    }
+
+    .independence strong {
+        font-family: var(--mono-font);
+        color: var(--forest);
+        text-transform: uppercase;
+    }
+
+    .participation {
+        border-left: 4px solid var(--brass);
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .footer-wall {
+        border-top: 4px solid var(--forest);
+        padding: 2rem;
+        margin-top: 6rem;
+        font-family: var(--mono-font);
+        font-size: 0.78rem;
+        background: #000;
+        color: #fff;
+    }
+
+    .back-link {
+        font-family: var(--mono-font);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: var(--forest);
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--sans-font);
-            line-height: 1.65;
-            padding: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 1.25rem;
+        }
+
+        h1 {
+            font-size: 1.85rem;
         }
 
         .doc-meta {
-            font-family: var(--mono-font);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--brass);
-            padding-bottom: 0.5rem;
-            margin-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            color: var(--muted-text);
-            font-weight: 600;
+            flex-direction: column;
+            gap: 0.35rem;
         }
+    }
+</style>
+```
 
-        header { margin-bottom: 4rem; }
-
-        h1 {
-            font-family: var(--mono-font);
-            font-size: 2.35rem;
-            font-weight: 800;
-            letter-spacing: -0.035em;
-            line-height: 1.12;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            color: var(--forest);
-        }
-
-        .subtitle {
-            font-family: var(--mono-font);
-            font-size: 1rem;
-            color: var(--forest);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            margin-bottom: 1.5rem;
-        }
-
-        .status-line {
-            font-family: var(--mono-font);
-            font-size: 0.75rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 0.65rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .thesis-container {
-            border-left: 4px solid var(--forest);
-            padding-left: 1.25rem;
-            margin-bottom: 2rem;
-        }
-
-        .thesis {
-            font-size: 1.28rem;
-            font-weight: 650;
-            line-height: 1.52;
-        }
-
-        h2 {
-            font-family: var(--mono-font);
-            font-size: 1.25rem;
-            color: var(--forest);
-            text-transform: uppercase;
-            margin-top: 3.5rem;
-            margin-bottom: 1.25rem;
-            border-bottom: 1px solid var(--brass);
-            padding-bottom: 0.45rem;
-        }
-
-        h3 {
-            font-family: var(--mono-font);
-            font-size: 1rem;
-            color: var(--forest);
-            text-transform: uppercase;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-        }
-
-        p { margin-bottom: 1.25rem; }
-
-        .lead { font-size: 1.08rem; line-height: 1.65; }
-
-        .question {
-            background: var(--soft-bg);
-            border-left: 4px solid var(--brass);
-            padding: 1.25rem 1.5rem;
-            margin: 2rem 0;
-            font-family: var(--mono-font);
-            font-weight: 700;
-            color: var(--forest);
-        }
-
-        .principle {
-            border: 2px solid var(--forest);
-            background: var(--soft-bg);
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .principle-title {
-            font-family: var(--mono-font);
-            color: var(--forest);
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-        }
-
-        .volume {
-            border-left: 4px solid var(--brass);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            background: #fff;
-        }
-
-        .volume.primary {
-            border-left-color: var(--forest);
-            background: var(--soft-bg);
-        }
-
-        .volume-label {
-            font-family: var(--mono-font);
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }
-
-        .volume h3 { margin-top: 0; font-size: 1.15rem; }
-
-        .volume-question {
-            font-family: var(--mono-font);
-            color: var(--forest);
-            font-weight: 700;
-            margin: 1rem 0 1.25rem 0;
-        }
-
-        ul { margin: 0 0 1.25rem 1.25rem; }
-        li { margin-bottom: 0.55rem; }
-
-        .sequence {
-            font-family: var(--mono-font);
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--forest);
-            background: var(--soft-bg);
-            border: 1px solid var(--border-color);
-            padding: 1rem;
-            margin: 2rem 0;
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        .outcome-grid, .food-grid, .framework {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin: 1.5rem 0 2rem 0;
-        }
-
-        .outcome-card, .food-card, .framework-item {
-            border: 1px solid var(--border-color);
-            padding: 1.15rem;
-            background: #fff;
-        }
-
-        .outcome-card strong, .food-card strong {
-            display: block;
-            font-family: var(--mono-font);
-            color: var(--forest);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .food-card {
-            border-left: 4px solid var(--brass);
-        }
-
-        .food-card.primary {
-            border-left-color: var(--forest);
-            background: var(--soft-bg);
-        }
-
-        .food-card .descriptor {
-            font-family: var(--mono-font);
-            font-size: 0.76rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            margin-bottom: 0.55rem;
-        }
-
-        .environment {
-            border-left: 3px solid var(--brass);
-            padding: 1.15rem 1.25rem;
-            margin: 1.25rem 0;
-            background: #fff;
-        }
-
-        .environment strong {
-            font-family: var(--mono-font);
-            color: var(--forest);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 0.35rem;
-        }
-
-        .time-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin: 1.5rem 0 2rem 0;
-        }
-
-        .time-card {
-            border: 1px solid var(--border-color);
-            padding: 1.15rem;
-            background: #fff;
-        }
-
-        .time-card strong {
-            display: block;
-            font-family: var(--mono-font);
-            color: var(--forest);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .independence {
-            border: 2px solid var(--forest);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            background: var(--soft-bg);
-        }
-
-        .independence strong {
-            font-family: var(--mono-font);
-            color: var(--forest);
-            text-transform: uppercase;
-        }
-
-        .participation {
-            border-left: 4px solid var(--brass);
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .footer-wall {
-            border-top: 4px solid var(--forest);
-            padding: 2rem;
-            margin-top: 6rem;
-            font-family: var(--mono-font);
-            font-size: 0.78rem;
-            background: #000;
-            color: #fff;
-        }
-
-        .back-link {
-            font-family: var(--mono-font);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--forest);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .back-link:hover { text-decoration: underline; }
-
-        @media (max-width: 768px) {
-            body { padding: 1.25rem; }
-            h1 { font-size: 1.85rem; }
-            .doc-meta { flex-direction: column; gap: 0.35rem; }
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="doc-meta">
-        <span>PROVISION1</span>
-        <span>INDEPENDENT FOOD-TRANSFORMATION RESEARCH</span>
+```
+<div class="doc-meta">
+    <span>PROVISION1</span>
+    <span>INDEPENDENT FOOD-TRANSFORMATION RESEARCH</span>
+</div>
+
+<header>
+    <a href="index.html" class="back-link">← PROVISION1 LABORATORY</a>
+
+    <h1 style="margin-top: 1.5rem;">
+        THE ACCELERATED<br>
+        FOOD SYSTEMS
+    </h1>
+
+    <p class="subtitle">
+        A Two-Volume Independent Research Reference
+    </p>
+
+    <div class="status-line">
+        RESEARCH PROGRAM · FOOD TRANSFORMATION · APPLICATION RESEARCH · PROVISION1 LABORATORY
     </div>
 
-    <header>
-        <a href="index.html" class="back-link">← PROVISION1 LABORATORY</a>
+    <div class="thesis-container">
+        <p class="thesis">
+            We do not study speed for its own sake.<br>
+            We study what happens when important foods encounter accelerated production processes—and whether those processes actually create value for the food, the operator, the production system, and the consumer.
+        </p>
+    </div>
+</header>
 
-        <h1 style="margin-top: 1.5rem;">
-            THE ACCELERATED<br>
-            FOOD SYSTEMS
-        </h1>
 
-        <p class="subtitle">
-            A Two-Volume Independent Research Reference
+<section>
+    <h2>WHAT IT IS</h2>
+
+    <p class="lead">
+        <em>The Accelerated Food Systems</em> is a two-volume professional reference produced through independent application research.
+    </p>
+
+    <p>
+        It investigates accelerated cooking and compressed food-production systems through the foods themselves: their physical structure, thermal behavior, hydration, transformation, quality, repeatability, holding behavior, regeneration, raw-material variability, safety, and usefulness in real production environments.
+    </p>
+
+    <p>
+        The central subject is <strong>food transformation</strong>. Equipment and production technologies are research instruments. The food is the research subject.
+    </p>
+
+    <p>
+        This establishes a fundamental operating principle:
+    </p>
+
+    <div class="principle">
+        <div class="principle-title">Food Dictates the Equipment</div>
+
+        <p>
+            The research begins with the food, the desired food outcome, the intended application, and the production problem. Equipment is selected because it can answer the research question—not because the food has been selected to demonstrate what an appliance can do.
         </p>
 
-        <div class="status-line">
-            RESEARCH PROGRAM · FOOD TRANSFORMATION · APPLICATION RESEARCH · PROVISION1 LABORATORY
-        </div>
+        <p style="margin-bottom: 0;">
+            The governing question is therefore not simply <strong>“What does this machine do?”</strong> but:
+            <strong>“What can this process do to this food, for this application, under real production conditions?”</strong>
+        </p>
+    </div>
 
-        <div class="thesis-container">
-            <p class="thesis">
-                We do not study speed for its own sake.<br>
-                We study what happens when important foods are subjected to accelerated production processes—and when those processes create, destroy, or merely relocate value.
-            </p>
-        </div>
-    </header>
+    <div class="question">
+        WHAT CAN ACCELERATED PROCESSES DO TO IMPORTANT FOOD MATERIALS — AND WHEN DOES THAT CREATE REAL VALUE?
+    </div>
 
-    <section>
-        <h2>WHAT IT IS</h2>
+    <p>
+        The research examines technologies and operating architectures that alter the time required to prepare, cook, chill, freeze, store, regenerate, finish, hold, and serve food—and the consequences of those changes for the food, the process, the operation, the consumer, and the economics.
+    </p>
 
-        <p class="lead">
-            <em>The Accelerated Food Systems</em> is a two-volume professional reference produced through independent application research.
+    <p>
+        The work is not an equipment catalog, buyer’s guide, recipe collection, manufacturer literature, sponsored editorial, or conventional thought-leadership piece.
+    </p>
+
+    <p>
+        It is an independent research record of <strong>food transformation, capability, limitation, boundary conditions, application, failure modes, variability, bottleneck behavior, and system-level consequence.</strong>
+    </p>
+</section>
+
+
+<section>
+    <h2>THE BREAKTHROUGH PROPOSITION</h2>
+
+    <div class="principle">
+        <div class="principle-title">Acceleration Is a Research Variable, Not the Subject</div>
+
+        <p>
+            The research does not begin by asking which appliance is fastest. It begins with a food material, a transformation problem, a desired food outcome, and a real application.
         </p>
 
         <p>
-            It investigates accelerated cooking and compressed food-production systems through the foods themselves: their physical structure, thermal behavior, hydration, transformation, quality, repeatability, holding behavior, regeneration, and usefulness in real production environments.
+            Acceleration matters only when it improves the relevant production system.
         </p>
 
-        <p>
-            The central subject is <strong>food transformation</strong>. Equipment and production technologies are research instruments. The food is the research subject.
+        <p style="margin-bottom: 0;">
+            The central question is:
+            <strong>Can an accelerated process produce the required food outcome—at the required quality, safety, consistency, affordability, and repeatability—within the real operational and economic constraints of the intended application?</strong>
         </p>
+    </div>
 
-        <p>
-            This changes the fundamental question from <strong>“What does this machine do?”</strong> to a more useful question:
-        </p>
+    <p>
+        A process that reduces twelve minutes to three but produces inferior texture, flavor, moisture retention, appearance, consistency, safety margin, or holding performance may create little or no value.
+    </p>
 
-        <div class="question">
-            WHAT CAN ACCELERATED PROCESSES DO TO IMPORTANT FOOD MATERIALS — AND WHEN DOES THAT CREATE REAL VALUE?
-        </div>
+    <p>
+        Conversely, an accelerated pathway that makes a difficult ingredient practical at production scale may create substantial value even when the absolute time reduction is only one part of the result.
+    </p>
 
-        <p>
-            The research examines technologies and operating architectures that alter the time required to prepare, cook, chill, freeze, store, regenerate, finish, hold, and serve food—and the consequences of those changes for the food, the process, the operation, and the economics.
-        </p>
+    <p>
+        The research therefore distinguishes between <strong>speed</strong> and <strong>productive capacity</strong>. A faster process is not automatically a more productive system.
+    </p>
 
-        <p>
-            The work is not an equipment catalog, buyer’s guide, recipe collection, manufacturer literature, sponsored editorial, or conventional thought-leadership piece.
-        </p>
+    <div class="question">
+        DOES ACCELERATION REMOVE A BOTTLENECK — OR SIMPLY MOVE THE BOTTLENECK SOMEWHERE ELSE?
+    </div>
 
-        <p>
-            It is an independent research record of <strong>food transformation, capability, limitation, boundary conditions, application, failure modes, and system-level consequence.</strong>
-        </p>
-    </section>
+    <p>
+        This distinction is fundamental. A faster cooking event may expose limitations in preparation, loading, recovery, chilling, storage, packaging, regeneration, holding, service, labor, ingredient supply, or co-manufacturing capacity.
+    </p>
 
-    <section>
-        <h2>THE BREAKTHROUGH PROPOSITION</h2>
+    <p>
+        The relevant object of study is therefore not merely the accelerated step. It is the <strong>production architecture surrounding the step</strong>.
+    </p>
+</section>
 
-        <div class="principle">
-            <div class="principle-title">Acceleration Is a Research Variable, Not the Subject</div>
 
-            <p>
-                The research does not begin by asking which appliance is fastest. It begins with a food material, a transformation problem, and a desired outcome.
-            </p>
+<section>
+    <h2>THE FOOD RESEARCH TAXONOMY</h2>
 
+    <p>
+        The research is initially organized around food systems with large existing markets, broad culinary utility, significant production volume, or unresolved processing barriers that may be affected by acceleration.
+    </p>
+
+    <div class="food-grid">
+
+        <div class="food-card primary">
+            <div class="descriptor">RESEARCH DOMAIN 01 · MASS STAPLES</div>
+            <strong>Rice · Wheat · Citrus</strong>
             <p style="margin-bottom: 0;">
-                The central question is:
-                <strong>Can an accelerated process produce the required food outcome—at the required quality and consistency—within the real operational and economic constraints of the intended application?</strong>
+                Major food systems with enormous production volumes, multiple physical forms, complex transformation pathways, and substantial opportunities for accelerated preparation, cooking, preservation, regeneration, and service.
             </p>
         </div>
 
-        <p>
-            A process that reduces twelve minutes to three but produces inferior texture, flavor, moisture retention, appearance, consistency, or holding performance may create little or no value.
-        </p>
-
-        <p>
-            Conversely, an accelerated pathway that makes a difficult ingredient practical at production scale may create substantial value even when the absolute time reduction is only one part of the result.
-        </p>
-
-        <p>
-            This is especially important for foods whose commercial adoption is constrained not by demand, but by <strong>operational friction</strong>: long preparation times, difficult hydration, poor regeneration, narrow processing windows, inconsistent results, or incompatibility with high-volume production.
-        </p>
-    </section>
-
-    <section>
-        <h2>THE FOOD RESEARCH TAXONOMY</h2>
-
-        <p>
-            The research is initially organized around food systems with large existing markets, broad culinary utility, or significant potential for expanded use through accelerated processing.
-        </p>
-
-        <div class="food-grid">
-            <div class="food-card primary">
-                <div class="descriptor">RESEARCH DOMAIN 01 · MASS STAPLES</div>
-                <strong>Rice · Wheat · Citrus</strong>
-                <p style="margin-bottom: 0;">
-                    Major food systems with enormous production volumes, multiple physical forms, complex transformation pathways, and substantial opportunities for accelerated preparation, cooking, preservation, regeneration, and service.
-                </p>
-            </div>
-
-            <div class="food-card">
-                <div class="descriptor">RESEARCH DOMAIN 02 · HIGH-VOLUME FRUIT</div>
-                <strong>Apples · Pears · Stone Fruit · Tropical Fruit · Berries</strong>
-                <p style="margin-bottom: 0;">
-                    Fruit systems in which accelerated thermal processing interacts with cellular structure, pectin, moisture migration, sugar concentration, acidity, browning, aroma, and texture.
-                </p>
-            </div>
-
-            <div class="food-card">
-                <div class="descriptor">RESEARCH DOMAIN 03 · SPECIALTY FOODS SEEKING MASS UTILITY</div>
-                <strong>Farro · Sorghum · Millet · Barley · Teff · Other Specialty Grains</strong>
-                <p style="margin-bottom: 0;">
-                    Foods whose broader adoption may be limited by preparation time, processing complexity, regeneration behavior, or other operational barriers that acceleration may help remove.
-                </p>
-            </div>
-        </div>
-
-        <p>
-            These domains are not intended as a permanent closed list. They establish the initial research spine. Additional foods enter the program when their transformation behavior, commercial importance, application potential, or unresolved processing problem justifies investigation.
-        </p>
-    </section>
-
-    <section>
-        <h2>THE RESEARCH OBJECT</h2>
-
-        <p>
-            A food is not treated as a single static ingredient. The research follows it through relevant physical and production states.
-        </p>
-
-        <div class="sequence">
-            MATERIAL → FORM / STATE → PROCESS → THERMAL MODE → TIME / TEMPERATURE → ENDPOINT → FOOD OUTCOME → SYSTEM CONSEQUENCE
-        </div>
-
-        <p>
-            A single material may therefore become multiple research objects. Rice may be examined as whole grain, hydrated grain, cooked grain, chilled grain, frozen grain, regenerated grain, or as an ingredient in a prepared food. Wheat may be examined as grain, cracked grain, flour, dough, fermented dough, par-baked product, frozen product, and regenerated product.
-        </p>
-
-        <p>
-            The purpose is not to create recipes. It is to characterize <strong>transformation pathways</strong>.
-        </p>
-    </section>
-
-    <section>
-        <h2>THE RESEARCH MATRIX</h2>
-
-        <p>
-            Each research question can be understood as an interaction among food material, physical state, process, thermal conditions, time, and desired endpoint.
-        </p>
-
-        <div class="framework">
-            <div class="framework-item">FOOD MATERIAL — What are we transforming?</div>
-            <div class="framework-item">FORM / STATE — In what physical condition?</div>
-            <div class="framework-item">PROCESS — What transformation are we attempting?</div>
-            <div class="framework-item">THERMAL MODE — How is energy delivered?</div>
-            <div class="framework-item">TIME / TEMPERATURE — How is the process accelerated or controlled?</div>
-            <div class="framework-item">ENDPOINT — What food result is required?</div>
-            <div class="framework-item">APPLICATION — Where must that result function?</div>
-        </div>
-
-        <p>
-            Equipment enters this matrix according to its relevance to the question. The research therefore does not begin with a fixed list of manufacturers or machines.
-        </p>
-    </section>
-
-    <section>
-        <h2>FOOD OUTCOME IS THE PRIMARY OUTPUT</h2>
-
-        <p>
-            Food is not merely material passing through an appliance. It is the output being purchased, served, evaluated, and consumed.
-        </p>
-
-        <div class="outcome-grid">
-            <div class="outcome-card">
-                <strong>Structure &amp; Texture</strong>
-                Crispness, tenderness, chew, cellular structure, crust development, hydration, moisture retention, and structural integrity.
-            </div>
-
-            <div class="outcome-card">
-                <strong>Thermal Result</strong>
-                Internal temperature, thermal gradients, doneness, carryover, uniformity, and endpoint control.
-            </div>
-
-            <div class="outcome-card">
-                <strong>Flavor &amp; Aroma</strong>
-                Browning, color development, aroma retention, flavor development, surface reactions, acidity, sweetness, and other relevant sensory effects.
-            </div>
-
-            <div class="outcome-card">
-                <strong>Holding &amp; Regeneration</strong>
-                How the food behaves after processing during staging, transport, chilling, freezing, regeneration, holding, and service.
-            </div>
-
-            <div class="outcome-card">
-                <strong>Consistency</strong>
-                Repeatability across operators, batches, loads, cycles, product states, and service conditions.
-            </div>
-
-            <div class="outcome-card">
-                <strong>Application Fitness</strong>
-                Whether the resulting food is appropriate for the culinary, operational, and commercial environment in which it is intended to function.
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>FOOD → PROCESS → OPERATION → ECONOMICS</h2>
-
-        <div class="framework">
-            <div class="framework-item">FOOD — What happened to the food?</div>
-            <div class="framework-item">PROCESS — What happened to time, throughput, recovery, labor, repeatability, and process tolerance?</div>
-            <div class="framework-item">OPERATION — What happened to workflow, infrastructure, capacity, storage, service, and production architecture?</div>
-            <div class="framework-item">ECONOMICS — What changed in yield, waste, labor, capital, flexibility, service performance, and overall viability?</div>
-        </div>
-
-        <p>
-            Value is the judgment that follows from all four. None can be evaluated adequately in isolation.
-        </p>
-
-        <div class="question">
-            TIME IS AN INPUT CONSTRAINT. FOOD IS THE OUTPUT. VALUE IS THE SYSTEM-LEVEL JUDGMENT.
-        </div>
-    </section>
-
-    <section>
-        <h2>THE PRODUCTION SEQUENCE</h2>
-
-        <p>
-            Acceleration is evaluated not only at the cooking event, but across the complete relevant production sequence:
-        </p>
-
-        <div class="sequence">
-            PREPARATION → COOKING → CHILLING / FREEZING → STORAGE → REGENERATION → FINISHING → HOLDING → SERVICE
-        </div>
-
-        <p>
-            A faster cooking event may improve service—or expose a downstream holding problem. Rapid chilling may enable centralized production—or introduce packaging, storage, or regeneration requirements. A specialty grain that becomes practical through accelerated hydration and cooking may enable an entirely different production model.
-        </p>
-
-        <p>
-            The research therefore asks whether acceleration creates a meaningful improvement in the <strong>entire production architecture</strong>, not merely in an isolated process step.
-        </p>
-    </section>
-
-    <section>
-        <h2>THE TWO-VOLUME STUDY</h2>
-
-        <div class="volume primary">
-            <div class="volume-label">VOLUME 01</div>
-            <h3>THE ACCELERATED COOKING FIELD GUIDE</h3>
-
-            <p class="volume-question">
-                What happens when the primary cooking or finishing event is compressed—and what food transformations become possible as a result?
-            </p>
-
-            <p>
-                Volume 01 is the principal experimental volume for accelerated thermal cooking. It examines commercial cooking platforms as research instruments applied to defined food materials, products, transformation problems, and applications.
-            </p>
-
-            <p>Investigation includes:</p>
-
-            <ul>
-                <li>High-speed ovens</li>
-                <li>Combi systems and combi ovens</li>
-                <li>Hybrid accelerated cooking platforms</li>
-                <li>Other accelerated thermal cooking platforms</li>
-                <li>Induction, steam, pressure, radiant, infrared, and other thermal modes where relevant to the research question</li>
-                <li>Food-specific transformation pathways</li>
-                <li>Hydration, cooking, finishing, and regeneration behavior</li>
-                <li>Product quality, texture, structure, flavor, moisture, and appearance</li>
-                <li>Boundary conditions, edge applications, and failure modes</li>
-                <li>Workflow, labor, infrastructure, throughput, and economic consequences</li>
-            </ul>
-        </div>
-
-        <div class="volume">
-            <div class="volume-label">VOLUME 02</div>
-            <h3>THE EXTENDED PRODUCTION CYCLE FIELD GUIDE</h3>
-
-            <p class="volume-question">
-                What happens before and after the cooking event—and which production architectures allow accelerated food transformations to become operationally useful?
-            </p>
-
-            <p>
-                Volume 02 examines the systems surrounding the cooking event: preservation, storage, movement, regeneration, finishing, centralized production, distributed production, and the technologies that connect those stages.
-            </p>
-
-            <p>Investigation includes:</p>
-
-            <ul>
-                <li>Rapid chilling and blast chilling</li>
-                <li>Rapid freezing and blast freezing</li>
-                <li>Thawing systems</li>
-                <li>Cook-chill and cook-freeze architectures</li>
-                <li>Regeneration and rethermalization</li>
-                <li>Pure steam and pressure systems</li>
-                <li>Precision and controlled low-temperature systems</li>
-                <li>Automation, sensing, and control</li>
-                <li>Integrated production systems</li>
-                <li>Central-to-satellite and distributed production models</li>
-                <li>Food-quality consequences of extended production cycles</li>
-                <li>Boundary conditions, workflow, labor, infrastructure, and economic consequences</li>
-            </ul>
-        </div>
-
-        <p>
-            The volumes are therefore complementary rather than simply sequential: <strong>Volume 01 investigates accelerated transformation at the cooking event; Volume 02 investigates the production architecture required to make those transformations useful at system scale.</strong>
-        </p>
-    </section>
-
-    <section>
-        <h2>PUBLICATION ARCHITECTURE</h2>
-
-        <p>
-            <em>The Accelerated Food Systems</em> is both a two-volume professional reference and a continuing research program.
-        </p>
-
-        <p>
-            The two principal volumes establish the permanent reference architecture. Quarterly monographs extend that architecture through focused investigations of individual food materials, transformation problems, and application questions.
-        </p>
-
-        <div class="volume primary">
-            <div class="volume-label">FOUNDATIONAL REFERENCE · VOLUME 01</div>
-            <h3>THE ACCELERATED COOKING FIELD GUIDE</h3>
+        <div class="food-card">
+            <div class="descriptor">RESEARCH DOMAIN 02 · HIGH-VOLUME FRUIT</div>
+            <strong>Apples · Pears · Stone Fruit · Tropical Fruit · Berries</strong>
             <p style="margin-bottom: 0;">
-                Accelerated cooking, finishing, thermal transformation, food response, process performance, and application.
+                Fruit systems in which accelerated thermal processing interacts with cellular structure, pectin, moisture migration, sugar concentration, acidity, browning, aroma, and texture.
             </p>
         </div>
 
-        <div class="volume">
-            <div class="volume-label">FOUNDATIONAL REFERENCE · VOLUME 02</div>
-            <h3>THE EXTENDED PRODUCTION CYCLE FIELD GUIDE</h3>
+        <div class="food-card">
+            <div class="descriptor">RESEARCH DOMAIN 03 · SPECIALTY FOODS SEEKING MASS UTILITY</div>
+            <strong>Farro · Sorghum · Millet · Barley · Teff · Other Specialty Grains</strong>
             <p style="margin-bottom: 0;">
-                The systems before and after the primary cooking event: chilling, freezing, storage, regeneration, staging, finishing, service, labor, workflow, and production architecture.
+                Foods whose broader adoption may be limited by preparation time, processing complexity, regeneration behavior, raw-material variability, or other operational barriers that acceleration may help remove.
             </p>
         </div>
 
-        <h3>QUARTERLY RESEARCH MONOGRAPHS</h3>
+    </div>
 
-        <p>
-            The quarterly monographs provide deeper investigations of individual food materials. Each examines the material as a production system rather than simply as an ingredient, documenting relevant physical states, transformation pathways, process conditions, food outcomes, boundary conditions, applications, and operational consequences.
-        </p>
+    <p>
+        These domains are not intended as a permanent closed list. They establish the initial research spine. Additional foods enter the program when their transformation behavior, commercial importance, application potential, consumer relevance, or unresolved processing problem justifies investigation.
+    </p>
+</section>
 
-        <div class="food-grid">
-            <div class="food-card primary">
-                <div class="descriptor">Q1</div>
-                <strong>RICE</strong>
-                <p style="margin-bottom: 0;">
-                    Hydration, accelerated cooking, texture, holding, regeneration, and high-volume application.
-                </p>
-            </div>
 
-            <div class="food-card">
-                <div class="descriptor">Q2</div>
-                <strong>MUSHROOM</strong>
-                <p style="margin-bottom: 0;">
-                    Water management, structure, browning, concentration, accelerated transformation, and production utility.
-                </p>
-            </div>
+<section>
+    <h2>THE RESEARCH OBJECT</h2>
 
-            <div class="food-card">
-                <div class="descriptor">Q3</div>
-                <strong>CITRUS</strong>
-                <p style="margin-bottom: 0;">
-                    Peel, pith, juice, membrane, extraction, softening, concentration, preservation, and accelerated thermal pathways.
-                </p>
-            </div>
+    <p>
+        A food is not treated as a single static ingredient. The research follows it through relevant physical and production states.
+    </p>
 
-            <div class="food-card">
-                <div class="descriptor">Q4</div>
-                <strong>SORGHUM</strong>
-                <p style="margin-bottom: 0;">
-                    Hydration, cooking, texture, processing friction, regeneration, and the potential for expanded foodservice utility.
-                </p>
-            </div>
+    <div class="sequence">
+        MATERIAL → FORM / STATE → VARIABILITY → PROCESS → THERMAL MODE → TIME / TEMPERATURE → ENDPOINT → FOOD OUTCOME → APPLICATION → SYSTEM CONSEQUENCE
+    </div>
+
+    <p>
+        A single material may therefore become multiple research objects. Rice may be examined as whole grain, hydrated grain, cooked grain, chilled grain, frozen grain, regenerated grain, or as an ingredient in a prepared food.
+    </p>
+
+    <p>
+        Wheat may be examined as grain, cracked grain, flour, dough, fermented dough, par-baked product, frozen product, and regenerated product.
+    </p>
+
+    <p>
+        The research also recognizes that food is inherently variable. A raw material is not necessarily identical from season to season, lot to lot, producer to producer, or growing environment to growing environment.
+    </p>
+
+    <div class="question">
+        HOW MUCH RAW-MATERIAL VARIABILITY CAN THE PRODUCTION SYSTEM TOLERATE BEFORE THE OPERATOR MUST INTERVENE?
+    </div>
+
+    <p>
+        The purpose is therefore not to create recipes. It is to characterize <strong>transformation pathways, tolerance ranges, and production boundaries.</strong>
+    </p>
+</section>
+
+
+<section>
+    <h2>THE RESEARCH MATRIX</h2>
+
+    <p>
+        Each research question can be understood as an interaction among food material, physical state, material variability, process, thermal conditions, time, desired endpoint, and intended application.
+    </p>
+
+    <div class="framework">
+        <div class="framework-item">FOOD MATERIAL — What are we transforming?</div>
+        <div class="framework-item">FORM / STATE — In what physical condition?</div>
+        <div class="framework-item">VARIABILITY — How much can the material naturally vary?</div>
+        <div class="framework-item">PROCESS — What transformation are we attempting?</div>
+        <div class="framework-item">THERMAL MODE — How is energy delivered?</div>
+        <div class="framework-item">TIME / TEMPERATURE — How is the process accelerated or controlled?</div>
+        <div class="framework-item">ENDPOINT — What food result is required?</div>
+        <div class="framework-item">APPLICATION — Where must that result function?</div>
+        <div class="framework-item">SYSTEM — What happens upstream and downstream?</div>
+    </div>
+
+    <p>
+        Equipment enters this matrix according to its relevance to the question. The research therefore does not begin with a fixed list of manufacturers or machines.
+    </p>
+</section>
+
+
+<section>
+    <h2>FOOD OUTCOME IS THE PRIMARY OUTPUT</h2>
+
+    <p>
+        Food is not merely material passing through an appliance. It is the output being purchased, served, evaluated, and consumed.
+    </p>
+
+    <p>
+        The desired food outcome must therefore be defined before the equipment is selected whenever practical.
+    </p>
+
+    <div class="outcome-grid">
+
+        <div class="outcome-card">
+            <strong>Delicious</strong>
+            Flavor, aroma, texture, appearance, balance, culinary expression, and overall sensory quality.
         </div>
 
-        <p>
-            The quarterly schedule is an initial publication spine rather than a closed research taxonomy. Future monographs may address additional food materials, technologies, applications, or unresolved transformation problems as the research program develops.
-        </p>
-
-        <div class="principle">
-            <div class="principle-title">The Program Has Three Layers</div>
-            <p style="margin-bottom: 0;">
-                <strong>Two volumes</strong> establish the foundational reference.<br>
-                <strong>Quarterly monographs</strong> deepen the evidence base.<br>
-                <strong>Continuing research</strong> expands the program beyond any single edition.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>APPLICATION IS THE CONTROL VARIABLE</h2>
-
-        <p>
-            There is no universal definition of a successful accelerated food system. The relevant comparison depends upon the food, the intended result, the customer, the service model, and the operating environment.
-        </p>
-
-        <div class="environment">
-            <strong>HIGH-END / MICHELIN-LEVEL OPERATIONS</strong>
-            Product quality, precision, texture, culinary expression, consistency, and repeatability may dominate the evaluation. Saving thirty seconds is irrelevant if the resulting food is inferior.
+        <div class="outcome-card">
+            <strong>Healthy</strong>
+            Where relevant to the application, nutritional density, ingredient integrity, protein, fiber, sodium, fat, sugar, and other meaningful nutritional attributes.
         </div>
 
-        <div class="environment">
-            <strong>HOTELS, RESORTS &amp; LARGE HOSPITALITY OPERATIONS</strong>
-            Banquet throughput, multiple outlets, labor distribution, holding behavior, consistency, peak-load management, and centralized or distributed production may dominate.
+        <div class="outcome-card">
+            <strong>Safe</strong>
+            Food-safety requirements, time-temperature control, process consistency, handling conditions, and relevant production safeguards.
         </div>
 
-        <div class="environment">
-            <strong>CRUISE, TRANSPORT &amp; REMOTE OPERATIONS</strong>
-            Footprint, utilities, storage, logistics, crew labor, service windows, throughput, reliability, and food quality interact under unusually constrained physical conditions.
+        <div class="outcome-card">
+            <strong>Affordable</strong>
+            Food cost, labor burden, waste, infrastructure, throughput, and other factors affecting the practical cost of the finished food.
         </div>
 
-        <div class="environment">
-            <strong>QUICK-SERVICE &amp; HIGH-VOLUME OPERATIONS</strong>
-            Service latency, throughput, labor efficiency, consistency, footprint, holding performance, and menu flexibility may carry greater weight.
+        <div class="outcome-card">
+            <strong>Structure &amp; Texture</strong>
+            Crispness, tenderness, chew, cellular structure, crust development, hydration, moisture retention, and structural integrity.
         </div>
 
-        <div class="environment">
-            <strong>INSTITUTIONAL &amp; COST-CONSTRAINED OPERATIONS</strong>
-            Labor reduction, infrastructure requirements, food cost, waste, consistency, throughput, and service requirements may define the relevant value proposition.
+        <div class="outcome-card">
+            <strong>Holding &amp; Regeneration</strong>
+            How the food behaves after processing during staging, transport, chilling, freezing, regeneration, holding, and service.
         </div>
 
-        <p>
-            The research evaluates the technology and food transformation against the application—not the application against the technology.
-        </p>
-    </section>
-
-    <section>
-        <h2>RESEARCH METHODOLOGY</h2>
-
-        <p>
-            Controlled Application Lab testing distinguishes nominal equipment performance from actual production-system performance and from the quality of the resulting food.
-        </p>
-
-        <p>Every serious test establishes three primary outputs:</p>
-
-        <div class="time-grid">
-            <div class="time-card">
-                <strong>1. Food Outcome</strong>
-                What happened to the food?
-            </div>
-            <div class="time-card">
-                <strong>2. Process Performance</strong>
-                What happened to time, throughput, recovery, labor, repeatability, and process tolerance?
-            </div>
-            <div class="time-card">
-                <strong>3. System Consequence</strong>
-                What happened to the operation and its economics?
-            </div>
+        <div class="outcome-card">
+            <strong>Consistency</strong>
+            Repeatability across operators, batches, loads, cycles, product states, raw-material lots, and service conditions.
         </div>
 
-        <p>Where appropriate, testing distinguishes:</p>
-
-        <div class="time-grid">
-            <div class="time-card">
-                <strong>Cook Time</strong>
-                The time during which the food is actively undergoing the primary cooking event.
-            </div>
-            <div class="time-card">
-                <strong>Cycle Time</strong>
-                The complete programmed equipment cycle and associated thermal events.
-            </div>
-            <div class="time-card">
-                <strong>Recovery Time</strong>
-                The time required for the equipment or system to return to the required operating condition.
-            </div>
-            <div class="time-card">
-                <strong>Operator Time</strong>
-                The actual human labor required to execute the process.
-            </div>
-            <div class="time-card">
-                <strong>System Time</strong>
-                The total elapsed time imposed on the relevant production system from starting condition to finished condition.
-            </div>
+        <div class="outcome-card">
+            <strong>Application Fitness</strong>
+            Whether the resulting food is appropriate for the culinary, operational, consumer, safety, and commercial environment in which it is intended to function.
         </div>
 
-        <p>
-            Time measurements are essential, but they are not sufficient. Research may also examine hydration, thermal gradients, moisture migration, structure, browning, texture, aroma, flavor, appearance, holding performance, regeneration, consistency, throughput, capacity utilization, workflow, staging, infrastructure, labor, waste, and downstream effects.
-        </p>
-    </section>
+    </div>
 
-    <section>
-        <h2>WHY THIS REFERENCE EXISTS</h2>
+    <p>
+        These outcomes do not carry equal weight in every application. A Michelin-level restaurant, school lunch program, cruise ship, hospital, QSR, food desert, co-manufacturer, and consumer packaged food operation may establish very different priorities.
+    </p>
+</section>
 
-        <p>
-            Commercial equipment literature answers one question well:
-        </p>
 
-        <div class="question">WHAT DOES THIS MACHINE DO?</div>
+<section>
+    <h2>FOOD → PROCESS → OPERATION → ECONOMICS</h2>
 
-        <p>
-            The more consequential questions begin with the food:
-        </p>
+    <div class="framework">
+        <div class="framework-item">FOOD — What happened to the food?</div>
+        <div class="framework-item">PROCESS — What happened to time, throughput, recovery, labor, repeatability, capacity, and process tolerance?</div>
+        <div class="framework-item">OPERATION — What happened to workflow, infrastructure, storage, service, production sequencing, and bottleneck location?</div>
+        <div class="framework-item">ECONOMICS — What changed in yield, waste, labor, capital, flexibility, capacity utilization, service performance, and overall viability?</div>
+    </div>
 
-        <div class="question">WHAT CAN THIS PROCESS DO TO THIS FOOD?</div>
+    <p>
+        Value is the judgment that follows from all four. None can be evaluated adequately in isolation.
+    </p>
 
-        <div class="question">CAN IT REMOVE A REAL PROCESSING BARRIER?</div>
+    <div class="question">
+        TIME IS AN INPUT CONSTRAINT. FOOD IS THE OUTPUT. THE PRODUCTION SYSTEM IS THE TEST. VALUE IS THE SYSTEM-LEVEL JUDGMENT.
+    </div>
+</section>
 
-        <div class="question">CAN IT MAKE A DIFFICULT FOOD MATERIAL OPERATIONALLY USEFUL AT GREATER SCALE?</div>
 
-        <div class="question">WHAT HAPPENS TO THE FOOD, THE PRODUCTION SYSTEM, AND THE ECONOMICS WHEN WE DO?</div>
+<section>
+    <h2>THE BOTTLENECK PRINCIPLE</h2>
 
-        <p>
-            There is abundant information about what commercial equipment is specified to do. There is considerably less independent documentation of what happens when accelerated technologies are systematically applied to important food materials and products.
-        </p>
-
-        <p>
-            <em>The Accelerated Food Systems</em> is designed to occupy that space.
-        </p>
-
-        <p>
-            It connects food technology, thermal processing, culinary outcome, production architecture, labor, infrastructure, service, and economics within a single research framework.
-        </p>
-    </section>
-
-    <section>
-        <h2>INDEPENDENCE &amp; RESEARCH INTEGRITY</h2>
-
-        <div class="independence">
-            <p><strong>Research participation does not purchase editorial outcomes.</strong></p>
-
-            <p>
-                Participating organizations may contribute research questions, application problems, technical expertise, food-product knowledge, equipment access, unusual operating environments, or research funding and other support.
-            </p>
-
-            <p>
-                Participation does not purchase favorable findings, predetermined conclusions, editorial placement, exclusion of negative findings, or competitive exclusion of other technologies or food materials.
-            </p>
-
-            <p style="margin-bottom: 0;">
-                The research may identify genuine strengths, limitations, unexpected applications, product-quality advantages, compromises, or failure modes. Those findings are part of the value of an independent reference.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>RESEARCH PARTICIPATION</h2>
-
-        <div class="participation">
-            <p>
-                The research program can engage organizations on both sides of the food-transformation equation.
-            </p>
-
-            <h3>TECHNOLOGY &amp; EQUIPMENT PARTICIPANTS</h3>
-            <ul>
-                <li>Equipment access or temporary research equipment</li>
-                <li>Technical documentation and engineering information</li>
-                <li>Application expertise</li>
-                <li>Controlled testing opportunities</li>
-                <li>Research questions and application problems</li>
-            </ul>
-
-            <h3>FOOD &amp; INGREDIENT PARTICIPANTS</h3>
-            <ul>
-                <li>Food-product or ingredient samples for defined research protocols</li>
-                <li>Technical information about material properties and intended applications</li>
-                <li>Processing questions or operational barriers</li>
-                <li>Access to unusual or high-volume production environments</li>
-                <li>Research funding or other forms of research support</li>
-            </ul>
-
-            <p style="margin-bottom: 0;">
-                The objective is not sponsored promotion. The objective is to create a controlled channel through which food expertise, technology, equipment access, operating knowledge, and real production environments contribute to an independent body of application research.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>WHO IT SERVES</h2>
-
-        <h3>OPERATORS &amp; CHEFS</h3>
-        <p>
-            Evidence-based understanding of which accelerated processes produce food that is better, faster, more consistent, more serviceable, or more economically useful—and which do not.
-        </p>
-
-        <h3>FOOD TECHNOLOGISTS &amp; INGREDIENT COMPANIES</h3>
-        <p>
-            A framework for understanding how food properties interact with accelerated thermal processing, hydration, cooking, chilling, freezing, regeneration, holding, and service.
-        </p>
-
-        <h3>KITCHEN DESIGNERS &amp; CONSULTANTS</h3>
-        <p>
-            Analysis of footprint, infrastructure, workflow, production sequencing, distributed production, and the consequences of changing where and when food is produced.
-        </p>
-
-        <h3>MANUFACTURERS, DEALERS &amp; DISTRIBUTORS</h3>
-        <p>
-            Independent application intelligence showing where technologies create meaningful value, where they encounter limitations, and which food applications may not be obvious from conventional equipment literature.
-        </p>
-
-        <h3>HOSPITALITY &amp; FOOD-PRODUCTION ORGANIZATIONS</h3>
-        <p>
-            A basis for evaluating whether accelerated food transformations actually create meaningful culinary and operational advantage.
-        </p>
-
-        <h3>EDUCATORS &amp; STUDENTS</h3>
-        <p>
-            A durable technical and culinary reference grounded in controlled application research rather than manufacturer claims alone.
-        </p>
-    </section>
-
-    <section>
-        <h2>PUBLICATION ARCHITECTURE</h2>
+    <div class="principle">
+        <div class="principle-title">A Faster Step Is Not Necessarily a Faster System</div>
 
         <p>
-            The completed research will form two principal volumes:
+            Accelerated cooking can reduce a cooking bottleneck while creating another bottleneck elsewhere.
         </p>
+
+        <p>
+            The constraint may move to preparation, loading, equipment recovery, chilling, freezing, packaging, storage, regeneration, holding, service, labor, raw-material supply, or co-manufacturing capacity.
+        </p>
+
+        <p style="margin-bottom: 0;">
+            Every serious acceleration study must therefore ask:
+            <strong>What became the limiting factor after acceleration?</strong>
+        </p>
+    </div>
+
+    <p>
+        This principle extends the research beyond appliance performance into production-system design. A technology creates meaningful leverage only when the additional capacity, flexibility, quality, or economic value survives contact with the rest of the system.
+    </p>
+
+    <p>
+        This is particularly important in co-manufacturing, where available manufacturing capacity can itself become a major constraint for food innovators and emerging companies.
+    </p>
+
+    <div class="question">
+        DOES THE TECHNOLOGY INCREASE THE CAPACITY OF THE FOOD-PRODUCTION SYSTEM — OR SIMPLY MAKE ONE STEP FASTER?
+    </div>
+</section>
+
+
+<section>
+    <h2>THE PRODUCTION SEQUENCE</h2>
+
+    <p>
+        Acceleration is evaluated not only at the cooking event, but across the complete relevant production sequence:
+    </p>
+
+    <div class="sequence">
+        SOURCING → PREPARATION → COOKING → CHILLING / FREEZING → STORAGE → REGENERATION → FINISHING → HOLDING → SERVICE
+    </div>
+
+    <p>
+        A faster cooking event may improve service—or expose a downstream holding problem. Rapid chilling may enable centralized production—or introduce packaging, storage, or regeneration requirements.
+    </p>
+
+    <p>
+        A specialty grain that becomes practical through accelerated hydration and cooking may enable an entirely different production model. A raw material that varies substantially between lots may require process adjustment, sensing, sorting, or procurement changes before the apparent cooking advantage becomes commercially useful.
+    </p>
+
+    <p>
+        The research therefore asks whether acceleration creates a meaningful improvement in the <strong>entire production architecture</strong>, not merely in an isolated process step.
+    </p>
+</section>
+
+
+<section>
+    <h2>THE TWO-VOLUME STUDY</h2>
+
+    <div class="volume primary">
+        <div class="volume-label">VOLUME 01</div>
+        <h3>THE ACCELERATED COOKING FIELD GUIDE</h3>
+
+        <p class="volume-question">
+            What happens when the primary cooking or finishing event is compressed—and what food transformations become possible as a result?
+        </p>
+
+        <p>
+            Volume 01 is the principal experimental volume for accelerated thermal cooking. It examines commercial cooking platforms as research instruments applied to defined food materials, products, transformation problems, and applications.
+        </p>
+
+        <p>
+            The volume is deliberately food-first. The research begins with a desired food outcome and determines which equipment, thermal mode, process conditions, and material states are appropriate for testing.
+        </p>
+
+        <p>Investigation includes:</p>
 
         <ul>
-            <li><strong>Volume 01 — The Accelerated Cooking Field Guide</strong></li>
-            <li><strong>Volume 02 — The Extended Production Cycle Field Guide</strong></li>
+            <li>High-speed ovens</li>
+            <li>Combi systems and combi ovens</li>
+            <li>Hybrid accelerated cooking platforms</li>
+            <li>Other accelerated thermal cooking platforms</li>
+            <li>Induction, steam, pressure, radiant, infrared, and other thermal modes where relevant to the research question</li>
+            <li>Food-specific transformation pathways</li>
+            <li>Hydration, cooking, finishing, and regeneration behavior</li>
+            <li>Raw-material variability and process tolerance</li>
+            <li>Product quality, texture, structure, flavor, moisture, appearance, and sensory performance</li>
+            <li>Food-safety implications and time-temperature control</li>
+            <li>Boundary conditions, edge applications, and failure modes</li>
+            <li>Operator intervention and process sensitivity</li>
+            <li>Workflow, labor, infrastructure, throughput, recovery, and economic consequences</li>
+            <li>Whether apparent acceleration creates useful productive capacity</li>
         </ul>
+    </div>
 
-        <p>
-            Together they form a core independent reference on accelerated food transformation and compressed food-production systems.
+
+    <div class="volume">
+        <div class="volume-label">VOLUME 02</div>
+        <h3>THE EXTENDED PRODUCTION CYCLE FIELD GUIDE</h3>
+
+        <p class="volume-question">
+            What happens before and after the cooking event—and which production architectures allow accelerated food transformations to become operationally useful?
         </p>
 
         <p>
-            The underlying research program is designed to persist beyond a single edition. New food materials, transformation questions, technologies, applications, operating models, and evidence can be incorporated into later editions while preserving the provenance and integrity of earlier research.
-        </p>
-    </section>
-
-    <section>
-        <h2>THE PROPOSITION</h2>
-
-        <p class="lead">
-            <strong>Acceleration is not synonymous with speed. It is not synonymous with improvement. And it is not valuable merely because a machine can do it.</strong>
+            Volume 02 examines the systems surrounding the cooking event: preservation, storage, movement, regeneration, finishing, centralized production, distributed production, co-manufacturing, regional production capacity, and the technologies that connect those stages.
         </p>
 
         <p>
-            The purpose of this research is to determine when accelerated processing produces a genuine advantage; when it creates a useful tradeoff; when it makes an otherwise difficult food material more operationally viable; and when it simply moves the constraint somewhere else.
+            The central question is not simply how food can be produced faster. It is whether a changed production architecture can create <strong>more useful capacity, greater access, better quality, lower friction, or improved economics</strong> without transferring the constraint elsewhere.
         </p>
+
+        <p>Investigation includes:</p>
+
+        <ul>
+            <li>Rapid chilling and blast chilling</li>
+            <li>Rapid freezing and blast freezing</li>
+            <li>Thawing systems</li>
+            <li>Cook-chill and cook-freeze architectures</li>
+            <li>Regeneration and rethermalization</li>
+            <li>Pure steam and pressure systems</li>
+            <li>Precision and controlled low-temperature systems</li>
+            <li>Automation, sensing, and control</li>
+            <li>Integrated production systems</li>
+            <li>Central-to-satellite and distributed production models</li>
+            <li>Regional co-manufacturing capacity</li>
+            <li>Co-manufacturers as potential R&amp;D and production partners</li>
+            <li>Food-quality consequences of extended production cycles</li>
+            <li>Raw-material sourcing and variability</li>
+            <li>Food-safety implications across extended production sequences</li>
+            <li>Menu variety, SKU complexity, changeovers, and operational burden</li>
+            <li>Capacity utilization, bottleneck relocation, and system throughput</li>
+            <li>Labor, infrastructure, workflow, and economic consequences</li>
+        </ul>
+    </div>
+
+    <p>
+        The volumes are therefore complementary rather than simply sequential:
+        <strong>Volume 01 investigates accelerated transformation at the cooking event; Volume 02 investigates the production architecture required to make those transformations useful at system scale.</strong>
+    </p>
+</section>
+
+
+<section>
+    <h2>CO-MANUFACTURING AS A RESEARCH QUESTION</h2>
+
+    <p>
+        Food innovation is frequently constrained not by the ability to formulate a food, but by the availability, economics, and flexibility of suitable manufacturing capacity.
+    </p>
+
+    <p>
+        Co-manufacturers may therefore represent more than outsourced production. Under the right conditions, they may become participants in food R&amp;D, process development, regional production, and application research.
+    </p>
+
+    <div class="question">
+        CAN REGIONAL CO-MANUFACTURERS BECOME TRUE R&amp;D AND FOOD-PRODUCTION PARTNERS RATHER THAN SIMPLY MANUFACTURERS FOR HIRE?
+    </div>
+
+    <p>
+        This question is especially relevant where accelerated technologies can increase productive capacity, shorten development cycles, improve utilization, or allow smaller food companies to access capabilities that would otherwise be unavailable to them.
+    </p>
+
+    <p>
+        The research may examine regional production hubs serving food companies, institutional foodservice, schools, hospitals, senior populations, hospitality operations, and other local or distributed needs.
+    </p>
+
+    <p>
+        Such models may also intersect with regional agriculture, food waste reduction, imperfect-produce utilization, local employment, and improved access to prepared foods.
+    </p>
+</section>
+
+
+<section>
+    <h2>RAW-MATERIAL VARIABILITY</h2>
+
+    <p>
+        Food is biological material. Its properties vary.
+    </p>
+
+    <p>
+        Rice may differ according to variety, growing conditions, harvest, storage, moisture, milling, and season. Meat may differ according to genetics, fat-to-lean ratio, feed, animal age, processing, and production system. Vegetables may differ according to variety, maturity, size, moisture, growing conditions, harvest method, and storage.
+    </p>
+
+    <div class="question">
+        HOW MUCH VARIABILITY CAN THE PRODUCTION SYSTEM TOLERATE BEFORE THE OPERATOR MUST CHANGE THE PROCESS OR ACCEPT A DIFFERENT FOOD OUTCOME?
+    </div>
+
+    <p>
+        The research therefore considers variability itself a production variable.
+    </p>
+
+    <p>
+        Where practical, studies may examine multiple lots, forms, sizes, moisture levels, varieties, or other relevant states rather than assuming that a single idealized sample represents the material.
+    </p>
+
+    <p>
+        The objective is not to eliminate the natural variability of food. It is to understand the <strong>operating envelope</strong> within which the production system can continue to produce acceptable food without excessive intervention.
+    </p>
+</section>
+
+
+<section>
+    <h2>WHEN VARIETY BECOMES COMPLEXITY</h2>
+
+    <p>
+        Culinary variety can create consumer value. It can also create operational complexity.
+    </p>
+
+    <p>
+        Every additional flavor, format, size, ingredient set, or SKU may affect procurement, inventory, preparation, equipment loading, changeovers, labor, training, quality control, packaging, storage, throughput, and service.
+    </p>
+
+    <div class="question">
+        WHEN DOES THE VALUE OF ADDITIONAL CULINARY VARIETY BECOME LESS THAN THE OPERATIONAL COMPLEXITY REQUIRED TO PRODUCE IT?
+    </div>
+
+    <p>
+        The research therefore treats menu and product variety as a system variable rather than an exclusively marketing decision.
+    </p>
+
+    <p>
+        A technically elegant accelerated process that requires excessive changeovers or specialized handling may be less valuable than a slightly slower process that supports a coherent family of foods through a common production architecture.
+    </p>
+</section>
+
+
+<section>
+    <h2>APPLICATION IS THE CONTROL VARIABLE</h2>
+
+    <p>
+        There is no universal definition of a successful accelerated food system. The relevant comparison depends upon the food, the intended result, the consumer, the service model, the production environment, and the operating economics.
+    </p>
+
+    <div class="environment">
+        <strong>HIGH-END / MICHELIN-LEVEL OPERATIONS</strong>
+        Product quality, precision, texture, culinary expression, consistency, and repeatability may dominate the evaluation. Saving thirty seconds is irrelevant if the resulting food is inferior.
+    </div>
+
+    <div class="environment">
+        <strong>HOTELS, RESORTS &amp; LARGE HOSPITALITY OPERATIONS</strong>
+        Banquet throughput, multiple outlets, labor distribution, holding behavior, consistency, peak-load management, and centralized or distributed production may dominate.
+    </div>
+
+    <div class="environment">
+        <strong>CRUISE, TRANSPORT &amp; REMOTE OPERATIONS</strong>
+        Footprint, utilities, storage, logistics, crew labor, service windows, throughput, reliability, and food quality interact under unusually constrained physical conditions.
+    </div>
+
+    <div class="environment">
+        <strong>QUICK-SERVICE &amp; HIGH-VOLUME OPERATIONS</strong>
+        Service latency, throughput, labor efficiency, consistency, footprint, holding performance, menu flexibility, and changeover burden may carry greater weight.
+    </div>
+
+    <div class="environment">
+        <strong>CPG &amp; LARGE FOOD MANUFACTURERS</strong>
+        Product consistency, raw-material variability, throughput, process control, food safety, shelf-life, packaging, manufacturing capacity, and economics may dominate.
+    </div>
+
+    <div class="environment">
+        <strong>CO-MANUFACTURERS &amp; REGIONAL PRODUCTION</strong>
+        Equipment utilization, production capacity, R&amp;D capability, customer flexibility, changeovers, technical support, food safety, and the ability to serve multiple food companies may become central.
+    </div>
+
+    <div class="environment">
+        <strong>INSTITUTIONAL &amp; COST-CONSTRAINED OPERATIONS</strong>
+        Labor reduction, infrastructure requirements, food cost, waste, consistency, throughput, nutrition, safety, and service requirements may define the relevant value proposition.
+    </div>
+
+    <p>
+        The research evaluates the technology and food transformation against the application—not the application against the technology.
+    </p>
+</section>
+
+
+<section>
+    <h2>THE CONSUMER IS PART OF THE SYSTEM</h2>
+
+    <p>
+        The production system ultimately exists to produce food for someone.
+    </p>
+
+    <p>
+        An accelerated process should therefore be evaluated against the actual needs and priorities of the intended consumer rather than against an abstract definition of efficiency.
+    </p>
+
+    <p>
+        Different consumers may prioritize different combinations of:
+    </p>
+
+    <div class="framework">
+        <div class="framework-item">DELICIOUS — sensory quality and culinary satisfaction</div>
+        <div class="framework-item">HEALTHY — meaningful nutritional value and dietary suitability</div>
+        <div class="framework-item">SAFE — appropriate food-safety performance</div>
+        <div class="framework-item">AFFORDABLE — practical access at an acceptable cost</div>
+        <div class="framework-item">CONVENIENT — appropriate preparation and service burden</div>
+        <div class="framework-item">CUSTOMIZABLE — ability to accommodate meaningful preferences or needs</div>
+        <div class="framework-item">APPEALING — visual and cultural relevance</div>
+    </div>
+
+    <p>
+        These priorities are not universal and do not carry equal weight in every application.
+    </p>
+
+    <p>
+        The research may therefore incorporate sensory and organoleptic evaluation where appropriate, including structured consideration of taste, aroma, texture, appearance, convenience, affordability, and other application-specific attributes.
+    </p>
+</section>
+
+
+<section>
+    <h2>FOOD SAFETY IS NOT IMPLIED</h2>
+
+    <div class="principle">
+        <div class="principle-title">Safety Is a Defined Food Outcome</div>
 
         <p>
-            The relevant standard is the relationship among <strong>food transformation, time, quality, operating environment, labor, infrastructure, capacity, flexibility, service, and economics.</strong>
+            Food safety is not treated as an assumption hidden inside time-temperature measurements.
         </p>
 
-        <p>
-            That relationship is the subject of <em>The Accelerated Food Systems.</em>
+        <p style="margin-bottom: 0;">
+            Where relevant to the research question, accelerated systems are evaluated for their implications for <strong>time-temperature control, process consistency, handling, chilling, storage, regeneration, holding, and other food-safety requirements.</strong>
         </p>
+    </div>
 
-        <div class="principle" style="margin-top: 3rem;">
-            <p style="margin-bottom: 0.5rem; font-family: var(--mono-font); font-weight: 700; color: var(--forest); text-transform: uppercase;">
-                Technology is the instrument.<br>
-                Food is the subject.<br>
-                Application is the test.<br>
-                The system is the consequence.
-            </p>
-            <p style="margin-bottom: 0; font-family: var(--mono-font); font-weight: 700; color: var(--forest);">
-                That is what we research.
+    <p>
+        The purpose of independent research is not to replace formal regulatory, HACCP, validation, or process-authority requirements. It is to ensure that food-safety consequences are visible within the production-system analysis rather than disappearing behind the word "speed."
+    </p>
+</section>
+
+
+<section>
+    <h2>RESEARCH METHODOLOGY</h2>
+
+    <p>
+        Controlled Application Lab testing distinguishes nominal equipment performance from actual production-system performance and from the quality of the resulting food.
+    </p>
+
+    <p>
+        Every serious test establishes four primary outputs:
+    </p>
+
+    <div class="time-grid">
+
+        <div class="time-card">
+            <strong>1. Food Outcome</strong>
+            What happened to the food?
+        </div>
+
+        <div class="time-card">
+            <strong>2. Process Performance</strong>
+            What happened to time, throughput, recovery, labor, repeatability, capacity, and process tolerance?
+        </div>
+
+        <div class="time-card">
+            <strong>3. System Consequence</strong>
+            What happened to workflow, bottleneck location, infrastructure, storage, service, capacity, and production architecture?
+        </div>
+
+        <div class="time-card">
+            <strong>4. Economic Consequence</strong>
+            What happened to yield, waste, labor, capital, utilization, flexibility, and the practical economics of the food?
+        </div>
+
+    </div>
+
+    <p>
+        Where appropriate, testing distinguishes:
+    </p>
+
+    <div class="time-grid">
+
+        <div class="time-card">
+            <strong>Cook Time</strong>
+            The time during which the food is actively undergoing the primary cooking event.
+        </div>
+
+        <div class="time-card">
+            <strong>Cycle Time</strong>
+            The complete programmed equipment cycle and associated thermal events.
+        </div>
+
+        <div class="time-card">
+            <strong>Recovery Time</strong>
+            The time required for the equipment or system to return to the required operating condition.
+        </div>
+
+        <div class="time-card">
+            <strong>Operator Time</strong>
+            The actual human labor required to execute the process.
+        </div>
+
+        <div class="time-card">
+            <strong>System Time</strong>
+            The total elapsed time imposed on the relevant production system from starting condition to finished condition.
+        </div>
+
+        <div class="time-card">
+            <strong>Capacity Effect</strong>
+            The extent to which the process actually increases useful production capacity after accounting for preparation, loading, recovery, downstream constraints, and other bottlenecks.
+        </div>
+
+    </div>
+
+    <p>
+        Time measurements are essential, but they are not sufficient. Research may also examine hydration, thermal gradients, moisture migration, structure, browning, texture, aroma, flavor, appearance, holding performance, regeneration, consistency, raw-material tolerance, throughput, capacity utilization, workflow, staging, infrastructure, labor, waste, safety, and downstream effects.
+    </p>
+</section>
+
+
+<section>
+    <h2>THE RESEARCH QUESTION SET</h2>
+
+    <p>
+        The program is organized around a family of recurring questions rather than a single definition of acceleration.
+    </p>
+
+    <div class="question">
+        01 · DOES ACCELERATED COOKING REDUCE THE TOTAL PRODUCTION BOTTLENECK — OR JUST MOVE IT?
+    </div>
+
+    <div class="question">
+        02 · HOW MUCH RAW-MATERIAL VARIABILITY CAN A PRODUCTION SYSTEM TOLERATE?
+    </div>
+
+    <div class="question">
+        03 · CAN TECHNOLOGY INCREASE THE CAPACITY OF THE FOOD-PRODUCTION SYSTEM RATHER THAN ONLY SPEEDING ONE STEP?
+    </div>
+
+    <div class="question">
+        04 · CAN REGIONAL CO-MANUFACTURERS BECOME TRUE R&amp;D AND FOOD-PRODUCTION PARTNERS?
+    </div>
+
+    <div class="question">
+        05 · WHEN DOES CULINARY VARIETY STOP CREATING VALUE AND START CREATING OPERATIONAL COMPLEXITY?
+    </div>
+
+    <div class="question">
+        06 · WHO IS THE FOOD SYSTEM DESIGNED TO SERVE — AND WHAT DOES THAT CONSUMER ACTUALLY VALUE?
+    </div>
+
+    <p>
+        These questions do not replace food-specific experiments. They provide the system-level lens through which the experimental findings become useful.
+    </p>
+</section>
+
+
+<section>
+    <h2>WHY THIS REFERENCE EXISTS</h2>
+
+    <p>
+        Commercial equipment literature answers one question well:
+    </p>
+
+    <div class="question">
+        WHAT DOES THIS MACHINE DO?
+    </div>
+
+    <p>
+        The more consequential questions begin with the food:
+    </p>
+
+    <div class="question">
+        WHAT CAN THIS PROCESS DO TO THIS FOOD?
+    </div>
+
+    <div class="question">
+        DOES THE RESULT REMAIN DELICIOUS, HEALTHY, SAFE, AND AFFORDABLE FOR THE INTENDED APPLICATION?
+    </div>
+
+    <div class="question">
+        CAN IT REMOVE A REAL PROCESSING BARRIER?
+    </div>
+
+    <div class="question">
+        CAN IT MAKE A DIFFICULT FOOD MATERIAL OPERATIONALLY USEFUL AT GREATER SCALE?
+    </div>
+
+    <div class="question">
+        DOES IT CREATE NEW CAPACITY — OR SIMPLY MOVE THE CONSTRAINT?
+    </div>
+
+    <div class="question">
+        WHAT HAPPENS TO THE FOOD, THE PRODUCTION SYSTEM, THE CONSUMER, AND THE ECONOMICS WHEN WE DO?
+    </div>
+
+    <p>
+        There is abundant information about what commercial equipment is specified to do. There is considerably less independent documentation of what happens when accelerated technologies are systematically applied to important food materials and products under realistic production conditions.
+    </p>
+
+    <p>
+        <em>The Accelerated Food Systems</em> is designed to occupy that space.
+    </p>
+
+    <p>
+        It connects food technology, thermal processing, culinary outcome, raw-material behavior, production architecture, labor, infrastructure, service, consumer needs, food safety, and economics within a single research framework.
+    </p>
+</section>
+
+
+<section>
+    <h2>PUBLICATION ARCHITECTURE</h2>
+
+    <p>
+        <em>The Accelerated Food Systems</em> is both a two-volume professional reference and a continuing research program.
+    </p>
+
+    <p>
+        The two principal volumes establish the permanent reference architecture. Quarterly monographs extend that architecture through focused investigations of individual food materials, transformation problems, and application questions.
+    </p>
+
+    <div class="volume primary">
+        <div class="volume-label">FOUNDATIONAL REFERENCE · VOLUME 01</div>
+        <h3>THE ACCELERATED COOKING FIELD GUIDE</h3>
+        <p style="margin-bottom: 0;">
+            Accelerated cooking, finishing, thermal transformation, food response, process performance, material variability, food safety, and application.
+        </p>
+    </div>
+
+    <div class="volume">
+        <div class="volume-label">FOUNDATIONAL REFERENCE · VOLUME 02</div>
+        <h3>THE EXTENDED PRODUCTION CYCLE FIELD GUIDE</h3>
+        <p style="margin-bottom: 0;">
+            The systems before and after the primary cooking event: chilling, freezing, storage, regeneration, staging, finishing, service, co-manufacturing, capacity, labor, workflow, bottlenecks, and production architecture.
+        </p>
+    </div>
+
+    <h3>QUARTERLY RESEARCH MONOGRAPHS</h3>
+
+    <p>
+        The quarterly monographs provide deeper investigations of individual food materials. Each examines the material as a production system rather than simply as an ingredient, documenting relevant physical states, transformation pathways, process conditions, raw-material variability, food outcomes, boundary conditions, applications, safety considerations, and operational consequences.
+    </p>
+
+    <div class="food-grid">
+
+        <div class="food-card primary">
+            <div class="descriptor">Q1</div>
+            <strong>RICE</strong>
+            <p style="margin-bottom: 0;">
+                Hydration, accelerated cooking, raw-material variability, texture, holding, regeneration, high-volume application, and production-system implications.
             </p>
         </div>
-    </section>
 
-    <div class="footer-wall">
-        STRATEGIC POSITION: INDEPENDENT FOOD-TRANSFORMATION RESEARCH LABORATORY.<br>
-        RESEARCH PROGRAM: THE ACCELERATED FOOD SYSTEMS.<br>
-        SECURITY PROTOCOL: ABSOLUTE NO-SAMPLE POLICY.<br>
-        CONTACT: PRO1LAB@PROTON.ME · PROVISION1.COM
+        <div class="food-card">
+            <div class="descriptor">Q2</div>
+            <strong>MUSHROOM</strong>
+            <p style="margin-bottom: 0;">
+                Water management, structure, browning, concentration, accelerated transformation, holding, and production utility.
+            </p>
+        </div>
+
+        <div class="food-card">
+            <div class="descriptor">Q3</div>
+            <strong>CITRUS</strong>
+            <p style="margin-bottom: 0;">
+                Peel, pith, juice, membrane, extraction, softening, concentration, preservation, raw-material variability, and accelerated thermal pathways.
+            </p>
+        </div>
+
+        <div class="food-card">
+            <div class="descriptor">Q4</div>
+            <strong>SORGHUM</strong>
+            <p style="margin-bottom: 0;">
+                Hydration, cooking, texture, processing friction, raw-material variability, regeneration, and the potential for expanded foodservice utility.
+            </p>
+        </div>
+
     </div>
+
+    <p>
+        The quarterly schedule is an initial publication spine rather than a closed research taxonomy. Future monographs may address additional food materials, technologies, applications, consumer populations, co-manufacturing questions, or unresolved transformation problems as the research program develops.
+    </p>
+
+    <div class="principle">
+        <div class="principle-title">The Program Has Three Layers</div>
+
+        <p style="margin-bottom: 0;">
+            <strong>Two volumes</strong> establish the foundational reference.<br>
+            <strong>Quarterly monographs</strong> deepen the evidence base.<br>
+            <strong>Continuing research</strong> expands the program beyond any single edition.
+        </p>
+    </div>
+</section>
+
+
+<section>
+    <h2>INDEPENDENCE &amp; RESEARCH INTEGRITY</h2>
+
+    <div class="independence">
+
+        <p>
+            <strong>Research participation does not purchase editorial outcomes.</strong>
+        </p>
+
+        <p>
+            Participating organizations may contribute research questions, application problems, technical expertise, food-product knowledge, equipment access, unusual operating environments, ingredient or material samples, research facilities, research data, funding, or other support.
+        </p>
+
+        <p>
+            Participation does not purchase favorable findings, predetermined conclusions, editorial placement, exclusion of negative findings, or competitive exclusion of other technologies or food materials.
+        </p>
+
+        <p style="margin-bottom: 0;">
+            The research may identify genuine strengths, limitations, unexpected applications, product-quality advantages, compromises, bottlenecks, raw-material sensitivities, or failure modes. Those findings are part of the value of an independent reference.
+        </p>
+
+    </div>
+</section>
+
+
+<section>
+    <h2>RESEARCH PARTICIPATION</h2>
+
+    <div class="participation">
+
+        <p>
+            The research program can engage organizations on both sides of the food-transformation equation.
+        </p>
+
+        <h3>TECHNOLOGY &amp; EQUIPMENT PARTICIPANTS</h3>
+
+        <ul>
+            <li>Equipment access or temporary research equipment</li>
+            <li>Technical documentation and engineering information</li>
+            <li>Application expertise</li>
+            <li>Controlled testing opportunities</li>
+            <li>Research questions and application problems</li>
+            <li>Access to engineering or technical specialists</li>
+        </ul>
+
+        <h3>FOOD &amp; INGREDIENT PARTICIPANTS</h3>
+
+        <ul>
+            <li>Food-product or ingredient samples for defined research protocols</li>
+            <li>Technical information about material properties and intended applications</li>
+            <li>Processing questions or operational barriers</li>
+            <li>Raw-material variability information</li>
+            <li>Access to unusual or high-volume production environments</li>
+            <li>Research funding or other forms of research support</li>
+        </ul>
+
+        <h3>MANUFACTURING &amp; PRODUCTION PARTICIPANTS</h3>
+
+        <ul>
+            <li>Co-manufacturing environments</li>
+            <li>Production-capacity and throughput data</li>
+            <li>R&amp;D and process-development access</li>
+            <li>Changeover and SKU-complexity information</li>
+            <li>Regional production and distribution models</li>
+            <li>Operational problems that can be investigated independently</li>
+        </ul>
+
+        <p style="margin-bottom: 0;">
+            The objective is not sponsored promotion. The objective is to create a controlled channel through which food expertise, technology, equipment access, operating knowledge, manufacturing capacity, real production environments, and research support contribute to an independent body of application research.
+        </p>
+
+    </div>
+</section>
+
+
+<section>
+    <h2>WHO IT SERVES</h2>
+
+    <h3>OPERATORS &amp; CHEFS</h3>
+    <p>
+        Evidence-based understanding of which accelerated processes produce food that is better, faster, more consistent, more serviceable, safer, or more economically useful—and which do not.
+    </p>
+
+    <h3>FOOD TECHNOLOGISTS &amp; INGREDIENT COMPANIES</h3>
+    <p>
+        A framework for understanding how food properties and raw-material variability interact with accelerated thermal processing, hydration, cooking, chilling, freezing, regeneration, holding, and service.
+    </p>
+
+    <h3>KITCHEN DESIGNERS &amp; CONSULTANTS</h3>
+    <p>
+        Analysis of footprint, infrastructure, workflow, production sequencing, distributed production, and the consequences of changing where and when food is produced.
+    </p>
+
+    <h3>MANUFACTURERS, DEALERS &amp; DISTRIBUTORS</h3>
+    <p>
+        Independent application intelligence showing where technologies create meaningful value, where they encounter limitations, and which food applications may not be obvious from conventional equipment literature.
+    </p>
+
+    <h3>CO-MANUFACTURERS &amp; FOOD-PRODUCTION ORGANIZATIONS</h3>
+    <p>
+        A framework for understanding how accelerated processes, R&amp;D capability, production capacity, regional manufacturing, and food-material knowledge can interact to create greater productive capacity.
+    </p>
+
+    <h3>HOSPITALITY &amp; FOOD-PRODUCTION ORGANIZATIONS</h3>
+    <p>
+        A basis for evaluating whether accelerated food transformations actually create meaningful culinary, operational, consumer, safety, and economic advantage.
+    </p>
+
+    <h3>EDUCATORS &amp; STUDENTS</h3>
+    <p>
+        A durable technical and culinary reference grounded in controlled application research rather than manufacturer claims alone.
+    </p>
+</section>
+
+
+<section>
+    <h2>THE PROPOSITION</h2>
+
+    <p class="lead">
+        <strong>Acceleration is not synonymous with speed. It is not synonymous with improvement. And it is not valuable merely because a machine can do it.</strong>
+    </p>
+
+    <p>
+        The purpose of this research is to determine when accelerated processing produces a genuine advantage; when it creates a useful tradeoff; when it makes an otherwise difficult food material more operationally viable; when it increases useful production capacity; and when it simply moves the constraint somewhere else.
+    </p>
+
+    <p>
+        The relevant standard is the relationship among <strong>food transformation, raw-material variability, time, quality, safety, consumer needs, operating environment, labor, infrastructure, capacity, flexibility, service, and economics.</strong>
+    </p>
+
+    <p>
+        The food should determine the desired outcome. The desired outcome should inform the process. The process should be tested against the application. And the application should be evaluated within the larger production system.
+    </p>
+
+    <p>
+        That relationship is the subject of <em>The Accelerated Food Systems.</em>
+    </p>
+
+    <div class="principle" style="margin-top: 3rem;">
+
+        <p style="margin-bottom: 0.5rem; font-family: var(--mono-font); font-weight: 700; color: var(--forest); text-transform: uppercase;">
+            Food is the subject.<br>
+            Technology is the instrument.<br>
+            Application is the test.<br>
+            The consumer defines the purpose.<br>
+            The production system is the consequence.
+        </p>
+
+        <p style="margin-bottom: 0; font-family: var(--mono-font); font-weight: 700; color: var(--forest);">
+            That is what we research.
+        </p>
+
+    </div>
+</section>
+
+
+<div class="footer-wall">
+    STRATEGIC POSITION: INDEPENDENT FOOD-TRANSFORMATION RESEARCH LABORATORY.<br>
+    RESEARCH PROGRAM: THE ACCELERATED FOOD SYSTEMS.<br>
+    RESEARCH STANDARD: FOOD-FIRST · APPLICATION-DRIVEN · SYSTEM-LEVEL.<br>
+    CONTACT: PRO1LAB@PROTON.ME · PROVISION1.COM
+</div>
+```
 
 </body>
 </html>
