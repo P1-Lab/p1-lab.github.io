@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLORIDA FIELD RECORD — Monographic Series &amp; A Continuing Documentary Record</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #faf8f5;
+            --surface-color: #f2efe9;
+            --text-primary: #1a1a1a;
+            --text-muted: #4a4a46;
+            --text-dim: #76746e;
+            --accent-neutral: #5c5953;
+            --border-subtle: rgba(26, 26, 26, 0.12);
+            --border-strong: rgba(26, 26, 26, 0.28);
+
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .mono-label {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(250, 248, 245, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.1rem 0 0.9rem;
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+        }
+
+        .brand-mark {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .parent-link {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.2s var(--transition-smooth);
+        }
+
+        .parent-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            transition: color 0.2s var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding-top: 8.5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            line-height: 1.05;
+            margin: 0.35rem 0 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-manifesto {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.75;
+            max-width: 760px;
+        }
+
+        .hero-manifesto p {
+            margin-bottom: 1.1rem;
+        }
+
+        .hero-manifesto p.lead-statement {
+            font-family: var(--font-serif);
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            line-height: 1.4;
+            color: var(--text-primary);
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+
+        /* SECTIONS */
+        .pub-section {
+            padding: 4.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section-meta {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-index {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            color: var(--text-dim);
+            font-style: italic;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            font-weight: 350;
+            max-width: 720px;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* GRID ARCHITECTURE */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 3rem;
+        }
+
+        .grid-item {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .item-body {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.65;
+        }
+
+        .full-width-item {
+            grid-column: 1 / -1;
+        }
+
+        /* ITEMIZED LIST STYLING */
+        .materials-list {
+            list-style: none;
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem 2rem;
+        }
+
+        .materials-list li {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            position: relative;
+            padding-left: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .materials-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-dim);
+        }
+
+        /* PATRONAGE / SUPPORT STRUCTURE */
+        .prose-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .prose-block p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 350;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .prose-block p.highlight-statement {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .support-schedule {
+            margin-top: 3rem;
+        }
+
+        .schedule-title {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-strong);
+        }
+
+        .support-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem 2rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            align-items: baseline;
+        }
+
+        .support-name {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        .support-amount {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            letter-spacing: 0.04em;
+            text-align: right;
+        }
+
+        .support-desc {
+            grid-column: 1 / -1;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.6;
+        }
+
+        /* INSTITUTIONAL INQUIRIES BLOCK */
+        .institutional-inquiries {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .inquiry-link {
+            display: inline-block;
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-strong);
+            padding-bottom: 0.15rem;
+            transition: color 0.2s var(--transition-smooth), border-color 0.2s var(--transition-smooth);
+        }
+
+        .inquiry-link:hover {
+            color: var(--text-dim);
+            border-color: var(--text-dim);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 4.5rem 0 4rem;
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .signature-block {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .signature-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .footer-contact {
+            display: inline-block;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            margin-top: 0.75rem;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.2s var(--transition-smooth);
+        }
+
+        .footer-contact:hover {
+            border-bottom-color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .materials-list {
+                grid-template-columns: 1fr;
+            }
+            .container { padding: 0 1.25rem; }
+            .pub-section { padding: 3.5rem 0; }
+            .hero-title { font-size: 2.2rem; }
+            .hero { padding-top: 7.5rem; min-height: auto; }
+            .support-item { grid-template-columns: 1fr; gap: 0.25rem; }
+            .support-amount { text-align: left; margin-bottom: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-inner">
+        <div class="brand-row">
+            <a href="#" class="brand-mark">FLORIDA FIELD RECORD</a>
+            <a href="/" class="parent-link">&larr; Provision1</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#series">Series</a></li>
+            <li><a href="#volume">Volume</a></li>
+            <li><a href="#nexus">Nexus</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#patronage">Patronage</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO / INTENTION -->
+<section class="hero">
+    <div class="container">
+        <span class="mono-label">INDEPENDENT MONOGRAPHIC SERIES</span>
+        <h1 class="hero-title">FLORIDA FIELD RECORD</h1>
+        
+        <div class="hero-manifesto">
+            <p class="lead-statement">An independent monographic series documenting the physical, historical, cultural, ecological, and economic realities of Florida.</p>
+            <p>Each volume is an independently conceived documentary work organized around a significant nexus discovered through field reporting.</p>
+            <p style="color: var(--text-primary); font-weight: 400;">The subjects of future volumes are deliberately not predetermined. Research determines what warrants publication.</p>
+            <p>Each volume is produced as a substantial printed book designed for long-term reference, private ownership, and institutional collection. Together, the volumes form a cumulative record of Florida.</p>
+            <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-top: 1.5rem;">The subject comes first.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 01 — THE SERIES -->
+<section id="series" class="pub-section">
+    <div class="container">
+        <div class="section-meta">
+            <span class="section-index">01</span>
+            <h2 class="section-subtitle">The Series</h2>
+        </div>
+        <p class="section-desc">
+            A cumulative documentary library devoted to Florida as a physical, historical, and contemporary reality. The series is designed to produce a minimum of four independently researched volumes annually.
+        </p>
+
+        <div class="content-grid">
+            <div class="grid-item full-width-item">
+                <h4 class="item-title">Monographic Scope</h4>
+                <p class="item-body">The series is organized around books, not issues: each volume is an independently conceived investigation that remains a Continuing part of the record. It is neither a magazine issue nor an anthology of disparate articles. An individual volume maintains complete independent value, standing as a complete physical reference work regardless of sequence.</p>
+            </div>
+            <div class="grid-item">
+                <h4 class="item-title">Cumulative Architecture</h4>
+                <p class="item-body">Subsequent volumes do not supersede preceding ones. Each volume functions as an independent, continuing entry in an expanding monographic record. At a minimum of four volumes annually, the series accumulates into an expanding documentary record of the state.</p>
+            </div>
+            <div class="grid-item">
+                <h4 class="item-title">Open Research Directive</h4>
+                <p class="item-body">Subjects are selected solely through active field investigation. No forward publication schedule or thematic calendar is imposed in advance, ensuring that publication responds to physical reality rather than editorial deadlines.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02 — THE VOLUME -->
+<section id="volume" class="pub-section">
+    <div class="container">
+        <div class="section-meta">
+            <span class="section-index">02</span>
+            <h2 class="section-subtitle">The Volume</h2>
+        </div>
+        <p class="section-desc">
+            A volume is a substantial documentary investigation, not an essay wrapped around photographs. Each volume is produced as a substantial printed book designed for long-term reference, private ownership, and institutional collection. The result is a complete monographic work in which text, photography, documentary evidence, maps, technical material, and source records are integrated according to the demands of the investigation.
+        </p>
+
+        <div class="content-grid">
+            <div class="grid-item full-width-item">
+                <h4 class="item-title">Primary Contents &amp; Materials</h4>
+                <p class="item-body">Depending on the specific demands of the investigation, a volume incorporates primary evidence assembled during field reporting:</p>
+                <ul class="materials-list">
+                    <li>Original field photography</li>
+                    <li>Primary reporting &amp; observation</li>
+                    <li>Firsthand interviews</li>
+                    <li>Historical records &amp; archives</li>
+                    <li>Technical &amp; physical investigation</li>
+                    <li>Specially prepared maps &amp; diagrams</li>
+                    <li>Documentary evidence &amp; schematics</li>
+                    <li>Contextual documentation &amp; captions</li>
+                    <li>Complete source records &amp; bibliographies</li>
+                    <li>Primary data &amp; site documentation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 — THE NEXUS -->
+<section id="nexus" class="pub-section">
+    <div class="container">
+        <div class="section-meta">
+            <span class="section-index">03</span>
+            <h2 class="section-subtitle">The Nexus</h2>
+        </div>
+        <p class="section-desc">
+            The nexus is the structural mechanism of the book. It is not a topical "theme," but a specific physical, operational, or historical entry point that opens into interconnected systems. The nexus is discovered through research; it is not imposed in advance. The resulting book follows those relationships until the subject has been adequately documented.
+        </p>
+
+        <div class="content-grid">
+            <div class="grid-item full-width-item">
+                <h4 class="item-title">Structure Over Theme</h4>
+                <p class="item-body">Conventional publications assign a thematic headline and compile essays around it. FLORIDA FIELD RECORD identifies a single operating reality and follows its actual physical, economic, and human extensions.</p>
+            </div>
+            <div class="grid-item">
+                <h4 class="item-title">Illustration: Agricultural Operation</h4>
+                <p class="item-body">An investigation originating in a citrus operation extends directly into land ownership, water rights, soil cultivation, labor history, plant pathology, machinery, processing infrastructure, transportation networks, regional markets, and environmental transformation.</p>
+            </div>
+            <div class="grid-item">
+                <h4 class="item-title">Illustration: Working Waterfront</h4>
+                <p class="item-body">An investigation originating on a working harbor extends into vessel design, commercial fisheries, shipyards, channel navigation, marine insurance, dock labor, coastal tourism, maintenance dredging, wetland ecology, and waterfront development pressure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 04 — METHOD -->
+<section id="method" class="pub-section">
+    <div class="container">
+        <div class="section-meta">
+            <span class="section-index">04</span>
+            <h2 class="section-subtitle">Method</h2>
+        </div>
+        <p class="section-desc">
+            Reporting that prioritizes direct observation, physical evidence, and primary knowledge over secondary synthesis. Research proceeds from field observation through primary reporting, verification, editorial construction, and publication.
+        </p>
+
+        <div class="content-grid">
+            <div class="grid-item">
+                <h4 class="item-title">Field Observation</h4>
+                <p class="item-body">Direct site visits and physical inspection. We examine structural infrastructure, observe operating routines firsthand, and document material conditions across locations.</p>
+            </div>
+            <div class="grid-item">
+                <h4 class="item-title">Primary Knowledge</h4>
+                <p class="item-body">Direct engagement with people who possess operational experience: crew members, engineers, agriculturalists, historians, mechanics, owners, and long-term workers.</p>
+            </div>
+            <div class="grid-item">
+                <h4 class="item-title">Verification &amp; Evidence</h4>
+                <p class="item-body">Claims made in the field are systematically cross-checked against public records, physical artifacts, technical literature, and historical archives prior to publication.</p>
+            </div>
+            <div class="grid-item">
+                <h4 class="item-title">Restraint</h4>
+                <p class="item-body">Maintaining editorial restraint and observational neutrality. The purpose of the prose and imagery is to render physical reality visible with clarity and accuracy.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 — RESEARCH (VOLUME ONE) -->
+<section id="research" class="pub-section">
+    <div class="container">
+        <div class="section-meta">
+            <span class="section-index">05</span>
+            <h2 class="section-subtitle">Volume One</h2>
+        </div>
+        <p class="section-desc">
+            Volume One is the first publication in a continuing series planned at a minimum of four volumes annually. Field investigation across Florida is currently underway.
+        </p>
+
+        <div class="content-grid">
+            <div class="grid-item full-width-item">
+                <h4 class="item-title">Current Status &amp; Trajectory</h4>
+                <p class="item-body">Researchers are actively conducting site visits, interviews, and archival research across multiple intersecting locations. The final scope, geographic bounds, and structural focus of Volume One emerge directly from the relationships and evidence discovered during field reporting. The volume is published when the research is complete.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06 — PATRONAGE -->
+<section id="patronage" class="pub-section">
+    <div class="container">
+        <div class="section-meta">
+            <span class="section-index">06</span>
+            <h2 class="section-subtitle">Patronage</h2>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">Underwriting &amp; Institutional Support</h3>
+
+        <div class="prose-block">
+            <p>FLORIDA FIELD RECORD is produced independently and financed through a combination of publishing revenue, institutional library acquisition, private patronage, and research underwriting. Underwriting provides the capital required to conduct extended field research and bring completed investigations into publication before the commercial life of a book can support those costs.</p>
+            
+            <p>Extended field reporting requires dedicated capital for travel, site access, photography, primary interviews, document acquisition, research assistance, transcription, technical verification, image preparation, typography, editing, printing, and distribution. Underwriting supports the work; it does not purchase editorial control.</p>
+            
+            <p class="highlight-statement">Underwriters acquire no oversight, approval, or editorial direction regarding research, subject selection, interpretation, or conclusions.</p>
+        </div>
+
+        <div class="support-schedule">
+            <div class="schedule-title">Forms of Support</div>
+
+            <div class="support-item">
+                <span class="support-name">Volume Underwriting</span>
+                <span class="support-amount">$25,000</span>
+                <p class="support-desc">Supports the field research, reporting, editorial development, production, printing, and publication of one complete documentary volume.</p>
+            </div>
+
+            <div class="support-item">
+                <span class="support-name">Research Underwriting</span>
+                <span class="support-amount">$10,000</span>
+                <p class="support-desc">Supports extended field investigation and primary reporting contributing to the series.</p>
+            </div>
+
+            <div class="support-item">
+                <span class="support-name">Institutional Patronage</span>
+                <span class="support-amount">$5,000</span>
+                <p class="support-desc">Provides general support for continuing field research, research infrastructure, and ongoing publication.</p>
+            </div>
+
+            <div class="support-item">
+                <span class="support-name">Publication Support</span>
+                <span class="support-amount">$1,500</span>
+                <p class="support-desc">Supports the preservation, production, and institutional distribution of completed volumes.</p>
+            </div>
+        </div>
+
+        <div class="institutional-inquiries">
+            <h4 class="item-title">Institutional Inquiries</h4>
+            <p class="item-body" style="margin-bottom: 1.25rem;">Institutions interested in underwriting field research or acquiring the series may contact the publishing director.</p>
+            <a href="mailto:Pro1Lab@proton.me?subject=FLORIDA%20FIELD%20RECORD%20—%20Institutional%20Inquiry" class="inquiry-link">Inquire Regarding Institutional Support &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- 07 — CONTACT -->
+<footer id="contact">
+    <div class="container">
+        <div class="section-meta">
+            <span class="section-index">07</span>
+            <h2 class="section-subtitle">Contact</h2>
+        </div>
+        <p class="section-desc" style="margin-bottom: 2rem;">
+            FLORIDA FIELD RECORD is an independent monographic series documenting the physical, historical, cultural, ecological, and economic realities of Florida.
+        </p>
+
+        <div class="signature-block">
+            <div class="mono-label" style="margin-bottom: 0.5rem;">VOLUME ONE · FIELD RESEARCH UNDERWAY</div>
+            <div class="signature-title" style="margin-top: 0.25rem;">FLORIDA FIELD RECORD · Published by Provision1 Laboratory</div>
+            <a href="mailto:Pro1Lab@proton.me" class="footer-contact">Pro1Lab@proton.me</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
