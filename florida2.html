@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLORIDA FIELD RECORD — Monographic Series &amp; A Continuing Documentary Record</title>
+    <title>FLORIDA FIELD RECORD — Independent Florida Monographic Series</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -266,7 +266,7 @@
             color: var(--text-dim);
         }
 
-        /* PATRONAGE / SUPPORT STRUCTURE */
+        /* PROSE & PARTNERSHIP STRUCTURE */
         .prose-block {
             margin-bottom: 2.5rem;
         }
@@ -284,55 +284,35 @@
             font-weight: 400;
         }
 
-        .support-schedule {
-            margin-top: 3rem;
-        }
-
-        .schedule-title {
-            font-family: var(--font-sans);
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-dim);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-strong);
-        }
-
-        .support-item {
+        .partner-program-grid {
+            margin-top: 2.5rem;
             display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 0.5rem 2rem;
-            padding: 1.25rem 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-strong);
+        }
+
+        .partner-program-grid .program-item {
+            padding-bottom: 1rem;
             border-bottom: 1px solid var(--border-subtle);
-            align-items: baseline;
         }
 
-        .support-name {
-            font-size: 1.05rem;
+        .partner-program-grid .program-item-title {
+            font-size: 1rem;
             font-weight: 400;
             color: var(--text-primary);
+            margin-bottom: 0.25rem;
         }
 
-        .support-amount {
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--text-primary);
-            letter-spacing: 0.04em;
-            text-align: right;
-        }
-
-        .support-desc {
-            grid-column: 1 / -1;
+        .partner-program-grid .program-item-desc {
             font-size: 0.9rem;
             color: var(--text-muted);
             font-weight: 350;
             line-height: 1.6;
         }
 
-        /* INSTITUTIONAL INQUIRIES BLOCK */
-        .institutional-inquiries {
+        .partnership-inquiries {
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border-subtle);
@@ -392,7 +372,7 @@
         }
 
         @media (max-width: 768px) {
-            .content-grid {
+            .content-grid, .partner-program-grid {
                 grid-template-columns: 1fr;
             }
             .materials-list {
@@ -402,8 +382,6 @@
             .pub-section { padding: 3.5rem 0; }
             .hero-title { font-size: 2.2rem; }
             .hero { padding-top: 7.5rem; min-height: auto; }
-            .support-item { grid-template-columns: 1fr; gap: 0.25rem; }
-            .support-amount { text-align: left; margin-bottom: 0.25rem; }
         }
     </style>
 </head>
@@ -421,7 +399,7 @@
             <li><a href="#nexus">Nexus</a></li>
             <li><a href="#method">Method</a></li>
             <li><a href="#research">Research</a></li>
-            <li><a href="#patronage">Patronage</a></li>
+            <li><a href="#partnership">Partnership</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
@@ -451,17 +429,17 @@
             <h2 class="section-subtitle">The Series</h2>
         </div>
         <p class="section-desc">
-            A cumulative documentary library devoted to Florida as a physical, historical, and contemporary reality. The series is designed to produce a minimum of four independently researched volumes annually.
+            A cumulative documentary library devoted to Florida as a physical, historical, and contemporary reality. The series is designed as a continuing series of independently researched volumes, with a minimum publication cadence of four volumes annually.
         </p>
 
         <div class="content-grid">
             <div class="grid-item full-width-item">
                 <h4 class="item-title">Monographic Scope</h4>
-                <p class="item-body">The series is organized around books, not issues: each volume is an independently conceived investigation that remains a Continuing part of the record. It is neither a magazine issue nor an anthology of disparate articles. An individual volume maintains complete independent value, standing as a complete physical reference work regardless of sequence.</p>
+                <p class="item-body">The series is organized around books, not issues: each volume is an independently conceived investigation that remains a continuing part of the record. It is neither a magazine issue nor an anthology of disparate articles. An individual volume maintains complete independent value, standing as a complete physical reference work regardless of sequence.</p>
             </div>
             <div class="grid-item">
                 <h4 class="item-title">Cumulative Architecture</h4>
-                <p class="item-body">Subsequent volumes do not supersede preceding ones. Each volume functions as an independent, continuing entry in an expanding monographic record. At a minimum of four volumes annually, the series accumulates into an expanding documentary record of the state.</p>
+                <p class="item-body">Subsequent volumes do not supersede preceding ones. Each volume functions as an independent, continuing entry in an expanding monographic record. At a minimum publication cadence of four volumes annually, the series accumulates into an expanding documentary record of the state.</p>
             </div>
             <div class="grid-item">
                 <h4 class="item-title">Open Research Directive</h4>
@@ -571,67 +549,65 @@
             <h2 class="section-subtitle">Volume One</h2>
         </div>
         <p class="section-desc">
-            Volume One is the first publication in a continuing series planned at a minimum of four volumes annually. Field investigation across Florida is currently underway.
+            Volume One is the first publication in a continuing series planned with a minimum publication cadence of four volumes annually. Field investigation is currently underway across multiple intersecting locations.
         </p>
 
         <div class="content-grid">
             <div class="grid-item full-width-item">
                 <h4 class="item-title">Current Status &amp; Trajectory</h4>
-                <p class="item-body">Researchers are actively conducting site visits, interviews, and archival research across multiple intersecting locations. The final scope, geographic bounds, and structural focus of Volume One emerge directly from the relationships and evidence discovered during field reporting. The volume is published when the research is complete.</p>
+                <p class="item-body">Field investigation is currently underway across multiple intersecting locations, incorporating site visits, interviews, and archival research. The final scope, geographic bounds, and structural focus of Volume One emerge directly from the relationships and evidence discovered during field reporting. The volume is published when the research is complete.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 06 — PATRONAGE -->
-<section id="patronage" class="pub-section">
+<!-- 06 — COMMERCIAL PARTNERSHIP -->
+<section id="partnership" class="pub-section">
     <div class="container">
         <div class="section-meta">
             <span class="section-index">06</span>
-            <h2 class="section-subtitle">Patronage</h2>
+            <h2 class="section-subtitle">Commercial Partnership</h2>
         </div>
-        <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">Underwriting &amp; Institutional Support</h3>
+        <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">Independent publication. Commercial participation. Editorial independence.</h3>
 
         <div class="prose-block">
-            <p>FLORIDA FIELD RECORD is produced independently and financed through a combination of publishing revenue, institutional library acquisition, private patronage, and research underwriting. Underwriting provides the capital required to conduct extended field research and bring completed investigations into publication before the commercial life of a book can support those costs.</p>
+            <p>FLORIDA FIELD RECORD is building a limited network of Florida businesses whose work, expertise, and clients intersect with the physical, cultural, ecological, historical, and economic landscape documented by the series.</p>
             
-            <p>Extended field reporting requires dedicated capital for travel, site access, photography, primary interviews, document acquisition, research assistance, transcription, technical verification, image preparation, typography, editing, printing, and distribution. Underwriting supports the work; it does not purchase editorial control.</p>
+            <p>Commercial partners participate through a client-development program built around the finished monograph. The program is designed not as conventional advertising, but as a means of placing a substantial Florida documentary work directly into the hands of clients, prospects, collaborators, and other important relationships.</p>
             
-            <p class="highlight-statement">Underwriters acquire no oversight, approval, or editorial direction regarding research, subject selection, interpretation, or conclusions.</p>
+            <p class="highlight-statement">Commercial partners are selected according to relevance to the work and the Florida landscape being documented. Commercial participation is limited by volume and subject relevance. Participation provides no editorial control over research, subject selection, interpretation, or conclusions.</p>
         </div>
 
-        <div class="support-schedule">
-            <div class="schedule-title">Forms of Support</div>
-
-            <div class="support-item">
-                <span class="support-name">Volume Underwriting</span>
-                <span class="support-amount">$25,000</span>
-                <p class="support-desc">Supports the field research, reporting, editorial development, production, printing, and publication of one complete documentary volume.</p>
+        <div class="partner-program-grid">
+            <div class="program-item">
+                <h4 class="program-item-title">Client-Development Copies</h4>
+                <p class="program-item-desc">Finished copies of the monograph for direct distribution to clients and prospects.</p>
             </div>
 
-            <div class="support-item">
-                <span class="support-name">Research Underwriting</span>
-                <span class="support-amount">$10,000</span>
-                <p class="support-desc">Supports extended field investigation and primary reporting contributing to the series.</p>
+            <div class="program-item">
+                <h4 class="program-item-title">Publication Presentation</h4>
+                <p class="program-item-desc">A substantial, designed presentation within the finished volume.</p>
             </div>
 
-            <div class="support-item">
-                <span class="support-name">Institutional Patronage</span>
-                <span class="support-amount">$5,000</span>
-                <p class="support-desc">Provides general support for continuing field research, research infrastructure, and ongoing publication.</p>
+            <div class="program-item">
+                <h4 class="program-item-title">Digital Presence</h4>
+                <p class="program-item-desc">A corresponding presence associated with the publication online.</p>
             </div>
 
-            <div class="support-item">
-                <span class="support-name">Publication Support</span>
-                <span class="support-amount">$1,500</span>
-                <p class="support-desc">Supports the preservation, production, and institutional distribution of completed volumes.</p>
+            <div class="program-item">
+                <h4 class="program-item-title">Trackable Response</h4>
+                <p class="program-item-desc">A dedicated mechanism connecting interested readers directly with the participating business.</p>
+            </div>
+
+            <div class="program-item" style="grid-column: 1 / -1;">
+                <h4 class="program-item-title">Founding Commercial Partner</h4>
+                <p class="program-item-desc">Recognition as a founding commercial participant in the continuing series.</p>
             </div>
         </div>
 
-        <div class="institutional-inquiries">
-            <h4 class="item-title">Institutional Inquiries</h4>
-            <p class="item-body" style="margin-bottom: 1.25rem;">Institutions interested in underwriting field research or acquiring the series may contact the publishing director.</p>
-            <a href="mailto:Pro1Lab@proton.me?subject=FLORIDA%20FIELD%20RECORD%20—%20Institutional%20Inquiry" class="inquiry-link">Inquire Regarding Institutional Support &rarr;</a>
+        <div class="partnership-inquiries">
+            <p class="item-body" style="margin-bottom: 1.25rem;">Commercial participation is limited by volume and is structured around the individual requirements of each publication. Businesses interested in participating may request the current partner brief.</p>
+            <a href="mailto:Pro1Lab@proton.me?subject=FLORIDA%20FIELD%20RECORD%20—%20Commercial%20Partner%20Brief%20Request" class="inquiry-link">REQUEST THE COMMERCIAL PARTNER BRIEF &rarr;</a>
         </div>
     </div>
 </section>
