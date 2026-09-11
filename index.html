@@ -271,70 +271,6 @@ section {
     line-height: 1.8;
 }
 
-.output-list { border-top: 1px solid var(--border); }
-
-.output-row {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 45px;
-    padding: 30px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.output-row h3 {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.output-row p {
-    max-width: 650px;
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.commission-intro {
-    max-width: 700px;
-    margin: 0 0 52px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 29px;
-    font-weight: 300;
-    line-height: 1.35;
-}
-
-.commission-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-}
-
-.commission-item {
-    min-height: 235px;
-    padding: 34px;
-    background: var(--bg-color);
-}
-
-.commission-item h3 {
-    margin: 0 0 14px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 1.15;
-}
-
-.commission-item p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
 .desk-bridge {
     margin-top: 50px;
     padding: 28px 0;
@@ -362,6 +298,32 @@ section {
 }
 
 .desk-link:hover { color: var(--accent-bone); }
+
+.output-list { border-top: 1px solid var(--border); }
+
+.output-row {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 45px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.output-row h3 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.output-row p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
 
 .record-grid {
     display: grid;
@@ -507,12 +469,10 @@ footer {
     .section-title { font-size: 34px; }
     .research-feature-grid,
     .research-secondary-grid,
-    .systems-grid,
-    .commission-grid { grid-template-columns: 1fr; }
+    .systems-grid { grid-template-columns: 1fr; }
     .research-feature { min-height: 340px; }
     .research-feature h3 { font-size: 32px; }
     .output-row { grid-template-columns: 1fr; gap: 16px; }
-    .commission-intro { font-size: 26px; }
     .desk-bridge { flex-direction: column; align-items: flex-start; }
     .record-grid { grid-template-columns: 1fr; gap: 45px; }
     .record-statement { font-size: 28px; }
@@ -529,9 +489,9 @@ footer {
         <nav>
             <a href="#research">Research</a>
             <a href="#outputs">Outputs</a>
-            <a href="#commission">Commission</a>
             <a href="#record">The Record</a>
             <a href="#systems">Systems</a>
+            <a href="desk.html">The Desk</a>
         </nav>
     </div>
 </header>
@@ -572,7 +532,7 @@ footer {
         <div class="research-feature-grid">
             <article class="research-feature">
                 <div>
-                    <div class="research-feature-number">01 / Flagship Investigation</div>
+                    <div class="research-feature-number">01 / Geographic Field Record</div>
                     <h3>Florida Field Record</h3>
                     <p>
                         An independent monographic field-research program
@@ -587,12 +547,12 @@ footer {
 
             <article class="research-feature">
                 <div>
-                    <div class="research-feature-number">02 / Flagship Investigation</div>
+                    <div class="research-feature-number">02 / Geographic Field Record</div>
                     <h3>Korea: Material Culture Series</h3>
                     <p>
-                        A seven-volume field research program examining Korea 
-                        through its physical, institutional, and material systems—spanning 
-                        international medical travel, manufacturing, domestic architecture, 
+                        A multi-volume field research program examining Korea
+                        through its physical, institutional, and material systems—spanning
+                        international medical travel, manufacturing, domestic architecture,
                         and the underlying theory of physical culture.
                     </p>
                     <div class="research-meta">Field Research · Infrastructure · Material Systems · Monographic Series</div>
@@ -603,7 +563,7 @@ footer {
         <div class="research-secondary-grid">
             <article class="research-secondary">
                 <div>
-                    <div class="research-secondary-number">03</div>
+                    <div class="research-secondary-number">03 / Monographic Music Series</div>
                     <h3>NS Design Electric Cello Study</h3>
                     <p>
                         A five-volume research program examining the electric
@@ -618,7 +578,7 @@ footer {
 
             <article class="research-secondary">
                 <div>
-                    <div class="research-secondary-number">04</div>
+                    <div class="research-secondary-number">04 / Monographic Music Series</div>
                     <h3>u-he Sound Design Idiom Field Manual</h3>
                     <p>
                         An eight-volume research program mapping sound-design
@@ -632,31 +592,36 @@ footer {
 
             <article class="research-secondary">
                 <div>
-                    <div class="research-secondary-number">05</div>
+                    <div class="research-secondary-number">05 / Pre-Commercial R&amp;D</div>
                     <h3>Films &amp; Structural Sheets</h3>
                     <p>
-                        Investigation of thin films, sheets, wrappers and
-                        structural food-material systems, including formulation,
-                        physical behavior, processing and potential commercial
-                        applications.
+                        Investigation of thin films, structural sheets, wrappers
+                        and food-material systems, examining formulation, physical behavior,
+                        processing architectures and material performance.
                     </p>
-                    <div class="research-meta">Materials · Formulation · Structural Systems</div>
+                    <div class="research-meta">Applied R&amp;D · Materials · Formulation · Structural Systems</div>
                 </div>
             </article>
 
             <article class="research-secondary">
                 <div>
-                    <div class="research-secondary-number">06</div>
+                    <div class="research-secondary-number">06 / Cultural Research Incubator</div>
                     <h3>Cultural &amp; Historical Research</h3>
                     <p>
-                        Independent investigations into cultural history,
-                        technological history, material culture and the
-                        preservation and interpretation of knowledge through
-                        research, writing and publication.
+                        Long-term historical and cultural inquiry serving as the intellectual 
+                        incubator for forthcoming monographic book series, essays, and 
+                        published dispatches across material history and technological development.
                     </p>
-                    <div class="research-meta">History · Culture · Primary Sources · Publishing</div>
+                    <div class="research-meta">Incubator · History · Culture · Primary Sources · Publishing</div>
                 </div>
             </article>
+        </div>
+
+        <div class="desk-bridge">
+            <p>
+                Research capacity is also available to organizations requiring independent investigation, technical reconstruction, R&amp;D, or editorial production.
+            </p>
+            <a class="desk-link" href="desk.html">Enter the Desk →</a>
         </div>
     </div>
 </section>
@@ -710,72 +675,17 @@ footer {
                 </p>
             </div>
             <div class="output-row">
+                <h3>Research Archives</h3>
+                <p>
+                    Primary datasets, field records, photographic records, physical taxonomies, source documentation, and structural research archives built across extended investigations.
+                </p>
+            </div>
+            <div class="output-row">
                 <h3>Commercial Research Assets</h3>
                 <p>
-                    Selected investigations may produce application research,
-                    product architectures, technical references, editorial
-                    assets or other intellectual property with defined
-                    commercial use.
+                    Selected research may also produce application research, product architectures, technical references, editorial assets, or other defined intellectual property.
                 </p>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="commission">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-number">03 / Commission</div>
-            <div>
-                <h2 class="section-title">Research can be commissioned.</h2>
-            </div>
-        </div>
-
-        <p class="commission-intro">
-            P1Lab does not operate as a general-purpose consultancy or
-            outsourced content department. The practice is brought in when
-            the subject itself requires investigation.
-        </p>
-
-        <div class="commission-grid">
-            <article class="commission-item">
-                <h3>Research Commissions</h3>
-                <p>
-                    Independent investigation of technically rich, historically
-                    complex, materially difficult or insufficiently documented
-                    subjects. Work may result in a research dossier, field
-                    record, monograph, technical reference or publication.
-                </p>
-            </article>
-
-            <article class="commission-item">
-                <h3>Technical Research</h3>
-                <p>
-                    Systems analysis, reconstruction, experimental development
-                    and applied investigation where conventional assumptions
-                    are inadequate. Work may address materials, processes,
-                    physical systems, applications or technical architectures.
-                </p>
-            </article>
-
-            <article class="commission-item">
-                <h3>Editorial &amp; Knowledge Production</h3>
-                <p>
-                    Research-driven writing, technical documentation,
-                    knowledge architecture, editorial development and
-                    publication for organizations that need complex knowledge
-                    made coherent and usable.
-                </p>
-            </article>
-        </div>
-
-        <div class="desk-bridge">
-            <p>
-                For organizations seeking a continuing research and editorial
-                capability, the P1Lab Desk provides a defined engagement
-                structure.
-            </p>
-            <a class="desk-link" href="desk.html">Explore the P1Lab Desk →</a>
         </div>
     </div>
 </section>
@@ -783,20 +693,18 @@ footer {
 <section id="record">
     <div class="container">
         <div class="section-header">
-            <div class="section-number">04 / The Record</div>
+            <div class="section-number">03 / The Record</div>
             <div>
                 <h2 class="section-title">Evidence of the work.</h2>
                 <p class="section-intro">
-                    The present investigations sit within a substantially
-                    larger record of independent research, authorship,
-                    technical development and publication.
+                    Capability is demonstrated through the record of what has been researched, documented, built, published, and delivered.
                 </p>
             </div>
         </div>
 
         <div class="record-grid">
             <div class="record-statement">
-                The practice is the current form of a three-decade commitment to research, systems, and publishing.
+                The present practice rests on more than three decades of research, systems development, writing, and publishing.
             </div>
 
             <div class="record-details">
@@ -847,9 +755,9 @@ footer {
 <section id="systems" class="systems-section">
     <div class="container">
         <div class="section-header">
-            <div class="section-number">05 / Systems Practice</div>
+            <div class="section-number">04 / Systems Practice</div>
             <div>
-                <h2 class="section-title">Applied technical practice.</h2>
+                <h2 class="section-title">Technical practice.</h2>
                 <p class="section-intro">
                     Technical investigation and development across systems, materials,
                     signals and physical processes.
