@@ -3,1584 +3,903 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>P1 Lab | Independent Research &amp; Publishing</title>
-
-<meta name="description" content="P1 Lab is an independent research and publishing practice investigating complex subjects, physical systems, technologies, materials, places and culture.">
-<meta name="author" content="P1 Lab">
+<title>P1Lab | Independent Research &amp; Publishing</title>
+<meta name="description" content="P1Lab is an independent research and publishing practice investigating complex subjects, systems, materials, technologies, places and culture.">
+<meta name="author" content="P1Lab">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
     --bg-color: #fcfaf2;
     --surface-color: #f5f2e6;
-
     --text-primary: #1c1d1c;
     --text-muted: #5f5c56;
-    --text-dim: #77736b;
-
+    --text-dim: #635f58;
     --accent-bone: #8a7a5f;
-
     --border: rgba(28, 29, 28, 0.14);
     --border-light: rgba(28, 29, 28, 0.09);
-
     --max-width: 1180px;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
     background: var(--bg-color);
     color: var(--text-primary);
-
     font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 400;
-
     line-height: 1.75;
-
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
 
 .container {
     width: min(calc(100% - 48px), var(--max-width));
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
+    top: 0; left: 0; right: 0;
     z-index: 100;
-
     background: rgba(252, 250, 242, 0.95);
     backdrop-filter: blur(8px);
-
     border-bottom: 1px solid var(--border-light);
 }
 
 .header-inner {
     min-height: 76px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 30px;
 }
 
 .brand {
     font-family: "Cormorant Garamond", serif;
-
     font-size: 21px;
     font-weight: 500;
-
     letter-spacing: 0.075em;
     text-transform: uppercase;
-
     white-space: nowrap;
 }
 
 nav {
     display: flex;
     align-items: center;
-
     gap: 27px;
 }
 
 nav a {
     font-size: 10px;
     font-weight: 500;
-
     letter-spacing: 0.12em;
     text-transform: uppercase;
-
     color: var(--text-muted);
-
     transition: color 0.2s ease;
 }
 
-nav a:hover {
-    color: var(--text-primary);
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
+nav a:hover { color: var(--text-primary); }
 
 .hero {
     min-height: 88vh;
-
     padding-top: 76px;
-
     display: flex;
     align-items: center;
 }
 
 .hero-content {
     max-width: 790px;
-
     padding: 105px 0 95px;
 }
 
 .eyebrow {
     margin-bottom: 25px;
-
     font-size: 10px;
     font-weight: 500;
-
     letter-spacing: 0.18em;
     text-transform: uppercase;
-
     color: var(--accent-bone);
 }
 
 h1 {
     margin: 0;
-
     max-width: 760px;
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(48px, 5.2vw, 64px);
     font-weight: 300;
-
     line-height: 1.02;
     letter-spacing: -0.015em;
 }
 
 .hero-intro {
-    max-width: 610px;
-
+    max-width: 650px;
     margin: 36px 0 0;
-
     color: var(--text-muted);
-
     font-size: 15px;
     line-height: 1.85;
 }
 
-
-/* =========================================================
-   GENERAL SECTIONS
-   ========================================================= */
-
 section {
     padding: 105px 0;
-
     border-top: 1px solid var(--border);
 }
 
 .section-header {
     display: grid;
-
     grid-template-columns: 160px 1fr;
-
     gap: 45px;
-
     margin-bottom: 58px;
 }
 
 .section-number {
     font-size: 10px;
     font-weight: 500;
-
     letter-spacing: 0.15em;
-
     color: var(--accent-bone);
 }
 
 .section-title {
     margin: 0;
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(32px, 3.5vw, 42px);
     font-weight: 300;
-
     line-height: 1.08;
     letter-spacing: -0.01em;
 }
 
 .section-intro {
     max-width: 660px;
-
     margin: 20px 0 0;
-
     color: var(--text-muted);
-
     font-size: 14px;
     line-height: 1.85;
 }
 
-
-/* =========================================================
-   CURRENT RESEARCH
-   ========================================================= */
-
-.research-grid {
+.research-feature-grid {
     display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: 1fr 1fr;
     border-top: 1px solid var(--border);
     border-left: 1px solid var(--border);
 }
 
-.research-card {
-    min-height: 285px;
-
-    padding: 34px;
-
+.research-feature {
+    min-height: 390px;
+    padding: 42px;
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    background: var(--bg-color);
     transition: background 0.25s ease;
 }
 
-.research-card:hover {
-    background: var(--surface-color);
-}
+.research-feature:hover { background: var(--surface-color); }
 
-.research-card-number {
+.research-feature-number {
     font-size: 9px;
     font-weight: 500;
-
     letter-spacing: 0.16em;
-
     color: var(--accent-bone);
 }
 
-.research-card h3 {
-    margin: 48px 0 14px;
-
+.research-feature h3 {
+    margin: 72px 0 17px;
+    max-width: 520px;
     font-family: "Cormorant Garamond", serif;
-
-    font-size: 27px;
+    font-size: 35px;
     font-weight: 400;
-
-    line-height: 1.12;
+    line-height: 1.08;
 }
 
-.research-card p {
+.research-feature p {
+    max-width: 500px;
     margin: 0;
-
-    max-width: 450px;
-
     color: var(--text-muted);
-
     font-size: 13px;
-    line-height: 1.8;
+    line-height: 1.85;
 }
 
 .research-meta {
-    margin-top: 25px;
-
+    margin-top: 28px;
     font-size: 9px;
     font-weight: 500;
-
     letter-spacing: 0.12em;
     text-transform: uppercase;
-
     color: var(--text-dim);
 }
 
 .card-link {
     display: inline-block;
-
-    margin-top: 28px;
-
+    margin-top: 30px;
     font-size: 9px;
     font-weight: 500;
-
     letter-spacing: 0.14em;
     text-transform: uppercase;
-
-    color: var(--text-primary);
 }
 
+.card-link:hover { color: var(--accent-bone); }
 
-/* =========================================================
-   ARCHIVE
-   ========================================================= */
-
-.archive-grid {
+.research-secondary-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
-    gap: 1px;
-
-    background: var(--border);
-
-    border: 1px solid var(--border);
+    border-left: 1px solid var(--border);
 }
 
-.archive-item {
-    min-height: 225px;
-
-    padding: 38px;
-
-    background: var(--bg-color);
-
+.research-secondary {
+    min-height: 285px;
+    padding: 34px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transition: background 0.25s ease;
 }
 
-.archive-item:hover {
-    background: var(--surface-color);
+.research-secondary:hover { background: var(--surface-color); }
+
+.research-secondary-number {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--accent-bone);
 }
 
-.archive-item h3 {
-    margin: 0 0 16px;
-
+.research-secondary h3 {
+    margin: 46px 0 14px;
     font-family: "Cormorant Garamond", serif;
-
     font-size: 27px;
     font-weight: 400;
-
-    line-height: 1.15;
+    line-height: 1.12;
 }
 
-.archive-item p {
-    max-width: 480px;
-
+.research-secondary p {
+    max-width: 450px;
     margin: 0;
-
     color: var(--text-muted);
-
     font-size: 13px;
     line-height: 1.8;
 }
 
-.archive-link {
-    display: inline-block;
+.output-list { border-top: 1px solid var(--border); }
 
-    margin-top: 25px;
-
-    font-size: 9px;
-    font-weight: 500;
-
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   RESEARCH ASSETS
-   ========================================================= */
-
-.asset-list {
-    border-top: 1px solid var(--border);
-}
-
-.asset-row {
+.output-row {
     display: grid;
-
     grid-template-columns: 250px 1fr;
-
     gap: 45px;
-
     padding: 30px 0;
-
     border-bottom: 1px solid var(--border);
 }
 
-.asset-row h3 {
+.output-row h3 {
     margin: 0;
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: 24px;
     font-weight: 400;
-
     line-height: 1.2;
 }
 
-.asset-row p {
+.output-row p {
     max-width: 650px;
-
     margin: 0;
-
     color: var(--text-muted);
-
     font-size: 13px;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   COMMISSIONED RESEARCH
-   ========================================================= */
-
 .commission-intro {
     max-width: 700px;
-
     margin: 0 0 52px;
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: 29px;
     font-weight: 300;
-
     line-height: 1.35;
 }
 
 .commission-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 1px;
-
     background: var(--border);
-
     border: 1px solid var(--border);
 }
 
 .commission-item {
     min-height: 235px;
-
     padding: 34px;
-
     background: var(--bg-color);
 }
 
 .commission-item h3 {
     margin: 0 0 14px;
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: 25px;
     font-weight: 400;
-
     line-height: 1.15;
 }
 
 .commission-item p {
     margin: 0;
-
     color: var(--text-muted);
-
     font-size: 13px;
     line-height: 1.8;
 }
 
 .desk-bridge {
     margin-top: 50px;
-
     padding: 28px 0;
-
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 30px;
 }
 
 .desk-bridge p {
     max-width: 700px;
-
     margin: 0;
-
     color: var(--text-muted);
-
     font-size: 13px;
 }
 
 .desk-link {
     white-space: nowrap;
-
     font-size: 9px;
     font-weight: 500;
-
     letter-spacing: 0.15em;
     text-transform: uppercase;
 }
 
-
-/* =========================================================
-   THE RECORD
-   ========================================================= */
+.desk-link:hover { color: var(--accent-bone); }
 
 .record-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 70px;
-
     align-items: start;
 }
 
 .record-statement {
     max-width: 500px;
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: 30px;
     font-weight: 300;
-
     line-height: 1.35;
 }
 
-.record-details {
-    border-top: 1px solid var(--border);
-}
+.record-details { border-top: 1px solid var(--border); }
 
 .record-item {
     padding: 27px 0;
-
     border-bottom: 1px solid var(--border);
 }
 
 .record-label {
     display: block;
-
     margin-bottom: 8px;
-
     font-size: 9px;
     font-weight: 500;
-
     letter-spacing: 0.14em;
     text-transform: uppercase;
-
     color: var(--accent-bone);
 }
 
 .record-value {
     font-family: "Cormorant Garamond", serif;
-
     font-size: 25px;
     font-weight: 400;
-
     line-height: 1.2;
 }
 
 .record-description {
     max-width: 570px;
-
     margin-top: 7px;
-
     color: var(--text-muted);
-
     font-size: 12px;
     line-height: 1.75;
 }
 
+.systems-section { padding-bottom: 90px; }
 
-/* =========================================================
-   CLOSING STATEMENT
-   ========================================================= */
+.systems-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+}
+
+.systems-item {
+    min-height: 285px;
+    padding: 34px;
+    background: var(--bg-color);
+}
+
+.systems-item h3 {
+    margin: 0 0 17px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.systems-item p {
+    max-width: 500px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
 
 .closing {
     padding: 125px 0;
-
     border-top: 1px solid var(--border);
-
     text-align: center;
 }
 
 .closing p {
     max-width: 700px;
-
     margin: 0 auto;
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(30px, 3.2vw, 38px);
     font-weight: 300;
-
     line-height: 1.25;
 }
 
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
 footer {
     padding: 50px 0;
-
     border-top: 1px solid var(--border);
 }
 
 .footer-inner {
     display: flex;
-
     justify-content: space-between;
     align-items: flex-start;
-
     gap: 30px;
 }
 
 .footer-brand {
     font-family: "Cormorant Garamond", serif;
-
     font-size: 20px;
     font-weight: 500;
-
     letter-spacing: 0.075em;
     text-transform: uppercase;
 }
 
 .footer-contact {
     text-align: right;
-
     color: var(--text-muted);
-
     font-size: 12px;
     line-height: 1.8;
 }
 
-.footer-contact a:hover {
-    color: var(--text-primary);
-}
+.footer-contact a:hover { color: var(--text-primary); }
 
 .footer-note {
     margin-top: 8px;
-
     color: var(--text-dim);
-
     font-size: 10px;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
 @media (max-width: 800px) {
-
-    .container {
-        width: min(calc(100% - 32px), var(--max-width));
-    }
-
-    .header-inner {
-        min-height: 70px;
-
-        padding: 14px 0;
-
-        align-items: flex-start;
-    }
-
-    .brand {
-        font-size: 18px;
-    }
-
-    nav {
-        gap: 12px;
-
-        flex-wrap: wrap;
-
-        justify-content: flex-end;
-    }
-
-    nav a {
-        font-size: 8px;
-    }
-
-    .hero {
-        min-height: auto;
-    }
-
-    .hero-content {
-        padding: 120px 0 90px;
-    }
-
-    h1 {
-        font-size: clamp(42px, 11vw, 54px);
-    }
-
-    .hero-intro {
-        font-size: 14px;
-    }
-
-    section {
-        padding: 80px 0;
-    }
-
-    .section-header {
-        grid-template-columns: 1fr;
-
-        gap: 13px;
-
-        margin-bottom: 45px;
-    }
-
-    .section-title {
-        font-size: 34px;
-    }
-
-    .research-grid,
-    .archive-grid,
-    .commission-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .research-card {
-        min-height: 270px;
-    }
-
-    .asset-row {
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-    }
-
-    .commission-intro {
-        font-size: 26px;
-    }
-
-    .desk-bridge {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .record-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-    }
-
-    .record-statement {
-        font-size: 28px;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-    }
-
-    .footer-contact {
-        text-align: left;
-    }
+    .container { width: min(calc(100% - 32px), var(--max-width)); }
+    .header-inner { min-height: 70px; padding: 14px 0; align-items: center; }
+    .brand { font-size: 18px; }
+    nav { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+    nav a { font-size: 8px; }
+    .hero { min-height: auto; }
+    .hero-content { padding: 120px 0 90px; }
+    h1 { font-size: clamp(42px, 11vw, 54px); }
+    .hero-intro { font-size: 14px; }
+    section { padding: 80px 0; }
+    .section-header { grid-template-columns: 1fr; gap: 13px; margin-bottom: 45px; }
+    .section-title { font-size: 34px; }
+    .research-feature-grid,
+    .research-secondary-grid,
+    .systems-grid,
+    .commission-grid { grid-template-columns: 1fr; }
+    .research-feature { min-height: 340px; }
+    .research-feature h3 { font-size: 32px; }
+    .output-row { grid-template-columns: 1fr; gap: 16px; }
+    .commission-intro { font-size: 26px; }
+    .desk-bridge { flex-direction: column; align-items: flex-start; }
+    .record-grid { grid-template-columns: 1fr; gap: 45px; }
+    .record-statement { font-size: 28px; }
+    .footer-inner { flex-direction: column; }
+    .footer-contact { text-align: left; }
 }
-
 </style>
 </head>
-
-
 <body>
 
-
-<!-- =======================================================
-     HEADER
-     ======================================================= -->
-
 <header>
-
     <div class="container header-inner">
-
-        <a href="#" class="brand">
-            P1 Lab
-        </a>
-
+        <a href="#" class="brand">P1Lab</a>
         <nav>
             <a href="#research">Research</a>
-            <a href="#archive">Archive</a>
-            <a href="#assets">Assets</a>
+            <a href="#outputs">Outputs</a>
             <a href="#commission">Commission</a>
             <a href="#record">The Record</a>
+            <a href="#systems">Systems</a>
         </nav>
-
     </div>
-
 </header>
 
-
 <main>
-
-
-<!-- =======================================================
-     HERO
-     ======================================================= -->
-
 <section class="hero">
-
     <div class="container">
-
         <div class="hero-content">
-
-            <div class="eyebrow">
-                Independent Research &amp; Publishing
-            </div>
-
-            <h1>
-                Research into complex subjects and systems.
-            </h1>
-
+            <div class="eyebrow">Independent Research &amp; Publishing</div>
+            <h1>Research into complex subjects and systems.</h1>
             <p class="hero-intro">
-                P1 Lab is an independent research and publishing
-                practice investigating subjects that require sustained inquiry,
+                P1Lab is an independent research and publishing practice
+                investigating subjects that require sustained inquiry,
                 evidence, reconstruction and interpretation. The work crosses
                 physical systems, technologies, materials, places, cultural
                 history and applied knowledge.
             </p>
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =======================================================
-     01 / RESEARCH
-     ======================================================= -->
-
 <section id="research">
-
     <div class="container">
-
         <div class="section-header">
-
-            <div class="section-number">
-                01 / Research
-            </div>
-
+            <div class="section-number">01 / Research</div>
             <div>
-
-                <h2 class="section-title">
-                    Current investigations.
-                </h2>
-
+                <h2 class="section-title">Current investigations.</h2>
                 <p class="section-intro">
-                    The Lab does not define itself by a single industry
-                    or subject category. Each investigation begins with a
-                    difficult question, an insufficient explanation, or a
-                    system that requires closer examination.
+                    Each investigation begins with a difficult question,
+                    an insufficient explanation, or a system that requires
+                    closer examination. Subjects are selected for the quality
+                    of the inquiry they demand, not for conformity to an
+                    industry category.
                 </p>
-
             </div>
-
         </div>
 
-
-        <div class="research-grid">
-
-
-            <!-- RESEARCH 01 -->
-
-            <article class="research-card">
-
+        <div class="research-feature-grid">
+            <article class="research-feature">
                 <div>
-
-                    <div class="research-card-number">
-    01
-</div>
-
-<h3>
-    NS Design Electric Cello Study
-</h3>
-
-<p>
-    A <strong>five-volume independent research program</strong> investigating the NS Design electric cello from historical, physical, mechanical, expressive, and signal-system perspectives.
-</p>
-
-<div class="research-meta">
-    5-Volume Research Atlas · Instrument Systems · Expressive Vocabulary · Signal Architecture · Experimental Practice
-</div>
-
-</div>
-
-            </article>
-
-
-            <!-- RESEARCH 02 -->
-
-            <article class="research-card">
-
-                <div>
-
-                    <div class="research-card-number">
-                        02
-                    </div>
-
-                    <h3>
-                        Florida Field Record
-                    </h3>
-
+                    <div class="research-feature-number">01 / Flagship Investigation</div>
+                    <h3>Florida Field Record</h3>
                     <p>
-                        An independent field-research program documenting
-                        Florida through landscape, infrastructure, architecture,
-                        material culture, history and the systems that shape
-                        particular places.
+                        An independent monographic field-research program
+                        documenting Florida through landscape, infrastructure,
+                        architecture, material culture, history and the systems
+                        that shape particular places.
                     </p>
-
-                    <div class="research-meta">
-                        Field Research · Place · Landscape · Cultural History
-                    </div>
-
+                    <div class="research-meta">Field Research · Place · Landscape · Cultural History · Publishing</div>
                 </div>
-
-
-                <a
-                    class="card-link"
-                    href="florida2.html"
-                >
-                    Enter the Field Record →
-                </a>
-
+                <a class="card-link" href="florida2.html">Enter the Field Record →</a>
             </article>
 
-
-            <!-- RESEARCH 03 -->
-
-            <article class="research-card">
-
+            <article class="research-feature">
                 <div>
-
-                    <div class="research-card-number">
-                        03
-                    </div>
-
-                    <h3>
-                        Accelerated Cooking Systems
-                    </h3>
-
+                    <div class="research-feature-number">02 / Flagship Investigation</div>
+                    <h3>Korea: Material Culture Series</h3>
                     <p>
-                        Research into thermal processing, material behavior,
-                        structure, phase change and accelerated culinary
-                        production, developed through controlled systems rather
-                        than conventional recipe development.
+                        A seven-volume field research program examining Korea 
+                        through its physical, institutional, and material systems—spanning 
+                        international medical travel, manufacturing, domestic architecture, 
+                        and the underlying theory of physical culture.
                     </p>
-
-                    <div class="research-meta">
-                        Thermal Systems · Materials · Process Research
-                    </div>
-
+                    <div class="research-meta">Field Research · Infrastructure · Material Systems · Monographic Series</div>
                 </div>
+            </article>
+        </div>
 
+        <div class="research-secondary-grid">
+            <article class="research-secondary">
+                <div>
+                    <div class="research-secondary-number">03</div>
+                    <h3>NS Design Electric Cello Study</h3>
+                    <p>
+                        A five-volume research program examining the electric
+                        cello across its historical, physical, mechanical,
+                        expressive and signal dimensions, beginning with
+                        controlled investigation of the instrument's active
+                        and passive states.
+                    </p>
+                    <div class="research-meta">Instrument Systems · Signal Research · Physical Study</div>
+                </div>
             </article>
 
-
-            <!-- RESEARCH 04 -->
-
-            <article class="research-card">
-
+            <article class="research-secondary">
                 <div>
+                    <div class="research-secondary-number">04</div>
+                    <h3>u-he Sound Design Idiom Field Manual</h3>
+                    <p>
+                        An eight-volume research program mapping sound-design
+                        practice through genre, instrument and sound-design
+                        idiom rather than treating synthesis as a collection
+                        of isolated techniques or presets.
+                    </p>
+                    <div class="research-meta">Sound Design · Taxonomy · Electronic Music</div>
+                </div>
+            </article>
 
-                    <div class="research-card-number">
-                        04
-                    </div>
-
-                    <h3>
-                        Films &amp; Structural Sheets
-                    </h3>
-
+            <article class="research-secondary">
+                <div>
+                    <div class="research-secondary-number">05</div>
+                    <h3>Films &amp; Structural Sheets</h3>
                     <p>
                         Investigation of thin films, sheets, wrappers and
                         structural food-material systems, including formulation,
                         physical behavior, processing and potential commercial
                         applications.
                     </p>
-
-                    <div class="research-meta">
-                        Materials · Formulation · Structural Systems
-                    </div>
-
+                    <div class="research-meta">Materials · Formulation · Structural Systems</div>
                 </div>
-
             </article>
 
-
-            <!-- RESEARCH 05 -->
-
-            <article class="research-card">
-
+            <article class="research-secondary">
                 <div>
-
-                    <div class="research-card-number">
-                        05
-                    </div>
-
-                    <h3>
-                        Cultural &amp; Historical Research
-                    </h3>
-
+                    <div class="research-secondary-number">06</div>
+                    <h3>Cultural &amp; Historical Research</h3>
                     <p>
                         Independent investigations into cultural history,
                         technological history, material culture and the
                         preservation and interpretation of knowledge through
                         research, writing and publication.
                     </p>
-
-                    <div class="research-meta">
-                        History · Culture · Primary Sources · Publishing
-                    </div>
-
+                    <div class="research-meta">History · Culture · Primary Sources · Publishing</div>
                 </div>
-
             </article>
-
-
-            <!-- RESEARCH 06 / intentionally restrained -->
-
-            <article class="research-card">
-
-                <div>
-
-                    <div class="research-card-number">
-                        —
-                    </div>
-
-                    <h3>
-                        Further investigations
-                    </h3>
-
-                    <p>
-                        The Lab maintains additional research programs
-                        and unpublished investigations that are not presented
-                        here as public-facing categories. The current record is
-                        deliberately selective.
-                    </p>
-
-                    <div class="research-meta">
-                        Selected Work · Ongoing Research · Private Investigations
-                    </div>
-
-                </div>
-
-            </article>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =======================================================
-     02 / ARCHIVE
-     ======================================================= -->
-
-<section id="archive">
-
+<section id="outputs">
     <div class="container">
-
         <div class="section-header">
-
-            <div class="section-number">
-                02 / Archive
-            </div>
-
+            <div class="section-number">02 / Publications &amp; Outputs</div>
             <div>
-
-                <h2 class="section-title">
-                    The technical record.
-                </h2>
-
+                <h2 class="section-title">What research produces.</h2>
                 <p class="section-intro">
-                    The present Lab is built on a much larger body of
-                    technical experiments, research documents, development work
-                    and published investigation. The archive remains available
-                    as a record rather than being reconstructed for presentation.
+                    Investigation is carried through to a durable form.
+                    The result may be a publication, field record, technical
+                    study, research dossier, knowledge structure, physical
+                    system or documented body of evidence.
                 </p>
-
             </div>
-
         </div>
 
-
-        <div class="archive-grid">
-
-
-            <article class="archive-item">
-
-                <h3>
-                    P1-Lab GitHub
-                </h3>
-
+        <div class="output-list">
+            <div class="output-row">
+                <h3>Monographs &amp; Books</h3>
                 <p>
-                    Technical research repositories, development work,
-                    experimental systems, documentation and supporting research
-                    maintained through the P1-Lab archive.
+                    Research developed into books, monographs, field records,
+                    technical publications and extended studies intended to
+                    preserve and communicate difficult subjects.
                 </p>
-
-                <a
-                    class="archive-link"
-                    href="https://github.com/P1-Lab"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Open Technical Repositories →
-                </a>
-
-            </article>
-
-
-            <article class="archive-item">
-
-                <h3>
-                    P1 Technical Archive
-                </h3>
-
+            </div>
+            <div class="output-row">
+                <h3>Research Studies</h3>
                 <p>
-                    The earlier P1 Lab environment, preserved as
-                    part of the technical and research record. The archive
-                    reflects an earlier stage of the Lab's development
-                    and retains its original environment.
+                    Structured investigations documenting evidence, methods,
+                    observations, analysis and conclusions across technical,
+                    physical, cultural and historical subjects.
                 </p>
-
-                <a
-                    class="archive-link"
-                    href="index_archive1.html"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Open Technical Archive →
-                </a>
-
-            </article>
-
-
+            </div>
+            <div class="output-row">
+                <h3>Technical &amp; Knowledge Systems</h3>
+                <p>
+                    Research translated into taxonomies, reference structures,
+                    documentation, application libraries, technical frameworks
+                    and other forms that make complex knowledge usable.
+                </p>
+            </div>
+            <div class="output-row">
+                <h3>Physical &amp; Applied Systems</h3>
+                <p>
+                    Where appropriate, research proceeds into formulations,
+                    material systems, processing architectures, instrument
+                    studies and other physical or technical outcomes.
+                </p>
+            </div>
+            <div class="output-row">
+                <h3>Commercial Research Assets</h3>
+                <p>
+                    Selected investigations may produce application research,
+                    product architectures, technical references, editorial
+                    assets or other intellectual property with defined
+                    commercial use.
+                </p>
+            </div>
         </div>
-
     </div>
-
 </section>
-
-
-<!-- =======================================================
-     03 / ASSETS
-     ======================================================= -->
-
-<section id="assets">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="section-number">
-                03 / Assets
-            </div>
-
-            <div>
-
-                <h2 class="section-title">
-                    What research produces.
-                </h2>
-
-                <p class="section-intro">
-                    Research is carried through to usable intellectual,
-                    technical and commercial outputs. The result may be a
-                    publication, a technical system, a research dossier,
-                    a knowledge structure, a physical platform or a body of
-                    documented evidence.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="asset-list">
-
-
-            <div class="asset-row">
-
-                <h3>
-                    Publications
-                </h3>
-
-                <p>
-                    Books, monographs, field records, technical publications,
-                    cultural research and editorial works developed from
-                    independent investigation.
-                </p>
-
-            </div>
-
-
-            <div class="asset-row">
-
-                <h3>
-                    Physical &amp; Technical Systems
-                </h3>
-
-                <p>
-                    Experimental formulations, material systems, processing
-                    architectures, instrument studies and other research-derived
-                    technical structures.
-                </p>
-
-            </div>
-
-
-            <div class="asset-row">
-
-                <h3>
-                    Commercial Research Assets
-                </h3>
-
-                <p>
-                    Research translated into product architectures, technical
-                    references, application libraries, editorial assets,
-                    educational material and other usable commercial outputs.
-                </p>
-
-            </div>
-
-
-            <div class="asset-row">
-
-                <h3>
-                    Proprietary Research
-                </h3>
-
-                <p>
-                    Confidential investigations and internally developed
-                    systems conducted under defined research, development or
-                    intellectual-property arrangements.
-                </p>
-
-            </div>
-
-
-            <div class="asset-row">
-
-                <h3>
-                    Knowledge Systems
-                </h3>
-
-                <p>
-                    Structured bodies of evidence, documentation and
-                    interpretation that allow difficult or fragmented knowledge
-                    to become usable by organizations, researchers and readers.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =======================================================
-     04 / COMMISSION
-     ======================================================= -->
 
 <section id="commission">
-
     <div class="container">
-
         <div class="section-header">
-
-            <div class="section-number">
-                04 / Commission
-            </div>
-
+            <div class="section-number">03 / Commission</div>
             <div>
-
-                <h2 class="section-title">
-                    Research can be commissioned.
-                </h2>
-
+                <h2 class="section-title">Research can be commissioned.</h2>
             </div>
-
         </div>
 
-
         <p class="commission-intro">
-            P1 does not operate as a general-purpose consultancy or
-            outsourced content department. The Lab is brought in when
+            P1Lab does not operate as a general-purpose consultancy or
+            outsourced content department. The practice is brought in when
             the subject itself requires investigation.
         </p>
 
-
         <div class="commission-grid">
-
-
             <article class="commission-item">
-
-                <h3>
-                    Research Commissions
-                </h3>
-
+                <h3>Research Commissions</h3>
                 <p>
                     Independent investigation of technically rich, historically
                     complex, materially difficult or insufficiently documented
                     subjects. Work may result in a research dossier, field
-                    record, monograph, technical reference or institutional
-                    publication.
+                    record, monograph, technical reference or publication.
                 </p>
-
             </article>
 
-
             <article class="commission-item">
-
-                <h3>
-                    Independent R&amp;D / Design
-                </h3>
-
+                <h3>Technical Research</h3>
                 <p>
-                    Experimental development and systems investigation where
-                    conventional product-development assumptions are inadequate.
-                    Research may address materials, processes, physical systems,
-                    applications or new technical architectures.
+                    Systems analysis, reconstruction, experimental development
+                    and applied investigation where conventional assumptions
+                    are inadequate. Work may address materials, processes,
+                    physical systems, applications or technical architectures.
                 </p>
-
             </article>
 
-
             <article class="commission-item">
-
-                <h3>
-                    Editorial &amp; Knowledge Production
-                </h3>
-
+                <h3>Editorial &amp; Knowledge Production</h3>
                 <p>
                     Research-driven writing, technical documentation,
                     knowledge architecture, editorial development and
                     publication for organizations that need complex knowledge
                     made coherent and usable.
                 </p>
-
             </article>
-
-
         </div>
-
 
         <div class="desk-bridge">
-
             <p>
                 For organizations seeking a continuing research and editorial
-                capability, the P1 Lab Desk provides a defined engagement
+                capability, the P1Lab Desk provides a defined engagement
                 structure.
             </p>
-
-            <a
-                class="desk-link"
-                href="desk.html"
-            >
-                Explore the P1 Lab Desk →
-            </a>
-
+            <a class="desk-link" href="desk.html">Explore the P1Lab Desk →</a>
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =======================================================
-     05 / THE RECORD
-     ======================================================= -->
-
 <section id="record">
-
     <div class="container">
-
         <div class="section-header">
-
-            <div class="section-number">
-                05 / The Record
-            </div>
-
+            <div class="section-number">04 / The Record</div>
             <div>
-
-                <h2 class="section-title">
-                    Evidence of the work.
-                </h2>
-
+                <h2 class="section-title">Evidence of the work.</h2>
                 <p class="section-intro">
-                    The Lab's present investigations sit within a
-                    substantially larger record of independent research,
-                    authorship, technical development and publication.
+                    The present investigations sit within a substantially
+                    larger record of independent research, authorship,
+                    technical development and publication.
                 </p>
-
             </div>
-
         </div>
 
-
         <div class="record-grid">
-
-
             <div class="record-statement">
-                The work is not new. The present Lab is simply the
-                current form of a long-running practice of research, writing,
-                making and documentation.
+                The practice is the current form of a three-decade commitment to research, systems, and publishing.
             </div>
 
-
             <div class="record-details">
-
-
                 <div class="record-item">
-
-                    <span class="record-label">
-                        Publishing Record
-                    </span>
-
-                    <div class="record-value">
-                        31 books in print
-                    </div>
-
+                    <span class="record-label">Publishing Record</span>
+                    <div class="record-value">31 books in print</div>
                     <div class="record-description">
                         A multidisciplinary publishing record spanning technical
                         systems, philosophy, theology, cultural history,
                         psychogeography, culinary engineering, applied research
                         and related fields.
                     </div>
-
                 </div>
 
-
                 <div class="record-item">
-
-                    <span class="record-label">
-                        Technical Archive
-                    </span>
-
-                    <div class="record-value">
-                        23 active P1-Lab repositories
-                    </div>
-
+                    <span class="record-label">Research Practice</span>
+                    <div class="record-value">More than three decades</div>
                     <div class="record-description">
-                        A continuing technical archive containing research,
-                        experiments, development work, systems and supporting
-                        documentation.
+                        Independent work across research, software and systems,
+                        technical development, writing, publishing and applied
+                        investigation.
                     </div>
-
                 </div>
 
-
                 <div class="record-item">
-
-                    <span class="record-label">
-                        Current Practice
-                    </span>
-
-                    <div class="record-value">
-                        Independent Research Lab
-                    </div>
-
+                    <span class="record-label">Present Form</span>
+                    <div class="record-value">Independent Research &amp; Publishing</div>
                     <div class="record-description">
-                        Research, R&amp;D, systems reconstruction, design,
-                        documentation, editorial development and publishing.
+                        A selective practice organized around sustained inquiry,
+                        evidence, reconstruction, interpretation and durable
+                        publication.
                     </div>
-
                 </div>
 
-
                 <div class="record-item">
-
-                    <span class="record-label">
-                        Operating Principle
-                    </span>
-
-                    <div class="record-value">
-                        Evidence before assumption.
-                    </div>
-
+                    <span class="record-label">Operating Principle</span>
+                    <div class="record-value">Evidence before assumption.</div>
                     <div class="record-description">
                         Independent of institutional assumptions.
                         Accountable to evidence.
                     </div>
-
                 </div>
-
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
+<section id="systems" class="systems-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">05 / Systems Practice</div>
+            <div>
+                <h2 class="section-title">Applied technical practice.</h2>
+                <p class="section-intro">
+                    Technical investigation and development across systems, materials,
+                    signals and physical processes.
+                </p>
+            </div>
+        </div>
 
-<!-- =======================================================
-     CLOSING
-     ======================================================= -->
+        <div class="systems-grid">
+            <article class="systems-item">
+                <h3>Product as Platform</h3>
+                <p>
+                    A commercial product is treated as a platform rather than a fixed category. The work investigates what the underlying thing actually is, what structures and states it contains, and what other useful food, material or industrial forms may be developed from it.
+                </p>
+            </article>
+
+            <article class="systems-item">
+                <h3>Technical Systems</h3>
+                <p>
+                    Projects include deterministic media stabilization,
+                    signal conditioning, verification and audit systems,
+                    preservation-grade asset architecture, provenance
+                    infrastructure, transducer modeling and deterministic audio processing.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
 
 <section class="closing">
-
     <div class="container">
-
         <p>
             Investigate what is known.
             Examine what is assumed.
-            Determine what can be recorded.
+            Determine what can actually be said.
         </p>
-
     </div>
-
 </section>
-
-
 </main>
 
-
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
-
 <footer>
-
     <div class="container footer-inner">
-
-        <div class="footer-brand">
-            P1 Lab
-        </div>
-
+        <div class="footer-brand">P1Lab</div>
         <div class="footer-contact">
-
             <div>
-                <a href="mailto:Pro1Lab@proton.me">
-                    Pro1Lab@proton.me
-                </a>
+                <a href="mailto:Pro1Lab@proton.me">Pro1Lab@proton.me</a>
             </div>
-
-            <div class="footer-note">
-                Independent Research &amp; Publishing
-            </div>
-
+            <div class="footer-note">Independent Research &amp; Publishing</div>
         </div>
-
     </div>
-
 </footer>
-
 
 </body>
 </html>
