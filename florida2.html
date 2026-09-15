@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLORIDA FIELD RECORD — Independent Florida Monographic Series</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -153,6 +153,40 @@
             line-height: 1.05;
             margin: 0.35rem 0 1.5rem;
             color: var(--text-primary);
+        }
+
+        /* INSTITUTIONAL QUOTE */
+        .hero-quote {
+            margin: 2.5rem 0 0;
+            padding: 1.75rem 0 1.65rem;
+            border-top: 1px solid var(--border-strong);
+            border-bottom: 1px solid var(--border-subtle);
+            max-width: 780px;
+        }
+
+        .hero-quote p {
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+            line-height: 1.48;
+            color: var(--text-primary);
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-quote-attribution {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            line-height: 1.55;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            color: var(--text-dim);
+        }
+
+        .hero-quote-attribution strong {
+            display: block;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 0.15rem;
         }
 
         .hero-manifesto {
@@ -375,24 +409,49 @@
             .content-grid, .partner-program-grid {
                 grid-template-columns: 1fr;
             }
+
             .materials-list {
                 grid-template-columns: 1fr;
             }
-            .container { padding: 0 1.25rem; }
-            .pub-section { padding: 3.5rem 0; }
-            .hero-title { font-size: 2.2rem; }
-            .hero { padding-top: 7.5rem; min-height: auto; }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .pub-section {
+                padding: 3.5rem 0;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero {
+                padding-top: 7.5rem;
+                min-height: auto;
+            }
+
+            .hero-quote {
+                padding: 1.4rem 0 1.35rem;
+                margin-top: 2rem;
+            }
+
+            .hero-quote p {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header>
     <div class="container nav-inner">
         <div class="brand-row">
             <a href="#" class="brand-mark">FLORIDA FIELD RECORD</a>
-            <a href="/" class="parent-link">&larr; P1 Lab</a>
+            <a href="/" class="parent-link">&larr; Provision1</a>
         </div>
+
         <ul class="nav-links">
             <li><a href="#series">Series</a></li>
             <li><a href="#volume">Volume</a></li>
@@ -408,43 +467,93 @@
 <!-- HERO / INTENTION -->
 <section class="hero">
     <div class="container">
+
         <span class="mono-label">INDEPENDENT MONOGRAPHIC SERIES</span>
+
         <h1 class="hero-title">FLORIDA FIELD RECORD</h1>
-        
+
         <div class="hero-manifesto">
-            <p class="lead-statement">An independent monographic series documenting the physical, historical, cultural, ecological, and economic realities of Florida.</p>
-            <p>Each volume is an independently conceived documentary work organized around a significant nexus discovered through field reporting.</p>
-            <p style="color: var(--text-primary); font-weight: 400;">The subjects of future volumes are deliberately not predetermined. Research determines what warrants publication.</p>
-            <p>Each volume is produced as a substantial printed book designed for long-term reference, private ownership, and institutional collection. Together, the volumes form a cumulative record of Florida.</p>
-            <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-top: 1.5rem;">The subject comes first.</p>
+            <p class="lead-statement">
+                An independent monographic series documenting the physical, historical, cultural, ecological, and economic realities of Florida.
+            </p>
+
+            <p>
+                Each volume is an independently conceived documentary work organized around a significant nexus discovered through field reporting.
+            </p>
+
+            <p style="color: var(--text-primary); font-weight: 400;">
+                The subjects of future volumes are deliberately not predetermined. Research determines what warrants publication.
+            </p>
+
+            <p>
+                Each volume is produced as a substantial printed book designed for long-term reference, private ownership, and institutional collection. Together, the volumes form a cumulative record of Florida.
+            </p>
+
+            <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-top: 1.5rem;">
+                The subject comes first.
+            </p>
         </div>
+
+        <!-- FRANK PRICE / NATURAL DIVERSITY & CONSERVATION -->
+        <div class="hero-quote">
+            <div class="mono-label" style="margin-bottom: 0.35rem;">
+    ON NATURAL DIVERSITY &amp; CONSERVATION
+</div>
+<div class="mono-label" style="font-size: 0.58rem; letter-spacing: 0.10em; margin-bottom: 1rem;">
+    Statement provided directly for this study
+</div>
+
+            <p>
+                “Comprehensive documentation of Florida’s biodiversity is essential to protecting our state’s unique natural heritage. Florida harbors remarkably diverse ecosystems, from ancient scrub ridges to expansive pine flatwoods, supporting hundreds of rare species. Maintaining an accurate, science-based inventory enables land managers, conservation planners, and policymakers to identify vulnerable habitats, prioritize land acquisition, and evaluate ecological changes over time. Without rigorous spatial data and regular monitoring, targeted stewardship is impossible. Documenting our natural resources ensures that conservation decisions remain grounded in science, preserving a resilient landscape for future generations.”
+            </p>
+
+            <div class="hero-quote-attribution">
+                <strong>Frank Price</strong>
+                Director<br>
+                Florida Natural Areas Inventory<br>
+                Florida State University
+            </div>
+        </div>
+
     </div>
 </section>
 
 <!-- 01 — THE SERIES -->
 <section id="series" class="pub-section">
     <div class="container">
+
         <div class="section-meta">
             <span class="section-index">01</span>
             <h2 class="section-subtitle">The Series</h2>
         </div>
+
         <p class="section-desc">
             A cumulative documentary library devoted to Florida as a physical, historical, and contemporary reality. The series is designed as a continuing series of independently researched volumes, with a minimum publication cadence of four volumes annually.
         </p>
 
         <div class="content-grid">
+
             <div class="grid-item full-width-item">
                 <h4 class="item-title">Monographic Scope</h4>
-                <p class="item-body">The series is organized around books, not issues: each volume is an independently conceived investigation that remains a continuing part of the record. It is neither a magazine issue nor an anthology of disparate articles. An individual volume maintains complete independent value, standing as a complete physical reference work regardless of sequence.</p>
+                <p class="item-body">
+                    The series is organized around books, not issues: each volume is an independently conceived investigation that remains a continuing part of the record. It is neither a magazine issue nor an anthology of disparate articles. An individual volume maintains complete independent value, standing as a complete physical reference work regardless of sequence.
+                </p>
             </div>
+
             <div class="grid-item">
                 <h4 class="item-title">Cumulative Architecture</h4>
-                <p class="item-body">Subsequent volumes do not supersede preceding ones. Each volume functions as an independent, continuing entry in an expanding monographic record. At a minimum publication cadence of four volumes annually, the series accumulates into an expanding documentary record of the state.</p>
+                <p class="item-body">
+                    Subsequent volumes do not supersede preceding ones. Each volume functions as an independent, continuing entry in an expanding monographic record. At a minimum publication cadence of four volumes annually, the series accumulates into an expanding documentary record of the state.
+                </p>
             </div>
+
             <div class="grid-item">
                 <h4 class="item-title">Open Research Directive</h4>
-                <p class="item-body">Subjects are selected solely through active field investigation. No forward publication schedule or thematic calendar is imposed in advance, ensuring that publication responds to physical reality rather than editorial deadlines.</p>
+                <p class="item-body">
+                    Subjects are selected solely through active field investigation. No forward publication schedule or thematic calendar is imposed in advance, ensuring that publication responds to physical reality rather than editorial deadlines.
+                </p>
             </div>
+
         </div>
     </div>
 </section>
@@ -452,18 +561,25 @@
 <!-- 02 — THE VOLUME -->
 <section id="volume" class="pub-section">
     <div class="container">
+
         <div class="section-meta">
             <span class="section-index">02</span>
             <h2 class="section-subtitle">The Volume</h2>
         </div>
+
         <p class="section-desc">
             A volume is a substantial documentary investigation, not an essay wrapped around photographs. Each volume is produced as a substantial printed book designed for long-term reference, private ownership, and institutional collection. The result is a complete monographic work in which text, photography, documentary evidence, maps, technical material, and source records are integrated according to the demands of the investigation.
         </p>
 
         <div class="content-grid">
+
             <div class="grid-item full-width-item">
                 <h4 class="item-title">Primary Contents &amp; Materials</h4>
-                <p class="item-body">Depending on the specific demands of the investigation, a volume incorporates primary evidence assembled during field reporting:</p>
+
+                <p class="item-body">
+                    Depending on the specific demands of the investigation, a volume incorporates primary evidence assembled during field reporting:
+                </p>
+
                 <ul class="materials-list">
                     <li>Original field photography</li>
                     <li>Primary reporting &amp; observation</li>
@@ -477,6 +593,7 @@
                     <li>Primary data &amp; site documentation</li>
                 </ul>
             </div>
+
         </div>
     </div>
 </section>
@@ -484,27 +601,39 @@
 <!-- 03 — THE NEXUS -->
 <section id="nexus" class="pub-section">
     <div class="container">
+
         <div class="section-meta">
             <span class="section-index">03</span>
             <h2 class="section-subtitle">The Nexus</h2>
         </div>
+
         <p class="section-desc">
             The nexus is the structural mechanism of the book. It is not a topical "theme," but a specific physical, operational, or historical entry point that opens into interconnected systems. The nexus is discovered through research; it is not imposed in advance. The resulting book follows those relationships until the subject has been adequately documented.
         </p>
 
         <div class="content-grid">
+
             <div class="grid-item full-width-item">
                 <h4 class="item-title">Structure Over Theme</h4>
-                <p class="item-body">Conventional publications assign a thematic headline and compile essays around it. FLORIDA FIELD RECORD identifies a single operating reality and follows its actual physical, economic, and human extensions.</p>
+                <p class="item-body">
+                    Conventional publications assign a thematic headline and compile essays around it. FLORIDA FIELD RECORD identifies a single operating reality and follows its actual physical, economic, and human extensions.
+                </p>
             </div>
+
             <div class="grid-item">
                 <h4 class="item-title">Illustration: Agricultural Operation</h4>
-                <p class="item-body">An investigation originating in a citrus operation extends directly into land ownership, water rights, soil cultivation, labor history, plant pathology, machinery, processing infrastructure, transportation networks, regional markets, and environmental transformation.</p>
+                <p class="item-body">
+                    An investigation originating in a citrus operation extends directly into land ownership, water rights, soil cultivation, labor history, plant pathology, machinery, processing infrastructure, transportation networks, regional markets, and environmental transformation.
+                </p>
             </div>
+
             <div class="grid-item">
                 <h4 class="item-title">Illustration: Working Waterfront</h4>
-                <p class="item-body">An investigation originating on a working harbor extends into vessel design, commercial fisheries, shipyards, channel navigation, marine insurance, dock labor, coastal tourism, maintenance dredging, wetland ecology, and waterfront development pressure.</p>
+                <p class="item-body">
+                    An investigation originating on a working harbor extends into vessel design, commercial fisheries, shipyards, channel navigation, marine insurance, dock labor, coastal tourism, maintenance dredging, wetland ecology, and waterfront development pressure.
+                </p>
             </div>
+
         </div>
     </div>
 </section>
@@ -512,31 +641,46 @@
 <!-- 04 — METHOD -->
 <section id="method" class="pub-section">
     <div class="container">
+
         <div class="section-meta">
             <span class="section-index">04</span>
             <h2 class="section-subtitle">Method</h2>
         </div>
+
         <p class="section-desc">
             Reporting that prioritizes direct observation, physical evidence, and primary knowledge over secondary synthesis. Research proceeds from field observation through primary reporting, verification, editorial construction, and publication.
         </p>
 
         <div class="content-grid">
+
             <div class="grid-item">
                 <h4 class="item-title">Field Observation</h4>
-                <p class="item-body">Direct site visits and physical inspection. We examine structural infrastructure, observe operating routines firsthand, and document material conditions across locations.</p>
+                <p class="item-body">
+                    Direct site visits and physical inspection. We examine structural infrastructure, observe operating routines firsthand, and document material conditions across locations.
+                </p>
             </div>
+
             <div class="grid-item">
                 <h4 class="item-title">Primary Knowledge</h4>
-                <p class="item-body">Direct engagement with people who possess operational experience: crew members, engineers, agriculturalists, historians, mechanics, owners, and long-term workers.</p>
+                <p class="item-body">
+                    Direct engagement with people who possess operational experience: crew members, engineers, agriculturalists, historians, mechanics, owners, and long-term workers.
+                </p>
             </div>
+
             <div class="grid-item">
                 <h4 class="item-title">Verification &amp; Evidence</h4>
-                <p class="item-body">Claims made in the field are systematically cross-checked against public records, physical artifacts, technical literature, and historical archives prior to publication.</p>
+                <p class="item-body">
+                    Claims made in the field are systematically cross-checked against public records, physical artifacts, technical literature, and historical archives prior to publication.
+                </p>
             </div>
+
             <div class="grid-item">
                 <h4 class="item-title">Restraint</h4>
-                <p class="item-body">Maintaining editorial restraint and observational neutrality. The purpose of the prose and imagery is to render physical reality visible with clarity and accuracy.</p>
+                <p class="item-body">
+                    Maintaining editorial restraint and observational neutrality. The purpose of the prose and imagery is to render physical reality visible with clarity and accuracy.
+                </p>
             </div>
+
         </div>
     </div>
 </section>
@@ -544,19 +688,25 @@
 <!-- 05 — RESEARCH (VOLUME ONE) -->
 <section id="research" class="pub-section">
     <div class="container">
+
         <div class="section-meta">
             <span class="section-index">05</span>
             <h2 class="section-subtitle">Volume One</h2>
         </div>
+
         <p class="section-desc">
             Volume One is the first publication in a continuing series planned with a minimum publication cadence of four volumes annually. Field investigation is currently underway across multiple intersecting locations.
         </p>
 
         <div class="content-grid">
+
             <div class="grid-item full-width-item">
                 <h4 class="item-title">Current Status &amp; Trajectory</h4>
-                <p class="item-body">Field investigation is currently underway across multiple intersecting locations, incorporating site visits, interviews, and archival research. The final scope, geographic bounds, and structural focus of Volume One emerge directly from the relationships and evidence discovered during field reporting. The volume is published when the research is complete.</p>
+                <p class="item-body">
+                    Field investigation is currently underway across multiple intersecting locations, incorporating site visits, interviews, and archival research. The final scope, geographic bounds, and structural focus of Volume One emerge directly from the relationships and evidence discovered during field reporting. The volume is published when the research is complete.
+                </p>
             </div>
+
         </div>
     </div>
 </section>
@@ -564,70 +714,111 @@
 <!-- 06 — COMMERCIAL PARTNERSHIP -->
 <section id="partnership" class="pub-section">
     <div class="container">
+
         <div class="section-meta">
             <span class="section-index">06</span>
             <h2 class="section-subtitle">Commercial Partnership</h2>
         </div>
-        <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">Independent publication. Commercial participation. Editorial independence.</h3>
+
+        <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">
+            Independent publication. Commercial participation. Editorial independence.
+        </h3>
 
         <div class="prose-block">
-            <p>FLORIDA FIELD RECORD is building a limited network of Florida businesses whose work, expertise, and clients intersect with the physical, cultural, ecological, historical, and economic landscape documented by the series.</p>
-            
-            <p>Commercial partners participate through a client-development program built around the finished monograph. The program is designed not as conventional advertising, but as a means of placing a substantial Florida documentary work directly into the hands of clients, prospects, collaborators, and other important relationships.</p>
-            
-            <p class="highlight-statement">Commercial partners are selected according to relevance to the work and the Florida landscape being documented. Commercial participation is limited by volume and subject relevance. Participation provides no editorial control over research, subject selection, interpretation, or conclusions.</p>
+
+            <p>
+                FLORIDA FIELD RECORD is building a limited network of Florida businesses whose work, expertise, and clients intersect with the physical, cultural, ecological, historical, and economic landscape documented by the series.
+            </p>
+
+            <p>
+                Commercial partners participate through a client-development program built around the finished monograph. The program is designed not as conventional advertising, but as a means of placing a substantial Florida documentary work directly into the hands of clients, prospects, collaborators, and other important relationships.
+            </p>
+
+            <p class="highlight-statement">
+                Commercial partners are selected according to relevance to the work and the Florida landscape being documented. Commercial participation is limited by volume and subject relevance. Participation provides no editorial control over research, subject selection, interpretation, or conclusions.
+            </p>
+
         </div>
 
         <div class="partner-program-grid">
+
             <div class="program-item">
                 <h4 class="program-item-title">Client-Development Copies</h4>
-                <p class="program-item-desc">Finished copies of the monograph for direct distribution to clients and prospects.</p>
+                <p class="program-item-desc">
+                    Finished copies of the monograph for direct distribution to clients and prospects.
+                </p>
             </div>
 
             <div class="program-item">
                 <h4 class="program-item-title">Publication Presentation</h4>
-                <p class="program-item-desc">A substantial, designed presentation within the finished volume.</p>
+                <p class="program-item-desc">
+                    A substantial, designed presentation within the finished volume.
+                </p>
             </div>
 
             <div class="program-item">
                 <h4 class="program-item-title">Digital Presence</h4>
-                <p class="program-item-desc">A corresponding presence associated with the publication online.</p>
+                <p class="program-item-desc">
+                    A corresponding presence associated with the publication online.
+                </p>
             </div>
 
             <div class="program-item">
                 <h4 class="program-item-title">Trackable Response</h4>
-                <p class="program-item-desc">A dedicated mechanism connecting interested readers directly with the participating business.</p>
+                <p class="program-item-desc">
+                    A dedicated mechanism connecting interested readers directly with the participating business.
+                </p>
             </div>
 
             <div class="program-item" style="grid-column: 1 / -1;">
                 <h4 class="program-item-title">Founding Commercial Partner</h4>
-                <p class="program-item-desc">Recognition as a founding commercial participant in the continuing series.</p>
+                <p class="program-item-desc">
+                    Recognition as a founding commercial participant in the continuing series.
+                </p>
             </div>
+
         </div>
 
         <div class="partnership-inquiries">
-            <p class="item-body" style="margin-bottom: 1.25rem;">Commercial participation is limited by volume and is structured around the individual requirements of each publication. Businesses interested in participating may request the current partner brief.</p>
-            <a href="mailto:Pro1Lab@proton.me?subject=FLORIDA%20FIELD%20RECORD%20—%20Commercial%20Partner%20Brief%20Request" class="inquiry-link">REQUEST THE COMMERCIAL PARTNER BRIEF &rarr;</a>
+            <p class="item-body" style="margin-bottom: 1.25rem;">
+                Commercial participation is limited by volume and is structured around the individual requirements of each publication. Businesses interested in participating may request the current partner brief.
+            </p>
+
+            <a href="mailto:Pro1Lab@proton.me?subject=FLORIDA%20FIELD%20RECORD%20—%20Commercial%20Partner%20Brief%20Request" class="inquiry-link">
+                REQUEST THE COMMERCIAL PARTNER BRIEF &rarr;
+            </a>
         </div>
+
     </div>
 </section>
 
 <!-- 07 — CONTACT -->
 <footer id="contact">
     <div class="container">
+
         <div class="section-meta">
             <span class="section-index">07</span>
             <h2 class="section-subtitle">Contact</h2>
         </div>
+
         <p class="section-desc" style="margin-bottom: 2rem;">
             FLORIDA FIELD RECORD is an independent monographic series documenting the physical, historical, cultural, ecological, and economic realities of Florida.
         </p>
 
         <div class="signature-block">
-            <div class="mono-label" style="margin-bottom: 0.5rem;">VOLUME ONE · FIELD RESEARCH UNDERWAY</div>
-            <div class="signature-title" style="margin-top: 0.25rem;">FLORIDA FIELD RECORD · Published by Provision1 Laboratory</div>
-            <a href="mailto:Pro1Lab@proton.me" class="footer-contact">Pro1Lab@proton.me</a>
+            <div class="mono-label" style="margin-bottom: 0.5rem;">
+                VOLUME ONE · FIELD RESEARCH UNDERWAY
+            </div>
+
+            <div class="signature-title" style="margin-top: 0.25rem;">
+                FLORIDA FIELD RECORD · Published by Provision1 Laboratory
+            </div>
+
+            <a href="mailto:Pro1Lab@proton.me" class="footer-contact">
+                Pro1Lab@proton.me
+            </a>
         </div>
+
     </div>
 </footer>
 
