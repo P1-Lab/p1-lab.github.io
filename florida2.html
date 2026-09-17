@@ -323,6 +323,85 @@
             color: var(--text-dim);
         }
 
+/* P1 Image Prepress System */
+.prepress-system {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.prepress-system-header {
+    margin-bottom: 1.4rem;
+}
+
+.prepress-system-title {
+    margin: 0 0 0.65rem;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.prepress-system-intro {
+    max-width: 760px;
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+.prepress-system-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1.8rem;
+}
+
+.prepress-system-item {
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.prepress-system-item h5 {
+    margin: 0 0 0.55rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.prepress-system-item p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.72rem;
+    line-height: 1.65;
+}
+
+.prepress-system-signature {
+    margin-top: 1.7rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.10em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.prepress-system-signature strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .prepress-system-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+}
         /* PROSE & PARTNERSHIP STRUCTURE */
         .prose-block {
             margin-bottom: 2.5rem;
@@ -602,7 +681,7 @@
             A volume is a substantial documentary investigation, not an essay wrapped around photographs. Each volume is produced as a substantial printed book designed for long-term reference, private ownership, and institutional collection. The result is a complete monographic work in which text, photography, documentary evidence, maps, technical material, and source records are integrated according to the demands of the investigation.
         </p>
 
-        <div class="content-grid">
+                <div class="content-grid">
 
             <div class="grid-item full-width-item">
                 <h4 class="item-title">Primary Contents &amp; Materials</h4>
@@ -626,6 +705,52 @@
             </div>
 
         </div>
+
+        <!-- P1 IMAGE PREPRESS SYSTEM -->
+        <div class="prepress-system">
+
+            <div class="prepress-system-header">
+                <h4 class="prepress-system-title">Physical Image Reproduction</h4>
+
+                <p class="prepress-system-intro">
+                    The physical page is part of the record. Photographs, maps, documents, and other visual material are processed through a dedicated image-prepress system before final production. P1 analyzes tonal structure, spatial detail, color relationships, resolution, and ink coverage at the image level, conditioning each production derivative for its intended reproduction rather than relying on a generic export workflow.
+                </p>
+            </div>
+
+            <div class="prepress-system-grid">
+
+                <div class="prepress-system-item">
+                    <h5>Tonal / Spatial</h5>
+                    <p>
+                        Adaptive tonal transfer, shadow preservation, frequency-aware detail conditioning, and resolution-aware resampling.
+                    </p>
+                </div>
+
+                <div class="prepress-system-item">
+                    <h5>Color / Coverage</h5>
+                    <p>
+                        Controlled CMYK conversion, black construction, near-neutral management, and image-level TAC analysis.
+                    </p>
+                </div>
+
+                <div class="prepress-system-item">
+                    <h5>Production / Preflight</h5>
+                    <p>
+                        Deterministic PDF/X assembly, bleed and safety verification, font and color validation, and final image-level production audit.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="prepress-system-signature">
+                <strong>P1 Image Prepress System™</strong><br>
+                Proprietary image-conditioning and production-control architecture developed for physical publication.
+            </div>
+
+        </div>
+
+
+
     </div>
 </section>
 
@@ -666,6 +791,8 @@
             </div>
 
         </div>
+
+
     </div>
 </section>
 
@@ -740,20 +867,30 @@
 
         </div>
 
-        <figure class="design-study-figure">
-            <img
-                src="florida-field-record-volume-one-design-study.png"
-                alt="Design study for Volume One of Florida Field Record, showing the proposed hardcover monograph, interior spreads, maps, photography, and production details."
-                class="design-study-image"
-                width="1312"
-                height="1199"
-                loading="lazy"
-            >
-            <figcaption class="design-study-caption">
-                Design Comp · Volume One<br>
-                Preliminary design comp for the physical form and editorial architecture of the inaugural volume.
-            </figcaption>
-        </figure>
+       <figure class="design-study-figure">
+    <img
+        src="florida-field-record-volume-one-design-study.png"
+        alt="Design study for Volume One of Florida Field Record, showing the proposed hardcover monograph, interior spreads, maps, photography, and production details."
+        class="design-study-image"
+        width="1312"
+        height="1199"
+        loading="lazy"
+    >
+
+    <figcaption class="design-study-caption">
+        <div class="design-study-label">Design Comp · Volume One</div>
+
+        <p class="design-study-description">
+            Preliminary design comp for the physical form and editorial architecture of the inaugural volume.
+        </p><BR>
+
+        <div class="design-study-subheading">Print Production Technology</div>
+
+        <p class="design-study-production">
+            Print gives the field record a life beyond the screen: a durable object that can be owned, shelved, annotated, passed between readers, and preserved in private and institutional collections. Unlike a transient digital page, a well-produced volume can remain physically accessible decades after publication, carrying its photographs, observations, and documentary record into the future. Proprietary pre-flight technology extends that principle into production, providing precise control over image preparation, color, typography, and output before each volume reaches the press.
+        </p>
+    </figcaption>
+</figure>
     </div>
 </section>
 
