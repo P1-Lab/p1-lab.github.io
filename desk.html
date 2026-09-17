@@ -80,6 +80,35 @@
             margin: 0 auto;
             padding: 0 2.5rem;
         }
+        /* Completed-publication evidence image */
+        .publication-evidence {
+            grid-column: 1 / -1;
+            padding: 0.2rem 0 2.1rem;
+        }
+
+        .publication-evidence img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .publication-caption {
+            margin-top: 0.75rem;
+            max-width: 790px;
+            color: var(--text-dim);
+            font-size: 0.67rem;
+            line-height: 1.55;
+        }
+
+        .publication-caption .caption-label {
+            display: block;
+            margin-bottom: 0.22rem;
+            color: var(--text-muted);
+            font-size: 0.60rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+        }
 
         /* =========================================================
            HEADER
@@ -1083,6 +1112,21 @@
                 </p>
 
             </div>
+
+            <div class="publication-evidence">
+                <img
+                    src="Culinary_Traveler.png"
+                    width="1280"
+                    height="720"
+                    alt="Interior spread from the independently produced Culinary Traveler publication"
+                    loading="lazy"
+                >
+                <p class="publication-caption">
+                    <span class="caption-label">Independent Magazine Production</span>
+                    Interior spread from an independently produced publication combining original research, writing, visual development, art direction, editorial structure, and production.
+                </p>
+            </div>
+
 
             <div class="grid-item">
 
