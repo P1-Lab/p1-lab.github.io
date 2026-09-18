@@ -466,6 +466,21 @@
             transition: color 0.2s var(--transition-smooth), border-color 0.2s var(--transition-smooth);
         }
 
+        html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10rem;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+        .pub-section,
+footer {
+    scroll-margin-top: 10rem;
+}
+
         .inquiry-link:hover {
             color: var(--text-dim);
             border-color: var(--text-dim);
