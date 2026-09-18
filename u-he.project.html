@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <title>
+      u-he Sound Design Idiom Field Manual — Provision1 Laboratory
+    </title>
+
+    <link rel="preconnect" 
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect" 
+          href="https://fonts.gstatic.com" 
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" 
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #faf8f5;
+            --surface-color: #f2efe9;
+            --text-primary: #1a1a1a;
+            --text-muted: #4a4a46;
+            --text-dim: #76746e;
+            --accent-neutral: #5c5953;
+            --border-subtle: rgba(26, 26, 26, 0.12);
+            --border-strong: rgba(26, 26, 26, 0.28);
+
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'Courier New', Courier, monospace;
+            --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .mono-label {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(250, 248, 245, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.1rem 0 0.9rem;
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+        }
+
+        .brand-mark {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .parent-link {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.2s var(--transition-smooth);
+        }
+
+        .parent-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            transition: color 0.2s var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding-top: 8.5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.3rem, 4.2vw, 3.3rem);
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            line-height: 1.08;
+            margin: 0.35rem 0 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-manifesto {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.75;
+            max-width: 760px;
+        }
+
+        .hero-manifesto p {
+            margin-bottom: 1.1rem;
+        }
+
+        .hero-manifesto p.lead-statement {
+            font-family: var(--font-serif);
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            line-height: 1.4;
+            color: var(--text-primary);
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+
+        /* FORMULA BOX */
+        .formula-box {
+            margin: 1.75rem 0;
+            padding: 1.25rem 1.5rem;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-subtle);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem 0.8rem;
+        }
+
+        .formula-step {
+            display: inline-block;
+        }
+
+        .formula-arrow {
+            color: var(--text-dim);
+        }
+
+        /* INSTITUTIONAL QUOTE */
+        .hero-quote {
+            margin: 2.25rem 0 0;
+            padding: 1.75rem 0 1.65rem;
+            border-top: 1px solid var(--border-strong);
+            border-bottom: 1px solid var(--border-subtle);
+            max-width: 780px;
+        }
+
+        .hero-quote p {
+            font-family: var(--font-serif);
+            font-size: clamp(1.15rem, 2.1vw, 1.4rem);
+            line-height: 1.48;
+            color: var(--text-primary);
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-quote-attribution {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            line-height: 1.55;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            color: var(--text-dim);
+        }
+
+        .hero-quote-attribution strong {
+            display: block;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 0.15rem;
+        }
+
+        /* SECTIONS */
+        .pub-section {
+            padding: 4.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section-meta {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-index {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            color: var(--text-dim);
+            font-style: italic;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            font-weight: 350;
+            max-width: 720px;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* GRID ARCHITECTURE */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 3rem;
+        }
+
+        .grid-item {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .item-subtitle-meta {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .item-body {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.65;
+        }
+
+        .full-width-item {
+            grid-column: 1 / -1;
+        }
+
+        /* VOLUMES LISTING */
+        .volume-card {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .volume-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .volume-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .volume-number {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text-dim);
+        }
+
+        .volume-title {
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        .volume-topics {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 0.85rem;
+        }
+
+        /* DESIGN COMP & IMAGE BLOCKS */
+        .comp-image-block {
+            margin: 2.5rem 0;
+            border: 1px solid var(--border-subtle);
+            background: var(--surface-color);
+            padding: 1rem;
+        }
+
+        .comp-image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .comp-caption {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-top: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .design-note-card {
+            margin: 2.5rem 0;
+            padding: 1.75rem;
+            background: var(--surface-color);
+            border-left: 2px solid var(--border-strong);
+            border-top: 1px solid var(--border-subtle);
+            border-right: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .design-note-card h4 {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .design-note-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 0.85rem;
+        }
+
+        .design-note-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* PROGRESSION PIPELINE */
+        .progression-pipeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.75rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.25rem;
+            background: var(--surface-color);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .progression-step {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .progression-arrow {
+            color: var(--text-dim);
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+        }
+
+        /* P1 ENGINE CALLOUT */
+        .prepress-system {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .prepress-system-header {
+            margin-bottom: 1.4rem;
+        }
+
+        .prepress-system-title {
+            margin: 0 0 0.65rem;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 0.64rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .prepress-system-intro {
+            max-width: 760px;
+            margin: 0;
+            color: var(--text-dim);
+            font-size: 0.82rem;
+            line-height: 1.7;
+        }
+
+        .prepress-system-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 1.8rem;
+        }
+
+        .prepress-system-item {
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .prepress-system-item h5 {
+            margin: 0 0 0.55rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .prepress-system-item p {
+            margin: 0;
+            color: var(--text-dim);
+            font-size: 0.72rem;
+            line-height: 1.65;
+        }
+
+        .prepress-system-signature {
+            margin-top: 1.7rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.10em;
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        .prepress-system-signature strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* PROSE & PARTNERSHIP STRUCTURE */
+        .prose-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .prose-block p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 350;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .prose-block p.highlight-statement {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .partner-program-grid {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-strong);
+        }
+
+        .partner-program-grid .program-item {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .partner-program-grid .program-item-title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .partner-program-grid .program-item-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.6;
+        }
+
+        .partnership-inquiries {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .inquiry-link {
+            display: inline-block;
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-strong);
+            padding-bottom: 0.15rem;
+            transition: color 0.2s var(--transition-smooth);
+        }
+
+        .inquiry-link:hover {
+            color: var(--text-dim);
+            border-color: var(--text-dim);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 4.5rem 0 4rem;
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .signature-block {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .signature-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .footer-contact {
+            display: inline-block;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            margin-top: 0.75rem;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.2s var(--transition-smooth);
+        }
+
+        .footer-contact:hover {
+            border-bottom-color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .content-grid, 
+            .partner-program-grid, 
+            .prepress-system-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .pub-section {
+                padding: 3.5rem 0;
+            }
+
+            .hero-title {
+                font-size: 2.1rem;
+            }
+
+            .hero {
+                padding-top: 7.5rem;
+                min-height: auto;
+            }
+
+            .hero-quote {
+                padding: 1.4rem 0 1.35rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-quote p {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav-inner">
+        <div class="brand-row">
+            <a href="#" class="brand-mark">
+              u-he SOUND DESIGN FIELD MANUAL
+            </a>
+            <a href="/" class="parent-link">&larr; P1 Lab</a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#volumes">Volumes</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#presets">Presets</a></li>
+            <li><a href="#laboratory">Laboratory</a></li>
+            <li><a href="#partnership">Partnership</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO / INTENTION -->
+<section class="hero">
+    <div class="container">
+
+        <span class="mono-label">
+          RESEARCH &amp; LEARNING PROGRAM · EIGHT VOLUMES
+        </span>
+
+        <h1 class="hero-title">u-he Sound Design Idiom Field Manual</h1>
+
+        <div class="hero-manifesto">
+            <p class="lead-statement">
+                An eight-volume curriculum examining how the sounds of 
+                electronic music are constructed, recognized, reproduced, 
+                transformed, and extended.
+            </p>
+
+            <p>
+                It begins from a simple premise: <strong>Sound design is not 
+                primarily the memorization of synthesizer controls. It is the 
+                acquisition of a way of hearing.</strong>
+            </p>
+
+            <p>
+                The series approaches electronic sound through the actual 
+                musical vocabulary in which that sound has developed.
+            </p>
+
+            <div class="formula-box">
+                <span class="formula-step">Genre</span>
+                <span class="formula-arrow">&rarr;</span>
+                <span class="formula-step">Sonic Idiom</span>
+                <span class="formula-arrow">&rarr;</span>
+                <span class="formula-step">Sound-Design Problem</span>
+                <span class="formula-arrow">&rarr;</span>
+                <span class="formula-step">u-he Engine</span>
+            </div>
+
+            <p>
+                The genre provides context. The idiom identifies a 
+                recognizable musical vocabulary. The sound-design problem 
+                asks what the musician actually needs the sound to 
+                accomplish. The u-he instrument provides a practical 
+                environment in which the underlying behavior can be heard 
+                and investigated.
+            </p>
+
+            <p style="font-family: var(--font-serif); 
+                      font-size: 1.25rem; 
+                      color: var(--text-primary); 
+                      margin-top: 1.5rem;">
+                The result is neither a preset book nor a conventional 
+                synthesis textbook. It is a field manual for learning 
+                how to hear and construct electronic sound.
+            </p>
+        </div>
+
+        <!-- GOVERNING PRINCIPLE QUOTE -->
+        <div class="hero-quote">
+            <div class="mono-label" style="margin-bottom: 0.35rem;">
+                THE GOVERNING PRINCIPLE
+            </div>
+            <div class="mono-label" 
+                 style="font-size: 0.58rem; 
+                        letter-spacing: 0.10em; 
+                        margin-bottom: 1rem;">
+                Core Educational Proposition
+            </div>
+
+            <p>
+                “The reader should be able to use an idea before fully 
+                understanding it, understand it before analyzing it, and 
+                analyze it without analysis becoming a prerequisite for 
+                musical use.”
+            </p>
+
+            <div class="hero-quote-attribution">
+                <strong>u-he Sound Design Idiom Field Manual</strong>
+                Monographic Research Series<br>
+                Provision1 Laboratory
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 01 — THE CURRICULUM -->
+<section id="curriculum" class="pub-section">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">01</span>
+            <h2 class="section-subtitle">
+              The Curriculum Is Deliberately Different
+            </h2>
+        </div>
+
+        <p class="section-desc">
+            Most synthesis education proceeds from technology toward 
+            music: oscillator &rarr; filter &rarr; envelope &rarr; 
+            modulation &rarr; patch. This series moves in the opposite 
+            direction.
+        </p>
+
+        <div class="content-grid">
+
+            <div class="grid-item full-width-item">
+                <h4 class="item-title">Reversing the Educational Flow</h4>
+                <p class="item-body">
+                    A musician does not normally encounter a sound by 
+                    first thinking: <em>“I would like to hear a 2:1 
+                    frequency ratio with a particular modulation index.”</em> 
+                    They hear something and think: <em>“How is that sound 
+                    behaving, and how could I make something like it?”</em> 
+                    The Field Manual begins there:
+                </p>
+                <div class="formula-box" 
+                     style="margin-top: 1rem; 
+                            margin-bottom: 0.5rem; 
+                            background: var(--bg-color);">
+                    <span class="formula-step">Musical Sound</span>
+                    <span class="formula-arrow">&rarr;</span>
+                    <span class="formula-step">Sonic Behavior</span>
+                    <span class="formula-arrow">&rarr;</span>
+                    <span class="formula-step">Sound-Design Problem</span>
+                    <span class="formula-arrow">&rarr;</span>
+                    <span class="formula-step">Synthesis Architecture</span>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Taxonomy &amp; Territory</h4>
+                <p class="item-body">
+                    The taxonomy provides the territory. The musical 
+                    idioms provide the evidence. The sound-design problems 
+                    provide the questions. The u-he instruments provide 
+                    the laboratory.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Transferable Judgment</h4>
+                <p class="item-body">
+                    The objective is not simply technical knowledge or 
+                    software mastery. It is the development of transferable 
+                    musical judgment that moves seamlessly across tools, 
+                    environments, and genres.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 02 — THE EIGHT VOLUMES -->
+<section id="volumes" class="pub-section">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">02</span>
+            <h2 class="section-subtitle">The Eight Volumes</h2>
+        </div>
+
+        <p class="section-desc">
+            An exhaustive eight-part curriculum spanning foundational 
+            physics, historical genre vocabularies, psychoacoustics, 
+            generative systems, and modern commercial rhythm production.
+        </p>
+
+        <!-- DESIGN COMP IMAGE 1: EIGHT VOLUMES WORKBENCH -->
+        <div class="comp-image-block">
+            <img src="u-he design comp 1.jpg" 
+                 alt="Design Comp: Complete 8-Volume Physical Field Manual Set on Workbench">
+            <div class="comp-caption">
+                Figure 2.1 — Physical Volume Architecture &amp; Complete Series Binding [Design Comp]
+            </div>
+        </div>
+
+        <!-- DESIGN & MATERIALITY RATIONALE NOTE -->
+        <div class="design-note-card">
+            <h4>DESIGN PROVENANCE &amp; MATERIALITY NOTE</h4>
+            <p>
+                <strong>Workflow &amp; Asset Creation:</strong> This visualization represents an active design comp. The underlying graphic system originated as hand sketches, which were digitized into Inkscape as structured vector layouts (establishing grid dynamics, Swiss/Bauhaus typography, and schematic block diagrams). The modular SVG assets were then passed through an AI diffusion workflow to place human-designed graphics into a photorealistic, tactile workbench environment.
+            </p>
+            <p>
+                <strong>Aesthetic Rationale:</strong> Digital synthesis manuals are too often delivered as ephemeral, disposable PDFs. We designed the series around mid-century modernist technical manuals, bench equipment guides, and physical field notebooks. Grounding abstract DSP concepts in dense, physical typography and tactile paper formats reflects our underlying philosophy: sound design is an enduring, physical craft of deep time and physical presence.
+            </p>
+        </div>
+
+        <div class="volumes-stack">
+
+            <!-- VOLUME I -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span class="volume-number">I</span>
+                    <h3 class="volume-title">The u-he Instrumentarium</h3>
+                </div>
+                <div class="volume-topics">
+                    Foundational Synthesis · Sound-Design Architecture · Utility &amp; Soundtrack
+                </div>
+                <p class="item-body">
+                    The foundation of the series. This volume establishes the 
+                    common vocabulary required by all subsequent books: 
+                    oscillation, waveform, filtering, resonance, envelopes, 
+                    modulation, feedback, phase, FM, wavetable synthesis, MSEG, 
+                    performance control, and spatial behavior.
+                </p>
+            </div>
+
+            <!-- VOLUME II -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span class="volume-number">II</span>
+                    <h3 class="volume-title">Trance, Rave, Techno &amp; Club Music</h3>
+                </div>
+                <div class="volume-topics">
+                    Rhythmic Electronic Synthesis · High-Energy Production
+                </div>
+                <p class="item-body">
+                    Techno, Trance, Rave, House, Hardcore, Eurodance, Progressive 
+                    House, Hardstyle, and related idioms provide a laboratory for 
+                    rhythm, repetition, resonance, propulsion, bass architecture, 
+                    and modulation.
+                </p>
+            </div>
+
+            <!-- VOLUME III -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span class="volume-number">III</span>
+                    <h3 class="volume-title">Breaks, Jungle &amp; Bass Music</h3>
+                </div>
+                <div class="volume-topics">
+                    Transient Dynamics · Bass Synthesis · Rhythmic Complexity
+                </div>
+                <p class="item-body">
+                    Drum &amp; Bass, Jungle, Dubstep, Breakbeat, UK Garage, 
+                    Grime, Footwork, and Bassline shift the investigation 
+                    toward transient behavior, low-frequency architecture, 
+                    rhythmic displacement, and spectral density.
+                </p>
+            </div>
+
+            <!-- VOLUME IV -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span class="volume-number">IV</span>
+                    <h3 class="volume-title">Dark Electronic &amp; Retro-Futurism</h3>
+                </div>
+                <div class="volume-topics">
+                    Historical Electronic Vocabulary · Contemporary Transformation
+                </div>
+                <p class="item-body">
+                    Synthwave, EBM, Industrial, Darkwave, Chiptune, Electro, 
+                    Post-Punk, and Synth-Pop offer a study in how historical 
+                    electronic vocabularies persist, mutate, and acquire new 
+                    meanings.
+                </p>
+            </div>
+
+            <!-- VOLUME V -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span class="volume-number">V</span>
+                    <h3 class="volume-title">Downtempo, Ambient &amp; Cinematic</h3>
+                </div>
+                <div class="volume-topics">
+                    Texture · Space · Evolution · Acoustic Illusion
+                </div>
+                <p class="item-body">
+                    Ambient, Downtempo, Soundtrack, Modern Classical, Trip-Hop, 
+                    New Age, Chillout, and Post-Rock shift the emphasis toward 
+                    duration, atmosphere, spatial perception, evolving timbre, 
+                    and acoustic environments.
+                </p>
+            </div>
+
+            <!-- VOLUME VI -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span class="volume-number">VI</span>
+                    <h3 class="volume-title">Jazz, Lounge, City Pop &amp; Global Hybrids</h3>
+                </div>
+                <div class="volume-topics">
+                    Synthetic Acoustic Illusion · Electroacoustic Fusion
+                </div>
+                <p class="item-body">
+                    Jazz, Fusion, City Pop, Lounge, Bossa Nova, Funk Jazz, 
+                    Worldbeat, Exotika, and Afrobeat introduce questions of 
+                    gesture, expression, instrumental imitation, and the boundary 
+                    between acoustic and electronic sound.
+                </p>
+            </div>
+
+            <!-- VOLUME VII -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span class="volume-number">VII</span>
+                    <h3 class="volume-title">IDM, Experimental &amp; Generative Systems</h3>
+                </div>
+                <div class="volume-topics">
+                    Complexity · Algorithmic Systems · Unconventional Architectures
+                </div>
+                <p class="item-body">
+                    IDM, Experimental, Generative Music, Glitch, Musique Concrète, 
+                    Electroacoustic, Noise, and Deconstructed Club open the 
+                    curriculum to systems in which sound emerges from complexity, 
+                    probability, and feedback.
+                </p>
+            </div>
+
+            <!-- VOLUME VIII -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span class="volume-number">VIII</span>
+                    <h3 class="volume-title">Hip-Hop, Pop, Funk &amp; Contemporary Production</h3>
+                </div>
+                <div class="volume-topics">
+                    Modern Commercial &amp; Underground Rhythm Production
+                </div>
+                <p class="item-body">
+                    Hip-Hop, Pop, Funk, R&amp;B, Trap, Disco, Reggaeton, and 
+                    Afrobeats bring all accumulated principles into contemporary 
+                    production, examining how synthesis, sampling, and rhythm 
+                    operate together.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 03 — LEARNING ARCHITECTURE -->
+<section id="architecture" class="pub-section">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">03</span>
+            <h2 class="section-subtitle">A Comprehensive Learning Architecture</h2>
+        </div>
+
+        <p class="section-desc">
+            The books are built around a recurring 10-stage progression that 
+            allows the same subject to be encountered at several distinct 
+            levels of cognitive depth:
+        </p>
+
+        <div class="progression-pipeline">
+            <span class="progression-step">EXPERIENCE</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">NOTICE</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">NAME</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">IMITATE</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">VARY</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">PREDICT</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">EXPLAIN</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">TROUBLESHOOT</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">INVENT</span> 
+            <span class="progression-arrow">&rarr;</span>
+            <span class="progression-step">TRANSFER</span>
+        </div>
+
+        <div class="content-grid">
+            <div class="grid-item full-width-item">
+                <h4 class="item-title">Layered Discovery Example: Filter Resonance</h4>
+                <p class="item-body">
+                    A reader may first use a filter without understanding 
+                    resonance. They then learn to recognize what resonance 
+                    sounds like. They investigate it. They learn why it behaves 
+                    that way. They encounter what happens when it goes wrong. 
+                    Eventually, they recognize resonance as a flexible design 
+                    resource in completely different musical situations.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 04 — METHOD -->
+<section id="method" class="pub-section">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">04</span>
+            <h2 class="section-subtitle">The Six-Part Field Manual Method</h2>
+        </div>
+
+        <p class="section-desc">
+            Major investigations move through six recurring operational 
+            modes designed to accommodate different reader profiles—from 
+            beginners to working producers and DSP researchers.
+        </p>
+
+        <!-- DESIGN COMP IMAGE 2: INTERIOR SPREAD WORKBENCH -->
+        <div class="comp-image-block">
+            <img src="u-he.design comp 2.jpg" 
+                 alt="Design Comp: Interior Page Spread Showing Bazille Patch Logic and Field Studies">
+            <div class="comp-caption">
+                Figure 4.1 — Interior Layout Spread: Idiom Definition, Patch Logic &amp; Field Studies [Design Comp]
+            </div>
+        </div>
+
+        <div class="content-grid">
+
+            <div class="grid-item">
+                <span class="item-subtitle-meta">Mode 01</span>
+                <h4 class="item-title">MAKE IT NOW</h4>
+                <p class="item-body">
+                    An immediate, tangible musical result designed to 
+                    establish instant sonic familiarity before technical 
+                    analysis begins.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <span class="item-subtitle-meta">Mode 02</span>
+                <h4 class="item-title">30-SECOND INTUITION</h4>
+                <p class="item-body">
+                    A simple, elegant mental model explaining the underlying 
+                    physical or acoustic phenomenon that just occurred.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <span class="item-subtitle-meta">Mode 03</span>
+                <h4 class="item-title">FIELD STUDY</h4>
+                <p class="item-body">
+                    Controlled listening routines, parameter isolation, and 
+                    experimental variations to observe boundary conditions.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <span class="item-subtitle-meta">Mode 04</span>
+                <h4 class="item-title">WHEN THIS GOES WRONG</h4>
+                <p class="item-body">
+                    Causal diagnosis, phase/clipping recovery, and 
+                    troubleshooting common sonic failures and unwanted 
+                    artifacts.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <span class="item-subtitle-meta">Mode 05</span>
+                <h4 class="item-title">ENGINE ROOM</h4>
+                <p class="item-body">
+                    The deeper technical, mathematical, and DSP architecture 
+                    underlying the synthesizer's internal behaviors.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <span class="item-subtitle-meta">Mode 06</span>
+                <h4 class="item-title">FIELD NOTE</h4>
+                <p class="item-body">
+                    The portable, durable principle worth remembering and 
+                    applying across any hardware or software system.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 05 — THE ROLE OF PRESETS -->
+<section id="presets" class="pub-section">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">05</span>
+            <h2 class="section-subtitle">The Role of the Presets</h2>
+        </div>
+
+        <p class="section-desc">
+            The practical patches are deliberately limited. The objective 
+            is not to produce another disposable preset library, but to build 
+            lasting architectural understanding.
+        </p>
+
+        <div class="content-grid">
+
+            <div class="grid-item full-width-item">
+                <p class="item-body" 
+                   style="font-size: 1rem; color: var(--text-primary);">
+                    Each sonic idiom in the curriculum is represented by two 
+                    principal investigations:
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">1. Idiomatic Example</h4>
+                <p class="item-body">
+                    A patch that makes the musical vocabulary immediately 
+                    recognizable, establishing the standard benchmark of the 
+                    genre.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">2. Investigative Extension</h4>
+                <p class="item-body">
+                    A related architecture pushed beyond the obvious genre 
+                    result—demonstrating what the underlying system becomes when 
+                    altered or transferred.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 06 — WHY U-HE / LABORATORY -->
+<section id="laboratory" class="pub-section">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">06</span>
+            <h2 class="section-subtitle">Why u-he as the Primary Laboratory</h2>
+        </div>
+
+        <p class="section-desc">
+            The u-he software instruments provide distinct, high-precision 
+            synthesis environments through which underlying acoustics can be 
+            rigorously tested.
+        </p>
+
+        <div class="content-grid">
+            <div class="grid-item full-width-item">
+                <h4 class="item-title">Universal vs. Instrument-Specific Principles</h4>
+                <p class="item-body">
+                    Working across u-he's diverse engines makes it possible 
+                    to answer a fundamental question repeatedly: <em>What is 
+                    universal across electronic sound, and what belongs 
+                    specifically to this instrument or architecture?</em>
+                </p>
+            </div>
+        </div>
+
+        <!-- P1 SOUND ENGINE CALLOUT -->
+        <div class="prepress-system">
+            <div class="prepress-system-header">
+                <h4 class="prepress-system-title">P1 Sound Engine Analysis System™</h4>
+                <p class="prepress-system-intro">
+                    Sound design demands rigorous signal control. Every patch, 
+                    waveform, filter sweep, and modulation routing generated for 
+                    this curriculum is analyzed through Provision1 Laboratory’s 
+                    proprietary audio analysis framework—verifying harmonic 
+                    distribution, phase coherence, and transient integrity.
+                </p>
+            </div>
+
+            <div class="prepress-system-grid">
+                <div class="prepress-system-item">
+                    <h5>Spectral / Phase</h5>
+                    <p>
+                        FFT spectral evaluation, harmonic energy mapping, anti-aliasing 
+                        inspection, and low-frequency phase alignment.
+                    </p>
+                </div>
+
+                <div class="prepress-system-item">
+                    <h5>Dynamic / Transient</h5>
+                    <p>
+                        Envelope behavior profiling, crest factor calculation, 
+                        micro-transient preservation, and headroom management.
+                    </p>
+                </div>
+
+                <div class="prepress-system-item">
+                    <h5>Pedagogical Audit</h5>
+                    <p>
+                        Patch state verification, parameter-to-behavior mapping, 
+                        cross-engine translation checks, and preset security.
+                    </p>
+                </div>
+            </div>
+
+            <div class="prepress-system-signature">
+                <strong>P1 Sound Engine Analysis System™</strong><br>
+                Proprietary acoustic verification &amp; signal conditioning 
+                architecture developed for physical &amp; digital publication.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 07 — PARTNERSHIP & INSTITUTIONS -->
+<section id="partnership" class="pub-section">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">07</span>
+            <h2 class="section-subtitle">Institutional &amp; Educational Partnership</h2>
+        </div>
+
+        <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">
+            Independent research. Curriculum adoption. Commercial &amp; academic integration.
+        </h3>
+
+        <div class="prose-block">
+            <p>
+                The <em>u-he Sound Design Idiom Field Manual</em> sits between 
+                technical reference, synthesis education, musical history, 
+                sound-design practice, and research monograph.
+            </p>
+
+            <p>
+                Provision1 Laboratory partners with universities, conservatories, 
+                music technology programs, and industry organizations seeking to 
+                adopt the curriculum or license specialized modules.
+            </p>
+
+            <p class="highlight-statement">
+                Educational licensing, bulk physical distribution for university 
+                programs, and custom institutional workshops are structured through 
+                Provision1 Laboratory.
+            </p>
+        </div>
+
+        <div class="partner-program-grid">
+            <div class="program-item">
+                <h4 class="program-item-title">Academic &amp; Conservatory Licensing</h4>
+                <p class="program-item-desc">
+                    Complete 8-volume curriculum licensing for music technology and 
+                    audio engineering degree programs.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Institutional Print Editions</h4>
+                <p class="program-item-desc">
+                    Hardbound reference volumes prepared specifically for 
+                    institutional library archives and lab environments.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Research &amp; R&amp;D Collaboration</h4>
+                <p class="program-item-desc">
+                    Joint research initiatives examining acoustic modeling, 
+                    pedagogical UI design, and sound-synthesis taxonomy.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Preset &amp; Curriculum Verification</h4>
+                <p class="program-item-desc">
+                    Rigorous third-party evaluation of synthesis presets for 
+                    commercial and educational release.
+                </p>
+            </div>
+        </div>
+
+        <div class="partnership-inquiries">
+            <p class="item-body" style="margin-bottom: 1.25rem;">
+                Institutions, educators, and commercial partners interested in 
+                adopting or sponsoring the series may request the institutional 
+                prospectus.
+            </p>
+
+            <a href="mailto:Pro1Lab@proton.me?subject=u-he%20FIELD%20MANUAL%20—%20Institutional%20Prospectus%20Request" 
+               class="inquiry-link">
+                REQUEST THE INSTITUTIONAL PROSPECTUS &rarr;
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- 08 — CONTACT / FOOTER -->
+<footer id="contact">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">08</span>
+            <h2 class="section-subtitle">Contact</h2>
+        </div>
+
+        <p class="section-desc" style="margin-bottom: 2rem;">
+            The <em>u-he Sound Design Idiom Field Manual</em> is an independent 
+            monographic series published by Provision1 Laboratory.
+        </p>
+
+        <div class="signature-block">
+            <div class="mono-label" style="margin-bottom: 0.5rem;">
+                EIGHT VOLUMES · EDITORIAL &amp; RESEARCH ACTIVE
+            </div>
+
+            <div class="signature-title" style="margin-top: 0.25rem;">
+                u-he Sound Design Idiom Field Manual · Published by Provision1 Laboratory
+            </div>
+
+            <a href="mailto:Pro1Lab@proton.me" class="footer-contact">
+                Pro1Lab@proton.me
+            </a>
+
+            <p style="font-size: 0.7rem; color: var(--text-dim); margin-top: 2rem; line-height: 1.6;">
+                &copy; 2026 P1Lab. All rights reserved. Unless otherwise indicated, 
+                all original text, research, editorial work, publications, design, 
+                graphics, and other original materials produced by P1Lab are protected 
+                by copyright. Third-party materials and software marks (including u-he) 
+                remain the property of their respective copyright holders.
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
