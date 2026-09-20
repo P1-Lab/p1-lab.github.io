@@ -240,6 +240,94 @@
             font-style: italic;
         }
 
+
+        /* THE MISSING BOOK */
+
+        .missing-book {
+            padding: 4.75rem 0 4.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .missing-book-intro {
+            max-width: 780px;
+            margin-bottom: 2.5rem;
+        }
+
+        .missing-book-intro p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            font-weight: 350;
+            line-height: 1.75;
+            margin-bottom: 1.2rem;
+        }
+
+        .missing-book-intro p.lead-statement {
+            font-family: var(--font-serif);
+            font-size: clamp(1.35rem, 2.7vw, 1.7rem);
+            line-height: 1.45;
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        .missing-book-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 3rem;
+            margin-top: 2.75rem;
+        }
+
+        .missing-book-item {
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-strong);
+        }
+
+        .missing-book-item h3 {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .missing-book-item p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.7;
+        }
+
+        .missing-book-thesis {
+            margin-top: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-strong);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .missing-book-thesis p {
+            font-family: var(--font-serif);
+            font-size: clamp(1.35rem, 2.6vw, 1.65rem);
+            line-height: 1.45;
+            color: var(--text-primary);
+            font-weight: 300;
+            max-width: 780px;
+        }
+
+        @media (max-width: 768px) {
+
+            .missing-book {
+                padding: 3.5rem 0;
+            }
+
+            .missing-book-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+        }
+
+
         /* SECTIONS */
 
         .pub-section {
@@ -792,6 +880,93 @@
     </div>
 </section>
 
+<!-- THE MISSING BOOK -->
+
+<section id="missing-book" class="missing-book">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">00</span>
+            <h2 class="section-subtitle">The Missing Book</h2>
+        </div>
+
+        <div class="missing-book-intro">
+
+            <p class="lead-statement">
+                There is no shortage of information about the world. What is increasingly scarce is the serious physical book that makes a real place, system, object, or process understandable as a whole.
+            </p>
+
+            <p>
+                Modern readers can find travel guides, institutional websites, technical manuals, academic studies, promotional material, photography books, videos, databases, reviews, and firsthand accounts for almost any subject. Each can be useful. But these forms tend to divide knowledge into separate purposes: where to go, what something looks like, how it is promoted, how it operates, what experts have concluded, or what one individual experienced.
+            </p>
+
+            <p>
+                The neglected space between them is the independent field reference: a substantial physical publication built from firsthand observation, documentary evidence, photography, diagrams, primary knowledge, contextual explanation, and practical understanding. Its purpose is neither to promote the subject nor to impose an author's personal vision upon it, but to make the subject itself legible.
+            </p>
+
+        </div>
+
+
+        <div class="missing-book-grid">
+
+            <div class="missing-book-item">
+
+                <h3>Places</h3>
+
+                <p>
+                    A field book can document a place as a functioning environment — its geography, infrastructure, movement, buildings, interfaces, material systems, history, and human use — rather than reducing it to attractions, itineraries, or photographic impressions.
+                </p>
+
+            </div>
+
+
+            <div class="missing-book-item">
+
+                <h3>Systems</h3>
+
+                <p>
+                    A complex system can be examined in the same way: component by component, interface by interface, showing how people, objects, institutions, technology, transportation, communication, and physical environments actually work together.
+                </p>
+
+            </div>
+
+
+            <div class="missing-book-item">
+
+                <h3>Objects &amp; Processes</h3>
+
+                <p>
+                    The same editorial method applies to machines, tools, food systems, repair, manufacturing, craft, and other material processes. Photography, diagrams, sequences, terminology, firsthand observation, and practical explanation can turn an unfamiliar object or process into something understandable.
+                </p>
+
+            </div>
+
+
+            <div class="missing-book-item">
+
+                <h3>Independent Reference</h3>
+
+                <p>
+                    The resulting book occupies a position between field reporting and reference publishing. It is factual without being bureaucratic, practical without becoming a manual, visual without becoming a coffee-table object, and independent without becoming a personal essay.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="missing-book-thesis">
+
+            <p>
+                P1 Lab builds physical editorial platforms for subjects that are important enough to understand, complex enough to require investigation, and poorly served by the existing forms of reference.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- 01 — THE PROJECT -->
 
