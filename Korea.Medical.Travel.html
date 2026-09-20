@@ -1,0 +1,1682 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KOREA: MEDICAL TRAVEL — The Material Culture and Infrastructure of the International Patient</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #faf8f5;
+            --surface-color: #f2efe9;
+            --text-primary: #1a1a1a;
+            --text-muted: #4a4a46;
+            --text-dim: #76746e;
+            --accent-neutral: #5c5953;
+            --border-subtle: rgba(26, 26, 26, 0.12);
+            --border-strong: rgba(26, 26, 26, 0.28);
+
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: "Courier New", monospace;
+
+            --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 10rem;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .mono-label {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* HEADER */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(250, 248, 245, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.1rem 0 0.9rem;
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+        }
+
+        .brand-mark {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .parent-link {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.2s var(--transition-smooth);
+        }
+
+        .parent-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.45rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            transition: color 0.2s var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 62vh;
+            display: flex;
+            align-items: center;
+            padding-top: 8.5rem;
+            padding-bottom: 4.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.35rem, 4.5vw, 3.45rem);
+            font-weight: 300;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
+            line-height: 1.05;
+            margin: 0.35rem 0 0.65rem;
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-serif);
+            font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.35;
+            margin-bottom: 2rem;
+        }
+
+        .hero-manifesto {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.75;
+            max-width: 780px;
+        }
+
+        .hero-manifesto p {
+            margin-bottom: 1.1rem;
+        }
+
+        .hero-manifesto p.lead-statement {
+            font-family: var(--font-serif);
+            font-size: clamp(1.3rem, 2.6vw, 1.55rem);
+            line-height: 1.42;
+            color: var(--text-primary);
+            font-weight: 300;
+            margin-bottom: 1.3rem;
+        }
+
+        .hero-manifesto p.key-statement {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        /* HERO INSTITUTIONAL QUOTE */
+
+        .hero-quote {
+            margin: 2.75rem 0 0;
+            padding: 1.75rem 0 1.65rem;
+            border-top: 1px solid var(--border-strong);
+            border-bottom: 1px solid var(--border-subtle);
+            max-width: 780px;
+        }
+
+        .hero-quote p {
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+            line-height: 1.48;
+            color: var(--text-primary);
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-quote-attribution {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            line-height: 1.55;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            color: var(--text-dim);
+        }
+
+        .hero-quote-attribution strong {
+            display: block;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 0.15rem;
+        }
+
+        .quote-pending {
+            color: var(--text-dim);
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* SECTIONS */
+
+        .pub-section {
+            padding: 4.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section-meta {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-index {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            color: var(--text-dim);
+            font-style: italic;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            font-weight: 350;
+            max-width: 750px;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* GRID */
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 3rem;
+        }
+
+        .grid-item {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .item-body {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.65;
+        }
+
+        .full-width-item {
+            grid-column: 1 / -1;
+        }
+
+        /* LARGE THESIS BLOCK */
+
+        .thesis-block {
+            margin: 2.5rem 0 0;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-strong);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .thesis-block p {
+            font-family: var(--font-serif);
+            font-size: clamp(1.35rem, 2.6vw, 1.65rem);
+            line-height: 1.45;
+            color: var(--text-primary);
+            font-weight: 300;
+            max-width: 780px;
+        }
+
+        /* JOURNEY */
+
+        .journey-grid {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--border-strong);
+        }
+
+        .journey-item {
+            padding: 1.25rem 1.25rem 1.25rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .journey-item:nth-child(even) {
+            padding-left: 1.25rem;
+            border-left: 1px solid var(--border-subtle);
+        }
+
+        .journey-number {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            color: var(--text-dim);
+            font-style: italic;
+            margin-bottom: 0.2rem;
+        }
+
+        .journey-title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .journey-body {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* FRAMEWORK */
+
+        .framework-group {
+            margin-top: 2.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-strong);
+        }
+
+        .framework-group-title {
+            font-family: var(--font-sans);
+            font-size: 0.67rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
+            margin-bottom: 1.25rem;
+        }
+
+        .framework-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0 2.5rem;
+        }
+
+        .framework-item {
+            padding: 0.65rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .framework-item strong {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .framework-closing {
+            margin-top: 2.25rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .framework-closing p {
+            font-size: 0.94rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* VISUAL TOUCHSTONES */
+
+        .design-study-figure {
+            margin: 3rem auto 0;
+            max-width: 780px;
+        }
+
+        .design-study-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .design-study-caption {
+            margin-top: 0.85rem;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            line-height: 1.55;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-dim);
+        }
+
+        .design-study-description {
+            margin-top: 0.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            line-height: 1.65;
+            text-transform: none;
+            letter-spacing: 0;
+            color: var(--text-muted);
+        }
+
+        .touchstone-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .touchstone-grid figure {
+            margin: 0;
+        }
+
+        .touchstone-grid .design-study-image {
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* RESEARCH METHOD */
+
+        .method-note {
+            margin-top: 2.5rem;
+            padding: 1.75rem 0;
+            border-top: 1px solid var(--border-strong);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .method-note p {
+            font-size: 0.94rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 760px;
+        }
+
+        /* COMPLIANCE */
+
+        .compliance-table {
+            margin-top: 2.5rem;
+            border-top: 1px solid var(--border-strong);
+        }
+
+        .compliance-row {
+            display: grid;
+            grid-template-columns: 28% 72%;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .compliance-label,
+        .compliance-desc {
+            padding: 1rem 0;
+        }
+
+        .compliance-label {
+            padding-right: 1.5rem;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        .compliance-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* DISTRIBUTION MODEL */
+
+        .distribution-callout {
+            margin-top: 2.5rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-strong);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .distribution-callout p {
+            font-family: var(--font-serif);
+            font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+            line-height: 1.48;
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        /* PARTNERSHIP */
+
+        .prose-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .prose-block p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 350;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .prose-block p.highlight-statement {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .partner-program-grid {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-strong);
+        }
+
+        .program-item {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .program-item-title {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .program-item-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 350;
+            line-height: 1.6;
+        }
+
+        /* CONTACT */
+
+        .partnership-inquiries {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .inquiry-link {
+            display: inline-block;
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-strong);
+            padding-bottom: 0.15rem;
+            transition: color 0.2s var(--transition-smooth),
+                        border-color 0.2s var(--transition-smooth);
+        }
+
+        .inquiry-link:hover {
+            color: var(--text-dim);
+            border-color: var(--text-dim);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 4.5rem 0 4rem;
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .signature-block {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .signature-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .footer-contact {
+            display: inline-block;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            margin-top: 0.75rem;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.2s var(--transition-smooth);
+        }
+
+        .footer-contact:hover {
+            border-bottom-color: var(--text-primary);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .content-grid,
+            .partner-program-grid,
+            .framework-list,
+            .touchstone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-item,
+            .journey-item:nth-child(even) {
+                padding-left: 0;
+                padding-right: 0;
+                border-left: none;
+            }
+
+            .compliance-row {
+                grid-template-columns: 1fr;
+            }
+
+            .compliance-label {
+                padding-bottom: 0.25rem;
+            }
+
+            .compliance-desc {
+                padding-top: 0.25rem;
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .pub-section {
+                padding: 3.5rem 0;
+            }
+
+            .hero-title {
+                font-size: 2.15rem;
+            }
+
+            .hero {
+                padding-top: 7.5rem;
+                min-height: auto;
+            }
+
+            .hero-quote {
+                padding: 1.4rem 0 1.35rem;
+                margin-bottom: 0;
+            }
+
+            .hero-quote p {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav-inner">
+
+        <div class="brand-row">
+            <a href="#" class="brand-mark">KOREA: MEDICAL TRAVEL</a>
+            <a href="/" class="parent-link">&larr; P1 Lab</a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#project">Project</a></li>
+            <li><a href="#trust">Trust</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#framework">Research</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#partnership">Participation</a></li>
+            <li><a href="#distribution">Distribution</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+    <div class="container">
+
+        <span class="mono-label">
+            INDEPENDENT DOCUMENTARY MONOGRAPH
+        </span>
+
+        <h1 class="hero-title">
+            KOREA: MEDICAL TRAVEL
+        </h1>
+
+        <div class="hero-subtitle">
+            The Material Culture and Infrastructure of the International Patient
+        </div>
+
+        <div class="hero-manifesto">
+
+            <p class="lead-statement">
+                KOREA: MEDICAL TRAVEL is being built to occupy a missing layer in the international-patient journey: the independent, physical trust instrument between discovering Korean medical care and becoming sufficiently confident to act.
+            </p>
+
+            <p>
+                Korea does not lack information about its medical system. It lacks a single, independent English-language physical reference that allows an international prospective patient to understand the whole journey — arrival, transportation, communication, hospital coordination, accommodation, recovery, documentation, and departure — as one coherent system.
+            </p>
+
+            <p class="key-statement">
+                This publication documents that system.
+            </p>
+
+            <p>
+                It is not a medical guide, a hospital review, a tourism brochure, or an investigation of patients. It is an independent documentary study of the material culture, urban form, logistical infrastructure, human interfaces, and commercial systems surrounding the international patient.
+            </p>
+
+        </div>
+
+        <!-- KHIDI INSTITUTIONAL PERSPECTIVE -->
+
+        <div class="hero-quote">
+
+            <div class="mono-label" style="margin-bottom: 0.35rem;">
+                INSTITUTIONAL PERSPECTIVE
+            </div>
+
+            <div class="mono-label" style="font-size: 0.58rem; letter-spacing: 0.10em; margin-bottom: 1rem;">
+                Requested from KHIDI leadership
+            </div>
+
+            <p class="quote-pending">
+                A 75–100 word perspective from KHIDI addressing Korea's infrastructure for international medical patients and the patient journey from care search and contact through interpretation, transportation, accommodation, hospital coordination, recovery, and departure.
+            </p>
+
+            <div class="hero-quote-attribution">
+                <strong>Korea Health Industry Development Institute (KHIDI)</strong>
+                Global Healthcare PR Team
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- 01 — THE PROJECT -->
+
+<section id="project" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">01</span>
+            <h2 class="section-subtitle">The Project</h2>
+        </div>
+
+        <p class="section-desc">
+            A documentary monograph examining what a city must build, coordinate, translate, transport, house, package, explain, and maintain when people cross national borders specifically to receive medical care.
+        </p>
+
+        <div class="content-grid">
+
+            <div class="grid-item full-width-item">
+
+                <h4 class="item-title">
+                    The International Patient as Urban Actor
+                </h4>
+
+                <p class="item-body">
+                    International medical travel is ordinarily presented through procedures, hospitals, destinations, prices, and outcomes. This study begins somewhere else: with the physical and operational environment surrounding the patient. The international patient enters an airport, crosses a border, enters a vehicle, encounters translated systems, moves through a medical district, occupies a temporary recovery environment, receives objects and documentation, and eventually departs. Each transition requires infrastructure.
+                </p>
+
+            </div>
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    2025 Scale
+                </h4>
+
+                <p class="item-body">
+                    South Korea recorded 2,011,822 foreign patients in 2025, according to KHIDI's current reporting. The scale of that activity makes international medical travel not simply a collection of individual transactions, but a visible infrastructural and urban phenomenon.
+                </p>
+
+            </div>
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    Central Question
+                </h4>
+
+                <p class="item-body">
+                    What does a city have to build, sell, translate, design, transport, house, feed, and explain when millions of people arrive from other countries specifically to receive medical care?
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="thesis-block">
+
+            <p>
+                The project follows the international patient through the built and translated world around medical care — not to evaluate the medicine itself, but to document the infrastructure that makes cross-border care possible.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 02 — THE TRUST BRIDGE -->
+
+<section id="trust" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">02</span>
+            <h2 class="section-subtitle">The Trust Bridge</h2>
+        </div>
+
+        <p class="section-desc">
+            The central proposition of the publication is that international medical travel requires more than discoverability. It requires confidence in an unfamiliar system.
+        </p>
+
+        <div class="content-grid">
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    Information Is Not the Missing Layer
+                </h4>
+
+                <p class="item-body">
+                    Prospective patients can already find hospitals, procedures, destination information, prices, testimonials, official websites, agency materials, and promotional campaigns. What is less readily available is a coherent independent account of the complete physical experience surrounding international care.
+                </p>
+
+            </div>
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    Understanding Before Action
+                </h4>
+
+                <p class="item-body">
+                    The publication is designed for the interval between discovering Korean medical care and becoming sufficiently confident to inquire, coordinate, travel, and act. It renders unfamiliar infrastructure visible before the patient has to encounter it personally.
+                </p>
+
+            </div>
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    The English-Language Gap
+                </h4>
+
+                <p class="item-body">
+                    The project is conceived principally for an international English-language audience: prospective patients, spouses and families, referring professionals, facilitators, institutional decision-makers, and others who influence whether international care is considered viable.
+                </p>
+
+            </div>
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    Independence as Utility
+                </h4>
+
+                <p class="item-body">
+                    The book does not reproduce institutional advertising. Its usefulness as a trust instrument depends upon documenting the ecosystem independently and allowing the physical evidence of the system to establish its own credibility.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="distribution-callout">
+
+            <p>
+                A person should not have to be unusually intrepid to cross a national border for medical care. The system itself should make that decision understandable.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 03 — THE PATIENT JOURNEY -->
+
+<section id="journey" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">03</span>
+            <h2 class="section-subtitle">The Patient Journey</h2>
+        </div>
+
+        <p class="section-desc">
+            The book follows the international patient through the surrounding infrastructure rather than treating medical travel as a single hospital encounter.
+        </p>
+
+        <div class="journey-grid">
+
+            <div class="journey-item">
+                <div class="journey-number">01</div>
+                <h4 class="journey-title">Discovery</h4>
+                <p class="journey-body">
+                    How Korea and individual institutions become visible to international patients and the networks influencing their decisions.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-number">02</div>
+                <h4 class="journey-title">Contact &amp; Coordination</h4>
+                <p class="journey-body">
+                    International-patient desks, coordinators, interpreters, digital interfaces, forms, communication systems, and administrative preparation.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-number">03</div>
+                <h4 class="journey-title">Arrival &amp; Transfer</h4>
+                <p class="journey-body">
+                    Airport interfaces, medical visas, specialized transfers, vehicles, routing, and the first physical movement into the Korean medical system.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-number">04</div>
+                <h4 class="journey-title">Medical District</h4>
+                <p class="journey-body">
+                    Seoul's concentrated medical geography: districts, clinic streets, hospital zones, vertical buildings, signage, and urban navigation.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-number">05</div>
+                <h4 class="journey-title">Recovery</h4>
+                <p class="journey-body">
+                    Hotels, recovery rooms, accessibility, food systems, room service, proximity to medical facilities, and the adapted environment surrounding treatment.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-number">06</div>
+                <h4 class="journey-title">Objects &amp; Documentation</h4>
+                <p class="journey-body">
+                    Packaging, prescriptions, instruction sheets, receipts, labels, pharmacy interfaces, recovery products, and digital systems carried through the journey.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-number">07</div>
+                <h4 class="journey-title">Departure</h4>
+                <p class="journey-body">
+                    Discharge, documentation, medication and recovery materials, onward transportation, and the physical transition out of the Korean system.
+                </p>
+            </div>
+
+            <div class="journey-item">
+                <div class="journey-number">08</div>
+                <h4 class="journey-title">The System</h4>
+                <p class="journey-body">
+                    The final synthesis: how airport, hospital, translation, hospitality, commercial, and urban systems operate together at city scale.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 04 — RESEARCH FRAMEWORK -->
+
+<section id="framework" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">04</span>
+            <h2 class="section-subtitle">Research Framework</h2>
+        </div>
+
+        <p class="section-desc">
+            The study is organized as a 36-topic documentary framework. The topics are deliberately confined to the material culture, urban form, logistical systems, human interfaces, and commercial infrastructure surrounding the international patient.
+        </p>
+
+
+        <!-- A -->
+
+        <div class="framework-group">
+
+            <div class="framework-group-title">
+                A · Arrival &amp; Entry Systems
+            </div>
+
+            <div class="framework-list">
+
+                <div class="framework-item"><strong>01 —</strong> The International Patient as Urban Actor</div>
+                <div class="framework-item"><strong>02 —</strong> Incheon Airport as Medical Gateway</div>
+                <div class="framework-item"><strong>03 —</strong> The Medical Visa &amp; Border Interface</div>
+                <div class="framework-item"><strong>04 —</strong> From Gate to Vehicle: First Physical Transfer</div>
+                <div class="framework-item"><strong>05 —</strong> Specialized Medical Transfer Vehicles &amp; Protocols</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- B -->
+
+        <div class="framework-group">
+
+            <div class="framework-group-title">
+                B · Human &amp; Translation Infrastructure
+            </div>
+
+            <div class="framework-list">
+
+                <div class="framework-item"><strong>06 —</strong> The Certified Interpreter</div>
+                <div class="framework-item"><strong>07 —</strong> The International Medical Coordinator</div>
+                <div class="framework-item"><strong>08 —</strong> Translation as Built Environment</div>
+                <div class="framework-item"><strong>09 —</strong> The International Patient Desk</div>
+                <div class="framework-item"><strong>10 —</strong> Multilingual Wayfinding Systems</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- C -->
+
+        <div class="framework-group">
+
+            <div class="framework-group-title">
+                C · Urban Medical Geography
+            </div>
+
+            <div class="framework-list">
+
+                <div class="framework-item"><strong>11 —</strong> Seoul's Concentrated Medical Districts</div>
+                <div class="framework-item"><strong>12 —</strong> Gangnam as Medical City</div>
+                <div class="framework-item"><strong>13 —</strong> Seocho and Adjacent Medical Zones</div>
+                <div class="framework-item"><strong>14 —</strong> The Hospital District as Urban Form</div>
+                <div class="framework-item"><strong>15 —</strong> Clinic Streets and Vertical Medical Buildings</div>
+                <div class="framework-item"><strong>16 —</strong> The Visual Language of Medical Signage</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- D -->
+
+        <div class="framework-group">
+
+            <div class="framework-group-title">
+                D · Recovery Environments
+            </div>
+
+            <div class="framework-list">
+
+                <div class="framework-item"><strong>17 —</strong> The Hotel as Temporary Recovery Infrastructure</div>
+                <div class="framework-item"><strong>18 —</strong> Medical-Friendly Room Design &amp; Accessibility</div>
+                <div class="framework-item"><strong>19 —</strong> The Recovery Room as Adapted Space</div>
+                <div class="framework-item"><strong>20 —</strong> Post-Treatment Food Systems &amp; Room Service</div>
+                <div class="framework-item"><strong>21 —</strong> Hotel–Clinic Proximity Clustering</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- E -->
+
+        <div class="framework-group">
+
+            <div class="framework-group-title">
+                E · Material Objects &amp; Interfaces
+            </div>
+
+            <div class="framework-list">
+
+                <div class="framework-item"><strong>22 —</strong> The Patient's Carry-Home Assemblage</div>
+                <div class="framework-item"><strong>23 —</strong> Pharmaceutical and Medical Packaging Design</div>
+                <div class="framework-item"><strong>24 —</strong> Instruction Sheets, Forms, and Administrative Objects</div>
+                <div class="framework-item"><strong>25 —</strong> The Pharmacy as Post-Hospital Interface</div>
+                <div class="framework-item"><strong>26 —</strong> Recovery Products and Wellness Objects</div>
+                <div class="framework-item"><strong>27 —</strong> Digital Interfaces and Translation Technology</div>
+                <div class="framework-item"><strong>28 —</strong> Receipts, Labels, and Traceability Artifacts</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- F -->
+
+        <div class="framework-group">
+
+            <div class="framework-group-title">
+                F · System, Trust &amp; Commercial Architecture
+            </div>
+
+            <div class="framework-list">
+
+                <div class="framework-item"><strong>29 —</strong> Medical Travel Facilitators as Infrastructure</div>
+                <div class="framework-item"><strong>30 —</strong> How Korea Presents Its Medical System Abroad</div>
+                <div class="framework-item"><strong>31 —</strong> How Institutions Present Themselves to International Patients</div>
+                <div class="framework-item"><strong>32 —</strong> The Visible Architecture of Trust</div>
+                <div class="framework-item"><strong>33 —</strong> Continuity from K-Beauty into Clinical Environments</div>
+                <div class="framework-item"><strong>34 —</strong> The Scale of the System: What Two Million Patients Means Spatially</div>
+                <div class="framework-item"><strong>35 —</strong> Surrounding Tourism, Wellness &amp; Hospitality Networks</div>
+                <div class="framework-item"><strong>36 —</strong> The Medical City: An Integrated Urban System</div>
+
+            </div>
+
+        </div>
+
+
+        <div class="framework-closing">
+
+            <p>
+                Topic 36 synthesizes the preceding 35 units. Airport gateways, transfer protocols, translation systems, concentrated medical districts, recovery hotels, material objects, facilitators, and commercial networks are examined not as isolated services but as components of a measurable urban and infrastructural system.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 05 — METHOD -->
+
+<section id="method" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">05</span>
+            <h2 class="section-subtitle">Method &amp; Scope</h2>
+        </div>
+
+        <p class="section-desc">
+            Research proceeds through direct observation, primary institutional knowledge, field photography, documentary evidence, and verification. The project remains deliberately on the public, infrastructural, material, and logistical side of the clinical boundary.
+        </p>
+
+        <div class="content-grid">
+
+            <div class="grid-item">
+                <h4 class="item-title">Field Observation</h4>
+                <p class="item-body">
+                    Direct observation of airports, streets, buildings, public interfaces, transportation systems, hospitality environments, signage, packaging, pharmacies, and other relevant physical infrastructure.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Primary Knowledge</h4>
+                <p class="item-body">
+                    Interviews and institutional research with people responsible for operating, coordinating, translating, designing, transporting, housing, and supporting international patients.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Physical Evidence</h4>
+                <p class="item-body">
+                    Forms, labels, packaging, signage, wayfinding systems, digital interfaces, administrative objects, architectural details, maps, and other visible artifacts are treated as documentary evidence.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Editorial Restraint</h4>
+                <p class="item-body">
+                    The project does not rank hospitals, assess clinical outcomes, provide medical advice, investigate individual patients, or reproduce confidential medical information. Its purpose is to render the surrounding system visible with accuracy and restraint.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="method-note">
+
+            <p>
+                The project is designed so that the large majority of fieldwork can be conducted through normal authorized observation of public and commercially accessible environments. Interior institutional documentation, interviews, and specific facility photography will be undertaken only with appropriate permission.
+            </p>
+
+        </div>
+
+
+        <!-- COMPLIANCE -->
+
+        <div class="compliance-table">
+
+            <div class="compliance-row">
+
+                <div class="compliance-label">
+                    Zero Patient Data Exposure
+                </div>
+
+                <div class="compliance-desc">
+                    No patient identities, personal medical histories, clinical records, or invasive procedure photography are required by the research framework.
+                </div>
+
+            </div>
+
+            <div class="compliance-row">
+
+                <div class="compliance-label">
+                    Strict Non-Clinical Scope
+                </div>
+
+                <div class="compliance-desc">
+                    The publication is an urban, logistical, material-cultural, and infrastructural study—not a clinical review, hospital ranking index, or medical advice publication.
+                </div>
+
+            </div>
+
+            <div class="compliance-row">
+
+                <div class="compliance-label">
+                    Authorized Fieldwork
+                </div>
+
+                <div class="compliance-desc">
+                    Observation and photography will be conducted within applicable institutional, facility, privacy, and fieldwork guidelines. Restricted environments will not be entered or documented without authorization.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 06 — THE PHYSICAL BOOK -->
+
+<section id="book" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">06</span>
+            <h2 class="section-subtitle">The Physical Book</h2>
+        </div>
+
+        <p class="section-desc">
+            The finished publication is conceived as a substantial bound reference monograph rather than a disposable marketing publication. Its physical form is part of its function.
+        </p>
+
+        <div class="content-grid">
+
+            <div class="grid-item">
+                <h4 class="item-title">Documentary Reference</h4>
+                <p class="item-body">
+                    A designed physical record integrating field photography, primary reporting, institutional knowledge, maps, diagrams, documentary objects, contextual captions, and source records.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Designed for Circulation</h4>
+                <p class="item-body">
+                    The monograph is intended to be owned, shelved, consulted, shared with family members, brought into professional conversations, and retained as a durable reference.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">English-Language International Edition</h4>
+                <p class="item-body">
+                    The primary edition is designed to communicate Korea's international-patient infrastructure to a global English-language readership without reproducing the tone or structure of institutional promotional material.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Fieldwork &amp; Release</h4>
+                <p class="item-body">
+                    Seoul fieldwork: March 2027. Target global publication: Summer 2027.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- VISUAL TOUCHSTONES -->
+
+<div class="touchstone-stack">
+
+    <figure>
+        <img
+            src="korea4.jpg"
+            alt="Preliminary physical design study for KOREA: MEDICAL TRAVEL showing the proposed bound monograph."
+            class="design-study-image"
+            loading="lazy"
+        >
+
+        <figcaption class="design-study-caption">
+            <div>Physical Design Touchstone · 01</div>
+
+            <p class="design-study-description">
+                Preliminary design study for the physical form of KOREA: MEDICAL TRAVEL.
+                The publication is conceived as a substantial bound reference object,
+                designed to function in the hand rather than merely on a screen.
+            </p>
+        </figcaption>
+    </figure>
+<P><BR>
+
+    <figure>
+        <img
+            src="KoreaMed21.jpg"
+            alt="Second preliminary design study for KOREA: MEDICAL TRAVEL showing the physical publication and interior editorial architecture."
+            class="design-study-image"
+            loading="lazy"
+        >
+
+        <figcaption class="design-study-caption">
+            <div>Physical Design Touchstone · 02</div>
+
+            <p class="design-study-description">
+                Preliminary interior design study illustrating the intended relationship
+                between the physical publication, documentary photography, infrastructure,
+                material objects, and structured editorial analysis.
+            </p>
+        </figcaption>
+    </figure>
+
+</div>
+
+
+<div class="method-note">
+
+    <p>
+        These images are preliminary visual touchstones rather than final production
+        specifications. The final physical architecture, image selection, pagination,
+        paper, binding, and production configuration will be determined as field
+        research develops.
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 07 — COMMERCIAL ARCHITECTURE -->
+
+<section id="partnership" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">07</span>
+            <h2 class="section-subtitle">Institutional Participation</h2>
+        </div>
+
+        <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">
+            Independent publication. Institutional participation. Editorial independence.
+        </h3>
+
+        <div class="prose-block">
+
+            <p>
+                KOREA: MEDICAL TRAVEL is building a limited network of organizations whose work forms the international-patient infrastructure documented by the study.
+            </p>
+
+            <p>
+                Participation is structured as an institutional editorial partnership rather than conventional advertising. Participating organizations are documented as operational components of the system: their facilities, interfaces, expertise, services, physical environments, and institutional roles may become part of the published research record.
+            </p>
+
+            <p class="highlight-statement">
+                Participation provides no editorial control over research, subject selection, interpretation, or conclusions. The value of participation is authoritative representation within an independent documentary record.
+            </p>
+
+        </div>
+
+
+        <div class="partner-program-grid">
+
+            <div class="program-item">
+                <h4 class="program-item-title">Founding / Principal Participation</h4>
+                <p class="program-item-desc">
+                    Recognition within the project's institutional framework and master publication record.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Institutional Profile</h4>
+                <p class="program-item-desc">
+                    Structured documentary treatment of the organization's role within the international-patient infrastructure.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Primary-Source Interview</h4>
+                <p class="program-item-desc">
+                    Qualitative institutional knowledge incorporated into the research where relevant to the documentary framework.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Field Documentation</h4>
+                <p class="program-item-desc">
+                    Authorized photography and technical documentation of relevant physical facilities, interfaces, transport systems, or recovery environments.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Published Attribution</h4>
+                <p class="program-item-desc">
+                    Formal institutional acknowledgment within the project prospectus, publication, and associated launch materials.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Finished Reference Copies</h4>
+                <p class="program-item-desc">
+                    Dedicated copies of the completed monograph for institutional, executive, referral, and other appropriate uses.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 08 — DISTRIBUTION -->
+
+<section id="distribution" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">08</span>
+            <h2 class="section-subtitle">Institutional Distribution</h2>
+        </div>
+
+        <p class="section-desc">
+            The finished monograph is designed not only to be read, but to be deployed through the international-patient ecosystem.
+        </p>
+
+        <div class="distribution-callout">
+
+            <p>
+                The book is a physical trust-and-conversion instrument for the ecosystem it documents.
+            </p>
+
+        </div>
+
+
+        <div class="content-grid">
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    Strategic Circulation
+                </h4>
+
+                <p class="item-body">
+                    Institutional purchasers may acquire finished copies at wholesale for selective distribution through existing patient-acquisition, referral, hospitality, diplomatic, professional, and international-patient networks.
+                </p>
+
+            </div>
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    The Decision Network
+                </h4>
+
+                <p class="item-body">
+                    Potential recipients include prospective patients, spouses and families, referring professionals, international-patient coordinators, facilitators, hospitality partners, corporate medical offices, and other decision-making intermediaries.
+                </p>
+
+            </div>
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    Distribution Rather Than Advertising
+                </h4>
+
+                <p class="item-body">
+                    The objective is not mass promotional circulation. It is strategic placement of a durable independent reference at points where confidence and understanding influence whether international medical care is seriously considered.
+                </p>
+
+            </div>
+
+            <div class="grid-item">
+
+                <h4 class="item-title">
+                    Two Complementary Revenue Streams
+                </h4>
+
+                <p class="item-body">
+                    The project combines institutional participation in the documentary record with wholesale acquisition of the finished physical publication. Organizations may therefore participate in the research and representation while also deploying the resulting reference through their own networks.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="thesis-block">
+
+            <p>
+                The organizations that make the system work have a reason to be authoritatively documented within it. The organizations that benefit from international patients have a reason to place the resulting reference into the hands of the people who influence their decisions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 09 — PROJECT SPECIFICATIONS -->
+
+<section id="specifications" class="pub-section">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">09</span>
+            <h2 class="section-subtitle">Project Specifications</h2>
+        </div>
+
+        <div class="content-grid">
+
+            <div class="grid-item">
+                <h4 class="item-title">Publication Format</h4>
+                <p class="item-body">
+                    Bound documentary reference monograph organized around a 36-topic editorial framework and a substantial documentary fieldwork archive.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Primary Audience</h4>
+                <p class="item-body">
+                    International patients and their decision networks; global healthcare administrators; medical-travel facilitators; hospitality organizations; institutional and policy audiences.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Fieldwork</h4>
+                <p class="item-body">
+                    Seoul · March 2027
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Target Release</h4>
+                <p class="item-body">
+                    Summer 2027
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">KHIDI Contribution</h4>
+                <p class="item-body">
+                    Requested 75–100 word institutional perspective on Korea's international-patient infrastructure and patient journey.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">Editorial Scope</h4>
+                <p class="item-body">
+                    Material culture, urban form, logistics, translation, hospitality, commercial infrastructure, interfaces, and visible systems surrounding international medical care.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">10</span>
+            <h2 class="section-subtitle">Contact</h2>
+        </div>
+
+        <p class="section-desc" style="margin-bottom: 2rem;">
+            KOREA: MEDICAL TRAVEL is an independent documentary monograph examining the material culture and urban, logistical, human, and commercial infrastructure surrounding the international patient.
+        </p>
+
+        <div class="signature-block">
+
+            <div class="mono-label" style="margin-bottom: 0.5rem;">
+                SEOUL FIELDWORK · MARCH 2027 · TARGET RELEASE SUMMER 2027
+            </div>
+
+            <div class="signature-title">
+                KOREA: MEDICAL TRAVEL · Published by Provision1 Laboratory
+            </div>
+
+            <a
+                href="mailto:principal.p1.lab@proton.me?subject=KOREA%3A%20MEDICAL%20TRAVEL%20%E2%80%94%20Project%20Inquiry"
+                class="footer-contact"
+            >
+                principal.p1.lab@proton.me
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
+```
