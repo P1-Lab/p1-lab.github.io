@@ -33,6 +33,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 10rem;
             background-color: var(--bg-color);
             color: var(--text-primary);
             font-family: var(--font-sans);
@@ -214,6 +215,7 @@
         .pub-section {
             padding: 4.5rem 0;
             border-bottom: 1px solid var(--border-subtle);
+            scroll-margin-top: 10rem;
         }
 
         .section-meta {
@@ -300,7 +302,6 @@
             color: var(--text-dim);
         }
 
-
         /* VOLUME ONE DESIGN STUDY */
         .design-study-figure {
             margin: 3rem auto 0;
@@ -323,85 +324,79 @@
             color: var(--text-dim);
         }
 
-/* P1 Image Prepress System */
-.prepress-system {
-    margin-top: 3.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-subtle);
-}
+        /* P1 Image Prepress System */
+        .prepress-system {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
 
-.prepress-system-header {
-    margin-bottom: 1.4rem;
-}
+        .prepress-system-header {
+            margin-bottom: 1.4rem;
+        }
 
-.prepress-system-title {
-    margin: 0 0 0.65rem;
-    color: var(--text-primary);
-    font-family: var(--font-mono);
-    font-size: 0.64rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-}
+        .prepress-system-title {
+            margin: 0 0 0.65rem;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 0.64rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
 
-.prepress-system-intro {
-    max-width: 760px;
-    margin: 0;
-    color: var(--text-dim);
-    font-size: 0.82rem;
-    line-height: 1.7;
-}
+        .prepress-system-intro {
+            max-width: 760px;
+            margin: 0;
+            color: var(--text-dim);
+            font-size: 0.82rem;
+            line-height: 1.7;
+        }
 
-.prepress-system-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 1.8rem;
-}
+        .prepress-system-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 1.8rem;
+        }
 
-.prepress-system-item {
-    padding-top: 0.8rem;
-    border-top: 1px solid var(--border-subtle);
-}
+        .prepress-system-item {
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border-subtle);
+        }
 
-.prepress-system-item h5 {
-    margin: 0 0 0.55rem;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
+        .prepress-system-item h5 {
+            margin: 0 0 0.55rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
 
-.prepress-system-item p {
-    margin: 0;
-    color: var(--text-dim);
-    font-size: 0.72rem;
-    line-height: 1.65;
-}
+        .prepress-system-item p {
+            margin: 0;
+            color: var(--text-dim);
+            font-size: 0.72rem;
+            line-height: 1.65;
+        }
 
-.prepress-system-signature {
-    margin-top: 1.7rem;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.10em;
-    line-height: 1.6;
-    text-transform: uppercase;
-}
+        .prepress-system-signature {
+            margin-top: 1.7rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.10em;
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
 
-.prepress-system-signature strong {
-    color: var(--text-primary);
-    font-weight: 500;
-}
+        .prepress-system-signature strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
 
-@media (max-width: 768px) {
-    .prepress-system-grid {
-        grid-template-columns: 1fr;
-        gap: 1.4rem;
-    }
-}
         /* PROSE & PARTNERSHIP STRUCTURE */
         .prose-block {
             margin-bottom: 2.5rem;
@@ -421,7 +416,7 @@
         }
 
         .partner-program-grid {
-            margin-top: 2.5rem;
+            margin-top: 1.5rem;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem 2.5rem;
@@ -439,6 +434,8 @@
             font-weight: 400;
             color: var(--text-primary);
             margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .partner-program-grid .program-item-desc {
@@ -466,21 +463,6 @@
             transition: color 0.2s var(--transition-smooth), border-color 0.2s var(--transition-smooth);
         }
 
-        html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 10rem;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-        .pub-section,
-footer {
-    scroll-margin-top: 10rem;
-}
-
         .inquiry-link:hover {
             color: var(--text-dim);
             border-color: var(--text-dim);
@@ -491,6 +473,7 @@ footer {
             padding: 4.5rem 0 4rem;
             background-color: var(--surface-color);
             border-top: 1px solid var(--border-subtle);
+            scroll-margin-top: 10rem;
         }
 
         .signature-block {
@@ -498,14 +481,6 @@ footer {
             padding-top: 1.5rem;
             border-top: 1px solid var(--border-subtle);
         }
-.hero-quote-label {
-    font-family: "Courier New", monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--dim);
-    margin-bottom: 1rem;
-}
 
         .signature-title {
             font-size: 0.75rem;
@@ -531,6 +506,11 @@ footer {
         }
 
         @media (max-width: 768px) {
+            .prepress-system-grid {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+
             .content-grid, .partner-program-grid {
                 grid-template-columns: 1fr;
             }
@@ -580,10 +560,11 @@ footer {
         <ul class="nav-links">
             <li><a href="#series">Series</a></li>
             <li><a href="#volume">Volume</a></li>
+            <li><a href="#object">Physical Object</a></li>
             <li><a href="#nexus">Nexus</a></li>
             <li><a href="#method">Method</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#partnership">Partnership</a></li>
+            <li><a href="#research">Volume One</a></li>
+            <li><a href="#partnership">Participation</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
@@ -693,10 +674,14 @@ footer {
         </div>
 
         <p class="section-desc">
-            A volume is a substantial documentary investigation, not an essay wrapped around photographs. Each volume is produced as a substantial printed book designed for long-term reference, private ownership, and institutional collection. The result is a complete monographic work in which text, photography, documentary evidence, maps, technical material, and source records are integrated according to the demands of the investigation.
+            A volume is a substantial documentary investigation, not an essay wrapped around photographs. Each volume is produced as a substantial printed monograph designed for long-term ownership, collection, and circulation. The finished book is a permanent physical record of its subject—not a periodical or disposable promotional publication.
         </p>
 
-                <div class="content-grid">
+        <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 2rem;">
+            A book to keep. A book to give. A record to build.
+        </p>
+
+        <div class="content-grid">
 
             <div class="grid-item full-width-item">
                 <h4 class="item-title">Primary Contents &amp; Materials</h4>
@@ -764,17 +749,71 @@ footer {
 
         </div>
 
-
-
     </div>
 </section>
 
-<!-- 03 — THE NEXUS -->
-<section id="nexus" class="pub-section">
+<!-- 03 — THE PHYSICAL OBJECT -->
+<section id="object" class="pub-section">
     <div class="container">
 
         <div class="section-meta">
             <span class="section-index">03</span>
+            <h2 class="section-subtitle">The Physical Object</h2>
+        </div>
+
+        <p class="section-desc">
+            FLORIDA FIELD RECORD is produced as a substantial, collectible monograph rather than a periodical or promotional publication. The finished volume is intended to be owned, preserved, consulted, displayed, and given.
+        </p>
+
+        <div class="content-grid">
+
+            <div class="grid-item">
+                <h4 class="item-title">For Private Ownership</h4>
+                <p class="item-body">
+                    A durable illustrated record designed to remain useful and visually compelling long after its publication date.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">For Institutional Collections</h4>
+                <p class="item-body">
+                    A permanent volume suitable for offices, libraries, hospitality environments, professional collections, and other institutional settings.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">For Client Development</h4>
+                <p class="item-body">
+                    Institutions may acquire copies for deliberate distribution to clients, prospects, collaborators, owners, designers, and other important professional relationships.
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <h4 class="item-title">For the Record</h4>
+                <p class="item-body">
+                    Each volume remains an independent part of the continuing Florida Field Record. Later volumes do not replace earlier ones; they extend the record.
+                </p>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-strong);">
+
+            <p style="font-family: var(--font-serif); font-size: clamp(1.35rem, 2.6vw, 1.65rem); line-height: 1.45; color: var(--text-primary); font-weight: 300; max-width: 780px;">
+                This is a book made to enter a room and remain there.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 04 — THE NEXUS -->
+<section id="nexus" class="pub-section">
+    <div class="container">
+
+        <div class="section-meta">
+            <span class="section-index">04</span>
             <h2 class="section-subtitle">The Nexus</h2>
         </div>
 
@@ -807,16 +846,15 @@ footer {
 
         </div>
 
-
     </div>
 </section>
 
-<!-- 04 — METHOD -->
+<!-- 05 — METHOD -->
 <section id="method" class="pub-section">
     <div class="container">
 
         <div class="section-meta">
-            <span class="section-index">04</span>
+            <span class="section-index">05</span>
             <h2 class="section-subtitle">Method</h2>
         </div>
 
@@ -858,12 +896,12 @@ footer {
     </div>
 </section>
 
-<!-- 05 — RESEARCH (VOLUME ONE) -->
+<!-- 06 — VOLUME ONE -->
 <section id="research" class="pub-section">
     <div class="container">
 
         <div class="section-meta">
-            <span class="section-index">05</span>
+            <span class="section-index">06</span>
             <h2 class="section-subtitle">Volume One</h2>
         </div>
 
@@ -883,43 +921,43 @@ footer {
         </div>
 
        <figure class="design-study-figure">
-    <img
-        src="florida-field-record-volume-one-design-study.png"
-        alt="Design study for Volume One of Florida Field Record, showing the proposed hardcover monograph, interior spreads, maps, photography, and production details."
-        class="design-study-image"
-        width="1312"
-        height="1199"
-        loading="lazy"
-    >
+            <img
+                src="florida-field-record-volume-one-design-study.png"
+                alt="Design study for Volume One of Florida Field Record, showing the proposed hardcover monograph, interior spreads, maps, photography, and production details."
+                class="design-study-image"
+                width="1312"
+                height="1199"
+                loading="lazy"
+            >
 
-    <figcaption class="design-study-caption">
-        <div class="design-study-label">Design Comp · Volume One</div>
+            <figcaption class="design-study-caption">
+                <div class="design-study-label">Design Comp · Volume One</div>
 
-        <p class="design-study-description">
-            Preliminary design comp for the physical form and editorial architecture of the inaugural volume.
-        </p><BR>
+                <p class="design-study-description" style="margin-top: 0.35rem;">
+                    Preliminary design comp for the physical form and editorial architecture of the inaugural volume.
+                </p><br>
 
-        <div class="design-study-subheading">Print Production Technology</div>
+                <div class="design-study-subheading" style="font-weight: 500; color: var(--text-muted);">Print Production Technology</div>
 
-        <p class="design-study-production">
-            Print gives the field record a life beyond the screen: a physical volume designed to be owned, shelved, annotated, circulated, and preserved. The photographs are treated as part of the documentary record, not merely as illustrations. P1 Lab’s image-conditioning system prepares photographic material specifically for physical reproduction, controlling resolution, tonal structure, color separation, reproduction limits, and output sharpening before the files reach the printer. The result is a production process built around the finished object: preserving as much photographic information as possible as the image moves from the original file into the printed page.
-        </p>
-    </figcaption>
-</figure>
+                <p class="design-study-production" style="margin-top: 0.35rem;">
+                    Print gives the field record a life beyond the screen: a physical volume designed to be owned, shelved, annotated, circulated, and preserved. The photographs are treated as part of the documentary record, not merely as illustrations. P1 Lab’s image-conditioning system prepares photographic material specifically for physical reproduction, controlling resolution, tonal structure, color separation, reproduction limits, and output sharpening before the files reach the printer. The result is a production process built around the finished object: preserving as much photographic information as possible as the image moves from the original file into the printed page.
+                </p>
+            </figcaption>
+        </figure>
     </div>
 </section>
 
-<!-- 06 — COMMERCIAL PARTNERSHIP -->
+<!-- 07 — INSTITUTIONAL PARTICIPATION -->
 <section id="partnership" class="pub-section">
     <div class="container">
 
         <div class="section-meta">
-            <span class="section-index">06</span>
-            <h2 class="section-subtitle">Commercial Partnership</h2>
+            <span class="section-index">07</span>
+            <h2 class="section-subtitle">Institutional Participation</h2>
         </div>
 
         <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">
-            Independent publication. Commercial participation. Editorial independence.
+            Independent publication. Institutional participation. Editorial independence.
         </h3>
 
         <div class="prose-block">
@@ -929,49 +967,90 @@ footer {
             </p>
 
             <p>
-                Commercial partners participate through a client-development program built around the finished monograph. The program is designed not as conventional advertising, but as a means of placing a substantial Florida documentary work directly into the hands of clients, prospects, collaborators, and other important relationships.
+                Institutions can participate in FLORIDA FIELD RECORD in two independent ways: through the editorial documentation of their work where relevant to the subject, and through advance acquisition of finished books for institutional and client distribution. They may undertake either or both.
+            </p>
+
+            <p>
+                This is not advertising inventory. The institution acquires a real book.
+            </p>
+
+            <p>
+                Editorial participation and institutional acquisition are separate commercial relationships; neither purchases editorial control.
             </p>
 
             <p class="highlight-statement">
-                Commercial partners are selected according to relevance to the work and the Florida landscape being documented. Commercial participation is limited by volume and subject relevance. Participation provides no editorial control over research, subject selection, interpretation, or conclusions.
+                Participating institutions are selected according to relevance to the work and the Florida landscape being documented. Institutional participation is limited by volume and subject relevance. Participation provides no editorial control over research, subject selection, interpretation, or conclusions.
             </p>
 
+        </div>
+
+        <div class="mono-label" style="margin-top: 3rem; margin-bottom: 1rem; color: var(--text-primary); font-size: 0.72rem; letter-spacing: 0.16em;">
+            Three Ways to Participate
         </div>
 
         <div class="partner-program-grid">
 
             <div class="program-item">
-                <h4 class="program-item-title">Client-Development Copies</h4>
+                <h4 class="program-item-title">Editorial Participation</h4>
                 <p class="program-item-desc">
-                    Finished copies of the monograph for direct distribution to clients and prospects.
+                    Independent documentation of the institution's relevant work, expertise, place, project, or operational role within the subject of the volume.
                 </p>
             </div>
 
             <div class="program-item">
-                <h4 class="program-item-title">Publication Presentation</h4>
+                <h4 class="program-item-title">Institutional Acquisition</h4>
                 <p class="program-item-desc">
-                    A substantial, designed presentation within the finished volume.
+                    Advance reservation of finished copies at the institutional rate for distribution to clients, prospects, collaborators, and professional relationships.
                 </p>
             </div>
 
             <div class="program-item">
-                <h4 class="program-item-title">Digital Presence</h4>
+                <h4 class="program-item-title">Combined Participation</h4>
                 <p class="program-item-desc">
-                    A corresponding presence associated with the publication online.
+                    Editorial participation together with an institutional allocation of finished books.
+                </p>
+            </div>
+
+            <div class="program-item full-width-item">
+                <h4 class="program-item-title">Post-Publication Acquisition</h4>
+                <p class="program-item-desc">
+                    Additional institutional copies may be acquired after publication, subject to availability.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="mono-label" style="margin-top: 3rem; margin-bottom: 1rem; color: var(--text-primary); font-size: 0.72rem; letter-spacing: 0.16em;">
+            Institutional Allocation &amp; Mechanics
+        </div>
+
+        <div class="partner-program-grid">
+
+            <div class="program-item">
+                <h4 class="program-item-title">Advance Reservation</h4>
+                <p class="program-item-desc">
+                    Book allocations are reserved prior to press run to guarantee production volume and physical fulfillment.
                 </p>
             </div>
 
             <div class="program-item">
-                <h4 class="program-item-title">Trackable Response</h4>
+                <h4 class="program-item-title">Institutional Allocation</h4>
                 <p class="program-item-desc">
-                    A dedicated mechanism connecting interested readers directly with the participating business.
+                    Structured acquisition terms and volume tiers established for participating institutions.
                 </p>
             </div>
 
-            <div class="program-item" style="grid-column: 1 / -1;">
-                <h4 class="program-item-title">Founding Commercial Partner</h4>
+            <div class="program-item">
+                <h4 class="program-item-title">Phased Schedule</h4>
                 <p class="program-item-desc">
-                    Recognition as a founding commercial participant in the continuing series.
+                    Commitments are structured upon reservation, with final delivery aligned directly to press schedules.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <h4 class="program-item-title">Institutional Use</h4>
+                <p class="program-item-desc">
+                    Finished monographs are curated for distribution to clients, prospects, collaborators, and key relationships.
                 </p>
             </div>
 
@@ -979,23 +1058,23 @@ footer {
 
         <div class="partnership-inquiries">
             <p class="item-body" style="margin-bottom: 1.25rem;">
-                Commercial participation is limited by volume and is structured around the individual requirements of each publication. Businesses interested in participating may request the current partner brief.
+                Institutions considering editorial participation, advance book acquisition, or both may request the current Institutional Participation Brief.
             </p>
 
-            <a href="mailto:Pro1Lab@proton.me?subject=FLORIDA%20FIELD%20RECORD%20—%20Commercial%20Partner%20Brief%20Request" class="inquiry-link">
-                REQUEST THE COMMERCIAL PARTNER BRIEF &rarr;
+            <a href="mailto:Pro1Lab@proton.me?subject=FLORIDA%20FIELD%20RECORD%20—%20Institutional%20Participation%20Brief%20Request" class="inquiry-link">
+                REQUEST THE INSTITUTIONAL PARTICIPATION BRIEF &rarr;
             </a>
         </div>
 
     </div>
 </section>
 
-<!-- 07 — CONTACT -->
+<!-- 08 — CONTACT -->
 <footer id="contact">
     <div class="container">
 
         <div class="section-meta">
-            <span class="section-index">07</span>
+            <span class="section-index">08</span>
             <h2 class="section-subtitle">Contact</h2>
         </div>
 
