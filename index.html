@@ -1,4 +1,5 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -48,7 +49,9 @@ a { color: inherit; text-decoration: none; }
 
 header {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     background: rgba(252, 250, 242, 0.95);
     backdrop-filter: blur(8px);
@@ -455,32 +458,87 @@ footer {
 }
 
 @media (max-width: 800px) {
-    .container { width: min(calc(100% - 32px), var(--max-width)); }
-    .header-inner { min-height: 70px; padding: 14px 0; align-items: center; }
+    .container {
+        width: min(calc(100% - 32px), var(--max-width));
+    }
+
+    .header-inner {
+        min-height: 70px;
+        padding: 14px 0;
+        align-items: center;
+    }
+
     .brand { font-size: 18px; }
-    nav { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
     nav a { font-size: 8px; }
+
     .hero { min-height: auto; }
-    .hero-content { padding: 120px 0 90px; }
-    h1 { font-size: clamp(42px, 11vw, 54px); }
+
+    .hero-content {
+        padding: 120px 0 90px;
+    }
+
+    h1 {
+        font-size: clamp(42px, 11vw, 54px);
+    }
+
     .hero-intro { font-size: 14px; }
+
     section { padding: 80px 0; }
-    .section-header { grid-template-columns: 1fr; gap: 13px; margin-bottom: 45px; }
+
+    .section-header {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        margin-bottom: 45px;
+    }
+
     .section-title { font-size: 34px; }
+
     .research-feature-grid,
     .research-secondary-grid,
-    .systems-grid { grid-template-columns: 1fr; }
+    .systems-grid {
+        grid-template-columns: 1fr;
+    }
+
     .research-feature { min-height: 340px; }
+
     .research-feature h3 { font-size: 32px; }
-    .output-row { grid-template-columns: 1fr; gap: 16px; }
-    .desk-bridge { flex-direction: column; align-items: flex-start; }
-    .record-grid { grid-template-columns: 1fr; gap: 45px; }
+
+    .output-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .desk-bridge {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .record-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
     .record-statement { font-size: 28px; }
-    .footer-inner { flex-direction: column; }
-    .footer-contact { text-align: left; }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .footer-contact {
+        text-align: left;
+    }
 }
 </style>
+
 </head>
+
 <body>
 
 <header>
@@ -497,298 +555,422 @@ footer {
 </header>
 
 <main>
+
 <section class="hero">
     <div class="container">
         <div class="hero-content">
             <div class="eyebrow">Independent Research &amp; Publishing</div>
-            <h1>Research into complex subjects and systems.</h1>
-            <p class="hero-intro">
-                P1Lab is an independent research and publishing practice
-                investigating subjects that require sustained inquiry,
-                evidence, reconstruction and interpretation. The work crosses
-                physical systems, technologies, materials, places, cultural
-                history and applied knowledge.
-            </p>
-        </div>
+
+
+        <h1>Research into complex subjects and systems.</h1>
+
+        <p class="hero-intro">
+            P1Lab is an independent research and publishing practice
+            investigating subjects that require sustained inquiry,
+            evidence, reconstruction and interpretation. The work crosses
+            physical systems, technologies, materials, places, cultural
+            history and applied knowledge.
+        </p>
     </div>
+</div>
+
+
 </section>
 
 <section id="research">
     <div class="container">
-        <div class="section-header">
-            <div class="section-number">01 / Research</div>
-            <div>
-                <h2 class="section-title">Current investigations.</h2>
-                <p class="section-intro">
-                    Each investigation begins with a difficult question,
-                    an insufficient explanation, or a system that requires
-                    closer examination. Subjects are selected for the quality
-                    of the inquiry they demand, not for conformity to an
-                    industry category.
-                </p>
-            </div>
-        </div>
 
-        <div class="research-feature-grid">
-            <article class="research-feature">
-                <div>
-                    <div class="research-feature-number">01 / Geographic Field Record</div>
-                    <h3>Florida Field Record</h3>
-                    <p>
-                        An independent monographic field-research program
-                        documenting Florida through landscape, infrastructure,
-                        architecture, material culture, history and the systems
-                        that shape particular places.
-                    </p>
-                    <div class="research-meta">Field Research · Place · Landscape · Cultural History · Publishing</div>
-                </div>
-                <a class="card-link" href="florida2.html">Enter the Field Record →</a>
-            </article>
 
-            <article class="research-feature">
-                <div>
-                    <div class="research-feature-number">02 / Geographic Field Record</div>
-                    <h3>Korea: Material Culture Series</h3>
-                    <p>
-                        A multi-volume field research program examining Korea
-                        through its physical, institutional, and material systems—spanning
-                        international medical travel, manufacturing, domestic architecture,
-                        and the underlying theory of physical culture.
-                    </p>
-                    <div class="research-meta">Field Research · Infrastructure · Material Systems · Monographic Series</div>
-                </div><a class="card-link" href="Korea.Medical.Travel.html">Enter Korea: Medical Travel Overview→</a>
-            </article>
-        </div>
+    <div class="section-header">
+        <div class="section-number">01 / Research</div>
 
-        <div class="research-secondary-grid">
-            <article class="research-secondary">
-                <div>
-                    <div class="research-secondary-number">03 / Monographic Music Series</div>
-                    <h3>NS Design Electric Cello Study</h3>
-                    <p>
-                        A five-volume research program examining the electric
-                        cello across its historical, physical, mechanical,
-                        expressive and signal dimensions, beginning with
-                        controlled investigation of the instrument's active
-                        and passive states.
-                    </p>
-                    <div class="research-meta">Instrument Systems · Signal Research · Physical Study</div>
-                </div>
-            </article>
+        <div>
+            <h2 class="section-title">Current investigations.</h2>
 
-            <article class="research-secondary">
-    <div>
-        <div class="research-secondary-number">04 / Monographic Music Series</div>
-        <h3>u-he Sound Design Atlas</h3>
-        <p class="research-subtitle">
-            An Eight-Volume Research Program in Electronic Sound, Synthesis,
-            and Musical Idiom
-        </p>
-        <p>
-            An eight-volume research program mapping the structures, practices,
-            instruments, and musical idioms of electronic sound design across
-            genre, synthesis, and production.
-        </p>
-        <div class="research-meta">Sound Design · Taxonomy · Electronic Music</div>
-    </div>
-    <a class="card-link" href="u-he.project.html">Enter the Atlas →</a>
-</article>
-
-           <article class="research-secondary">
-    <div>
-        <div class="research-secondary-number">05 / Applied Materials Research</div>
-        <h3>Edible Films, Food-Built Materials &amp; Garum</h3>
-        <p>
-            Independent bench-scale research into agricultural, botanical, fungal, and marine materials as functional food and material systems. Work examines edible films, food-built materials, natural composites, and enzymatically transformed liquids such as garum through direct formulation and bench experimentation.
-        </p><bR>
-        <p>
-            Research investigates how primary materials behave under fractionation, formulation, casting, drying, and biotransformation, building a comparative materials library organized around physical performance, chemical behavior, processing characteristics, and cultural use.
-        </p><br>
-        <p>
-            The objective is not the development of isolated recipes, but a growing body of applied knowledge about how food materials can be understood, modified, combined, and documented as functional systems.
-        </p>
-        <div class="research-meta">Applied R&amp;D · Food Materials · Bench Research · Biotransformation</div>
-    </div>
-</article>
-
-            <article class="research-secondary">
-                <div>
-                    <div class="research-secondary-number">06 / Cultural Research Incubator</div>
-                    <h3>Cultural &amp; Historical Research</h3>
-                    <p>
-                        Long-term historical and cultural inquiry serving as the intellectual 
-                        incubator for forthcoming monographic book series, essays, and 
-                        published dispatches across material history and technological development.
-                    </p>
-                    <div class="research-meta">Incubator · History · Culture · Primary Sources · Publishing</div>
-                </div>
-            </article>
-        </div>
-
-        <div class="desk-bridge">
-            <p>
-                Research capacity is also available to organizations requiring independent investigation, technical reconstruction, R&amp;D, or editorial production.
+            <p class="section-intro">
+                Each investigation begins with a difficult question,
+                an insufficient explanation, or a system that requires
+                closer examination. Subjects are selected for the quality
+                of the inquiry they demand, not for conformity to an
+                industry category.
             </p>
-            <a class="desk-link" href="desk.html">Enter the Desk →</a>
         </div>
     </div>
+
+    <div class="research-feature-grid">
+
+        <article class="research-feature">
+            <div>
+                <div class="research-feature-number">01 / Geographic Field Record</div>
+
+                <h3>Florida Field Record</h3>
+
+                <p>
+                    An independent monographic field-research program
+                    documenting Florida through landscape, infrastructure,
+                    architecture, material culture, history and the systems
+                    that shape particular places.
+                </p>
+
+                <div class="research-meta">
+                    Field Research · Place · Landscape · Cultural History · Publishing
+                </div>
+            </div>
+
+            <a class="card-link" href="florida2.html">
+                Enter the Field Record →
+            </a>
+        </article>
+
+        <article class="research-feature">
+            <div>
+                <div class="research-feature-number">02 / Geographic Field Record</div>
+
+                <h3>Korea: Material Culture Series</h3>
+
+                <p>
+                    A multi-volume field research program examining Korea
+                    through its physical, institutional, and material systems—spanning
+                    international medical travel, manufacturing, domestic architecture,
+                    and the underlying theory of physical culture.
+                </p>
+
+                <div class="research-meta">
+                    Field Research · Infrastructure · Material Systems · Monographic Series
+                </div>
+            </div>
+
+            <a class="card-link" href="Korea.Medical.Travel.html">
+                Enter Korea: Medical Travel Overview →
+            </a>
+        </article>
+
+    </div>
+
+    <div class="research-secondary-grid">
+
+        <article class="research-secondary">
+            <div>
+                <div class="research-secondary-number">03 / Monographic Music Series</div>
+
+                <h3>NS Design Electric Cello Study</h3>
+
+                <p>
+                    A five-volume research program examining the electric
+                    cello across its historical, physical, mechanical,
+                    expressive and signal dimensions, beginning with
+                    controlled investigation of the instrument's active
+                    and passive states.
+                </p>
+
+                <div class="research-meta">
+                    Instrument Systems · Signal Research · Physical Study
+                </div>
+            </div>
+        </article>
+
+        <article class="research-secondary">
+            <div>
+                <div class="research-secondary-number">04 / Monographic Music Series</div>
+
+                <h3>u-he Sound Design Idiom Field Manual</h3>
+
+                <p>
+                    An eight-volume research program mapping sound-design
+                    practice through genre, instrument and sound-design
+                    idiom rather than treating synthesis as a collection
+                    of isolated techniques or presets.
+                </p>
+
+                <div class="research-meta">
+                    Sound Design · Taxonomy · Electronic Music
+                </div>
+            </div>
+
+            <a class="card-link" href="u-he.project.html">
+                Enter the Field Manual →
+            </a>
+        </article>
+
+        <article class="research-secondary">
+            <div>
+                <div class="research-secondary-number">05 / 24-Volume Research Program</div>
+
+                <h3>Arturia Sound Design &amp; Musical Idiom Field Manual</h3>
+
+                <p>
+                    A 24-volume research program mapping the Arturia ecosystem
+                    across historical instruments, contemporary software,
+                    hardware, performance systems, and the musical idioms
+                    that emerge from changing instrument architectures.
+                </p>
+
+                <div class="research-meta">
+                    Instrument Systems · Sound Design · Musical Idiom · Hardware · Software · Publishing
+                </div>
+            </div>
+        </article>
+
+        <article class="research-secondary">
+            <div>
+                <div class="research-secondary-number">06 / Commissioned Documentary Practice</div>
+
+                <h3>Commissioned Field Records</h3>
+
+                <p>
+                    Permanent documentary records of distinctive businesses,
+                    workshops, trades, facilities, and working environments—
+                    the people, work, place, process, objects, and history
+                    behind the enterprise.
+                </p>
+
+                <div class="research-meta">
+                    Field Research · Documentary Photography · Oral History · Editorial · Publishing
+                </div>
+            </div>
+
+            <a class="card-link" href="commissioned-field-records.html">
+                View the Field Record offering →
+            </a>
+        </article>
+
+    </div>
+
+    <div class="desk-bridge">
+        <p>
+            Research capacity is also available to organizations requiring independent investigation, technical reconstruction, R&amp;D, or editorial production.
+        </p>
+
+        <a class="desk-link" href="desk.html">
+            Enter the Desk →
+        </a>
+    </div>
+
+</div>
+
+
 </section>
 
 <section id="outputs">
     <div class="container">
-        <div class="section-header">
-            <div class="section-number">02 / Publications &amp; Outputs</div>
-            <div>
-                <h2 class="section-title">What research produces.</h2>
-                <p class="section-intro">
-                    Investigation is carried through to a durable form.
-                    The result may be a publication, field record, technical
-                    study, research dossier, knowledge structure, physical
-                    system or documented body of evidence.
-                </p>
-            </div>
-        </div>
 
-        <div class="output-list">
-            <div class="output-row">
-                <h3>Monographs &amp; Books</h3>
-                <p>
-                    Research developed into books, monographs, field records,
-                    technical publications and extended studies intended to
-                    preserve and communicate difficult subjects.
-                </p>
-            </div>
-            <div class="output-row">
-                <h3>Research Studies</h3>
-                <p>
-                    Structured investigations documenting evidence, methods,
-                    observations, analysis and conclusions across technical,
-                    physical, cultural and historical subjects.
-                </p>
-            </div>
-            <div class="output-row">
-                <h3>Technical &amp; Knowledge Systems</h3>
-                <p>
-                    Research translated into taxonomies, reference structures,
-                    documentation, application libraries, technical frameworks
-                    and other forms that make complex knowledge usable.
-                </p>
-            </div>
-            <div class="output-row">
-                <h3>Physical &amp; Applied Systems</h3>
-                <p>
-                    Where appropriate, research proceeds into formulations,
-                    material systems, processing architectures, instrument
-                    studies and other physical or technical outcomes.
-                </p>
-            </div>
-            <div class="output-row">
-                <h3>Research Archives</h3>
-                <p>
-                    Primary datasets, field records, photographic records, physical taxonomies, source documentation, and structural research archives built across extended investigations.
-                </p>
-            </div>
-            <div class="output-row">
-                <h3>Commercial Research Assets</h3>
-                <p>
-                    Selected research may also produce application research, product architectures, technical references, editorial assets, or other defined intellectual property.
-                </p>
-            </div>
+
+    <div class="section-header">
+        <div class="section-number">02 / Publications &amp; Outputs</div>
+
+        <div>
+            <h2 class="section-title">What research produces.</h2>
+
+            <p class="section-intro">
+                Investigation is carried through to a durable form.
+                The result may be a publication, field record, technical
+                study, research dossier, knowledge structure, physical
+                system or documented body of evidence.
+            </p>
         </div>
     </div>
+
+    <div class="output-list">
+
+        <div class="output-row">
+            <h3>Monographs &amp; Books</h3>
+
+            <p>
+                Research developed into books, monographs, field records,
+                technical publications and extended studies intended to
+                preserve and communicate difficult subjects.
+            </p>
+        </div>
+
+        <div class="output-row">
+            <h3>Research Studies</h3>
+
+            <p>
+                Structured investigations documenting evidence, methods,
+                observations, analysis and conclusions across technical,
+                physical, cultural and historical subjects.
+            </p>
+        </div>
+
+        <div class="output-row">
+            <h3>Technical &amp; Knowledge Systems</h3>
+
+            <p>
+                Research translated into taxonomies, reference structures,
+                documentation, application libraries, technical frameworks
+                and other forms that make complex knowledge usable.
+            </p>
+        </div>
+
+        <div class="output-row">
+            <h3>Physical &amp; Applied Systems</h3>
+
+            <p>
+                Where appropriate, research proceeds into formulations,
+                material systems, processing architectures, instrument
+                studies and other physical or technical outcomes.
+            </p>
+        </div>
+
+        <div class="output-row">
+            <h3>Research Archives</h3>
+
+            <p>
+                Primary datasets, field records, photographic records,
+                physical taxonomies, source documentation, and structural
+                research archives built across extended investigations.
+            </p>
+        </div>
+
+        <div class="output-row">
+            <h3>Commercial Research Assets</h3>
+
+            <p>
+                Selected research may also produce application research,
+                product architectures, technical references, editorial
+                assets, or other defined intellectual property.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
 </section>
 
 <section id="record">
     <div class="container">
-        <div class="section-header">
-            <div class="section-number">03 / The Record</div>
-            <div>
-                <h2 class="section-title">Evidence of the work.</h2>
-                <p class="section-intro">
-                    Capability is demonstrated through the record of what has been researched, documented, built, published, and delivered.
-                </p>
-            </div>
-        </div>
 
-        <div class="record-grid">
-            <div class="record-statement">
-                The present practice rests on more than three decades of research, systems development, writing, and publishing.
-            </div>
 
-            <div class="record-details">
-                <div class="record-item">
-                    <span class="record-label">Publishing Record</span>
-                    <div class="record-value">31 books in print</div>
-                    <div class="record-description">
-                        A multidisciplinary publishing record spanning technical systems, philosophy, theology, cultural history, psychogeography, culinary engineering, applied research and related fields. The catalog ranges from formal research and reference works to practical field books, notebooks and deliberately idiosyncratic studies—united by a belief in the physical book as a serious instrument for thinking, making and recording.
-                    </div>
-                </div>
+    <div class="section-header">
+        <div class="section-number">03 / The Record</div>
 
-                <div class="record-item">
-                    <span class="record-label">Research Practice</span>
-                    <div class="record-value">More than three decades</div>
-                    <div class="record-description">
-                        Independent work across research, software and systems,
-                        technical development, writing, publishing and applied
-                        investigation.
-                    </div>
-                </div>
+        <div>
+            <h2 class="section-title">Evidence of the work.</h2>
 
-                <div class="record-item">
-                    <span class="record-label">Present Form</span>
-                    <div class="record-value">Independent Research &amp; Publishing</div>
-                    <div class="record-description">
-                        A selective practice organized around sustained inquiry,
-                        evidence, reconstruction, interpretation and durable
-                        publication.
-                    </div>
-                </div>
-
-                <div class="record-item">
-                    <span class="record-label">Operating Principle</span>
-                    <div class="record-value">Evidence before assumption.</div>
-                    <div class="record-description">
-                        Independent of institutional assumptions.
-                        Accountable to evidence.
-                    </div>
-                </div>
-            </div>
+            <p class="section-intro">
+                Capability is demonstrated through the record of what has
+                been researched, documented, built, published, and delivered.
+            </p>
         </div>
     </div>
+
+    <div class="record-grid">
+
+        <div class="record-statement">
+            The present practice rests on more than three decades of research, systems development, writing, and publishing.
+        </div>
+
+        <div class="record-details">
+
+            <div class="record-item">
+                <span class="record-label">Publishing Record</span>
+
+                <div class="record-value">
+                    31 books in print
+                </div>
+
+                <div class="record-description">
+                    A multidisciplinary publishing record spanning technical
+                    systems, philosophy, theology, cultural history,
+                    psychogeography, culinary engineering, applied research
+                    and related fields.
+                </div>
+            </div>
+
+            <div class="record-item">
+                <span class="record-label">Research Practice</span>
+
+                <div class="record-value">
+                    More than three decades
+                </div>
+
+                <div class="record-description">
+                    Independent work across research, software and systems,
+                    technical development, writing, publishing and applied
+                    investigation.
+                </div>
+            </div>
+
+            <div class="record-item">
+                <span class="record-label">Present Form</span>
+
+                <div class="record-value">
+                    Independent Research &amp; Publishing
+                </div>
+
+                <div class="record-description">
+                    A selective practice organized around sustained inquiry,
+                    evidence, reconstruction, interpretation and durable
+                    publication.
+                </div>
+            </div>
+
+            <div class="record-item">
+                <span class="record-label">Operating Principle</span>
+
+                <div class="record-value">
+                    Evidence before assumption.
+                </div>
+
+                <div class="record-description">
+                    Independent of institutional assumptions.
+                    Accountable to evidence.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 </section>
 
 <section id="systems" class="systems-section">
     <div class="container">
-        <div class="section-header">
-            <div class="section-number">04 / Systems Practice</div>
-            <div>
-                <h2 class="section-title">Technical practice.</h2>
-                <p class="section-intro">
-                    Technical investigation and development across systems, materials,
-                    signals and physical processes.
-                </p>
-            </div>
-        </div>
 
-        <div class="systems-grid">
-            <article class="systems-item">
-                <h3>Product as Platform</h3>
-                <p>
-                    A commercial product is treated as a platform rather than a fixed category. The work investigates what the underlying thing actually is, what structures and states it contains, and what other useful food, material or industrial forms may be developed from it.
-                </p>
-            </article>
 
-            <article class="systems-item">
-                <h3>Technical Systems</h3>
-                <p>
-                    Projects include deterministic media stabilization,
-                    signal conditioning, verification and audit systems,
-                    preservation-grade asset architecture, provenance
-                    infrastructure, transducer modeling and deterministic audio processing.
-                </p>
-            </article>
+    <div class="section-header">
+        <div class="section-number">04 / Systems Practice</div>
+
+        <div>
+            <h2 class="section-title">Technical practice.</h2>
+
+            <p class="section-intro">
+                Technical investigation and development across systems, materials,
+                signals and physical processes.
+            </p>
         </div>
     </div>
+
+    <div class="systems-grid">
+
+        <article class="systems-item">
+            <h3>Product as Platform</h3>
+
+            <p>
+                A commercial product is treated as a platform rather than a fixed category.
+                The work investigates what the underlying thing actually is, what structures
+                and states it contains, and what other useful food, material or industrial
+                forms may be developed from it.
+            </p>
+        </article>
+
+        <article class="systems-item">
+            <h3>Technical Systems</h3>
+
+            <p>
+                Projects include deterministic media stabilization,
+                signal conditioning, verification and audit systems,
+                preservation-grade asset architecture, provenance
+                infrastructure, transducer modeling and deterministic audio processing.
+            </p>
+        </article>
+
+    </div>
+</div>
+
+
 </section>
 
 <section class="closing">
@@ -800,18 +982,32 @@ footer {
         </p>
     </div>
 </section>
+
 </main>
 
 <footer>
     <div class="container footer-inner">
-        <div class="footer-brand">P1Lab</div>
-        <div class="footer-contact">
-            <div>
-                <a href="mailto:Pro1Lab@proton.me">Pro1Lab@proton.me</a>
-            </div>
-            <div class="footer-note">Independent Research &amp; Publishing</div>
+
+
+    <div class="footer-brand">
+        P1Lab
+    </div>
+
+    <div class="footer-contact">
+        <div>
+            <a href="mailto:Pro1Lab@proton.me">
+                Pro1Lab@proton.me
+            </a>
+        </div>
+
+        <div class="footer-note">
+            Independent Research &amp; Publishing
         </div>
     </div>
+
+</div>
+
+
 </footer>
 
 </body>
