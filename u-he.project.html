@@ -1,895 +1,1690 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>u-he Sound Design Atlas — P1Lab</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-color: #faf8f5;
-            --surface-color: #f2efe9;
-            --text-primary: #1a1a1a;
-            --text-muted: #4a4a46;
-            --text-dim: #76746e;
-            --accent-neutral: #5c5953;
-            --border-subtle: rgba(26, 26, 26, 0.12);
-            --border-strong: rgba(26, 26, 26, 0.28);
-
-            --font-serif: 'Cormorant Garamond', Georgia, serif;
-            --font-sans: 'Inter', -apple-system, sans-serif;
-            --font-mono: 'Courier New', Courier, monospace;
-            --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 130px;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            font-size: 16px;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            overflow-x: hidden;
-            background-color: var(--bg-color);
-        }
-
-        a {
-            color: inherit;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-serif);
-            font-weight: 300;
-            letter-spacing: 0.01em;
-        }
-
-        .mono-label {
-            font-family: var(--font-sans);
-            font-weight: 400;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-dim);
-        }
-
-        .container {
-            max-width: 840px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(250, 248, 245, 0.96);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 1.1rem 0 0.9rem;
-        }
-
-        .brand-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.75rem;
-        }
-
-        .brand-mark {
-            font-family: var(--font-serif);
-            font-size: 1.15rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        .parent-link {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-dim);
-            text-decoration: none;
-            transition: color 0.2s var(--transition-smooth);
-        }
-
-        .parent-link:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem 1.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            transition: color 0.2s var(--transition-smooth);
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .hero {
-            min-height: 55vh;
-            display: flex;
-            align-items: center;
-            padding-top: 8.5rem;
-            padding-bottom: 4rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .hero-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2.3rem, 4.2vw, 3.3rem);
-            font-weight: 300;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            line-height: 1.08;
-            margin: 0.35rem 0 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .hero-manifesto {
-            font-size: 0.98rem;
-            color: var(--text-muted);
-            font-weight: 350;
-            line-height: 1.75;
-            max-width: 760px;
-        }
-
-        .hero-manifesto p {
-            margin-bottom: 1.1rem;
-        }
-
-        .hero-manifesto p.lead-statement {
-            font-family: var(--font-serif);
-            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-            line-height: 1.4;
-            color: var(--text-primary);
-            font-weight: 300;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero-quote {
-            margin: 2.25rem 0 0;
-            padding: 1.75rem 0 1.65rem;
-            border-top: 1px solid var(--border-strong);
-            border-bottom: 1px solid var(--border-subtle);
-            max-width: 780px;
-        }
-
-        .hero-quote p {
-            font-family: var(--font-serif);
-            font-size: clamp(1.15rem, 2.1vw, 1.4rem);
-            line-height: 1.48;
-            color: var(--text-primary);
-            font-weight: 300;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero-quote-attribution {
-            font-family: var(--font-sans);
-            font-size: 0.68rem;
-            line-height: 1.55;
-            text-transform: uppercase;
-            letter-spacing: 0.11em;
-            color: var(--text-dim);
-        }
-
-        .hero-quote-attribution strong {
-            display: block;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 0.15rem;
-        }
-
-        .pub-section {
-            padding: 4.5rem 0;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .section-meta {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-index {
-            font-family: var(--font-serif);
-            font-size: 1rem;
-            color: var(--text-dim);
-            font-style: italic;
-        }
-
-        .section-subtitle {
-            font-size: clamp(1.6rem, 2.8vw, 2.1rem);
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .section-desc {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            font-weight: 350;
-            max-width: 720px;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem 3rem;
-        }
-
-        .grid-item {
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .item-title {
-            font-size: 1.1rem;
-            font-weight: 400;
-            margin-bottom: 0.35rem;
-            color: var(--text-primary);
-        }
-
-        .item-body {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            font-weight: 350;
-            line-height: 1.65;
-        }
-
-        .full-width-item {
-            grid-column: 1 / -1;
-        }
-
-        .volume-card {
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .volume-card:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .volume-header {
-            display: flex;
-            align-items: baseline;
-            gap: 0.75rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .volume-number {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            color: var(--text-dim);
-        }
-
-        .volume-title {
-            font-size: 1.35rem;
-            font-weight: 400;
-            color: var(--text-primary);
-        }
-
-        .volume-topics {
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-bottom: 0.85rem;
-        }
-
-        .comp-image-block {
-            margin: 2.5rem 0;
-            border: 1px solid var(--border-subtle);
-            background: var(--surface-color);
-            padding: 1rem;
-        }
-
-        .comp-image-block img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border: 1px solid var(--border-subtle);
-        }
-
-        .comp-caption {
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-top: 0.85rem;
-            line-height: 1.5;
-        }
-
-        .prose-block {
-            margin-bottom: 2.5rem;
-        }
-
-        .prose-block p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 350;
-            line-height: 1.7;
-            margin-bottom: 1.25rem;
-        }
-
-        .prose-block p.highlight-statement {
-            color: var(--text-primary);
-            font-weight: 400;
-        }
-
-        .partner-program-grid {
-            margin-top: 2.5rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-strong);
-        }
-
-        .partner-program-grid .program-item {
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .partner-program-grid .program-item-title {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .partner-program-grid .program-item-desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 350;
-            line-height: 1.6;
-        }
-
-        .partnership-inquiries {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .inquiry-link {
-            display: inline-block;
-            color: var(--text-primary);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            text-decoration: none;
-            border-bottom: 1px solid var(--border-strong);
-            padding-bottom: 0.15rem;
-            transition: color 0.2s var(--transition-smooth);
-        }
-
-        .inquiry-link:hover {
-            color: var(--text-dim);
-            border-color: var(--text-dim);
-        }
-
-        footer {
-            padding: 4.5rem 0 4rem;
-            background-color: var(--surface-color);
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .signature-block {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .signature-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        .footer-contact {
-            display: inline-block;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            letter-spacing: 0.02em;
-            margin-top: 0.75rem;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border 0.2s var(--transition-smooth);
-        }
-
-        .footer-contact:hover {
-            border-bottom-color: var(--text-primary);
-        }
-
-        @media (max-width: 768px) {
-            .content-grid,
-            .partner-program-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 0 1.25rem;
-            }
-
-            .pub-section {
-                padding: 3.5rem 0;
-            }
-
-            .hero-title {
-                font-size: 2.1rem;
-            }
-
-            .hero {
-                padding-top: 7.5rem;
-                min-height: auto;
-            }
-
-            .hero-quote {
-                padding: 1.4rem 0 1.35rem;
-            }
-
-            .hero-quote p {
-                font-size: 1.15rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>u-he Sound Design Atlas — P1Lab</title>
+
+<meta name="description" content="u-he Sound Design Atlas is an eight-volume P1Lab research and learning program mapping the structures, practices, instruments, and musical idioms of electronic sound design.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bone: #f3f0e9;
+    --paper: #f8f6f0;
+    --ink: #20201e;
+    --muted: #68665f;
+    --line: #d8d4ca;
+    --soft: #e9e5dc;
+    --white: #fbfaf6;
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: "Courier New", Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bone);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(243, 240, 233, 0.95);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.brand {
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.brand small {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--sans);
+    font-size: 7px;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.main-nav a {
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--ink);
+}
+
+/* --------------------------------------------------
+   HERO
+-------------------------------------------------- */
+
+.hero {
+    padding: 118px 0 112px;
+    border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+    margin-bottom: 25px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero h1 {
+    max-width: 950px;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(52px, 7vw, 88px);
+    line-height: 0.93;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+.hero-subtitle {
+    max-width: 780px;
+    margin: 28px 0 0;
+    font-family: var(--serif);
+    font-size: clamp(25px, 3vw, 35px);
+    line-height: 1.2;
+    color: #35342f;
+}
+
+.hero-lead {
+    max-width: 820px;
+    margin: 42px 0 0;
+    font-family: var(--serif);
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.25;
+    color: #35342f;
+}
+
+.hero-copy {
+    max-width: 800px;
+    margin: 30px 0 0;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.85;
+}
+
+.hero-statement {
+    max-width: 790px;
+    margin-top: 45px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1.25;
+}
+
+.hero-statement strong {
+    font-weight: 500;
+}
+
+.hero-quote {
+    max-width: 840px;
+    margin-top: 58px;
+    padding: 30px 0 28px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-quote .quote-label {
+    margin-bottom: 18px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero-quote p {
+    margin: 0 0 25px;
+    font-family: var(--serif);
+    font-size: clamp(25px, 3vw, 33px);
+    line-height: 1.28;
+}
+
+.hero-quote-attribution {
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero-quote-attribution strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+/* --------------------------------------------------
+   SECTION STRUCTURE
+-------------------------------------------------- */
+
+.section {
+    padding: 105px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 50px;
+    margin-bottom: 70px;
+}
+
+.section-number {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.section-title {
+    max-width: 820px;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(40px, 5vw, 61px);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+}
+
+.section-intro {
+    max-width: 760px;
+    margin: 25px 0 0;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* --------------------------------------------------
+   CONTENT GRID
+-------------------------------------------------- */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.grid-item {
+    min-height: 220px;
+    padding: 34px;
+    background: var(--paper);
+}
+
+.grid-item.full-width {
+    grid-column: 1 / -1;
+    min-height: auto;
+}
+
+.grid-item .num {
+    margin-bottom: 28px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.item-title {
+    margin: 0 0 13px;
+    font-family: var(--serif);
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.item-body {
+    max-width: 560px;
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* --------------------------------------------------
+   VOLUME ARCHITECTURE
+-------------------------------------------------- */
+
+.volumes-stack {
+    margin-top: 55px;
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.volume-card {
+    padding: 32px 34px 36px;
+    background: var(--paper);
+}
+
+.volume-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 7px;
+}
+
+.volume-number {
+    flex: 0 0 auto;
+    font-family: var(--serif);
+    font-size: 24px;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.volume-title {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.volume-topics {
+    margin-bottom: 15px;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.volume-card .item-body {
+    max-width: 780px;
+}
+
+/* --------------------------------------------------
+   DESIGN COMP
+-------------------------------------------------- */
+
+.comp-section {
+    background: var(--paper);
+}
+
+.comp-figure {
+    margin: 0 0 65px;
+}
+
+.comp-frame {
+    padding: 16px;
+    background: var(--bone);
+    border: 1px solid var(--line);
+}
+
+.comp-frame img {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid var(--line);
+}
+
+.comp-caption {
+    padding: 20px 6px 0;
+}
+
+.comp-caption-label {
+    margin-bottom: 9px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.comp-caption p {
+    max-width: 820px;
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* --------------------------------------------------
+   APPROACH
+-------------------------------------------------- */
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.approach-lead {
+    font-family: var(--serif);
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.12;
+}
+
+.approach-copy p {
+    margin: 0 0 25px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.85;
+}
+
+.approach-example {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+}
+
+.approach-example h3 {
+    margin: 0 0 12px;
+    font-family: var(--serif);
+    font-size: 31px;
+    font-weight: 500;
+}
+
+.approach-example p {
+    margin: 0;
+}
+
+/* --------------------------------------------------
+   PRESETS
+-------------------------------------------------- */
+
+.preset-note {
+    max-width: 830px;
+    margin-top: 45px;
+    padding: 28px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--serif);
+    font-size: 27px;
+    line-height: 1.3;
+}
+
+/* --------------------------------------------------
+   DARK INSTRUMENT ENVIRONMENT
+-------------------------------------------------- */
+
+.environment-section {
+    background: #272724;
+    color: #eeeae1;
+}
+
+.environment-section .section-number {
+    color: #aaa79f;
+}
+
+.environment-section .section-title {
+    color: #f3f0e9;
+}
+
+.environment-section .section-intro {
+    color: #bcb8af;
+}
+
+.environment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: #484741;
+    border: 1px solid #484741;
+}
+
+.environment-card {
+    min-height: 230px;
+    padding: 34px;
+    background: #2d2d29;
+}
+
+.environment-card .label {
+    margin-bottom: 28px;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #aaa79f;
+}
+
+.environment-card h3 {
+    margin: 0 0 15px;
+    font-family: var(--serif);
+    font-size: 33px;
+    line-height: 1;
+    font-weight: 500;
+    color: #f3f0e9;
+}
+
+.environment-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #bcb8af;
+    line-height: 1.75;
+}
+
+.environment-statement {
+    max-width: 820px;
+    margin-top: 42px;
+    padding-top: 28px;
+    border-top: 1px solid #484741;
+    font-family: var(--serif);
+    font-size: clamp(29px, 3.7vw, 43px);
+    line-height: 1.12;
+    color: #f3f0e9;
+}
+
+/* --------------------------------------------------
+   PARTNERSHIP
+-------------------------------------------------- */
+
+.partner-intro {
+    max-width: 850px;
+    margin-bottom: 48px;
+}
+
+.partner-intro p {
+    margin: 0 0 24px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.85;
+}
+
+.partner-intro .highlight {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 27px;
+    line-height: 1.3;
+}
+
+.partner-program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.program-item {
+    min-height: 190px;
+    padding: 30px;
+    background: var(--paper);
+}
+
+.program-item-title {
+    margin: 0 0 10px;
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.program-item-desc {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.partnership-inquiries {
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+}
+
+.inquiry-copy {
+    margin: 0 0 18px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.inquiry-link {
+    display: inline-block;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------
+   CTA
+-------------------------------------------------- */
+
+.cta {
+    padding: 130px 0;
+    text-align: center;
+}
+
+.cta .eyebrow {
+    margin-bottom: 25px;
+}
+
+.cta h2 {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: var(--serif);
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 0.98;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.cta p {
+    max-width: 680px;
+    margin: 32px auto 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.cta-link {
+    display: inline-block;
+    margin-top: 34px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+
+footer {
+    padding: 45px 0;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.footer-brand {
+    font-family: var(--serif);
+    font-size: 29px;
+}
+
+.footer-meta {
+    text-align: right;
+    font-size: 10px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.footer-meta a:hover {
+    color: var(--ink);
+}
+
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(100% - 34px, 700px);
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 80px 0 78px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .section-head {
+        display: block;
+        margin-bottom: 45px;
+    }
+
+    .section-number {
+        margin-bottom: 18px;
+    }
+
+    .content-grid,
+    .environment-grid,
+    .partner-program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item.full-width {
+        grid-column: auto;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .materials-list {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-meta {
+        text-align: left;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .header-inner {
+        min-height: 64px;
+    }
+
+    .brand {
+        font-size: 21px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-subtitle,
+    .hero-lead {
+        font-size: 25px;
+    }
+
+    .section-title {
+        font-size: 42px;
+    }
+
+    .grid-item,
+    .environment-card,
+    .program-item {
+        padding: 28px;
+    }
+
+    .volume-card {
+        padding: 28px;
+    }
+
+    .volume-title {
+        font-size: 30px;
+    }
+
+    .comp-frame {
+        padding: 10px;
+    }
+
+    .cta {
+        padding: 90px 0;
+    }
+
+    .cta h2 {
+        font-size: 48px;
+    }
+}
+</style>
+
 </head>
 
 <body>
 
-<header>
-    <div class="container">
-        <div class="brand-row">
-            <a href="#" class="brand-mark">u-he SOUND DESIGN ATLAS</a>
-            <a href="/" class="parent-link">&larr; P1 Lab</a>
-        </div>
+<header class="site-header">
+    <div class="container header-inner">
 
-        <ul class="nav-links">
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#volumes">Volumes</a></li>
-            <li><a href="#approach">Approach</a></li>
-            <li><a href="#presets">Presets</a></li>
-            <li><a href="#u-he">u-he</a></li>
-            <li><a href="#partnership">Partnership</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
+```
+    <a href="/" class="brand">
+        P1Lab
+        <small>Independent Research &amp; Publishing</small>
+    </a>
+
+    <nav class="main-nav">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#volumes">Volumes</a>
+        <a href="#approach">Approach</a>
+        <a href="#presets">Presets</a>
+        <a href="#u-he">u-he</a>
+        <a href="#partnership">Partnership</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</div>
+```
+
 </header>
 
-<!-- HERO -->
+<main>
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
 <section class="hero">
     <div class="container">
 
-        <span class="mono-label">RESEARCH &amp; LEARNING SERIES · EIGHT VOLUMES</span>
+```
+    <div class="eyebrow">
+        Research &amp; Learning Series / Eight Volumes
+    </div>
 
-        <h1 class="hero-title">u-he Sound Design Atlas</h1>
+    <h1>
+        u-he Sound Design Atlas
+    </h1>
 
-        <div class="hero-manifesto">
-            <p class="lead-statement">
-                An eight-volume research program mapping the structures, practices, instruments, and musical idioms of electronic sound design.
-            </p>
+    <div class="hero-subtitle">
+        Electronic Sound Through Instruments, Idioms, Structures &amp; Practice
+    </div>
 
-            <p>
-                Sound design is not primarily the memorization of synthesizer controls. It is the acquisition of a way of hearing.
-            </p>
+    <p class="hero-lead">
+        An eight-volume research program mapping the structures, practices, instruments, and musical idioms of electronic sound design.
+    </p>
 
-            <p>
-                The Atlas approaches electronic sound through the musical vocabularies in which that sound has developed—genre by genre, idiom by idiom—then investigates how those vocabularies can be constructed, varied, and extended inside u-he instruments.
-            </p>
+    <p class="hero-copy">
+        Sound design is not primarily the memorization of synthesizer controls. It is the acquisition of a way of hearing.
+    </p>
 
-            <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-top: 1.5rem;">
-                The result is a systematic study of electronic sound: its structures, instruments, histories, production practices, and musical uses.
-            </p>
+    <p class="hero-copy">
+        The Atlas approaches electronic sound through the musical vocabularies in which that sound has developed—genre by genre, idiom by idiom—then investigates how those vocabularies can be constructed, varied, and extended inside u-he instruments.
+    </p>
+
+    <div class="hero-statement">
+        <strong>The result is a systematic study of electronic sound: its structures, instruments, histories, production practices, and musical uses.</strong>
+    </div>
+
+    <div class="hero-quote">
+
+        <div class="quote-label">
+            Governing Principle
         </div>
 
-        <div class="hero-quote">
-            <div class="mono-label" style="margin-bottom: 1rem;">GOVERNING PRINCIPLE</div>
-            <p>
-                “The reader should be able to use an idea before fully understanding it, understand it before analyzing it, and analyze it without analysis becoming a prerequisite for musical use.”
-            </p>
-            <div class="hero-quote-attribution">
-                <strong>u-he Sound Design Atlas</strong>
-                Monographic Research Series<br>
-                P1Lab
-            </div>
+        <p>
+            “The reader should be able to use an idea before fully understanding it, understand it before analyzing it, and analyze it without analysis becoming a prerequisite for musical use.”
+        </p>
+
+        <div class="hero-quote-attribution">
+            <strong>u-he Sound Design Atlas</strong>
+            Monographic Research Series<br>
+            P1Lab
         </div>
 
     </div>
+
+</div>
+```
+
 </section>
 
-<!-- OVERVIEW -->
-<section id="overview" class="pub-section">
+<!-- ==================================================
+     01 / A DIFFERENT STARTING POINT
+================================================== -->
+
+<section class="section" id="overview">
     <div class="container">
 
-        <div class="section-meta">
-            <span class="section-index">01</span>
-            <h2 class="section-subtitle">A Different Starting Point</h2>
+```
+    <div class="section-head">
+
+        <div class="section-number">
+            01 / A Different Starting Point
         </div>
 
-        <p class="section-desc">
-            Most synthesis education moves from technology toward music: oscillator, filter, envelope, modulation, patch. The Atlas moves in the opposite direction—from recognizable musical sound toward the architecture that produces it.
-        </p>
+        <div>
+            <h2 class="section-title">
+                Start with what the ear recognizes.
+            </h2>
 
-        <div class="content-grid">
-            <div class="grid-item full-width-item">
-                <h4 class="item-title">From Hearing to Construction</h4>
-                <p class="item-body">
-                    A musician rarely begins by wanting a specific frequency ratio or modulation index. They hear something and ask how it behaves, and how something like it could be made. The Atlas begins with that question and works outward into the tools and principles that answer it.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">Musical Vocabulary First</h4>
-                <p class="item-body">
-                    Genres and idioms supply the evidence. Sound-design problems supply the questions. The u-he instruments provide a practical environment in which those questions can be heard and investigated.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">Transferable Judgment</h4>
-                <p class="item-body">
-                    The goal is not software mastery for its own sake. It is the development of musical judgment that travels across tools, environments, and genres.
-                </p>
-            </div>
+            <p class="section-intro">
+                Most synthesis education moves from technology toward music: oscillator, filter, envelope, modulation, patch. The Atlas moves in the opposite direction—from recognizable musical sound toward the architecture that produces it.
+            </p>
         </div>
+
     </div>
-</section>
 
-<!-- VOLUMES -->
-<section id="volumes" class="pub-section">
-    <div class="container">
 
-        <div class="section-meta">
-            <span class="section-index">02</span>
-            <h2 class="section-subtitle">The Eight Volumes</h2>
-        </div>
+    <div class="content-grid">
 
-        <p class="section-desc">
-            A complete curriculum spanning foundational synthesis, historical and contemporary genre vocabularies, texture and space, generative systems, and modern production practice.
-        </p>
+        <article class="grid-item full-width">
 
-        <div class="comp-image-block">
-            <img src="u-he design comp 1.jpg"
-                 alt="Design Comp: Complete 8-Volume Physical Sound Design Atlas Set on Workbench">
-            <div class="comp-caption">
-                Figure 2.1 — Physical Volume Architecture &amp; Complete Series Binding [Design Comp]
-            </div>
-        </div>
-
-        <div class="volumes-stack">
-
-            <div class="volume-card">
-                <div class="volume-header">
-                    <span class="volume-number">I</span>
-                    <h3 class="volume-title">The u-he Instrumentarium</h3>
-                </div>
-                <div class="volume-topics">Foundational Synthesis · Architecture · Utility &amp; Soundtrack</div>
-                <p class="item-body">
-                    Establishes the shared vocabulary for the series: oscillation, waveform, filtering, resonance, envelopes, modulation, feedback, phase, FM, wavetable synthesis, multi-stage envelopes, performance control, and spatial behavior.
-                </p>
+            <div class="num">
+                From Hearing to Construction
             </div>
 
-            <div class="volume-card">
-                <div class="volume-header">
-                    <span class="volume-number">II</span>
-                    <h3 class="volume-title">Trance, Rave, Techno &amp; Club Music</h3>
-                </div>
-                <div class="volume-topics">Rhythmic Electronic Synthesis · High-Energy Production</div>
-                <p class="item-body">
-                    Techno, Trance, Rave, House, Hardcore, Eurodance, Progressive House, Hardstyle and related idioms as a framework for rhythm, repetition, resonance, propulsion, bass architecture, and modulation.
-                </p>
+            <h3 class="item-title">
+                Sound first. Architecture second.
+            </h3>
+
+            <p class="item-body">
+                A musician rarely begins by wanting a specific frequency ratio or modulation index. They hear something and ask how it behaves, and how something like it could be made. The Atlas begins with that question and works outward into the tools and principles that answer it.
+            </p>
+
+        </article>
+
+
+        <article class="grid-item">
+
+            <div class="num">
+                01 / Musical Vocabulary
             </div>
 
-            <div class="volume-card">
-                <div class="volume-header">
-                    <span class="volume-number">III</span>
-                    <h3 class="volume-title">Breaks, Jungle &amp; Bass Music</h3>
-                </div>
-                <div class="volume-topics">Transient Dynamics · Bass Synthesis · Rhythmic Complexity</div>
-                <p class="item-body">
-                    Drum &amp; Bass, Jungle, Dubstep, Breakbeat, UK Garage, Grime, Footwork and Bassline—focused on transient behavior, low-frequency architecture, rhythmic displacement, and spectral density.
-                </p>
+            <h3 class="item-title">
+                Genre and idiom provide the evidence.
+            </h3>
+
+            <p class="item-body">
+                Genres and idioms supply the evidence. Sound-design problems supply the questions. The u-he instruments provide a practical environment in which those questions can be heard and investigated.
+            </p>
+
+        </article>
+
+
+        <article class="grid-item">
+
+            <div class="num">
+                02 / Transferable Judgment
             </div>
 
-            <div class="volume-card">
-                <div class="volume-header">
-                    <span class="volume-number">IV</span>
-                    <h3 class="volume-title">Dark Electronic &amp; Retro-Futurism</h3>
-                </div>
-                <div class="volume-topics">Historical Electronic Vocabulary · Contemporary Transformation</div>
-                <p class="item-body">
-                    Synthwave, EBM, Industrial, Darkwave, Chiptune, Electro, Post-Punk and Synth-Pop: how historical electronic vocabularies persist, mutate, and acquire new meanings.
-                </p>
-            </div>
+            <h3 class="item-title">
+                Skills should travel beyond the software.
+            </h3>
 
-            <div class="volume-card">
-                <div class="volume-header">
-                    <span class="volume-number">V</span>
-                    <h3 class="volume-title">Downtempo, Ambient &amp; Cinematic</h3>
-                </div>
-                <div class="volume-topics">Texture · Space · Evolution · Acoustic Illusion</div>
-                <p class="item-body">
-                    Ambient, Downtempo, Soundtrack, Modern Classical, Trip-Hop, New Age, Chillout and Post-Rock—emphasis on duration, atmosphere, spatial perception, evolving timbre, and acoustic environments.
-                </p>
-            </div>
+            <p class="item-body">
+                The goal is not software mastery for its own sake. It is the development of musical judgment that travels across tools, environments, architectures, and genres.
+            </p>
 
-            <div class="volume-card">
-                <div class="volume-header">
-                    <span class="volume-number">VI</span>
-                    <h3 class="volume-title">Jazz, Lounge, City Pop &amp; Global Hybrids</h3>
-                </div>
-                <div class="volume-topics">Synthetic Acoustic Illusion · Electroacoustic Fusion</div>
-                <p class="item-body">
-                    Jazz, Fusion, City Pop, Lounge, Bossa Nova, Funk Jazz, Worldbeat, Exotica and Afrobeat: gesture, expression, instrumental imitation, and the boundary between acoustic and electronic sound.
-                </p>
-            </div>
+        </article>
 
-            <div class="volume-card">
-                <div class="volume-header">
-                    <span class="volume-number">VII</span>
-                    <h3 class="volume-title">IDM, Experimental &amp; Generative Systems</h3>
-                </div>
-                <div class="volume-topics">Complexity · Algorithmic Systems · Unconventional Architectures</div>
-                <p class="item-body">
-                    IDM, Experimental, Generative Music, Glitch, Musique Concrète, Electroacoustic, Noise and Deconstructed Club—systems in which sound emerges from complexity, probability, and feedback.
-                </p>
-            </div>
-
-            <div class="volume-card">
-                <div class="volume-header">
-                    <span class="volume-number">VIII</span>
-                    <h3 class="volume-title">Hip-Hop, Pop, Funk &amp; Contemporary Production</h3>
-                </div>
-                <div class="volume-topics">Modern Commercial &amp; Underground Rhythm Production</div>
-                <p class="item-body">
-                    Hip-Hop, Pop, Funk, R&amp;B, Trap, Disco, Reggaeton and Afrobeats: how synthesis, sampling, and rhythm operate together in contemporary production.
-                </p>
-            </div>
-
-        </div>
     </div>
+
+</div>
+```
+
 </section>
 
-<!-- APPROACH -->
-<section id="approach" class="pub-section">
+<!-- ==================================================
+     02 / THE EIGHT VOLUMES
+================================================== -->
+
+<section class="section" id="volumes">
     <div class="container">
 
-        <div class="section-meta">
-            <span class="section-index">03</span>
-            <h2 class="section-subtitle">How the Material Is Organized</h2>
+```
+    <div class="section-head">
+
+        <div class="section-number">
+            02 / The Eight Volumes
         </div>
 
-        <p class="section-desc">
-            Each major topic is encountered at successive levels of depth—first as usable sound, then as recognizable behavior, then as something that can be varied, diagnosed, and transferred.
-        </p>
+        <div>
+            <h2 class="section-title">
+                Eight books. One connected vocabulary of electronic sound.
+            </h2>
 
-        <div class="comp-image-block">
-            <img src="u-he.design comp 2.jpg"
-                 alt="Design Comp: Interior Page Spread Showing Bazille Patch Logic and Field Studies">
-            <div class="comp-caption">
-                Figure 3.1 — Interior Layout Spread: Idiom Definition, Patch Logic &amp; Field Studies [Design Comp]
-            </div>
+            <p class="section-intro">
+                A complete curriculum spanning foundational synthesis, historical and contemporary genre vocabularies, texture and space, generative systems, and modern production practice.
+            </p>
         </div>
 
-        <div class="content-grid">
-            <div class="grid-item full-width-item">
-                <h4 class="item-title">Layered Encounter</h4>
-                <p class="item-body">
-                    A reader may first use a filter without understanding resonance, then learn to recognize what resonance sounds like, investigate its behavior, understand why it behaves that way, encounter what happens when it goes wrong, and eventually treat it as a flexible design resource in entirely different musical contexts.
-                </p>
+    </div>
+
+
+    <figure class="comp-figure">
+
+        <div class="comp-frame">
+            <img
+                src="u-he design comp 1.jpg"
+                alt="Design comp showing the complete eight-volume physical u-he Sound Design Atlas set on a workbench."
+            >
+        </div>
+
+        <figcaption class="comp-caption">
+
+            <div class="comp-caption-label">
+                Physical Volume Architecture / Complete Series
             </div>
 
-            <div class="grid-item">
-                <h4 class="item-title">Immediate Musical Result</h4>
-                <p class="item-body">
+            <p>
+                Preliminary design comp for the complete eight-volume physical Atlas.
+            </p>
+
+        </figcaption>
+
+    </figure>
+
+
+    <div class="volumes-stack">
+
+        <article class="volume-card">
+
+            <div class="volume-header">
+                <span class="volume-number">I</span>
+                <h3 class="volume-title">
+                    The u-he Instrumentarium
+                </h3>
+            </div>
+
+            <div class="volume-topics">
+                Foundational Synthesis · Architecture · Utility &amp; Soundtrack
+            </div>
+
+            <p class="item-body">
+                Establishes the shared vocabulary for the series: oscillation, waveform, filtering, resonance, envelopes, modulation, feedback, phase, FM, wavetable synthesis, multi-stage envelopes, performance control, and spatial behavior.
+            </p>
+
+        </article>
+
+
+        <article class="volume-card">
+
+            <div class="volume-header">
+                <span class="volume-number">II</span>
+                <h3 class="volume-title">
+                    Trance, Rave, Techno &amp; Club Music
+                </h3>
+            </div>
+
+            <div class="volume-topics">
+                Rhythmic Electronic Synthesis · High-Energy Production
+            </div>
+
+            <p class="item-body">
+                Techno, Trance, Rave, House, Hardcore, Eurodance, Progressive House, Hardstyle and related idioms as a framework for rhythm, repetition, resonance, propulsion, bass architecture, and modulation.
+            </p>
+
+        </article>
+
+
+        <article class="volume-card">
+
+            <div class="volume-header">
+                <span class="volume-number">III</span>
+                <h3 class="volume-title">
+                    Breaks, Jungle &amp; Bass Music
+                </h3>
+            </div>
+
+            <div class="volume-topics">
+                Transient Dynamics · Bass Synthesis · Rhythmic Complexity
+            </div>
+
+            <p class="item-body">
+                Drum &amp; Bass, Jungle, Dubstep, Breakbeat, UK Garage, Grime, Footwork and Bassline—focused on transient behavior, low-frequency architecture, rhythmic displacement, and spectral density.
+            </p>
+
+        </article>
+
+
+        <article class="volume-card">
+
+            <div class="volume-header">
+                <span class="volume-number">IV</span>
+                <h3 class="volume-title">
+                    Dark Electronic &amp; Retro-Futurism
+                </h3>
+            </div>
+
+            <div class="volume-topics">
+                Historical Electronic Vocabulary · Contemporary Transformation
+            </div>
+
+            <p class="item-body">
+                Synthwave, EBM, Industrial, Darkwave, Chiptune, Electro, Post-Punk and Synth-Pop: how historical electronic vocabularies persist, mutate, and acquire new meanings.
+            </p>
+
+        </article>
+
+
+        <article class="volume-card">
+
+            <div class="volume-header">
+                <span class="volume-number">V</span>
+                <h3 class="volume-title">
+                    Downtempo, Ambient &amp; Cinematic
+                </h3>
+            </div>
+
+            <div class="volume-topics">
+                Texture · Space · Evolution · Acoustic Illusion
+            </div>
+
+            <p class="item-body">
+                Ambient, Downtempo, Soundtrack, Modern Classical, Trip-Hop, New Age, Chillout and Post-Rock—emphasis on duration, atmosphere, spatial perception, evolving timbre, and acoustic environments.
+            </p>
+
+        </article>
+
+
+        <article class="volume-card">
+
+            <div class="volume-header">
+                <span class="volume-number">VI</span>
+                <h3 class="volume-title">
+                    Jazz, Lounge, City Pop &amp; Global Hybrids
+                </h3>
+            </div>
+
+            <div class="volume-topics">
+                Synthetic Acoustic Illusion · Electroacoustic Fusion
+            </div>
+
+            <p class="item-body">
+                Jazz, Fusion, City Pop, Lounge, Bossa Nova, Funk Jazz, Worldbeat, Exotica and Afrobeat: gesture, expression, instrumental imitation, and the boundary between acoustic and electronic sound.
+            </p>
+
+        </article>
+
+
+        <article class="volume-card">
+
+            <div class="volume-header">
+                <span class="volume-number">VII</span>
+                <h3 class="volume-title">
+                    IDM, Experimental &amp; Generative Systems
+                </h3>
+            </div>
+
+            <div class="volume-topics">
+                Complexity · Algorithmic Systems · Unconventional Architectures
+            </div>
+
+            <p class="item-body">
+                IDM, Experimental, Generative Music, Glitch, Musique Concrète, Electroacoustic, Noise and Deconstructed Club—systems in which sound emerges from complexity, probability, and feedback.
+            </p>
+
+        </article>
+
+
+        <article class="volume-card">
+
+            <div class="volume-header">
+                <span class="volume-number">VIII</span>
+                <h3 class="volume-title">
+                    Hip-Hop, Pop, Funk &amp; Contemporary Production
+                </h3>
+            </div>
+
+            <div class="volume-topics">
+                Modern Commercial &amp; Underground Rhythm Production
+            </div>
+
+            <p class="item-body">
+                Hip-Hop, Pop, Funk, R&amp;B, Trap, Disco, Reggaeton and Afrobeats: how synthesis, sampling, and rhythm operate together in contemporary production.
+            </p>
+
+        </article>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ==================================================
+     03 / HOW THE MATERIAL IS ORGANIZED
+================================================== -->
+
+<section class="section comp-section" id="approach">
+    <div class="container">
+
+```
+    <div class="section-head">
+
+        <div class="section-number">
+            03 / How the Material Is Organized
+        </div>
+
+        <div>
+            <h2 class="section-title">
+                Encounter the idea. Hear the behavior. Then understand the system.
+            </h2>
+
+            <p class="section-intro">
+                Each major topic is encountered at successive levels of depth—first as usable sound, then as recognizable behavior, then as something that can be varied, diagnosed, and transferred.
+            </p>
+        </div>
+
+    </div>
+
+
+    <figure class="comp-figure">
+
+        <div class="comp-frame">
+            <img
+                src="u-he.design comp 2.jpg"
+                alt="Design comp showing an interior u-he Sound Design Atlas spread with Bazille patch logic and field studies."
+            >
+        </div>
+
+        <figcaption class="comp-caption">
+
+            <div class="comp-caption-label">
+                Interior Layout / Idiom Definition, Patch Logic &amp; Field Studies
+            </div>
+
+            <p>
+                Preliminary interior design comp showing the intended relationship between musical idiom, technical explanation, patch construction, and documentary-style research material.
+            </p>
+
+        </figcaption>
+
+    </figure>
+
+
+    <div class="approach-grid">
+
+        <div class="approach-lead">
+            The reader should be able to begin with the sound and arrive naturally at the architecture behind it.
+        </div>
+
+
+        <div class="approach-copy">
+
+            <p>
+                A reader may first use a filter without understanding resonance, then learn to recognize what resonance sounds like, investigate its behavior, understand why it behaves that way, encounter what happens when it goes wrong, and eventually treat it as a flexible design resource in entirely different musical contexts.
+            </p>
+
+            <p>
+                Technical knowledge therefore becomes a consequence of musical investigation rather than a prerequisite for beginning it.
+            </p>
+
+            <div class="approach-example">
+
+                <h3>
+                    Immediate Musical Result
+                </h3>
+
+                <p>
                     Investigations open with tangible sonic results so that familiarity is established before technical analysis begins.
                 </p>
+
             </div>
 
-            <div class="grid-item">
-                <h4 class="item-title">Portable Principles</h4>
-                <p class="item-body">
-                    Each section closes with durable principles intended to travel beyond any single instrument or platform.
+
+            <div class="approach-example">
+
+                <h3>
+                    Portable Principles
+                </h3>
+
+                <p>
+                    Each section closes with durable principles intended to travel beyond any single instrument or software environment.
                 </p>
+
             </div>
+
         </div>
+
     </div>
+
+</div>
+```
+
 </section>
 
-<!-- PRESETS -->
-<section id="presets" class="pub-section">
+<!-- ==================================================
+     04 / THE ROLE OF THE PRESETS
+================================================== -->
+
+<section class="section" id="presets">
     <div class="container">
 
-        <div class="section-meta">
-            <span class="section-index">04</span>
-            <h2 class="section-subtitle">The Role of the Presets</h2>
+```
+    <div class="section-head">
+
+        <div class="section-number">
+            04 / The Role of the Presets
         </div>
 
-        <p class="section-desc">
-            The practical patches are deliberately limited. They function as evidence and working examples within the research rather than as a standalone preset library.
+        <div>
+            <h2 class="section-title">
+                Presets are evidence, not the destination.
+            </h2>
+
+            <p class="section-intro">
+                The practical patches are deliberately limited. They function as evidence and working examples within the research rather than as a standalone preset library.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="content-grid">
+
+        <article class="grid-item">
+
+            <div class="num">
+                01 / Idiomatic Example
+            </div>
+
+            <h3 class="item-title">
+                Make the vocabulary immediately recognizable.
+            </h3>
+
+            <p class="item-body">
+                A patch that makes the musical vocabulary immediately recognizable—establishing a clear benchmark for the genre or idiom under study.
+            </p>
+
+        </article>
+
+
+        <article class="grid-item">
+
+            <div class="num">
+                02 / Investigative Extension
+            </div>
+
+            <h3 class="item-title">
+                Push the architecture beyond the obvious result.
+            </h3>
+
+            <p class="item-body">
+                A related architecture pushed beyond the obvious genre result, showing what the underlying system becomes when altered or transferred.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <div class="preset-note">
+        The preset demonstrates the principle. The principle is what remains useful after the preset is gone.
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ==================================================
+     05 / u-he AS PRIMARY INSTRUMENT ENVIRONMENT
+================================================== -->
+
+<section class="section environment-section" id="u-he">
+    <div class="container">
+
+```
+    <div class="section-head">
+
+        <div class="section-number">
+            05 / u-he as Primary Instrument Environment
+        </div>
+
+        <div>
+            <h2 class="section-title">
+                One instrument family. Many architectures. A common laboratory.
+            </h2>
+
+            <p class="section-intro">
+                The u-he instruments provide distinct synthesis environments through which underlying acoustics, architectures, and production techniques can be examined with clarity and consistency.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="environment-grid">
+
+        <article class="environment-card">
+
+            <div class="label">
+                01 / Comparative Architecture
+            </div>
+
+            <h3>
+                Universal vs. instrument-specific.
+            </h3>
+
+            <p>
+                Working across u-he's diverse engines repeatedly raises a useful question: what is universal across electronic sound, and what belongs specifically to a given instrument or architecture? The series treats that distinction as a core research and learning outcome.
+            </p>
+
+        </article>
+
+
+        <article class="environment-card">
+
+            <div class="label">
+                02 / Precision
+            </div>
+
+            <h3>
+                A controlled environment for investigation.
+            </h3>
+
+            <p>
+                Distinct synthesis architectures provide a consistent practical environment in which the same musical problem can be approached through different technical structures.
+            </p>
+
+        </article>
+
+
+        <article class="environment-card">
+
+            <div class="label">
+                03 / Transfer
+            </div>
+
+            <h3>
+                Learn the principle, then move elsewhere.
+            </h3>
+
+            <p>
+                The point of working within a defined instrument environment is not dependence upon that environment. The underlying goal is to identify principles that remain intelligible when the tools change.
+            </p>
+
+        </article>
+
+
+        <article class="environment-card">
+
+            <div class="label">
+                04 / Evidence
+            </div>
+
+            <h3>
+                The instrument is a research instrument.
+            </h3>
+
+            <p>
+                The u-he instruments provide the practical evidence through which the Atlas examines synthesis behavior, musical vocabulary, workflow, and design judgment.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <div class="environment-statement">
+        The software is not the subject. Electronic sound is the subject; the instruments are the laboratory.
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ==================================================
+     06 / INSTITUTIONAL & EDUCATIONAL PARTNERSHIP
+================================================== -->
+
+<section class="section" id="partnership">
+    <div class="container">
+
+```
+    <div class="section-head">
+
+        <div class="section-number">
+            06 / Institutional &amp; Educational Partnership
+        </div>
+
+        <div>
+            <h2 class="section-title">
+                Independent research. Curriculum adoption. Educational and industry integration.
+            </h2>
+
+            <p class="section-intro">
+                The Atlas sits between technical reference, synthesis education, musical history, sound-design practice, and research monograph.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="partner-intro">
+
+        <p>
+            P1Lab develops the <em>u-he Sound Design Atlas</em> as an independent research and publishing program with potential applications in higher education, conservatories, music-technology programs, independent study, and specialist industry training.
         </p>
 
-        <div class="content-grid">
-            <div class="grid-item">
-                <h4 class="item-title">Idiomatic Example</h4>
-                <p class="item-body">
-                    A patch that makes the musical vocabulary immediately recognizable—establishing a clear benchmark for the genre or idiom under study.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">Investigative Extension</h4>
-                <p class="item-body">
-                    A related architecture pushed beyond the obvious genre result, showing what the underlying system becomes when altered or transferred.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- u-he -->
-<section id="u-he" class="pub-section">
-    <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">05</span>
-            <h2 class="section-subtitle">Why u-he as the Primary Instrument Environment</h2>
-        </div>
-
-        <p class="section-desc">
-            The u-he instruments provide distinct, high-precision synthesis environments through which underlying acoustics, architectures, and production techniques can be examined with clarity and consistency.
+        <p>
+            The program is structured so that physical books, curriculum materials, specialized modules, and direct institutional engagements can function together without turning the publication into conventional promotional content.
         </p>
 
-        <div class="content-grid">
-            <div class="grid-item full-width-item">
-                <h4 class="item-title">Universal vs. Instrument-Specific</h4>
-                <p class="item-body">
-                    Working across u-he’s diverse engines repeatedly raises a useful question: what is universal across electronic sound, and what belongs specifically to a given instrument or architecture? The series treats that distinction as a core research and learning outcome.
-                </p>
-            </div>
-        </div>
+        <p class="highlight">
+            The Atlas is designed as a serious teaching and reference system whose underlying ideas remain useful beyond any single software platform.
+        </p>
+
     </div>
+
+
+    <div class="partner-program-grid">
+
+        <article class="program-item">
+
+            <h4 class="program-item-title">
+                Academic &amp; Conservatory Licensing
+            </h4>
+
+            <p class="program-item-desc">
+                Complete eight-volume curriculum licensing for music technology, synthesis, composition, and audio-engineering programs.
+            </p>
+
+        </article>
+
+
+        <article class="program-item">
+
+            <h4 class="program-item-title">
+                Institutional Print Editions
+            </h4>
+
+            <p class="program-item-desc">
+                Hardbound reference volumes prepared for institutional libraries, laboratories, studios, teaching environments, and specialist collections.
+            </p>
+
+        </article>
+
+
+        <article class="program-item">
+
+            <h4 class="program-item-title">
+                Research Collaboration
+            </h4>
+
+            <p class="program-item-desc">
+                Joint initiatives examining acoustic modeling, pedagogical design, synthesis taxonomy, sound-design practice, and related research questions.
+            </p>
+
+        </article>
+
+
+        <article class="program-item">
+
+            <h4 class="program-item-title">
+                Curriculum &amp; Preset Verification
+            </h4>
+
+            <p class="program-item-desc">
+                Third-party evaluation of synthesis materials for educational, institutional, or commercial release.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <div class="partnership-inquiries">
+
+        <p class="inquiry-copy">
+            Institutions, educators, and commercial partners interested in adopting the series may request the institutional prospectus.
+        </p>
+
+        <a
+            href="mailto:principal.p1.lab@proton.me?subject=u-he%20SOUND%20DESIGN%20ATLAS%20%E2%80%94%20Institutional%20Prospectus%20Request"
+            class="inquiry-link"
+        >
+            Request the Institutional Prospectus &rarr;
+        </a>
+
+    </div>
+
+</div>
+```
+
 </section>
 
-<!-- PARTNERSHIP -->
-<section id="partnership" class="pub-section">
+<!-- ==================================================
+     CTA
+================================================== -->
+
+<section class="cta" id="contact">
     <div class="container">
 
-        <div class="section-meta">
-            <span class="section-index">06</span>
-            <h2 class="section-subtitle">Institutional &amp; Educational Partnership</h2>
+```
+    <div class="eyebrow">
+        u-he Sound Design Atlas / P1Lab
+    </div>
+
+    <h2>
+        Learn the sound. Understand the system.
+    </h2>
+
+    <p>
+        The <em>u-he Sound Design Atlas</em> is an eight-volume independent research and learning series examining electronic sound through musical idiom, synthesis architecture, instrument design, production practice, and transferable judgment.
+    </p>
+
+    <a
+        class="cta-link"
+        href="mailto:principal.p1.lab@proton.me?subject=u-he%20Sound%20Design%20Atlas%20%E2%80%94%20Project%20Inquiry"
+    >
+        Contact P1Lab
+    </a>
+
+</div>
+```
+
+</section>
+
+</main>
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+    <div class="container footer-inner">
+
+```
+    <div>
+        <div class="footer-brand">
+            P1Lab
+        </div>
+    </div>
+
+    <div class="footer-meta">
+
+        <div>
+            Independent Research &amp; Publishing
         </div>
 
-        <h3 style="font-size: 1.25rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.5rem;">
-            Independent research. Curriculum adoption. Commercial &amp; academic integration.
-        </h3>
-
-        <div class="prose-block">
-            <p>
-                The <em>u-he Sound Design Atlas</em> sits between technical reference, synthesis education, musical history, sound-design practice, and research monograph.
-            </p>
-
-            <p>
-                P1Lab partners with universities, conservatories, music technology programs, and industry organizations seeking to adopt the curriculum or license specialized modules.
-            </p>
-
-            <p class="highlight-statement">
-                Educational licensing, bulk physical distribution for university programs, and custom institutional workshops are structured through P1Lab.
-            </p>
+        <div>
+            u-he Sound Design Atlas
         </div>
 
-        <div class="partner-program-grid">
-            <div class="program-item">
-                <h4 class="program-item-title">Academic &amp; Conservatory Licensing</h4>
-                <p class="program-item-desc">
-                    Complete 8-volume curriculum licensing for music technology and audio engineering degree programs.
-                </p>
-            </div>
-
-            <div class="program-item">
-                <h4 class="program-item-title">Institutional Print Editions</h4>
-                <p class="program-item-desc">
-                    Hardbound reference volumes prepared for institutional libraries and lab environments.
-                </p>
-            </div>
-
-            <div class="program-item">
-                <h4 class="program-item-title">Research Collaboration</h4>
-                <p class="program-item-desc">
-                    Joint initiatives examining acoustic modeling, pedagogical design, and sound-synthesis taxonomy.
-                </p>
-            </div>
-
-            <div class="program-item">
-                <h4 class="program-item-title">Curriculum &amp; Preset Verification</h4>
-                <p class="program-item-desc">
-                    Third-party evaluation of synthesis materials for commercial and educational release.
-                </p>
-            </div>
+        <div>
+            Eight Volumes
         </div>
 
-        <div class="partnership-inquiries">
-            <p class="item-body" style="margin-bottom: 1.25rem;">
-                Institutions, educators, and commercial partners interested in adopting or sponsoring the series may request the institutional prospectus.
-            </p>
-
-            <a href="mailto:Pro1Lab@proton.me?subject=u-he%20SOUND%20DESIGN%20ATLAS%20—%20Institutional%20Prospectus%20Request" class="inquiry-link">
-                REQUEST THE INSTITUTIONAL PROSPECTUS &rarr;
+        <div>
+            <a href="mailto:principal.p1.lab@proton.me">
+                principal.p1.lab@proton.me
             </a>
         </div>
 
-    </div>
-</section>
-
-<!-- CONTACT -->
-<footer id="contact">
-    <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">07</span>
-            <h2 class="section-subtitle">Contact</h2>
-        </div>
-
-        <p class="section-desc" style="margin-bottom: 2rem;">
-            The <em>u-he Sound Design Atlas</em> is an independent monographic research series published by P1Lab.
-        </p>
-
-        <div class="signature-block">
-            <div class="mono-label" style="margin-bottom: 0.5rem;">
-                EIGHT VOLUMES · EDITORIAL &amp; RESEARCH ACTIVE
-            </div>
-
-            <div class="signature-title">
-                u-he Sound Design Atlas · Published by P1Lab
-            </div>
-
-            <a href="mailto:Pro1Lab@proton.me" class="footer-contact">
-                Pro1Lab@proton.me
+        <div>
+            <a href="/">
+                p1-lab.github.io
             </a>
-
-            <p style="font-size: 0.7rem; color: var(--text-dim); margin-top: 2rem; line-height: 1.6;">
-                &copy; 2026 P1Lab. All rights reserved. Unless otherwise indicated, all original text, research, editorial work, publications, design, graphics, and other original materials produced by P1Lab are protected by copyright. Third-party materials and software marks (including u-he) remain the property of their respective copyright holders.
-            </p>
         </div>
+
+        <div>
+            &copy; 2026 P1Lab
+        </div>
+
     </div>
+
+</div>
+```
+
 </footer>
 
 </body>
