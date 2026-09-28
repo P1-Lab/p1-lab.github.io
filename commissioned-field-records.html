@@ -1,1196 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commissioned Field Records — P1Lab</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-color: #faf8f5;
-            --surface-color: #f2efe9;
-            --surface-card: #f7f4ef;
-            --text-primary: #1a1a1a;
-            --text-muted: #4a4a46;
-            --text-dim: #76746e;
-            --accent-neutral: #5c5953;
-            --border-subtle: rgba(26, 26, 26, 0.12);
-            --border-strong: rgba(26, 26, 26, 0.28);
-
-            --font-serif: 'Cormorant Garamond', Georgia, serif;
-            --font-sans: 'Inter', -apple-system, sans-serif;
-            --font-mono: 'Courier New', Courier, monospace;
-            --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-            --header-height: 118px;
-            --anchor-gap: 34px;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: calc(var(--header-height) + var(--anchor-gap));
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            font-size: 16px;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            overflow-x: hidden;
-            background-color: var(--bg-color);
-        }
-
-        a {
-            color: inherit;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-serif);
-            font-weight: 300;
-            letter-spacing: 0.01em;
-        }
-
-        .mono-label {
-            font-family: var(--font-sans);
-            font-weight: 400;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-dim);
-        }
-
-        .container {
-            max-width: 840px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(250, 248, 245, 0.97);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .header-inner {
-            min-height: var(--header-height);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 1rem 0 0.8rem;
-        }
-
-        .brand-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 1.25rem;
-            margin-bottom: 0.7rem;
-        }
-
-        .brand-mark {
-            font-family: var(--font-serif);
-            font-size: 1.12rem;
-            letter-spacing: 0.11em;
-            text-transform: uppercase;
-            color: var(--text-primary);
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .parent-link {
-            flex: 0 0 auto;
-            font-size: 0.63rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-dim);
-            text-decoration: none;
-            transition: color 0.2s var(--transition-smooth);
-            white-space: nowrap;
-        }
-
-        .parent-link:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-toggle {
-            display: none;
-            appearance: none;
-            border: 1px solid var(--border-subtle);
-            background: transparent;
-            color: var(--text-primary);
-            font-family: var(--font-sans);
-            font-size: 0.62rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            padding: 0.55rem 0.7rem;
-            cursor: pointer;
-        }
-
-        .nav-toggle:hover,
-        .nav-toggle:focus-visible {
-            border-color: var(--border-strong);
-            outline: none;
-        }
-
-        .mobile-nav {
-            display: none;
-            border-top: 1px solid var(--border-subtle);
-            margin-top: 0.8rem;
-            padding-top: 0.75rem;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            column-gap: 1.5rem;
-        }
-
-        .mobile-nav-links li {
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .mobile-nav-links a {
-            display: block;
-            padding: 0.72rem 0;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.68rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .mobile-nav-links a:hover,
-        .mobile-nav-links a:focus-visible {
-            color: var(--text-primary);
-            outline: none;
-        }
-
-        .nav-wrap {
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .nav-wrap::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            list-style: none;
-            white-space: nowrap;
-            width: max-content;
-        }
-
-        .nav-links li {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links li + li::before {
-            content: "·";
-            color: var(--text-dim);
-            margin: 0 0.7rem;
-            font-size: 0.65rem;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.61rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            transition: color 0.2s var(--transition-smooth);
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .hero,
-        .pub-section,
-        footer {
-            scroll-margin-top: calc(var(--header-height) + var(--anchor-gap));
-        }
-
-        .hero {
-            min-height: calc(55vh - var(--header-height));
-            display: flex;
-            align-items: center;
-            padding: 5.75rem 0 5rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .hero-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2.3rem, 4.2vw, 3.3rem);
-            font-weight: 300;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            line-height: 1.08;
-            margin: 0.35rem 0 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .hero-manifesto {
-            font-size: 0.98rem;
-            color: var(--text-muted);
-            font-weight: 350;
-            line-height: 1.75;
-            max-width: 760px;
-        }
-
-        .hero-manifesto p {
-            margin-bottom: 1.1rem;
-        }
-
-        .hero-manifesto p.lead-statement {
-            font-family: var(--font-serif);
-            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-            line-height: 1.4;
-            color: var(--text-primary);
-            font-weight: 300;
-            margin-bottom: 1.25rem;
-        }
-
-        .observation-list {
-            list-style: none;
-            margin: 1.25rem 0 1.75rem;
-            padding-left: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.4rem 2rem;
-        }
-
-        .observation-list li {
-            font-size: 0.92rem;
-            color: var(--text-primary);
-            position: relative;
-            padding-left: 1rem;
-        }
-
-        .observation-list li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--text-dim);
-        }
-
-        .hero-quote {
-            margin: 2.25rem 0 0;
-            padding: 1.75rem 0 1.65rem;
-            border-top: 1px solid var(--border-strong);
-            border-bottom: 1px solid var(--border-subtle);
-            max-width: 780px;
-        }
-
-        .hero-quote p {
-            font-family: var(--font-serif);
-            font-size: clamp(1.2rem, 2.3vw, 1.5rem);
-            line-height: 1.42;
-            color: var(--text-primary);
-            font-weight: 300;
-            margin-bottom: 0.75rem;
-        }
-
-        .hero-quote-attribution {
-            font-family: var(--font-sans);
-            font-size: 0.68rem;
-            line-height: 1.55;
-            text-transform: uppercase;
-            letter-spacing: 0.11em;
-            color: var(--text-dim);
-        }
-
-        .hero-quote-attribution strong {
-            display: block;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 0.15rem;
-        }
-
-        .pub-section {
-            padding: 5.25rem 0;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .section-meta {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            margin-bottom: 0.65rem;
-        }
-
-        .section-index {
-            font-family: var(--font-serif);
-            font-size: 1rem;
-            color: var(--text-dim);
-            font-style: italic;
-            flex: 0 0 auto;
-        }
-
-        .section-subtitle {
-            font-size: clamp(1.6rem, 2.8vw, 2.1rem);
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-            line-height: 1.1;
-        }
-
-        .section-desc {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            font-weight: 350;
-            max-width: 720px;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem 3rem;
-        }
-
-        .grid-item {
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .item-title {
-            font-size: 1.1rem;
-            font-weight: 400;
-            margin-bottom: 0.35rem;
-            color: var(--text-primary);
-        }
-
-        .item-body {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            font-weight: 350;
-            line-height: 1.65;
-        }
-
-        .prose-block {
-            margin-bottom: 2.5rem;
-        }
-
-        .prose-block p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 350;
-            line-height: 1.7;
-            margin-bottom: 1.25rem;
-        }
-
-        .prose-block p.highlight-statement {
-            color: var(--text-primary);
-            font-weight: 400;
-        }
-
-        /* PRODUCTION MOCKUPS */
-        .prototype-container {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-            margin-top: 2.5rem;
-        }
-
-        .prototype-card {
-            border: 1px solid var(--border-strong);
-            background: var(--surface-card);
-            padding: 2rem;
-        }
-
-        .prototype-header {
-            border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 1rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .prototype-title {
-            font-size: 1.35rem;
-            color: var(--text-primary);
-            font-family: var(--font-serif);
-            letter-spacing: 0.02em;
-        }
-
-        .prototype-tag {
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            background: var(--bg-color);
-            padding: 0.25rem 0.6rem;
-            border: 1px solid var(--border-subtle);
-        }
-
-        .prototype-spread {
-            background: #ffffff;
-            border: 1px solid var(--border-subtle);
-            padding: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 1.75rem;
-        }
-
-        .spread-page {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 320px;
-        }
-
-        .spread-page.photo-page {
-            border-right: 1px dashed var(--border-subtle);
-            padding-right: 1.5rem;
-        }
-
-        .spread-page:last-child {
-            padding-left: 0.25rem;
-        }
-
-        .page-num {
-            font-family: var(--font-mono);
-            font-size: 0.6rem;
-            color: var(--text-dim);
-        }
-
-        .prototype-photo-frame {
-            width: 100%;
-            aspect-ratio: 16 / 10;
-            overflow: hidden;
-            border: 1px solid var(--border-subtle);
-            background: #e5e2dc;
-            position: relative;
-        }
-
-        .prototype-photo-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: grayscale(8%) contrast(103%);
-        }
-
-        .prototype-photo-label {
-            position: absolute;
-            left: 0.75rem;
-            bottom: 0.75rem;
-            padding: 0.28rem 0.55rem;
-            background: rgba(250, 248, 245, 0.92);
-            border: 1px solid rgba(26, 26, 26, 0.16);
-            font-family: var(--font-mono);
-            font-size: 0.58rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-        }
-
-        .prototype-photo-caption {
-            margin-top: 0.7rem;
-            font-size: 0.78rem;
-            color: var(--text-dim);
-            line-height: 1.5;
-        }
-
-        .prototype-copy {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 320px;
-        }
-
-        .prototype-copy-block {
-            margin-top: 1rem;
-        }
-
-        .prototype-copy-block:first-child {
-            margin-top: 0;
-        }
-
-        .prototype-copy-heading {
-            font-family: var(--font-serif);
-            font-size: 1.05rem;
-            line-height: 1.3;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .prototype-copy p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-            margin-bottom: 0.8rem;
-        }
-
-        .prototype-copy .quote {
-            font-family: var(--font-serif);
-            font-size: 1rem;
-            line-height: 1.45;
-            color: var(--text-primary);
-            font-style: italic;
-        }
-
-        .prototype-copy-meta {
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 0.85rem;
-            margin-top: 1rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.7rem;
-        }
-
-        .prototype-copy-meta-item {
-            font-family: var(--font-mono);
-            font-size: 0.6rem;
-            line-height: 1.5;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-        }
-
-        .prototype-copy-meta-item strong {
-            display: block;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 0.15rem;
-        }
-
-        .sequence-bar {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1.25rem;
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            flex-wrap: wrap;
-        }
-
-        .sequence-step {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .sequence-step::after {
-            content: "→";
-            color: var(--text-dim);
-        }
-
-        .sequence-step:last-child::after {
-            content: "";
-        }
-
-        /* GALLERY */
-        .gallery-container {
-            margin-top: 2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem 2rem;
-        }
-
-        .gallery-card {
-            border: 1px solid var(--border-subtle);
-            background: var(--surface-color);
-            padding: 0.85rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gallery-card.featured {
-            grid-column: 1 / -1;
-        }
-
-        .gallery-image-wrapper {
-            width: 100%;
-            overflow: hidden;
-            background-color: #e5e2dc;
-            border: 1px solid var(--border-subtle);
-            aspect-ratio: 16 / 10;
-            position: relative;
-        }
-
-        .gallery-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: grayscale(10%) contrast(102%);
-            transition: filter 0.3s var(--transition-smooth);
-        }
-
-        .gallery-card:hover .gallery-image-wrapper img {
-            filter: grayscale(0%) contrast(105%);
-        }
-
-        .gallery-meta {
-            font-family: var(--font-mono);
-            font-size: 0.65rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            margin-top: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 0.35rem;
-        }
-
-        .gallery-caption {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            font-weight: 350;
-            line-height: 1.55;
-            margin-top: 0.5rem;
-        }
-
-        .js-lightbox {
-            cursor: zoom-in;
-        }
-
-        .js-lightbox img {
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .js-lightbox:hover img {
-            transform: scale(1.02);
-            filter: brightness(1.03);
-        }
-
-        /* LIGHTBOX */
-        .image-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(4px);
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
-        }
-
-        .modal-content {
-            max-width: 90vw;
-            max-height: 90vh;
-            object-fit: contain;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-            cursor: default;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #ffffff;
-            font-size: 32px;
-            font-weight: 300;
-            font-family: monospace;
-            cursor: pointer;
-        }
-
-        /* CLIENT CARDS */
-        .client-card {
-            padding: 1.75rem 0;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .client-card:last-child {
-            border-bottom: none;
-        }
-
-        .client-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-        }
-
-        .client-card-title {
-            font-size: 1.35rem;
-            font-weight: 400;
-            color: var(--text-primary);
-        }
-
-        .client-card-price {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            font-weight: 400;
-        }
-
-        .closing-banner {
-            margin-top: 3.5rem;
-            padding: 2.5rem 0;
-            border-top: 1px solid var(--border-strong);
-            border-bottom: 1px solid var(--border-strong);
-            text-align: center;
-        }
-
-        .closing-banner-title {
-            font-family: var(--font-serif);
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-primary);
-            line-height: 1.3;
-        }
-
-        footer {
-            padding: 5.25rem 0 4rem;
-            background-color: var(--surface-color);
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .signature-block {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .signature-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-
-        .footer-contact {
-            display: inline-block;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            letter-spacing: 0.02em;
-            margin-top: 0.75rem;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border 0.2s var(--transition-smooth);
-        }
-
-        .footer-contact:hover {
-            border-bottom-color: var(--text-primary);
-        }
-
-        @media (max-width: 1100px) {
-            :root {
-                --header-height: 74px;
-                --anchor-gap: 28px;
-            }
-
-            .header-inner {
-                min-height: var(--header-height);
-                padding: 0.7rem 0;
-            }
-
-            .header-inner .brand-row {
-                margin-bottom: 0;
-                align-items: center;
-            }
-
-            .brand-mark {
-                font-size: 0.98rem;
-            }
-
-            .parent-link {
-                font-size: 0.58rem;
-                margin-left: auto;
-                margin-right: 0.7rem;
-            }
-
-            .nav-toggle {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .nav-wrap {
-                display: none;
-            }
-
-            .mobile-nav.is-open {
-                display: block;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 5rem 0 4.5rem;
-            }
-
-            .hero-title {
-                font-size: clamp(2.1rem, 5vw, 3rem);
-            }
-
-            .content-grid,
-            .gallery-container,
-            .observation-list,
-            .prototype-spread {
-                grid-template-columns: 1fr;
-            }
-
-            .pub-section {
-                padding: 4.5rem 0;
-            }
-
-            .spread-page.photo-page {
-                border-right: none;
-                border-bottom: 1px dashed var(--border-subtle);
-                padding-right: 0;
-                padding-bottom: 1.5rem;
-            }
-
-            .spread-page:last-child {
-                padding-left: 0;
-            }
-
-            .gallery-card.featured {
-                grid-column: span 1;
-            }
-
-            .client-card-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.25rem;
-            }
-
-            .prototype-spread {
-                padding: 1rem;
-            }
-
-            .prototype-card {
-                padding: 1.25rem;
-            }
-
-            .prototype-copy-meta {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            :root {
-                --header-height: 62px;
-                --anchor-gap: 24px;
-            }
-
-            .container {
-                padding: 0 1.1rem;
-            }
-
-            .brand-mark {
-                font-size: 0.82rem;
-                letter-spacing: 0.09em;
-            }
-
-            .parent-link {
-                font-size: 0.55rem;
-                margin-right: 0.55rem;
-            }
-
-            .nav-toggle {
-                font-size: 0.55rem;
-                padding: 0.5rem 0.6rem;
-            }
-
-            .mobile-nav {
-                margin-top: 0.65rem;
-                padding-top: 0.4rem;
-            }
-
-            .mobile-nav-links {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 3.75rem 0 4rem;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-                letter-spacing: 0.03em;
-            }
-
-            .pub-section {
-                padding: 4rem 0;
-            }
-
-            .section-subtitle {
-                font-size: 1.7rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Commissioned Field Records — P1Lab</title>
+
+<meta name="description" content="P1Lab goes into specialized businesses, workshops, trades, facilities, and working environments, learns how they work, and builds permanent field records that give others a way into those worlds.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bone: #f3f0e9;
+    --paper: #f8f6f0;
+    --ink: #20201e;
+    --muted: #68665f;
+    --line: #d8d4ca;
+    --soft: #e9e5dc;
+    --white: #fbfaf6;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body {
+    margin: 0;
+    background: var(--bone);
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; height: auto; }
+.container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+
+/* HEADER */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(243, 240, 233, 0.95);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.header-inner {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+.brand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 29px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+.brand small {
+    display: block;
+    margin-top: -7px;
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.main-nav a { color: var(--muted); transition: color .2s ease; }
+.main-nav a:hover, .main-nav a.active { color: var(--ink); }
+
+/* HERO */
+.hero { padding: 118px 0 112px; border-bottom: 1px solid var(--line); }
+.eyebrow {
+    margin-bottom: 25px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.hero h1 {
+    max-width: 900px;
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(54px, 7vw, 88px);
+    line-height: .95;
+    font-weight: 500;
+    letter-spacing: -.025em;
+}
+.hero-lead {
+    max-width: 780px;
+    margin: 42px 0 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.25;
+    color: #35342f;
+}
+.hero-copy {
+    max-width: 720px;
+    margin: 30px 0 0;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+.hero-statement {
+    max-width: 720px;
+    margin-top: 45px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    line-height: 1.25;
+}
+.hero-statement strong { font-weight: 600; }
+
+/* SECTIONS */
+.section {
+    padding: 105px 0;
+    border-bottom: 1px solid var(--line);
+}
+.section-head {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 50px;
+    margin-bottom: 70px;
+}
+.section-number {
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.section-title {
+    max-width: 760px;
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(40px, 5vw, 61px);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -.015em;
+}
+.section-intro {
+    max-width: 700px;
+    margin: 25px 0 0;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* FIELD RECORD */
+.field-record-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+.field-record-copy { max-width: 620px; }
+.field-record-copy p { margin: 0 0 25px; font-size: 16px; line-height: 1.85; }
+.pullquote {
+    margin: 48px 0 0;
+    padding: 28px 0 28px 28px;
+    border-left: 2px solid var(--ink);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    line-height: 1.25;
+}
+.field-record-note { padding: 34px; background: var(--paper); border: 1px solid var(--line); }
+.field-record-note .label, .commission-card .label {
+    margin-bottom: 22px;
+    font-size: 9px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.field-record-note h3 {
+    margin: 0 0 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+    line-height: 1.05;
+    font-weight: 500;
+}
+.field-record-note p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+/* BRIDGE */
+.bridge { background: var(--paper); }
+.bridge-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: start; }
+.bridge-lead { font-family: "Cormorant Garamond", serif; font-size: clamp(34px, 4vw, 50px); line-height: 1.12; }
+.bridge-copy p { margin: 0 0 25px; font-size: 15px; line-height: 1.85; color: var(--muted); }
+.bridge-example { margin-top: 45px; padding-top: 30px; border-top: 1px solid var(--line); }
+.bridge-example h3 { margin: 0 0 12px; font-family: "Cormorant Garamond", serif; font-size: 31px; font-weight: 500; }
+.bridge-example p { margin: 0; color: var(--muted); }
+
+/* WHAT WE RECORD */
+.record-grid { display: grid; grid-template-columns: repeat(2,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.record-item { min-height: 250px; padding: 34px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.record-item .num { margin-bottom: 30px; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+.record-item h3 { margin: 0 0 13px; font-family: "Cormorant Garamond", serif; font-size: 33px; font-weight: 500; line-height: 1; }
+.record-item p { max-width: 440px; margin: 0; font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+/* RECORD AS FORM — RESTORED PRODUCTION MOCKUPS */
+.form-intro { max-width: 720px; margin-bottom: 60px; font-size: 15px; color: var(--muted); }
+.prototype-container { display: flex; flex-direction: column; gap: 48px; margin-top: 10px; }
+.prototype-card { border: 1px solid var(--line); background: var(--paper); padding: 28px; }
+.prototype-header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.prototype-title { font-family: "Cormorant Garamond", serif; font-size: 34px; line-height: 1; font-weight: 500; }
+.prototype-tag {
+    font-size: 9px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--bone);
+    padding: 5px 8px;
+    border: 1px solid var(--line);
+}
+.prototype-spread {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.03);
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 28px;
+}
+.spread-page { display: flex; flex-direction: column; justify-content: space-between; min-height: 360px; }
+.spread-page.photo-page { border-right: 1px dashed var(--line); padding-right: 24px; }
+.spread-page:last-child { padding-left: 4px; }
+.page-num { font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.prototype-photo-frame { width: 100%; aspect-ratio: 16/10; overflow: hidden; border: 1px solid var(--line); background: #e5e2dc; position: relative; }
+.prototype-photo-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(8%) contrast(103%); }
+.prototype-photo-label { position: absolute; left: 12px; bottom: 12px; padding: 5px 8px; background: rgba(250,248,245,.92); border: 1px solid rgba(26,26,26,.16); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.prototype-photo-caption { margin-top: 12px; font-size: 12px; color: var(--muted); line-height: 1.55; }
+.prototype-copy { display: flex; flex-direction: column; justify-content: space-between; min-height: 360px; }
+.prototype-copy-block { margin-top: 18px; }
+.prototype-copy-block:first-child { margin-top: 0; }
+.prototype-copy-heading { font-family: "Cormorant Garamond", serif; font-size: 25px; line-height: 1.2; font-weight: 500; color: var(--ink); margin: 0 0 9px; }
+.prototype-copy p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0 0 12px; }
+.prototype-copy .quote { font-family: "Cormorant Garamond", serif; font-size: 21px; line-height: 1.35; color: var(--ink); font-style: italic; }
+.prototype-copy-meta { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.prototype-copy-meta-item { font-size: 8px; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.prototype-copy-meta-item strong { display: block; color: var(--ink); font-weight: 500; margin-bottom: 2px; }
+.sequence-bar { display: flex; gap: 10px; margin-top: 18px; font-size: 8px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; flex-wrap: wrap; }
+.sequence-step { display: flex; align-items: center; gap: 10px; }
+.sequence-step::after { content: "→"; color: var(--muted); }
+.sequence-step:last-child::after { content: ""; }
+
+/* GALLERY — RESTORED */
+.studies { background: var(--paper); }
+.gallery-container { margin-top: 8px; display: grid; grid-template-columns: repeat(2,1fr); gap: 28px 24px; }
+.gallery-card { border: 1px solid var(--line); background: var(--bone); padding: 12px; display: flex; flex-direction: column; }
+.gallery-card.featured { grid-column: 1 / -1; }
+.gallery-image-wrapper { width: 100%; overflow: hidden; background: #e5e2dc; border: 1px solid var(--line); aspect-ratio: 16/10; position: relative; }
+.gallery-image-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%) contrast(102%); transition: transform .35s ease, filter .3s ease; }
+.gallery-card:hover .gallery-image-wrapper img { transform: scale(1.02); filter: grayscale(0%) contrast(105%); }
+.gallery-meta { font-size: 8px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.gallery-caption { font-size: 12px; color: var(--muted); line-height: 1.6; margin: 8px 0 2px; }
+.js-lightbox { cursor: zoom-in; }
+
+/* ORAL HISTORY */
+.oral-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; align-items: start; }
+.oral-title { font-family: "Cormorant Garamond", serif; font-size: 47px; line-height: 1; }
+.oral-copy p { margin: 0 0 25px; font-size: 15px; color: var(--muted); line-height: 1.85; }
+.oral-highlight { margin-top: 42px; padding: 25px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: "Cormorant Garamond", serif; font-size: 27px; line-height: 1.25; }
+
+/* PUBLISHED RECORD */
+.published { background: var(--paper); }
+.published-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+.published-copy p { margin: 0 0 25px; font-size: 15px; color: var(--muted); line-height: 1.85; }
+.publication-list { border-top: 1px solid var(--line); }
+.publication-item { padding: 22px 0; border-bottom: 1px solid var(--line); }
+.publication-item strong { display: block; margin-bottom: 5px; font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 500; }
+.publication-item span { font-size: 12px; color: var(--muted); }
+
+/* PRACTICE */
+.practice-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.practice-item { min-height: 235px; padding: 34px; background: var(--bone); }
+.practice-item h3 { margin: 0 0 14px; font-family: "Cormorant Garamond", serif; font-size: 32px; font-weight: 500; line-height: 1; }
+.practice-item p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+/* COMMISSION */
+.commission-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.commission-card { padding: 38px 30px 42px; background: var(--paper); }
+.commission-card .label { margin-bottom: 28px; }
+.commission-card h3 { margin: 0 0 18px; font-family: "Cormorant Garamond", serif; font-size: 36px; line-height: 1; font-weight: 500; }
+.commission-card p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.75; }
+.scope-note { max-width: 700px; margin-top: 35px; font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+/* SOUTH FLORIDA */
+.florida { background: #252522; color: #eeeae1; }
+.florida .section-number, .florida .section-intro { color: #aaa79f; }
+.florida .section-title { color: #f3f0e9; }
+.florida-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+.florida-copy p { margin: 0 0 25px; font-size: 15px; color: #bcb8af; line-height: 1.85; }
+.florida-list { border-top: 1px solid #484741; }
+.florida-item { padding: 17px 0; border-bottom: 1px solid #484741; font-family: "Cormorant Garamond", serif; font-size: 25px; }
+
+/* CTA */
+.cta { padding: 130px 0; text-align: center; }
+.cta h2 { max-width: 850px; margin: 0 auto; font-family: "Cormorant Garamond", serif; font-size: clamp(48px,6vw,76px); line-height: .98; font-weight: 500; letter-spacing: -.02em; }
+.cta p { max-width: 600px; margin: 32px auto 0; font-size: 14px; color: var(--muted); line-height: 1.8; }
+.cta-link { display: inline-block; margin-top: 34px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+
+/* FOOTER */
+footer { padding: 45px 0; border-top: 1px solid var(--line); }
+.footer-inner { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+.footer-brand { font-family: "Cormorant Garamond", serif; font-size: 29px; }
+.footer-meta { text-align: right; font-size: 10px; line-height: 1.8; color: var(--muted); }
+.footer-meta a:hover { color: var(--ink); }
+
+/* LIGHTBOX */
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(20,20,18,.94);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+    padding: 30px;
+}
+.modal-content { max-width: 92vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; border: 1px solid rgba(255,255,255,.15); box-shadow: 0 20px 50px rgba(0,0,0,.8); cursor: default; }
+.modal-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 32px; font-weight: 300; font-family: monospace; cursor: pointer; }
+
+@media (max-width: 850px) {
+    .container { width: min(100% - 34px, 700px); }
+    .main-nav { display: none; }
+    .hero { padding: 80px 0 78px; }
+    .section { padding: 75px 0; }
+    .section-head { display: block; margin-bottom: 45px; }
+    .section-number { margin-bottom: 18px; }
+    .field-record-grid, .bridge-grid, .oral-grid, .published-grid, .florida-grid { grid-template-columns: 1fr; gap: 45px; }
+    .record-grid, .practice-grid, .commission-grid, .gallery-container { grid-template-columns: 1fr; }
+    .prototype-spread { grid-template-columns: 1fr; padding: 16px; }
+    .spread-page.photo-page { border-right: none; border-bottom: 1px dashed var(--line); padding-right: 0; padding-bottom: 24px; }
+    .spread-page:last-child { padding-left: 0; }
+    .gallery-card.featured { grid-column: span 1; }
+    .footer-inner { align-items: flex-start; flex-direction: column; }
+    .footer-meta { text-align: left; }
+}
+
+@media (max-width: 520px) {
+    .container { width: calc(100% - 28px); }
+    .header-inner { min-height: 64px; }
+    .hero h1 { font-size: 50px; }
+    .hero-lead { font-size: 25px; }
+    .section-title { font-size: 42px; }
+    .record-item { min-height: auto; padding: 28px; }
+    .pullquote { font-size: 27px; }
+    .cta { padding: 90px 0; }
+    .cta h2 { font-size: 48px; }
+    .prototype-card { padding: 18px; }
+    .prototype-title { font-size: 30px; }
+    .prototype-copy-meta { grid-template-columns: 1fr; }
+    .gallery-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
     <div class="container header-inner">
-        <div class="brand-row">
-            <a href="#field-record" class="brand-mark">COMMISSIONED FIELD RECORDS</a>
-            <a href="/" class="parent-link">&larr; P1 Lab</a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation">Sections</button>
-        </div>
+        <a href="/" class="brand">
+            P1Lab
+            <small>Independent Research &amp; Publishing</small>
+        </a>
 
-        <div class="nav-wrap">
-            <ul class="nav-links">
-                <li><a href="#field-record">The Field Record</a></li>
-                <li><a href="#what-we-record">What We Record</a></li>
-                <li><a href="#record-form">Record as Form</a></li>
-                <li><a href="#field-studies">Field Studies</a></li>
-                <li><a href="#commission-structure">Commission Structure</a></li>
-                <li><a href="#proof-of-practice">Documentary Practice</a></li>
-                <li><a href="#commission-cta">Commission</a></li>
-            </ul>
-        </div>
-
-        <nav id="mobile-navigation" class="mobile-nav" aria-label="Page sections">
-            <ul class="mobile-nav-links">
-                <li><a href="#field-record">The Field Record</a></li>
-                <li><a href="#what-we-record">What We Record</a></li>
-                <li><a href="#record-form">The Record, as a Form</a></li>
-                <li><a href="#field-studies">Field Studies</a></li>
-                <li><a href="#commission-structure">Commission Structure</a></li>
-                <li><a href="#oral-history">Oral History &amp; Trade Vernacular</a></li>
-                <li><a href="#published-record">The Published Record</a></li>
-                <li><a href="#proof-of-practice">Documentary Practice</a></li>
-                <li><a href="#field-desk">South Florida Field Desk</a></li>
-                <li><a href="#commission-cta">Commission a Field Record</a></li>
-            </ul>
+        <nav class="main-nav">
+            <a href="/">P1Lab</a>
+            <a href="#field-record" class="active">Field Records</a>
+            <a href="#record-form">Record as Form</a>
+            <a href="#field-studies">Field Studies</a>
+            <a href="#commission">Commission</a>
         </nav>
     </div>
 </header>
 
-<!-- HERO / SECTION 01: THE FIELD RECORD -->
-<section id="field-record" class="hero">
+<main>
+
+<section class="hero">
     <div class="container">
+        <div class="eyebrow">Commissioned Field Records / P1Lab</div>
+        <h1>You own a world. We connect it to everyone else.</h1>
+        <p class="hero-lead">
+            Every specialized business has a world around it: people, tools, materials, decisions, places, history, and ways of working that make sense once you are inside—but are almost invisible from the outside.
+        </p>
+        <p class="hero-copy">
+            P1Lab goes there. We learn how the work works, follow the connections, and build a permanent record that lets people outside the operation see what the people inside already know.
+        </p>
+        <div class="hero-statement">
+            <strong>For the people who do the work, it is a way to show their world. For everyone else, it is a way in.</strong>
+        </div>
+    </div>
+</section>
 
-        <span class="mono-label">P1LAB · INDEPENDENT RESEARCH &amp; PUBLISHING</span>
+<section class="section" id="field-record">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-number">01 / The Field Record</div>
+            <div>
+                <h2 class="section-title">The subject comes first. The record follows.</h2>
+                <p class="section-intro">A Field Record begins with the world itself—not with a predetermined shot list or a package of deliverables.</p>
+            </div>
+        </div>
+        <div class="field-record-grid">
+            <div class="field-record-copy">
+                <p>P1Lab spends time on site. We observe the work, talk with the people who know it, follow the operation, and learn what makes the place work.</p>
+                <p>We photograph people while they work. We record tools, materials, spaces, finished objects, unfinished work, decisions, problems, solutions, and the physical traces of the operation. We listen to the language people use when they talk about what they do.</p>
+                <p>Then we build the record around what we learned.</p>
+                <p>The result may be a focused field record, a substantial company history, a hardbound master publication, an archival record, or a larger historical edition. The form follows the subject.</p>
+                <div class="pullquote">“The record follows the operation. We do not ask the work to stop being work in order to document it.”</div>
+            </div>
+            <aside class="field-record-note">
+                <div class="label">Field Method</div>
+                <h3>Go there.<br>Pay attention.<br>Learn how it works.</h3>
+                <p>Follow the connections. Ask the people who know. Record what is actually there. Build something that allows another person to enter the world.</p>
+            </aside>
+        </div>
+    </div>
+</section>
 
-        <h1 class="hero-title">Commissioned Field Records</h1>
-
-        <div class="hero-manifesto">
-            <p class="lead-statement">
-                Some businesses are worth documenting because of what they make. Others because of how they make it.
-            </p>
-
-            <p>
-                P1Lab produces commissioned field records of distinctive businesses, workshops, trades, facilities, and working environments—the people, processes, places, objects, and histories that ordinarily disappear without a record.
-            </p>
-
-            <p>
-                We work on location, around active operations, documenting the work as it actually happens. P1Lab brings photographic, documentary, research, editorial, and publishing capabilities together in a single field practice—converting active work into a permanent documentary record.
-            </p>
-
-            <p style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--text-primary); margin-top: 1.5rem; font-style: italic;">
-                The subject comes first. The record follows.
-            </p>
-
-            <div class="hero-quote" style="margin-top: 2rem;">
-                <p>
-                    “You have built something worth preserving. We document the people, work, place, process, and history that make it what it is.”
-                </p>
-                <div class="hero-quote-attribution">
-                    <strong>P1Lab Field Method</strong>
-                    Documentary Practice
+<section class="section bridge">
+    <div class="container">
+        <div class="section-head">
+            <div class="section-number">02 / Building the Bridge</div>
+            <div>
+                <h2 class="section-title">Experts know their worlds. P1Lab builds the way across.</h2>
+                <p class="section-intro">The people doing the work have the knowledge. Our job is to enter that knowledge from another direction and make the connections visible to someone who has never been inside.</p>
+            </div>
+        </div>
+        <div class="bridge-grid">
+            <div class="bridge-lead">A specialized world can be completely ordinary to the people who live in it—and extraordinary to everyone else.</div>
+            <div class="bridge-copy">
+                <p>A yacht restoration shop may be a place where experienced people solve difficult problems every day. A fabrication shop may simply be where work gets done. A cabinetmaker may think about grain, tooling, joinery, tolerances, and sequence without giving those things a second thought.</p>
+                <p>P1Lab enters from the outside. We learn from the people inside, then look for the larger connections that can make the world legible to someone encountering it for the first time.</p>
+                <p>The result is not a simplification of the work. It is a wider view of it.</p>
+                <div class="bridge-example">
+                    <h3>One operation can open many doors.</h3>
+                    <p>A restoration can lead into materials, engineering, design, history, stewardship, patience, skilled hands, and the people who keep old knowledge alive. A fabrication shop can lead into metallurgy, measurement, machinery, judgment, industrial history, and the long human practice of making things well.</p>
                 </div>
             </div>
-
-            <div class="prose-block" style="margin-top: 2rem; margin-bottom: 0;">
-                <p>
-                    This is not campaign photography. The purpose is to create a durable documentary record of the enterprise itself—its people, tools, physical environment, processes, objects, and history.
-                </p>
-                <p class="highlight-statement">
-                    The subject changes. The method does not: observe the work, understand the system, identify the people and decisions, record the material evidence, and build the record.
-                </p>
-            </div>
         </div>
-
     </div>
 </section>
 
-<!-- SECTION 02: WHAT WE RECORD -->
-<section id="what-we-record" class="pub-section">
+<section class="section" id="what-we-record">
     <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">02</span>
-            <h2 class="section-subtitle">What We Record</h2>
-        </div>
-
-        <p class="section-desc">
-            P1Lab documents six core dimensions of working enterprises, capturing both physical evidence and human knowledge.
-        </p>
-
-        <div class="content-grid">
-            <div class="grid-item">
-                <h4 class="item-title">01 / The People</h4>
-                <p class="item-body">
-                    The technicians, master craftsmen, founders, and operators whose tacit knowledge, hand-tool dexterity, and decision-making drive the enterprise.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">02 / The Work</h4>
-                <p class="item-body">
-                    Active labor mechanics, skilled execution, assembly sequences, and physical transformation recorded as work actually happens on site.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">03 / The Place</h4>
-                <p class="item-body">
-                    Working environments, physical plants, shop floors, yards, facilities, and the spatial architecture of productive operations.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">04 / The Process</h4>
-                <p class="item-body">
-                    End-to-end workflows, material handling, tolerances, trade techniques, and engineering methods from raw input to finished state.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">05 / The History</h4>
-                <p class="item-body">
-                    Institutional origin, site lineage, trade traditions, and oral histories recorded directly through structured conversations with key figures.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">06 / The Objects</h4>
-                <p class="item-body">
-                    Finished builds, restored assets, high-value components, trade tooling, and physical artifacts documented in precise material detail.
-                </p>
+        <div class="section-head">
+            <div class="section-number">03 / What We Record</div>
+            <div>
+                <h2 class="section-title">The world around the work.</h2>
+                <p class="section-intro">Every operation is different. These are not a checklist but the places we look when learning how a world works.</p>
             </div>
         </div>
-
+        <div class="record-grid">
+            <article class="record-item"><div class="num">01 / People</div><h3>The People</h3><p>The owners, founders, technicians, craftspeople, apprentices, specialists, and others whose knowledge gives the operation its character.</p></article>
+            <article class="record-item"><div class="num">02 / Work</div><h3>The Work</h3><p>What actually happens: the sequence, movement, repetition, concentration, interruption, adjustment, inspection, and completion.</p></article>
+            <article class="record-item"><div class="num">03 / Place</div><h3>The Place</h3><p>The building, yard, shop, vessel, landscape, storage, machinery, light, weather, and physical conditions that make the work possible.</p></article>
+            <article class="record-item"><div class="num">04 / Materials</div><h3>The Materials</h3><p>Wood, metal, stone, fabric, paint, composites, machinery, components, ingredients, and the physical behavior that the work must understand.</p></article>
+            <article class="record-item"><div class="num">05 / Decisions</div><h3>The Decisions</h3><p>Judgment, adaptation, problem-solving, experience, and the small choices that separate simply completing a task from knowing how to do it well.</p></article>
+            <article class="record-item"><div class="num">06 / History</div><h3>The History</h3><p>Where the enterprise came from, who built it, what changed, what endured, and what knowledge is being carried forward.</p></article>
+        </div>
     </div>
 </section>
 
-<!-- SECTION 03: THE RECORD, AS A FORM -->
-<section id="record-form" class="pub-section">
+<section class="section" id="record-form">
     <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">03</span>
-            <h2 class="section-subtitle">The Record, as a Form</h2>
+        <div class="section-head">
+            <div class="section-number">04 / The Record, as a Form</div>
+            <div>
+                <h2 class="section-title">A world becomes a physical record.</h2>
+                <p class="section-intro">Illustrative production spreads showing how field photography, interviews, research, and editorial work are assembled into a permanent documentary record.</p>
+            </div>
         </div>
-
-        <p class="section-desc">
-            Illustrative production spreads showing how P1Lab's field photography, interviews, research, and editorial work are assembled into a permanent documentary record.
-        </p>
 
         <div class="prototype-container">
 
-            <!-- Prototype 1: Marine Service Record -->
             <div class="prototype-card">
                 <div class="prototype-header">
                     <div class="prototype-title">A Marine Service Record</div>
-                    <span class="prototype-tag">ILLUSTRATIVE PRODUCTION MOCKUP</span>
+                    <span class="prototype-tag">Illustrative Production Mockup</span>
                 </div>
-
                 <div class="prototype-spread">
-
                     <div class="spread-page photo-page">
                         <div>
-                            <span class="page-num">FIELD OBSERVATION · MARINE SERVICE</span>
-
-                            <div class="prototype-photo-frame" style="margin-top: 1rem;">
-                                <img
-                                    src="marine-service-recordb2.jpg"
-                                    alt="Illustrative production mockup of documentary photography made during active marine service work"
-                                >
-                                <div class="prototype-photo-label">ILLUSTRATIVE / NOT A CLIENT COMMISSION</div>
+                            <span class="page-num">Field Observation · Marine Service</span>
+                            <div class="prototype-photo-frame" style="margin-top:1rem;">
+                                <img src="marine-service-recordb2.jpg" alt="Illustrative production mockup of documentary photography made during active marine service work">
+                                <div class="prototype-photo-label">Illustrative / Not a Client Commission</div>
                             </div>
-
-                            <p class="prototype-photo-caption">
-                                Active marine service documented in the field: vessel, technician, tooling, working environment, and physical intervention recorded as one operation.
-                            </p>
+                            <p class="prototype-photo-caption">Active marine service documented in the field: vessel, technician, tooling, working environment, and physical intervention recorded as one operation.</p>
                         </div>
-
-                        <span class="page-num" style="text-align: right; margin-top: 1rem;">[ FIELD RECORD · 01 ]</span>
+                        <span class="page-num" style="text-align:right; margin-top:1rem;">[ Field Record · 01 ]</span>
                     </div>
-
                     <div class="spread-page">
                         <div class="prototype-copy">
                             <div>
-                                <span class="page-num">CHAPTER 02 · THE YARD</span>
-
+                                <span class="page-num">Chapter 02 · The Yard</span>
                                 <div class="prototype-copy-block">
                                     <h4 class="prototype-copy-heading">The work as it happens.</h4>
-                                    <p>
-                                        Field photography follows the operation rather than a predetermined shot list—recording the people, vessel, tools, sequence, decisions, and physical conditions that define the work.
-                                    </p>
+                                    <p>Field photography follows the operation rather than a predetermined shot list—recording the people, vessel, tools, sequence, decisions, and physical conditions that define the work.</p>
                                 </div>
-
-                                <div class="prototype-copy-block">
-                                    <p class="quote">
-                                        “The record follows the operation. We do not ask the work to stop being work in order to photograph it.”
-                                    </p>
-                                </div>
-
+                                <div class="prototype-copy-block"><p class="quote">“The record follows the operation. We do not ask the work to stop being work in order to photograph it.”</p></div>
                                 <div class="prototype-copy-meta">
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Observed</strong>
-                                        People / Vessel / Yard
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Recorded</strong>
-                                        Process / Tooling / Sequence
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Context</strong>
-                                        Owner / History / Site
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Result</strong>
-                                        Permanent Field Record
-                                    </div>
+                                    <div class="prototype-copy-meta-item"><strong>Observed</strong>People / Vessel / Yard</div>
+                                    <div class="prototype-copy-meta-item"><strong>Recorded</strong>Process / Tooling / Sequence</div>
+                                    <div class="prototype-copy-meta-item"><strong>Context</strong>Owner / History / Site</div>
+                                    <div class="prototype-copy-meta-item"><strong>Result</strong>Permanent Field Record</div>
                                 </div>
                             </div>
-
-                            <span class="page-num" style="text-align: right;">[ FOLIO 42 ]</span>
+                            <span class="page-num" style="text-align:right;">[ Folio 42 ]</span>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="sequence-bar">
                     <span class="sequence-step">01 / Owner &amp; History</span>
                     <span class="sequence-step">02 / The Yard</span>
@@ -1200,79 +550,43 @@
                 </div>
             </div>
 
-            <!-- Prototype 2: Fabrication Shop Record -->
             <div class="prototype-card">
                 <div class="prototype-header">
                     <div class="prototype-title">A Fabrication Shop Record</div>
-                    <span class="prototype-tag">ILLUSTRATIVE PRODUCTION MOCKUP</span>
+                    <span class="prototype-tag">Illustrative Production Mockup</span>
                 </div>
-
                 <div class="prototype-spread">
-
                     <div class="spread-page photo-page">
                         <div>
-                            <span class="page-num">FIELD OBSERVATION · FABRICATION</span>
-
-                            <div class="prototype-photo-frame" style="margin-top: 1rem;">
-                                <img
-                                    src="fabrication-shop-record.jpg"
-                                    alt="Illustrative production mockup of documentary photography made during active fabrication work"
-                                >
-                                <div class="prototype-photo-label">ILLUSTRATIVE / NOT A CLIENT COMMISSION</div>
+                            <span class="page-num">Field Observation · Fabrication</span>
+                            <div class="prototype-photo-frame" style="margin-top:1rem;">
+                                <img src="fabrication-shop-record.jpg" alt="Illustrative production mockup of documentary photography made during active fabrication work">
+                                <div class="prototype-photo-label">Illustrative / Not a Client Commission</div>
                             </div>
-
-                            <p class="prototype-photo-caption">
-                                Hands, tooling, material, measurement, partially completed work, and the shop environment treated as one documentary field.
-                            </p>
+                            <p class="prototype-photo-caption">Hands, tooling, material, measurement, partially completed work, and the shop environment treated as one documentary field.</p>
                         </div>
-
-                        <span class="page-num" style="text-align: right; margin-top: 1rem;">[ FIELD RECORD · 02 ]</span>
+                        <span class="page-num" style="text-align:right; margin-top:1rem;">[ Field Record · 02 ]</span>
                     </div>
-
                     <div class="spread-page">
                         <div class="prototype-copy">
                             <div>
-                                <span class="page-num">CASE RECORD · THE SHOP</span>
-
+                                <span class="page-num">Case Record · The Shop</span>
                                 <div class="prototype-copy-block">
                                     <h4 class="prototype-copy-heading">Material becomes evidence.</h4>
-                                    <p>
-                                        The record follows the movement from stock to finished object: measurement, setup, tool control, hand position, adjustment, fabrication, inspection, and completion.
-                                    </p>
+                                    <p>The record follows the movement from stock to finished object: measurement, setup, tool control, hand position, adjustment, fabrication, inspection, and completion.</p>
                                 </div>
-
-                                <div class="prototype-copy-block">
-                                    <p class="quote">
-                                        “A finished object tells only part of the story. The shop, the tools, and the decisions behind it complete the record.”
-                                    </p>
-                                </div>
-
+                                <div class="prototype-copy-block"><p class="quote">“A finished object tells only part of the story. The shop, the tools, and the decisions behind it complete the record.”</p></div>
                                 <div class="prototype-copy-meta">
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Observed</strong>
-                                        Material / Tool / Hand
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Recorded</strong>
-                                        Sequence / Technique / Detail
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Context</strong>
-                                        Shop / People / Practice
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Result</strong>
-                                        Permanent Shop Record
-                                    </div>
+                                    <div class="prototype-copy-meta-item"><strong>Observed</strong>Material / Tool / Hand</div>
+                                    <div class="prototype-copy-meta-item"><strong>Recorded</strong>Sequence / Technique / Detail</div>
+                                    <div class="prototype-copy-meta-item"><strong>Context</strong>Shop / People / Practice</div>
+                                    <div class="prototype-copy-meta-item"><strong>Result</strong>Permanent Shop Record</div>
                                 </div>
                             </div>
-
-                            <span class="page-num" style="text-align: right;">[ FOLIO 18 ]</span>
+                            <span class="page-num" style="text-align:right;">[ Folio 18 ]</span>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="sequence-bar">
                     <span class="sequence-step">01 / Material</span>
                     <span class="sequence-step">02 / Tool</span>
@@ -1282,79 +596,43 @@
                 </div>
             </div>
 
-            <!-- Prototype 3: Restoration Record -->
             <div class="prototype-card">
                 <div class="prototype-header">
                     <div class="prototype-title">A Restoration Record</div>
-                    <span class="prototype-tag">ILLUSTRATIVE PRODUCTION MOCKUP</span>
+                    <span class="prototype-tag">Illustrative Production Mockup</span>
                 </div>
-
                 <div class="prototype-spread">
-
                     <div class="spread-page photo-page">
                         <div>
-                            <span class="page-num">FIELD OBSERVATION · RESTORATION</span>
-
-                            <div class="prototype-photo-frame" style="margin-top: 1rem;">
-                                <img
-                                    src="restoration-record.jpg"
-                                    alt="Illustrative production mockup of documentary photography made during an active restoration process"
-                                >
-                                <div class="prototype-photo-label">ILLUSTRATIVE / NOT A CLIENT COMMISSION</div>
+                            <span class="page-num">Field Observation · Restoration</span>
+                            <div class="prototype-photo-frame" style="margin-top:1rem;">
+                                <img src="restoration-record.jpg" alt="Illustrative production mockup of documentary photography made during an active restoration process">
+                                <div class="prototype-photo-label">Illustrative / Not a Client Commission</div>
                             </div>
-
-                            <p class="prototype-photo-caption">
-                                An object in process: condition, tools, disassembly, material evidence, craftsmanship, and return toward completed form.
-                            </p>
+                            <p class="prototype-photo-caption">An object in process: condition, tools, disassembly, material evidence, craftsmanship, and return toward completed form.</p>
                         </div>
-
-                        <span class="page-num" style="text-align: right; margin-top: 1rem;">[ FIELD RECORD · 03 ]</span>
+                        <span class="page-num" style="text-align:right; margin-top:1rem;">[ Field Record · 03 ]</span>
                     </div>
-
                     <div class="spread-page">
                         <div class="prototype-copy">
                             <div>
-                                <span class="page-num">ARCHIVAL RECORD · RESTORATION</span>
-
+                                <span class="page-num">Archival Record · Restoration</span>
                                 <div class="prototype-copy-block">
                                     <h4 class="prototype-copy-heading">The history remains inside the object.</h4>
-                                    <p>
-                                        Restoration fieldwork documents not only the returned object, but the condition, provenance, materials, interventions, and knowledge encountered along the way.
-                                    </p>
+                                    <p>Restoration fieldwork documents not only the returned object, but the condition, provenance, materials, interventions, and knowledge encountered along the way.</p>
                                 </div>
-
-                                <div class="prototype-copy-block">
-                                    <p class="quote">
-                                        “The finished restoration is the final state. The record preserves everything that had to be understood to reach it.”
-                                    </p>
-                                </div>
-
+                                <div class="prototype-copy-block"><p class="quote">“The finished restoration is the final state. The record preserves everything that had to be understood to reach it.”</p></div>
                                 <div class="prototype-copy-meta">
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Observed</strong>
-                                        Object / Condition / Craft
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Recorded</strong>
-                                        Detail / Sequence / Change
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Context</strong>
-                                        Provenance / People / Place
-                                    </div>
-                                    <div class="prototype-copy-meta-item">
-                                        <strong>Result</strong>
-                                        Permanent Restoration Record
-                                    </div>
+                                    <div class="prototype-copy-meta-item"><strong>Observed</strong>Object / Condition / Craft</div>
+                                    <div class="prototype-copy-meta-item"><strong>Recorded</strong>Detail / Sequence / Change</div>
+                                    <div class="prototype-copy-meta-item"><strong>Context</strong>Provenance / People / Place</div>
+                                    <div class="prototype-copy-meta-item"><strong>Result</strong>Permanent Restoration Record</div>
                                 </div>
                             </div>
-
-                            <span class="page-num" style="text-align: right;">[ FOLIO 64 ]</span>
+                            <span class="page-num" style="text-align:right;">[ Folio 64 ]</span>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="sequence-bar">
                     <span class="sequence-step">01 / Condition</span>
                     <span class="sequence-step">02 / Provenance</span>
@@ -1365,464 +643,276 @@
             </div>
 
         </div>
-
     </div>
 </section>
 
-<!-- SECTION 04: FIELD STUDIES -->
-<section id="field-studies" class="pub-section">
+<section class="section studies" id="field-studies">
     <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">04</span>
-            <h2 class="section-subtitle">Field Studies</h2>
+        <div class="section-head">
+            <div class="section-number">05 / Field Studies</div>
+            <div>
+                <h2 class="section-title">Learning the world begins with looking closely.</h2>
+                <p class="section-intro">Selected independent studies demonstrate the observational and editorial methods applied to commissioned Field Records. Client commissions are published only with permission.</p>
+            </div>
         </div>
-
-        <p class="section-desc" style="margin-bottom: 0.5rem;">
-            Selected work demonstrating P1Lab's approach to observation, material, environment, human gesture, historical objects, and physical process.
-        </p>
-
-        <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 2.25rem;">
-            Selected independent studies demonstrate the observational and editorial methods applied to commissioned Field Records. Client commissions are published only with permission.
-        </p>
 
         <div class="gallery-container">
 
-            <!-- Item 1: PROCESS -->
             <div class="gallery-card featured">
                 <div class="gallery-image-wrapper js-lightbox" data-full="farmbuilder-smaller.jpg" title="Click to inspect composition">
-                    <img src="farmbuilder-smaller.jpg" alt="Pacific Northwest water surface fluid dynamics action" style="object-position: top;">
+                    <img src="farmbuilder-smaller.jpg" alt="Pacific Northwest water surface fluid dynamics action" style="object-position:top;">
                 </div>
-                <div class="gallery-meta">
-                    <span>PROCESS / TRANSFORMATION</span>
-                    <span>INDUSTRIAL FLOOR</span>
-                </div>
-                <p class="gallery-caption">
-Commissioned Field Records: Converting Active Operations into Permanent Archives.                </p>
+                <div class="gallery-meta"><span>Process / Transformation</span><span>Industrial Floor</span></div>
+                <p class="gallery-caption">Commissioned Field Records: Converting Active Operations into Permanent Archives.</p>
             </div>
 
-            <!-- Item 2: GESTURE -->
             <div class="gallery-card">
                 <div class="gallery-image-wrapper js-lightbox" data-full="gallery-07a.jpg" title="Click to inspect composition">
                     <img src="gallery-07a.jpg" alt="Observational study of working gesture under harsh glare">
                 </div>
-                <div class="gallery-meta">
-                    <span>GEOGRAPHICAL ANCHOR / TERRITORIAL CONTEXT</span>
-                    <span>Coastal Reserve</span>
-                </div>
-                <p class="gallery-caption">
-                    The marshland perimeter and regulatory signage establish the remote ecological boundary where local trade and shoreline operations take place. Capturing these outlying markers frames the physical territory before operations begin, anchoring the documentary record to its specific geography.
-                </p>
+                <div class="gallery-meta"><span>Geographical Anchor / Territorial Context</span><span>Coastal Reserve</span></div>
+                <p class="gallery-caption">The marshland perimeter and regulatory signage establish the remote ecological boundary where local trade and shoreline operations take place. Capturing these outlying markers frames the physical territory before operations begin, anchoring the documentary record to its specific geography.</p>
             </div>
 
-            <!-- Item 3: ENVIRONMENT -->
             <div class="gallery-card">
                 <div class="gallery-image-wrapper js-lightbox" data-full="NS_Fish.jpg" title="Click to inspect composition">
                     <img src="NS_Fish.jpg" alt="Documentary study of vernacular typography and spatial context">
                 </div>
-                <div class="gallery-meta">
-                    <span>ENVIRONMENT / VERNACULAR SPACES</span>
-                    <span>FIELD OBSERVATION</span>
-                </div>
-                <p class="gallery-caption">
-                    A custom forged trade sign hangs above the harbor, capturing the material heritage and localized identity of maritime commerce. Such handmade objects and specialized markers anchor the historical record before modern standardization erases them. Processed via proprietary deterministic signal-conditioning pipeline prior to RIP routing.
-                </p>
+                <div class="gallery-meta"><span>Environment / Vernacular Spaces</span><span>Field Observation</span></div>
+                <p class="gallery-caption">A custom forged trade sign hangs above the harbor, capturing the material heritage and localized identity of maritime commerce. Such handmade objects and specialized markers anchor the historical record before modern standardization erases them. Processed via proprietary deterministic signal-conditioning pipeline prior to RIP routing.</p>
             </div>
 
-            <!-- Item 4: OBJECT / MATERIAL -->
             <div class="gallery-card">
                 <div class="gallery-image-wrapper js-lightbox" data-full="DSCF1993.jpg" title="Click to inspect composition">
                     <img src="DSCF1993.jpg" alt="Study of metallic form and surface patina">
                 </div>
-                <div class="gallery-meta">
-                    <span>MATERIAL / SURFACE PATINA</span>
-                    <span>FISHING MUSEUM</span>
-                </div>
-                <p class="gallery-caption">
-                    Material surface, form, and age recorded as physical evidence. Traditional woven wickerwork eel basket trap.
-                </p>
+                <div class="gallery-meta"><span>Material / Surface Patina</span><span>Fishing Museum</span></div>
+                <p class="gallery-caption">Material surface, form, and age recorded as physical evidence. Traditional woven wickerwork eel basket trap.</p>
             </div>
 
-            <!-- Item 5: GESTURE / PERSON -->
             <div class="gallery-card">
                 <div class="gallery-image-wrapper js-lightbox" data-full="gallery05.jpg" title="Click to inspect composition">
                     <img src="gallery05.jpg" alt="Observational study of human posture and hand gesture">
                 </div>
-                <div class="gallery-meta">
-                    <span>GESTURE / HAND &amp; TOOL</span>
-                    <span>FIELD OBSERVATION</span>
-                </div>
-                <p class="gallery-caption">
-                    Unscripted human posture and manual technique captured during active work. The pit master tends the grill line during peak service, preserving the unscripted rhythm and sensory environment of traditional trade work. Such ephemeral operations disappear entirely without a permanent documentary record.
-                </p>
+                <div class="gallery-meta"><span>Gesture / Hand &amp; Tool</span><span>Field Observation</span></div>
+                <p class="gallery-caption">Unscripted human posture and manual technique captured during active work. The pit master tends the grill line during peak service, preserving the unscripted rhythm and sensory environment of traditional trade work. Such ephemeral operations disappear entirely without a permanent documentary record.</p>
             </div>
 
-            <!-- Item 6: DETAIL -->
             <div class="gallery-card">
                 <div class="gallery-image-wrapper js-lightbox" data-full="gallery-03.jpg" title="Click to inspect composition">
-                    <img src="gallery-03.jpg" alt="High-contrast study of precision movement" style="object-position: top;">
+                    <img src="gallery-03.jpg" alt="High-contrast study of precision movement" style="object-position:top;">
                 </div>
-                <div class="gallery-meta">
-                    <span>OPTICAL CAPTURE / TONAL RESOLUTION</span>
-                    <span>INTRACOASTAL</span>
-                </div>
-                <p class="gallery-caption">
-Avian silhouette. This high-contrast field study demonstrates rigorous visual editorial capability, utilizing custom signal processing to optimize dynamic range for print. It captures the natural indicators of the working perimeter, transforming fleeting wildlife moments into a disciplined documentary record.                </p>
+                <div class="gallery-meta"><span>Optical Capture / Tonal Resolution</span><span>Intracoastal</span></div>
+                <p class="gallery-caption">Avian silhouette. This high-contrast field study demonstrates rigorous visual editorial capability, utilizing custom signal processing to optimize dynamic range for print. It captures the natural indicators of the working perimeter, transforming fleeting wildlife moments into a disciplined documentary record.</p>
             </div>
 
-            <!-- Item 7: STRUCTURE -->
             <div class="gallery-card">
                 <div class="gallery-image-wrapper js-lightbox" data-full="Quebec3.jpg" title="Click to inspect composition">
                     <img src="Quebec3.jpg" alt="Structural study of tension geometry and line">
                 </div>
-                <div class="gallery-meta">
-                    <span>STRUCTURE / GEOMETRY</span>
-                    <span>Quebec City</span>
-                </div>
-                <p class="gallery-caption">
-                    Line, tension, and structural geometry recorded under direct light. Field records of disappearing trades, industrial environments, and active workshops.
-                </p>
+                <div class="gallery-meta"><span>Structure / Geometry</span><span>Quebec City</span></div>
+                <p class="gallery-caption">Line, tension, and structural geometry recorded under direct light. Field records of disappearing trades, industrial environments, and active workshops.</p>
             </div>
 
-            <!-- Item 8: MATERIAL -->
             <div class="gallery-card">
                 <div class="gallery-image-wrapper js-lightbox" data-full="NBDSCF1968.jpg" title="Click to inspect composition">
                     <img src="NBDSCF1968.jpg" alt="Surface study of weathered timber and exposed hardware">
                 </div>
-                <div class="gallery-meta">
-                    <span>MATERIAL / WEAR &amp; ENVIRONMENT</span>
-                    <span>Museum Collection</span>
-                </div>
-                <p class="gallery-caption">
-                    A "Make-and-Break" marine gasoline engine, specifically an Acadia or Atlantic engine, which played a monumental role in the maritime and industrial history of Atlantic Canada. Commissioned Museum Collection Photo.
-                </p>
+                <div class="gallery-meta"><span>Material / Wear &amp; Environment</span><span>Museum Collection</span></div>
+                <p class="gallery-caption">A “Make-and-Break” marine gasoline engine, specifically an Acadia or Atlantic engine, which played a monumental role in the maritime and industrial history of Atlantic Canada. Commissioned Museum Collection Photo.</p>
             </div>
 
-            <!-- Item 9: ENVIRONMENT -->
             <div class="gallery-card">
                 <div class="gallery-image-wrapper js-lightbox" data-full="BDSCF1984.jpg" title="Click to inspect composition">
                     <img src="BDSCF1984.jpg" alt="Environmental context study across coastal landscape">
                 </div>
-                <div class="gallery-meta">
-                    <span>ENVIRONMENT / ATMOSPHERE</span>
-                    <span>Nova Scotia</span>
-                </div>
-                <p class="gallery-caption">
-                    Living History Museum. Physical Object. Natural Lighting. Vintage canvas life jacket. Commissioned Museum Collection Photo.
-                </p>
+                <div class="gallery-meta"><span>Environment / Atmosphere</span><span>Nova Scotia</span></div>
+                <p class="gallery-caption">Living History Museum. Physical Object. Natural Lighting. Vintage canvas life jacket. Commissioned Museum Collection Photo.</p>
             </div>
 
-            <!-- Item 10: STRUCTURE / PLACE -->
             <div class="gallery-card featured">
                 <div class="gallery-image-wrapper js-lightbox" data-full="water_dog_print_test.jpg" title="Click to inspect composition">
-                    <img src="water_dog_print_test.jpg" alt="Panoramic operational survey of site layout and facility space" style="object-position: center;">
+                    <img src="water_dog_print_test.jpg" alt="Panoramic operational survey of site layout and facility space" style="object-position:center;">
                 </div>
-                <div class="gallery-meta">
-                    <span>ACTION</span>
-                    <span>COASTAL SHORELINE</span>
-                </div>
-                <p class="gallery-caption">
-                    Raw field study capturing fleeting physical mechanics and active environments that ordinarily vanish without a permanent record. By integrating high-speed observation with rigorous documentary craft, we transform unscripted, dynamic field operations into enduring published monographs.
-                </p>
+                <div class="gallery-meta"><span>Action</span><span>Coastal Shoreline</span></div>
+                <p class="gallery-caption">Raw field study capturing fleeting physical mechanics and active environments that ordinarily vanish without a permanent record. By integrating high-speed observation with rigorous documentary craft, we transform unscripted, dynamic field operations into enduring published monographs.</p>
             </div>
 
         </div>
-
     </div>
 </section>
 
-<!-- SECTION 05: COMMISSION STRUCTURE -->
-<section id="commission-structure" class="pub-section">
+<section class="section">
     <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">05</span>
-            <h2 class="section-subtitle">Commission Structure</h2>
-        </div>
-
-        <p class="section-desc">
-            Engagements are structured around operational scope, research depth, and physical publishing requirements.
-        </p>
-
-        <div class="client-card">
-            <div class="client-card-header">
-                <h3 class="client-card-title">FIELD RECORD</h3>
-                <span class="client-card-price">FOCUSED SCOPE</span>
+        <div class="section-head">
+            <div class="section-number">06 / Oral History</div>
+            <div>
+                <h2 class="section-title">Let the people inside explain their world.</h2>
+                <p class="section-intro">Photographs can show what happened. The people doing the work can tell us why.</p>
             </div>
-            <p class="item-body">
-                A focused record of one distinctive operation, process, facility, or build.
-            </p>
         </div>
-
-        <div class="client-card">
-            <div class="client-card-header">
-                <h3 class="client-card-title">COMPANY RECORD</h3>
-                <span class="client-card-price">FULL ENTERPRISE</span>
+        <div class="oral-grid">
+            <div class="oral-title">The language of the work belongs in the record.</div>
+            <div class="oral-copy">
+                <p>During field work, P1Lab conducts structured conversations with founders, owners, technicians, craftspeople, specialists, and others whose experience gives the operation its depth.</p>
+                <p>These conversations may cover company history, trade vocabulary, difficult jobs, important decisions, materials, tools, mistakes, discoveries, people who taught the work, and changes that shaped the enterprise.</p>
+                <p>The purpose is not to turn specialists into spokespeople. It is to let the people who actually know the work explain it in their own language.</p>
+                <div class="oral-highlight">The record becomes stronger when the people who live in the world can speak from inside it.</div>
             </div>
-            <p class="item-body">
-                A comprehensive record of the enterprise—its people, place, work, history, and finished output.
-            </p>
         </div>
-
-        <div class="client-card">
-            <div class="client-card-header">
-                <h3 class="client-card-title">DEFINITIVE RECORD</h3>
-                <span class="client-card-price">HISTORICAL EDITION</span>
-            </div>
-            <p class="item-body">
-                A substantial historical record intended to preserve the enterprise beyond the present generation.
-            </p>
-        </div>
-
-        <div class="prose-block" style="margin-top: 2rem; margin-bottom: 0;">
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
-                Each commission is individually scoped. Field work may range from a focused assignment to a multi-phase historical project.
-            </p>
-        </div>
-
     </div>
 </section>
 
-<!-- SECTION 06: ORAL HISTORY -->
-<section id="oral-history" class="pub-section">
+<section class="section published">
     <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">06</span>
-            <h2 class="section-subtitle">Oral History &amp; Trade Vernacular</h2>
-        </div>
-
-        <p class="section-desc">
-            A visual record alone is incomplete without the trade vocabulary, founder memory, and specialized working wisdom behind the shop floor.
-        </p>
-
-        <div class="prose-block">
-            <p>
-                During field work, P1Lab conducts structured audio interviews with key technicians, master craftsmen, and founders. These conversations capture trade terminology, company origin, critical engineering decisions, and institutional memory.
-            </p>
-        </div>
-
-        <div class="content-grid">
-            <div class="grid-item">
-                <h4 class="item-title">Preserving Working Wisdom</h4>
-                <p class="item-body">
-                    Capturing decades of unwritten technical expertise, shop adjustments, and historical craft knowledge before it is lost.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">Editorial Integration</h4>
-                <p class="item-body">
-                    Recorded oral histories are edited directly into text blocks, captions, and narrative spreads within the published record.
-                </p>
+        <div class="section-head">
+            <div class="section-number">07 / The Published Record</div>
+            <div>
+                <h2 class="section-title">Give the world somewhere to live.</h2>
+                <p class="section-intro">A Field Record can become a physical object that remains after the assignment, the project, and the people involved have moved on.</p>
             </div>
         </div>
-
+        <div class="published-grid">
+            <div class="published-copy">
+                <p>P1Lab brings field observation, photography, research, oral history, editorial work, design, and publishing together in a single practice.</p>
+                <p>The result may include a master documentary archive, organized digital assets, source material, interviews, research files, and a custom physical publication.</p>
+                <p>The physical book gives the enterprise a durable way to say: this is what this place is, this is how this work is done, and these are the people who know it.</p>
+                <p>It can sit in an owner's office, a boardroom, a reception area, a family library, an institutional archive, or with the people who will inherit the work.</p>
+            </div>
+            <div class="publication-list">
+                <div class="publication-item"><strong>Master Field Record</strong><span>Complete documentary record of the commissioned field work.</span></div>
+                <div class="publication-item"><strong>Hardbound Publication</strong><span>Designed physical edition built around the subject and its history.</span></div>
+                <div class="publication-item"><strong>Commercial Archive</strong><span>Organized photographic, documentary, interview, and source assets.</span></div>
+                <div class="publication-item"><strong>Historical Edition</strong><span>Expanded record intended to remain useful beyond the present generation.</span></div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- SECTION 07: THE PUBLISHED RECORD -->
-<section id="published-record" class="pub-section">
+<section class="section">
     <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">07</span>
-            <h2 class="section-subtitle">The Published Record</h2>
+        <div class="section-head">
+            <div class="section-number">08 / Practice</div>
+            <div>
+                <h2 class="section-title">The field record is part of a larger practice.</h2>
+                <p class="section-intro">P1Lab has spent more than three decades moving between documentary photography, publishing, research, systems development, and the physical record.</p>
+            </div>
         </div>
-
-        <div class="prose-block">
-            <p>
-                P1Lab is an independent research, editorial, and publishing practice. Our work extends from physical field observation through technical writing, photography, and physical publication.
-            </p>
-
-            <p class="highlight-statement" style="margin-bottom: 1.25rem;">
-                The primary product is the permanent record of the enterprise. The physical publication is its tangible, enduring manifestation.
-            </p>
-
-            <p>
-                Depending on commission scope, the record may encompass a master documentary archive, digital asset registry, or custom physical publication edition designed to sit in boardrooms, on founder desks, or in institutional archives as a permanent physical record of the enterprise and its work.
-            </p>
+        <div class="practice-grid">
+            <article class="practice-item"><h3>Documentary Film</h3><p><em>National Guitar</em> — documentary production concerning the making of guitars, with worldwide distribution.</p></article>
+            <article class="practice-item"><h3>Research &amp; Publishing</h3><p>Independent monographic publishing, technical research, oral history, editorial production, and long-form documentary work.</p></article>
+            <article class="practice-item"><h3>Cultural Documentation</h3><p>Field work across museums, historical subjects, natural history, food, material culture, places, and working environments.</p></article>
+            <article class="practice-item"><h3>Books in Print</h3><p>More than 31 books published across documentary, research, cultural, technical, and subject-specific projects.</p></article>
         </div>
-
     </div>
 </section>
 
-<!-- SECTION 08: DOCUMENTARY & PUBLISHING PRACTICE -->
-<section id="proof-of-practice" class="pub-section">
+<section class="section" id="commission">
     <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">08</span>
-            <h2 class="section-subtitle">Selected Documentary &amp; Publishing Practice</h2>
-        </div>
-
-        <p class="section-desc">
-            P1Lab operates at the intersection of media production, field research, and monographic publishing.
-        </p>
-
-        <div class="content-grid">
-            <div class="grid-item">
-                <h4 class="item-title">DOCUMENTARY FILM</h4>
-                <p class="item-body">
-                    <em>National Guitar</em> — documentary production with worldwide distribution.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">RESEARCH &amp; PUBLISHING</h4>
-                <p class="item-body">
-                    Independent monographic publishing, technical research, oral history, and editorial production.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">CULTURAL DOCUMENTATION</h4>
-                <p class="item-body">
-                    Museum, historical, natural-history, food, and material-culture documentation.
-                </p>
-            </div>
-
-            <div class="grid-item">
-                <h4 class="item-title">FIELD PRACTICE</h4>
-                <p class="item-body">
-                    Photography and observational studies conducted across natural, cultural, and working environments.
-                </p>
+        <div class="section-head">
+            <div class="section-number">09 / Commission Structure</div>
+            <div>
+                <h2 class="section-title">The depth of the record follows the depth of the subject.</h2>
+                <p class="section-intro">Every commission begins with the subject itself. Scope is established after P1Lab understands the operation, the people involved, the history, and what the finished record needs to accomplish.</p>
             </div>
         </div>
-
+        <div class="commission-grid">
+            <article class="commission-card"><div class="label">Focused Scope</div><h3>Field Record</h3><p>A focused record of one distinctive operation, process, facility, restoration, build, or working environment.</p></article>
+            <article class="commission-card"><div class="label">Full Enterprise</div><h3>Company Record</h3><p>A comprehensive record of the enterprise—its people, place, work, history, processes, objects, and finished output.</p></article>
+            <article class="commission-card"><div class="label">Historical Edition</div><h3>Definitive Record</h3><p>A substantial historical record intended to preserve the enterprise, its knowledge, and its way of working beyond the present generation.</p></article>
+        </div>
+        <p class="scope-note">Field work may range from a concentrated assignment to a multi-phase historical project. The final publication, archive, and delivery structure are developed around the actual subject rather than a fixed package.</p>
     </div>
 </section>
 
-<!-- SECTION 09: SOUTH FLORIDA FIELD DESK -->
-<section id="field-desk" class="pub-section">
+<section class="section florida">
     <div class="container">
-
-        <div class="section-meta">
-            <span class="section-index">09</span>
-            <h2 class="section-subtitle">South Florida Field Desk</h2>
+        <div class="section-head">
+            <div class="section-number">10 / South Florida Field Desk</div>
+            <div>
+                <h2 class="section-title">Specialized worlds are everywhere.</h2>
+                <p class="section-intro">P1Lab's South Florida field desk is based in Jupiter, Florida, with particular interest in owner-led operations where specialized knowledge, skilled work, physical environments, and long experience intersect.</p>
+            </div>
         </div>
-
-        <p class="section-desc">
-            Operating from Jupiter, Florida. We document distinctive enterprises across South Florida's working waterfronts, industrial corridors, and specialized workshops:
-        </p>
-
-        <ul class="observation-list" style="margin-bottom: 2.5rem;">
-            <li>Yacht Construction, Refit &amp; Service</li>
-            <li>Precision Fabrication &amp; Machining</li>
-            <li>Custom Millwork &amp; Fine Joinery</li>
-            <li>Architectural Metal, Stone &amp; Glass</li>
-            <li>Aviation &amp; Specialty Mechanical</li>
-            <li>Restoration &amp; Heritage Craft</li>
-            <li>Working Waterfronts &amp; Yards</li>
-            <li>Distinctive Facilities &amp; Estates</li>
-        </ul>
-
+        <div class="florida-grid">
+            <div class="florida-copy">
+                <p>South Florida contains an unusually dense concentration of marine, fabrication, restoration, construction, mechanical, aviation, architectural, horticultural, and specialty trades.</p>
+                <p>These are working worlds. P1Lab goes into them, learns how they operate, and builds records that can be understood by people who may never otherwise cross the threshold.</p>
+                <p>The field desk operates from Jupiter and works within practical reach of the specialized businesses, yards, workshops, restoration facilities, working waterfronts, and other operations of the region.</p>
+            </div>
+            <div class="florida-list">
+                <div class="florida-item">Yacht Construction, Refit &amp; Service</div>
+                <div class="florida-item">Precision Fabrication &amp; Machining</div>
+                <div class="florida-item">Custom Millwork &amp; Fine Joinery</div>
+                <div class="florida-item">Architectural Metal, Stone &amp; Glass</div>
+                <div class="florida-item">Aviation &amp; Specialty Mechanical</div>
+                <div class="florida-item">Restoration &amp; Heritage Craft</div>
+                <div class="florida-item">Working Waterfronts &amp; Yards</div>
+                <div class="florida-item">Distinctive Facilities &amp; Estates</div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- SECTION 10: COMMISSION A FIELD RECORD -->
-<footer id="commission-cta">
+<section class="cta">
     <div class="container">
+        <div class="eyebrow">Commission a Field Record</div>
+        <h2>Give people a way into your world.</h2>
+        <p>P1Lab is accepting a limited number of commissioned Field Records in South Florida. If your business, workshop, facility, restoration, trade, or operation has a world worth understanding, write to the field desk.</p>
+        <a class="cta-link" href="mailto:principal.p1.lab@proton.me?subject=Commissioned%20Field%20Record%20Inquiry">Contact the Field Desk</a>
+    </div>
+</section>
 
-        <div class="section-meta">
-            <span class="section-index">10</span>
-            <h2 class="section-subtitle">Commission a Field Record</h2>
-        </div>
+</main>
 
-        <div class="closing-banner" style="margin-top: 1.5rem; margin-bottom: 2.75rem; text-align: left; padding: 2.25rem 0 2.5rem;">
-            <div class="closing-banner-title" style="font-size: clamp(1.5rem, 3vw, 2.1rem); text-transform: uppercase;">
-                Document the Work.
-            </div>
-            <p style="margin-top: 1rem; color: var(--text-muted); font-size: 1rem; font-weight: 350; max-width: 680px; line-height: 1.65;">
-                P1Lab is accepting a limited number of commissioned Field Records in South Florida. To discuss a business, workshop, facility, restoration, trade, or operation that should be permanently documented, write to the field desk.
-            </p>
-        </div>
-
-        <div class="signature-block" style="margin-top: 0; padding-top: 0; border-top: none;">
-            <div class="mono-label" style="margin-bottom: 0.55rem;">
-                P1LAB · INDEPENDENT RESEARCH &amp; PUBLISHING
-            </div>
-
-            <div class="signature-title" style="margin-top: 0; font-size: 0.75rem; color: var(--text-muted);">
-                COMMISSIONED FIELD RECORDS · SOUTH FLORIDA FIELD DESK
-            </div>
-
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.85rem;">
-                Jupiter, Florida | <a href="https://p1-lab.github.io" style="text-decoration: underline;">p1-lab.github.io</a>
-            </p>
-
-            <a href="mailto:principal.p1.lab@proton.me?subject=Commissioned%20Field%20Record%20Inquiry" class="footer-contact" style="font-size: 1rem; font-weight: 500; color: var(--text-primary);">
-                principal.p1.lab@proton.me
-            </a>
-
-            <p style="font-size: 0.7rem; color: var(--text-dim); margin-top: 2.5rem; line-height: 1.6;">
-                &copy; 2026 P1Lab. All rights reserved. Unless otherwise indicated, all original text, photography, field recordings, research, editorial work, publications, design, and graphics produced by P1Lab are protected by copyright.
-            </p>
+<footer>
+    <div class="container footer-inner">
+        <div><div class="footer-brand">P1Lab</div></div>
+        <div class="footer-meta">
+            <div>Independent Research &amp; Publishing</div>
+            <div>Jupiter, Florida</div>
+            <div><a href="mailto:principal.p1.lab@proton.me">principal.p1.lab@proton.me</a></div>
+            <div><a href="https://p1-lab.github.io">p1-lab.github.io</a></div>
+            <div>&copy; 2026 P1Lab</div>
         </div>
     </div>
 </footer>
 
-<!-- Lightbox Modal Container -->
 <div id="image-modal" class="image-modal" onclick="closeModal()">
     <span class="modal-close">&times;</span>
     <img id="modal-img" class="modal-content" src="" alt="Full Resolution Preview">
 </div>
 
-<!-- Lightbox Script -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
-    const navToggle = document.querySelector('.nav-toggle');
-    const mobileNav = document.getElementById('mobile-navigation');
 
     if (modalImg) {
-        modalImg.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
+        modalImg.addEventListener('click', (e) => e.stopPropagation());
     }
 
     document.querySelectorAll('.js-lightbox').forEach(item => {
         item.addEventListener('click', () => {
             const fullSrc = item.getAttribute('data-full');
+            if (!fullSrc || !modal || !modalImg) return;
             modalImg.src = fullSrc;
             modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         });
     });
-
-    if (navToggle && mobileNav) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', String(!isOpen));
-            mobileNav.classList.toggle('is-open', !isOpen);
-        });
-
-        mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.setAttribute('aria-expanded', 'false');
-                mobileNav.classList.remove('is-open');
-            });
-        });
-    }
 });
 
 function closeModal() {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
-    modal.style.display = 'none';
-    modalImg.src = '';
+    if (modal) modal.style.display = 'none';
+    if (modalImg) modalImg.src = '';
+    document.body.style.overflow = '';
 }
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeModal();
-        const navToggle = document.querySelector('.nav-toggle');
-        const mobileNav = document.getElementById('mobile-navigation');
-        if (navToggle && mobileNav) {
-            navToggle.setAttribute('aria-expanded', 'false');
-            mobileNav.classList.remove('is-open');
-        }
-    }
+    if (e.key === 'Escape') closeModal();
 });
 </script>
 
