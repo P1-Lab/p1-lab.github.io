@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PHLATS INSHORE FISHING — Florida Field Record | P1Lab</title>
+
+<meta name="description" content="Phlats Inshore Fishing — a proposed Florida Field Record documenting working waters, fishing practice, accumulated knowledge, and the physical culture of inshore fishing in Jupiter and Palm Beach.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bone:#f3f0e9;
+  --paper:#f8f6f0;
+  --ink:#20201e;
+  --muted:#68665f;
+  --line:#d8d4ca;
+  --soft:#e9e5dc;
+  --white:#fbfaf6;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bone);
+  color:var(--ink);
+  font-family:Inter, sans-serif;
+  line-height:1.65;
+  font-size:15px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1120px, calc(100% - 48px));
+  margin:0 auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(243,240,233,.96);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+
+.nav{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-family:"Cormorant Garamond", serif;
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:.01em;
+}
+
+.nav-right{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.nav-right a:hover{
+  color:var(--ink);
+}
+
+.hero{
+  padding:110px 0 90px;
+  border-bottom:1px solid var(--line);
+}
+
+.kicker,
+.section-number,
+.eyebrow{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.hero h1{
+  margin:18px 0 20px;
+  max-width:850px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:clamp(58px, 8vw, 100px);
+  line-height:.88;
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+
+.hero .deck{
+  max-width:720px;
+  margin:0;
+  font-family:"Cormorant Garamond", serif;
+  font-size:30px;
+  line-height:1.16;
+}
+
+.hero-rule{
+  width:100%;
+  height:1px;
+  background:var(--line);
+  margin:58px 0 28px;
+}
+
+.hero-note{
+  max-width:760px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+section{
+  padding:92px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.section-head{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:35px;
+  margin-bottom:48px;
+}
+
+.section-number{
+  padding-top:10px;
+}
+
+.section-head h2{
+  margin:0;
+  max-width:820px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:48px;
+  line-height:1;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+
+.section-intro{
+  max-width:720px;
+  margin:20px 0 0;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.definition{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:70px;
+  align-items:start;
+}
+
+.definition h3{
+  margin:0 0 18px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:36px;
+  line-height:1.05;
+  font-weight:500;
+}
+
+.definition p{
+  max-width:650px;
+  margin:0 0 18px;
+}
+
+.side-note{
+  border-top:1px solid var(--ink);
+  padding-top:18px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.side-note strong{
+  display:block;
+  color:var(--ink);
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.offers{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.offer{
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding:38px 36px 34px;
+  display:flex;
+  flex-direction:column;
+  min-height:560px;
+}
+
+.offer.primary{
+  border-color:var(--ink);
+}
+
+.offer-label{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.offer h3{
+  margin:16px 0 10px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:38px;
+  line-height:1;
+  font-weight:500;
+}
+
+.offer .price{
+  margin:4px 0 28px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:29px;
+}
+
+.offer p{
+  margin:0 0 20px;
+}
+
+.offer ul{
+  margin:5px 0 30px;
+  padding:0;
+  list-style:none;
+  border-top:1px solid var(--line);
+}
+
+.offer li{
+  padding:11px 0;
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+}
+
+.offer li strong{
+  font-weight:600;
+}
+
+.offer-bottom{
+  margin-top:auto;
+  padding-top:24px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.55;
+}
+
+.process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+
+.process-item{
+  padding:27px 25px 30px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  min-height:220px;
+}
+
+.process-item .num{
+  font-family:"Cormorant Garamond", serif;
+  font-size:28px;
+  color:var(--muted);
+}
+
+.process-item h3{
+  margin:15px 0 10px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:25px;
+  line-height:1.05;
+  font-weight:500;
+}
+
+.process-item p{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.field-session{
+  margin-top:48px;
+  padding:38px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+
+.field-session h3{
+  margin:0 0 12px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:34px;
+  line-height:1;
+  font-weight:500;
+}
+
+.field-session p{
+  margin:0;
+}
+
+.field-session ul{
+  margin:0;
+  padding-left:18px;
+}
+
+.field-session li{
+  margin:7px 0;
+  font-size:13px;
+}
+
+.collaboration{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.collab-card{
+  padding:32px;
+  border:1px solid var(--line);
+  background:var(--paper);
+}
+
+.collab-card h3{
+  margin:0 0 18px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:32px;
+  line-height:1;
+  font-weight:500;
+}
+
+.collab-card ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.collab-card li{
+  border-top:1px solid var(--line);
+  padding:11px 0;
+  font-size:13px;
+}
+
+.collab-card li:last-child{
+  border-bottom:1px solid var(--line);
+}
+
+.booking{
+  display:grid;
+  grid-template-columns:1fr .8fr;
+  gap:70px;
+  align-items:start;
+}
+
+.booking h3{
+  margin:0 0 20px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:42px;
+  line-height:1;
+  font-weight:500;
+}
+
+.booking p{
+  max-width:680px;
+}
+
+.booking-box{
+  border-top:1px solid var(--ink);
+  padding-top:20px;
+}
+
+.booking-box .label{
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.booking-box p{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.rationale{
+  max-width:820px;
+}
+
+.rationale p{
+  font-family:"Cormorant Garamond", serif;
+  font-size:27px;
+  line-height:1.28;
+  margin:0 0 25px;
+}
+
+.rationale p:last-child{
+  margin-bottom:0;
+}
+
+.cta{
+  padding:100px 0 110px;
+  text-align:center;
+}
+
+.cta .kicker{
+  margin-bottom:20px;
+}
+
+.cta h2{
+  max-width:800px;
+  margin:0 auto 20px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:58px;
+  line-height:.95;
+  font-weight:500;
+  letter-spacing:-.025em;
+}
+
+.cta p{
+  max-width:600px;
+  margin:0 auto 32px;
+  color:var(--muted);
+}
+
+.button{
+  display:inline-block;
+  padding:13px 23px;
+  border:1px solid var(--ink);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.button:hover{
+  background:var(--ink);
+  color:var(--white);
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 45px;
+  font-size:11px;
+  color:var(--muted);
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+@media(max-width:800px){
+
+  .container{
+    width:min(100% - 32px,1120px);
+  }
+
+  .nav-right{
+    display:none;
+  }
+
+  .hero{
+    padding:75px 0 65px;
+  }
+
+  .hero h1{
+    font-size:62px;
+  }
+
+  .hero .deck{
+    font-size:25px;
+  }
+
+  section{
+    padding:65px 0;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-number{
+    margin-bottom:20px;
+  }
+
+  .section-head h2{
+    font-size:40px;
+  }
+
+  .definition,
+  .booking{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .offers,
+  .collaboration,
+  .field-session{
+    grid-template-columns:1fr;
+  }
+
+  .offer{
+    min-height:auto;
+  }
+
+  .process{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .cta h2{
+    font-size:45px;
+  }
+
+  .footer-inner{
+    display:block;
+  }
+
+  .footer-inner div + div{
+    margin-top:8px;
+  }
+}
+
+@media(max-width:520px){
+
+  .process{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:53px;
+  }
+
+  .offer,
+  .field-session,
+  .collab-card{
+    padding:27px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="https://p1-lab.github.io/" class="brand">P1Lab</a>
+
+    <nav class="nav-right">
+      <a href="https://p1-lab.github.io/florida2.html">Florida Field Record</a>
+      <a href="#commission">Commission</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container">
+
+    <div class="kicker">
+      Florida Field Record · Working Waters · Jupiter / Palm Beach
+    </div>
+
+    <h1>Phlats<br>Inshore Fishing</h1>
+
+    <p class="deck">
+      A proposed field record of fishing, water, place, and accumulated knowledge on Florida’s working coast.
+    </p>
+
+    <div class="hero-rule"></div>
+
+    <p class="hero-note">
+      Florida Field Record is an independent monographic series documenting the physical, historical, cultural, ecological, and economic realities of Florida. Phlats can enter the series at two scales: as a substantial feature in Volume I, or as the subject of its own 80–100 page hardcover book.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- WHAT IT IS -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-number">01 / The proposition</div>
+
+      <div>
+        <h2>This is a book about the work, not another piece of promotion.</h2>
+
+        <p class="section-intro">
+          The starting point is simple: Phlats already has a working practice, a body of accumulated knowledge, a particular relationship with the Jupiter and Palm Beach waterways, and years of experience that cannot be adequately represented by a website, social feed, or magazine article.
+        </p>
+      </div>
+    </div>
+
+    <div class="definition">
+
+      <div>
+        <h3>The record is the product.</h3>
+
+        <p>
+          P1Lab would document the operation in the field and build that material into a serious editorial publication: fishing practice, waterways, boat, equipment, weather, tides, technique, decision-making, clients, history, and the knowledge that comes from repeatedly working the same water.
+        </p>
+
+        <p>
+          The finished object is a substantial hardcover publication that can be owned, given to clients, placed with institutions, retained as part of the business archive, and distributed through the book trade.
+        </p>
+
+        <p>
+          This is not an advertising package and it is not a conventional fishing-magazine assignment. It is a commissioned publication within an independent documentary series.
+        </p>
+      </div>
+
+      <div class="side-note">
+        <strong>Florida Field Record</strong>
+
+        Books, not issues.
+
+        <br><br>
+
+        Each volume stands on its own as a substantial documentary investigation, while contributing to a cumulative record of Florida’s physical and working culture.
+
+        <br><br>
+
+        The physical book is the durable unit of the record.
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WHAT CRAIG GETS -->
+
+<section id="commission">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-number">02 / The publication</div>
+
+      <div>
+        <h2>Two scales of record.</h2>
+
+        <p class="section-intro">
+          The smaller project places Phlats inside the inaugural Florida Field Record. The larger project makes Phlats itself the subject of a complete book.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="offers">
+
+      <article class="offer">
+
+        <div class="offer-label">
+          Florida Field Record · Volume I
+        </div>
+
+        <h3>Working Waters Feature</h3>
+
+        <div class="price">
+          $2,500–$3,500
+        </div>
+
+        <p>
+          A substantial editorial feature documenting Phlats as part of the working-water culture of Jupiter and Palm Beach.
+        </p>
+
+        <ul>
+          <li><strong>Approx. 12 pages</strong></li>
+          <li>Field photography and editorial documentation</li>
+          <li>Interview and firsthand knowledge</li>
+          <li>Waterways, practice, equipment, and place</li>
+          <li>Finished hardcover Florida Field Record</li>
+          <li>Direct copies for Phlats and client relationships</li>
+          <li>Book-trade distribution through Ingram</li>
+        </ul>
+
+        <div class="offer-bottom">
+          Production is booked and paid in full at commissioning. This reserves the field, editorial, design, prepress, and production capacity required for the feature.
+        </div>
+
+      </article>
+
+
+      <article class="offer primary">
+
+        <div class="offer-label">
+          Dedicated Florida Field Record
+        </div>
+
+        <h3>Phlats Inshore Fishing</h3>
+
+        <div class="price">
+          $5,500–$7,500
+        </div>
+
+        <p>
+          A complete monographic record of the practice, the water, the people, and the accumulated knowledge behind Phlats Inshore Fishing.
+        </p>
+
+        <ul>
+          <li><strong>Approx. 80–100 pages</strong></li>
+          <li>Dedicated field research and photography</li>
+          <li>3–4 hour working fishing trip documented in the field</li>
+          <li>Extended interviews and observation</li>
+          <li>Boat, tackle, technique, waterways, and working environment</li>
+          <li>Hardcover master publication and direct copies</li>
+          <li>Book-trade distribution through Ingram</li>
+        </ul>
+
+        <div class="offer-bottom">
+          Production is booked and paid in full at commissioning. P1Lab then reserves the field, editorial, design, prepress, and production resources for the complete publication.
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FIELDWORK -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-number">03 / The field session</div>
+
+      <div>
+        <h2>We go fishing.</h2>
+
+        <p class="section-intro">
+          The dedicated book begins with the actual operation rather than a staged portrait of it.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="field-session">
+
+      <div>
+        <h3>A 3–4 hour working trip.</h3>
+
+        <p>
+          P1Lab would join Craig on the water for a normal working session, documenting the operation as it actually unfolds: departure, water conditions, movement, equipment, tackle, technique, decisions, fish, clients where appropriate, and the physical environment in which the knowledge is applied.
+        </p>
+      </div>
+
+      <div>
+        <ul>
+          <li>The boat as working environment</li>
+          <li>Water, weather, tide, and seasonal conditions</li>
+          <li>Tackle and equipment in actual use</li>
+          <li>Technique and decision-making</li>
+          <li>Interaction with clients and the water</li>
+          <li>Knowledge that cannot be learned from a brochure</li>
+          <li>The ordinary physical details that make the practice distinctive</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- COLLABORATION -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-number">04 / Collaboration</div>
+
+      <div>
+        <h2>Craig’s knowledge is part of the source material.</h2>
+
+        <p class="section-intro">
+          The project works because the person who actually knows the water is present during the investigation.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="collaboration">
+
+      <div class="collab-card">
+
+        <h3>Craig / Phlats</h3>
+
+        <ul>
+          <li>Access to the working operation</li>
+          <li>Firsthand knowledge of the waterways</li>
+          <li>Interviews and technical explanation</li>
+          <li>Historical and experiential context</li>
+          <li>Opportunity to contribute photographs if desired</li>
+          <li>Review of factual and technical material before publication</li>
+        </ul>
+
+      </div>
+
+
+      <div class="collab-card">
+
+        <h3>P1Lab</h3>
+
+        <ul>
+          <li>Editorial architecture and research</li>
+          <li>Field observation and photography</li>
+          <li>Interviews, writing, and documentation</li>
+          <li>Image conditioning and prepress</li>
+          <li>Book design and production</li>
+          <li>Hardcover publication and distribution</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <p class="section-intro" style="margin-top:28px;">
+      If Craig wants to photograph during the field session, that work can be incorporated into the publication as part of the agreed commissioning and image-use terms. The point is not to separate photographer from subject, but to use the people closest to the work as part of the documentary record.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- WHAT THE BOOK DOCUMENTS -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-number">05 / The record</div>
+
+      <div>
+        <h2>What would actually be documented?</h2>
+
+        <p class="section-intro">
+          The book would be discovered through the fieldwork. The categories below establish the territory without turning the project into a predetermined shot list.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="process">
+
+      <div class="process-item">
+        <div class="num">01</div>
+        <h3>The Water</h3>
+        <p>
+          Jupiter, Palm Beach, estuaries, inlets, tides, seasons, weather, currents, and the physical character of the fishing grounds.
+        </p>
+      </div>
+
+      <div class="process-item">
+        <div class="num">02</div>
+        <h3>The Practice</h3>
+        <p>
+          Boat, tackle, equipment, movement, preparation, technique, judgment, and the sequence of an actual working day.
+        </p>
+      </div>
+
+      <div class="process-item">
+        <div class="num">03</div>
+        <h3>The Knowledge</h3>
+        <p>
+          What years on the water have taught: patterns, decisions, exceptions, memory, observation, and accumulated local knowledge.
+        </p>
+      </div>
+
+      <div class="process-item">
+        <div class="num">04</div>
+        <h3>The Person</h3>
+        <p>
+          The experience and working philosophy of the person whose practice connects all of the preceding elements.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WHY -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-number">06 / Why the record</div>
+
+      <div>
+        <h2>The reason to make the book is not that Phlats needs another advertisement.</h2>
+      </div>
+    </div>
+
+
+    <div class="rationale">
+
+      <p>
+        Fishing magazines can cover a trip. Television can cover a personality. Social media can show what happened this week. None of those forms necessarily creates a permanent record of the accumulated practice behind the work.
+      </p>
+
+      <p>
+        Phlats operates within a particular Florida landscape and a particular body of local knowledge. That knowledge exists because someone has spent years reading the water, learning its changes, making decisions, and applying that knowledge for other people.
+      </p>
+
+      <p>
+        A field record gives that knowledge a physical form that can remain useful after the current season, current website, current social platforms, and current media cycle have passed.
+      </p>
+
+      <p>
+        For clients, it becomes a substantial object associated with the experience they have bought. For the business, it becomes part of its permanent archive. For the larger Florida Field Record, it becomes one documented piece of the state’s working culture.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- BOOKING -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-number">07 / Commissioning</div>
+
+      <div>
+        <h2>The project is booked as a publication.</h2>
+
+        <p class="section-intro">
+          Once a scale is selected, P1Lab schedules the fieldwork and commits the production resources needed to complete it.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="booking">
+
+      <div>
+
+        <h3>Paid at booking.</h3>
+
+        <p>
+          Production is booked and paid in full at commissioning. P1Lab then reserves the field time, editorial capacity, design, prepress, and physical production resources for the project.
+        </p>
+
+        <p>
+          The scope, field schedule, access, photography, participation, publication specifications, and delivery of finished copies are established before work begins.
+        </p>
+
+        <p>
+          The dedicated book is intended as an approximately 80–100 page publication. The final page count and editorial structure are determined by the material discovered during the fieldwork rather than by padding the book to reach an arbitrary number.
+        </p>
+
+      </div>
+
+
+      <div class="booking-box">
+
+        <div class="label">Next step</div>
+
+        <p>
+          A short conversation to determine which scale makes sense, establish access and scheduling, and define the field session.
+        </p>
+
+        <p>
+          No advertising inventory is being sold. No social campaign is required. The commissioning decision is simply whether Phlats should enter Florida Field Record as a feature or as its own book.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="contact">
+  <div class="container">
+
+    <div class="kicker">Florida Field Record · P1Lab</div>
+
+    <h2>Decide which scale of record makes sense.</h2>
+
+    <p>
+      If the dedicated book is the more interesting possibility, the next step is to get the field session on the calendar and work out the publication scope from there.
+    </p>
+
+    <a class="button" href="mailto:principal.p1.lab@proton.me">
+      Discuss the project
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-inner">
+
+    <div>
+      P1Lab — Independent Research &amp; Publishing
+    </div>
+
+    <div>
+      Florida Field Record · Jupiter / Palm Beach
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
