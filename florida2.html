@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -313,6 +312,61 @@ img {
 
 
 /* --------------------------------------------------
+   PALM BEACH COUNTY AGRICULTURE
+-------------------------------------------------- */
+
+.agriculture-feature {
+    padding: 115px 0;
+    background: #e6e2d9;
+}
+
+.agriculture-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.agriculture-title {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(48px, 6.5vw, 82px);
+    line-height: 0.88;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+.agriculture-copy {
+    margin-top: 28px;
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #57544d;
+}
+
+.agriculture-link {
+    display: inline-block;
+    margin-top: 34px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.agriculture-image {
+    border: 1px solid #c9c4ba;
+    background: var(--paper);
+    padding: 12px;
+}
+
+.agriculture-image img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* --------------------------------------------------
    WEST PALM BEACH FEATURE
 -------------------------------------------------- */
 
@@ -588,7 +642,8 @@ footer {
     }
 
     .collection-grid,
-    .feature-grid {
+    .feature-grid,
+    .agriculture-grid {
         grid-template-columns: 1fr;
         gap: 45px;
     }
@@ -644,6 +699,11 @@ footer {
         padding: 28px;
     }
 
+    .agriculture-feature,
+    .feature {
+        padding: 85px 0;
+    }
+
     .cta {
         padding: 90px 0;
     }
@@ -662,23 +722,20 @@ footer {
 <header class="site-header">
     <div class="container header-inner">
 
+        <a href="/" class="brand">
+            P1Lab
+            <small>Independent Research &amp; Publishing</small>
+        </a>
 
-<a href="/" class="brand">
-    P1Lab
-    <small>Independent Research &amp; Publishing</small>
-</a>
+        <nav class="main-nav">
+            <a href="#collection" class="active">Collection</a>
+            <a href="#volumes">Volumes</a>
+            <a href="#method">Method</a>
+            <a href="#participation">Participation</a>
+            <a href="west-palm-beach.html">West Palm Beach</a>
+        </nav>
 
-<nav class="main-nav">
-    <a href="#collection" class="active">Collection</a>
-    <a href="#volumes">Volumes</a>
-    <a href="#method">Method</a>
-    <a href="#participation">Participation</a>
-    <a href="west-palm-beach.html">West Palm Beach</a>
-</nav>
-
-
-</div>
-
+    </div>
 </header>
 
 <main>
@@ -690,35 +747,33 @@ footer {
 <section class="hero">
     <div class="container">
 
+        <div class="eyebrow">
+            P1Lab / Independent Documentary Publishing
+        </div>
 
-<div class="eyebrow">
-    P1Lab / Independent Documentary Publishing
-</div>
+        <h1>
+            Florida<br>Field Record
+        </h1>
 
-<h1>
-    Florida<br>Field Record
-</h1>
+        <p class="hero-lead">
+            A collection of regional field records documenting Florida one place at a time.
+        </p>
 
-<p class="hero-lead">
-    A collection of regional field records documenting Florida one place at a time.
-</p>
+        <p class="hero-copy">
+            Florida is not a single subject. It is a collection of distinct places, working environments, histories, cultures, landscapes, institutions, infrastructures, and communities.
+        </p>
 
-<p class="hero-copy">
-    Florida is not a single subject. It is a collection of distinct places, working environments, histories, cultures, landscapes, institutions, infrastructures, and communities.
-</p>
+        <p class="hero-copy">
+            Florida Field Record publishes those places as substantial independent books. Each regional volume establishes its own field of investigation and follows the physical and historical relationships discovered there.
+        </p>
 
-<p class="hero-copy">
-    Florida Field Record publishes those places as substantial independent books. Each regional volume establishes its own field of investigation and follows the physical and historical relationships discovered there.
-</p>
+        <div class="hero-statement">
+            The collection grows geographically. The record grows through research.
+        </div>
 
-<div class="hero-statement">
-    The collection grows geographically. The record grows through research.
-</div>
-
-
-</div>
-
+    </div>
 </section>
+
 
 <!-- ==================================================
      01 / THE COLLECTION
@@ -727,53 +782,51 @@ footer {
 <section class="section" id="collection">
     <div class="container">
 
+        <div class="section-head">
 
-<div class="section-head">
+            <div class="section-number">
+                01 / The Collection
+            </div>
 
-    <div class="section-number">
-        01 / The Collection
+            <div>
+                <h2 class="section-title">
+                    One state. Many fields.
+                </h2>
+
+                <p class="section-intro">
+                    Florida Field Record is the collection title. The individual books are regional field records: substantial documentary volumes devoted to particular Florida places.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="collection-grid">
+
+            <div class="collection-lead">
+                A regional volume begins with a place and follows what the place contains.
+            </div>
+
+            <div class="collection-copy">
+
+                <p>
+                    A city, region, landscape, waterfront, historic district, or other defined field becomes the geographic boundary of the investigation.
+                </p>
+
+                <p>
+                    Within that boundary, research determines what matters: the people who operate there, the work performed there, the structures and infrastructure, the objects and materials, the institutions, the histories, the environmental conditions, and the relationships connecting them.
+                </p>
+
+                <p>
+                    Each volume stands independently. Together, the volumes form a continuing physical record of Florida.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div>
-        <h2 class="section-title">
-            One state. Many fields.
-        </h2>
-
-        <p class="section-intro">
-            Florida Field Record is the collection title. The individual books are regional field records: substantial documentary volumes devoted to particular Florida places.
-        </p>
-    </div>
-
-</div>
-
-<div class="collection-grid">
-
-    <div class="collection-lead">
-        A regional volume begins with a place and follows what the place contains.
-    </div>
-
-    <div class="collection-copy">
-
-        <p>
-            A city, region, landscape, waterfront, historic district, or other defined field becomes the geographic boundary of the investigation.
-        </p>
-
-        <p>
-            Within that boundary, research determines what matters: the people who operate there, the work performed there, the structures and infrastructure, the objects and materials, the institutions, the histories, the environmental conditions, and the relationships connecting them.
-        </p>
-
-        <p>
-            Each volume stands independently. Together, the volumes form a continuing physical record of Florida.
-        </p>
-
-    </div>
-
-</div>
-
-
-</div>
-
 </section>
+
 
 <!-- ==================================================
      02 / REGIONAL VOLUMES
@@ -782,472 +835,561 @@ footer {
 <section class="section volume-section" id="volumes">
     <div class="container">
 
+        <div class="section-head">
 
-<div class="section-head">
+            <div class="section-number">
+                02 / Regional Volumes
+            </div>
 
-    <div class="section-number">
-        02 / Regional Volumes
+            <div>
+                <h2 class="section-title">
+                    The books are the collection.
+                </h2>
+
+                <p class="section-intro">
+                    Regional volumes are independently researched and published as substantial physical books. The geographic field is defined first. The structure of the record emerges through investigation.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="volume-list">
+
+            <article class="volume current">
+
+                <div class="volume-number">
+                    Current Project
+                </div>
+
+                <div>
+                    <h3>West Palm Beach</h3>
+
+                    <div class="volume-meta">
+                        Regional Field Record · In Research
+                    </div>
+                </div>
+
+                <a href="west-palm-beach.html" class="volume-link">
+                    Explore Volume →
+                </a>
+
+            </article>
+
+
+            <article class="volume">
+
+                <div class="volume-number">
+                    Palm Beach County Field
+                </div>
+
+                <div>
+                    <h3>Florida Agriculture</h3>
+
+                    <div class="volume-meta">
+                        Palm Beach County · Material Record · In Research
+                    </div>
+                </div>
+
+                <a href="palm-beach-county-ag.html" class="volume-link">
+                    Explore Record →
+                </a>
+
+            </article>
+
+
+            <article class="volume">
+
+                <div class="volume-number">
+                    Next Regional Field
+                </div>
+
+                <div>
+                    <h3>Fort Lauderdale</h3>
+
+                    <div class="volume-meta">
+                        Regional Field Record · Planned
+                    </div>
+                </div>
+
+                <span class="volume-link">
+                    Planned
+                </span>
+
+            </article>
+
+
+            <article class="volume">
+
+                <div class="volume-number">
+                    Future Regional Volume
+                </div>
+
+                <div>
+                    <h3>The Everglades</h3>
+
+                    <div class="volume-meta">
+                        Regional Field Record · Future
+                    </div>
+                </div>
+
+                <span class="volume-link">
+                    Future
+                </span>
+
+            </article>
+
+
+            <article class="volume">
+
+                <div class="volume-number">
+                    Future Regional Volume
+                </div>
+
+                <div>
+                    <h3>The Keys</h3>
+
+                    <div class="volume-meta">
+                        Regional Field Record · Future
+                    </div>
+                </div>
+
+                <span class="volume-link">
+                    Future
+                </span>
+
+            </article>
+
+        </div>
+
     </div>
+</section>
 
-    <div>
-        <h2 class="section-title">
-            The books are the collection.
-        </h2>
 
-        <p class="section-intro">
-            Regional volumes are independently researched and published as substantial physical books. The geographic field is defined first. The structure of the record emerges through investigation.
-        </p>
+<!-- ==================================================
+     03 / PALM BEACH COUNTY AGRICULTURE
+================================================== -->
+
+<section class="agriculture-feature" id="agriculture">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Palm Beach County Field Investigation
+        </div>
+
+        <div class="agriculture-grid">
+
+            <div>
+
+                <h2 class="agriculture-title">
+                    Florida<br>
+                    Agriculture
+                </h2>
+
+                <p class="agriculture-copy">
+                    A focused field record of agriculture as a physical, historical, industrial, and cultural system within Palm Beach County.
+                </p>
+
+                <p class="agriculture-copy">
+                    The investigation follows the land, crops, water, machinery, processing systems, working landscapes, agricultural businesses, people, institutions, and histories that make the county's agricultural field legible.
+                </p>
+
+                <a href="palm-beach-county-ag.html" class="agriculture-link">
+                    Enter the Palm Beach County Agriculture Record →
+                </a>
+
+            </div>
+
+            <div class="agriculture-image">
+
+                <img
+                    src="palm-beach-county-ag.png"
+                    alt="Physical publication mockup for Florida Agriculture: The Material Record, a Palm Beach County field investigation."
+                >
+
+            </div>
+
+        </div>
+
     </div>
-
-</div>
-
-<div class="volume-list">
-
-    <article class="volume current">
-
-        <div class="volume-number">
-            Current Project
-        </div>
-
-        <div>
-            <h3>West Palm Beach</h3>
-
-            <div class="volume-meta">
-                Regional Field Record · In Research
-            </div>
-        </div>
-
-        <a href="west-palm-beach.html" class="volume-link">
-            Explore Volume →
-        </a>
-
-    </article>
-
-    <article class="volume">
-
-        <div class="volume-number">
-            Next Regional Field
-        </div>
-
-        <div>
-            <h3>Fort Lauderdale</h3>
-
-            <div class="volume-meta">
-                Regional Field Record · Planned
-            </div>
-        </div>
-
-        <span class="volume-link">
-            Planned
-        </span>
-
-    </article>
-
-    <article class="volume">
-
-        <div class="volume-number">
-            Future Regional Volume
-        </div>
-
-        <div>
-            <h3>The Everglades</h3>
-
-            <div class="volume-meta">
-                Regional Field Record · Future
-            </div>
-        </div>
-
-        <span class="volume-link">
-            Future
-        </span>
-
-    </article>
-
-    <article class="volume">
-
-        <div class="volume-number">
-            Future Regional Volume
-        </div>
-
-        <div>
-            <h3>The Keys</h3>
-
-            <div class="volume-meta">
-                Regional Field Record · Future
-            </div>
-        </div>
-
-        <span class="volume-link">
-            Future
-        </span>
-
-    </article>
-
-</div>
-
-
-</div>
 
 </section>
 
+
 <!-- ==================================================
-     03 / WEST PALM BEACH
+     04 / WEST PALM BEACH
 ================================================== -->
 
 <section class="feature" id="west-palm-beach">
+
     <div class="container">
 
+        <div class="eyebrow">
+            Current Regional Investigation
+        </div>
 
-<div class="eyebrow">
-    Current Regional Investigation
-</div>
+        <div class="feature-grid">
 
-<div class="feature-grid">
+            <div>
 
-    <div>
+                <h2 class="feature-title">
+                    West Palm<br>Beach
+                </h2>
 
-        <h2 class="feature-title">
-            West Palm<br>Beach
-        </h2>
+                <p class="feature-copy">
+                    The first active regional field record in the collection. Research is examining the city through its working environments, waterfront, architecture, institutions, histories, cultural life, infrastructure, and the people who make those systems function.
+                </p>
 
-        <p class="feature-copy">
-            The first active regional field record in the collection. Research is examining the city through its working environments, waterfront, architecture, institutions, histories, cultural life, infrastructure, and the people who make those systems function.
-        </p>
+                <a href="west-palm-beach.html" class="feature-link">
+                    Enter the West Palm Beach Field Record →
+                </a>
 
-        <a href="west-palm-beach.html" class="feature-link">
-            Enter the West Palm Beach Field Record →
-        </a>
+            </div>
+
+            <div class="feature-image">
+
+                <img
+                    src="west-palm-beach-field-record-mockup.jpg"
+                    alt="Publication design study for West Palm Beach Field Record, a regional volume in the Florida Field Record collection."
+                >
+
+            </div>
+
+        </div>
 
     </div>
-
-    <div class="feature-image">
-
-        <img
-            src="west-palm-beach-field-record-mockup.jpg"
-            alt="Publication design study for West Palm Beach Field Record, a regional volume in the Florida Field Record collection."
-        >
-
-    </div>
-
-</div>
-
-
-</div>
 
 </section>
 
+
 <!-- ==================================================
-     04 / WHAT A REGIONAL FIELD RECORD IS
+     05 / WHAT A REGIONAL FIELD RECORD IS
 ================================================== -->
 
 <section class="section">
+
     <div class="container">
 
+        <div class="section-head">
 
-<div class="section-head">
+            <div class="section-number">
+                05 / The Volume
+            </div>
 
-    <div class="section-number">
-        04 / The Volume
+            <div>
+                <h2 class="section-title">
+                    A place becomes a book.
+                </h2>
+
+                <p class="section-intro">
+                    A Florida Field Record volume is not a magazine, directory, advertising publication, or collection of unrelated profiles. It is a researched regional monograph.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="definition-grid">
+
+            <article class="definition-card">
+
+                <div class="label">
+                    Geographic Field
+                </div>
+
+                <h3>
+                    Begin with the place.
+                </h3>
+
+                <p>
+                    The geographic boundary establishes the field. Research then determines which realities within that field warrant sustained documentation.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <div class="label">
+                    Primary Evidence
+                </div>
+
+                <h3>
+                    Follow what is there.
+                </h3>
+
+                <p>
+                    Field observation, photography, firsthand interviews, archives, physical evidence, technical inquiry, maps, documents, and other primary materials form the record.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <div class="label">
+                    Independent Editorial Work
+                </div>
+
+                <h3>
+                    Research determines inclusion.
+                </h3>
+
+                <p>
+                    A regional volume is independently conceived and edited. Participation does not determine interpretation or purchase editorial conclusions.
+                </p>
+
+            </article>
+
+
+            <article class="definition-card">
+
+                <div class="label">
+                    Physical Publication
+                </div>
+
+                <h3>
+                    The record becomes a book.
+                </h3>
+
+                <p>
+                    The finished regional field record is produced as a substantial physical volume intended for ownership, collection, consultation, and long-term preservation.
+                </p>
+
+            </article>
+
+        </div>
+
     </div>
-
-    <div>
-        <h2 class="section-title">
-            A place becomes a book.
-        </h2>
-
-        <p class="section-intro">
-            A Florida Field Record volume is not a magazine, directory, advertising publication, or collection of unrelated profiles. It is a researched regional monograph.
-        </p>
-    </div>
-
-</div>
-
-<div class="definition-grid">
-
-    <article class="definition-card">
-
-        <div class="label">
-            Geographic Field
-        </div>
-
-        <h3>
-            Begin with the place.
-        </h3>
-
-        <p>
-            The geographic boundary establishes the field. Research then determines which realities within that field warrant sustained documentation.
-        </p>
-
-    </article>
-
-    <article class="definition-card">
-
-        <div class="label">
-            Primary Evidence
-        </div>
-
-        <h3>
-            Follow what is there.
-        </h3>
-
-        <p>
-            Field observation, photography, firsthand interviews, archives, physical evidence, technical inquiry, maps, documents, and other primary materials form the record.
-        </p>
-
-    </article>
-
-    <article class="definition-card">
-
-        <div class="label">
-            Independent Editorial Work
-        </div>
-
-        <h3>
-            Research determines inclusion.
-        </h3>
-
-        <p>
-            A regional volume is independently conceived and edited. Participation does not determine interpretation or purchase editorial conclusions.
-        </p>
-
-    </article>
-
-    <article class="definition-card">
-
-        <div class="label">
-            Physical Publication
-        </div>
-
-        <h3>
-            The record becomes a book.
-        </h3>
-
-        <p>
-            The finished regional field record is produced as a substantial physical volume intended for ownership, collection, consultation, and long-term preservation.
-        </p>
-
-    </article>
-
-</div>
-
-
-</div>
 
 </section>
 
+
 <!-- ==================================================
-     05 / METHOD
+     06 / METHOD
 ================================================== -->
 
 <section class="section" id="method">
+
     <div class="container">
 
+        <div class="section-head">
 
-<div class="section-head">
+            <div class="section-number">
+                06 / Method
+            </div>
 
-    <div class="section-number">
-        05 / Method
+            <div>
+                <h2 class="section-title">
+                    Go there. Observe. Verify. Build the record.
+                </h2>
+
+                <p class="section-intro">
+                    Every regional volume is built through direct engagement with the physical field and the people who possess primary knowledge of it.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="method-grid">
+
+            <article class="method-card">
+
+                <div class="number">
+                    01 / Field Observation
+                </div>
+
+                <h3>
+                    Be there.
+                </h3>
+
+                <p>
+                    Direct site visits, physical inspection, photographic observation, and attention to material and spatial conditions.
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="number">
+                    02 / Primary Knowledge
+                </div>
+
+                <h3>
+                    Ask the people who know it.
+                </h3>
+
+                <p>
+                    Owners, workers, operators, craftspeople, historians, engineers, curators, builders, technicians, and long-term participants.
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="number">
+                    03 / Evidence
+                </div>
+
+                <h3>
+                    Cross-check the record.
+                </h3>
+
+                <p>
+                    Field observations are examined against documents, archives, physical evidence, technical literature, maps, and other available sources.
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="number">
+                    04 / Editorial Restraint
+                </div>
+
+                <h3>
+                    Document, don't promote.
+                </h3>
+
+                <p>
+                    The purpose is to make the physical reality of the field legible without turning the record into advertising.
+                </p>
+
+            </article>
+
+        </div>
+
     </div>
-
-    <div>
-        <h2 class="section-title">
-            Go there. Observe. Verify. Build the record.
-        </h2>
-
-        <p class="section-intro">
-            Every regional volume is built through direct engagement with the physical field and the people who possess primary knowledge of it.
-        </p>
-
-    </div>
-
-</div>
-
-<div class="method-grid">
-
-    <article class="method-card">
-
-        <div class="number">
-            01 / Field Observation
-        </div>
-
-        <h3>
-            Be there.
-        </h3>
-
-        <p>
-            Direct site visits, physical inspection, photographic observation, and attention to material and spatial conditions.
-        </p>
-
-    </article>
-
-    <article class="method-card">
-
-        <div class="number">
-            02 / Primary Knowledge
-        </div>
-
-        <h3>
-            Ask the people who know it.
-        </h3>
-
-        <p>
-            Owners, workers, operators, craftspeople, historians, engineers, curators, builders, technicians, and long-term participants.
-        </p>
-
-    </article>
-
-    <article class="method-card">
-
-        <div class="number">
-            03 / Evidence
-        </div>
-
-        <h3>
-            Cross-check the record.
-        </h3>
-
-        <p>
-            Field observations are examined against documents, archives, physical evidence, technical literature, maps, and other available sources.
-        </p>
-
-    </article>
-
-    <article class="method-card">
-
-        <div class="number">
-            04 / Editorial Restraint
-        </div>
-
-        <h3>
-            Document, don't promote.
-        </h3>
-
-        <p>
-            The purpose is to make the physical reality of the field legible without turning the record into advertising.
-        </p>
-
-    </article>
-
-</div>
-
-
-</div>
 
 </section>
 
+
 <!-- ==================================================
-     06 / PARTICIPATION
+     07 / PARTICIPATION
 ================================================== -->
 
 <section class="section participation" id="participation">
+
     <div class="container">
 
+        <div class="section-head">
 
-<div class="section-head">
+            <div class="section-number">
+                07 / Participation
+            </div>
 
-    <div class="section-number">
-        06 / Participation
+            <div>
+                <h2 class="section-title">
+                    Independent books can have institutional participants.
+                </h2>
+
+                <p class="section-intro">
+                    Organizations whose work, history, facilities, collections, expertise, or operating environments form part of a regional field may participate in making its documentation possible.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="participation-copy">
+
+            <p>
+                Participation supports field research and physical production of a regional volume. It may include research access, documentary work, production underwriting, and institutional acquisition of finished books.
+            </p>
+
+            <p>
+                The resulting publication remains independently conceived and edited. Participation is not advertising and does not purchase favorable treatment, editorial control, or a predetermined place in the book.
+            </p>
+
+            <p class="highlight">
+                The institution helps make the regional record possible. It does not buy an advertisement inside it.
+            </p>
+
+        </div>
+
     </div>
-
-    <div>
-        <h2 class="section-title">
-            Independent books can have institutional participants.
-        </h2>
-
-        <p class="section-intro">
-            Organizations whose work, history, facilities, collections, expertise, or operating environments form part of a regional field may participate in making its documentation possible.
-        </p>
-
-    </div>
-
-</div>
-
-<div class="participation-copy">
-
-    <p>
-        Participation supports field research and physical production of a regional volume. It may include research access, documentary work, production underwriting, and institutional acquisition of finished books.
-    </p>
-
-    <p>
-        The resulting publication remains independently conceived and edited. Participation is not advertising and does not purchase favorable treatment, editorial control, or a predetermined place in the book.
-    </p>
-
-    <p class="highlight">
-        The institution helps make the regional record possible. It does not buy an advertisement inside it.
-    </p>
-
-</div>
-
-
-</div>
 
 </section>
+
 
 <!-- ==================================================
      CTA
 ================================================== -->
 
 <section class="cta">
+
     <div class="container">
 
+        <div class="eyebrow">
+            Current Regional Investigations
+        </div>
 
-<div class="eyebrow">
-    Current Regional Volume
-</div>
+        <h2>
+            Florida is being<br>
+            recorded.
+        </h2>
 
-<h2>
-    West Palm Beach<br>is being recorded.
-</h2>
+        <p>
+            Explore the active regional field records, the research underway, the proposed books, and the ways organizations within those fields can participate in their production.
+        </p>
 
-<p>
-    Explore the current field, the proposed book, the research, and the ways organizations within the region can participate in its production.
-</p>
+        <a href="#volumes" class="cta-link">
+            Explore the Current Fields →
+        </a>
 
-<a href="west-palm-beach.html" class="cta-link">
-    Enter West Palm Beach Field Record →
-</a>
-
-
-</div>
+    </div>
 
 </section>
 
 </main>
 
+
 <footer>
+
     <div class="container footer-inner">
 
+        <div>
+            <div class="footer-brand">
+                P1Lab
+            </div>
+        </div>
 
-<div>
-    <div class="footer-brand">
-        P1Lab
+        <div class="footer-meta">
+
+            <div>
+                Independent Research &amp; Publishing
+            </div>
+
+            <div>
+                Florida Field Record
+            </div>
+
+            <div>
+                West Palm Beach, Florida
+            </div>
+
+            <div>
+                <a href="mailto:principal.p1.lab@proton.me">
+                    principal.p1.lab@proton.me
+                </a>
+            </div>
+
+            <div>
+                <a href="/">
+                    p1-lab.github.io
+                </a>
+            </div>
+
+            <div>
+                &copy; 2026 P1Lab
+            </div>
+
+        </div>
+
     </div>
-</div>
-
-<div class="footer-meta">
-    <div>Independent Research &amp; Publishing</div>
-    <div>Florida Field Record</div>
-    <div>West Palm Beach, Florida</div>
-
-    <div>
-        <a href="mailto:principal.p1.lab@proton.me">
-            principal.p1.lab@proton.me
-        </a>
-    </div>
-
-    <div>
-        <a href="/">
-            p1-lab.github.io
-        </a>
-    </div>
-
-    <div>
-        &copy; 2026 P1Lab
-    </div>
-</div>
-
-
-</div>
 
 </footer>
 
