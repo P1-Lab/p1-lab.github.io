@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Korea: Material Culture Series — P1Lab</title>
+
+<meta name="description" content="Korea: Material Culture Series is an independent documentary field study beginning in Seoul, focused on museum culture, food, craft, architecture, objects, and selected material systems.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bone: #f3f0e9;
+    --paper: #f8f6f0;
+    --ink: #20201e;
+    --muted: #68665f;
+    --line: #d8d4ca;
+    --soft: #e9e5dc;
+    --white: #fbfaf6;
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bone);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(243, 240, 233, 0.95);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.brand {
+    font-family: var(--serif);
+    font-size: 29px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.brand small {
+    display: block;
+    margin-top: -7px;
+    font-family: var(--sans);
+    font-size: 8px;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.main-nav a {
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--ink);
+}
+
+
+/* --------------------------------------------------
+   HERO
+-------------------------------------------------- */
+
+.hero {
+    padding: 120px 0 100px;
+    border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+    margin-bottom: 25px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero h1 {
+    max-width: 1000px;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(54px, 7vw, 96px);
+    line-height: 0.9;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.hero-lead {
+    max-width: 820px;
+    margin: 42px 0 0;
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.2;
+    color: #35342f;
+}
+
+.hero-copy {
+    max-width: 720px;
+    margin: 30px 0 0;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--muted);
+}
+
+.hero-statement {
+    max-width: 820px;
+    margin-top: 45px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-family: var(--serif);
+    font-size: 29px;
+    line-height: 1.3;
+}
+
+.hero-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero-link:hover {
+    border-color: var(--ink);
+}
+
+
+/* --------------------------------------------------
+   SECTIONS
+-------------------------------------------------- */
+
+.section {
+    padding: 105px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 50px;
+    margin-bottom: 65px;
+}
+
+.section-number {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.section-title {
+    max-width: 820px;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 0.98;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+}
+
+.section-intro {
+    max-width: 720px;
+    margin: 25px 0 0;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* --------------------------------------------------
+   SCOPE
+-------------------------------------------------- */
+
+.scope-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.scope-lead {
+    font-family: var(--serif);
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.08;
+}
+
+.scope-copy p {
+    margin: 0 0 24px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--muted);
+}
+
+
+/* --------------------------------------------------
+   DOCUMENTARY FIELDS
+-------------------------------------------------- */
+
+.fields {
+    background: var(--paper);
+}
+
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.field-card {
+    min-height: 240px;
+    padding: 32px;
+    background: var(--paper);
+}
+
+.field-card .label {
+    margin-bottom: 24px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.field-card h3 {
+    margin: 0 0 15px;
+    font-family: var(--serif);
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.field-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+
+/* --------------------------------------------------
+   CURRENT INVESTIGATION
+-------------------------------------------------- */
+
+.feature {
+    padding: 115px 0;
+    background: #292926;
+    color: var(--white);
+}
+
+.feature .eyebrow {
+    color: #aaa79f;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 75px;
+    align-items: start;
+}
+
+.feature-title {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 0.88;
+    font-weight: 500;
+}
+
+.feature-copy {
+    margin-top: 28px;
+    max-width: 560px;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #c2beb5;
+}
+
+.feature-link {
+    display: inline-block;
+    margin-top: 34px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #eeeae1;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #f3f0e9;
+}
+
+.feature-link:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.feature-note {
+    margin-top: 45px;
+    padding-top: 22px;
+    border-top: 1px solid #4a4944;
+    max-width: 560px;
+    font-family: var(--serif);
+    font-size: 27px;
+    line-height: 1.25;
+    color: #f3f0e9;
+}
+
+.book-mockup {
+    min-height: 470px;
+    border: 1px solid #4a4944;
+    background: #32322e;
+    padding: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book {
+    width: min(315px, 80%);
+    min-height: 395px;
+    padding: 42px 34px;
+    background: #ece8df;
+    color: #20201e;
+    box-shadow: 18px 18px 0 rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-kicker {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.book-title {
+    margin-top: 65px;
+    font-family: var(--serif);
+    font-size: 43px;
+    line-height: 0.9;
+}
+
+.book-subtitle {
+    margin-top: 18px;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #68665f;
+}
+
+.book-footer {
+    padding-top: 20px;
+    border-top: 1px solid #c9c4ba;
+    font-size: 8px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+
+/* --------------------------------------------------
+   METHOD
+-------------------------------------------------- */
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.method-card {
+    min-height: 245px;
+    padding: 32px;
+    background: var(--paper);
+}
+
+.method-card .number {
+    margin-bottom: 32px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.method-card h3 {
+    margin: 0 0 14px;
+    font-family: var(--serif);
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.method-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+
+/* --------------------------------------------------
+   ARCHIVE
+-------------------------------------------------- */
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.archive-card {
+    min-height: 235px;
+    padding: 32px;
+    background: var(--paper);
+}
+
+.archive-card .label {
+    margin-bottom: 24px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.archive-card h3 {
+    margin: 0 0 15px;
+    font-family: var(--serif);
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.archive-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+
+/* --------------------------------------------------
+   FIELDWORK
+-------------------------------------------------- */
+
+.fieldwork {
+    max-width: 850px;
+}
+
+.fieldwork h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(46px, 6vw, 76px);
+    line-height: 0.92;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.fieldwork p {
+    max-width: 720px;
+    margin-top: 28px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--muted);
+}
+
+.fieldwork-date {
+    margin-top: 34px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+/* --------------------------------------------------
+   CTA
+-------------------------------------------------- */
+
+.cta {
+    padding: 135px 0;
+    text-align: center;
+}
+
+.cta .eyebrow {
+    margin-bottom: 25px;
+}
+
+.cta h2 {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: var(--serif);
+    font-size: clamp(52px, 7vw, 84px);
+    line-height: 0.92;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 32px auto 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.cta-link {
+    display: inline-block;
+    margin-top: 34px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+
+footer {
+    padding: 45px 0;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.footer-brand {
+    font-family: var(--serif);
+    font-size: 29px;
+}
+
+.footer-meta {
+    text-align: right;
+    font-size: 10px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(100% - 34px, 700px);
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 80px 0 78px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .section-head {
+        display: block;
+        margin-bottom: 45px;
+    }
+
+    .section-number {
+        margin-bottom: 18px;
+    }
+
+    .scope-grid,
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .field-grid,
+    .method-grid,
+    .archive-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-mockup {
+        min-height: 400px;
+    }
+
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-meta {
+        text-align: left;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .header-inner {
+        min-height: 64px;
+    }
+
+    .hero h1 {
+        font-size: 51px;
+    }
+
+    .hero-lead {
+        font-size: 27px;
+    }
+
+    .section-title {
+        font-size: 43px;
+    }
+
+    .field-card,
+    .method-card,
+    .archive-card {
+        padding: 28px;
+    }
+
+    .cta {
+        padding: 90px 0;
+    }
+
+    .cta h2 {
+        font-size: 50px;
+    }
+
+    .book {
+        width: 88%;
+        min-height: 350px;
+        padding: 32px 27px;
+    }
+
+    .book-title {
+        font-size: 37px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+
+        <a href="index.html" class="brand">
+            P1Lab
+            <small>Independent Research &amp; Publishing</small>
+        </a>
+
+        <nav class="main-nav">
+            <a href="#series" class="active">Series</a>
+            <a href="#fields">Fields</a>
+            <a href="#method">Method</a>
+            <a href="#fieldwork">Fieldwork</a>
+            <a href="Korea.Medical.Travel.html">Medical Travel</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+    <div class="container">
+
+        <div class="eyebrow">
+            P1Lab / Independent Field Documentation
+        </div>
+
+        <h1>
+            Korea: Material<br>Culture Series
+        </h1>
+
+        <p class="hero-lead">
+            A bounded documentary field study beginning in Seoul.
+        </p>
+
+        <p class="hero-copy">
+            The Korea: Material Culture Series records selected parts of Korean
+            material life through direct observation, photography, firsthand
+            reporting, and documentary evidence.
+        </p>
+
+        <p class="hero-copy">
+            The initial field period is deliberately limited. Primary fieldwork
+            will take place principally in Seoul, where the project will examine
+            a small number of accessible subjects closely rather than attempt
+            to survey the country.
+        </p>
+
+        <div class="hero-statement">
+            Do not explain the country. Record what can actually be seen.
+        </div>
+
+        <a href="Korea.Medical.Travel.html" class="hero-link">
+            Current Investigation — Korea: Medical Travel →
+        </a>
+
+    </div>
+</section>
+
+
+<!-- ==================================================
+     01 / THE SERIES
+================================================== -->
+
+<section class="section" id="series">
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                01 / The Series
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Small field. Primary evidence.
+                </h2>
+
+                <p class="section-intro">
+                    This is not a survey of Korea and it is not travel writing.
+                    The first field period establishes a focused visual and
+                    documentary record of selected material systems in Seoul.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="scope-grid">
+
+            <div class="scope-lead">
+                Observe a limited number of subjects closely enough to leave a useful record.
+            </div>
+
+            <div class="scope-copy">
+
+                <p>
+                    The researcher is not the subject of the books. Personal
+                    impressions and travel narrative are deliberately secondary
+                    to the physical record.
+                </p>
+
+                <p>
+                    A museum collection, a market, a kitchen, a workshop, a room,
+                    an object, a meal, a tool, a building, or a medical facility
+                    may become a field subject when it can be documented directly
+                    and with sufficient depth.
+                </p>
+
+                <p>
+                    The scope is determined by time, access, geography, and the
+                    quality of evidence available in the field.
+                </p>
+
+                <p>
+                    The first field archive will determine which subjects merit
+                    subsequent publication.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================================================
+     02 / DOCUMENTARY FIELDS
+================================================== -->
+
+<section class="section fields" id="fields">
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                02 / Documentary Fields
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    The initial field is deliberately narrow.
+                </h2>
+
+                <p class="section-intro">
+                    These are areas of investigation for the Seoul field period,
+                    not claims of comprehensive national coverage.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="field-grid">
+
+            <article class="field-card">
+
+                <div class="label">
+                    01 / Museum Culture
+                </div>
+
+                <h3>
+                    Collections &amp; Display
+                </h3>
+
+                <p>
+                    Museums, exhibitions, objects, display systems, labels,
+                    publications, museum shops, craft collections, historical
+                    collections, and the visible ways material culture is preserved
+                    and presented.
+                </p>
+
+            </article>
+
+
+            <article class="field-card">
+
+                <div class="label">
+                    02 / Food
+                </div>
+
+                <h3>
+                    Food &amp; Table
+                </h3>
+
+                <p>
+                    Markets, ingredients, preparation, cookware, vessels,
+                    preservation, fermentation, packaging, restaurants, retail,
+                    and the physical organization of eating.
+                </p>
+
+            </article>
+
+
+            <article class="field-card">
+
+                <div class="label">
+                    03 / Craft
+                </div>
+
+                <h3>
+                    Making &amp; Objects
+                </h3>
+
+                <p>
+                    Accessible workshops, makers, materials, tools, finished
+                    objects, traditional techniques, contemporary craft,
+                    and small-scale production.
+                </p>
+
+            </article>
+
+
+            <article class="field-card">
+
+                <div class="label">
+                    04 / Architecture
+                </div>
+
+                <h3>
+                    Buildings &amp; Interiors
+                </h3>
+
+                <p>
+                    Selected buildings and accessible interiors examined through
+                    materials, rooms, furniture, fixtures, spatial organization,
+                    and visible use.
+                </p>
+
+            </article>
+
+
+            <article class="field-card">
+
+                <div class="label">
+                    05 / Everyday Objects
+                </div>
+
+                <h3>
+                    Ordinary Material Life
+                </h3>
+
+                <p>
+                    Packaging, household goods, clothing, tools, appliances,
+                    stationery, retail displays, signs, utensils, and other
+                    objects encountered directly in the city.
+                </p>
+
+            </article>
+
+
+            <article class="field-card">
+
+                <div class="label">
+                    06 / Selected Systems
+                </div>
+
+                <h3>
+                    Document What Access Allows
+                </h3>
+
+                <p>
+                    A limited number of additional subjects may enter the record
+                    where legitimate access, time, and documentary value make
+                    sustained observation possible.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================================================
+     03 / CURRENT INVESTIGATION
+================================================== -->
+
+<section class="feature">
+    <div class="container">
+
+        <div class="eyebrow">
+            Current Investigation / Seoul
+        </div>
+
+        <div class="feature-grid">
+
+            <div>
+
+                <h2 class="feature-title">
+                    Korea:<br>Medical Travel
+                </h2>
+
+                <p class="feature-copy">
+                    One specialized investigation within the larger Seoul field.
+                    The subject is the material and logistical environment
+                    encountered by an international medical patient.
+                </p>
+
+                <p class="feature-copy">
+                    Depending on access, the record may include hospitals,
+                    clinics, interpretation, coordination, wayfinding,
+                    transportation, technology, hospitality, and recovery
+                    environments.
+                </p>
+
+                <a href="Korea.Medical.Travel.html" class="feature-link">
+                    Enter Korea: Medical Travel →
+                </a>
+
+                <div class="feature-note">
+                    Medical travel is a defined field investigation, not the
+                    identity or scope of the Korea series.
+                </div>
+
+            </div>
+
+
+            <div class="book-mockup">
+
+                <div class="book">
+
+                    <div>
+
+                        <div class="book-kicker">
+                            Korea: Material Culture Series
+                        </div>
+
+                        <div class="book-title">
+                            Korea:<br>Medical<br>Travel
+                        </div>
+
+                        <div class="book-subtitle">
+                            A documentary study of the international-patient environment in Seoul
+                        </div>
+
+                    </div>
+
+                    <div class="book-footer">
+                        P1Lab · Independent Research &amp; Publishing
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================================================
+     04 / METHOD
+================================================== -->
+
+<section class="section" id="method">
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                04 / Method
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Record first. Interpret later, if necessary.
+                </h2>
+
+                <p class="section-intro">
+                    The method is documentary rather than essayistic. The book
+                    establishes the evidence and leaves room for the reader to
+                    make connections.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="method-grid">
+
+            <article class="method-card">
+
+                <div class="number">
+                    01 / Observation
+                </div>
+
+                <h3>
+                    Be there.
+                </h3>
+
+                <p>
+                    Direct observation of objects, spaces, processes, displays,
+                    food, materials, and environments available in the field.
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="number">
+                    02 / Photography
+                </div>
+
+                <h3>
+                    Show it clearly.
+                </h3>
+
+                <p>
+                    Photography is used as documentary evidence: establishing
+                    objects, details, spaces, sequences, materials, and visible
+                    conditions.
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="number">
+                    03 / Primary Sources
+                </div>
+
+                <h3>
+                    Ask who knows it.
+                </h3>
+
+                <p>
+                    Firsthand interviews, captions, documents, museum records,
+                    technical sources, and other available primary evidence are
+                    used where they materially strengthen the record.
+                </p>
+
+            </article>
+
+
+            <article class="method-card">
+
+                <div class="number">
+                    04 / Restraint
+                </div>
+
+                <h3>
+                    Do not force a conclusion.
+                </h3>
+
+                <p>
+                    The publication does not need to tell the reader what a
+                    documented object, space, or practice means. Description,
+                    evidence, sequence, and context come first.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================================================
+     05 / RESEARCH ARCHIVE
+================================================== -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                05 / Research Archive
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Build the archive before deciding the books.
+                </h2>
+
+                <p class="section-intro">
+                    The March field period produces a primary visual and
+                    documentary archive. Publication follows the evidence.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="archive-grid">
+
+            <article class="archive-card">
+
+                <div class="label">
+                    Location
+                </div>
+
+                <h3>
+                    Where was it?
+                </h3>
+
+                <p>
+                    City, district, street, building, market, museum, shop,
+                    restaurant, workshop, facility, or other documented site.
+                </p>
+
+            </article>
+
+
+            <article class="archive-card">
+
+                <div class="label">
+                    Subject
+                </div>
+
+                <h3>
+                    What was recorded?
+                </h3>
+
+                <p>
+                    Object, material, food, process, room, building, display,
+                    tool, technology, institution, or visible system.
+                </p>
+
+            </article>
+
+
+            <article class="archive-card">
+
+                <div class="label">
+                    Evidence
+                </div>
+
+                <h3>
+                    How do we know?
+                </h3>
+
+                <p>
+                    Photograph, direct observation, firsthand interview,
+                    documentary record, museum information, technical source,
+                    or other identifiable evidence.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================================================
+     06 / FIELDWORK
+================================================== -->
+
+<section class="section" id="fieldwork">
+    <div class="container">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                06 / Fieldwork
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Seoul first.
+                </h2>
+
+                <p class="section-intro">
+                    The initial field period is intentionally limited to what
+                    one researcher can document properly.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="fieldwork">
+
+            <h2>
+                Two to three weeks is enough to begin a record. Not enough to claim a country.
+            </h2>
+
+            <p>
+                Primary fieldwork will be concentrated principally in Seoul
+                during March 2027. The objective is to document a manageable
+                number of subjects carefully rather than accumulate a superficial
+                national survey.
+            </p>
+
+            <p>
+                Access, time, geography, and the quality of the evidence will
+                determine the final field. Additional regions can be studied
+                in later field periods when a specific subject warrants them.
+            </p>
+
+            <div class="fieldwork-date">
+                Program · October 2026 – April 2027
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================================================
+     CTA
+================================================== -->
+
+<section class="cta">
+    <div class="container">
+
+        <div class="eyebrow">
+            Korea: Material Culture Series
+        </div>
+
+        <h2>
+            Document what can be seen.
+        </h2>
+
+        <p>
+            The first field record begins in Seoul. The archive will determine
+            what becomes a finished publication.
+        </p>
+
+        <a href="Korea.Medical.Travel.html" class="cta-link">
+            Current Investigation — Korea: Medical Travel →
+        </a>
+
+    </div>
+</section>
+
+</main>
+
+
+<footer>
+    <div class="container footer-inner">
+
+        <div>
+            <div class="footer-brand">
+                P1Lab
+            </div>
+        </div>
+
+        <div class="footer-meta">
+            <div>Independent Research &amp; Publishing</div>
+            <div>Korea: Material Culture Series</div>
+            <div>West Palm Beach, Florida</div>
+
+            <div>
+                <a href="mailto:principal.p1.lab@proton.me">
+                    principal.p1.lab@proton.me
+                </a>
+            </div>
+
+            <div>
+                <a href="/">
+                    p1-lab.github.io
+                </a>
+            </div>
+
+            <div>
+                &copy; 2026 P1Lab
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>

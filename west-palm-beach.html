@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>West Palm Beach Field Record — Two-Volume Regional Record / Florida Field Record / P1Lab</title>
+
+<meta name="description" content="West Palm Beach Field Record — a two-volume independent regional record documenting West Palm Beach through field research, photography, oral history, archival work, and physical publishing.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --paper: #f4f1e9;
+    --paper-deep: #e9e4d8;
+    --ink: #20201d;
+    --muted: #68665e;
+    --line: #c9c4b8;
+    --accent: #514d43;
+    --white: #faf9f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.site-header {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 5vw 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 30px;
+}
+
+.brand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    letter-spacing: .02em;
+}
+
+.brand span {
+    color: var(--muted);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.nav a {
+    color: var(--muted);
+}
+
+.nav a:hover {
+    color: var(--ink);
+}
+
+.container {
+    width: min(1180px, 90vw);
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 105px 0 90px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: clamp(58px, 8vw, 112px);
+    line-height: .86;
+    letter-spacing: -.035em;
+    margin: 0;
+    max-width: 850px;
+}
+
+.hero-subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(25px, 3vw, 39px);
+    line-height: 1.08;
+    max-width: 760px;
+    margin: 35px 0 28px;
+}
+
+.hero-intro {
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.hero-meta {
+    margin-top: 42px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.image-holder {
+    margin-top: 75px;
+    min-height: 610px;
+    background: var(--paper-deep);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-holder::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(104,102,94,.28);
+}
+
+.image-holder-label {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.image-holder-label strong {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    text-transform: none;
+    color: var(--ink);
+}
+
+.section {
+    border-top: 1px solid var(--line);
+    padding: 95px 0;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 65px;
+}
+
+.section-number {
+    font-size: 10px;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.section-title {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: .95;
+    margin: 0 0 30px;
+    letter-spacing: -.02em;
+}
+
+.lead {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    line-height: 1.22;
+    max-width: 780px;
+    margin-bottom: 28px;
+}
+
+.prose {
+    max-width: 760px;
+}
+
+.prose p {
+    margin: 0 0 20px;
+}
+
+.pullquote {
+    margin: 65px 0 20px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 31px;
+    line-height: 1.15;
+    max-width: 800px;
+}
+
+.small-note {
+    color: var(--muted);
+    font-size: 12px;
+    max-width: 650px;
+}
+
+.field-grid {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.field-card {
+    padding: 30px;
+    min-height: 185px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.field-card h3 {
+    font-size: 28px;
+    margin: 0 0 12px;
+}
+
+.field-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.nexus {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.nexus-item {
+    background: var(--paper);
+    padding: 34px;
+}
+
+.nexus-item h3 {
+    margin: 0 0 12px;
+    font-size: 30px;
+}
+
+.nexus-item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.method-list {
+    margin-top: 45px;
+    border-top: 1px solid var(--line);
+}
+
+.method-row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 40px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.method-row strong {
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.method-row span {
+    color: var(--muted);
+}
+
+.participation {
+    background: var(--paper-deep);
+    padding: 95px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.participation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.participation-cards {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.participation-card {
+    padding: 30px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.participation-card h3 {
+    font-size: 27px;
+    margin: 0 0 12px;
+}
+
+.participation-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0;
+}
+
+.cta {
+    padding: 115px 0 125px;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: .9;
+    margin: 0 auto 30px;
+    max-width: 900px;
+}
+
+.cta p {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    color: var(--muted);
+}
+
+.cta-link {
+    display: inline-block;
+    padding: 14px 25px;
+    border: 1px solid var(--ink);
+    font-size: 11px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.cta-link:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+footer {
+    border-top: 1px solid var(--line);
+    padding: 25px 5vw;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+@media (max-width: 800px) {
+
+    .site-header {
+        display: block;
+    }
+
+    .nav {
+        margin-top: 18px;
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 75px 0 65px;
+    }
+
+    .hero-meta {
+        display: block;
+    }
+
+    .hero-meta div + div {
+        margin-top: 10px;
+    }
+
+    .image-holder {
+        min-height: 380px;
+        margin-top: 50px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-grid {
+        display: block;
+    }
+
+    .section-number {
+        margin-bottom: 25px;
+    }
+
+    .field-grid,
+    .nexus,
+    .participation-grid,
+    .participation-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .method-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    footer {
+        display: block;
+    }
+
+    footer div + div {
+        margin-top: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="brand">
+        Florida Field Record <span> / <a href="index.html">P1Lab</a></span>
+    </div>
+
+    <nav class="nav">
+        <a href="florida2.html">Series</a>
+        <a href="#field">Field</a>
+        <a href="#volumes">Volumes</a>
+        <a href="#nexus">Nexus</a>
+        <a href="#method">Method</a>
+        <a href="#participation">Participation</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<main>
+
+<section class="hero">
+    <div class="container">
+
+        <div class="eyebrow">
+            Florida Field Record · Regional Project
+        </div>
+
+        <h1>
+            West Palm<br>
+            Beach
+        </h1>
+
+        <div class="hero-subtitle">
+            A two-volume field record of a working city.
+        </div>
+
+        <div class="hero-intro">
+            West Palm Beach Field Record is a two-volume independent regional
+            record documenting the physical, historical, cultural, economic,
+            and working realities of West Palm Beach.
+        </div>
+
+        <div class="hero-meta">
+            <div>Florida Field Record · Regional Project</div>
+            <div>Research &amp; Publication by P1Lab</div>
+        </div>
+
+        <div class="image-holder" style="padding:40px;">
+            <img src="west-palm-beach-field-record-mockup.jpg"
+                 alt="West Palm Beach Field Record — publication design study"
+                 style="width:100%; height:auto; object-fit:contain;">
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section" id="field">
+    <div class="container">
+        <div class="section-grid">
+
+            <div class="section-number">
+                01 · The Field
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    One city.<br>
+                    Many systems.
+                </h2>
+
+                <div class="lead">
+                    West Palm Beach is the geographic field. The two books
+                    follow what that field contains.
+                </div>
+
+                <div class="prose">
+                    <p>
+                        A city is not simply a collection of buildings. It is a
+                        working system of places, people, materials, institutions,
+                        trades, histories, infrastructures, businesses, waterways,
+                        and accumulated decisions.
+                    </p>
+
+                    <p>
+                        The research follows what is physically and historically
+                        significant within that field: the people who build and
+                        maintain things, the places where work occurs, the
+                        institutions that preserve knowledge, the infrastructure
+                        that makes the city function, and the histories embedded
+                        in its buildings, neighborhoods, waterways, and working
+                        environments.
+                    </p>
+
+                    <p>
+                        The project is not a directory of businesses and it is not
+                        a tourism guide. Organizations may appear because their
+                        work, history, knowledge, or physical presence forms part
+                        of the evidence through which the city can be understood.
+                    </p>
+                </div>
+
+                <div class="pullquote">
+                    The city defines the field.
+                    Research determines what within it warrants inclusion.
+                </div>
+
+                <div class="small-note">
+                    The same geographic field is investigated across both
+                    volumes; the division is editorial, not geographic.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="volumes">
+    <div class="container">
+        <div class="section-grid">
+
+            <div class="section-number">
+                02 · The Volumes
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    One field.<br>
+                    Two books.
+                </h2>
+
+                <div class="lead">
+                    West Palm Beach is large enough—and historically layered
+                    enough—to warrant two substantial books rather than one
+                    compressed account.
+                </div>
+
+                <div class="prose">
+                    <p>
+                        The two volumes share the same geographic field and the
+                        same research method. They are not two editions of the
+                        same book. Each is intended to be a substantial,
+                        independently structured documentary work.
+                    </p>
+
+                    <p>
+                        The division is provisional at the research stage. It
+                        allows the project to give adequate space to the city's
+                        working systems, physical environment, history, culture,
+                        memory, and change without forcing unrelated material into
+                        a single volume.
+                    </p>
+
+                    <p>
+                        Final chapter structures will be determined by the
+                        evidence gathered in the field.
+                    </p>
+                </div>
+
+                <div class="field-grid">
+
+                    <div class="field-card">
+                        <h3>Volume I</h3>
+                        <p>
+                            <strong>The Working City</strong><br>
+                            Work, making, marine activity, construction,
+                            restoration, service, infrastructure, architecture,
+                            transportation, waterways, and the physical systems
+                            through which West Palm Beach operates.
+                        </p>
+                    </div>
+
+                    <div class="field-card">
+                        <h3>Volume II</h3>
+                        <p>
+                            <strong>The Remembered City</strong><br>
+                            History, neighborhoods, institutions, culture,
+                            architecture, collections, oral histories,
+                            preservation, migration, redevelopment, memory,
+                            and the forces reshaping the city.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="small-note" style="margin-top:25px;">
+                    These are working editorial distinctions, not a claim that
+                    the city's realities fall into two sealed categories.
+                    Connections between the volumes are expected.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="nexus">
+    <div class="container">
+        <div class="section-grid">
+
+            <div class="section-number">
+                03 · The Nexus
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Follow the<br>
+                    connections.
+                </h2>
+
+                <div class="lead">
+                    The project does not attempt to describe everything.
+                    It follows significant realities until their connections
+                    become visible.
+                </div>
+
+                <div class="prose">
+                    <p>
+                        A working waterfront may lead to vessels, technicians,
+                        yards, fabrication, marine systems, labor, infrastructure,
+                        tourism, property, and the history of the river.
+                    </p>
+
+                    <p>
+                        A historic neighborhood may lead to architecture,
+                        migration, Black business history, preservation,
+                        redevelopment, property, cultural institutions, and
+                        contemporary civic identity.
+                    </p>
+
+                    <p>
+                        A fabrication shop may lead to machining, metal, marine
+                        work, construction, architecture, supply chains, skilled
+                        trades, and workforce development.
+                    </p>
+
+                    <p>
+                        The nexus is the structural mechanism of the project:
+                        one observed reality becomes a route into the larger
+                        system around it.
+                    </p>
+                </div>
+
+                <div class="nexus">
+
+                    <div class="nexus-item">
+                        <h3>Working Waterfront</h3>
+                        <p>
+                            River → vessels → yards → technicians → fabrication
+                            → marine systems → labor → infrastructure → tourism
+                            → property → history
+                        </p>
+                    </div>
+
+                    <div class="nexus-item">
+                        <h3>Historic Neighborhood</h3>
+                        <p>
+                            Architecture → migration → business → preservation
+                            → redevelopment → property → culture → memory
+                        </p>
+                    </div>
+
+                    <div class="nexus-item">
+                        <h3>Making</h3>
+                        <p>
+                            Material → fabrication → machining → construction
+                            → architecture → supply chain → skilled labor
+                        </p>
+                    </div>
+
+                    <div class="nexus-item">
+                        <h3>Service</h3>
+                        <p>
+                            Hospitality → architecture → labor → food → design
+                            → tourism → seasonal economy → real estate
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="method">
+    <div class="container">
+        <div class="section-grid">
+
+            <div class="section-number">
+                04 · Method
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Go there.<br>
+                    Follow the evidence.
+                </h2>
+
+                <div class="lead">
+                    The record is built in the field rather than assembled
+                    from promotional material.
+                </div>
+
+                <div class="prose">
+                    <p>
+                        P1Lab enters the field directly. Observation,
+                        photography, interviews, archival research, physical
+                        investigation, and documentary records are used together.
+                    </p>
+
+                    <p>
+                        Photography is one instrument within that process.
+                        The objective is not to manufacture attractive images
+                        of the city, but to understand and record how the city
+                        actually works.
+                    </p>
+
+                    <p>
+                        The two books follow the evidence rather than imposing
+                        a predetermined promotional narrative.
+                    </p>
+                </div>
+
+                <div class="method-list">
+
+                    <div class="method-row">
+                        <strong>Field Observation</strong>
+                        <span>
+                            Direct observation of places, operations, materials,
+                            people, facilities, and working environments.
+                        </span>
+                    </div>
+
+                    <div class="method-row">
+                        <strong>Primary Knowledge</strong>
+                        <span>
+                            Conversations with people who built, maintain,
+                            operate, preserve, or understand the subject.
+                        </span>
+                    </div>
+
+                    <div class="method-row">
+                        <strong>Archives</strong>
+                        <span>
+                            Historical records, photographs, documents,
+                            collections, maps, plans, and other source material.
+                        </span>
+                    </div>
+
+                    <div class="method-row">
+                        <strong>Verification</strong>
+                        <span>
+                            Claims and historical relationships are checked
+                            against available documentary evidence.
+                        </span>
+                    </div>
+
+                    <div class="method-row">
+                        <strong>Editorial Restraint</strong>
+                        <span>
+                            Participation does not purchase favorable treatment,
+                            authority over research, or control of conclusions.
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="section-grid">
+
+            <div class="section-number">
+                05 · The Record
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Two books.<br>
+                    One field record.
+                </h2>
+
+                <div class="lead">
+                    The books are the durable public form of a larger working
+                    documentary archive.
+                </div>
+
+                <div class="prose">
+                    <p>
+                        The West Palm Beach project will be developed from a
+                        working documentary archive that may include original
+                        field photography, interviews, research notes, archival
+                        material, maps, diagrams, site documentation, captions,
+                        source records, and other primary evidence.
+                    </p>
+
+                    <p>
+                        The two published books are the edited public form of
+                        that research. Together they constitute the West Palm
+                        Beach Field Record within the Florida Field Record
+                        collection.
+                    </p>
+
+                    <p>
+                        Participating organizations may also acquire copies of
+                        the finished books for institutional collections,
+                        professional offices, clients, relationship development,
+                        archives, or long-term corporate history.
+                    </p>
+                </div>
+
+                <div class="pullquote">
+                    The books are not the advertisement.
+                    The city is the subject.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="participation" id="participation">
+    <div class="container">
+
+        <div class="participation-grid">
+
+            <div>
+                <div class="section-number">
+                    06 · Institutional Participation
+                </div>
+
+                <h2 class="section-title">
+                    Help make<br>
+                    the record.
+                </h2>
+            </div>
+
+            <div class="prose">
+                <div class="lead">
+                    West Palm Beach Field Record is independently researched
+                    and published by P1Lab as a two-volume regional project.
+                </div>
+
+                <p>
+                    The scale of the project depends upon access to the field,
+                    research time, archival work, field production, editing,
+                    design, and physical publication across both books.
+                </p>
+
+                <p>
+                    Organizations whose work, history, facilities, collections,
+                    or operating environments form part of the documented field
+                    may participate in making the project possible.
+                </p>
+
+                <p>
+                    Participation is not advertising. It does not purchase
+                    editorial control, guaranteed favorable treatment, authority
+                    over subject selection, or control over the conclusions of
+                    the research.
+                </p>
+
+                <p>
+                    The institution helps make the research books possible.
+                    It does not buy an advertisement inside them.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="participation-cards">
+
+            <div class="participation-card">
+                <h3>Editorial Participation</h3>
+                <p>
+                    A participating organization becomes part of the documented
+                    field through access, interviews, site research, operational
+                    documentation, historical material, or other primary evidence.
+                </p>
+            </div>
+
+            <div class="participation-card">
+                <h3>Institutional Acquisition</h3>
+                <p>
+                    Organizations may acquire an allocation of the finished
+                    volume or volumes for institutional use, clients, professional
+                    relationships, archives, or permanent collection.
+                </p>
+            </div>
+
+            <div class="participation-card">
+                <h3>Combined Participation</h3>
+                <p>
+                    Research participation and institutional acquisition may be
+                    combined where an organization wants both a documented place
+                    in the field and a substantial physical allocation of the
+                    finished record.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="section-grid">
+
+            <div class="section-number">
+                07 · Current Research
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    The field is fixed.<br>
+                    The record is developing.
+                </h2>
+
+                <div class="lead">
+                    West Palm Beach is the geographic field. The two-volume
+                    architecture gives the research room to discover what
+                    belongs where.
+                </div>
+
+                <div class="prose">
+                    <p>
+                        Research begins with the physical city and expands
+                        through the relationships encountered in the field.
+                    </p>
+
+                    <p>
+                        Volume I and Volume II provide room for different bodies
+                        of evidence to receive adequate treatment without forcing
+                        the entire city into a single compressed publication.
+                    </p>
+
+                    <p>
+                        The provisional distinction between the working city
+                        and the remembered city will be tested against the
+                        research. Subjects may cross between volumes when the
+                        evidence shows that they belong together.
+                    </p>
+
+                    <p>
+                        Final chapter structures will emerge from the field.
+                    </p>
+                </div>
+
+                <div class="pullquote">
+                    Two books give the city room.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="cta" id="contact">
+    <div class="container">
+
+        <div class="eyebrow">
+            West Palm Beach Field Record · Two-Volume Regional Project
+        </div>
+
+        <h2>
+            The city is the subject.<br>
+            The record follows.
+        </h2>
+
+        <p>
+            P1Lab is currently developing the two-volume West Palm Beach
+            regional record within Florida Field Record and is speaking with
+            organizations whose work, history, facilities, collections, and
+            knowledge belong within the field.
+        </p>
+
+        <a class="cta-link" href="mailto:principal.p1.lab@proton.me">
+            Inquire About Participation
+        </a>
+
+    </div>
+</section>
+
+</main>
+
+
+<footer>
+    <div>
+        Florida Field Record · P1Lab — Independent Research &amp; Publishing
+    </div>
+
+    <div>
+        West Palm Beach, Florida
+    </div>
+</footer>
+
+</body>
+</html>
