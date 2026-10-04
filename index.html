@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +7,7 @@
 
 <title>P1Lab — Independent Research & Publishing</title>
 
-<meta name="description" content="P1Lab is an independent research and publishing practice working with specialized subjects, technologies, businesses, institutions and places.">
+<meta name="description" content="P1Lab is an independent research and publishing practice working with specialized subjects, technologies, businesses, institutions and places. GrüvType is an editorial imprint focused on the material world people inhabit.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,6 +149,77 @@ nav a:hover {
     line-height: 1.5;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* --------------------------------------------------
+   EDITORIAL STRUCTURE
+-------------------------------------------------- */
+
+.structure {
+    padding: 82px 0 88px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.structure-grid {
+    display: grid;
+    grid-template-columns: 110px 1fr 1fr;
+    gap: 40px;
+}
+
+.structure-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.structure-block {
+    padding-right: 25px;
+}
+
+.structure-block + .structure-block {
+    border-left: 1px solid var(--rule);
+    padding-left: 40px;
+}
+
+.structure-name {
+    margin: 0 0 8px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.structure-name a {
+    border-bottom: 1px solid transparent;
+}
+
+.structure-name a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.structure-type {
+    margin-bottom: 22px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.structure-block p {
+    max-width: 500px;
+    margin: 0;
+}
+
+.structure-note {
+    grid-column: 2 / 4;
+    max-width: 760px;
+    margin-top: 8px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
     color: var(--muted);
 }
 
@@ -428,7 +500,7 @@ footer {
 }
 
 .footer-inner {
-    min-height: 110px;
+    min-height: 125px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -446,6 +518,10 @@ footer {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: right;
+}
+
+.footer-meta a:hover {
+    color: var(--accent);
 }
 
 /* --------------------------------------------------
@@ -474,13 +550,23 @@ footer {
         padding: 80px 0 78px;
     }
 
-    .section {
+    .section,
+    .structure {
         padding: 70px 0;
     }
 
     .section-head {
         grid-template-columns: 70px 1fr;
         gap: 25px;
+    }
+
+    .structure-grid {
+        grid-template-columns: 70px 1fr 1fr;
+        gap: 25px;
+    }
+
+    .structure-block + .structure-block {
+        padding-left: 25px;
     }
 
     .study {
@@ -544,7 +630,8 @@ footer {
         font-size: 16px;
     }
 
-    .section {
+    .section,
+    .structure {
         padding: 58px 0;
     }
 
@@ -556,6 +643,27 @@ footer {
 
     .section-title {
         font-size: 43px;
+    }
+
+    .structure-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .structure-block {
+        padding-right: 0;
+    }
+
+    .structure-block + .structure-block {
+        border-left: none;
+        border-top: 1px solid var(--rule);
+        padding-left: 0;
+        padding-top: 38px;
+    }
+
+    .structure-note {
+        grid-column: auto;
+        margin-top: 0;
     }
 
     .study {
@@ -608,6 +716,7 @@ footer {
     }
 }
 </style>
+
 </head>
 
 <body>
@@ -615,658 +724,730 @@ footer {
 <header>
     <div class="site header-inner">
 
-        <a href="index.html" class="brand">
-            P1Lab
-            <span>Independent Research &amp; Publishing</span>
-        </a>
 
-        <nav>
-            <a href="#studies">Studies</a>
-            <a href="#approach">Approach</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <a href="index.html" class="brand">
+        P1Lab
+        <span>Independent Research &amp; Publishing</span>
+    </a>
 
-    </div>
+    <nav>
+        <a href="#studies">Studies</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</div>
+
+
 </header>
-
 
 <main>
 
-    <!-- HERO -->
 
-    <section class="hero">
-        <div class="site">
+<!-- HERO -->
 
-            <div class="kicker">
+<section class="hero">
+    <div class="site">
+
+        <div class="kicker">
+            Independent Research &amp; Publishing
+        </div>
+
+        <h1>
+            <span>You own a world.</span>
+            <span>We connect it</span>
+            <span>to everyone else.</span>
+        </h1>
+
+        <div class="hero-copy">
+            You know your subject. We spend the time to understand it from the
+            outside, find the connections, and make a way into it for people
+            who do not know it yet.
+        </div>
+
+        <div class="hero-note">
+            Field Records · Research · Publishing · Institutional Studies
+        </div>
+
+    </div>
+</section>
+
+
+<!-- EDITORIAL STRUCTURE -->
+
+<section class="structure">
+
+    <div class="site structure-grid">
+
+        <div class="structure-label">
+            The House
+        </div>
+
+        <div class="structure-block">
+
+            <h2 class="structure-name">
+                P1Lab
+            </h2>
+
+            <div class="structure-type">
                 Independent Research &amp; Publishing
             </div>
 
-            <h1>
-                <span>You own a world.</span>
-                <span>We connect it</span>
-                <span>to everyone else.</span>
-            </h1>
-
-            <div class="hero-copy">
-                You know your subject. We spend the time to understand it from the
-                outside, find the connections, and make a way into it for people
-                who do not know it yet.
-            </div>
-
-            <div class="hero-note">
-                Field Records · Research · Publishing · Institutional Studies
-            </div>
+            <p>
+                The parent research and publishing practice. P1Lab works
+                with specialized fields, technologies, institutions, places,
+                businesses and systems, developing records that make their
+                knowledge accessible without reducing their complexity.
+            </p>
 
         </div>
-    </section>
 
 
-    <!-- CURRENT STUDIES -->
+        <div class="structure-block">
 
-    <section class="section" id="studies">
-
-        <div class="site">
-
-            <div class="section-head">
-
-                <div class="section-number">
-                    01
-                </div>
-
-                <div>
-                    <h2 class="section-title">
-                        Current Studies
-                    </h2>
-
-                    <p class="section-intro">
-                        The work is already happening. These are the current
-                        P1Lab research and publishing programs.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="studies">
-
-                <a href="florida2.html" class="study">
-
-                    <div class="study-number">
-                        I.01
-                    </div>
-
-                    <div>
-                        <h3 class="study-title">
-                            Florida Field Record
-                        </h3>
-
-                        <p class="study-description">
-                            A continuing regional field-record program documenting
-                            Florida's people, places, trades, landscapes, working
-                            environments and material culture.
-                        </p>
-                    </div>
-
-                    <div class="study-link">
-                        View study
-                    </div>
-
+            <h2 class="structure-name">
+                <a href="gruv.html">
+                    GrüvType
                 </a>
-
-
-                <a href="commissioned-field-records.html" class="study">
-
-                    <div class="study-number">
-                        II.01
-                    </div>
-
-                    <div>
-                        <h3 class="study-title">
-                            Commissioned Field Records
-                        </h3>
-
-                        <p class="study-description">
-                            Permanent records of specialized businesses and the
-                            work they actually do: the people, tools, processes,
-                            environments and knowledge that make the operation
-                            what it is.
-                        </p>
-                    </div>
-
-                    <div class="study-link">
-                        View practice
-                    </div>
-
-                </a>
-
-
-                <a href="" class="study">
-
-                    <div class="study-number">
-                        III.01
-                    </div>
-
-                    <div>
-                        <h3 class="study-title">
-                            Arturia Instrumentarium
-                        </h3>
-
-                        <p class="study-description">
-                            A 24-volume study of electronic instruments, their
-                            invention, architecture, history, interfaces and
-                            musical use.
-                        </p>
-                    </div>
-
-                    <div class="study-link">
-                        Study Overview Posting 10.15.26
-                    </div>
-
-                </a>
-
-
-                <a href="u-he.project.html" class="study">
-
-                    <div class="study-number">
-                        IV.01
-                    </div>
-
-                    <div>
-                        <h3 class="study-title">
-                            u-he Sound Design Atlas
-                        </h3>
-
-                        <p class="study-description">
-                            Eight volumes examining synthesis, sound design,
-                            instruments, techniques and the musical practices
-                            built around them.
-                        </p>
-                    </div>
-
-                    <div class="study-link">
-                        View study
-                    </div>
-
-                </a>
-
-
-                <a href="" class="study">
-
-                    <div class="study-number">
-                        V.01
-                    </div>
-
-                    <div>
-                        <h3 class="study-title">
-                            NS Design Electric Cello Study
-                        </h3>
-
-                        <p class="study-description">
-                            A five-volume study of the electric cello:
-                            construction, materials, electronics, mechanics,
-                            performance and the instrument's development.
-                        </p>
-                    </div>
-
-                    <div class="study-link">
-                        Study Overview Posting 10.15.26
-                    </div>
-
-                </a>
-
-
-                <a href="Electronic-Organs.html" class="study">
-
-                    <div class="study-number">
-                        VI.01
-                    </div>
-
-                    <div>
-                        <h3 class="study-title">
-                            Electronic Organs
-                        </h3>
-
-                        <p class="study-description">
-                            A two-volume study of the electronic organ as
-                            instrument, technology, electrical system,
-                            architecture and musical environment.
-                        </p>
-                    </div>
-
-                    <div class="study-link">
-                        view study
-                    </div>
-
-                </a>
-
-
-                <a href="Korea.Material.Culture.html" class="study">
-
-    <div class="study-number">
-        VII.01
-    </div>
-
-    <div>
-        <h3 class="study-title">
-            Korea: Material Culture Series
-        </h3>
-
-        <p class="study-description">
-            An independent documentary field study beginning in Seoul,
-            recording selected material systems through museums, food,
-            craft, architecture, objects, and everyday physical life.
-        </p>
-    </div>
-
-    <div class="study-link">
-        View study
-    </div>
-
-</a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- APPROACH -->
-
-    <section class="section" id="approach">
-
-        <div class="site">
-
-            <div class="section-head">
-
-                <div class="section-number">
-                    02
-                </div>
-
-                <div>
-                    <h2 class="section-title">
-                        The Approach
-                    </h2>
-
-                    <p class="section-intro">
-                        Different subjects. The same basic problem.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="approach">
-
-                <div>
-
-                    <div class="small-label">
-                        Start with the subject
-                    </div>
-
-                    <h3>
-                        You know your world.
-                    </h3>
-
-                    <p>
-                        A company knows its instruments. A craftsperson knows
-                        the work. A hospital knows its system. A place knows
-                        itself.
-                    </p>
-
-                    <p>
-                        The difficulty is usually somewhere else: giving
-                        someone from outside enough understanding to see why
-                        that world matters and how its parts connect.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <div class="small-label">
-                        Build the connection
-                    </div>
-
-                    <h3>
-                        We learn it with you.
-                    </h3>
-
-                    <p>
-                        We enter the subject, ask questions, follow the work,
-                        examine the evidence and pay attention to the
-                        connections.
-                    </p>
-
-                    <p>
-                        Then we build something that lets another person come
-                        into the subject without having to begin where we did.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- OUTPUTS -->
-
-    <section class="section">
-
-        <div class="site">
-
-            <div class="section-head">
-
-                <div class="section-number">
-                    03
-                </div>
-
-                <div>
-                    <h2 class="section-title">
-                        The Work
-                    </h2>
-
-                    <p class="section-intro">
-                        The form follows the subject.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="outputs">
-
-                <div class="output">
-                    <h3>Field Records</h3>
-                    <p>
-                        Detailed records of active operations, specialized
-                        trades, places and working knowledge.
-                    </p>
-                </div>
-
-                <div class="output">
-                    <h3>Books</h3>
-                    <p>
-                        Monographs and multi-volume studies built around a
-                        subject rather than a campaign.
-                    </p>
-                </div>
-
-                <div class="output">
-                    <h3>Institutional Studies</h3>
-                    <p>
-                        Research and publications built with organizations
-                        whose knowledge needs a durable public form.
-                    </p>
-                </div>
-
-                <div class="output">
-                    <h3>Research Programs</h3>
-                    <p>
-                        Sustained investigations developed over multiple
-                        volumes, subjects or stages.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- COMMISSIONED FIELD RECORDS -->
-
-    <section class="section">
-
-        <div class="site">
-
-            <div class="section-head">
-
-                <div class="section-number">
-                    04
-                </div>
-
-                <div>
-                    <h2 class="section-title">
-                        Commissioned Field Records
-                    </h2>
-
-                    <p class="section-intro">
-                        For businesses whose work is worth understanding.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="field-record">
-
-                <div>
-
-                    <h2>
-                        The operation is the subject.
-                    </h2>
-
-                </div>
-
-
-                <div>
-
-                    <p>
-                        P1Lab works with owner-led businesses in specialized
-                        fields: marine trades, fabrication, woodworking,
-                        restoration, horticulture, construction and other
-                        operations where knowledge is carried in the work itself.
-                    </p>
-
-                    <p>
-                        A Commissioned Field Record follows the operation as it
-                        actually happens and creates a durable record of the
-                        people, processes, tools, environment and decisions
-                        involved.
-                    </p>
-
-                    <p>
-                        The result is not promotional media. It is a substantial
-                        record of the business and the knowledge behind it.
-                    </p>
-
-                    <a href="field-records.html" class="field-record-link">
-                        About Commissioned Field Records
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- THE RECORD -->
-
-    <section class="section">
-
-        <div class="site">
-
-            <div class="section-head">
-
-                <div class="section-number">
-                    05
-                </div>
-
-                <div>
-                    <h2 class="section-title">
-                        The Record
-                    </h2>
-
-                    <p class="section-intro">
-                        Good work deserves something more durable than a
-                        momentary presentation.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="approach">
-
-                <div>
-
-                    <div class="small-label">
-                        Durable
-                    </div>
-
-                    <h3>
-                        Make something that lasts.
-                    </h3>
-
-                    <p>
-                        P1Lab's work is designed to remain useful after the
-                        original project, launch, campaign or conversation has
-                        passed.
-                    </p>
-
-                    <p>
-                        Books, studies and field records become reference
-                        objects: something that can be read, consulted,
-                        circulated and returned to.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <div class="small-label">
-                        Useful
-                    </div>
-
-                    <h3>
-                        Give people a way in.
-                    </h3>
-
-                    <p>
-                        The record is not simply evidence that something exists.
-                        It gives someone unfamiliar with the subject enough
-                        structure to begin understanding it.
-                    </p>
-
-                    <p>
-                        That is the connection.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PLATFORM -->
-
-    <section class="section">
-
-        <div class="site">
-
-            <div class="section-head">
-
-                <div class="section-number">
-                    06
-                </div>
-
-                <div>
-                    <h2 class="section-title">
-                        A Subject Is a Starting Point
-                    </h2>
-                </div>
-
-            </div>
-
-
-            <div class="platform">
-
-                <h2>
-                    Everything can lead somewhere else.
-                </h2>
-
-                <p>
-                    A synthesizer can lead to electrical engineering, industrial
-                    design, music, manufacturing and the history of invention.
-                    A boatyard can lead to materials, navigation, engineering,
-                    craftsmanship and the people who keep those skills alive.
-                </p>
-
-                <p>
-                    A city, an instrument, a trade, a medical system, a piece of
-                    software or a particular way of making something can all be
-                    starting points.
-                </p>
-
-                <p>
-                    P1Lab follows the subject far enough to discover where it
-                    leads.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section class="contact" id="contact">
-
-        <div class="site">
-
-            <div class="kicker">
-                P1Lab
-            </div>
-
-            <h2>
-                Have a world<br>
-                worth entering?
             </h2>
 
-            <div class="contact-copy">
-                If you have a subject, operation, institution or body of
-                knowledge that deserves a serious record, let's talk about it.
+            <div class="structure-type">
+                An Editorial Imprint of P1Lab
             </div>
 
-            <a href="mailto:principal.p1.lab@proton.me" class="contact-link">
-                principal.p1.lab@proton.me
+            <p>
+                GrüvType turns its attention toward the material world people
+                inhabit: gardens, rooms, tools, making, objects, food and the
+                environments we construct around ourselves.
+            </p>
+
+        </div>
+
+
+        <div class="structure-note">
+            The distinction is not academic versus popular. Both are deeply
+            researched. P1Lab tends to enter specialized worlds from the
+            inside; GrüvType begins with familiar things and looks closely
+            enough to reveal their complexity.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CURRENT STUDIES -->
+
+<section class="section" id="studies">
+
+    <div class="site">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Current P1Lab Studies
+                </h2>
+
+                <p class="section-intro">
+                    The work is already happening. These are the current
+                    P1Lab research and publishing programs.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="studies">
+
+            <a href="florida2.html" class="study">
+
+                <div class="study-number">
+                    I.01
+                </div>
+
+                <div>
+                    <h3 class="study-title">
+                        Florida Field Record
+                    </h3>
+
+                    <p class="study-description">
+                        A continuing regional field-record program documenting
+                        Florida's people, places, trades, landscapes, working
+                        environments and material culture.
+                    </p>
+                </div>
+
+                <div class="study-link">
+                    View study
+                </div>
+
+            </a>
+
+
+            <a href="commissioned-field-records.html" class="study">
+
+                <div class="study-number">
+                    II.01
+                </div>
+
+                <div>
+                    <h3 class="study-title">
+                        Commissioned Field Records
+                    </h3>
+
+                    <p class="study-description">
+                        Permanent records of specialized businesses and the
+                        work they actually do: the people, tools, processes,
+                        environments and knowledge that make the operation
+                        what it is.
+                    </p>
+                </div>
+
+                <div class="study-link">
+                    View practice
+                </div>
+
+            </a>
+
+
+            <a href="" class="study">
+
+                <div class="study-number">
+                    III.01
+                </div>
+
+                <div>
+                    <h3 class="study-title">
+                        Arturia Instrumentarium
+                    </h3>
+
+                    <p class="study-description">
+                        A 24-volume study of electronic instruments, their
+                        invention, architecture, history, interfaces and
+                        musical use.
+                    </p>
+                </div>
+
+                <div class="study-link">
+                    Study Overview Posting 10.15.26
+                </div>
+
+            </a>
+
+
+            <a href="u-he.project.html" class="study">
+
+                <div class="study-number">
+                    IV.01
+                </div>
+
+                <div>
+                    <h3 class="study-title">
+                        u-he Sound Design Atlas
+                    </h3>
+
+                    <p class="study-description">
+                        Eight volumes examining synthesis, sound design,
+                        instruments, techniques and the musical practices
+                        built around them.
+                    </p>
+                </div>
+
+                <div class="study-link">
+                    View study
+                </div>
+
+            </a>
+
+
+            <a href="" class="study">
+
+                <div class="study-number">
+                    V.01
+                </div>
+
+                <div>
+                    <h3 class="study-title">
+                        NS Design Electric Cello Study
+                    </h3>
+
+                    <p class="study-description">
+                        A five-volume study of the electric cello:
+                        construction, materials, electronics, mechanics,
+                        performance and the instrument's development.
+                    </p>
+                </div>
+
+                <div class="study-link">
+                    Study Overview Posting 10.15.26
+                </div>
+
+            </a>
+
+
+            <a href="Electronic-Organs.html" class="study">
+
+                <div class="study-number">
+                    VI.01
+                </div>
+
+                <div>
+                    <h3 class="study-title">
+                        Electronic Organs
+                    </h3>
+
+                    <p class="study-description">
+                        A two-volume study of the electronic organ as
+                        instrument, technology, electrical system,
+                        architecture and musical environment.
+                    </p>
+                </div>
+
+                <div class="study-link">
+                    View study
+                </div>
+
+            </a>
+
+
+            <a href="Korea.Material.Culture.html" class="study">
+
+                <div class="study-number">
+                    VII.01
+                </div>
+
+                <div>
+                    <h3 class="study-title">
+                        Korea: Material Culture Series
+                    </h3>
+
+                    <p class="study-description">
+                        An independent documentary field study beginning in
+                        Seoul, recording selected material systems through
+                        museums, food, craft, architecture, objects, and
+                        everyday physical life.
+                    </p>
+                </div>
+
+                <div class="study-link">
+                    View study
+                </div>
+
             </a>
 
         </div>
 
-    </section>
+    </div>
 
-</main>
+</section>
 
 
-<footer>
+<!-- APPROACH -->
 
-    <div class="site footer-inner">
+<section class="section" id="approach">
 
-        <div class="footer-brand">
-            P1Lab
+    <div class="site">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    The Approach
+                </h2>
+
+                <p class="section-intro">
+                    Different subjects. The same basic problem.
+                </p>
+            </div>
+
         </div>
 
-        <div class="footer-meta">
-            Independent Research &amp; Publishing<br>
-            West Palm Beach, Florida · 2026
+
+        <div class="approach">
+
+            <div>
+
+                <div class="small-label">
+                    Start with the subject
+                </div>
+
+                <h3>
+                    You know your world.
+                </h3>
+
+                <p>
+                    A company knows its instruments. A craftsperson knows
+                    the work. A hospital knows its system. A place knows
+                    itself.
+                </p>
+
+                <p>
+                    The difficulty is usually somewhere else: giving
+                    someone from outside enough understanding to see why
+                    that world matters and how its parts connect.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="small-label">
+                    Build the connection
+                </div>
+
+                <h3>
+                    We learn it with you.
+                </h3>
+
+                <p>
+                    We enter the subject, ask questions, follow the work,
+                    examine the evidence and pay attention to the
+                    connections.
+                </p>
+
+                <p>
+                    Then we build something that lets another person come
+                    into the subject without having to begin where we did.
+                </p>
+
+            </div>
+
         </div>
 
     </div>
+
+</section>
+
+
+<!-- OUTPUTS -->
+
+<section class="section">
+
+    <div class="site">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                03
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    The Work
+                </h2>
+
+                <p class="section-intro">
+                    The form follows the subject.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="outputs">
+
+            <div class="output">
+                <h3>Field Records</h3>
+                <p>
+                    Detailed records of active operations, specialized
+                    trades, places and working knowledge.
+                </p>
+            </div>
+
+            <div class="output">
+                <h3>Books</h3>
+                <p>
+                    Monographs and multi-volume studies built around a
+                    subject rather than a campaign.
+                </p>
+            </div>
+
+            <div class="output">
+                <h3>Institutional Studies</h3>
+                <p>
+                    Research and publications built with organizations
+                    whose knowledge needs a durable public form.
+                </p>
+            </div>
+
+            <div class="output">
+                <h3>Research Programs</h3>
+                <p>
+                    Sustained investigations developed over multiple
+                    volumes, subjects or stages.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMMISSIONED FIELD RECORDS -->
+
+<section class="section">
+
+    <div class="site">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                04
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Commissioned Field Records
+                </h2>
+
+                <p class="section-intro">
+                    For businesses whose work is worth understanding.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="field-record">
+
+            <div>
+
+                <h2>
+                    The operation is the subject.
+                </h2>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    P1Lab works with owner-led businesses in specialized
+                    fields: marine trades, fabrication, woodworking,
+                    restoration, horticulture, construction and other
+                    operations where knowledge is carried in the work itself.
+                </p>
+
+                <p>
+                    A Commissioned Field Record follows the operation as it
+                    actually happens and creates a durable record of the
+                    people, processes, tools, environment and decisions
+                    involved.
+                </p>
+
+                <p>
+                    The result is not promotional media. It is a substantial
+                    record of the business and the knowledge behind it.
+                </p>
+
+                <a href="field-records.html" class="field-record-link">
+                    About Commissioned Field Records
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- THE RECORD -->
+
+<section class="section">
+
+    <div class="site">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                05
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    The Record
+                </h2>
+
+                <p class="section-intro">
+                    Good work deserves something more durable than a
+                    momentary presentation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="approach">
+
+            <div>
+
+                <div class="small-label">
+                    Durable
+                </div>
+
+                <h3>
+                    Make something that lasts.
+                </h3>
+
+                <p>
+                    P1Lab's work is designed to remain useful after the
+                    original project, launch, campaign or conversation has
+                    passed.
+                </p>
+
+                <p>
+                    Books, studies and field records become reference
+                    objects: something that can be read, consulted,
+                    circulated and returned to.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="small-label">
+                    Useful
+                </div>
+
+                <h3>
+                    Give people a way in.
+                </h3>
+
+                <p>
+                    The record is not simply evidence that something exists.
+                    It gives someone unfamiliar with the subject enough
+                    structure to begin understanding it.
+                </p>
+
+                <p>
+                    That is the connection.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PLATFORM -->
+
+<section class="section">
+
+    <div class="site">
+
+        <div class="section-head">
+
+            <div class="section-number">
+                06
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    A Subject Is a Starting Point
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="platform">
+
+            <h2>
+                Everything can lead somewhere else.
+            </h2>
+
+            <p>
+                A synthesizer can lead to electrical engineering, industrial
+                design, music, manufacturing and the history of invention.
+                A boatyard can lead to materials, navigation, engineering,
+                craftsmanship and the people who keep those skills alive.
+            </p>
+
+            <p>
+                A city, an instrument, a trade, a medical system, a piece of
+                software or a particular way of making something can all be
+                starting points.
+            </p>
+
+            <p>
+                P1Lab follows the subject far enough to discover where it
+                leads.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="site">
+
+        <div class="kicker">
+            P1Lab
+        </div>
+
+        <h2>
+            Have a world<br>
+            worth entering?
+        </h2>
+
+        <div class="contact-copy">
+            If you have a subject, operation, institution or body of
+            knowledge that deserves a serious record, let's talk about it.
+        </div>
+
+        <a href="mailto:principal.p1.lab@proton.me" class="contact-link">
+            principal.p1.lab@proton.me
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<footer>
+
+
+<div class="site footer-inner">
+
+    <div class="footer-brand">
+        P1Lab
+    </div>
+
+    <div class="footer-meta">
+        Independent Research &amp; Publishing<br>
+        <a href="gruv.html">GrüvType · An Editorial Imprint of P1Lab</a><br>
+        West Palm Beach, Florida · 2026
+    </div>
+
+</div>
+
 
 </footer>
 
