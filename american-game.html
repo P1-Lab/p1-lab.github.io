@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>American Game — GrüvType</title>
+
+<meta name="description" content="American Game — an independent documentary publication about the physical, computational, commercial and cultural world in which Americans play.">
+
+<style>
+
+:root {
+    --ink: #181817;
+    --paper: #f7f5f0;
+    --soft: #eeece6;
+    --dark: #20201e;
+    --muted: #6b675f;
+    --rule: #d5d1c8;
+    --max: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(var(--max), calc(100% - 48px));
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+}
+
+.header-inner {
+    width: min(var(--max), calc(100% - 48px));
+    margin: 0 auto;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.wordmark {
+    font-size: 22px;
+    letter-spacing: 0.02em;
+}
+
+.wordmark span {
+    color: var(--muted);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: var(--muted);
+}
+
+nav a:hover {
+    color: var(--ink);
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero-image {
+    width: 100%;
+    background: var(--soft);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero {
+    padding: 88px 0 100px;
+}
+
+.eyebrow {
+    margin-bottom: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero h1 {
+    margin: 0;
+    max-width: 900px;
+    font-size: clamp(58px, 9vw, 122px);
+    line-height: 0.9;
+    font-weight: normal;
+    letter-spacing: -0.045em;
+}
+
+.hero-subtitle {
+    max-width: 780px;
+    margin-top: 34px;
+    font-size: clamp(25px, 3vw, 39px);
+    line-height: 1.15;
+}
+
+.hero-lead {
+    max-width: 720px;
+    margin-top: 34px;
+    font-size: 18px;
+    color: var(--muted);
+}
+
+/* =========================
+   GENERAL SECTIONS
+   ========================= */
+
+section {
+    padding: 100px 0;
+    border-top: 1px solid var(--rule);
+}
+
+.section-label {
+    margin-bottom: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.section-title {
+    margin: 0;
+    max-width: 900px;
+    font-size: clamp(38px, 5vw, 68px);
+    line-height: 1.03;
+    font-weight: normal;
+    letter-spacing: -0.025em;
+}
+
+.section-intro {
+    max-width: 720px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+/* =========================
+   PROPOSITION
+   ========================= */
+
+.proposition-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.proposition-statement {
+    font-size: clamp(31px, 4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.proposition-copy {
+    max-width: 570px;
+    font-size: 18px;
+}
+
+.proposition-copy p {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+/* =========================
+   WHY THIS BOOK
+   ========================= */
+
+.test-grid {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+}
+
+.test {
+    padding: 32px 28px 34px 0;
+    margin-right: 28px;
+    border-right: 1px solid var(--rule);
+}
+
+.test:last-child {
+    border-right: none;
+    margin-right: 0;
+}
+
+.test-number {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.test h3 {
+    margin: 18px 0 12px;
+    font-size: 27px;
+    font-weight: normal;
+}
+
+.test p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+/* =========================
+   THE WORLD
+   ========================= */
+
+.world-list {
+    margin-top: 62px;
+    border-top: 1px solid var(--rule);
+}
+
+.world-item {
+    display: grid;
+    grid-template-columns: 100px 260px 1fr;
+    gap: 30px;
+    padding: 27px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+}
+
+.world-number {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.world-name {
+    font-size: 29px;
+    line-height: 1.1;
+}
+
+.world-description {
+    max-width: 620px;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+/* =========================
+   SIGNAL PATH
+   ========================= */
+
+.dark-section {
+    background: var(--dark);
+    color: #f3f0e9;
+    border-top: none;
+}
+
+.dark-section .section-label {
+    color: #a7a39b;
+}
+
+.dark-section .section-title {
+    color: #f3f0e9;
+}
+
+.signal-intro {
+    max-width: 720px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: #c5c1b8;
+}
+
+.signal-grid {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #494843;
+}
+
+.signal-item {
+    padding: 32px 25px 0 0;
+    margin-right: 25px;
+    border-right: 1px solid #494843;
+}
+
+.signal-item:last-child {
+    border-right: none;
+    margin-right: 0;
+}
+
+.signal-item h3 {
+    margin: 0 0 12px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.signal-item p {
+    margin: 0;
+    font-size: 15px;
+    color: #aaa69d;
+}
+
+/* =========================
+   READER
+   ========================= */
+
+.reader-grid {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.reader-column p {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.reader-list {
+    border-top: 1px solid var(--rule);
+}
+
+.reader-list div {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 17px;
+}
+
+/* =========================
+   PARTICIPATION
+   ========================= */
+
+.participation-lead {
+    max-width: 760px;
+    margin-top: 30px;
+    font-size: 21px;
+}
+
+.participation-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--rule);
+}
+
+.participation-item {
+    padding: 29px 40px 29px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.participation-item:nth-child(odd) {
+    border-right: 1px solid var(--rule);
+    padding-right: 40px;
+}
+
+.participation-item:nth-child(even) {
+    padding-left: 40px;
+}
+
+.participation-item h3 {
+    margin: 0 0 9px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.participation-item p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+/* =========================
+   PUBLICATION CONDITION
+   ========================= */
+
+.condition {
+    background: var(--soft);
+}
+
+.condition-copy {
+    max-width: 760px;
+    margin-top: 30px;
+    font-size: 19px;
+}
+
+.condition-copy p {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.condition-note {
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid var(--rule);
+    max-width: 760px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+}
+
+/* =========================
+   BOOK
+   ========================= */
+
+.book-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.book-copy {
+    font-size: 18px;
+}
+
+.book-copy p {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.book-spec {
+    border-top: 1px solid var(--rule);
+}
+
+.book-spec div {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.book-spec strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: var(--muted);
+}
+
+.book-spec span {
+    font-size: 16px;
+}
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact {
+    padding-bottom: 115px;
+}
+
+.contact-title {
+    margin: 0;
+    max-width: 800px;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 0.98;
+    font-weight: normal;
+    letter-spacing: -0.03em;
+}
+
+.contact-copy {
+    max-width: 620px;
+    margin-top: 30px;
+    font-size: 19px;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 18px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0 40px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .header-inner {
+        min-height: 70px;
+    }
+
+    nav {
+        gap: 14px;
+        font-size: 9px;
+    }
+
+    .hero {
+        padding: 65px 0 75px;
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .proposition-grid,
+    .reader-grid,
+    .book-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .test-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .test:nth-child(2) {
+        border-right: none;
+    }
+
+    .test:nth-child(3),
+    .test:nth-child(4) {
+        border-top: 1px solid var(--rule);
+    }
+
+    .world-item {
+        grid-template-columns: 65px 1fr;
+        gap: 15px;
+    }
+
+    .world-description {
+        grid-column: 2;
+    }
+
+    .signal-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .signal-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .signal-item:nth-child(3),
+    .signal-item:nth-child(4) {
+        border-top: 1px solid #494843;
+        padding-top: 25px;
+    }
+
+    .participation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .participation-item:nth-child(odd) {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .participation-item:nth-child(even) {
+        padding-left: 0;
+    }
+
+    .book-spec div {
+        grid-template-columns: 120px 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .container,
+    .header-inner {
+        width: min(var(--max), calc(100% - 32px));
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .test-grid,
+    .signal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .test,
+    .signal-item {
+        border-right: none !important;
+        border-bottom: 1px solid var(--rule);
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .test:last-child,
+    .signal-item:last-child {
+        border-bottom: none;
+    }
+
+    .test:nth-child(3),
+    .test:nth-child(4),
+    .signal-item:nth-child(3),
+    .signal-item:nth-child(4) {
+        border-top: none;
+    }
+
+    .world-item {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .world-description {
+        grid-column: 2;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <a href="index.html" class="wordmark">
+            GrüvType <span>— An Editorial Imprint of P1Lab</span>
+        </a>
+
+        <nav>
+            <a href="#book">Books</a>
+            <a href="#world">The World</a>
+            <a href="#participation">Participation</a>
+            <a href="#contact">Inquiries</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<div class="hero-image">
+    <img src="american-game-hero.jpg" alt="American Game">
+</div>
+
+<section class="hero">
+    <div class="container">
+
+        <div class="eyebrow">
+            GrüvType — Publication in Development
+        </div>
+
+        <h1>American Game.</h1>
+
+        <div class="hero-subtitle">
+            The physical, computational and commercial world in which Americans play.
+        </div>
+
+        <div class="hero-lead">
+            A substantial illustrated book about the machines, materials, software,
+            businesses, places and people that made American play possible—from
+            arcades and consoles to gaming PCs, networks, controllers, components,
+            storefronts and the industries built around them.
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     THE PROPOSITION
+     ========================= -->
+
+<section>
+    <div class="container">
+
+        <div class="section-label">
+            01 — The Proposition
+        </div>
+
+        <div class="proposition-grid">
+
+            <div class="proposition-statement">
+                Everyone knows the game.<br>
+                Almost nobody sees the system.
+            </div>
+
+            <div class="proposition-copy">
+
+                <p>
+                    A game appears on a screen. Behind it is a physical and
+                    commercial world: chips, graphics processors, displays,
+                    controllers, cabinets, computers, networks, storefronts,
+                    studios, warehouses, repair benches, collectors and the
+                    people who build and maintain them.
+                </p>
+
+                <p>
+                    AMERICAN GAME follows that world.
+                </p>
+
+                <p>
+                    The subject is not game criticism, rankings or nostalgia.
+                    It is the material culture and infrastructure that allows
+                    games to exist in the first place.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     WHY THIS BOOK
+     ========================= -->
+
+<section>
+    <div class="container">
+
+        <div class="section-label">
+            02 — Why This Book
+        </div>
+
+        <h2 class="section-title">
+            A familiar world with an enormous hidden structure.
+        </h2>
+
+        <div class="section-intro">
+            Games are among the most familiar forms of American entertainment.
+            The systems that make them possible are considerably less visible.
+        </div>
+
+        <div class="test-grid">
+
+            <div class="test">
+                <div class="test-number">01</div>
+                <h3>Familiar</h3>
+                <p>
+                    Consoles, computers, controllers, arcades and games are
+                    already part of ordinary American life.
+                </p>
+            </div>
+
+            <div class="test">
+                <div class="test-number">02</div>
+                <h3>Hidden</h3>
+                <p>
+                    The engineering, manufacturing, computation, distribution
+                    and infrastructure behind play largely disappear from view.
+                </p>
+            </div>
+
+            <div class="test">
+                <div class="test-number">03</div>
+                <h3>Useful</h3>
+                <p>
+                    Understanding the machine changes the way we understand
+                    the game—and the culture built around it.
+                </p>
+            </div>
+
+            <div class="test">
+                <div class="test-number">04</div>
+                <h3>Deep</h3>
+                <p>
+                    The record extends from arcade cabinets and silicon to
+                    broadband, retail, collecting, repair and preservation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     THE WORLD
+     ========================= -->
+
+<section id="world">
+    <div class="container">
+
+        <div class="section-label">
+            03 — The World
+        </div>
+
+        <h2 class="section-title">
+            The game is only one part of the record.
+        </h2>
+
+        <div class="section-intro">
+            AMERICAN GAME moves through the connected physical and
+            computational systems that surround play.
+        </div>
+
+        <div class="world-list">
+
+            <div class="world-item">
+                <div class="world-number">01</div>
+
+                <div class="world-name">
+                    Machine
+                </div>
+
+                <div class="world-description">
+                    Arcade cabinets, consoles, gaming PCs, handhelds,
+                    controllers, displays, peripherals, storage devices,
+                    components and the physical objects through which play
+                    becomes possible.
+                </div>
+            </div>
+
+
+            <div class="world-item">
+                <div class="world-number">02</div>
+
+                <div class="world-name">
+                    Computation
+                </div>
+
+                <div class="world-description">
+                    CPUs, GPUs, memory, graphics, operating systems, engines,
+                    rendering, storage and the layers of computation hidden
+                    behind the visible image.
+                </div>
+            </div>
+
+
+            <div class="world-item">
+                <div class="world-number">03</div>
+
+                <div class="world-name">
+                    Connection
+                </div>
+
+                <div class="world-description">
+                    Networks, broadband, servers, storefronts, online services,
+                    multiplayer systems and the infrastructure that transformed
+                    play from a local activity into a connected one.
+                </div>
+            </div>
+
+
+            <div class="world-item">
+                <div class="world-number">04</div>
+
+                <div class="world-name">
+                    Place
+                </div>
+
+                <div class="world-description">
+                    Arcades, living rooms, bedrooms, LAN spaces, game stores,
+                    esports venues, conventions and the physical environments
+                    in which games are played.
+                </div>
+            </div>
+
+
+            <div class="world-item">
+                <div class="world-number">05</div>
+
+                <div class="world-name">
+                    Making
+                </div>
+
+                <div class="world-description">
+                    Programmers, artists, designers, sound specialists,
+                    hardware engineers, developers and the tools and working
+                    systems through which games are made.
+                </div>
+            </div>
+
+
+            <div class="world-item">
+                <div class="world-number">06</div>
+
+                <div class="world-name">
+                    Commerce
+                </div>
+
+                <div class="world-description">
+                    Publishers, manufacturers, retailers, distributors,
+                    storefronts, subscriptions, components, PC builders and
+                    the businesses that turn play into an industry.
+                </div>
+            </div>
+
+
+            <div class="world-item">
+                <div class="world-number">07</div>
+
+                <div class="world-name">
+                    Preservation
+                </div>
+
+                <div class="world-description">
+                    Collectors, repairers, modders, archives, museums,
+                    restoration work and the people keeping obsolete machines,
+                    software and experiences available.
+                </div>
+            </div>
+
+
+            <div class="world-item">
+                <div class="world-number">08</div>
+
+                <div class="world-name">
+                    Play
+                </div>
+
+                <div class="world-description">
+                    The games themselves—and the people who inhabit them.
+                    Not reviews or rankings, but games as evidence of the
+                    larger system that produced them.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SIGNAL PATH
+     ========================= -->
+
+<section class="dark-section">
+    <div class="container">
+
+        <div class="section-label">
+            04 — Editorial Structure
+        </div>
+
+        <h2 class="section-title">
+            From machine to player.
+        </h2>
+
+        <div class="signal-intro">
+            The book does not treat these subjects as isolated categories.
+            It follows the relationships between them: the machine produces
+            computation; computation produces software; software moves through
+            networks and commerce; all of it eventually arrives at a place,
+            a person and an act of play.
+        </div>
+
+        <div class="signal-grid">
+
+            <div class="signal-item">
+                <h3>Machine</h3>
+                <p>
+                    What is physically built to make play possible.
+                </p>
+            </div>
+
+            <div class="signal-item">
+                <h3>Computation</h3>
+                <p>
+                    What the machine actually does beneath the image.
+                </p>
+            </div>
+
+            <div class="signal-item">
+                <h3>Software</h3>
+                <p>
+                    The systems, tools and creative work that inhabit the machine.
+                </p>
+            </div>
+
+            <div class="signal-item">
+                <h3>Connection</h3>
+                <p>
+                    How machines become networks, platforms and shared spaces.
+                </p>
+            </div>
+
+            <div class="signal-item">
+                <h3>Commerce</h3>
+                <p>
+                    The businesses and distribution systems that move the
+                    technology into people's hands.
+                </p>
+            </div>
+
+            <div class="signal-item">
+                <h3>Place</h3>
+                <p>
+                    Where the system becomes a physical environment.
+                </p>
+            </div>
+
+            <div class="signal-item">
+                <h3>Culture</h3>
+                <p>
+                    Collecting, modification, communities, competition and memory.
+                </p>
+            </div>
+
+            <div class="signal-item">
+                <h3>Play</h3>
+                <p>
+                    The visible activity at the end of the entire system.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     READER
+     ========================= -->
+
+<section>
+    <div class="container">
+
+        <div class="section-label">
+            05 — The Reader
+        </div>
+
+        <h2 class="section-title">
+            For people who play—and want to know what they are actually playing.
+        </h2>
+
+        <div class="reader-grid">
+
+            <div class="reader-column">
+
+                <p>
+                    AMERICAN GAME is designed for readers who already understand
+                    games as part of American life, but want to see the machinery
+                    around them more clearly.
+                </p>
+
+                <p>
+                    It speaks to players, builders, collectors, developers,
+                    engineers, historians, retailers and technically curious
+                    readers without requiring specialist knowledge.
+                </p>
+
+                <p>
+                    The book is intended to remain useful after the particular
+                    game, console or hardware generation has passed.
+                </p>
+
+            </div>
+
+            <div class="reader-list">
+
+                <div>Players and longtime enthusiasts</div>
+                <div>PC builders and hardware specialists</div>
+                <div>Arcade collectors and operators</div>
+                <div>Developers and technical creators</div>
+                <div>Hardware and component manufacturers</div>
+                <div>Retailers and distributors</div>
+                <div>Historians and preservationists</div>
+                <div>Libraries, museums and institutional collections</div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     PARTICIPATION
+     ========================= -->
+
+<section id="participation">
+    <div class="container">
+
+        <div class="section-label">
+            06 — Participation
+        </div>
+
+        <h2 class="section-title">
+            The book comes first. The game industry belongs inside the record.
+        </h2>
+
+        <div class="participation-lead">
+            AMERICAN GAME is independently conceived and editorially controlled.
+            Companies, developers, manufacturers, platforms, institutions and
+            specialists can participate by contributing access, knowledge,
+            material, documentation, institutional acquisition or publication
+            support.
+        </div>
+
+        <div class="participation-grid">
+
+            <div class="participation-item">
+                <h3>Hardware &amp; Components</h3>
+                <p>
+                    Consoles, PCs, displays, controllers, processors, graphics,
+                    storage, peripherals and the physical technologies behind play.
+                </p>
+            </div>
+
+            <div class="participation-item">
+                <h3>Developers &amp; Publishers</h3>
+                <p>
+                    Studios, publishers, programmers, artists, sound specialists
+                    and the working systems through which games are produced.
+                </p>
+            </div>
+
+            <div class="participation-item">
+                <h3>Platforms &amp; Networks</h3>
+                <p>
+                    Operating systems, storefronts, online services, broadband,
+                    servers and the infrastructure of connected play.
+                </p>
+            </div>
+
+            <div class="participation-item">
+                <h3>Arcade &amp; Public Play</h3>
+                <p>
+                    Cabinets, operators, manufacturers, game rooms, arcades and
+                    the commercial spaces that shaped American gaming culture.
+                </p>
+            </div>
+
+            <div class="participation-item">
+                <h3>Retail &amp; Distribution</h3>
+                <p>
+                    Stores, distributors, publishers, component suppliers and
+                    the systems that moved games from makers to players.
+                </p>
+            </div>
+
+            <div class="participation-item">
+                <h3>Collections &amp; Preservation</h3>
+                <p>
+                    Collectors, repairers, archives, museums and specialists
+                    preserving machines, software and technical history.
+                </p>
+            </div>
+
+            <div class="participation-item">
+                <h3>Institutional Acquisition</h3>
+                <p>
+                    Libraries, museums, archives, educational institutions and
+                    collections acquiring the finished publication.
+                </p>
+            </div>
+
+            <div class="participation-item">
+                <h3>Publication Support</h3>
+                <p>
+                    Organizations whose participation helps bring the complete
+                    documentary record into physical form.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     PUBLICATION CONDITION
+     ========================= -->
+
+<section class="condition">
+    <div class="container">
+
+        <div class="section-label">
+            07 — Publication Condition
+        </div>
+
+        <h2 class="section-title">
+            The subject is strong. The book must also be viable.
+        </h2>
+
+        <div class="condition-copy">
+
+            <p>
+                AMERICAN GAME is being developed as an independent editorial
+                publication rather than as a corporate history, advertising
+                vehicle or conventional game-industry coffee-table book.
+            </p>
+
+            <p>
+                That independence is important. It allows the book to move
+                between manufacturers, developers, machines, places, technical
+                systems and cultural practices according to the evidence rather
+                than according to a single company's story.
+            </p>
+
+            <p>
+                Participation therefore supports the making of the publication
+                without determining its editorial conclusions.
+            </p>
+
+            <p>
+                The finished book is intended to stand as a substantial physical
+                record of American play: something to read, examine, keep and
+                place in a serious collection.
+            </p>
+
+        </div>
+
+        <div class="condition-note">
+            AMERICAN GAME is not a game guide, review anthology, ranking system,
+            advertising directory or sponsored corporate history.
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     THE BOOK
+     ========================= -->
+
+<section id="book">
+    <div class="container">
+
+        <div class="section-label">
+            08 — The Book
+        </div>
+
+        <h2 class="section-title">
+            A physical record of American play.
+        </h2>
+
+        <div class="book-grid">
+
+            <div class="book-copy">
+
+                <p>
+                    The finished publication will bring together photography,
+                    research, technical evidence, documents, objects, places
+                    and first-hand knowledge into a coherent physical record.
+                </p>
+
+                <p>
+                    Its visual language belongs to the documentary magazine
+                    tradition: photographs are evidence, objects are evidence,
+                    machines are evidence, and the accumulated details reveal
+                    the larger system.
+                </p>
+
+                <p>
+                    The result is intended to remain valuable beyond any one
+                    console generation, software release or commercial cycle.
+                </p>
+
+                <p>
+                    The game changes. The machine changes. The infrastructure
+                    changes. The record remains.
+                </p>
+
+            </div>
+
+            <div class="book-spec">
+
+                <div>
+                    <strong>Format</strong>
+                    <span>Substantial illustrated hardcover publication</span>
+                </div>
+
+                <div>
+                    <strong>Approach</strong>
+                    <span>Independent documentary editorial</span>
+                </div>
+
+                <div>
+                    <strong>Subject</strong>
+                    <span>The physical, computational and commercial world of play</span>
+                </div>
+
+                <div>
+                    <strong>Evidence</strong>
+                    <span>Machines, software, photographs, documents, places and people</span>
+                </div>
+
+                <div>
+                    <strong>Audience</strong>
+                    <span>Players, builders, collectors, specialists and institutions</span>
+                </div>
+
+                <div>
+                    <strong>Position</strong>
+                    <span>Neither game guide nor corporate history</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     CONTACT
+     ========================= -->
+
+<section class="contact" id="contact">
+    <div class="container">
+
+        <div class="section-label">
+            09 — Inquiries
+        </div>
+
+        <h2 class="contact-title">
+            Part of this world?
+        </h2>
+
+        <div class="contact-copy">
+            We are speaking with manufacturers, developers, publishers,
+            platform companies, hardware specialists, collectors,
+            preservationists and institutions whose work belongs in the record.
+        </div>
+
+        <a href="mailto:publisher@p1lab.net" class="contact-link">
+            publisher@p1lab.net
+        </a>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+    <div class="container footer-inner">
+
+        <div>
+            GrüvType — An Editorial Imprint of P1Lab
+        </div>
+
+        <div>
+            American Game · © 2026
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
