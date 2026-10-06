@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,1611 +6,1700 @@
 
 <title>Florida Agriculture: The Material Record — Palm Beach County | P1Lab</title>
 
-<meta name="description" content="Florida Agriculture: The Material Record is an independent P1Lab documentary study of agriculture in Palm Beach County through land, crops, water, tools, machinery, nurseries, packing, processing, buildings, and the material systems of agricultural work.">
+<meta name="description" content="Florida Agriculture: The Material Record is an independent P1Lab documentary study of Palm Beach County agriculture at a moment when agriculture is becoming part of the county's tourism future: land, crops, water, machinery, nurseries, processing, working landscapes, and the material systems behind the emerging agritourism economy.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
-    --bone: #f3f0e9;
-    --paper: #f8f6f0;
-    --ink: #20201e;
-    --muted: #68665f;
-    --line: #d8d4ca;
-    --soft: #e9e5dc;
-    --white: #fbfaf6;
-
-    --serif: "Cormorant Garamond", Georgia, serif;
-    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --bone:#f3f0e9;
+    --paper:#f8f6f0;
+    --ink:#20201e;
+    --muted:#68665f;
+    --line:#d8d4ca;
+    --soft:#e9e5dc;
+    --white:#fbfaf6;
+    --serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 body {
-    margin: 0;
-    background: var(--bone);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-weight: 400;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+    color:inherit;
+    text-decoration:none;
 }
 
 img {
-    display: block;
-    width: 100%;
-    height: auto;
+    display:block;
+    width:100%;
+    height:auto;
 }
 
 .container {
-    width: min(1120px, calc(100% - 48px));
-    margin: 0 auto;
+    width:min(1120px,calc(100% - 48px));
+    margin:0 auto;
 }
 
 
-/* --------------------------------------------------
+/* =========================
    HEADER
--------------------------------------------------- */
+   ========================= */
 
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(243, 240, 233, 0.95);
-    border-bottom: 1px solid var(--line);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(243,240,233,.95);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
 }
 
 .header-inner {
-    min-height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
 }
 
 .brand {
-    font-family: var(--serif);
-    font-size: 29px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
+    font-family:var(--serif);
+    font-size:29px;
+    font-weight:600;
+    letter-spacing:.01em;
 }
 
 .brand small {
-    display: block;
-    margin-top: -7px;
-    font-family: var(--sans);
-    font-size: 8px;
-    line-height: 1;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
+    display:block;
+    margin-top:-7px;
+    font-family:var(--sans);
+    font-size:8px;
+    line-height:1;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 .main-nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    display:flex;
+    align-items:center;
+    gap:28px;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
 }
 
 .main-nav a {
-    color: var(--muted);
-    transition: color 0.2s ease;
+    color:var(--muted);
+    transition:color .2s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-    color: var(--ink);
+    color:var(--ink);
 }
 
 
-/* --------------------------------------------------
+/* =========================
+   FULL-WIDTH HERO IMAGE
+   ========================= */
+
+.hero-image {
+    width:100%;
+    background:var(--soft);
+}
+
+.hero-image img {
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+
+/* =========================
    HERO
--------------------------------------------------- */
+   ========================= */
 
 .hero {
-    padding: 105px 0 95px;
-    border-bottom: 1px solid var(--line);
+    padding:105px 0 95px;
+    border-bottom:1px solid var(--line);
 }
 
 .eyebrow {
-    margin-bottom: 25px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
+    margin-bottom:25px;
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 .hero-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(480px, 1fr);
-    gap: 65px;
-    align-items: center;
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(480px,1fr);
+    gap:65px;
+    align-items:center;
 }
 
 .hero h1 {
-    max-width: 820px;
-    margin: 0;
-    font-family: var(--serif);
-    font-size: clamp(52px, 7vw, 94px);
-    line-height: 0.9;
-    font-weight: 500;
-    letter-spacing: -0.03em;
+    max-width:820px;
+    margin:0;
+    font-family:var(--serif);
+    font-size:clamp(52px,7vw,94px);
+    line-height:.9;
+    font-weight:500;
+    letter-spacing:-.03em;
 }
 
 .hero-lead {
-    max-width: 760px;
-    margin: 42px 0 0;
-    font-family: var(--serif);
-    font-size: clamp(27px, 3.5vw, 39px);
-    line-height: 1.2;
-    color: #35342f;
+    max-width:760px;
+    margin:42px 0 0;
+    font-family:var(--serif);
+    font-size:clamp(27px,3.5vw,39px);
+    line-height:1.2;
+    color:#35342f;
 }
 
 .hero-copy {
-    max-width: 720px;
-    margin: 30px 0 0;
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--muted);
+    max-width:720px;
+    margin:30px 0 0;
+    font-size:15px;
+    line-height:1.85;
+    color:var(--muted);
 }
 
 .hero-statement {
-    max-width: 760px;
-    margin-top: 42px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
-    font-family: var(--serif);
-    font-size: 28px;
-    line-height: 1.3;
+    max-width:760px;
+    margin-top:42px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-family:var(--serif);
+    font-size:28px;
+    line-height:1.3;
 }
 
 .hero-meta {
-    margin-top: 28px;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
+    margin-top:28px;
+    font-size:10px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
-
-/* --------------------------------------------------
-   BOOK TOUCHSTONE
--------------------------------------------------- */
-
 .book-touchstone {
-    width: 100%;
-    max-width: 540px;
-    margin-left: auto;
-    padding: 14px;
-    border: 1px solid var(--line);
-    background: var(--paper);
+    width:100%;
+    max-width:540px;
+    margin-left:auto;
+    padding:14px;
+    border:1px solid var(--line);
+    background:var(--paper);
 }
 
 .book-touchstone img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-    background: var(--soft);
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+    background:var(--soft);
 }
 
 .touchstone-caption {
-    margin-top: 12px;
-    font-size: 9px;
-    line-height: 1.6;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
+    margin-top:12px;
+    font-size:9px;
+    line-height:1.6;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 
-/* --------------------------------------------------
-   SECTIONS
--------------------------------------------------- */
+/* =========================
+   GENERAL SECTIONS
+   ========================= */
 
 .section {
-    padding: 105px 0;
-    border-bottom: 1px solid var(--line);
+    padding:105px 0;
+    border-bottom:1px solid var(--line);
 }
 
 .section-head {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 50px;
-    margin-bottom: 65px;
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:50px;
+    margin-bottom:65px;
 }
 
 .section-number {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-size:10px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 .section-title {
-    max-width: 820px;
-    margin: 0;
-    font-family: var(--serif);
-    font-size: clamp(42px, 5vw, 64px);
-    line-height: 0.98;
-    font-weight: 500;
-    letter-spacing: -0.015em;
+    max-width:820px;
+    margin:0;
+    font-family:var(--serif);
+    font-size:clamp(42px,5vw,64px);
+    line-height:.98;
+    font-weight:500;
+    letter-spacing:-.015em;
 }
 
 .section-intro {
-    max-width: 720px;
-    margin: 25px 0 0;
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.8;
+    max-width:720px;
+    margin:25px 0 0;
+    font-size:15px;
+    color:var(--muted);
+    line-height:1.8;
 }
 
 
-/* --------------------------------------------------
+/* =========================
    PROPOSITION
--------------------------------------------------- */
+   ========================= */
 
 .proposition-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 70px;
-    align-items: start;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:start;
 }
 
 .proposition-lead {
-    font-family: var(--serif);
-    font-size: clamp(34px, 4vw, 52px);
-    line-height: 1.08;
+    font-family:var(--serif);
+    font-size:clamp(34px,4vw,52px);
+    line-height:1.08;
 }
 
 .proposition-copy p {
-    margin: 0 0 24px;
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--muted);
+    margin:0 0 24px;
+    font-size:15px;
+    line-height:1.85;
+    color:var(--muted);
 }
 
 .source-note {
-    margin-top: 35px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    font-size: 11px;
-    line-height: 1.7;
-    color: var(--muted);
+    margin-top:35px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:11px;
+    line-height:1.7;
+    color:var(--muted);
 }
 
 .source-note strong {
-    color: var(--ink);
-    font-weight: 500;
+    color:var(--ink);
+    font-weight:500;
 }
 
 
-/* --------------------------------------------------
+/* =========================
    FIELD
--------------------------------------------------- */
+   ========================= */
 
 .field {
-    background: var(--paper);
+    background:var(--paper);
 }
 
 .field-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
 }
 
 .field-card {
-    min-height: 245px;
-    padding: 32px;
-    background: var(--paper);
+    min-height:245px;
+    padding:32px;
+    background:var(--paper);
 }
 
 .field-card .label {
-    margin-bottom: 24px;
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
+    margin-bottom:24px;
+    font-size:9px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 .field-card h3 {
-    margin: 0 0 15px;
-    font-family: var(--serif);
-    font-size: 31px;
-    line-height: 1;
-    font-weight: 500;
+    margin:0 0 15px;
+    font-family:var(--serif);
+    font-size:31px;
+    line-height:1;
+    font-weight:500;
 }
 
 .field-card p {
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.75;
-    color: var(--muted);
+    margin:0;
+    font-size:13px;
+    line-height:1.75;
+    color:var(--muted);
 }
 
 
-/* --------------------------------------------------
+/* =========================
    MATERIAL RECORD
--------------------------------------------------- */
+   ========================= */
 
 .material-record {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 75px;
-    align-items: start;
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:75px;
+    align-items:start;
 }
 
 .material-record h2 {
-    margin: 0;
-    font-family: var(--serif);
-    font-size: clamp(48px, 6vw, 78px);
-    line-height: 0.9;
-    font-weight: 500;
-    letter-spacing: -0.03em;
+    margin:0;
+    font-family:var(--serif);
+    font-size:clamp(48px,6vw,78px);
+    line-height:.9;
+    font-weight:500;
+    letter-spacing:-.03em;
 }
 
 .material-copy p {
-    margin: 0 0 22px;
-    max-width: 650px;
+    margin:0 0 22px;
+    max-width:650px;
 }
 
 .material-list {
-    margin-top: 30px;
-    border-top: 1px solid var(--line);
+    margin-top:30px;
+    border-top:1px solid var(--line);
 }
 
 .material-item {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 28px;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--line);
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:28px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
 }
 
 .material-item .label {
-    font-size: 9px;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-size:9px;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 .material-item p {
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.7;
-    color: var(--muted);
+    margin:0;
+    font-size:13px;
+    line-height:1.7;
+    color:var(--muted);
 }
 
 
-/* --------------------------------------------------
+/* =========================
    PARTICIPATION
--------------------------------------------------- */
+   ========================= */
 
 .participation {
-    background: var(--paper);
+    background:var(--paper);
 }
 
 .participation-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
 }
 
 .participation-card {
-    min-height: 280px;
-    padding: 36px;
-    background: var(--paper);
+    min-height:280px;
+    padding:36px;
+    background:var(--paper);
 }
 
 .participation-card .label {
-    margin-bottom: 24px;
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
+    margin-bottom:24px;
+    font-size:9px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 .participation-card h3 {
-    margin: 0 0 16px;
-    font-family: var(--serif);
-    font-size: 36px;
-    line-height: 1;
-    font-weight: 500;
+    margin:0 0 16px;
+    font-family:var(--serif);
+    font-size:36px;
+    line-height:1;
+    font-weight:500;
 }
 
 .participation-card p {
-    margin: 0;
-    max-width: 560px;
-    font-size: 13px;
-    line-height: 1.8;
-    color: var(--muted);
+    margin:0;
+    max-width:560px;
+    font-size:13px;
+    line-height:1.8;
+    color:var(--muted);
 }
 
 .participation-note {
-    max-width: 800px;
-    margin-top: 32px;
-    font-family: var(--serif);
-    font-size: 28px;
-    line-height: 1.25;
+    max-width:800px;
+    margin-top:32px;
+    font-family:var(--serif);
+    font-size:28px;
+    line-height:1.25;
 }
 
 
-/* --------------------------------------------------
+/* =========================
    METHOD
--------------------------------------------------- */
+   ========================= */
 
 .method-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
 }
 
 .method-card {
-    min-height: 250px;
-    padding: 32px;
-    background: var(--paper);
+    min-height:250px;
+    padding:32px;
+    background:var(--paper);
 }
 
 .method-card .number {
-    margin-bottom: 32px;
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
+    margin-bottom:32px;
+    font-size:9px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 .method-card h3 {
-    margin: 0 0 14px;
-    font-family: var(--serif);
-    font-size: 31px;
-    line-height: 1;
-    font-weight: 500;
+    margin:0 0 14px;
+    font-family:var(--serif);
+    font-size:31px;
+    line-height:1;
+    font-weight:500;
 }
 
 .method-card p {
-    margin: 0;
-    font-size: 12px;
-    line-height: 1.75;
-    color: var(--muted);
+    margin:0;
+    font-size:12px;
+    line-height:1.75;
+    color:var(--muted);
 }
 
 
-/* --------------------------------------------------
+/* =========================
    FIELDWORK
--------------------------------------------------- */
+   ========================= */
 
 .fieldwork {
-    max-width: 850px;
+    max-width:850px;
 }
 
 .fieldwork h2 {
-    margin: 0;
-    font-family: var(--serif);
-    font-size: clamp(46px, 6vw, 76px);
-    line-height: 0.92;
-    font-weight: 500;
-    letter-spacing: -0.03em;
+    margin:0;
+    font-family:var(--serif);
+    font-size:clamp(46px,6vw,76px);
+    line-height:.92;
+    font-weight:500;
+    letter-spacing:-.03em;
 }
 
 .fieldwork p {
-    max-width: 720px;
-    margin: 28px 0 0;
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--muted);
+    max-width:720px;
+    margin:28px 0 0;
+    font-size:15px;
+    line-height:1.85;
+    color:var(--muted);
 }
 
 .fieldwork-meta {
-    margin-top: 35px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    font-size: 10px;
-    line-height: 1.8;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--muted);
+    margin-top:35px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:10px;
+    line-height:1.8;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--muted);
 }
 
 
-/* --------------------------------------------------
+/* =========================
    CTA
--------------------------------------------------- */
+   ========================= */
 
 .cta {
-    padding: 135px 0;
-    text-align: center;
+    padding:135px 0;
+    text-align:center;
 }
 
 .cta .eyebrow {
-    margin-bottom: 25px;
+    margin-bottom:25px;
 }
 
 .cta h2 {
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: var(--serif);
-    font-size: clamp(52px, 7vw, 84px);
-    line-height: 0.92;
-    font-weight: 500;
-    letter-spacing: -0.025em;
+    max-width:900px;
+    margin:0 auto;
+    font-family:var(--serif);
+    font-size:clamp(52px,7vw,84px);
+    line-height:.92;
+    font-weight:500;
+    letter-spacing:-.025em;
 }
 
 .cta p {
-    max-width: 650px;
-    margin: 32px auto 0;
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.8;
+    max-width:650px;
+    margin:32px auto 0;
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.8;
 }
 
 .cta-link {
-    display: inline-block;
-    margin-top: 34px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--ink);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    display:inline-block;
+    margin-top:34px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--ink);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
 }
 
 
-/* --------------------------------------------------
+/* =========================
    FOOTER
--------------------------------------------------- */
+   ========================= */
 
 footer {
-    padding: 45px 0;
-    border-top: 1px solid var(--line);
-    background: var(--paper);
+    padding:45px 0;
+    border-top:1px solid var(--line);
+    background:var(--paper);
 }
 
 .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
 }
 
 .footer-brand {
-    font-family: var(--serif);
-    font-size: 29px;
+    font-family:var(--serif);
+    font-size:29px;
 }
 
 .footer-meta {
-    text-align: right;
-    font-size: 10px;
-    line-height: 1.8;
-    color: var(--muted);
+    text-align:right;
+    font-size:10px;
+    line-height:1.8;
+    color:var(--muted);
 }
 
 
-/* --------------------------------------------------
+/* =========================
    RESPONSIVE
--------------------------------------------------- */
+   ========================= */
 
-@media (max-width: 1050px) {
+@media (max-width:1050px) {
 
     .hero-layout {
-        grid-template-columns: minmax(0, 1fr) minmax(400px, 480px);
-        gap: 45px;
+        grid-template-columns:minmax(0,1fr) minmax(400px,480px);
+        gap:45px;
     }
 
 }
 
-
-@media (max-width: 900px) {
+@media (max-width:900px) {
 
     .container {
-        width: min(100% - 34px, 700px);
+        width:min(100% - 34px,700px);
     }
 
     .main-nav {
-        display: none;
+        display:none;
     }
 
     .hero {
-        padding: 80px 0 78px;
+        padding:80px 0 78px;
     }
 
     .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 55px;
-        align-items: start;
+        grid-template-columns:1fr;
+        gap:55px;
+        align-items:start;
     }
 
     .book-touchstone {
-        margin-left: 0;
-        max-width: 540px;
+        margin-left:0;
+        max-width:540px;
     }
 
     .section {
-        padding: 75px 0;
+        padding:75px 0;
     }
 
     .section-head {
-        display: block;
-        margin-bottom: 45px;
+        display:block;
+        margin-bottom:45px;
     }
 
     .section-number {
-        margin-bottom: 18px;
+        margin-bottom:18px;
     }
 
     .proposition-grid,
     .material-record {
-        grid-template-columns: 1fr;
-        gap: 45px;
+        grid-template-columns:1fr;
+        gap:45px;
     }
 
     .field-grid,
     .method-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
     }
 
     .participation-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
     }
 
     .material-item {
-        grid-template-columns: 120px 1fr;
+        grid-template-columns:120px 1fr;
     }
 
     .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
+        align-items:flex-start;
+        flex-direction:column;
     }
 
     .footer-meta {
-        text-align: left;
+        text-align:left;
     }
 
 }
 
-
-@media (max-width: 520px) {
+@media (max-width:520px) {
 
     .container {
-        width: calc(100% - 28px);
+        width:calc(100% - 28px);
     }
 
     .header-inner {
-        min-height: 64px;
+        min-height:64px;
     }
 
     .hero h1 {
-        font-size: 51px;
+        font-size:51px;
     }
 
     .hero-lead {
-        font-size: 27px;
+        font-size:27px;
     }
 
     .section-title {
-        font-size: 43px;
+        font-size:43px;
     }
 
     .field-card,
     .method-card,
     .participation-card {
-        padding: 28px;
+        padding:28px;
     }
 
     .material-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
+        grid-template-columns:1fr;
+        gap:8px;
     }
 
     .cta {
-        padding: 90px 0;
+        padding:90px 0;
     }
 
     .cta h2 {
-        font-size: 50px;
+        font-size:50px;
     }
 
     .book-touchstone {
-        max-width: 100%;
-        padding: 10px;
+        max-width:100%;
+        padding:10px;
     }
 
 }
-
 </style>
-
 </head>
 
 <body>
 
 <header class="site-header">
-    <div class="container header-inner">
 
+<div class="container header-inner">
 
-    <a href="https://p1-lab.github.io/" class="brand">
-        P1Lab
-        <small>Independent Research &amp; Publishing</small>
-    </a>
+<a href="https://p1-lab.github.io/" class="brand">
+    P1Lab
+    <small>Independent Research &amp; Publishing</small>
+</a>
 
-    <nav class="main-nav">
-        <a href="#record" class="active">The Record</a>
-        <a href="#field">Field</a>
-        <a href="#participation">Participation</a>
-        <a href="#method">Method</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<nav class="main-nav">
+    <a href="#record" class="active">The Record</a>
+    <a href="#field">Field</a>
+    <a href="#agritourism">Agri + Tourism</a>
+    <a href="#participation">Participation</a>
+    <a href="#method">Method</a>
+    <a href="#contact">Contact</a>
+</nav>
 
 </div>
-
 
 </header>
 
+
+<!-- =========================
+     FULL-WIDTH HERO IMAGE
+     ========================= -->
+
+<div class="hero-image">
+    <img src="ag-tour-hero.jpg" alt="Florida agricultural landscape in Palm Beach County.">
+</div>
+
+
 <main>
 
-<!-- ==================================================
+
+<!-- =========================
      HERO
-================================================== -->
+     ========================= -->
 
 <section class="hero">
-    <div class="container">
 
+<div class="container">
 
-    <div class="eyebrow">
-        P1Lab / Florida Field Record
-    </div>
+<div class="eyebrow">
+    P1Lab / Florida Field Record
+</div>
 
-    <div class="hero-layout">
+<div class="hero-layout">
 
-        <div>
+<div>
 
-            <h1>
-                Florida Agriculture:<br>
-                The Material Record
-            </h1>
+<h1>
+    Florida Agriculture:<br>
+    The Material Record
+</h1>
 
-            <p class="hero-lead">
-                Palm Beach County is the field.
-            </p>
+<p class="hero-lead">
+    The field behind the visitor experience.
+</p>
 
-            <p class="hero-copy">
-                An independent documentary study of agriculture as a physical
-                system: land, crops, water, tools, machinery, nurseries,
-                packing, processing, buildings, materials, and the people
-                whose work keeps the system operating.
-            </p>
+<p class="hero-copy">
+    Palm Beach County is developing a new relationship between agriculture and tourism.
+    P1Lab is documenting the agricultural world behind that emerging experience:
+    land, crops, water, tools, machinery, nurseries, processing, buildings,
+    working landscapes, and the systems that make agricultural production possible.
+</p>
 
-            <p class="hero-copy">
-                The geographic boundary is Palm Beach County. The subject is
-                agriculture within that boundary.
-            </p>
+<p class="hero-copy">
+    The geographic boundary is Palm Beach County. The subject is the material
+    agricultural field — documented at a moment when that field is increasingly
+    being understood as part of the county's tourism future.
+</p>
 
-            <div class="hero-statement">
-                Not a survey of Florida agriculture. A detailed record of one
-                agricultural field.
-            </div>
+<div class="hero-statement">
+    The tourism experience is new.<br>
+    The agricultural field is not.
+</div>
 
-            <div class="hero-meta">
-                Palm Beach County · Material Field Record · P1Lab
-            </div>
-
-        </div>
-
-
-        <div class="book-touchstone">
-
-            <img
-                src="palm-beach-county-ag.png"
-                alt="Physical book mockup for Florida Agriculture: The Material Record."
-            >
-
-            <div class="touchstone-caption">
-                Custom Cloth Cover Example ·  Custom Format Example · Physical mockup
-            </div>
-
-        </div>
-
-    </div>
+<div class="hero-meta">
+    Palm Beach County · Material Field Record · P1Lab
+</div>
 
 </div>
 
 
+<div class="book-touchstone">
+
+<img
+    src="palm-beach-county-ag.png"
+    alt="Physical book mockup for Florida Agriculture: The Material Record."
+>
+
+<div class="touchstone-caption">
+    Custom Cloth Cover Example · Custom Format Example · Physical mockup
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- ==================================================
-     01 / THE RECORD
-================================================== -->
+
+<!-- =========================
+     THE RECORD
+     ========================= -->
 
 <section class="section" id="record">
-    <div class="container">
 
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-        <div class="section-number">
-            01 / The Record
-        </div>
+<div class="section-number">
+    01 / The Record
+</div>
 
-        <div>
-            <h2 class="section-title">
-                Agriculture is more than the crop.
-            </h2>
+<div>
 
-            <p class="section-intro">
-                The physical record begins before planting and extends
-                beyond harvest. The book follows the material systems that
-                make agricultural production possible.
-            </p>
-        </div>
+<h2 class="section-title">
+    Agriculture is becoming part of the visitor economy.
+</h2>
 
-    </div>
+<p class="section-intro">
+    Palm Beach County's emerging tourism strategy identifies agritourism and
+    rural experiences as areas for development. This record begins with the
+    agricultural world itself — the physical field beneath that emerging experience.
+</p>
 
-
-    <div class="proposition-grid">
-
-        <div class="proposition-lead">
-            The field is the starting point. The system around it is the subject.
-        </div>
-
-        <div class="proposition-copy">
-
-            <p>
-                A field record can show the soil, water, rows, plants,
-                harvesting, tools, machinery, storage, packing, transportation,
-                processing, buildings, and other physical elements that
-                ordinarily disappear behind the final product.
-            </p>
-
-            <p>
-                The objective is not to explain what Palm Beach County
-                agriculture means. It is to establish a visual and documentary
-                record of what is actually there and how the component parts
-                connect.
-            </p>
-
-            <p>
-                Farms, nurseries, growers, processors, agricultural suppliers,
-                equipment operators, markets, and other participants may enter
-                the record where they contribute genuine documentary evidence
-                to the field.
-            </p>
-
-            <div class="source-note">
-                <strong>Documentary basis:</strong>
-                Direct field observation, photography, firsthand interviews,
-                historical material, maps, technical information, and other
-                identifiable sources.
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 
+<div class="proposition-grid">
+
+<div class="proposition-lead">
+    Before the visitor sees the farm, there is a working agricultural system.
+</div>
+
+
+<div class="proposition-copy">
+
+<p>
+    The record follows the land, water, crops, tools, machinery, nurseries,
+    packing, processing, buildings, roads, equipment, and other physical systems
+    that make agriculture possible.
+</p>
+
+<p>
+    It also follows the places where agriculture becomes visible to the public:
+    farm markets, working farms, plant nurseries, food systems, educational
+    experiences, culinary connections, and other points where the agricultural
+    field begins to meet the visitor economy.
+</p>
+
+<p>
+    The purpose is not to produce an agritourism guide. It is to document the
+    agricultural systems that an emerging agritourism economy is beginning to
+    make more visible.
+</p>
+
+<div class="source-note">
+
+<strong>Documentary basis:</strong>
+Direct field observation, photography, firsthand interviews, historical
+material, maps, technical information, county planning documents, and other
+identifiable sources.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- ==================================================
-     02 / FIELD
-================================================== -->
+
+<!-- =========================
+     FIELD
+     ========================= -->
 
 <section class="section field" id="field">
-    <div class="container">
 
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-        <div class="section-number">
-            02 / Palm Beach County
-        </div>
+<div class="section-number">
+    02 / Palm Beach County
+</div>
 
-        <div>
-            <h2 class="section-title">
-                One county. Many agricultural systems.
-            </h2>
+<div>
 
-            <p class="section-intro">
-                The field is geographically bounded, but materially diverse.
-                The final record will follow the agricultural systems that
-                can be observed and documented properly.
-            </p>
-        </div>
+<h2 class="section-title">
+    One county. Many agricultural systems.
+</h2>
 
-    </div>
+<p class="section-intro">
+    The field is geographically bounded, but materially diverse. The record
+    follows agricultural systems across the county and the places where those
+    systems intersect with food, landscape, commerce, and visitors.
+</p>
 
-
-    <div class="field-grid">
-
-        <article class="field-card">
-
-            <div class="label">
-                Sugar
-            </div>
-
-            <h3>
-                Sugarcane
-            </h3>
-
-            <p>
-                Cane fields, planting, harvesting, transport, processing,
-                machinery, field organization, and the physical landscape
-                surrounding the sugar system.
-            </p>
-
-        </article>
-
-
-        <article class="field-card">
-
-            <div class="label">
-                Crops
-            </div>
-
-            <h3>
-                Vegetables
-            </h3>
-
-            <p>
-                Field production, irrigation, seasonal work, harvesting,
-                equipment, handling, packing, and movement toward market.
-            </p>
-
-        </article>
-
-
-        <article class="field-card">
-
-            <div class="label">
-                Crop Systems
-            </div>
-
-            <h3>
-                Corn &amp; Other Crops
-            </h3>
-
-            <p>
-                Crop production documented through fields, equipment,
-                harvesting, handling, storage, processing, and the material
-                systems surrounding production.
-            </p>
-
-        </article>
-
-
-        <article class="field-card">
-
-            <div class="label">
-                Horticulture
-            </div>
-
-            <h3>
-                Nurseries &amp; Plants
-            </h3>
-
-            <p>
-                Propagation, containers, growing systems, shade structures,
-                irrigation, plant handling, transport, retail, and landscape
-                plant production.
-            </p>
-
-        </article>
-
-
-        <article class="field-card">
-
-            <div class="label">
-                Land
-            </div>
-
-            <h3>
-                Agricultural Land
-            </h3>
-
-            <p>
-                Fields, soils, drainage, canals, water control, roads,
-                boundaries, cultivated land, and the physical relationship
-                between agriculture and surrounding development.
-            </p>
-
-        </article>
-
-
-        <article class="field-card">
-
-            <div class="label">
-                Supporting Systems
-            </div>
-
-            <h3>
-                Tools &amp; Equipment
-            </h3>
-
-            <p>
-                Hand tools, tractors, implements, pumps, trailers, storage,
-                farm vehicles, machinery, materials, supplies, and equipment
-                in actual use.
-            </p>
-
-        </article>
-
-    </div>
+</div>
 
 </div>
 
 
+<div class="field-grid">
+
+<article class="field-card">
+
+<div class="label">Sugar</div>
+
+<h3>Sugarcane</h3>
+
+<p>
+    Cane fields, planting, harvesting, transport, processing, machinery,
+    field organization, and the physical landscape surrounding the sugar system.
+</p>
+
+</article>
+
+
+<article class="field-card">
+
+<div class="label">Crops</div>
+
+<h3>Vegetables</h3>
+
+<p>
+    Field production, irrigation, seasonal work, harvesting, equipment,
+    handling, packing, and movement toward market.
+</p>
+
+</article>
+
+
+<article class="field-card">
+
+<div class="label">Horticulture</div>
+
+<h3>Nurseries &amp; Plants</h3>
+
+<p>
+    Propagation, containers, growing systems, shade structures, irrigation,
+    plant handling, transport, retail, and landscape plant production.
+</p>
+
+</article>
+
+
+<article class="field-card">
+
+<div class="label">Land</div>
+
+<h3>Agricultural Land</h3>
+
+<p>
+    Fields, soils, drainage, canals, water control, roads, boundaries,
+    cultivated land, and the physical relationship between agriculture
+    and surrounding development.
+</p>
+
+</article>
+
+
+<article class="field-card">
+
+<div class="label">Working Systems</div>
+
+<h3>Tools &amp; Equipment</h3>
+
+<p>
+    Hand tools, tractors, implements, pumps, trailers, storage, farm vehicles,
+    machinery, materials, supplies, and equipment in actual use.
+</p>
+
+</article>
+
+
+<article class="field-card">
+
+<div class="label">Public Edge</div>
+
+<h3>Farm &amp; Food</h3>
+
+<p>
+    Markets, farm stands, culinary connections, educational sites, visitor
+    access, and other places where agricultural production becomes part
+    of public experience.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- ==================================================
-     03 / MATERIAL RECORD
-================================================== -->
+
+<!-- =========================
+     AGRI + TOURISM
+     ========================= -->
+
+<section class="section" id="agritourism">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-number">
+    03 / Agri + Tourism
+</div>
+
+<div>
+
+<h2 class="section-title">
+    The emerging agricultural destination.
+</h2>
+
+<p class="section-intro">
+    The visitor experience is becoming a new layer of the agricultural landscape.
+    The record documents the agricultural world before, beneath, and beyond that layer.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="proposition-grid">
+
+<div class="proposition-lead">
+    The visitor experience begins where the agricultural system becomes visible.
+</div>
+
+
+<div class="proposition-copy">
+
+<p>
+    Palm Beach County's current tourism planning identifies agritourism and
+    rural tourism as an area for product development, including farm experiences,
+    culinary connections, sugar experiences, farm stays, and other visitor-facing
+    agricultural activities.
+</p>
+
+<p>
+    The County's agricultural development program already coordinates with
+    agricultural operators on agritourism and with the Tourist Development Council
+    on the promotion of agricultural interests.
+</p>
+
+<p>
+    P1Lab's role is different. This publication does not market the destination.
+    It establishes a material record of the agricultural field from which that
+    destination is emerging.
+</p>
+
+<div class="source-note">
+
+<strong>Current planning context:</strong>
+Palm Beach County's Tourism Master Plan identifies agritourism and rural
+tourism as an area for development and sets a target of 25 new or enhanced
+agritourism businesses and experiences within three years. The County's
+Agricultural Enhancement Council also includes an agritourism seat.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MATERIAL CULTURE
+     ========================= -->
 
 <section class="section">
-    <div class="container">
 
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-        <div class="section-number">
-            03 / Material Culture
-        </div>
+<div class="section-number">
+    04 / Material Culture
+</div>
 
-        <div>
-            <h2 class="section-title">
-                The crop is only one material in the system.
-            </h2>
+<div>
 
-            <p class="section-intro">
-                The record follows the physical things that make agriculture
-                possible and the transformations those things undergo.
-            </p>
+<h2 class="section-title">
+    The crop is only one material in the system.
+</h2>
 
-        </div>
+<p class="section-intro">
+    The record follows the physical things that make agriculture possible,
+    the transformations those things undergo, and the places where agricultural
+    production enters the public landscape.
+</p>
 
-    </div>
-
-
-    <div class="material-record">
-
-        <div>
-
-            <h2>
-                From soil<br>to shipment.
-            </h2>
-
-        </div>
-
-
-        <div class="material-copy">
-
-            <p>
-                The finished book will be built around things that can be
-                observed, photographed, described, located, and compared.
-            </p>
-
-            <p>
-                These categories define the documentary territory without
-                pretending that the final book can contain every agricultural
-                operation in the county.
-            </p>
-
-            <div class="material-list">
-
-                <div class="material-item">
-
-                    <div class="label">
-                        Land &amp; Water
-                    </div>
-
-                    <p>
-                        Fields, soil, muck, sand, drainage, canals, irrigation,
-                        water control, field roads, boundaries, and the physical
-                        organization of agricultural land.
-                    </p>
-
-                </div>
-
-
-                <div class="material-item">
-
-                    <div class="label">
-                        Tools &amp; Machines
-                    </div>
-
-                    <p>
-                        Hand tools, tractors, implements, harvest equipment,
-                        trailers, pumps, machinery, protective equipment,
-                        containers, and equipment in actual use.
-                    </p>
-
-                </div>
-
-
-                <div class="material-item">
-
-                    <div class="label">
-                        Crops &amp; Plants
-                    </div>
-
-                    <p>
-                        Sugarcane, vegetables, corn, rice, nursery plants,
-                        sod, specialty crops, seeds, propagation, harvested
-                        materials, and finished agricultural goods.
-                    </p>
-
-                </div>
-
-
-                <div class="material-item">
-
-                    <div class="label">
-                        Buildings &amp; Spaces
-                    </div>
-
-                    <p>
-                        Greenhouses, storage spaces, packing areas, farm
-                        structures, equipment buildings, processing environments,
-                        and other accessible agricultural spaces.
-                    </p>
-
-                </div>
-
-
-                <div class="material-item">
-
-                    <div class="label">
-                        Handling &amp; Processing
-                    </div>
-
-                    <p>
-                        Harvesting, washing, grading, packing, bins, crates,
-                        pallets, cold storage, loading, processing, and
-                        movement toward market.
-                    </p>
-
-                </div>
-
-
-                <div class="material-item">
-
-                    <div class="label">
-                        Knowledge
-                    </div>
-
-                    <p>
-                        Growers, workers, operators, processors, suppliers,
-                        equipment specialists, historians, and others able
-                        to describe the physical work firsthand.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 
+<div class="material-record">
+
+<div>
+
+<h2>
+    From soil<br>
+    to visitor.
+</h2>
+
+</div>
+
+
+<div class="material-copy">
+
+<p>
+    The finished book will be built around things that can be observed,
+    photographed, described, located, and compared.
+</p>
+
+<p>
+    These categories define the documentary territory without pretending that
+    the final book can contain every agricultural operation in the county.
+</p>
+
+
+<div class="material-list">
+
+
+<div class="material-item">
+
+<div class="label">
+    Land &amp; Water
+</div>
+
+<p>
+    Fields, soil, muck, sand, drainage, canals, irrigation, water control,
+    field roads, boundaries, and the physical organization of agricultural land.
+</p>
+
+</div>
+
+
+<div class="material-item">
+
+<div class="label">
+    Tools &amp; Machines
+</div>
+
+<p>
+    Hand tools, tractors, implements, harvest equipment, trailers, pumps,
+    machinery, containers, and equipment in actual use.
+</p>
+
+</div>
+
+
+<div class="material-item">
+
+<div class="label">
+    Crops &amp; Plants
+</div>
+
+<p>
+    Sugarcane, vegetables, nursery plants, sod, specialty crops, seeds,
+    propagation, harvested materials, and finished agricultural goods.
+</p>
+
+</div>
+
+
+<div class="material-item">
+
+<div class="label">
+    Buildings &amp; Spaces
+</div>
+
+<p>
+    Greenhouses, storage spaces, packing areas, farm structures, equipment
+    buildings, processing environments, and other accessible agricultural spaces.
+</p>
+
+</div>
+
+
+<div class="material-item">
+
+<div class="label">
+    Handling &amp; Processing
+</div>
+
+<p>
+    Harvesting, washing, grading, packing, bins, crates, pallets, cold storage,
+    loading, processing, and movement toward market.
+</p>
+
+</div>
+
+
+<div class="material-item">
+
+<div class="label">
+    Public Edge
+</div>
+
+<p>
+    Farm markets, visitor areas, educational spaces, culinary connections,
+    farm experiences, and other places where working agriculture becomes
+    legible to the public.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- ==================================================
-     04 / PARTICIPATION
-================================================== -->
+
+<!-- =========================
+     PARTICIPATION
+     ========================= -->
 
 <section class="section participation" id="participation">
-    <div class="container">
 
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-        <div class="section-number">
-            04 / Participation
-        </div>
+<div class="section-number">
+    05 / Participation
+</div>
 
-        <div>
-            <h2 class="section-title">
-                The record can be built with the field.
-            </h2>
+<div>
 
-            <p class="section-intro">
-                Participation allows a larger number of agricultural
-                operations and organizations to contribute to the making
-                of the county record.
-            </p>
-        </div>
+<h2 class="section-title">
+    The record can be built with the field.
+</h2>
 
-    </div>
+<p class="section-intro">
+    Participation allows agricultural operations, institutions, tourism organizations,
+    and other relevant participants to contribute evidence and access to the county record.
+</p>
 
-
-    <div class="participation-grid">
-
-        <article class="participation-card">
-
-            <div class="label">
-                Documentary Participation
-            </div>
-
-            <h3>
-                Enter the field.
-            </h3>
-
-            <p>
-                Farms, nurseries, growers, processors, agricultural suppliers,
-                equipment businesses, and other relevant operations may
-                participate by providing access, firsthand knowledge,
-                photographs, documents, or other useful material and by
-                acquiring finished books.
-            </p>
-
-        </article>
-
-
-        <article class="participation-card">
-
-            <div class="label">
-                Institutional Participation
-            </div>
-
-            <h3>
-                Help establish the record.
-            </h3>
-
-            <p>
-                Agricultural organizations, research bodies, businesses,
-                cultural institutions, and other organizations may support
-                research and production through institutional participation
-                and acquisition.
-            </p>
-
-        </article>
-
-    </div>
-
-
-    <div class="participation-note">
-        Participation supports the making of the record. It does not purchase
-        advertising space or editorial conclusions.
-    </div>
+</div>
 
 </div>
 
 
+<div class="participation-grid">
+
+
+<article class="participation-card">
+
+<div class="label">
+    Agricultural Participation
+</div>
+
+<h3>
+    Open the field.
+</h3>
+
+<p>
+    Farms, nurseries, growers, processors, agricultural suppliers, equipment
+    businesses, markets, and other relevant operations may participate by providing
+    access, firsthand knowledge, photographs, documents, or other useful material
+    and by acquiring finished books.
+</p>
+
+</article>
+
+
+<article class="participation-card">
+
+<div class="label">
+    Institutional Participation
+</div>
+
+<h3>
+    Help establish the record.
+</h3>
+
+<p>
+    Agricultural organizations, tourism bodies, research institutions, cultural
+    institutions, businesses, and other organizations may support research and
+    production through institutional participation and acquisition.
+</p>
+
+</article>
+
+
+</div>
+
+
+<div class="participation-note">
+    Participation supports the making of the record. It does not purchase
+    advertising space or editorial conclusions.
+</div>
+
+</div>
+
 </section>
 
-<!-- ==================================================
-     05 / METHOD
-================================================== -->
+
+<!-- =========================
+     METHOD
+     ========================= -->
 
 <section class="section" id="method">
-    <div class="container">
 
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-        <div class="section-number">
-            05 / Method
-        </div>
+<div class="section-number">
+    06 / Method
+</div>
 
-        <div>
-            <h2 class="section-title">
-                Document what can actually be established.
-            </h2>
+<div>
 
-            <p class="section-intro">
-                Palm Beach County is the boundary. Available access,
-                field time, and the quality of the evidence determine
-                the final record.
-            </p>
+<h2 class="section-title">
+    Document what can actually be established.
+</h2>
 
-        </div>
+<p class="section-intro">
+    Palm Beach County is the boundary. Available access, field time, and the
+    quality of the evidence determine the final record.
+</p>
 
-    </div>
-
-
-    <div class="method-grid">
-
-        <article class="method-card">
-
-            <div class="number">
-                01 / Field
-            </div>
-
-            <h3>
-                Go there.
-            </h3>
-
-            <p>
-                Visit accessible agricultural environments and observe
-                physical conditions, processes, materials, tools, crops,
-                equipment, and spaces directly.
-            </p>
-
-        </article>
-
-
-        <article class="method-card">
-
-            <div class="number">
-                02 / Photograph
-            </div>
-
-            <h3>
-                Show the evidence.
-            </h3>
-
-            <p>
-                Photography establishes objects, details, sequences,
-                landscapes, machinery, workspaces, materials, and other
-                visible conditions.
-            </p>
-
-        </article>
-
-
-        <article class="method-card">
-
-            <div class="number">
-                03 / Ask
-            </div>
-
-            <h3>
-                Talk to people who know it.
-            </h3>
-
-            <p>
-                Firsthand explanations from growers, workers, operators,
-                processors, suppliers, historians, and others strengthen
-                the documentary record.
-            </p>
-
-        </article>
-
-
-        <article class="method-card">
-
-            <div class="number">
-                04 / Restrain
-            </div>
-
-            <h3>
-                Do not overstate the field.
-            </h3>
-
-            <p>
-                The publication will not claim to represent every agricultural
-                operation in Palm Beach County. It will identify and document
-                the fields that can genuinely be observed.
-            </p>
-
-        </article>
-
-    </div>
+</div>
 
 </div>
 
 
+<div class="method-grid">
+
+
+<article class="method-card">
+
+<div class="number">
+    01 / Field
+</div>
+
+<h3>
+    Go there.
+</h3>
+
+<p>
+    Visit accessible agricultural environments and observe physical conditions,
+    processes, materials, tools, crops, equipment, visitor interfaces, and spaces directly.
+</p>
+
+</article>
+
+
+<article class="method-card">
+
+<div class="number">
+    02 / Photograph
+</div>
+
+<h3>
+    Show the evidence.
+</h3>
+
+<p>
+    Photography establishes objects, details, sequences, landscapes, machinery,
+    workspaces, materials, working conditions, and other visible conditions.
+</p>
+
+</article>
+
+
+<article class="method-card">
+
+<div class="number">
+    03 / Ask
+</div>
+
+<h3>
+    Talk to people who know it.
+</h3>
+
+<p>
+    Firsthand explanations from growers, workers, operators, processors,
+    suppliers, tourism participants, historians, and others strengthen the
+    documentary record.
+</p>
+
+</article>
+
+
+<article class="method-card">
+
+<div class="number">
+    04 / Restrain
+</div>
+
+<h3>
+    Do not overstate the field.
+</h3>
+
+<p>
+    The publication will not claim to represent every agricultural operation
+    or every visitor experience in Palm Beach County. It will identify and
+    document what can genuinely be established.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
 </section>
 
-<!-- ==================================================
-     06 / FIELDWORK
-================================================== -->
+
+<!-- =========================
+     FIELDWORK
+     ========================= -->
 
 <section class="section" id="fieldwork">
-    <div class="container">
 
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-        <div class="section-number">
-            06 / Fieldwork
-        </div>
+<div class="section-number">
+    07 / Fieldwork
+</div>
 
-        <div>
-            <h2 class="section-title">
-                Palm Beach County first.
-            </h2>
-        </div>
+<div>
 
-    </div>
+<h2 class="section-title">
+    Palm Beach County first.
+</h2>
 
-
-    <div class="fieldwork">
-
-        <h2>
-            A county is manageable. Agriculture is not.
-        </h2>
-
-        <p>
-            The project therefore begins with Palm Beach County rather than
-            attempting a statewide survey. The field will be developed through
-            a selected number of accessible agricultural operations and
-            material systems.
-        </p>
-
-        <p>
-            Large-scale agriculture, horticulture, nurseries, processing,
-            agricultural equipment, specialty production, and smaller
-            operations may all enter the record where access and documentary
-            value make sustained observation possible.
-        </p>
-
-        <div class="fieldwork-meta">
-            Initial Geographic Field · Palm Beach County, Florida<br>
-            P1Lab · Florida Field Record
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 
+<div class="fieldwork">
+
+<h2>
+    A county is manageable. Agriculture is not.
+</h2>
+
+<p>
+    The project begins with Palm Beach County rather than attempting a statewide
+    survey. The field will be developed through a selected number of accessible
+    agricultural operations, material systems, historical sources, and emerging
+    visitor-facing agricultural experiences.
+</p>
+
+<p>
+    Large-scale agriculture, horticulture, nurseries, processing, agricultural
+    equipment, specialty production, markets, culinary connections, and smaller
+    operations may all enter the record where access and documentary value make
+    sustained observation possible.
+</p>
+
+<div class="fieldwork-meta">
+    Initial Geographic Field · Palm Beach County, Florida<br>
+    P1Lab · Florida Field Record
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- ==================================================
-     07 / HISTORICAL POINT OF ENTRY
-================================================== -->
+
+<!-- =========================
+     HISTORICAL RECORD
+     ========================= -->
 
 <section class="section">
-    <div class="container">
 
+<div class="container">
 
-    <div class="section-head">
+<div class="section-head">
 
-        <div class="section-number">
-            07 / Historical Point of Entry
-        </div>
+<div class="section-number">
+    08 / Historical Record
+</div>
 
-        <div>
-            <h2 class="section-title">
-                The project also has a family connection to the field.
-            </h2>
+<div>
 
-            <p class="section-intro">
-                The historical record includes a direct family connection
-                to Palm Beach County agriculture in the 1920s.
-            </p>
+<h2 class="section-title">
+    The present field has a long memory.
+</h2>
 
-        </div>
+<p class="section-intro">
+    The emerging visitor economy does not replace the agricultural history.
+    It creates a new reason to examine it.
+</p>
 
-    </div>
-
-
-    <div class="proposition-grid">
-
-        <div class="proposition-lead">
-            One agricultural history begins in the family archive.
-        </div>
-
-        <div class="proposition-copy">
-
-            <p>
-                The researcher's wife's grandfather worked with corn in Palm
-                Beach County during the 1920s and sold his crop to Consolidated
-                Sugar.
-            </p>
-
-            <p>
-                That family history provides one point of entry into an
-                agricultural field whose physical organization, crops,
-                technologies, businesses, and relationships have changed
-                substantially over the course of a century.
-            </p>
-
-            <p>
-                The connection is useful not because it supplies a conclusion,
-                but because it places one documented family experience inside
-                the larger historical record being investigated.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 
+<div class="proposition-grid">
+
+<div class="proposition-lead">
+    A working landscape becomes more legible when its history is still visible.
+</div>
+
+
+<div class="proposition-copy">
+
+<p>
+    Historical photographs, maps, family archives, agricultural records,
+    equipment histories, land-use changes, and firsthand recollections may enter
+    the record where they help establish how the county's agricultural systems
+    developed.
+</p>
+
+<p>
+    The project will place contemporary agricultural production alongside the
+    historical evidence necessary to understand what has changed, what remains,
+    and what is now being presented to a new public.
+</p>
+
+<p>
+    The objective is not nostalgia. It is continuity: establishing the material
+    relationship between the agricultural county that existed, the agricultural
+    county that remains, and the agricultural landscape increasingly being opened
+    to visitors.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- ==================================================
-     CTA
-================================================== -->
+
+<!-- =========================
+     CONTACT
+     ========================= -->
 
 <section class="cta" id="contact">
-    <div class="container">
 
+<div class="container">
 
-    <div class="eyebrow">
-        Florida Agriculture: The Material Record
-    </div>
+<div class="eyebrow">
+    Florida Agriculture: The Material Record
+</div>
 
-    <h2>
-        The county is the field.<br>
-        Agriculture is the record.
-    </h2>
+<h2>
+    The agricultural field<br>
+    behind the visitor experience.
+</h2>
 
-    <p>
-        P1Lab is developing the Palm Beach County volume as an independent
-        documentary publication and is looking for agricultural operations,
-        institutions, and knowledgeable participants willing to open the field.
-    </p>
+<p>
+    P1Lab is developing the Palm Beach County volume as an independent documentary
+    publication and is looking for agricultural operations, institutions,
+    tourism organizations, and knowledgeable participants willing to open the field.
+</p>
 
-    <a href="mailto:principal.p1.lab@proton.me" class="cta-link">
-        principal.p1.lab@proton.me
-    </a>
+<a href="mailto:publisher@p1lab.net" class="cta-link">
+    publisher@p1lab.net
+</a>
 
 </div>
 
-
 </section>
+
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
 <footer>
-    <div class="container footer-inner">
 
+<div class="container footer-inner">
 
-    <div>
-        <div class="footer-brand">
-            P1Lab
-        </div>
+<div>
+    <div class="footer-brand">
+        P1Lab
     </div>
+</div>
 
-    <div class="footer-meta">
-        <div>Independent Research &amp; Publishing</div>
-        <div>Florida Agriculture: The Material Record</div>
-        <div>Palm Beach County, Florida</div>
+<div class="footer-meta">
 
-        <div>
-            <a href="mailto:principal.p1.lab@proton.me">
-                principal.p1.lab@proton.me
-            </a>
-        </div>
+<div>
+    Independent Research &amp; Publishing
+</div>
 
-        <div>
-            <a href="https://p1-lab.github.io/">
-                p1-lab.github.io
-            </a>
-        </div>
+<div>
+    Florida Agriculture: The Material Record
+</div>
 
-        <div>
-            &copy; 2026 P1Lab
-        </div>
-    </div>
+<div>
+    Palm Beach County, Florida
+</div>
+
+<div>
+    <a href="mailto:publisher@p1lab.net">
+        publisher@p1lab.net
+    </a>
+</div>
+
+<div>
+    <a href="https://p1-lab.github.io/">
+        p1-lab.github.io
+    </a>
+</div>
+
+<div>
+    &copy; 2026 P1Lab
+</div>
 
 </div>
 
+</div>
 
 </footer>
 
 </body>
 </html>
-
-
-This version treats the **1536×1024 image as a landscape hero**, with a desktop display area of roughly **540×360px** before the surrounding frame/caption. That's the scale I'd use here: **large enough to read immediately as a publication object, but not so dominant that it overwhelms the title.**
