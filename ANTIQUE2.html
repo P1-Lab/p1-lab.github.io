@@ -220,6 +220,7 @@ section {
 .proposition-copy {
     max-width: 600px;
     font-size: 18px;
+    color: #5f5b54;
 }
 
 .proposition-copy p {
@@ -229,6 +230,7 @@ section {
 
 .proposition-copy strong {
     font-weight: normal;
+    color: #48453f;
 }
 
 
@@ -300,6 +302,92 @@ section {
 
 
 /* =========================
+   PUBLICATION STATUS
+   ========================= */
+
+.publication-status {
+    background: var(--paper);
+}
+
+.publication-status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.publication-status-copy {
+    max-width: 620px;
+}
+
+.publication-status-copy h2 {
+    margin: 0;
+    max-width: 700px;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.03;
+    font-weight: normal;
+    letter-spacing: -0.025em;
+}
+
+.publication-status-copy p {
+    max-width: 620px;
+    margin: 28px 0 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #5f5b54;
+}
+
+.publication-status-side {
+    max-width: 600px;
+}
+
+.isbn-list {
+    margin-top: 10px;
+    border-top: 1px solid var(--rule);
+}
+
+.isbn-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 17px;
+    color: #5f5b54;
+}
+
+.isbn-item span {
+    color: #5f5b54;
+}
+
+.isbn-item a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3f3c37;
+    border-bottom: 1px solid #8d887f;
+    padding-bottom: 3px;
+}
+
+.isbn-item a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+.isbn-note {
+    margin-top: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a857d;
+}
+
+
+/* =========================
    THE WORLD
    ========================= */
 
@@ -349,6 +437,7 @@ section {
 
 .record-copy {
     font-size: 18px;
+    color: #5f5b54;
 }
 
 .record-copy p {
@@ -505,6 +594,7 @@ section {
     max-width: 770px;
     margin-top: 30px;
     font-size: 21px;
+    color: #5f5b54;
 }
 
 .participation-principle {
@@ -561,6 +651,7 @@ section {
 .participation-record-copy p {
     margin: 0 0 22px;
     font-size: 18px;
+    color: #5f5b54;
 }
 
 .trade-record-list {
@@ -574,6 +665,7 @@ section {
     padding: 12px 0;
     border-bottom: 1px solid var(--rule);
     font-size: 16px;
+    color: #5f5b54;
 }
 
 .trade-record-note {
@@ -652,6 +744,7 @@ section {
     max-width: 760px;
     margin-top: 34px;
     font-size: 19px;
+    color: #5f5b54;
 }
 
 .context-copy p {
@@ -737,6 +830,7 @@ section {
 
 .book-copy {
     font-size: 18px;
+    color: #5f5b54;
 }
 
 .book-copy p {
@@ -778,6 +872,7 @@ section {
 
 .book-spec span {
     font-size: 16px;
+    color: #5f5b54;
 }
 
 
@@ -813,7 +908,7 @@ section {
 }
 
 .disclosure-copy strong {
-    color: var(--ink);
+    color: #4b4842;
     font-weight: normal;
 }
 
@@ -839,6 +934,7 @@ section {
     max-width: 680px;
     margin-top: 30px;
     font-size: 19px;
+    color: #5f5b54;
 }
 
 .contact-link {
@@ -895,6 +991,7 @@ footer {
     }
 
     .proposition-grid,
+    .publication-status-grid,
     .context-grid,
     .engagement-grid,
     .record-grid,
@@ -1040,6 +1137,11 @@ footer {
 
     .engagement-card {
         padding: 30px;
+    }
+
+    .isbn-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 
 }
@@ -1269,96 +1371,108 @@ alt="Antique dealer room with furniture, framed works, books, decorative objects
 
 </section>
 
-<!-- PUBLICATION STATUS -->
+<!-- =========================
+     PUBLICATION STATUS
+     ========================= -->
 
-<section>
+<section class="publication-status">
 
-    <div class="container">
+<div class="container">
 
-        <div class="two-col">
+<div class="publication-status-grid">
 
-            <div>
+<div class="publication-status-copy">
 
-                <div class="section-label">
-                    Publication Status
-                </div>
+<div class="section-label">
+    Publication Status
+</div>
 
-                <h2>
-                    ANTIQUE is established as a three-volume book set.
-                </h2>
+<h2>
+    ANTIQUE is established as a three-volume book set.
+</h2>
 
-                <p class="copy">
-                    The three volumes have been assigned ISBNs through
-                    ISBN Canada and are registered as forthcoming books
-                    with a projected publication date of February 2027.
-                </p>
+<p>
+    The three volumes have been assigned ISBNs and are recorded as forthcoming
+    books with a projected publication date of February 2027.
+</p>
 
-                <p class="copy">
-                    These registrations establish the three-volume
-                    publication architecture independently of the annual
-                    editorial record that will continue through subsequent
-                    editions.
-                </p>
+<p>
+    These ISBN assignments establish the three-volume publication architecture
+    independently of the annual editorial record that will continue through
+    subsequent editions.
+</p>
 
-            </div>
+</div>
 
-            <div>
+<div class="publication-status-side">
 
-                <div class="section-label">
-                    ISBN Canada
-                </div>
+<div class="section-label">
+    ISBN Records
+</div>
 
-                <div class="isbn-list">
+<div class="isbn-list">
 
-                    <div class="isbn-item">
-                        <span>ANTIQUE, Vol. 1</span>
-                        <a
-                            href="https://www.collectionscanada.gc.ca/isbn-canada/app/index.php?fuseaction=logbook.edit&publication=1133870&lang=eng"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            978-1-989647-92-9
-                        </a>
-                    </div>
+<div class="isbn-item">
 
-                    <div class="isbn-item">
-                        <span>ANTIQUE, Vol. 2</span>
-                        <a
-                            href="https://www.collectionscanada.gc.ca/isbn-canada/app/index.php?fuseaction=logbook.edit&publication=1133871&lang=eng"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            978-1-989647-93-6
-                        </a>
-                    </div>
+<span>
+    ANTIQUE, Vol. 1
+</span>
 
-                    <div class="isbn-item">
-                        <span>ANTIQUE, Vol. 3</span>
-                        <a
-                            href="https://www.collectionscanada.gc.ca/isbn-canada/app/index.php?fuseaction=logbook.edit&publication=1133872&lang=eng"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            978-1-989647-94-3
-                        </a>
-                    </div>
+<a
+href="https://www.collectionscanada.gc.ca/isbn-canada/app/index.php?fuseaction=logbook.edit&publication=1133870&lang=eng"
+target="_blank"
+rel="noopener noreferrer"
+>
+    978-1-989647-92-9
+</a>
 
-                </div>
+</div>
 
-                <p class="isbn-note">
-                    ISBN Canada · Forthcoming · February 2027
-                </p>
+<div class="isbn-item">
 
-            </div>
+<span>
+    ANTIQUE, Vol. 2
+</span>
 
-        </div>
+<a
+href="https://www.collectionscanada.gc.ca/isbn-canada/app/index.php?fuseaction=logbook.edit&publication=1133871&lang=eng"
+target="_blank"
+rel="noopener noreferrer"
+>
+    978-1-989647-93-6
+</a>
 
-    </div>
+</div>
+
+<div class="isbn-item">
+
+<span>
+    ANTIQUE, Vol. 3
+</span>
+
+<a
+href="https://www.collectionscanada.gc.ca/isbn-canada/app/index.php?fuseaction=logbook.edit&publication=1133872&lang=eng"
+target="_blank"
+rel="noopener noreferrer"
+>
+    978-1-989647-94-3
+</a>
+
+</div>
+
+</div>
+
+<p class="isbn-note">
+    Forthcoming · February 2027
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
-
-
-
 
 <!-- =========================
      THE WORLD
