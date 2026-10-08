@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
@@ -8,7 +8,7 @@
 
 <title>ANTIQUE — GrüvType</title>
 
-<meta name="description" content="ANTIQUE — the annual North American reference to antique dealers, specialists, shops, galleries, collections and the material worlds through which North America trades in things with history.">
+<meta name="description" content="ANTIQUE — a three-volume annual North American reference to antique dealers, specialists, shops, galleries, collections and the material worlds through which North America trades in things with history.">
 
 <style>
 
@@ -443,13 +443,147 @@ section {
 
 
 /* =========================
-   PARTNERS
+   VOLUMES
+   ========================= */
+
+.volume-grid {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+}
+
+.volume {
+    padding: 35px 35px 38px 0;
+    margin-right: 35px;
+    border-right: 1px solid var(--rule);
+}
+
+.volume:last-child {
+    border-right: none;
+    margin-right: 0;
+}
+
+.volume-number {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.volume h3 {
+    margin: 17px 0 14px;
+    font-size: 32px;
+    line-height: 1.05;
+    font-weight: normal;
+}
+
+.volume p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.volume-fields {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+/* =========================
+   PARTNERS / PARTICIPATION
    ========================= */
 
 .participation-lead {
     max-width: 770px;
     margin-top: 30px;
     font-size: 21px;
+}
+
+.participation-principle {
+    max-width: 820px;
+    margin-top: 60px;
+    padding: 32px 0 34px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+}
+
+.participation-principle h3 {
+    margin: 0 0 15px;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.05;
+    font-weight: normal;
+    letter-spacing: -0.025em;
+}
+
+.participation-principle p {
+    max-width: 720px;
+    margin: 0;
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.participation-record {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    padding: 35px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.participation-record-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.participation-record h3 {
+    margin: 15px 0 0;
+    font-size: 38px;
+    line-height: 1;
+    font-weight: normal;
+}
+
+.participation-record-copy {
+    max-width: 650px;
+}
+
+.participation-record-copy p {
+    margin: 0 0 22px;
+    font-size: 18px;
+}
+
+.trade-record-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--rule);
+}
+
+.trade-record-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px;
+}
+
+.trade-record-note {
+    margin-top: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    color: var(--muted);
 }
 
 .participation-grid {
@@ -769,6 +903,11 @@ footer {
         gap: 45px;
     }
 
+    .participation-record {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
     .test-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -821,6 +960,21 @@ footer {
 
     .record-image-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .volume-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .volume {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .volume:last-child {
+        border-bottom: none;
     }
 
     .book-spec div {
@@ -893,9 +1047,7 @@ footer {
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      HEADER
@@ -923,7 +1075,6 @@ footer {
 
 </header>
 
-
 <!-- =========================
      HERO IMAGE
      ========================= -->
@@ -931,11 +1082,10 @@ footer {
 <div class="hero-image">
 
 <img
-    src="antique-hero.jpg"
-    alt="Antique dealer interior filled with furniture, decorative objects, books, lighting and architectural details">
+src="antique-hero.jpg"
+alt="Antique dealer interior filled with furniture, decorative objects, books, lighting and architectural details">
 
 </div>
-
 
 <!-- =========================
      HERO
@@ -946,7 +1096,7 @@ footer {
 <div class="container">
 
 <div class="eyebrow">
-    GrüvType — Publication in development
+    GrüvType — Three-Volume Publication in Development
 </div>
 
 <h1>
@@ -954,7 +1104,7 @@ footer {
 </h1>
 
 <div class="hero-subtitle">
-    The annual North American record of the antiquarian trade.
+    The three-volume annual North American record of the antiquarian trade.
 </div>
 
 <div class="hero-lead">
@@ -964,14 +1114,13 @@ footer {
 </div>
 
 <div class="hero-statement">
-    The web can find a dealer.<br>
-    ANTIQUE records the trade.
+    Three volumes.<br>
+    One record of the trade.
 </div>
 
 </div>
 
 </section>
-
 
 <!-- =========================
      PROPOSITION
@@ -1001,8 +1150,8 @@ footer {
 </p>
 
 <p>
-    ANTIQUE is conceived as an annual North American reference to the
-    businesses, specialties, regions, histories and material worlds through
+    ANTIQUE is conceived as a three-volume annual North American reference to
+    the businesses, specialties, regions, histories and material worlds through
     which North America buys, sells, studies and preserves objects with history.
 </p>
 
@@ -1025,8 +1174,8 @@ footer {
 <div class="image-feature">
 
 <img
-    src="antique-interior-store2.png"
-    alt="Antique dealer room with furniture, framed works, books, decorative objects and architectural elements">
+src="antique-interior-store2.png"
+alt="Antique dealer room with furniture, framed works, books, decorative objects and architectural elements">
 
 <div class="image-caption">
     The shop is part of the record.
@@ -1037,7 +1186,6 @@ footer {
 </div>
 
 </section>
-
 
 <!-- =========================
      WHY THIS BOOK
@@ -1056,9 +1204,9 @@ footer {
 </h2>
 
 <div class="section-intro">
-    ANTIQUE is designed to remain useful away from a screen: beside a desk,
-    on a dealer's shelf, in a collector's library, at a fair, or while planning
-    a visit to a region or specialist.
+    ANTIQUE is designed as a three-volume reference set that remains useful
+    away from a screen: beside a desk, on a dealer's shelf, in a collector's
+    library, at a fair, or while planning a visit to a region or specialist.
 </div>
 
 <div class="test-grid">
@@ -1076,7 +1224,6 @@ footer {
 
 </div>
 
-
 <div class="test">
 
 <div class="test-number">02</div>
@@ -1090,7 +1237,6 @@ footer {
 
 </div>
 
-
 <div class="test">
 
 <div class="test-number">03</div>
@@ -1103,7 +1249,6 @@ footer {
 </p>
 
 </div>
-
 
 <div class="test">
 
@@ -1124,7 +1269,6 @@ footer {
 
 </section>
 
-
 <!-- =========================
      THE WORLD
      ========================= -->
@@ -1142,24 +1286,18 @@ footer {
 </h2>
 
 <div class="section-intro">
-    ANTIQUE follows the material world itself: furniture, decorative arts,
-    architecture, books, maps, textiles, garden objects, tools, scientific
-    instruments, folk material, industrial objects and the specialist trades
-    that understand them.
+    ANTIQUE follows the material world itself. The three-volume structure gives
+    the trade enough room to be comprehensive without collapsing hundreds of
+    specialist fields into one undifferentiated directory.
 </div>
 
 <div class="world-list">
 
-
 <div class="world-item">
 
-<div class="world-number">
-    01
-</div>
+<div class="world-number">01</div>
 
-<div class="world-name">
-    Furniture
-</div>
+<div class="world-name">Furniture</div>
 
 <div class="world-description">
     American, European, modernist, country, formal, vernacular, architectural
@@ -1168,16 +1306,11 @@ footer {
 
 </div>
 
-
 <div class="world-item">
 
-<div class="world-number">
-    02
-</div>
+<div class="world-number">02</div>
 
-<div class="world-name">
-    Decorative Arts
-</div>
+<div class="world-name">Decorative Arts</div>
 
 <div class="world-description">
     Ceramics, glass, metalwork, objects, sculpture, clocks, lighting and the
@@ -1186,34 +1319,24 @@ footer {
 
 </div>
 
-
 <div class="world-item">
 
-<div class="world-number">
-    03
-</div>
+<div class="world-number">03</div>
 
-<div class="world-name">
-    Americana
-</div>
+<div class="world-name">Americana</div>
 
 <div class="world-description">
     Folk art, domestic objects, commercial material, regional traditions and
-    the material record of everyday American life.
+    the material record of everyday North American life.
 </div>
 
 </div>
-
 
 <div class="world-item">
 
-<div class="world-number">
-    04
-</div>
+<div class="world-number">04</div>
 
-<div class="world-name">
-    Books &amp; Paper
-</div>
+<div class="world-name">Books &amp; Paper</div>
 
 <div class="world-description">
     Rare books, maps, prints, manuscripts, ephemera, posters, photographs
@@ -1222,16 +1345,11 @@ footer {
 
 </div>
 
-
 <div class="world-item">
 
-<div class="world-number">
-    05
-</div>
+<div class="world-number">05</div>
 
-<div class="world-name">
-    Textiles
-</div>
+<div class="world-name">Textiles</div>
 
 <div class="world-description">
     Rugs, carpets, quilts, embroideries, lace, fabrics, costume and historic
@@ -1240,16 +1358,11 @@ footer {
 
 </div>
 
-
 <div class="world-item">
 
-<div class="world-number">
-    06
-</div>
+<div class="world-number">06</div>
 
-<div class="world-name">
-    Architecture
-</div>
+<div class="world-name">Architecture</div>
 
 <div class="world-description">
     Salvage, doors, windows, mantels, hardware, stone, ironwork, architectural
@@ -1258,16 +1371,11 @@ footer {
 
 </div>
 
-
 <div class="world-item">
 
-<div class="world-number">
-    07
-</div>
+<div class="world-number">07</div>
 
-<div class="world-name">
-    Garden
-</div>
+<div class="world-name">Garden</div>
 
 <div class="world-description">
     Urns, statuary, fountains, furniture, gates, planters, tools and other
@@ -1276,16 +1384,11 @@ footer {
 
 </div>
 
-
 <div class="world-item">
 
-<div class="world-number">
-    08
-</div>
+<div class="world-number">08</div>
 
-<div class="world-name">
-    Industrial
-</div>
+<div class="world-name">Industrial</div>
 
 <div class="world-description">
     Machines, tools, scientific equipment, commercial objects and the
@@ -1294,16 +1397,11 @@ footer {
 
 </div>
 
-
 <div class="world-item">
 
-<div class="world-number">
-    09
-</div>
+<div class="world-number">09</div>
 
-<div class="world-name">
-    Specialists
-</div>
+<div class="world-name">Specialists</div>
 
 <div class="world-description">
     Restorers, conservators, appraisers, reference dealers, category
@@ -1318,6 +1416,106 @@ footer {
 
 </section>
 
+<!-- =========================
+     THREE VOLUMES
+     ========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+    04 — The Three Volumes
+</div>
+
+<h2 class="section-title">
+    One trade. Three material worlds.
+</h2>
+
+<div class="section-intro">
+    The three-volume structure allows ANTIQUE to remain comprehensive without
+    becoming a single oversized directory. Each volume has its own material
+    logic; geography, period and specialist expertise operate across the set.
+</div>
+
+<div class="volume-grid">
+
+<div class="volume">
+
+<div class="volume-number">
+    Volume I
+</div>
+
+<h3>
+    House &amp;<br>
+    Decorative Arts
+</h3>
+
+<p>
+    The objects and materials that shape domestic, architectural and decorative
+    environments.
+</p>
+
+<div class="volume-fields">
+    Furniture · Decorative Arts · Ceramics · Glass · Silver · Textiles ·
+    Art · Lighting · Domestic Objects · Architecture · Garden
+</div>
+
+</div>
+
+<div class="volume">
+
+<div class="volume-number">
+    Volume II
+</div>
+
+<h3>
+    Americana &amp;<br>
+    Material Culture
+</h3>
+
+<p>
+    The objects, tools, machines, trades and regional material traditions
+    through which North American life has been made and remembered.
+</p>
+
+<div class="volume-fields">
+    Americana · Folk Art · Country Objects · Agricultural · Industrial ·
+    Tools · Commercial · Transportation · Military · Nautical · Sporting ·
+    Toys &amp; Games
+</div>
+
+</div>
+
+<div class="volume">
+
+<div class="volume-number">
+    Volume III
+</div>
+
+<h3>
+    Books, Paper &amp;<br>
+    Specialist Collections
+</h3>
+
+<p>
+    The documentary, scientific, mechanical and specialist fields whose
+    material requires deeper classification and expertise.
+</p>
+
+<div class="volume-fields">
+    Rare Books · Manuscripts · Maps · Prints · Photography · Ephemera ·
+    Scientific Instruments · Medical · Technology · Music · Clocks ·
+    Mechanical Objects · Archives
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- =========================
      THE RECORD
@@ -1328,7 +1526,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    04 — The Record
+    05 — The Record
 </div>
 
 <h2 class="section-title">
@@ -1336,43 +1534,38 @@ footer {
 </h2>
 
 <div class="signal-intro">
-    Each annual edition organizes the trade geographically and materially,
-    while preserving information that is difficult to recover from a changing
-    web: ownership, history, specialties, premises, expertise and the distinctive
-    character of a dealer's world.
+    Each annual edition is published as a three-volume set. The volumes organize
+    the trade by material field, while regional and specialist indexes allow the
+    reader to move across the entire record.
 </div>
 
 <div class="signal-grid">
 
-
 <div class="signal-item">
 
 <h3>
-    The Business
+    The Trade Record
 </h3>
 
 <p>
-    Business identity, location, specialties, established date, contact
-    information, website and a concise description of the dealer's field.
+    Business identity, location, specialties, material fields, established
+    date, website and a concise editorial description of the dealer's work.
 </p>
 
 </div>
 
-
 <div class="signal-item">
 
 <h3>
-    The Shop
+    The Material
 </h3>
 
 <p>
-    Properly licensed dealer-supplied imagery and, where commissioned,
-    original documentary photography establish the visual character of the
-    premises, material and inventory.
+    The categories, periods, materials and object fields in which a dealer
+    or specialist actually works.
 </p>
 
 </div>
-
 
 <div class="signal-item">
 
@@ -1387,7 +1580,6 @@ footer {
 
 </div>
 
-
 <div class="signal-item">
 
 <h3>
@@ -1401,7 +1593,6 @@ footer {
 
 </div>
 
-
 </div>
 
 <div class="record-image-grid">
@@ -1409,27 +1600,24 @@ footer {
 <div class="record-image">
 
 <img
-    src="antique-shop.jpg"
-    alt="Antique objects arranged as a visual study of materials, workmanship, age and use"
->
+src="antique-shop.jpg"
+alt="Antique objects arranged as a visual study of materials, workmanship, age and use">
 
 </div>
 
 <div class="record-image">
 
 <img
-    src="antique-objects.jpg"
-    alt="Close detail of patinated material and craftsmanship on an antique object"
->
+src="antique-objects.jpg"
+alt="Close detail of patinated material and craftsmanship on an antique object">
 
 </div>
 
 <div class="record-image">
 
 <img
-    src="antique-detail.jpg"
-    alt="Interior of an antique dealer shop with furniture, objects, books and shelves"
->
+src="antique-detail.jpg"
+alt="Interior of an antique dealer shop with furniture, objects, books and shelves">
 
 </div>
 
@@ -1438,7 +1626,6 @@ footer {
 </div>
 
 </section>
-
 
 <!-- =========================
      PARTNERS
@@ -1449,7 +1636,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    05 — Partners
+    06 — Partners
 </div>
 
 <h2 class="section-title">
@@ -1463,8 +1650,91 @@ footer {
     documentary histories of their own.
 </div>
 
-<div class="participation-grid">
+<div class="participation-principle">
 
+<h3>
+    ANTIQUE does not sell pages.<br>
+    It records the trade.
+</h3>
+
+<p>
+    The annual three-volume set is organized by material field and region.
+    Participating businesses are placed within the category or categories
+    that describe their actual work, so the books read as a reference to
+    the trade rather than a sequence of purchased advertisements.
+</p>
+
+</div>
+
+<div class="participation-record">
+
+<div>
+
+<div class="participation-record-label">
+    Annual Participation
+</div>
+
+<h3>
+    Trade Record
+</h3>
+
+</div>
+
+<div class="participation-record-copy">
+
+<p>
+    A standardized annual record for an established dealer, specialist,
+    shop or gallery. The Trade Record establishes the practical reference
+    layer of the three-volume set.
+</p>
+
+<ul class="trade-record-list">
+
+<li>
+    Business name, location and website
+</li>
+
+<li>
+    Primary specialties and material fields
+</li>
+
+<li>
+    Established date or concise history where appropriate
+</li>
+
+<li>
+    Editorial description of the dealer's field
+</li>
+
+<li>
+    Placement within the relevant material and regional sections
+</li>
+
+<li>
+    Appropriate imagery, properly licensed and editorially selected
+</li>
+
+<li>
+    Inclusion in the annual index
+</li>
+
+<li>
+    A copy of the published annual set
+</li>
+
+</ul>
+
+<div class="trade-record-note">
+    Trade Records do not purchase a page, position, endorsement or advertising
+    space. ANTIQUE determines category, sequence, wording and image treatment
+    as part of the editorial structure of the books.
+</div>
+
+</div>
+
+</div>
+
+<div class="participation-grid">
 
 <div class="participation-item">
 
@@ -1479,7 +1749,6 @@ footer {
 
 </div>
 
-
 <div class="participation-item">
 
 <h3>
@@ -1492,7 +1761,6 @@ footer {
 </p>
 
 </div>
-
 
 <div class="participation-item">
 
@@ -1507,7 +1775,6 @@ footer {
 
 </div>
 
-
 <div class="participation-item">
 
 <h3>
@@ -1521,7 +1788,6 @@ footer {
 
 </div>
 
-
 <div class="participation-item">
 
 <h3>
@@ -1534,7 +1800,6 @@ footer {
 </p>
 
 </div>
-
 
 <div class="participation-item">
 
@@ -1555,7 +1820,6 @@ footer {
 
 </section>
 
-
 <!-- =========================
      METHOD
      ========================= -->
@@ -1565,7 +1829,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    06 — Method
+    07 — Method
 </div>
 
 <h2 class="section-title">
@@ -1580,23 +1844,19 @@ footer {
 
 <div class="context-grid">
 
-
 <div class="context-image">
 
 <img
-    src="bird2.jpg"
-    alt="Antique objects showing materials, age, workmanship and patina"
->
+src="bird2.jpg"
+alt="Antique objects showing materials, age, workmanship and patina">
 
 </div>
 
-
 <div class="context-image">
 
 <img
-    src="goblets-antique2.jpg"
-    alt="Antique dealer interior showing furniture, shelving and collected objects"
->
+src="goblets-antique2.jpg"
+alt="Antique dealer interior showing furniture, shelving and collected objects">
 
 </div>
 
@@ -1632,7 +1892,6 @@ footer {
 
 </section>
 
-
 <!-- =========================
      DOCUMENTARY ENGAGEMENTS
      ========================= -->
@@ -1642,20 +1901,19 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    07 — Documentary Engagements
+    08 — Documentary Engagements
 </div>
 
 <h2 class="section-title">
-    Some businesses contain a history that deserves more than a listing.
+    Some businesses contain a history that deserves more than a Trade Record.
 </h2>
 
 <div class="section-intro">
-    The annual creates the reference point. Documentary work creates the
-    permanent record.
+    The Trade Record establishes the reference point. Documentary work creates
+    the permanent record.
 </div>
 
 <div class="engagement-grid">
-
 
 <div class="engagement-card">
 
@@ -1677,7 +1935,6 @@ footer {
 
 </div>
 
-
 <div class="engagement-card">
 
 <div class="label">
@@ -1697,7 +1954,6 @@ footer {
 
 </div>
 
-
 </div>
 
 <div class="engagement-note">
@@ -1709,7 +1965,6 @@ footer {
 
 </section>
 
-
 <!-- =========================
      IMAGES & MATERIAL
      ========================= -->
@@ -1719,7 +1974,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    08 — Images &amp; Material
+    09 — Images &amp; Material
 </div>
 
 <h2 class="section-title">
@@ -1729,7 +1984,8 @@ footer {
 <div class="section-intro">
     ANTIQUE can work with properly licensed dealer-supplied imagery,
     archival material and original documentary photography produced through
-    commissioned fieldwork.
+    commissioned fieldwork. Images are selected and used editorially within
+    the structure of the publication.
 </div>
 
 <div class="record-image-grid">
@@ -1737,27 +1993,24 @@ footer {
 <div class="record-image">
 
 <img
-    src="vase.jpg"
-    alt="Antique dealer shop showing furniture and objects"
->
+src="vase.jpg"
+alt="Antique dealer shop showing furniture and objects">
 
 </div>
 
 <div class="record-image">
 
 <img
-    src="pinball-antique.jpg"
-    alt="Close study of antique objects and material surfaces"
->
+src="pinball-antique.jpg"
+alt="Close study of antique objects and material surfaces">
 
 </div>
 
 <div class="record-image">
 
 <img
-    src="boat-bi.jpg"
-    alt="Detailed interior view of an antique shop"
->
+src="boat-bi.jpg"
+alt="Detailed interior view of an antique shop">
 
 </div>
 
@@ -1778,6 +2031,12 @@ footer {
     that make the business distinctive.
 </p>
 
+<p>
+    Participation does not create a guaranteed advertising position or
+    predetermined page treatment. The editorial structure of the annual
+    determines how material is organized and presented.
+</p>
+
 </div>
 
 <div class="context-callout">
@@ -1789,7 +2048,6 @@ footer {
 
 </section>
 
-
 <!-- =========================
      BOOK
      ========================= -->
@@ -1799,34 +2057,41 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    09 — The Book
+    10 — The Book
 </div>
 
 <h2 class="section-title">
-    A reference designed to remain useful after the search result disappears.
+    Three volumes. One annual record.
 </h2>
 
 <div class="book-grid">
-
 
 <div class="book-copy">
 
 <p>
     The physical ANTIQUE publication brings together dealers, specialists,
     regions, material categories, shops, histories, documentary images and
-    reference information into one coherent annual record.
+    reference information into a coherent three-volume annual set.
 </p>
 
 <p>
-    It is intended to be useful to the people already involved in this world:
-    dealers, collectors, designers, architects, museums, libraries,
+    The three volumes divide the enormous material field into logical areas
+    without separating the trade into isolated worlds. Dealers are encountered
+    through the material they handle, the specialties they practice and the
+    places where they operate.
+</p>
+
+<p>
+    Geography, period and specialist expertise operate across the set. A dealer
+    may therefore be understood not only by the volume in which the primary
+    material field appears, but also through regional and specialist indexing.
+</p>
+
+<p>
+    The set is intended to be useful to the people already involved in this
+    world: dealers, collectors, designers, architects, museums, libraries,
     researchers and institutions whose work depends on finding the people
     who know the material.
-</p>
-
-<p>
-    The publication is not simply a directory. It is a reference to the
-    physical trade and to the knowledge that makes that trade possible.
 </p>
 
 <p>
@@ -1837,26 +2102,25 @@ footer {
 
 </div>
 
-
 <div>
 
 <div class="book-image">
 
 <img
-    src="antique-book.jpg"
-    alt="ANTIQUE annual North American antiquarian reference book">
+src="antique-book.jpg"
+alt="ANTIQUE three-volume North American antiquarian reference set">
 
 </div>
 
 <div class="image-caption">
-    ANTIQUE · GrüvType publication in development
+    ANTIQUE · GrüvType three-volume publication in development
 </div>
 
 <div class="book-spec">
 
 <div>
     <strong>Format</strong>
-    <span>Substantial illustrated annual reference</span>
+    <span>Three-volume illustrated annual reference set</span>
 </div>
 
 <div>
@@ -1870,17 +2134,26 @@ footer {
 </div>
 
 <div>
+    <strong>Structure</strong>
+    <span>Material fields, regional organization and specialist records</span>
+</div>
+
+<div>
+    <strong>Volumes</strong>
+    <span>House &amp; Decorative Arts · Americana &amp; Material Culture · Books, Paper &amp; Specialist Collections</span>
+</div>
+
+<div>
     <strong>Evidence</strong>
     <span>Businesses, objects, places, documents, images and specialist knowledge</span>
 </div>
 
 <div>
     <strong>Output</strong>
-    <span>Permanent physical annual record</span>
+    <span>Permanent physical annual reference set</span>
 </div>
 
 </div>
-
 
 <!-- =========================
      WEBSITE IMAGE DISCLOSURE
@@ -1902,9 +2175,9 @@ footer {
 <p>
     Website imagery may include original photography, hand-drawn and digitally
     constructed illustrations, photographic composites, interpretive
-    reconstructions, publication mockups, and images created or modified with generative image tools. These visuals are used to establish
-    atmosphere, subject, material context and the intended character of the
-    publication.
+    reconstructions, publication mockups, and images created or modified with
+    generative image tools. These visuals are used to establish atmosphere,
+    subject, material context and the intended character of the publication.
 </p>
 
 <p>
@@ -1913,15 +2186,15 @@ footer {
 </p>
 
 <p>
-    <strong>The ANTIQUE book is different.</strong> Images published in the
-    physical book will be real photographic or archival images of actual
+    <strong>The ANTIQUE books are different.</strong> Images published in the
+    physical set will be real photographic or archival images of actual
     objects, places, businesses and material evidence. Generative imagery
-    will not be used as documentary evidence in the book.
+    will not be used as documentary evidence in the books.
 </p>
 
 <p>
     The distinction is intentional: the website presents the project;
-    the book records the material world.
+    the books record the material world.
 </p>
 
 </div>
@@ -1934,7 +2207,6 @@ footer {
 
 </section>
 
-
 <!-- =========================
      INQUIRIES
      ========================= -->
@@ -1944,7 +2216,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    10 — Inquiries
+    11 — Inquiries
 </div>
 
 <h2 class="contact-title">
@@ -1961,6 +2233,11 @@ footer {
 </p>
 
 <p>
+    We are currently accepting inquiries regarding participation in the
+    three-volume annual record and, where warranted, deeper documentary work.
+</p>
+
+<p>
     We are also interested in organizations with a company history, collection,
     premises, archive, specialization or body of knowledge that warrants a
     deeper documentary record of its own.
@@ -1968,16 +2245,13 @@ footer {
 
 </div>
 
-<a
-    href="mailto:publisher@p1lab.net"
-    class="contact-link">
+<a href="mailto:publisher@p1lab.net" class="contact-link">
     publisher@p1lab.net
 </a>
 
 </div>
 
 </section>
-
 
 <!-- =========================
      FOOTER
@@ -1999,7 +2273,5 @@ footer {
 
 </footer>
 
-
 </body>
 </html>
-
