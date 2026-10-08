@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FINISH — GrüvType</title>
+<title>FINISH — Annual Material Record | GrüvType</title>
 
-<meta name="description" content="FINISH — an independent documentary publication about how buildings become finished rooms: the materials, manufacturers, craftsmen, technologies and specialized knowledge behind the interiors people live with.">
+<meta name="description" content="FINISH is an annual independent GrüvType documentary publication about how buildings become finished rooms: the materials, manufacturers, craftsmen, technologies, showrooms and specialized knowledge behind the interiors people live with. Eligible participants may be formally identified through annual editorial listing and related documentary work.">
 
 <style>
 
@@ -96,7 +95,8 @@ nav a {
     color: var(--muted);
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
     color: var(--ink);
 }
 
@@ -252,7 +252,7 @@ section {
 
 
 /* =========================
-   WHY THIS BOOK
+   WHY THIS ANNUAL
    ========================= */
 
 .test-grid {
@@ -478,7 +478,7 @@ section {
 
 
 /* =========================
-   PARTNERS
+   PARTICIPATION
    ========================= */
 
 .participation-lead {
@@ -518,6 +518,73 @@ section {
     margin: 0;
     font-size: 16px;
     color: var(--muted);
+}
+
+.participation-note {
+    max-width: 820px;
+    margin-top: 34px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+}
+
+
+/* =========================
+   ANNUAL
+   ========================= */
+
+.annual {
+    background: var(--paper);
+}
+
+.annual-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+}
+
+.annual-card {
+    min-height: 285px;
+    padding: 38px;
+    background: var(--paper);
+}
+
+.annual-card .label {
+    margin-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.annual-card h3 {
+    margin: 0 0 17px;
+    font-size: 35px;
+    line-height: 1;
+    font-weight: normal;
+}
+
+.annual-card p {
+    max-width: 570px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.annual-note {
+    max-width: 820px;
+    margin-top: 35px;
+    font-size: clamp(27px, 3vw, 38px);
+    line-height: 1.15;
 }
 
 
@@ -634,7 +701,7 @@ section {
 
 
 /* =========================
-   WEBSITE IMAGE DISCLOSURE
+   IMAGE DISCLOSURE
    ========================= */
 
 .image-disclosure {
@@ -798,6 +865,7 @@ footer {
 
     .proposition-grid,
     .context-grid,
+    .annual-grid,
     .engagement-grid,
     .record-grid,
     .book-grid {
@@ -924,7 +992,8 @@ footer {
         grid-column: 2;
     }
 
-    .engagement-card {
+    .engagement-card,
+    .annual-card {
         padding: 30px;
     }
 
@@ -952,7 +1021,8 @@ footer {
 <nav>
     <a href="#book">Book</a>
     <a href="#world">The World</a>
-    <a href="#partners">Partners</a>
+    <a href="#participation">Participation</a>
+    <a href="#annual">Annual</a>
     <a href="#method">Method</a>
     <a href="#record">The Record</a>
     <a href="#contact">Inquiries</a>
@@ -980,7 +1050,7 @@ footer {
 <div class="container">
 
 <div class="eyebrow">
-    GrüvType — Publication in production
+    GrüvType — Annual Publication in Production for 2027
 </div>
 
 <h1>
@@ -992,7 +1062,7 @@ footer {
 </div>
 
 <div class="hero-lead">
-    A substantial illustrated record of the materials, manufacturers, craftsmen,
+    An annual illustrated record of the materials, manufacturers, craftsmen,
     technologies, details and specialized knowledge that turn a building shell
     into a place people actually live in.
 </div>
@@ -1000,6 +1070,8 @@ footer {
 <div class="hero-statement">
     The finished room is familiar.<br>
     The world behind it is not.
+    <br><br>
+    FINISH follows that world year after year.
 </div>
 
 </div>
@@ -1029,8 +1101,8 @@ footer {
 <div class="proposition-copy">
 
 <p>
-    A room looks complete when the surfaces, fixtures, trim, hardware, lighting,
-    flooring and built elements appear to belong together.
+    A room looks complete when the surfaces, fixtures, trim, hardware,
+    lighting, flooring and built elements appear to belong together.
 </p>
 
 <p>
@@ -1048,7 +1120,12 @@ footer {
 
 <p>
     The subject is not decorating advice and not a catalog of products.
-    It is the material record of how buildings become finished environments.
+    It is the annual material record of how buildings become finished environments.
+</p>
+
+<p>
+    Each edition establishes another point in that continuing record as materials,
+    manufacturers, techniques, companies and design practices change.
 </p>
 
 </div>
@@ -1073,7 +1150,7 @@ footer {
 
 
 <!-- =========================
-     WHY THIS BOOK
+     WHY THIS ANNUAL
      ========================= -->
 
 <section>
@@ -1081,17 +1158,18 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    02 — Why This Book
+    02 — Why This Annual
 </div>
 
 <h2 class="section-title">
     The showroom shows the material.<br>
-    FINISH explains the world behind it.
+    FINISH records the world behind it.
 </h2>
 
 <div class="section-intro">
     A material sample answers one question: what does it look like?
-    A serious documentary record can answer many more.
+    A continuing documentary record can answer many more—and return to the
+    field as that world changes.
 </div>
 
 <div class="test-grid">
@@ -1145,8 +1223,8 @@ footer {
 <h3>Continuity</h3>
 
 <p>
-    A permanent record that remains useful after a showroom display, product
-    line, website or design cycle has changed.
+    Each annual edition records what has entered, changed or remained in the
+    material world of architectural finishing.
 </p>
 
 </div>
@@ -1602,14 +1680,15 @@ footer {
 </p>
 
 <p>
-    FINISH creates that context in permanent physical form.
+    FINISH creates that context in permanent physical form and revisits it
+    through successive annual editions.
 </p>
 
 </div>
 
 <div class="context-callout">
     The showroom changes.<br>
-    The record remains.
+    The record continues.
 </div>
 
 </div>
@@ -1618,26 +1697,26 @@ footer {
 
 
 <!-- =========================
-     PARTNERS
+     PARTICIPATION
      ========================= -->
 
-<section id="partners">
+<section id="participation">
 
 <div class="container">
 
 <div class="section-label">
-    07 — Partners
+    07 — Participation
 </div>
 
 <h2 class="section-title">
-    The companies that make the room are part of the record.
+    The annual comes first. The companies that make the room belong inside the record.
 </h2>
 
 <div class="participation-lead">
-    FINISH is built around a larger material world. Manufacturers, mills,
-    fabricators, showrooms, craftsmen, suppliers and specialist companies
-    may hold important parts of that world—and may also have a substantial
-    documentary history of their own.
+    FINISH is built around a large material world. Manufacturers, mills,
+    fabricators, showrooms, craftsmen, suppliers, restorers and specialist
+    companies may hold important parts of that world and may be formally
+    identified within the annual record.
 </div>
 
 <div class="participation-grid">
@@ -1645,12 +1724,46 @@ footer {
 <div class="participation-item">
 
 <h3>
-    Materials &amp; Surfaces
+    Annual Editorial Listing
+</h3>
+
+<p>
+    Eligible manufacturers, mills, fabricators, material companies, showrooms,
+    specialist trades, craftsmen, suppliers, restorers and other participants
+    may be formally identified within the annual edition. The listing establishes
+    the organization, specialty, material, location or relevant professional
+    identity within the documented world. Participation does not determine
+    editorial conclusions.
+</p>
+
+</div>
+
+
+<div class="participation-item">
+
+<h3>
+    Access &amp; Knowledge
+</h3>
+
+<p>
+    Participants may provide access to factories, workshops, showrooms,
+    facilities, collections, archives, historical material, technical information,
+    product histories and knowledgeable specialists that strengthen the record.
+</p>
+
+</div>
+
+
+<div class="participation-item">
+
+<h3>
+    Architectural Materials
 </h3>
 
 <p>
     Paint, plaster, tile, stone, wood, flooring, carpet, wallcoverings,
-    countertops and other architectural surfaces.
+    countertops and other architectural surfaces may enter the record according
+    to their material and professional significance.
 </p>
 
 </div>
@@ -1664,7 +1777,8 @@ footer {
 
 <p>
     Cabinetmakers, millworkers, architectural woodworkers, stone fabricators,
-    metalworkers, glass companies and specialty shops.
+    metalworkers, glass companies and specialty shops form part of the
+    manufacturing and craft record.
 </p>
 
 </div>
@@ -1673,26 +1787,13 @@ footer {
 <div class="participation-item">
 
 <h3>
-    Architectural Hardware
+    Hardware, Lighting &amp; Fixtures
 </h3>
 
 <p>
     Hinges, handles, locks, pulls, fittings, switch plates, door systems,
-    cabinet hardware and other engineered details.
-</p>
-
-</div>
-
-
-<div class="participation-item">
-
-<h3>
-    Lighting &amp; Plumbing
-</h3>
-
-<p>
-    Fixtures, fittings, controls and technical components that become part
-    of the finished architectural environment.
+    lighting, plumbing fixtures, controls and other engineered details may
+    enter the annual field.
 </p>
 
 </div>
@@ -1706,7 +1807,8 @@ footer {
 
 <p>
     The professional places where materials are compared, specified, selected,
-    presented and connected to real projects.
+    presented and connected to actual architectural projects are part of the
+    material ecosystem.
 </p>
 
 </div>
@@ -1720,11 +1822,143 @@ footer {
 
 <p>
     Specialists preserving historic materials, traditional techniques,
-    architectural details and knowledge that modern production may no longer retain.
+    architectural details and knowledge that modern production may no longer
+    retain may also belong in the annual record.
 </p>
 
 </div>
 
+
+<div class="participation-item">
+
+<h3>
+    Specialist Knowledge
+</h3>
+
+<p>
+    Companies and individuals with rare technical knowledge, unusual fabrication
+    capabilities, historical expertise or material specialization may enter the
+    record where their knowledge materially strengthens the publication.
+</p>
+
+</div>
+
+</div>
+
+<div class="participation-note">
+    Participation establishes a place in the documentary record. It does not
+    purchase favorable treatment, rankings, endorsements, advertising placement,
+    or control over editorial conclusions.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ANNUAL
+     ========================= -->
+
+<section class="annual" id="annual">
+
+<div class="container">
+
+<div class="section-label">
+    08 — The Annual
+</div>
+
+<h2 class="section-title">
+    The material world changes. FINISH returns to it.
+</h2>
+
+<div class="section-intro">
+    New manufacturers appear. Old processes disappear. Materials evolve.
+    Workshops change ownership. New technologies enter production. Design
+    practices shift. Each annual edition records another point in that history.
+</div>
+
+<div class="annual-grid">
+
+<div class="annual-card">
+
+<div class="label">
+    Annual Edition
+</div>
+
+<h3>
+    A continuing publication.
+</h3>
+
+<p>
+    FINISH is conceived as a recurring annual publication rather than a
+    one-time survey. Each edition establishes a new documentary snapshot while
+    retaining continuity with the material field already examined.
+</p>
+
+</div>
+
+
+<div class="annual-card">
+
+<div class="label">
+    Selected Participation
+</div>
+
+<h3>
+    Defined representation.
+</h3>
+
+<p>
+    Each edition identifies a selected group of manufacturers, specialists,
+    showrooms, craftsmen, suppliers, restorers and other material-world
+    participants whose work belongs within that year's record.
+</p>
+
+</div>
+
+
+<div class="annual-card">
+
+<div class="label">
+    New Evidence
+</div>
+
+<h3>
+    The field keeps moving.
+</h3>
+
+<p>
+    New companies, materials, techniques, technologies, workshops, showrooms,
+    processes and specialists may enter subsequent editions as the professional
+    world of architectural finishing develops.
+</p>
+
+</div>
+
+
+<div class="annual-card">
+
+<div class="label">
+    Continuing Archive
+</div>
+
+<h3>
+    The record accumulates.
+</h3>
+
+<p>
+    Each annual edition adds another layer to the larger documentary history:
+    a continuing record of materials, manufacturing, craft, specification,
+    installation and the companies that make finished environments possible.
+</p>
+
+</div>
+
+</div>
+
+<div class="annual-note">
+    One material world. Another record each year.
 </div>
 
 </div>
@@ -1741,7 +1975,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    08 — Documentary Engagements
+    09 — Documentary Engagements
 </div>
 
 <h2 class="section-title">
@@ -1759,7 +1993,7 @@ footer {
 <div class="engagement-card">
 
 <div class="label">
-    FINISH / Documentary Treatment
+    Commissioned Documentary Treatment
 </div>
 
 <h3>
@@ -1771,8 +2005,8 @@ footer {
     manufacturing process, history, people, facilities, archive and place within
     the larger world of architectural finishing. Research, interviews, fieldwork,
     photography production, archival work and editorial development are scoped
-    to the undertaking. The resulting material contributes to the documentary
-    record within FINISH.
+    to the undertaking. The resulting material may contribute to a broader
+    documentary record.
 </p>
 
 </div>
@@ -1800,9 +2034,9 @@ footer {
 </div>
 
 <div class="engagement-note">
-    The two engagements are independent and may be commissioned separately or
-    combined. Documentary and editorial work is scoped first. Physical publication
-    copies and print production are handled separately.
+    These engagements are independent of annual editorial listing. Documentary
+    and editorial work is scoped according to the undertaking. Physical
+    publication and institutional editions are handled separately.
 </div>
 
 </div>
@@ -1819,7 +2053,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    09 — Method
+    10 — Method
 </div>
 
 <h2 class="section-title">
@@ -1914,7 +2148,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    10 — The Record
+    11 — The Record
 </div>
 
 <h2 class="section-title">
@@ -1926,7 +2160,7 @@ footer {
 <div class="record-copy">
 
 <p>
-    A FINISH project begins with documentation and may move across research,
+    A FINISH edition begins with documentation and may move across research,
     fieldwork, interviews, photography, archival material, technical evidence,
     process documentation and publication.
 </p>
@@ -1940,7 +2174,8 @@ footer {
 
 <p>
     For a company, that record can become a durable institutional resource
-    independent of any single marketing campaign or product cycle.
+    independent of any single marketing campaign, showroom installation or
+    product cycle.
 </p>
 
 </div>
@@ -1954,7 +2189,7 @@ footer {
 <div>Original documentary photography</div>
 <div>Archival and historical material</div>
 <div>Selected documentary assets</div>
-<div>Permanent physical publication</div>
+<div>Annual physical publication</div>
 <div>Institutional and archival use</div>
 
 </div>
@@ -2003,11 +2238,11 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    11 — The Book
+    12 — The Annual Book
 </div>
 
 <h2 class="section-title">
-    A permanent record of how rooms become finished.
+    A physical record of how rooms become finished.
 </h2>
 
 <div class="book-grid">
@@ -2015,7 +2250,7 @@ footer {
 <div class="book-copy">
 
 <p>
-    The physical FINISH publication brings together materials, manufacturers,
+    Each annual FINISH edition brings together materials, manufacturers,
     craftsmen, processes, technologies, historical evidence, working environments
     and finished interiors into one coherent documentary record.
 </p>
@@ -2027,13 +2262,14 @@ footer {
 </p>
 
 <p>
-    The publication is not a catalog of products. It is a record of the systems
-    behind them and the way those systems become architecture.
+    The publication is not a catalog of products and not a ranked guide.
+    It is a documentary record of the systems behind finished interiors.
 </p>
 
 <p>
-    Like the documentary work itself, the book is intended to remain useful
-    after individual collections, showrooms, product lines and websites change.
+    The annual format also gives the publication a memory. Individual companies,
+    materials, workshops, collections and techniques may appear again as their
+    stories develop.
 </p>
 
 </div>
@@ -2050,10 +2286,15 @@ footer {
 </div>
 
 <div class="image-caption">
-    Finish · GrüvType publication in production
+    FINISH · GrüvType annual publication in development
 </div>
 
 <div class="book-spec">
+
+<div>
+    <strong>Frequency</strong>
+    <span>Annual</span>
+</div>
 
 <div>
     <strong>Format</strong>
@@ -2076,8 +2317,8 @@ footer {
 </div>
 
 <div>
-    <strong>Output</strong>
-    <span>Permanent physical record</span>
+    <strong>Position</strong>
+    <span>Neither catalog nor design ranking</span>
 </div>
 
 </div>
@@ -2096,16 +2337,16 @@ footer {
 <div class="disclosure-copy">
 
 <p>
-    The images presented on this website are not the photographic record of
-    the FINISH publication.
+    The images presented on this website are not necessarily the photographic
+    record of the FINISH publication.
 </p>
 
 <p>
     Website imagery may include original photography, hand-drawn and digitally
     constructed illustrations, photographic composites, interpretive
-    reconstructions, publication mockups, and images created or modified with generative image tools. These visuals are used to establish
-    atmosphere, subject, material context and the intended character of the
-    publication.
+    reconstructions, publication mockups, and images created or modified with
+    generative image tools. These visuals are used to establish atmosphere,
+    subject, material context and the intended character of the publication.
 </p>
 
 <p>
@@ -2115,7 +2356,7 @@ footer {
 
 <p>
     <strong>The FINISH book is different.</strong> Images published in the
-    physical book will be real photographic or archival images of actual
+    physical annual will be real photographic or archival images of actual
     materials, facilities, processes, people, places and finished interiors.
     Generative imagery will not be used as documentary evidence in the book.
 </p>
@@ -2124,8 +2365,6 @@ footer {
     The distinction is intentional: the website presents the project;
     the book records the material world.
 </p>
-
-</div>
 
 </div>
 
@@ -2147,7 +2386,7 @@ footer {
 <div class="container">
 
 <div class="section-label">
-    12 — Inquiries
+    13 — Inquiries
 </div>
 
 <h2 class="contact-title">
@@ -2158,15 +2397,16 @@ footer {
 <div class="contact-copy">
 
 <p>
-    We are speaking with manufacturers, mills, fabricators, showrooms,
+    We are identifying manufacturers, mills, fabricators, showrooms,
     architectural-material companies, craftsmen, restoration specialists,
-    designers and institutions whose work forms part of the finished interior.
+    suppliers, designers and institutions whose work forms part of the
+    finished interior.
 </p>
 
 <p>
-    We are also interested in organizations with a company history, material,
-    workshop, archive or body of specialized knowledge that warrants a deeper
-    documentary record of its own.
+    Eligible organizations may participate in the annual record through
+    editorial listing, access and knowledge, and—where appropriate—deeper
+    documentary work of their own.
 </p>
 
 </div>
@@ -2195,7 +2435,7 @@ footer {
 </div>
 
 <div>
-    Finish · © 2026
+    FINISH · Annual Publication · © 2026
 </div>
 
 </div>
@@ -2204,4 +2444,3 @@ footer {
 
 </body>
 </html>
-
