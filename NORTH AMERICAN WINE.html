@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NORTH AMERICAN WINE — Annual Material Record | GrüvType</title>
+
+<meta name="description" content="NORTH AMERICAN WINE is an independent GrüvType annual documentary publication about the material world of wine across North America: vineyards, grapes, growing regions, growers, wineries, cellar equipment, fermentation, cooperage, bottling, distribution, tasting rooms and the knowledge through which wine is made and understood.">
+
+<style>
+
+:root {
+    --ink: #181817;
+    --paper: #f7f5f0;
+    --soft: #eeece6;
+    --dark: #20201e;
+    --muted: #6b675f;
+    --rule: #d5d1c8;
+    --max: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(var(--max), calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+}
+
+.header-inner {
+    width: min(var(--max), calc(100% - 48px));
+    margin: 0 auto;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.wordmark {
+    font-size: 22px;
+    letter-spacing: 0.02em;
+}
+
+.wordmark span {
+    color: var(--muted);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: var(--muted);
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--ink);
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero-image {
+    width: 100%;
+    background: var(--soft);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero {
+    padding: 88px 0 100px;
+}
+
+.eyebrow {
+    margin-bottom: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero h1 {
+    margin: 0;
+    max-width: 900px;
+    font-size: clamp(58px, 9vw, 122px);
+    line-height: 0.9;
+    font-weight: normal;
+    letter-spacing: -0.045em;
+}
+
+.hero-subtitle {
+    max-width: 820px;
+    margin-top: 34px;
+    font-size: clamp(25px, 3vw, 39px);
+    line-height: 1.15;
+}
+
+.hero-lead {
+    max-width: 770px;
+    margin-top: 34px;
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.hero-statement {
+    max-width: 780px;
+    margin-top: 42px;
+    padding-top: 25px;
+    border-top: 1px solid var(--rule);
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.18;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+   ========================= */
+
+section {
+    padding: 100px 0;
+    border-top: 1px solid var(--rule);
+}
+
+.section-label {
+    margin-bottom: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.section-title {
+    margin: 0;
+    max-width: 920px;
+    font-size: clamp(38px, 5vw, 68px);
+    line-height: 1.03;
+    font-weight: normal;
+    letter-spacing: -0.025em;
+}
+
+.section-intro {
+    max-width: 760px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+
+/* =========================
+   PROPOSITION
+   ========================= */
+
+.proposition-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.proposition-statement {
+    font-size: clamp(31px, 4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.proposition-copy {
+    max-width: 600px;
+    font-size: 18px;
+}
+
+.proposition-copy p {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.proposition-copy strong {
+    font-weight: normal;
+}
+
+
+/* =========================
+   IMAGE FEATURE
+   ========================= */
+
+.image-feature {
+    margin-top: 65px;
+}
+
+.image-feature img {
+    width: 100%;
+    height: auto;
+}
+
+.image-caption {
+    margin-top: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+/* =========================
+   WHY THIS ANNUAL
+   ========================= */
+
+.test-grid {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+}
+
+.test {
+    padding: 32px 28px 34px 0;
+    margin-right: 28px;
+    border-right: 1px solid var(--rule);
+}
+
+.test:last-child {
+    border-right: none;
+    margin-right: 0;
+}
+
+.test-number {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.test h3 {
+    margin: 18px 0 12px;
+    font-size: 27px;
+    font-weight: normal;
+}
+
+.test p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   MATERIAL WORLD
+   ========================= */
+
+.material-grid {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.material-card {
+    margin: 0;
+}
+
+.material-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--soft);
+}
+
+.material-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.material-card h3 {
+    margin: 17px 0 8px;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 1.05;
+}
+
+.material-card p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   THE WORLD
+   ========================= */
+
+.world-list {
+    margin-top: 62px;
+    border-top: 1px solid var(--rule);
+}
+
+.world-item {
+    display: grid;
+    grid-template-columns: 100px 260px 1fr;
+    gap: 30px;
+    padding: 27px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+}
+
+.world-number {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+.world-name {
+    font-size: 29px;
+    line-height: 1.1;
+}
+
+.world-description {
+    max-width: 650px;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   DARK SECTION
+   ========================= */
+
+.dark-section {
+    background: var(--dark);
+    color: #f3f0e9;
+    border-top: none;
+}
+
+.dark-section .section-label {
+    color: #a7a39b;
+}
+
+.dark-section .section-title {
+    color: #f3f0e9;
+}
+
+.dark-section .signal-intro {
+    max-width: 780px;
+    margin-top: 30px;
+    font-size: 20px;
+    color: #c5c1b8;
+}
+
+.signal-grid {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #494843;
+}
+
+.signal-item {
+    padding: 32px 25px 0 0;
+    margin-right: 25px;
+    border-right: 1px solid #494843;
+}
+
+.signal-item:nth-child(4n) {
+    border-right: none;
+    margin-right: 0;
+}
+
+.signal-item h3 {
+    margin: 0 0 12px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.signal-item p {
+    margin: 0;
+    font-size: 15px;
+    color: #aaa69d;
+}
+
+
+/* =========================
+   PROFESSIONAL / CONTEXT
+   ========================= */
+
+.context {
+    background: var(--soft);
+}
+
+.context-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.context-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--paper);
+}
+
+.context-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.context-copy {
+    max-width: 760px;
+    margin-top: 34px;
+    font-size: 19px;
+}
+
+.context-copy p {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.context-callout {
+    max-width: 780px;
+    margin-top: 52px;
+    padding-top: 25px;
+    border-top: 1px solid var(--rule);
+    font-size: clamp(28px, 3vw, 39px);
+    line-height: 1.12;
+}
+
+
+/* =========================
+   PARTICIPATION
+   ========================= */
+
+.participation-lead {
+    max-width: 790px;
+    margin-top: 30px;
+    font-size: 21px;
+}
+
+.participation-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--rule);
+}
+
+.participation-item {
+    padding: 29px 40px 29px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.participation-item:nth-child(odd) {
+    border-right: 1px solid var(--rule);
+    padding-right: 40px;
+}
+
+.participation-item:nth-child(even) {
+    padding-left: 40px;
+}
+
+.participation-item h3 {
+    margin: 0 0 9px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.participation-item p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.participation-note {
+    max-width: 840px;
+    margin-top: 34px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+}
+
+
+/* =========================
+   ANNUAL
+   ========================= */
+
+.annual {
+    background: var(--paper);
+}
+
+.annual-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+}
+
+.annual-card {
+    min-height: 285px;
+    padding: 38px;
+    background: var(--paper);
+}
+
+.annual-card .label {
+    margin-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.annual-card h3 {
+    margin: 0 0 17px;
+    font-size: 35px;
+    line-height: 1;
+    font-weight: normal;
+}
+
+.annual-card p {
+    max-width: 570px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.annual-note {
+    max-width: 840px;
+    margin-top: 35px;
+    font-size: clamp(27px, 3vw, 38px);
+    line-height: 1.15;
+}
+
+
+/* =========================
+   DOCUMENTARY ENGAGEMENTS
+   ========================= */
+
+.engagement-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+}
+
+.engagement-card {
+    min-height: 330px;
+    padding: 38px;
+    background: var(--paper);
+}
+
+.engagement-card .label {
+    margin-bottom: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.engagement-card h3 {
+    margin: 0 0 17px;
+    font-size: 37px;
+    line-height: 1;
+    font-weight: normal;
+}
+
+.engagement-card p {
+    max-width: 570px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.engagement-note {
+    max-width: 820px;
+    margin-top: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+}
+
+
+/* =========================
+   BOOK
+   ========================= */
+
+.book-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.book-copy {
+    font-size: 18px;
+}
+
+.book-copy p {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.book-image {
+    width: 100%;
+    background: var(--soft);
+}
+
+.book-image img {
+    width: 100%;
+    height: auto;
+}
+
+.book-spec {
+    margin-top: 35px;
+    border-top: 1px solid var(--rule);
+}
+
+.book-spec div {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.book-spec strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: var(--muted);
+}
+
+.book-spec span {
+    font-size: 16px;
+}
+
+
+/* =========================
+   IMAGE DISCLOSURE
+   ========================= */
+
+.image-disclosure {
+    max-width: 820px;
+    margin-top: 65px;
+    padding-top: 25px;
+    border-top: 1px solid var(--rule);
+}
+
+.image-disclosure .section-label {
+    margin-bottom: 22px;
+}
+
+.disclosure-copy {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 1.75;
+    color: var(--muted);
+    letter-spacing: 0.015em;
+}
+
+.disclosure-copy p {
+    margin: 0 0 14px;
+}
+
+.disclosure-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.disclosure-copy strong {
+    color: var(--ink);
+    font-weight: normal;
+}
+
+
+/* =========================
+   RECORD / ARCHIVE
+   ========================= */
+
+.record-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.record-copy {
+    font-size: 18px;
+}
+
+.record-copy p {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.record-list {
+    border-top: 1px solid var(--rule);
+}
+
+.record-list div {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 17px;
+}
+
+.record-image-grid {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.record-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--soft);
+}
+
+.record-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact {
+    padding-bottom: 115px;
+}
+
+.contact-title {
+    margin: 0;
+    max-width: 900px;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 0.98;
+    font-weight: normal;
+    letter-spacing: -0.03em;
+}
+
+.contact-copy {
+    max-width: 700px;
+    margin-top: 30px;
+    font-size: 19px;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 18px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0 40px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 850px) {
+
+    .header-inner {
+        min-height: 70px;
+    }
+
+    nav {
+        gap: 14px;
+        font-size: 9px;
+    }
+
+    .hero {
+        padding: 65px 0 75px;
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .proposition-grid,
+    .publication-status-grid,
+    .context-grid,
+    .annual-grid,
+    .engagement-grid,
+    .record-grid,
+    .book-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .test-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .test:nth-child(2) {
+        border-right: none;
+    }
+
+    .test:nth-child(3),
+    .test:nth-child(4) {
+        border-top: 1px solid var(--rule);
+    }
+
+    .material-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .world-item {
+        grid-template-columns: 65px 1fr;
+        gap: 15px;
+    }
+
+    .world-description {
+        grid-column: 2;
+    }
+
+    .signal-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .signal-item:nth-child(2n) {
+        border-right: none;
+        margin-right: 0;
+    }
+
+    .signal-item:nth-child(3),
+    .signal-item:nth-child(4) {
+        border-top: 1px solid #494843;
+        padding-top: 25px;
+    }
+
+    .participation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .participation-item:nth-child(odd) {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .participation-item:nth-child(even) {
+        padding-left: 0;
+    }
+
+    .record-image-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .book-spec div {
+        grid-template-columns: 120px 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .container,
+    .header-inner {
+        width: min(var(--max), calc(100% - 32px));
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .test-grid,
+    .material-grid,
+    .signal-grid,
+    .record-image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .test,
+    .signal-item {
+        border-right: none !important;
+        border-bottom: 1px solid var(--rule);
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .test:last-child,
+    .signal-item:last-child {
+        border-bottom: none;
+    }
+
+    .test:nth-child(3),
+    .test:nth-child(4),
+    .signal-item:nth-child(3),
+    .signal-item:nth-child(4) {
+        border-top: none;
+    }
+
+    .world-item {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .world-description {
+        grid-column: 2;
+    }
+
+    .engagement-card,
+    .annual-card {
+        padding: 30px;
+    }
+
+}
+
+
+/* =========================
+   PUBLICATION STATUS / ISBN
+   ========================= */
+
+.publication-status {
+    background: var(--paper);
+}
+
+.publication-status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.publication-status-copy {
+    max-width: 620px;
+}
+
+.publication-status-copy h2 {
+    margin: 0;
+    max-width: 700px;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.03;
+    font-weight: normal;
+    letter-spacing: -0.025em;
+}
+
+.publication-status-copy p {
+    max-width: 620px;
+    margin: 28px 0 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #5f5b54;
+}
+
+.publication-status-side {
+    max-width: 600px;
+}
+
+.isbn-list {
+    margin-top: 10px;
+    border-top: 1px solid var(--rule);
+}
+
+.isbn-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 17px;
+    color: #5f5b54;
+}
+
+.isbn-item a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3f3c37;
+    border-bottom: 1px solid #8d887f;
+    padding-bottom: 3px;
+}
+
+.isbn-item a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+.isbn-note {
+    margin-top: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a857d;
+}
+
+</style>
+</head>
+
+
+<body>
+<header>
+  <div class="header-inner">
+    <div class="wordmark"><a href="https://p1lab.net/gruv.html">GrüvType</a> <span>— An Editorial Imprint of <a href="https://p1lab.net/">P1Lab</a></span></div>
+    <nav>
+      <a href="NORTH AMERICAN WINE.html#book">Book</a><a href="NORTH AMERICAN WINE.html#world">The World</a><a href="NORTH AMERICAN WINE.html#participation">Participation</a><a href="NORTH AMERICAN WINE.html#annual">Annual</a><a href="file:///C:/Users/PCMag/Downloads/NORTH AMERICAN WINE.html#method">Method</a><a href="file:///C:/Users/PCMag/Downloads/NORTH AMERICAN WINE.html#record">The Record</a><a href="file:///C:/Users/PCMag/Downloads/NORTH AMERICAN WINE.html#contact">Inquiries</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero-image"><img src="wine-hero.jpg" alt="North American vineyard landscape with vines, cellar architecture and the material world of wine"></div>
+
+<section class="hero"><div class="container">
+  <div class="eyebrow">GrüvType — Annual Publication in Development for 2027</div>
+  <h1>NORTH<br>AMERICAN<br>WINE.</h1>
+  <div class="hero-subtitle">The material world behind the bottle.</div>
+  <div class="hero-lead">An annual illustrated record of the vineyards, growers, wineries, regions, materials, machinery, cellar practices, makers and specialized knowledge through which North American wine is grown, produced, preserved, distributed and understood.</div>
+  <div class="hero-statement">A bottle carries a place inside it.<br>The record follows everything that made it possible.<br><br>NORTH AMERICAN WINE documents that world, year after year.</div>
+</div></section>
+
+<section class="publication-status">
+  <div class="container">
+    <div class="publication-status-grid">
+      <div class="publication-status-copy">
+        <div class="section-label">Publication Status</div>
+        <h2>NORTH AMERICAN WINE is established as a forthcoming annual book.</h2>
+        <p>The publication has been assigned an ISBN and registered as a forthcoming book with a projected publication date of February 2027.</p>
+        <p>The ISBN establishes the book as a formal publication within the NORTH AMERICAN WINE annual program.</p>
+      </div>
+      <div class="publication-status-side">
+        <div class="section-label">ISBN Record</div>
+        <div class="isbn-list">
+          <div class="isbn-item">
+            <span>NORTH AMERICAN WINE 2007</span>
+            <a href="https://www.collectionscanada.gc.ca/isbn-canada/app/index.php?fuseaction=logbook.edit&amp;publication=1134204&amp;lang=eng" target="_blank" rel="noopener noreferrer">978-1-989647-96-7</a>
+          </div>
+        </div>
+        <p class="isbn-note">Forthcoming · February 2027</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section><div class="container">
+  <div class="section-label">01 — The Proposition</div>
+  <div class="proposition-grid">
+    <div class="proposition-statement">Wine is familiar.<br>The world behind it is not.</div>
+    <div class="proposition-copy">
+      <p>A bottle can suggest a vineyard, a grape, a vintage or a region. Yet wine is also the result of land, climate, cultivation, labor, machinery, cellar design, fermentation, storage, transport, commerce and accumulated knowledge.</p>
+      <p>Behind each bottle is a network of growers, wineries, nurseries, barrel makers, glass manufacturers, equipment suppliers, laboratories, distributors, hospitality businesses and regional institutions.</p>
+      <p><strong>NORTH AMERICAN WINE follows that larger world.</strong></p>
+      <p>It is not a scorecard, buying guide or collection of tasting notes. It is a documentary record of the material culture and working systems of wine across the continent—from vineyard soil to cellar, from production to place.</p>
+      <p>Each annual edition records another point in a field shaped by weather, craft, technology, regional identity and changing markets.</p>
+    </div>
+  </div>
+  <div class="image-feature"><img src="wine-vineyard.jpg" alt="Rows of grapevines in a North American wine-growing region"><div class="image-caption">Wine · Land / Plant / Material / Process / Place</div></div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-label">02 — Why This Annual</div>
+  <h2 class="section-title">The bottle is the final object.<br>The annual records the world that precedes it.</h2>
+  <div class="section-intro">A label identifies a wine. A documentary record can establish the region, the growing conditions, the production choices, the equipment, the people and the commercial systems that give the bottle its meaning.</div>
+  <div class="test-grid">
+    <div class="test"><div class="test-number">01</div><h3>Terroir</h3><p>Soil, geology, slope, water, weather, exposure and the regional conditions that shape a vineyard.</p></div>
+    <div class="test"><div class="test-number">02</div><h3>Making</h3><p>Growers, cellar teams, cooperages, equipment makers, laboratories and the people behind each stage.</p></div>
+    <div class="test"><div class="test-number">03</div><h3>Process</h3><p>Pruning, harvesting, crushing, fermentation, aging, blending, bottling and preservation.</p></div>
+    <div class="test"><div class="test-number">04</div><h3>Continuity</h3><p>Each annual edition records what changes, what endures and what distinguishes the wine world of its time.</p></div>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-label">03 — Material Worlds</div>
+  <h2 class="section-title">Wine is made from more than grapes.</h2>
+  <div class="section-intro">The record moves from the living vineyard through the equipment, materials and decisions that turn a harvest into a bottle.</div>
+  <div class="material-grid">
+    <article class="material-card"><div class="material-image"><img src="wine-vines.jpg" alt="Grapevines and vineyard rows"></div><h3>Vineyards &amp; Growing</h3><p>Vines, rootstock, soil, trellising, irrigation, canopy management, frost protection, harvest equipment and the realities of a growing season.</p></article>
+    <article class="material-card"><div class="material-image"><img src="wine-cellar.jpg" alt="Wine cellar with barrels and production equipment"></div><h3>Cellars &amp; Fermentation</h3><p>Crushers, presses, tanks, pumps, temperature control, fermentation vessels, laboratories, cellar architecture and production systems.</p></article>
+    <article class="material-card"><div class="material-image"><img src="wine-barrels.jpg" alt="Oak barrels used for wine aging"></div><h3>Barrels &amp; Materials</h3><p>Cooperage, oak, stainless steel, concrete, glass, cork, closures, hoses, filters and the materials that shape production and aging.</p></article>
+    <article class="material-card"><div class="material-image"><img src="wine-bottles.jpg" alt="Wine bottles and closures"></div><h3>Bottling &amp; Packaging</h3><p>Bottles, labels, capsules, closures, bottling lines, case goods, shipping materials and the systems that protect wine after production.</p></article>
+    <article class="material-card"><div class="material-image"><img src="wine-lab.jpg" alt="Wine laboratory instruments and sample glassware"></div><h3>Analysis &amp; Knowledge</h3><p>Laboratory testing, chemistry, microbiology, sensory practice, records, technical instruments and the knowledge used to make decisions.</p></article>
+    <article class="material-card"><div class="material-image"><img src="wine-tasting-room.jpg" alt="Wine tasting room and retail display"></div><h3>Places &amp; Hospitality</h3><p>Tasting rooms, winery shops, wine bars, regional routes, visitor experiences and the places where wine meets its public.</p></article>
+  </div>
+</div></section>
+
+<section id="world"><div class="container">
+  <div class="section-label">04 — The World</div>
+  <h2 class="section-title">Follow the wine back to its source.</h2>
+  <div class="section-intro">NORTH AMERICAN WINE documents the linked systems of land, cultivation, production, material, place and commerce.</div>
+  <div class="world-list">
+    <div class="world-item"><div class="world-number">01</div><div class="world-name">Land &amp; Climate</div><div class="world-description">Geology, soil, slope, rainfall, temperature, sunlight, water, exposure and the conditions that define a growing site.</div></div>
+    <div class="world-item"><div class="world-number">02</div><div class="world-name">Vines &amp; Nurseries</div><div class="world-description">Grape varieties, rootstock, propagation, vine health, trellis systems, nursery production and vineyard establishment.</div></div>
+    <div class="world-item"><div class="world-number">03</div><div class="world-name">Growing</div><div class="world-description">Pruning, canopy management, irrigation, pest management, frost response, seasonal labor and decisions made across the growing year.</div></div>
+    <div class="world-item"><div class="world-number">04</div><div class="world-name">Harvest</div><div class="world-description">Picking by hand or machine, harvest timing, bins, transport, sorting and the movement of fruit from vine to winery.</div></div>
+    <div class="world-item"><div class="world-number">05</div><div class="world-name">Crush &amp; Press</div><div class="world-description">Destemming, crushing, pressing, must handling, juice separation and the machinery that begins the transformation.</div></div>
+    <div class="world-item"><div class="world-number">06</div><div class="world-name">Fermentation</div><div class="world-description">Yeast, temperature, vessels, pumps, monitoring, microbiology and the practical knowledge of managing fermentation.</div></div>
+    <div class="world-item"><div class="world-number">07</div><div class="world-name">Aging &amp; Blending</div><div class="world-description">Oak barrels, tanks, concrete, maturation, oxygen management, blending decisions and the development of a finished wine.</div></div>
+    <div class="world-item"><div class="world-number">08</div><div class="world-name">Bottling</div><div class="world-description">Filtration, stabilization, bottling lines, closures, glass, labels, packaging, lot identification and quality control.</div></div>
+    <div class="world-item"><div class="world-number">09</div><div class="world-name">Cellar &amp; Storage</div><div class="world-description">Temperature, humidity, inventory, aging conditions, warehousing and the preservation of wine before and after release.</div></div>
+    <div class="world-item"><div class="world-number">10</div><div class="world-name">Regions &amp; Identity</div><div class="world-description">Appellations, regional histories, grape traditions, local adaptation, place names and the collective identity of wine-growing areas.</div></div>
+    <div class="world-item"><div class="world-number">11</div><div class="world-name">Trade &amp; Distribution</div><div class="world-description">Distributors, retailers, restaurants, export, direct sales, logistics, regulations and the routes through which wine reaches customers.</div></div>
+    <div class="world-item"><div class="world-number">12</div><div class="world-name">Tasting &amp; Place</div><div class="world-description">Tasting rooms, wine tourism, hospitality, regional food culture, education and the experiences that connect wine to its place.</div></div>
+  </div>
+</div></section>
+
+<section class="dark-section"><div class="container">
+  <div class="section-label">05 — The Transformation</div>
+  <h2 class="section-title">From living vine<br>to finished bottle.</h2>
+  <div class="signal-intro">The record follows the sequence of work. Each stage brings its own materials, tools, knowledge and decisions.</div>
+  <div class="signal-grid">
+    <div class="signal-item"><h3>Grow</h3><p>Land, vines, climate, cultivation and the decisions of the growing season.</p></div>
+    <div class="signal-item"><h3>Harvest</h3><p>Timing, picking, handling and the movement of fruit from vineyard to winery.</p></div>
+    <div class="signal-item"><h3>Transform</h3><p>Crushing, pressing, fermentation and the conversion of grape into wine.</p></div>
+    <div class="signal-item"><h3>Develop</h3><p>Aging, blending, monitoring and the evolution of structure and character.</p></div>
+    <div class="signal-item"><h3>Preserve</h3><p>Stabilization, filtration, cellar conditions and preparation for bottling.</p></div>
+    <div class="signal-item"><h3>Package</h3><p>Glass, closures, labels, cases and the systems that protect the finished wine.</p></div>
+    <div class="signal-item"><h3>Distribute</h3><p>Warehousing, shipping, retail, hospitality and direct customer relationships.</p></div>
+    <div class="signal-item"><h3>Remember</h3><p>Records, vintages, regional knowledge and the annual documentation of a changing field.</p></div>
+  </div>
+</div></section>
+
+<section class="context"><div class="container">
+  <div class="section-label">06 — The Professional World</div>
+  <h2 class="section-title">An entire industry exists between the vineyard and the glass.</h2>
+  <div class="section-intro">Wine depends on growers, wineries, equipment makers, nurseries, laboratories, barrel makers, glass producers, distributors, retailers and regional institutions.</div>
+  <div class="context-grid"><div class="context-image"><img src="wine-production.jpg" alt="Working winery production area with tanks and cellar equipment"></div><div class="context-image"><img src="wine-region.jpg" alt="North American wine region with vineyards and winery buildings"></div></div>
+  <div class="context-copy">
+    <p>A grower can describe a vineyard. A winery can explain its fermentation choices. A cooperage can show how barrels are made. An equipment company can document a press or tank.</p>
+    <p>But the larger relationship between place, plant, equipment, process, skill and market is rarely preserved as a connected record.</p>
+    <p>NORTH AMERICAN WINE establishes that broader context in physical form, bringing the many parts of the field into one continuing documentary publication.</p>
+  </div>
+  <div class="context-callout">Every bottle comes from somewhere.<br>The record remembers what that means.</div>
+</div></section>
+
+<section id="participation"><div class="container">
+  <div class="section-label">07 — Participation</div>
+  <h2 class="section-title">The annual comes first.<br>The wine world belongs inside the record.</h2>
+  <div class="participation-lead">NORTH AMERICAN WINE is built around a broad continental ecosystem. Wineries, growers, regional specialists, makers, suppliers and institutions may hold important parts of that world and may be formally identified within the annual documentary record.</div>
+  <div class="participation-grid">
+    <div class="participation-item"><h3>Annual Editorial Listing</h3><p>Eligible wineries, vineyards, growers, producers, makers, suppliers, specialist businesses and institutions may be formally identified in the annual edition. A listing establishes an organization's relevant place in the documented wine world; it does not determine editorial conclusions.</p></div>
+    <div class="participation-item"><h3>Wineries &amp; Vineyards</h3><p>Independent wineries, estate vineyards, grower-producers, family operations and distinctive producers whose work helps define a region or a way of making wine.</p></div>
+    <div class="participation-item"><h3>Regions &amp; Appellations</h3><p>Wine-growing areas, regional associations, appellation organizations and institutions preserving the knowledge, identity and development of a place.</p></div>
+    <div class="participation-item"><h3>Nurseries &amp; Grower Suppliers</h3><p>Vine nurseries, rootstock specialists, trellis and irrigation suppliers, vineyard equipment makers and businesses serving the growing cycle.</p></div>
+    <div class="participation-item"><h3>Cellar Equipment &amp; Materials</h3><p>Presses, tanks, pumps, filters, temperature-control systems, laboratory instruments, barrels, glass, closures and production infrastructure.</p></div>
+    <div class="participation-item"><h3>Cooperage &amp; Craft</h3><p>Barrel makers, glass and packaging specialists, label printers, fabricators and other makers whose materials enter the finished bottle.</p></div>
+    <div class="participation-item"><h3>Trade &amp; Hospitality</h3><p>Distributors, wine retailers, tasting rooms, wine bars, restaurants, hospitality businesses and specialist channels connecting wine with its audience.</p></div>
+    <div class="participation-item"><h3>Specialist Knowledge</h3><p>Enologists, viticulturists, laboratories, educators, historians, cellar specialists and other experts whose knowledge helps explain how the field works.</p></div>
+  </div>
+  <div class="participation-note">Participation establishes a place in the documentary record. It does not purchase favorable treatment, rankings, endorsements, reviews, advertising placement or control over editorial conclusions.</div>
+</div></section>
+
+<section class="annual" id="annual"><div class="container">
+  <div class="section-label">08 — The Annual</div>
+  <h2 class="section-title">The wine world changes.<br>The record returns to it.</h2>
+  <div class="section-intro">New vineyards are planted. Techniques evolve. Producers open, grow, change direction or close. Materials, markets and regional identities shift. Each edition records another point in that continuing story.</div>
+  <div class="annual-grid">
+    <div class="annual-card"><div class="label">Annual Edition</div><h3>A continuing publication.</h3><p>NORTH AMERICAN WINE is conceived as a recurring annual, not a one-time directory. Each edition establishes a new documentary snapshot while retaining continuity with the larger wine world.</p></div>
+    <div class="annual-card"><div class="label">Selected Participation</div><h3>Defined representation.</h3><p>Each edition identifies a selected body of wineries, growers, makers, suppliers, regions and specialists whose work helps establish the year's record.</p></div>
+    <div class="annual-card"><div class="label">New Evidence</div><h3>The field keeps moving.</h3><p>New producers, vineyard practices, technologies, facilities, materials and regional developments may enter subsequent editions as the field changes.</p></div>
+    <div class="annual-card"><div class="label">Continuing Archive</div><h3>The record accumulates.</h3><p>Each annual edition adds another layer to the documentary history of North American wine: its places, people, tools, processes and commercial systems.</p></div>
+  </div>
+  <div class="annual-note">One continent. Many wine worlds. A record that accumulates.</div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-label">09 — Documentary Engagements</div>
+  <h2 class="section-title">Document your part of the wine world.</h2>
+  <div class="section-intro">Organizations can engage with GrüvType through defined documentary work. Scope depends on the history, vineyard, facilities, production, archive, people, processes and depth of documentation involved.</div>
+  <div class="engagement-grid">
+    <div class="engagement-card"><div class="label">Commissioned Documentary Treatment</div><h3>Your place in the larger record.</h3><p>A commissioned treatment developed around a winery, vineyard, growing practice, production process, facility, archive or regional specialty. Research, interviews, fieldwork, photography and editorial development are scoped to the undertaking. The resulting work may contribute to a broader documentary record.</p></div>
+    <div class="engagement-card"><div class="label">Dedicated Company Record</div><h3>Your own documentary publication.</h3><p>A separate commissioned publication devoted to a winery, grower, maker, supplier, region or specialized practice. The resulting work can become a durable institutional record of the organization and the knowledge behind its work.</p></div>
+  </div>
+  <div class="engagement-note">These engagements are independent of annual editorial listing. Documentary work is scoped to the undertaking; physical publication and institutional editions are handled separately.</div>
+</div></section>
+
+<section id="method"><div class="container">
+  <div class="section-label">10 — Method</div>
+  <h2 class="section-title">Follow the vine<br>until the bottle appears.</h2>
+  <div class="section-intro">The record moves from physical evidence to process, from process to people, and from people to the larger system that makes wine possible.</div>
+  <div class="material-grid">
+    <article class="material-card"><div class="material-image"><img src="wine-research.jpg" alt="Historical wine labels, maps and archival records"></div><h3>Research</h3><p>Regional histories, producer records, technical documents, vintage materials, catalogs, maps and other evidence establish the world behind the bottle.</p></article>
+    <article class="material-card"><div class="material-image"><img src="wine-fieldwork.jpg" alt="Documentary fieldwork in a vineyard"></div><h3>Fieldwork</h3><p>Vineyards, cellars, cooperages, nurseries, laboratories, bottling lines, tasting rooms and other places where the subject exists in working form.</p></article>
+    <article class="material-card"><div class="material-image"><img src="wine-process.jpg" alt="Winemaking process in a working cellar"></div><h3>Process</h3><p>Growing, harvesting, pressing, fermenting, aging, blending, bottling and the practical decisions that shape wine.</p></article>
+  </div>
+</div></section>
+
+<section id="record"><div class="container">
+  <div class="section-label">11 — The Record</div>
+  <h2 class="section-title">The record is larger than the label.</h2>
+  <div class="record-grid">
+    <div class="record-copy"><p>A NORTH AMERICAN WINE edition begins with research and may move across fieldwork, interviews, photography, archival material, technical evidence, process documentation and publication.</p><p>The resulting record can preserve knowledge that rarely fits on a label: how a vineyard developed, how a winery works, how equipment changes production, how a region adapts, or how a specialist's knowledge has been carried across generations.</p><p>For a participating organization, its place in the annual offers a durable physical context beyond a single release, vintage, campaign or website.</p></div>
+    <div class="record-list"><div>Vineyard and regional history</div><div>Producer and company records</div><div>Viticulture and growing practice</div><div>Winemaking and cellar process</div><div>Equipment and material lineage</div><div>Interviews and specialist knowledge</div><div>Original documentary photography</div><div>Archival and historical evidence</div><div>Annual physical publication</div></div>
+  </div>
+  <div class="record-image-grid"><div class="record-image"><img src="wine-evidence-01.jpg" alt="Vineyard soil and grapevine evidence"></div><div class="record-image"><img src="wine-evidence-02.jpg" alt="Winemaking equipment and cellar materials"></div><div class="record-image"><img src="wine-evidence-03.jpg" alt="Wine bottle, label and finished product detail"></div></div>
+</div></section>
+
+<section id="book"><div class="container">
+  <div class="section-label">12 — The Annual Book</div>
+  <h2 class="section-title">A physical record of the world behind the wine.</h2>
+  <div class="book-grid">
+    <div class="book-copy"><p>Each annual edition brings together vineyards, producers, regions, equipment, materials, processes, historical evidence and specialist knowledge in one coherent documentary publication.</p><p>It is intended for the people already involved in this world: wineries, growers, wine professionals, makers, suppliers, retailers, collectors, libraries, archives and institutions.</p><p>The annual is not a tasting-score guide or a directory of bottles. It is a documentary record of the material, regional and commercial systems through which North American wine is made.</p><p>Its physical form matters. A substantial hardcover can remain in a winery, tasting room, shop, office or library as a lasting record of the field and a book that can be offered to customers who want to take part of that world home.</p></div>
+    <div><div class="book-image"><img src="wine-book.jpg" alt="NORTH AMERICAN WINE annual publication design presented as a physical hardcover book"></div><div class="image-caption">NORTH AMERICAN WINE · GrüvType annual publication in development</div>
+      <div class="book-spec"><div><strong>Frequency</strong><span>Annual</span></div><div><strong>Format</strong><span>Substantial illustrated hardcover publication</span></div><div><strong>Approach</strong><span>Independent documentary editorial</span></div><div><strong>Subject</strong><span>The material world of North American wine</span></div><div><strong>Evidence</strong><span>Places, producers, materials, machinery, processes, records and specialist knowledge</span></div><div><strong>Position</strong><span>Neither tasting-score guide nor product catalog</span></div></div>
+      <div class="image-disclosure"><div class="section-label">Website Image Disclosure</div><div class="disclosure-copy"><p>The images presented on this website are not necessarily the photographic record of the NORTH AMERICAN WINE publication.</p><p>Website imagery may include original photography, illustrations, photographic composites, interpretive reconstructions, publication mockups, and images created or modified with generative image tools. These visuals establish atmosphere, subject, material context and the intended character of the publication.</p><p>Where appropriate, captions identify images as documentary photography, composite, illustration, reconstruction or mockup.</p><p><strong>The physical annual is different.</strong> Images published as documentary evidence in the book will be real photographic or archival images of actual vineyards, wineries, products, materials, facilities, processes, people and places. Generative imagery will not be used as documentary evidence in the book.</p><p>The distinction is intentional: the website presents the project; the book records the material world.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="container">
+  <div class="section-label">13 — Inquiries</div>
+  <h2 class="contact-title">Your place belongs<br>in the record.</h2>
+  <div class="contact-copy"><p>We are identifying North American wineries, vineyards, growers, regional organizations, nurseries, cellar-equipment makers, cooperages, laboratories, packaging specialists, distributors, retailers and other businesses whose work forms part of the wine world.</p><p>Eligible organizations may be considered for the annual documentary record, with opportunities to discuss wholesale copies for their own retail and customer channels, as well as separate documentary work where appropriate.</p></div>
+  <a href="mailto:publisher@p1lab.net" class="contact-link">publisher@p1lab.net</a>
+</div></section>
+
+<footer><div class="container footer-inner"><div>GrüvType — An Editorial Imprint of P1Lab</div><div>NORTH AMERICAN WINE · Annual Publication · © 2026</div></div></footer>
+
+</body></html>
