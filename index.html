@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>P1Lab — Independent Research & Publishing</title>
+<title>P1Lab — Independent Research &amp; Publishing | FIELD, GrüvType &amp; The Record</title>
 
-<meta name="description" content="P1Lab is an independent research and publishing practice working with specialized subjects, technologies, businesses, institutions and places. GrüvType is an editorial imprint focused on the material world people inhabit.">
+<meta name="description" content="P1Lab is an independent research and publishing practice. FIELD makes collectible books about remarkable work and the worlds around it; GrüvType and The Record extend a wider publishing practice.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -536,14 +536,14 @@ footer {
 
     .header-inner {
         min-height: 68px;
+        flex-wrap: wrap;
+        padding: 14px 0;
+        gap: 16px 28px;
     }
 
     nav {
         gap: 15px;
-    }
-
-    nav a:nth-child(2) {
-        display: none;
+        flex-wrap: wrap;
     }
 
     .hero {
@@ -715,6 +715,128 @@ footer {
         text-align: left;
     }
 }
+
+
+/* --------------------------------------------------
+   FIELD FEATURE — PRIMARY PUBLISHING OFFER
+-------------------------------------------------- */
+.field-feature {
+    padding: 78px 0 76px;
+    border-bottom: 1px solid var(--rule);
+}
+.field-feature-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
+    gap: clamp(36px, 5.5vw, 76px);
+    align-items: center;
+}
+.field-visual { min-width: 0; }
+.field-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    background: var(--panel);
+}
+.field-visual-caption {
+    margin-top: 11px;
+    font-size: 10px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.field-copy .kicker { margin-bottom: 20px; }
+.field-copy h2 {
+    max-width: 620px;
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(46px, 5.1vw, 72px);
+    font-weight: 500;
+    line-height: .96;
+    letter-spacing: -.04em;
+}
+.field-lead {
+    max-width: 570px;
+    margin: 24px 0 14px;
+    font-size: 18px;
+    line-height: 1.55;
+}
+.field-description {
+    max-width: 570px;
+    margin: 0;
+    color: var(--muted);
+}
+.field-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin-top: 27px;
+}
+.field-action {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+.field-action:hover { color: var(--accent); border-color: var(--accent); }
+.field-credentials {
+    margin-top: 34px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+}
+.field-credentials .small-label { margin-bottom: 8px; }
+.field-credentials p {
+    max-width: 590px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
+}
+.field-credentials a {
+    white-space: nowrap;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+}
+.field-credentials a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Keep the three related practices visible as one publishing house. */
+.structure-grid {
+    grid-template-columns: 100px repeat(3, minmax(0, 1fr));
+}
+.structure-note { grid-column: 2 / 5; }
+
+@media (max-width: 900px) {
+    .field-feature { padding: 64px 0; }
+    .field-feature-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .field-copy h2 { font-size: clamp(44px, 6vw, 58px); }
+    .field-lead { font-size: 16px; }
+    .structure-grid { grid-template-columns: 70px repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .structure-block { padding-right: 8px; }
+    .structure-block + .structure-block { padding-left: 18px; }
+    .structure-name { font-size: 34px; }
+    .structure-type { font-size: 9px; }
+}
+@media (max-width: 600px) {
+    .field-feature { padding: 54px 0 58px; }
+    .field-feature-grid { grid-template-columns: 1fr; gap: 32px; }
+    .field-copy h2 { font-size: 49px; }
+    .field-lead { margin-top: 20px; font-size: 16px; }
+    .field-credentials { margin-top: 27px; }
+    .structure-grid { grid-template-columns: 1fr; gap: 34px; }
+    .structure-block { padding-right: 0; }
+    .structure-block + .structure-block {
+        border-left: none;
+        border-top: 1px solid var(--rule);
+        padding-left: 0;
+        padding-top: 30px;
+    }
+    .structure-note { grid-column: auto; }
+    nav { flex-wrap: wrap; justify-content: flex-start; gap: 10px 16px; }
+}
+
 </style>
 
 </head>
@@ -730,9 +852,11 @@ footer {
         <span>Independent Research &amp; Publishing</span>
     </a>
 
-    <nav>
-    <a href="#studies">Studies</a>
+    <nav aria-label="Main navigation">
+    <a href="FIELD-INDEX.html">FIELD</a>
+    <a href="#studies">Research</a>
     <a href="the-record.html">The Record</a>
+    <a href="gruv.html">GrüvType</a>
     <a href="#approach">Approach</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -767,12 +891,40 @@ footer {
         </div>
 
         <div class="hero-note">
-            Field Records · Research · Publishing · Institutional Studies
+            FIELD Book Collection · Research Programs · Field Records · Institutional Studies
         </div>
 
     </div>
 </section>
 
+
+
+
+<!-- FEATURED COLLECTION: FIELD -->
+<section class="field-feature" id="field" aria-labelledby="field-heading">
+    <div class="site">
+        <div class="field-feature-grid">
+            <div class="field-visual">
+                <img src="FIELD_bookstore_feature.png" alt="The FIELD collection displayed in a warmly lit independent bookstore: Yacht Design, Millwork, Antique Salvagers, Independent Game Designers, and Florida Farmer’s Markets." loading="eager">
+                <div class="field-visual-caption">FIELD / A P1LAB COLLECTION</div>
+            </div>
+            <div class="field-copy">
+                <div class="kicker">A curated book collection by P1Lab</div>
+                <h2 id="field-heading">Remarkable work.<br>Worlds worth knowing.</h2>
+                <p class="field-lead">FIELD makes collectible books about distinctive businesses, makers, places, products, and specialist knowledge.</p>
+                <p class="field-description">Rooted in the tradition of great illustrated print, each volume brings together expansive documentary photography, thoughtful storytelling, and useful detail. Approachable without being simplistic. Considered without being austere.</p>
+                <div class="field-actions">
+                    <a class="field-action" href="mailto:publisher@p1lab.net?subject=FIELD%20Book%20Commission">Discuss a FIELD volume ↗</a>
+                    <a class="field-action" href="the-record.html">Explore The Record ↗</a>
+                </div>
+                <div class="field-credentials">
+                    <div class="small-label">A publishing practice with a record</div>
+                    <p>The Record brings together a 50+ page magazine and a catalogue of 31 published books, available worldwide through Amazon and other booksellers. <a href="the-record.html">See the publication record</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- EDITORIAL STRUCTURE -->
 
@@ -795,10 +947,28 @@ footer {
             </div>
 
             <p>
-                The parent research and publishing practice. P1Lab works
-                with specialized fields, technologies, institutions, places,
-                businesses and systems, developing records that make their
-                knowledge accessible without reducing their complexity.
+                The parent research and publishing practice. P1Lab develops
+                research programs, field records and books that make specialist
+                knowledge accessible without reducing its complexity.
+            </p>
+
+        </div>
+
+
+        <div class="structure-block">
+
+            <h2 class="structure-name">
+                <a href="#field">FIELD</a>
+            </h2>
+
+            <div class="structure-type">
+                Curated Book Collection
+            </div>
+
+            <p>
+                Collectible, illustrated books about remarkable work and the
+                worlds around it—from skilled trades and specialist businesses
+                to places, products and creative communities.
             </p>
 
         </div>
@@ -826,10 +996,10 @@ footer {
 
 
         <div class="structure-note">
-            The distinction is not academic versus popular. Both are deeply
-            researched. P1Lab tends to enter specialized worlds from the
-            inside; GrüvType begins with familiar things and looks closely
-            enough to reveal their complexity.
+            Different forms, one principle: make a subject accessible without
+            flattening the complexity that makes it worth knowing. P1Lab leads
+            the research, FIELD makes collectible books, and GrüvType explores
+            the material world people inhabit.
         </div>
 
     </div>
@@ -851,12 +1021,12 @@ footer {
 
             <div>
                 <h2 class="section-title">
-                    Current P1Lab Studies
+                    Selected Research &amp; Publishing Programs
                 </h2>
 
                 <p class="section-intro">
-                    The work is already happening. These are the current
-                    P1Lab research and publishing programs.
+                    Beyond FIELD, P1Lab undertakes focused investigations and
+                    multi-volume studies for subjects that require deeper research.
                 </p>
             </div>
 
@@ -1280,7 +1450,7 @@ footer {
 
             <div>
                 <h2 class="section-title">
-                    The Record
+                    Why the Record Matters
                 </h2>
 
                 <p class="section-intro">
