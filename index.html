@@ -1,13 +1,13 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>P1Lab — Independent Research &amp; Publishing | FIELD, GrüvType &amp; The Record</title>
+<title>P1Lab — Independent Research &amp; Publishing | Project Book, FIELD &amp; GrüvType</title>
 
-<meta name="description" content="P1Lab is an independent research and publishing practice. FIELD makes collectible books about remarkable work and the worlds around it; GrüvType and The Record extend a wider publishing practice.">
+<meta name="description" content="P1Lab creates focused, image-led books for companies through Project Book, publishes distinctive subjects through its curated FIELD collection, and develops independent research and publishing programs.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -153,6 +153,211 @@ nav a:hover {
 }
 
 /* --------------------------------------------------
+   PROJECT BOOK — PRIMARY COMMERCIAL OFFERING
+-------------------------------------------------- */
+
+.project-feature {
+    padding: 76px 0 82px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.project-feature-grid {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1.5fr) minmax(220px, 0.7fr);
+    gap: 38px;
+    align-items: start;
+}
+
+.project-index {
+    padding-top: 8px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.project-copy .kicker {
+    margin-bottom: 20px;
+}
+
+.project-copy h2 {
+    max-width: 700px;
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 6vw, 78px);
+    font-weight: 500;
+    line-height: 0.94;
+    letter-spacing: -0.04em;
+}
+
+.project-lead {
+    max-width: 660px;
+    margin: 25px 0 16px;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.project-description {
+    max-width: 650px;
+    margin: 0;
+    color: var(--muted);
+}
+
+.project-action {
+    display: inline-block;
+    margin-top: 27px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 11px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.project-action:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.project-aside {
+    margin-top: 8px;
+    padding: 24px 0 0 27px;
+    border-left: 1px solid var(--rule);
+}
+
+.project-aside .small-label {
+    margin-bottom: 18px;
+}
+
+.project-quote {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(29px, 3vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.project-aside-note {
+    margin: 20px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------
+   FIELD FEATURE
+-------------------------------------------------- */
+
+.field-feature {
+    padding: 78px 0 76px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.field-feature-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
+    gap: clamp(36px, 5.5vw, 76px);
+    align-items: center;
+}
+
+.field-visual {
+    min-width: 0;
+}
+
+.field-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    background: var(--paper);
+}
+
+.field-visual-caption {
+    margin-top: 11px;
+    font-size: 10px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.field-copy .kicker {
+    margin-bottom: 20px;
+}
+
+.field-copy h2 {
+    max-width: 620px;
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(46px, 5.1vw, 72px);
+    font-weight: 500;
+    line-height: .96;
+    letter-spacing: -.04em;
+}
+
+.field-lead {
+    max-width: 570px;
+    margin: 24px 0 14px;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.field-description {
+    max-width: 570px;
+    margin: 0;
+    color: var(--muted);
+}
+
+.field-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin-top: 27px;
+}
+
+.field-action {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.field-action:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.field-credentials {
+    margin-top: 34px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+}
+
+.field-credentials .small-label {
+    margin-bottom: 8px;
+}
+
+.field-credentials p {
+    max-width: 590px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.field-credentials a {
+    white-space: nowrap;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+}
+
+.field-credentials a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* --------------------------------------------------
    EDITORIAL STRUCTURE
 -------------------------------------------------- */
 
@@ -163,8 +368,8 @@ nav a:hover {
 
 .structure-grid {
     display: grid;
-    grid-template-columns: 110px 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 100px repeat(3, minmax(0, 1fr));
+    gap: 32px;
 }
 
 .structure-label {
@@ -175,12 +380,12 @@ nav a:hover {
 }
 
 .structure-block {
-    padding-right: 25px;
+    padding-right: 15px;
 }
 
 .structure-block + .structure-block {
     border-left: 1px solid var(--rule);
-    padding-left: 40px;
+    padding-left: 30px;
 }
 
 .structure-name {
@@ -215,7 +420,7 @@ nav a:hover {
 }
 
 .structure-note {
-    grid-column: 2 / 4;
+    grid-column: 2 / 5;
     max-width: 760px;
     margin-top: 8px;
     padding-top: 28px;
@@ -528,8 +733,39 @@ footer {
    RESPONSIVE
 -------------------------------------------------- */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+    nav {
+        gap: 16px;
+    }
 
+    .project-feature-grid {
+        grid-template-columns: 70px minmax(0, 1.4fr) minmax(190px, .8fr);
+        gap: 25px;
+    }
+
+    .structure-grid {
+        grid-template-columns: 75px repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .structure-block {
+        padding-right: 8px;
+    }
+
+    .structure-block + .structure-block {
+        padding-left: 18px;
+    }
+
+    .structure-name {
+        font-size: 34px;
+    }
+
+    .structure-type {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 900px) {
     .site {
         width: min(100% - 32px, var(--max));
     }
@@ -555,18 +791,48 @@ footer {
         padding: 70px 0;
     }
 
+    .project-feature {
+        padding: 64px 0;
+    }
+
+    .project-feature-grid {
+        grid-template-columns: 55px minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .project-aside {
+        grid-column: 2;
+        margin-top: 8px;
+        padding: 20px 0 0;
+        border-left: none;
+        border-top: 1px solid var(--rule);
+    }
+
+    .project-quote {
+        max-width: 580px;
+        font-size: 36px;
+    }
+
     .section-head {
         grid-template-columns: 70px 1fr;
         gap: 25px;
     }
 
-    .structure-grid {
-        grid-template-columns: 70px 1fr 1fr;
-        gap: 25px;
+    .field-feature {
+        padding: 64px 0;
     }
 
-    .structure-block + .structure-block {
-        padding-left: 25px;
+    .field-feature-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .field-copy h2 {
+        font-size: clamp(44px, 6vw, 58px);
+    }
+
+    .field-lead {
+        font-size: 16px;
     }
 
     .study {
@@ -592,7 +858,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-
     body {
         font-size: 14px;
     }
@@ -610,7 +875,9 @@ footer {
 
     nav {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px 16px;
     }
 
     .brand span {
@@ -630,6 +897,41 @@ footer {
         font-size: 16px;
     }
 
+    .hero-note {
+        line-height: 1.8;
+    }
+
+    .project-feature {
+        padding: 54px 0 58px;
+    }
+
+    .project-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .project-index {
+        padding-top: 0;
+    }
+
+    .project-copy h2 {
+        font-size: 49px;
+    }
+
+    .project-lead {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .project-aside {
+        grid-column: auto;
+        margin-top: 10px;
+    }
+
+    .project-quote {
+        font-size: 35px;
+    }
+
     .section,
     .structure {
         padding: 58px 0;
@@ -645,9 +947,31 @@ footer {
         font-size: 43px;
     }
 
+    .field-feature {
+        padding: 54px 0 58px;
+    }
+
+    .field-feature-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .field-copy h2 {
+        font-size: 49px;
+    }
+
+    .field-lead {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .field-credentials {
+        margin-top: 27px;
+    }
+
     .structure-grid {
         grid-template-columns: 1fr;
-        gap: 42px;
+        gap: 34px;
     }
 
     .structure-block {
@@ -658,12 +982,11 @@ footer {
         border-left: none;
         border-top: 1px solid var(--rule);
         padding-left: 0;
-        padding-top: 38px;
+        padding-top: 30px;
     }
 
     .structure-note {
         grid-column: auto;
-        margin-top: 0;
     }
 
     .study {
@@ -715,130 +1038,7 @@ footer {
         text-align: left;
     }
 }
-
-
-/* --------------------------------------------------
-   FIELD FEATURE — PRIMARY PUBLISHING OFFER
--------------------------------------------------- */
-.field-feature {
-    padding: 78px 0 76px;
-    border-bottom: 1px solid var(--rule);
-}
-.field-feature-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
-    gap: clamp(36px, 5.5vw, 76px);
-    align-items: center;
-}
-.field-visual { min-width: 0; }
-.field-visual img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    background: var(--panel);
-}
-.field-visual-caption {
-    margin-top: 11px;
-    font-size: 10px;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-.field-copy .kicker { margin-bottom: 20px; }
-.field-copy h2 {
-    max-width: 620px;
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(46px, 5.1vw, 72px);
-    font-weight: 500;
-    line-height: .96;
-    letter-spacing: -.04em;
-}
-.field-lead {
-    max-width: 570px;
-    margin: 24px 0 14px;
-    font-size: 18px;
-    line-height: 1.55;
-}
-.field-description {
-    max-width: 570px;
-    margin: 0;
-    color: var(--muted);
-}
-.field-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px 28px;
-    margin-top: 27px;
-}
-.field-action {
-    display: inline-block;
-    padding-bottom: 5px;
-    border-bottom: 1px solid var(--ink);
-    font-size: 10px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
-.field-action:hover { color: var(--accent); border-color: var(--accent); }
-.field-credentials {
-    margin-top: 34px;
-    padding-top: 22px;
-    border-top: 1px solid var(--rule);
-}
-.field-credentials .small-label { margin-bottom: 8px; }
-.field-credentials p {
-    max-width: 590px;
-    margin: 0;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.55;
-}
-.field-credentials a {
-    white-space: nowrap;
-    color: var(--ink);
-    border-bottom: 1px solid var(--rule);
-}
-.field-credentials a:hover { color: var(--accent); border-color: var(--accent); }
-
-/* Keep the three related practices visible as one publishing house. */
-.structure-grid {
-    grid-template-columns: 100px repeat(3, minmax(0, 1fr));
-}
-.structure-note { grid-column: 2 / 5; }
-
-@media (max-width: 900px) {
-    .field-feature { padding: 64px 0; }
-    .field-feature-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-    .field-copy h2 { font-size: clamp(44px, 6vw, 58px); }
-    .field-lead { font-size: 16px; }
-    .structure-grid { grid-template-columns: 70px repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .structure-block { padding-right: 8px; }
-    .structure-block + .structure-block { padding-left: 18px; }
-    .structure-name { font-size: 34px; }
-    .structure-type { font-size: 9px; }
-}
-@media (max-width: 600px) {
-    .field-feature { padding: 54px 0 58px; }
-    .field-feature-grid { grid-template-columns: 1fr; gap: 32px; }
-    .field-copy h2 { font-size: 49px; }
-    .field-lead { margin-top: 20px; font-size: 16px; }
-    .field-credentials { margin-top: 27px; }
-    .structure-grid { grid-template-columns: 1fr; gap: 34px; }
-    .structure-block { padding-right: 0; }
-    .structure-block + .structure-block {
-        border-left: none;
-        border-top: 1px solid var(--rule);
-        padding-left: 0;
-        padding-top: 30px;
-    }
-    .structure-note { grid-column: auto; }
-    nav { flex-wrap: wrap; justify-content: flex-start; gap: 10px 16px; }
-}
-
 </style>
-
 </head>
 
 <body>
@@ -846,28 +1046,25 @@ footer {
 <header>
     <div class="site header-inner">
 
+        <a href="index.html" class="brand">
+            P1Lab
+            <span>Independent Research &amp; Publishing</span>
+        </a>
 
-    <a href="index.html" class="brand">
-        P1Lab
-        <span>Independent Research &amp; Publishing</span>
-    </a>
+        <nav aria-label="Main navigation">
+            <a href="Project-Book.html">Project Book</a>
+            <a href="FIELD-INDEX.html">FIELD</a>
+            <a href="#studies">Research</a>
+            <a href="the-record.html">The Record</a>
+            <a href="gruv.html">GrüvType</a>
+            <a href="#approach">Approach</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-    <nav aria-label="Main navigation">
-    <a href="FIELD-INDEX.html">FIELD</a>
-    <a href="#studies">Research</a>
-    <a href="the-record.html">The Record</a>
-    <a href="gruv.html">GrüvType</a>
-    <a href="#approach">Approach</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-</div>
-
-
+    </div>
 </header>
 
 <main>
-
 
 <!-- HERO -->
 
@@ -891,47 +1088,138 @@ footer {
         </div>
 
         <div class="hero-note">
-            FIELD Book Collection · Research Programs · Field Records · Institutional Studies
+            Project Books · FIELD Collection · Research Programs · Field Records · Institutional Studies
         </div>
 
     </div>
 </section>
 
+<!-- PROJECT BOOK: PRIMARY COMMERCIAL OFFERING -->
 
+<section class="project-feature" id="project-book" aria-labelledby="project-heading">
+    <div class="site">
+        <div class="project-feature-grid">
 
+            <div class="project-index">
+                01 / Commissions
+            </div>
+
+            <div class="project-copy">
+                <div class="kicker">
+                    P1Lab Project Book
+                </div>
+
+                <h2 id="project-heading">
+                    Your work.<br>
+                    A book of its own.
+                </h2>
+
+                <p class="project-lead">
+                    A focused, image-led book that gives your company’s work
+                    a more substantial form.
+                </p>
+
+                <p class="project-description">
+                    Project Book is for companies whose work deserves more
+                    than a conventional brochure or presentation. We bring
+                    selected projects, capabilities, specialist knowledge
+                    and the decisions behind the work together in a carefully
+                    edited, professionally designed publication—made to be
+                    read, kept and shared.
+                </p>
+
+                <a class="project-action" href="Project-Book.html">
+                    Explore the Project Book
+                </a>
+            </div>
+
+            <aside class="project-aside">
+                <div class="small-label">
+                    The principle
+                </div>
+
+                <p class="project-quote">
+                    A small book with the visual authority, editorial
+                    intelligence, and considered pacing of a much larger
+                    publication.
+                </p>
+
+                <p class="project-aside-note">
+                    A practical, physical sales tool built around the quality
+                    of the work itself.
+                </p>
+            </aside>
+
+        </div>
+    </div>
+</section>
 
 <!-- FEATURED COLLECTION: FIELD -->
+
 <section class="field-feature" id="field" aria-labelledby="field-heading">
     <div class="site">
         <div class="field-feature-grid">
+
             <div class="field-visual">
-                <img src="FIELD_bookstore_feature.png" alt="The FIELD collection displayed in a warmly lit independent bookstore: Yacht Design, Millwork, Antique Salvagers, Independent Game Designers, and Florida Farmer’s Markets." loading="eager">
+                <img src="FIELD_bookstore_feature.png"
+                     alt="The FIELD collection displayed in a warmly lit independent bookstore: Yacht Design, Millwork, Antique Salvagers, Independent Game Designers, and Florida Farmer’s Markets."
+                     loading="eager">
                 <div class="field-visual-caption">FIELD / A P1LAB COLLECTION</div>
             </div>
+
             <div class="field-copy">
                 <div class="kicker">A curated book collection by P1Lab</div>
-                <h2 id="field-heading">Remarkable work.<br>Worlds worth knowing.</h2>
-                <p class="field-lead">FIELD makes collectible books about distinctive businesses, makers, places, products, and specialist knowledge.</p>
-                <p class="field-description">Rooted in the tradition of great illustrated print, each volume brings together expansive documentary photography, thoughtful storytelling, and useful detail. Approachable without being simplistic. Considered without being austere.</p>
+
+                <h2 id="field-heading">
+                    Remarkable work.<br>
+                    Worlds worth knowing.
+                </h2>
+
+                <p class="field-lead">
+                    FIELD makes collectible books about distinctive businesses,
+                    makers, places, products, and specialist knowledge.
+                </p>
+
+                <p class="field-description">
+                    Rooted in the tradition of great illustrated print, each
+                    volume brings together expansive documentary photography,
+                    thoughtful storytelling, and useful detail. Approachable
+                    without being simplistic. Considered without being austere.
+                </p>
+
                 <div class="field-actions">
-<a class="field-action" href="FIELD-INDEX.html">Explore the FIELD Collection ↗</a>
-                    <a class="field-action" href="mailto:publisher@p1lab.net?subject=FIELD%20Book%20Commission">Discuss a FIELD volume ↗</a>
-                    
+                    <a class="field-action" href="FIELD-INDEX.html">
+                        Explore the FIELD Collection
+                    </a>
+
+                    <a class="field-action"
+                       href="mailto:publisher@p1lab.net?subject=FIELD%20Book%20Commission">
+                        Discuss a FIELD volume
+                    </a>
                 </div>
-                
 
+                <div class="field-credentials">
+                    <div class="small-label">
+                        Making complex subjects accessible without diminishing them
+                    </div>
 
-
-
-<div class="field-credentials">
-    <div class="small-label">Making complex subjects accessible without diminishing them</div>
-    <p>Across 31 published books, P1Lab has taken on subjects ranging from robotics and systems philosophy to theology, literature, music, historic cooking, and garden history. The connecting principle is a commitment to making specialized knowledge accessible without sacrificing its complexity, rigor, or intrinsic interest. Ten titles have ranked among Ingram's top ten in their respective categories, several over multiple years, providing measurable evidence of the catalogue's reach and the team's repeatable ability to bring specialized knowledge to a wider readership. <a href="the-record.html">Explore the complete publication record →</a></p>
-</div>
-
-
-
-
+                    <p>
+                        Across 31 published books, P1Lab has taken on subjects
+                        ranging from robotics and systems philosophy to theology,
+                        literature, music, historic cooking, and garden history.
+                        The connecting principle is a commitment to making
+                        specialized knowledge accessible without sacrificing its
+                        complexity, rigor, or intrinsic interest. Ten titles
+                        have ranked among Ingram's top ten in their respective
+                        categories, several over multiple years, providing
+                        measurable evidence of the catalogue's reach and the
+                        team's repeatable ability to bring specialized knowledge
+                        to a wider readership.
+                        <a href="the-record.html">Explore the complete publication record →</a>
+                    </p>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -939,7 +1227,6 @@ footer {
 <!-- EDITORIAL STRUCTURE -->
 
 <section class="structure">
-
     <div class="site structure-grid">
 
         <div class="structure-label">
@@ -947,10 +1234,7 @@ footer {
         </div>
 
         <div class="structure-block">
-
-            <h2 class="structure-name">
-                P1Lab
-            </h2>
+            <h2 class="structure-name">P1Lab</h2>
 
             <div class="structure-type">
                 Independent Research &amp; Publishing
@@ -958,15 +1242,13 @@ footer {
 
             <p>
                 The parent research and publishing practice. P1Lab develops
-                research programs, field records and books that make specialist
-                knowledge accessible without reducing its complexity.
+                commissioned books, research programs, field records and
+                publications that make specialist knowledge accessible
+                without reducing its complexity.
             </p>
-
         </div>
 
-
         <div class="structure-block">
-
             <h2 class="structure-name">
                 <a href="#field">FIELD</a>
             </h2>
@@ -980,16 +1262,11 @@ footer {
                 worlds around it—from skilled trades and specialist businesses
                 to places, products and creative communities.
             </p>
-
         </div>
 
-
         <div class="structure-block">
-
             <h2 class="structure-name">
-                <a href="gruv.html">
-                    GrüvType
-                </a>
+                <a href="gruv.html">GrüvType</a>
             </h2>
 
             <div class="structure-type">
@@ -1001,33 +1278,25 @@ footer {
                 inhabit: gardens, rooms, tools, making, objects, food and the
                 environments we construct around ourselves.
             </p>
-
         </div>
-
 
         <div class="structure-note">
             Different forms, one principle: make a subject accessible without
             flattening the complexity that makes it worth knowing. P1Lab leads
-            the research, FIELD makes collectible books, and GrüvType explores
-            the material world people inhabit.
+            the research and commissioned publishing; FIELD develops its curated
+            book collection; GrüvType explores the material world people inhabit.
         </div>
 
     </div>
-
 </section>
-
 
 <!-- CURRENT STUDIES -->
 
 <section class="section" id="studies">
-
     <div class="site">
 
         <div class="section-head">
-
-            <div class="section-number">
-                01
-            </div>
+            <div class="section-number">02</div>
 
             <div>
                 <h2 class="section-title">
@@ -1035,26 +1304,20 @@ footer {
                 </h2>
 
                 <p class="section-intro">
-                    Beyond FIELD, P1Lab undertakes focused investigations and
-                    multi-volume studies for subjects that require deeper research.
+                    Beyond commissioned company books and FIELD, P1Lab
+                    undertakes focused investigations and multi-volume
+                    studies for subjects that require deeper research.
                 </p>
             </div>
-
         </div>
 
         <div class="studies">
 
             <a href="florida2.html" class="study">
-
-                <div class="study-number">
-                    I.01
-                </div>
+                <div class="study-number">I.01</div>
 
                 <div>
-                    <h3 class="study-title">
-                        Florida Field Record
-                    </h3>
-
+                    <h3 class="study-title">Florida Field Record</h3>
                     <p class="study-description">
                         A continuing regional field-record program documenting
                         Florida's people, places, trades, landscapes, working
@@ -1062,24 +1325,14 @@ footer {
                     </p>
                 </div>
 
-                <div class="study-link">
-                    View study
-                </div>
-
+                <div class="study-link">View study</div>
             </a>
 
-
             <a href="commissioned-field-records.html" class="study">
-
-                <div class="study-number">
-                    II.01
-                </div>
+                <div class="study-number">II.01</div>
 
                 <div>
-                    <h3 class="study-title">
-                        Commissioned Field Records
-                    </h3>
-
+                    <h3 class="study-title">Commissioned Field Records</h3>
                     <p class="study-description">
                         Permanent records of specialized businesses and the
                         work they actually do: the people, tools, processes,
@@ -1088,24 +1341,14 @@ footer {
                     </p>
                 </div>
 
-                <div class="study-link">
-                    View practice
-                </div>
-
+                <div class="study-link">View practice</div>
             </a>
 
-
             <a href="" class="study">
-
-                <div class="study-number">
-                    III.01
-                </div>
+                <div class="study-number">III.01</div>
 
                 <div>
-                    <h3 class="study-title">
-                        Arturia Instrumentarium
-                    </h3>
-
+                    <h3 class="study-title">Arturia Instrumentarium</h3>
                     <p class="study-description">
                         A 24-volume study of electronic instruments, their
                         invention, architecture, history, interfaces and
@@ -1113,24 +1356,14 @@ footer {
                     </p>
                 </div>
 
-                <div class="study-link">
-                    Study Overview Posting 10.15.26
-                </div>
-
+                <div class="study-link">Study overview posting 10.15.26</div>
             </a>
 
-
             <a href="u-he.project.html" class="study">
-
-                <div class="study-number">
-                    IV.01
-                </div>
+                <div class="study-number">IV.01</div>
 
                 <div>
-                    <h3 class="study-title">
-                        u-he Sound Design Atlas
-                    </h3>
-
+                    <h3 class="study-title">u-he Sound Design Atlas</h3>
                     <p class="study-description">
                         Eight volumes examining synthesis, sound design,
                         instruments, techniques and the musical practices
@@ -1138,24 +1371,14 @@ footer {
                     </p>
                 </div>
 
-                <div class="study-link">
-                    View study
-                </div>
-
+                <div class="study-link">View study</div>
             </a>
 
-
             <a href="" class="study">
-
-                <div class="study-number">
-                    V.01
-                </div>
+                <div class="study-number">V.01</div>
 
                 <div>
-                    <h3 class="study-title">
-                        NS Design Electric Cello Study
-                    </h3>
-
+                    <h3 class="study-title">NS Design Electric Cello Study</h3>
                     <p class="study-description">
                         A five-volume study of the electric cello:
                         construction, materials, electronics, mechanics,
@@ -1163,24 +1386,14 @@ footer {
                     </p>
                 </div>
 
-                <div class="study-link">
-                    Study Overview Posting 10.15.26
-                </div>
-
+                <div class="study-link">Study overview posting 10.15.26</div>
             </a>
 
-
             <a href="Electronic-Organs.html" class="study">
-
-                <div class="study-number">
-                    VI.01
-                </div>
+                <div class="study-number">VI.01</div>
 
                 <div>
-                    <h3 class="study-title">
-                        Electronic Organs
-                    </h3>
-
+                    <h3 class="study-title">Electronic Organs</h3>
                     <p class="study-description">
                         A two-volume study of the electronic organ as
                         instrument, technology, electrical system,
@@ -1188,24 +1401,14 @@ footer {
                     </p>
                 </div>
 
-                <div class="study-link">
-                    View study
-                </div>
-
+                <div class="study-link">View study</div>
             </a>
 
-
             <a href="Korea.Material.Culture.html" class="study">
-
-                <div class="study-number">
-                    VII.01
-                </div>
+                <div class="study-number">VII.01</div>
 
                 <div>
-                    <h3 class="study-title">
-                        Korea: Material Culture Series
-                    </h3>
-
+                    <h3 class="study-title">Korea: Material Culture Series</h3>
                     <p class="study-description">
                         An independent documentary field study beginning in
                         Seoul, recording selected material systems through
@@ -1214,55 +1417,35 @@ footer {
                     </p>
                 </div>
 
-                <div class="study-link">
-                    View study
-                </div>
-
+                <div class="study-link">View study</div>
             </a>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- APPROACH -->
 
 <section class="section" id="approach">
-
     <div class="site">
 
         <div class="section-head">
-
-            <div class="section-number">
-                02
-            </div>
+            <div class="section-number">03</div>
 
             <div>
-                <h2 class="section-title">
-                    The Approach
-                </h2>
-
+                <h2 class="section-title">The Approach</h2>
                 <p class="section-intro">
                     Different subjects. The same basic problem.
                 </p>
             </div>
-
         </div>
-
 
         <div class="approach">
 
             <div>
+                <div class="small-label">Start with the subject</div>
 
-                <div class="small-label">
-                    Start with the subject
-                </div>
-
-                <h3>
-                    You know your world.
-                </h3>
+                <h3>You know your world.</h3>
 
                 <p>
                     A company knows its instruments. A craftsperson knows
@@ -1275,19 +1458,12 @@ footer {
                     someone from outside enough understanding to see why
                     that world matters and how its parts connect.
                 </p>
-
             </div>
 
-
             <div>
+                <div class="small-label">Build the connection</div>
 
-                <div class="small-label">
-                    Build the connection
-                </div>
-
-                <h3>
-                    We learn it with you.
-                </h3>
+                <h3>We learn it with you.</h3>
 
                 <p>
                     We enter the subject, ask questions, follow the work,
@@ -1299,56 +1475,44 @@ footer {
                     Then we build something that lets another person come
                     into the subject without having to begin where we did.
                 </p>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- OUTPUTS -->
 
 <section class="section">
-
     <div class="site">
 
         <div class="section-head">
-
-            <div class="section-number">
-                03
-            </div>
+            <div class="section-number">04</div>
 
             <div>
-                <h2 class="section-title">
-                    The Work
-                </h2>
-
+                <h2 class="section-title">The Work</h2>
                 <p class="section-intro">
                     The form follows the subject.
                 </p>
             </div>
-
         </div>
 
-
         <div class="outputs">
+
+            <div class="output">
+                <h3>Project Books</h3>
+                <p>
+                    Focused, image-led company books that bring selected
+                    projects, capabilities and specialist knowledge into
+                    a coherent, professionally designed publication.
+                </p>
+            </div>
 
             <div class="output">
                 <h3>Field Records</h3>
                 <p>
                     Detailed records of active operations, specialized
                     trades, places and working knowledge.
-                </p>
-            </div>
-
-            <div class="output">
-                <h3>Books</h3>
-                <p>
-                    Monographs and multi-volume studies built around a
-                    subject rather than a campaign.
                 </p>
             </div>
 
@@ -1369,51 +1533,32 @@ footer {
             </div>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- COMMISSIONED FIELD RECORDS -->
 
 <section class="section">
-
     <div class="site">
 
         <div class="section-head">
-
-            <div class="section-number">
-                04
-            </div>
+            <div class="section-number">05</div>
 
             <div>
-                <h2 class="section-title">
-                    Commissioned Field Records
-                </h2>
-
+                <h2 class="section-title">Commissioned Field Records</h2>
                 <p class="section-intro">
                     For businesses whose work is worth understanding.
                 </p>
-
             </div>
-
         </div>
-
 
         <div class="field-record">
 
             <div>
-
-                <h2>
-                    The operation is the subject.
-                </h2>
-
+                <h2>The operation is the subject.</h2>
             </div>
 
-
             <div>
-
                 <p>
                     P1Lab works with owner-led businesses in specialized
                     fields: marine trades, fabrication, woodworking,
@@ -1436,54 +1581,35 @@ footer {
                 <a href="commissioned-field-records.html" class="field-record-link">
                     About Commissioned Field Records
                 </a>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- THE RECORD -->
 
 <section class="section">
-
     <div class="site">
 
         <div class="section-head">
-
-            <div class="section-number">
-                05
-            </div>
+            <div class="section-number">06</div>
 
             <div>
-                <h2 class="section-title">
-                    Why the Record Matters
-                </h2>
-
+                <h2 class="section-title">Why the Record Matters</h2>
                 <p class="section-intro">
                     Good work deserves something more durable than a
                     momentary presentation.
                 </p>
-
             </div>
-
         </div>
-
 
         <div class="approach">
 
             <div>
+                <div class="small-label">Durable</div>
 
-                <div class="small-label">
-                    Durable
-                </div>
-
-                <h3>
-                    Make something that lasts.
-                </h3>
+                <h3>Make something that lasts.</h3>
 
                 <p>
                     P1Lab's work is designed to remain useful after the
@@ -1496,19 +1622,12 @@ footer {
                     objects: something that can be read, consulted,
                     circulated and returned to.
                 </p>
-
             </div>
 
-
             <div>
+                <div class="small-label">Useful</div>
 
-                <div class="small-label">
-                    Useful
-                </div>
-
-                <h3>
-                    Give people a way in.
-                </h3>
+                <h3>Give people a way in.</h3>
 
                 <p>
                     The record is not simply evidence that something exists.
@@ -1516,45 +1635,29 @@ footer {
                     structure to begin understanding it.
                 </p>
 
-                <p>
-                    That is the connection.
-                </p>
-
+                <p>That is the connection.</p>
             </div>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- PLATFORM -->
 
 <section class="section">
-
     <div class="site">
 
         <div class="section-head">
-
-            <div class="section-number">
-                06
-            </div>
+            <div class="section-number">07</div>
 
             <div>
-                <h2 class="section-title">
-                    A Subject Is a Starting Point
-                </h2>
+                <h2 class="section-title">A Subject Is a Starting Point</h2>
             </div>
-
         </div>
-
 
         <div class="platform">
 
-            <h2>
-                Everything can lead somewhere else.
-            </h2>
+            <h2>Everything can lead somewhere else.</h2>
 
             <p>
                 A synthesizer can lead to electrical engineering, industrial
@@ -1575,21 +1678,15 @@ footer {
             </p>
 
         </div>
-
     </div>
-
 </section>
-
 
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
-
     <div class="site">
 
-        <div class="kicker">
-            P1Lab
-        </div>
+        <div class="kicker">P1Lab</div>
 
         <h2>
             Have a world<br>
@@ -1606,30 +1703,22 @@ footer {
         </a>
 
     </div>
-
 </section>
-
 
 </main>
 
 <footer>
+    <div class="site footer-inner">
 
+        <div class="footer-brand">P1Lab</div>
 
-<div class="site footer-inner">
+        <div class="footer-meta">
+            Independent Research &amp; Publishing<br>
+            <a href="gruv.html">GrüvType · An Editorial Imprint of P1Lab</a><br>
+            West Palm Beach, Florida · 2026
+        </div>
 
-    <div class="footer-brand">
-        P1Lab
     </div>
-
-    <div class="footer-meta">
-        Independent Research &amp; Publishing<br>
-        <a href="gruv.html">GrüvType · An Editorial Imprint of P1Lab</a><br>
-        West Palm Beach, Florida · 2026
-    </div>
-
-</div>
-
-
 </footer>
 
 </body>
