@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)Project-Book2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Project Book — P1Lab</title>
+<meta name="description" content="P1Lab creates professionally edited and designed Project Books that bring a company's strongest work, projects, and specialist knowledge into focus.">
+
+<style>
+:root {
+  --paper:#f4f1e9;
+  --ink:#20211f;
+  --muted:#66665f;
+  --rule:#c9c5ba;
+  --panel:#e9e5dc;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:Inter,Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}
+a{color:inherit}
+img{display:block;width:100%;height:auto}
+.container{width:min(1180px,calc(100% - 64px));margin-inline:auto}
+
+.site-header{min-height:78px;border-bottom:1px solid var(--rule);display:flex;align-items:center;background:var(--paper)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:14px 0}
+.brand{font-family:var(--serif);font-size:34px;line-height:1;text-decoration:none;white-space:nowrap}
+.brand small{font-family:var(--sans);display:inline-block;margin-left:14px;font-size:9px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted);vertical-align:middle}
+.nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.nav a{font-size:10px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#454640}
+.nav a:hover,.text-link:hover{opacity:.65}
+
+.hero{position:relative;min-height:490px;display:flex;align-items:center;background:#282a28;color:#fff;isolation:isolate;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background-image:url('field-record-01.jpg');background-size:cover;background-position:center 52%;transform:scale(1.015)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,14,13,.88) 0%,rgba(12,14,13,.66) 38%,rgba(12,14,13,.16) 75%,rgba(12,14,13,.08) 100%)}
+.hero-inner{padding:68px 0 72px}
+.eyebrow,.section-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 18px;color:var(--muted)}
+.hero .eyebrow{color:#e3e0d8}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,4.8vw,66px);letter-spacing:-.035em;line-height:1.04;max-width:720px;margin:0 0 25px}
+.hero-lead{font-family:var(--serif);font-size:clamp(18px,1.65vw,21px);line-height:1.5;max-width:640px;margin:0 0 18px}
+.hero-note{font-size:12px;line-height:1.65;max-width:590px;color:#e3e0d8;margin:0}
+
+.section{padding:82px 0;border-bottom:1px solid var(--rule)}
+.section-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:9%;align-items:start}
+.section h2,.intro h2,.book-family-head h2,.inside-head h2,.uses-head h2,.process-head h2,.proof-head h2{font-family:var(--serif);font-weight:400;letter-spacing:-.035em;font-size:clamp(38px,4.3vw,58px);line-height:1.04;margin:0 0 25px}
+.body-copy{font-family:var(--serif);font-size:19px;line-height:1.62;color:#363732}
+.body-copy p{margin:0 0 16px}
+.inline-link,.button-link{display:inline-flex;align-items:center;gap:14px;text-transform:uppercase;text-decoration:none;letter-spacing:.16em;font-size:10px;border:1px solid #77786f;padding:14px 18px;margin-top:10px}
+.inline-link:after,.button-link:after{content:'→';font-size:16px;letter-spacing:0}
+
+.intro{padding:82px 0;border-bottom:1px solid var(--rule)}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr);gap:9%;align-items:start}
+.intro .body-copy{font-size:20px}
+.intro-aside{border-left:1px solid var(--rule);padding:5px 0 5px 28px}
+.intro-aside p{font-size:14px;color:#4c4d47;margin:0 0 18px}
+.intro-aside strong{font-family:var(--serif);font-size:25px;font-weight:400;line-height:1.25;display:block;margin-bottom:12px}
+
+.book-family,.inside-books,.layout-methodology,.book-uses,.process-section,.proof-section{padding:76px 0;border-bottom:1px solid var(--rule)}
+.book-family-head,.inside-head,.uses-head,.process-head,.proof-head{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:end;margin-bottom:32px}
+.book-family-head h2,.inside-head h2,.uses-head h2,.process-head h2,.proof-head h2{margin-bottom:0}
+.book-family-head>p,.inside-head>p,.uses-head>p,.process-head>p,.proof-head>p{font-size:14px;max-width:510px;color:#4c4d47;margin:0 0 4px}
+.book-family-figure{margin:0;width:100%;overflow:hidden}
+.book-family-image{display:block;width:100%;height:auto;max-width:100%}
+.visual-note{font-size:10px;color:var(--muted);margin:13px 0 0;letter-spacing:.03em}
+
+.spread-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.spread{display:grid;grid-template-columns:1fr 1fr;min-height:300px;background:#e7e2d8;border:1px solid #d1ccc1;box-shadow:0 8px 18px #25231e0c;overflow:hidden}
+.spread-image{display:block;width:100%;height:100%;min-height:300px;object-fit:cover;background:#b9b2a1}
+.spread-page{position:relative;padding:24px 20px 30px;background:#f7f4ec;display:flex;flex-direction:column;align-items:flex-start}
+.folio{font-size:7px;letter-spacing:.16em;color:#6c6c62;border-bottom:1px solid #c9c5ba;padding-bottom:9px;width:100%}
+.spread-page h3{font-family:var(--serif);font-size:clamp(20px,2.4vw,30px);font-weight:400;line-height:1.02;letter-spacing:-.03em;margin:27px 0 14px}
+.spread-page p{font-family:var(--serif);font-size:11px;line-height:1.55;color:#4d4d46;margin:0}
+.page-no{position:absolute;bottom:12px;right:18px;font-size:8px;color:#6c6c62}
+
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:36px}
+.principles article{border-top:1px solid var(--rule);padding-top:15px}
+.principles span,.uses-grid article span{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.principles h3,.uses-grid h3{font-family:var(--serif);font-size:25px;line-height:1.12;font-weight:400;letter-spacing:-.02em;margin:13px 0 9px}
+.principles p,.uses-grid article p{font-size:13px;line-height:1.65;color:#4c4d47;margin:0;max-width:350px}
+.principles-foot{margin:30px 0 0;padding-top:16px;border-top:1px solid var(--rule);font-family:var(--serif);font-size:clamp(19px,2vw,24px);line-height:1.35;max-width:850px}
+
+.book-uses{background:transparent}
+.uses-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.uses-grid article{border-top:1px solid var(--rule);padding-top:16px}
+.uses-grid h3{margin:14px 0 10px}
+
+.collection-promise{padding:78px 0 84px;background:#eae6dd;border-bottom:1px solid var(--rule)}
+.promise-inner{max-width:950px}
+.promise-inner h2{font-family:var(--serif);font-size:clamp(36px,5vw,65px);font-weight:400;line-height:1.05;letter-spacing:-.035em;margin:0 0 22px}
+.promise-inner>p:last-child{font-family:var(--serif);font-size:20px;max-width:670px;color:#4b4c45;margin:0}
+
+.process-section{background:var(--paper)}
+.process-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:9%;align-items:start}
+.process-list{list-style:none;margin:0;padding:0;counter-reset:step}
+.process-list li{counter-increment:step;display:grid;grid-template-columns:36px 1fr;gap:15px;padding:18px 0;border-top:1px solid var(--rule)}
+.process-list li:before{content:"0" counter(step);font-size:10px;letter-spacing:.1em;color:var(--muted);padding-top:3px}
+.process-list strong{display:block;font-size:13px;font-weight:600;margin-bottom:4px}
+.process-list p{font-size:12px;color:#4c4d47;line-height:1.65;margin:0}
+.process-note{background:var(--panel);padding:30px}
+.process-note h3{font-family:var(--serif);font-size:31px;font-weight:400;line-height:1.12;margin:0 0 15px}
+.process-note p{font-size:13px;line-height:1.7;color:#4c4d47;margin:0 0 13px}
+.process-note p:last-child{margin-bottom:0}
+
+.proof-section{background:#eae6dd}
+.proof-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;align-items:center}
+.proof-image{width:100%;height:100%;max-height:480px;object-fit:cover}
+.proof-copy{font-family:var(--serif);font-size:19px;line-height:1.62;color:#363732}
+.proof-copy p{margin:0 0 16px}
+.proof-link{display:inline-block;margin-top:8px;text-transform:uppercase;text-decoration:none;letter-spacing:.14em;font-family:var(--sans);font-size:10px;border-bottom:1px solid #77786f;padding:0 0 7px}
+
+.contact{background:var(--paper);padding:78px 0}
+.contact-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.contact h2{font-family:var(--serif);font-size:clamp(34px,4vw,48px);font-weight:400;letter-spacing:-.03em;margin:0 0 12px}
+.contact p{margin:0;color:#55564f;max-width:670px}
+.contact-link{display:inline-block;border-bottom:1px solid #65665e;padding:12px 0;text-decoration:none;font-size:10px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+
+.footer{padding:28px 0 34px;border-top:1px solid var(--rule)}
+.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:25px}
+.footer-brand{font-family:var(--serif);font-size:29px}
+.footer-sub{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
+.footer-meta{text-align:right;font-size:10px;line-height:1.9;letter-spacing:.06em;color:#55564f}
+.footer-meta a{text-decoration:none}
+
+.image-disclosure{padding:24px 0}
+.image-disclosure .section-label{margin-bottom:6px}
+.image-disclosure p{font-size:11px;line-height:1.5;color:var(--muted);margin:0 0 5px}
+
+@media(max-width:850px){
+.container{width:min(100% - 38px,700px)}
+.header-inner{align-items:flex-start;flex-direction:column;gap:15px}
+.nav{gap:13px 20px}
+.brand small{font-size:8px}
+.hero{min-height:450px}
+.hero:after{background:linear-gradient(90deg,rgba(12,14,13,.88),rgba(12,14,13,.48) 75%,rgba(12,14,13,.22))}
+.section,.process-section,.proof-section{padding:64px 0}
+.section-grid,.intro-grid,.process-grid,.proof-grid{grid-template-columns:1fr;gap:28px}
+.intro{padding:64px 0}
+.intro-aside{border-left:0;border-top:1px solid var(--rule);padding:22px 0 0}
+.book-family-head,.inside-head,.uses-head,.process-head,.proof-head{grid-template-columns:1fr;gap:20px}
+.spread-grid{grid-template-columns:1fr}
+.principles{gap:20px}
+.uses-grid{grid-template-columns:1fr 1fr;gap:24px}
+.proof-image{max-height:430px;aspect-ratio:4/3}
+.contact-inner{grid-template-columns:1fr;gap:18px}
+.footer-inner{flex-direction:column}
+.footer-meta{text-align:left}
+}
+@media(max-width:600px){
+.container{width:calc(100% - 30px)}
+.brand{font-size:30px}
+.brand small{display:block;margin:8px 0 0}
+.nav a{font-size:9px}
+.hero{min-height:430px}
+.hero:before{background-position:58% center}
+.hero-inner{padding:58px 0}
+.hero h1{font-size:clamp(36px,9vw,46px)}
+.hero .hero-lead{font-size:18px}
+.section h2,.intro h2,.book-family-head h2,.inside-head h2,.uses-head h2,.process-head h2,.proof-head h2{font-size:39px}
+.principles,.uses-grid{grid-template-columns:1fr}
+.spread{min-height:230px}
+.spread-image{min-height:230px}
+.spread-page{padding:16px 12px 27px}
+.spread-page h3{font-size:21px;margin:22px 0 10px}
+.spread-page p{font-size:10px}
+.collection-promise{padding:58px 0}
+.process-note{padding:25px 22px}
+.contact{padding:55px 0}
+}
+
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="https://p1lab.net/">P1Lab <small>Independent Research &amp; Publishing</small></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="Project-Book2.html#the-book">The Book</a>
+      <a href="Project-Book2.html#inside">Inside</a>
+      <a href="Project-Book2.html#methodology">Methodology</a>
+      <a href="Project-Book2.html#uses">Applications</a>
+      <a href="Project-Book2.html#approach">Approach</a>
+      <a href="Project-Book2.html#examples">Publishing</a>
+      <a href="Project-Book2.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-label="The Project Book">
+  <div class="container hero-inner">
+    <p class="eyebrow">P1Lab / Editorial Publishing</p>
+    <h1>Your work.<br>A book of its own.</h1>
+    <p class="hero-lead">A small book with the visual authority, editorial intelligence, and considered pacing of a much larger publication.</p>
+    <p class="hero-note">A considered presentation of your strongest projects, specialist knowledge, and the thinking behind the work. Made to be read, shared, and kept.</p>
+  </div>
+</section>
+
+<section class="intro" id="the-book">
+  <div class="container intro-grid">
+    <div>
+      <p class="section-label">The Project Book / The idea</p>
+      <h2>Show the work.<br>Make the case.</h2>
+      <div class="body-copy">
+        <p>A good project does more than demonstrate what a company can do. It reveals how its people think, what they know, the decisions they make, and the care they bring to the work.</p>
+        <p>The Project Book brings that evidence together in a professionally edited and designed publication. Selected projects, strong photography, concise explanation, and carefully paced pages make a company’s capabilities tangible.</p>
+        <p>Not another brochure. A book that gives the work room to speak.</p>
+      </div>
+    </div>
+    <aside class="intro-aside">
+      <strong>A more substantial way to present what you do.</strong>
+      <p>For companies whose best work deserves more than a web page, a presentation deck, or a collection of disconnected project photographs.</p>
+      <p>Developed around the material you already have, with additional editorial research or photography where the project calls for it.</p>
+      <a class="inline-link" href="Project-Book2.html#contact">Discuss a Project Book</a>
+    </aside>
+  </div>
+</section>
+
+<section class="book-family" aria-labelledby="book-family-title">
+  <div class="container">
+    <div class="book-family-head">
+      <div>
+        <p class="section-label">The object / Made to be kept</p>
+        <h2>A physical book.<br>Designed around your work.</h2>
+      </div>
+      <p>A portable, 6 × 9-inch perfect-bound book. Strong photography, considered typography, generous white space, and a clear editorial structure make the finished publication inviting to open and easy to use.</p>
+    </div>
+    <figure class="book-family-figure">
+      <img class="book-family-image" src="project-book-family.jpg" alt="Project Book mockups showing several possible company-specific book covers">
+    </figure>
+    <figure class="book-family-figure" style="margin-top: 24px;">
+      <img class="book-family-image" src="project-book-family2.jpg" alt="Project Book mockups showing alternative company-specific book covers">
+    </figure>
+    <p class="visual-note">Project Book concept mockups. Each cover and interior is developed for the company, subject, and intended reader.</p>
+  </div>
+</section>
+
+<section class="inside-books" id="inside">
+  <div class="container">
+    <div class="inside-head">
+      <div>
+        <p class="section-label">Inside the book / The editorial experience</p>
+        <h2>More than a portfolio.<br>More than a company profile.</h2>
+      </div>
+      <p>Each publication is shaped around the work itself. Photography, edited text, captions, diagrams, project detail, and technical knowledge combine to show not only what was made, but what it took to make it well.</p>
+    </div>
+
+    <div class="spread-grid" aria-label="Project Book interior concepts">
+      <div class="spread">
+        <img class="spread-image" src="project-book-spread-01.png" alt="Project Book spread featuring a major completed project">
+        <div class="spread-page">
+          <span class="folio">SELECTED WORK / 01</span>
+          <h3>The result<br>is only the beginning.</h3>
+          <p>Every finished project carries a story of requirements, decisions, materials, practical challenges, and accumulated experience. The book makes that story visible.</p>
+          <span class="page-no">012</span>
+        </div>
+      </div>
+
+      <div class="spread">
+        <div class="spread-page">
+          <span class="folio">METHOD / MATERIAL / DETAIL</span>
+          <h3>Knowledge<br>made visible.</h3>
+          <p>Show the details that matter. Explain the choices that distinguish the work. Give the reader enough context to understand what makes it exceptional.</p>
+          <div style="height:76px;width:100%;margin-top:16px;border-top:1px solid #c9c5ba;border-bottom:1px solid #c9c5ba;display:flex;align-items:center;justify-content:space-around">
+            <span style="width:20px;height:35px;border:1px solid #858579;transform:rotate(-8deg)"></span>
+            <span style="width:20px;height:49px;border:1px solid #858579;transform:rotate(4deg)"></span>
+            <span style="width:20px;height:27px;border:1px solid #858579;transform:rotate(8deg)"></span>
+          </div>
+          <span class="page-no">018</span>
+        </div>
+        <img class="spread-image" src="project-book-spread-02.png" alt="Project Book spread showing materials, methods, or specialist details">
+      </div>
+    </div>
+    <p class="visual-note">Interior design studies. The finished layout is tailored to the subject, balancing documentary imagery, explanation, and the natural rhythm of the material.</p>
+  </div>
+</section>
+
+<!-- NEW SECTION: Layout & Methodology Strip -->
+<section class="layout-methodology" id="methodology">
+  <div class="container">
+    <div class="inside-head">
+      <div>
+        <p class="section-label">Page architecture / Layout &amp; Rhythm</p>
+        <h2>Designed with proportion.<br>Built for legibility.</h2>
+      </div>
+      <p>Every spread balances documentary weight with generous negative space. Typography, folios, and photographic crops are strictly calibrated to establish an unhurried, museum-grade rhythm.</p>
+    </div>
+
+    <figure class="book-family-figure" style="margin-top: 32px;">
+      <img class="book-family-image" src="project-book-layout.jpg" alt="Layout design and methodology grid showing grid alignment, typography sizing, and image pacing">
+    </figure>
+    <p class="visual-note">Layout design and grid architecture. Typographic hierarchy and grid proportions are mapped specifically for 6×9-inch monographs.</p>
+  </div>
+</section>
+
+<section class="section" id="what-it-shows">
+  <div class="container">
+    <div class="section-grid">
+      <div>
+        <p class="section-label">The editorial approach</p>
+        <h2>Show what makes the work different.</h2>
+      </div>
+      <div class="body-copy">
+        <p>The strongest Project Books do not attempt to say everything. They select the work that tells the clearest story and present it with enough detail to make the company's capabilities understandable.</p>
+        <p>The result is a publication with a point of view: clear enough to use in business, rich enough to reward a closer look.</p>
+      </div>
+    </div>
+
+    <div class="principles">
+      <article>
+        <span>01 / The work</span>
+        <h3>Show the evidence.</h3>
+        <p>Selected projects, finished results, details, and photography that reveal the quality and character of the work.</p>
+      </article>
+      <article>
+        <span>02 / The thinking</span>
+        <h3>Explain the decisions.</h3>
+        <p>Requirements, materials, methods, constraints, and the reasoning that shaped the result.</p>
+      </article>
+      <article>
+        <span>03 / The expertise</span>
+        <h3>Make knowledge tangible.</h3>
+        <p>Experience and specialist understanding presented in a form that clients and professional partners can revisit.</p>
+      </article>
+    </div>
+    <p class="principles-foot">The aim is not to make a company sound impressive. It is to make the quality of its work easier to see and understand.</p>
+  </div>
+</section>
+
+<section class="book-uses" id="uses">
+  <div class="container">
+    <div class="uses-head">
+      <div>
+        <p class="section-label">Beyond the bookshelf</p>
+        <h2>One book.<br>Many ways to use it.</h2>
+      </div>
+      <p>A Project Book is a working business publication: something to bring into a meeting, include with a proposal, give to a prospective client, or leave behind after an introduction.</p>
+    </div>
+
+    <div class="uses-grid">
+      <article>
+        <span>01 / CLIENT MEETINGS</span>
+        <h3>Put the work in their hands.</h3>
+        <p>A physical introduction to the company, its projects, and the standards behind them.</p>
+      </article>
+      <article>
+        <span>02 / PROPOSALS</span>
+        <h3>Give the case more weight.</h3>
+        <p>A carefully made companion to a proposal or a specific business opportunity.</p>
+      </article>
+      <article>
+        <span>03 / INDUSTRY EVENTS</span>
+        <h3>Something worth taking away.</h3>
+        <p>A publication that can be browsed at a trade event and revisited after the conversation.</p>
+      </article>
+      <article>
+        <span>04 / CLIENT RELATIONSHIPS</span>
+        <h3>Make a lasting impression.</h3>
+        <p>A useful record for selected clients, specifiers, collaborators, and professional partners.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="collection-promise">
+  <div class="container promise-inner">
+    <p class="section-label">The Project Book / The principle</p>
+    <h2>Less like a pitch.<br>More like proof.</h2>
+    <p>A carefully made book gives the work a physical presence. It lets a prospective client spend time with the details, understand the decisions, and return to the material long after the meeting ends.</p>
+  </div>
+</section>
+
+<section class="process-section" id="approach">
+  <div class="container">
+    <div class="process-head">
+      <div>
+        <p class="section-label">From material to publication</p>
+        <h2>A considered process.<br>A defined result.</h2>
+      </div>
+      <p>Every Project Book starts with an assessment of the subject, the available material, and the reader the publication needs to reach.</p>
+    </div>
+
+    <div class="process-grid">
+      <ol class="process-list">
+        <li>
+          <div>
+            <strong>Review the material</strong>
+            <p>Assess existing project photography, descriptions, drawings, records, and other source material.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Shape the story</strong>
+            <p>Establish the editorial structure, select the strongest material, and determine what the reader needs to understand.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Write, edit, and design</strong>
+            <p>Develop concise text, prepare imagery, and create the page-by-page composition.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Prepare the book</strong>
+            <p>Complete the fixed-layout PDF and print-ready files, with printed copies and quantities agreed for the project.</p>
+          </div>
+        </li>
+      </ol>
+
+      <aside class="process-note">
+        <p class="section-label">A scope built around the subject</p>
+        <h3>Start with what you have.</h3>
+        <p>Existing photographs, project records, and company knowledge may provide the foundation for the book. The initial assessment establishes what can be achieved with that material and where further work would add value.</p>
+        <p>New documentary photography, interviews, site visits, and original research can be scoped separately where required. The company reviews the factual content before publication.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="proof-section" id="examples">
+  <div class="container">
+    <div class="proof-head">
+      <div>
+        <p class="section-label">P1Lab / Publishing record</p>
+        <h2>Editorial care.<br>From research to print.</h2>
+      </div>
+      <p>The Project Book draws on the same publishing disciplines P1Lab brings to its books and editorial projects: research, writing, photography, art direction, page design, and print preparation.</p>
+    </div>
+
+    <div class="proof-grid">
+      <img class="proof-image" src="Culinary_Traveler.png" alt="The Culinary Traveler, Volume 17, published by P1Lab">
+      <div class="proof-copy">
+        <p>P1Lab is an independent research and publishing initiative. Its published record includes 31 books, with 10 titles reaching Ingram category top-ten positions.</p>
+        <p><em>The Culinary Traveler, Volume 17</em> is a 50-page example of the work: researched, written, photographed, art-directed, and designed by P1Lab.</p>
+        <p>It is an example of a complete, published editorial project—not a speculative mockup.</p>
+        <a class="proof-link" href="https://drive.google.com/file/d/1B1GgQ0M9JMmU8uDZYMz_-HOo_lkZATbM/view" target="_blank" rel="noopener noreferrer">Read the complete issue →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-inner">
+    <div>
+      <p class="section-label">Start with the work</p>
+      <h2>Could your work fill a book?</h2>
+      <p>Tell us a little about your company, the projects you want to present, and the material already available. P1Lab can assess the opportunity and outline a suitable editorial scope.</p>
+    </div>
+    <a class="contact-link" href="mailto:publisher@p1lab.net?subject=Project%20Book%20Enquiry">Enquire about a Project Book →</a>
+  </div>
+</section>
+
+<section class="image-disclosure">
+  <div class="container">
+    <p class="section-label">Website image disclosure</p>
+    <p>Website imagery may include documentary photography, illustrations, composites, reconstructions, mockups, and generative imagery. Concept images communicate the intended character and format of the publication; they are not necessarily documentary evidence. The actual Project Book is developed around the client's work and source material.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">P1Lab</div>
+      <div class="footer-sub">Independent Research &amp; Publishing</div>
+    </div>
+    <div class="footer-meta">
+      <a href="https://p1lab.net/">p1lab.net</a> &nbsp;·&nbsp;
+      <a href="https://p1lab.net/FIELD-INDEX.html">FIELD Collection</a><br>
+      <a href="mailto:publisher@p1lab.net">publisher@p1lab.net</a><br>
+      © 2026 P1Lab
+    </div>
+  </div>
+</footer>
+
+
+</body></html>
