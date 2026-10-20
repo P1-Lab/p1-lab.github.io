@@ -1,0 +1,1321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Florida Field &amp; Ocean — P1Lab</title>
+<meta name="description" content="Florida Field & Ocean is a P1Lab documentary initiative exploring the people, places, industries, landscapes, and ideas shaping Florida through original films and carefully curated series.">
+<meta name="theme-color" content="#172a29">
+<meta property="og:title" content="Florida Field &amp; Ocean — P1Lab">
+<meta property="og:description" content="Florida, carefully documented. Original documentaries and considered series from P1Lab.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://p1lab.net/Florida-Field-and-Ocean.html">
+
+<style>
+:root{
+  --paper:#f4f1e9;
+  --ink:#20211f;
+  --muted:#66665f;
+  --rule:#c9c5ba;
+  --panel:#e9e5dc;
+  --deep:#172a29;
+  --deep-2:#203634;
+  --cream:#f4efe4;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Inter,Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:22px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}
+a{color:inherit}
+.container{width:min(1180px,calc(100% - 64px));margin-inline:auto}
+
+/* Header */
+.site-header{
+  min-height:76px;
+  border-bottom:1px solid var(--rule);
+  display:flex;
+  align-items:center;
+  background:var(--paper);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  padding:15px 0;
+}
+.brand{
+  font-family:var(--serif);
+  font-size:33px;
+  line-height:1;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.brand small{
+  display:block;
+  margin-top:7px;
+  font-family:var(--sans);
+  font-size:8px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.nav{display:flex;align-items:center;gap:27px}
+.nav a{
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:#454640;
+  white-space:nowrap;
+}
+.nav a:hover,.text-link:hover,.contact-link:hover{opacity:.65}
+
+/* Hero */
+.hero{
+  position:relative;
+  min-height:490px;
+  display:flex;
+  align-items:center;
+  background:var(--deep);
+  color:var(--cream);
+  isolation:isolate;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20,37,35,.88) 0%,
+      rgba(20,37,35,.68) 43%,
+      rgba(20,37,35,.32) 100%
+    ),
+    url("mangrove22.jpg") center center / cover no-repeat;
+}.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(90deg,rgba(13,23,22,.24),rgba(13,23,22,.02));
+}
+.hero-inner{padding:76px 0 80px;position:relative}
+.hero-overline{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#d1c9b7;
+  margin:0 0 28px;
+}
+.hero-overline:before{content:"";width:34px;height:1px;background:#b8b19e}
+.hero h1{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(48px,6.4vw,88px);
+  letter-spacing:-.048em;
+  line-height:.98;
+  max-width:870px;
+  margin:0 0 27px;
+}
+.hero h1 span{
+  display:block;
+  color:#d5cbb4;
+  font-size:.67em;
+  letter-spacing:-.025em;
+  margin-top:12px;
+}
+.hero-lead{
+  font-family:var(--serif);
+  font-size:clamp(21px,2vw,27px);
+  line-height:1.45;
+  max-width:720px;
+  margin:0 0 16px;
+  color:#f4efe4;
+}
+.hero-note{font-size:12px;line-height:1.8;max-width:660px;color:#c9d0c6;margin:0}
+.hero-index{
+  position:absolute;
+  right:0;
+  bottom:28px;
+  font-size:9px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#c0c6b9;
+}
+
+/* Shared sections and typography */
+.section,.intro,.collections,.arts,.production,.platform,.uses,.process,.partners,.contact{
+  border-bottom:1px solid var(--rule);
+}
+.section{padding:80px 0}
+.section h2,.intro h2,.collections-head h2,.arts-copy h2,
+.platform-head h2,.uses-head h2,.process-head h2,
+.partners-head h2,.production-grid h2,.promise-inner h2{
+  font-family:var(--serif);
+  font-weight:400;
+  letter-spacing:-.035em;
+  font-size:clamp(38px,4.3vw,58px);
+  line-height:1.04;
+  margin:0 0 25px;
+}
+.section-label{
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin:0 0 18px;
+  color:var(--muted);
+}
+.body-copy{
+  font-family:var(--serif);
+  font-size:19px;
+  line-height:1.62;
+  color:#363732;
+}
+.body-copy p{margin:0 0 16px}
+.inline-link{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  text-transform:uppercase;
+  text-decoration:none;
+  letter-spacing:.16em;
+  font-size:10px;
+  border:1px solid #77786f;
+  padding:14px 18px;
+  margin-top:10px;
+}
+.inline-link:after{content:"→";font-size:16px;letter-spacing:0}
+
+/* Featured film */
+.showreel{padding:34px 0 72px;border-bottom:1px solid var(--rule)}
+.showreel-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(260px,.6fr);
+  gap:26px;
+  align-items:stretch;
+}
+.media-placeholder{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  min-height:190px;
+  color:var(--cream);
+  background:#31413d;
+  border:1px solid rgba(32,33,31,.12);
+}
+.media-image{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.media-copy{position:relative;z-index:1;padding:21px;width:100%}
+.frame-corner,.play-mark{z-index:1}
+
+.media-tag{
+  display:block;
+  font-size:9px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:#e0d7c4;
+  margin-bottom:9px;
+}
+.media-title{
+  display:block;
+  font-family:var(--serif);
+  font-size:clamp(21px,2.3vw,31px);
+  font-weight:400;
+  line-height:1.08;
+  max-width:500px;
+}
+.media-note{display:block;font-size:9px;letter-spacing:.06em;color:#d5d8cf;margin-top:10px}
+.frame-corner{position:absolute;width:20px;height:20px;border-color:rgba(239,234,220,.55);border-style:solid;pointer-events:none}
+.corner-tl{left:12px;top:12px;border-width:1px 0 0 1px}
+.corner-tr{right:12px;top:12px;border-width:1px 1px 0 0}
+.corner-bl{left:12px;bottom:12px;border-width:0 0 1px 1px}
+.corner-br{right:12px;bottom:12px;border-width:0 1px 1px 0}
+.play-mark{
+  position:absolute;
+  right:23px;
+  top:21px;
+  width:41px;
+  height:41px;
+  border:1px solid rgba(244,239,228,.72);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#f4efe4;
+  font-size:13px;
+  padding-left:3px;
+}
+.showreel-frame{min-height:340px;aspect-ratio:16/9}
+.showreel-aside{
+  padding:25px 0 5px 25px;
+  border-left:1px solid var(--rule);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.showreel-aside h2{
+  font-family:var(--serif);
+  font-size:clamp(28px,3.2vw,42px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.03em;
+  margin:0 0 15px;
+}
+.showreel-aside p{font-size:13px;line-height:1.7;color:#4c4d47;margin:0 0 12px}
+.format-note{
+  font-size:9px!important;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted)!important;
+  border-top:1px solid var(--rule);
+  padding-top:14px;
+  margin-top:8px!important;
+}
+
+/* Intro */
+.intro{padding:82px 0}
+.intro-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr);
+  gap:9%;
+  align-items:start;
+}
+.intro .body-copy{font-size:20px}
+.intro-aside{border-left:1px solid var(--rule);padding:5px 0 5px 28px}
+.intro-aside p{font-size:14px;color:#4c4d47;margin:0 0 18px}
+.intro-aside strong{
+  font-family:var(--serif);
+  font-size:25px;
+  font-weight:400;
+  line-height:1.25;
+  display:block;
+  margin-bottom:12px;
+}
+
+/* Programming */
+.collections{padding:78px 0}
+.collections-head,.platform-head,.process-head,.partners-head,.uses-head{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8%;
+  align-items:end;
+  margin-bottom:34px;
+}
+.collections-head h2,.platform-head h2,.process-head h2,.partners-head h2,.uses-head h2{margin-bottom:0}
+.collections-head>p,.platform-head>p,.process-head>p,.partners-head>p,.uses-head>p{
+  font-size:14px;
+  max-width:530px;
+  color:#4c4d47;
+  margin:0 0 4px;
+}
+.collection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+.collection-card{border-top:1px solid var(--rule);padding-top:15px;min-width:0}
+.collection-card .media-placeholder{aspect-ratio:16/9;min-height:0;margin:0 0 17px}
+.collection-card .media-copy{padding:15px}
+.collection-card .media-tag{font-size:8px;margin-bottom:6px}
+.collection-card .media-title{font-size:21px}
+.collection-card .media-note{font-size:8px;margin-top:7px}
+.collection-number{font-size:9px;letter-spacing:.15em;color:var(--muted)}
+.collection-card h3{
+  font-family:var(--serif);
+  font-size:28px;
+  line-height:1.1;
+  font-weight:400;
+  letter-spacing:-.025em;
+  margin:13px 0 10px;
+}
+.collection-card p{font-size:13px;line-height:1.65;color:#4c4d47;margin:0;max-width:340px}
+.collection-foot{
+  margin:30px 0 0;
+  padding-top:17px;
+  border-top:1px solid var(--rule);
+  font-family:var(--serif);
+  font-size:clamp(19px,2vw,24px);
+  line-height:1.4;
+  max-width:880px;
+}
+
+/* Arts and culture */
+.arts{padding:78px 0;background:#eae6dd}
+.arts-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  gap:8%;
+  align-items:center;
+}
+.arts-main-visual{aspect-ratio:4/5;min-height:420px}
+.arts-copy h2{margin-bottom:22px}
+.arts-copy .body-copy{font-size:18px}
+.arts-copy .body-copy p{margin:0 0 15px}
+.arts-formats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;margin-top:28px}
+.arts-formats article{border-top:1px solid #c3beb3;padding-top:12px}
+.arts-formats strong{
+  display:block;
+  font-family:var(--serif);
+  font-size:20px;
+  line-height:1.12;
+  font-weight:400;
+  margin-bottom:6px;
+}
+.arts-formats span{font-size:11px;line-height:1.6;color:#4c4d47;display:block}
+.arts-triptych{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.arts-triptych .media-placeholder{aspect-ratio:5/4;min-height:0}
+.arts-triptych .media-copy{padding:14px}
+.arts-triptych .media-title{font-size:20px}
+.arts-triptych .media-tag{font-size:8px}
+.media-caption{font-size:10px;line-height:1.5;color:var(--muted);margin:11px 0 0}
+
+/* Editorial promise */
+.promise{padding:78px 0 84px;background:var(--deep);color:var(--cream);border-bottom:1px solid #43524a}
+.promise .section-label{color:#c8c2b2}
+.promise-inner{max-width:960px}
+.promise-inner h2{font-size:clamp(38px,5vw,66px);margin:0 0 23px;color:var(--cream)}
+.promise-inner>p:last-child{
+  font-family:var(--serif);
+  font-size:21px;
+  line-height:1.55;
+  max-width:790px;
+  color:#d7dbd2;
+  margin:0;
+}
+
+/* Production credibility */
+.production{padding:78px 0;background:var(--paper)}
+.production-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:9%;
+  align-items:start;
+}
+.production-grid h2{margin:0}
+.production-copy{
+  max-width:700px;
+  font-family:var(--serif);
+  font-size:19px;
+  line-height:1.62;
+  color:#363732;
+}
+.production-copy p{margin:0 0 17px}
+.production-copy p:last-child{margin-bottom:0}
+.production-note{
+  margin-top:23px;
+  padding-top:17px;
+  border-top:1px solid var(--rule);
+  font-family:var(--sans);
+  font-size:12px;
+  line-height:1.7;
+  color:#55564f;
+}
+
+/* Platform and reach */
+.platform{padding:78px 0}
+.platform-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:34px}
+.platform-list article{border-top:1px solid var(--rule);padding-top:16px}
+.platform-list .step{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.platform-list h3{
+  font-family:var(--serif);
+  font-size:26px;
+  line-height:1.12;
+  font-weight:400;
+  letter-spacing:-.02em;
+  margin:13px 0 10px;
+}
+.platform-list p{font-size:13px;line-height:1.68;color:#4c4d47;margin:0}
+.reach{margin-top:58px;padding-top:30px;border-top:1px solid var(--rule)}
+.reach-head{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:9%;
+  align-items:start;
+}
+.reach-head h3{
+  font-family:var(--serif);
+  font-size:clamp(32px,3.8vw,46px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.03em;
+  margin:0;
+}
+.reach-head p{font-size:13px;line-height:1.75;color:#4c4d47;margin:0;max-width:680px}
+.reach-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:30px}
+.reach-group{border-top:1px solid var(--rule);padding-top:14px}
+.reach-group h4{
+  font-size:9px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:500;
+  margin:0 0 13px;
+}
+.reach-group ul{list-style:none;padding:0;margin:0}
+.reach-group li{
+  font-family:var(--serif);
+  font-size:19px;
+  line-height:1.5;
+  margin:0 0 4px;
+}
+.reach-caveat{font-size:11px;line-height:1.65;color:var(--muted);margin:25px 0 0;max-width:900px}
+
+/* Applications */
+.uses{padding:78px 0;background:#eae6dd}
+.uses-head{margin-bottom:30px}
+.uses-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.uses-grid article{border-top:1px solid #c3beb3;padding-top:16px}
+.uses-grid article span{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.uses-grid h3{
+  font-family:var(--serif);
+  font-size:24px;
+  line-height:1.12;
+  font-weight:400;
+  letter-spacing:-.02em;
+  margin:13px 0 9px;
+}
+.uses-grid article p{font-size:13px;line-height:1.65;color:#4c4d47;margin:0}
+
+/* Process */
+.process{padding:78px 0}
+.process-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);
+  gap:9%;
+  align-items:start;
+}
+.process-list{list-style:none;margin:0;padding:0;counter-reset:step}
+.process-list li{
+  counter-increment:step;
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:15px;
+  padding:18px 0;
+  border-top:1px solid var(--rule);
+}
+.process-list li:before{
+  content:"0" counter(step);
+  font-size:10px;
+  letter-spacing:.1em;
+  color:var(--muted);
+  padding-top:3px;
+}
+.process-list strong{display:block;font-size:13px;font-weight:600;margin-bottom:4px}
+.process-list p{font-size:12px;color:#4c4d47;line-height:1.65;margin:0}
+.process-note{background:var(--panel);padding:30px}
+.process-note h3{
+  font-family:var(--serif);
+  font-size:31px;
+  font-weight:400;
+  line-height:1.12;
+  margin:0 0 15px;
+}
+.process-note p{font-size:13px;line-height:1.7;color:#4c4d47;margin:0 0 13px}
+.process-note p:last-child{margin-bottom:0}
+
+/* Partners */
+.partners{padding:78px 0}
+.partners-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.partner-type{padding:23px 24px 25px;border:1px solid var(--rule);background:rgba(255,255,255,.13)}
+.partner-type .type-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.partner-type h3{
+  font-family:var(--serif);
+  font-size:29px;
+  line-height:1.1;
+  font-weight:400;
+  margin:13px 0 10px;
+}
+.partner-type p{font-size:13px;line-height:1.7;color:#4c4d47;margin:0}
+.partner-foot{font-family:var(--serif);font-size:19px;line-height:1.55;color:#41423c;max-width:850px;margin:29px 0 0}
+
+/* Contact and footer */
+.contact{background:var(--paper);padding:78px 0}
+.contact-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.contact h2{
+  font-family:var(--serif);
+  font-size:clamp(34px,4vw,48px);
+  font-weight:400;
+  letter-spacing:-.03em;
+  margin:0 0 12px;
+}
+.contact p{margin:0;color:#55564f;max-width:690px}
+.contact-link{
+  display:inline-block;
+  border-bottom:1px solid #65665e;
+  padding:12px 0;
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.footer{padding:28px 0 34px;border-top:1px solid var(--rule)}
+.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:25px}
+.footer-brand{font-family:var(--serif);font-size:29px}
+.footer-sub{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
+.footer-meta{text-align:right;font-size:10px;line-height:1.9;letter-spacing:.06em;color:#55564f}
+.footer-meta a{text-decoration:none}
+.image-disclosure{padding:22px 0 24px}
+.image-disclosure .section-label{margin-bottom:6px}
+.image-disclosure p{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 5px}
+
+/* Responsive */
+@media(max-width:850px){
+  .container{width:min(calc(100% - 38px),700px)}
+  .header-inner{align-items:flex-start;flex-direction:column;gap:17px}
+  .nav{gap:13px 24px;flex-wrap:wrap}
+  .hero{min-height:450px}
+  .hero-index{display:none}
+  .section,.collections,.platform,.uses,.process,.partners,.production{padding:64px 0}
+  .intro,.arts{padding:64px 0}
+  .intro-grid,.process-grid,.production-grid,.reach-head{grid-template-columns:1fr;gap:25px}
+  .showreel-grid,.arts-grid{grid-template-columns:1fr;gap:25px}
+  .showreel-frame{min-height:260px}
+  .showreel-aside{border-left:0;border-top:1px solid var(--rule);padding:23px 0 0}
+  .arts-main-visual{aspect-ratio:16/9;min-height:0}
+  .intro-aside{border-left:0;border-top:1px solid var(--rule);padding:22px 0 0}
+  .collections-head,.platform-head,.process-head,.partners-head,.uses-head{grid-template-columns:1fr;gap:20px}
+  .collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .platform-list,.reach-groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .uses-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .contact-inner{grid-template-columns:1fr;gap:18px}
+  .footer-inner{flex-direction:column}
+  .footer-meta{text-align:left}
+}
+@media(max-width:600px){
+  .container{width:calc(100% - 30px)}
+  .brand{font-size:30px}
+  .nav{gap:12px 18px}
+  .nav a{font-size:9px}
+  .hero{min-height:435px}
+  .hero-inner{padding:58px 0}
+  .hero h1{font-size:clamp(42px,11vw,60px)}
+  .hero .hero-lead{font-size:20px}
+  .section h2,.intro h2,.collections-head h2,.platform-head h2,
+  .process-head h2,.partners-head h2,.uses-head h2,.production-grid h2{font-size:39px}
+  .collection-grid,.platform-list,.reach-groups,.uses-grid,.partners-grid{grid-template-columns:1fr}
+  .collection-card{padding-bottom:6px}
+  .showreel{padding:20px 0 52px}
+  .showreel-frame{min-height:220px}
+  .showreel-aside h2{font-size:34px}
+  .arts-formats,.arts-triptych{grid-template-columns:1fr}
+  .arts-triptych .media-placeholder{aspect-ratio:16/9}
+  .arts-copy h2{font-size:39px}
+  .media-placeholder .media-copy{padding:16px}
+  .media-placeholder .media-title{font-size:24px}
+  .promise{padding:59px 0 64px}
+  .promise-inner h2{font-size:42px}
+  .process-note{padding:25px 22px}
+  .contact{padding:55px 0}
+  .contact-link{white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="https://p1lab.net/">
+      P1Lab
+      <small>Independent Research &amp; Publishing</small>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#collections">Programming</a>
+      <a href="#production">Production</a>
+      <a href="#platform">Platform</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-label="Florida Field and Ocean">
+  <div class="container hero-inner">
+    <p class="hero-overline">P1Lab / Documentary Media</p>
+    <h1>FLORIDA FIELD <span>&amp; OCEAN</span></h1>
+    <p class="hero-lead">Florida, carefully documented.</p>
+    
+
+
+<p class="hero-note">
+  A statewide documentary streaming channel exploring the people, places,
+  industries, landscapes, and ideas that shape Florida through original
+  films and carefully curated series. Serious documentary films and
+  considered programming, available through supported streaming platforms.
+</p>
+
+
+    <div class="hero-index">A P1Lab initiative / Florida, USA</div>
+  </div>
+</section>
+
+<!-- Replace the designed placeholder with an approved film still or trailer. -->
+<section class="showreel" aria-label="Featured documentary preview">
+  <div class="container showreel-grid">
+    <div class="media-placeholder showreel-frame tone-water" role="img"
+     aria-label="Florida Field and Ocean featured documentary">
+      <img class="media-image" src="featured-film.jpg" alt="Florida Field and Ocean documentary still">
+  <span class="frame-corner corner-tl"></span>
+  <span class="frame-corner corner-tr"></span>
+  <span class="frame-corner corner-bl"></span>
+  <span class="frame-corner corner-br"></span>
+  <span class="play-mark" aria-hidden="true">▶</span>
+  <div class="media-copy">
+    <span class="media-tag"></span>
+    <strong class="media-title">A state worth seeing.<br>A culture worth hearing.</strong>
+  </div>
+</div>
+    <aside class="showreel-aside">
+      <p class="section-label">Moving image / sound / place</p>
+      <h2>Documentary, not wallpaper.</h2>
+      <p>
+        Films shaped by image, voice, music, natural sound, and the cadence
+        of a place. From major undertakings to small, telling details, each
+        production gives viewers something worth their attention.
+      </p>
+      <p class="format-note">
+        Long-form films · Artist portraits · Place-based stories · Sound-led field pieces
+      </p>
+    </aside>
+  </div>
+</section>
+
+<section class="intro" id="the-idea">
+  <div class="container intro-grid">
+    <div>
+      <p class="section-label">Florida Field &amp; Ocean / The idea</p>
+      <h2>A place deserves<br>more than a profile.</h2>
+      <div class="body-copy">
+        <p>
+          Florida is more than a destination or a market. It is a collection
+          of landscapes, communities, industries, crafts, institutions, and
+          ambitions—some celebrated, others rarely documented with the care
+          they deserve.
+        </p>
+        <p>
+          Florida Field &amp; Ocean is a documentary initiative built to make
+          those stories visible. Its films examine the work itself: the
+          decisions, knowledge, people, places, and material details that
+          reveal why something matters.
+        </p>
+        <p>
+          From a major development or a remarkable hotel to a family farm,
+          food producer, custom yacht, or distinctive cultural institution,
+          each subject is approached as a story worth telling properly.
+        </p>
+      </div>
+    </div>
+    <aside class="intro-aside">
+      <strong>A statewide documentary lens. An independent editorial identity.</strong>
+      <p>
+        Not a news channel, a video directory, or a stream of short
+        advertisements. Florida Field &amp; Ocean is conceived as a curated
+        home for serious, visually accomplished documentaries and series
+        about the state.
+      </p>
+      <p>
+        Commissioned productions give participating organizations useful
+        media assets while contributing to a wider record of Florida's
+        cultural, commercial, and natural life.
+      </p>
+      <a class="inline-link" href="#contact">Discuss a Commission</a>
+    </aside>
+  </div>
+</section>
+
+<section class="collections" id="collections">
+  <div class="container">
+    <div class="collections-head">
+      <div>
+        <p class="section-label">Programming / A state in many dimensions</p>
+        <h2>Many subjects.<br>One sense of place.</h2>
+      </div>
+      <p>
+        The channel is statewide in outlook. Programming can emerge
+        wherever a distinctive story, a compelling subject, or a committed
+        partner makes a worthwhile production possible.
+      </p>
+    </div>
+
+    <div class="collection-grid">
+
+  <article class="collection-card">
+    <div class="media-placeholder tone-built" role="img"
+         aria-label="Florida architecture and development">
+      <img class="media-image" src="florida-built.jpg" alt="Florida architecture and development">
+      <span class="frame-corner corner-tl"></span>
+      <span class="frame-corner corner-tr"></span>
+      <div class="media-copy">
+        <span class="media-tag"></span>
+        <strong class="media-title">Built form &amp; place</strong>
+      </div>
+    </div>
+    <span class="collection-number">01 / BUILT ENVIRONMENT</span>
+    <h3>Florida Built</h3>
+    <p>Architecture, development, landscape, construction, restoration, distinctive properties, and the ideas that shape the places where Floridians live and work.</p>
+  </article>
+
+  <article class="collection-card">
+    <div class="media-placeholder tone-land" role="img"
+         aria-label="Florida agriculture and food">
+      <img class="media-image" src="florida-cultivated.jpg" alt="Florida agriculture and food">
+      <span class="frame-corner corner-tl"></span>
+      <span class="frame-corner corner-tr"></span>
+      <div class="media-copy">
+        <span class="media-tag"></span>
+        <strong class="media-title">Land &amp; cultivation</strong>
+      </div>
+    </div>
+    <span class="collection-number">02 / LAND &amp; FOOD</span>
+    <h3>Florida Cultivated</h3>
+    <p>Agriculture, specialty crops, farms, food producers, gardens, agritourism, land stewardship, and the knowledge behind what Florida grows and makes.</p>
+  </article>
+
+  <article class="collection-card">
+    <div class="media-placeholder tone-urban" role="img"
+         aria-label="Florida hotels and destinations">
+      <img class="media-image" src="florida-hospitality.jpg" alt="Florida hotels and destinations">
+      <span class="frame-corner corner-tl"></span>
+      <span class="frame-corner corner-tr"></span>
+      <div class="media-copy">
+        <span class="media-tag"></span>
+        <strong class="media-title">Hospitality &amp; destination</strong>
+      </div>
+    </div>
+    <span class="collection-number">03 / HOSPITALITY &amp; PLACE</span>
+    <h3>Florida Hospitality</h3>
+    <p>Hotels, resorts, destinations, cultural attractions, and distinctive experiences—documented through the people, design, and work that bring them to life.</p>
+  </article>
+
+  <article class="collection-card">
+    <div class="media-placeholder tone-art" role="img"
+         aria-label="Florida makers and specialist trades">
+      <img class="media-image" src="florida-made.jpg" alt="Florida makers and specialist trades">
+      <span class="frame-corner corner-tl"></span>
+      <span class="frame-corner corner-tr"></span>
+      <div class="media-copy">
+        <span class="media-tag"></span>
+        <strong class="media-title">Making &amp; know-how</strong>
+      </div>
+    </div>
+    <span class="collection-number">04 / MAKING &amp; KNOW-HOW</span>
+    <h3>Florida Made</h3>
+    <p>Manufacturers, specialist trades, craftspeople, workshops, materials, and technical expertise essential to the state but often unseen.</p>
+  </article>
+
+  <article class="collection-card">
+    <div class="media-placeholder tone-water" role="img"
+         aria-label="Florida yachts and marine industries">
+      <img class="media-image" src="florida-water.jpg" alt="Florida yachts and marine industries">
+      <span class="frame-corner corner-tl"></span>
+      <span class="frame-corner corner-tr"></span>
+      <div class="media-copy">
+        <span class="media-tag"></span>
+        <strong class="media-title">On the water</strong>
+      </div>
+    </div>
+    <span class="collection-number">05 / MARINE &amp; COASTAL</span>
+    <h3>Florida on the Water</h3>
+    <p>Yacht construction, refit, restoration, marine engineering, fishing, coastal communities, and the skilled work that connects Florida to the water.</p>
+  </article>
+
+  <article class="collection-card">
+    <div class="media-placeholder tone-art" role="img"
+         aria-label="Florida artists and cultural life">
+      <img class="media-image" src="florida-creates.jpg" alt="Florida artists and cultural life">
+      <span class="frame-corner corner-tl"></span>
+      <span class="frame-corner corner-tr"></span>
+      <div class="media-copy">
+        <span class="media-tag"></span>
+        <strong class="media-title">Art &amp; cultural life</strong>
+      </div>
+    </div>
+    <span class="collection-number">06 / ARTS &amp; CULTURE</span>
+    <h3>Florida Creates</h3>
+    <p>Visual artists, musicians, performers, writers, designers, architects, craftspeople, and the cultural lives built across the state.</p>
+  </article>
+
+  <article class="collection-card">
+    <div class="media-placeholder tone-urban" role="img"
+         aria-label="Florida enterprise and innovation">
+      <img class="media-image" src="florida-forward.jpg" alt="Florida enterprise and innovation">
+      <span class="frame-corner corner-tl"></span>
+      <span class="frame-corner corner-tr"></span>
+      <div class="media-copy">
+        <span class="media-tag"></span>
+        <strong class="media-title">Enterprise &amp; ideas</strong>
+      </div>
+    </div>
+    <span class="collection-number">07 / ENTERPRISE &amp; IDEAS</span>
+    <h3>Florida Forward</h3>
+    <p>Businesses, institutions, investment, infrastructure, innovation, and the people shaping the state's next chapter.</p>
+  </article>
+
+</div>
+
+<p class="collection-foot">
+  The subjects are varied. The standard remains consistent: clear
+  editorial purpose, strong visual storytelling, informed research,
+  and respect for the viewer's attention.
+</p>
+
+<section class="arts" id="arts">
+  <div class="container">
+    <div class="arts-grid">
+      <div class="media-placeholder arts-main-visual tone-art" role="img" aria-label="Placeholder for a Florida artist at work">
+      <img class="media-image" src="florida-artist.jpg" alt="Florida artist at work">
+        <span class="frame-corner corner-tl"></span><span class="frame-corner corner-tr"></span>
+        <span class="frame-corner corner-bl"></span><span class="frame-corner corner-br"></span>
+        <div class="media-copy">
+          <span class="media-tag">Portrait / process / place</span>
+          <strong class="media-title">The work. The person. The world around them.</strong>
+        </div>
+      </div>
+
+      <div class="arts-copy">
+        <p class="section-label">Florida Creates / Arts &amp; culture</p>
+        <h2>Artists are part of the story of a place.</h2>
+        <div class="body-copy">
+          <p>
+            Florida Field &amp; Ocean makes room for artists, musicians,
+            performers, writers, architects, designers, and craftspeople
+            whose work gives the state a cultural life as well as an economy.
+          </p>
+          <p>
+            Films can move from a quiet studio visit to a rehearsal, a
+            performance, a conversation, or a portrait of a place through
+            the eyes of the people who make its culture. The treatment is
+            intimate and attentive: strong images, meaningful sound, and
+            enough time for a person and their work to emerge.
+          </p>
+          <p>
+            The aim is not celebrity coverage. It is a lasting record of
+            the imagination, skill, and individuality found across Florida.
+          </p>
+        </div>
+
+        <div class="arts-formats">
+          <article><strong>Artist portraits</strong><span>Visual artists, writers, makers, architects, and designers at work.</span></article>
+          <article><strong>Music &amp; performance</strong><span>Rehearsals, live performance, sound, and the places where culture happens.</span></article>
+          <article><strong>Conversations</strong><span>Thoughtful encounters with people whose lives illuminate a wider story.</span></article>
+          <article><strong>Short field films</strong><span>Brief, observed stories of a community, craft, landscape, or local institution.</span></article>
+        </div>
+      </div>
+    </div>
+
+    <div class="arts-triptych" aria-label="Examples of visual and audio-led program formats">
+      <div class="media-placeholder tone-art" role="img" aria-label="Placeholder for a Florida visual artist in a studio">
+      <img class="media-image" src="arts-studio.jpg" alt="Florida visual artist working in a studio">
+        <span class="frame-corner corner-tl"></span><span class="frame-corner corner-tr"></span>
+        <div class="media-copy"><span class="media-tag">Program form / 01</span><strong class="media-title">In the studio</strong></div>
+      </div>
+      <div class="media-placeholder tone-urban" role="img" aria-label="Placeholder for a musician or performer rehearsing">
+      <img class="media-image" src="arts-performance.jpg" alt="Florida musician or performer rehearsing">
+        <span class="frame-corner corner-tl"></span><span class="frame-corner corner-tr"></span>
+        <div class="media-copy"><span class="media-tag">Program form / 02</span><strong class="media-title">In performance</strong></div>
+      </div>
+      <div class="media-placeholder tone-land" role="img" aria-label="Placeholder for a Florida landscape or community">
+      <img class="media-image" src="arts-place.jpg" alt="Florida landscape or community">
+        <span class="frame-corner corner-tl"></span><span class="frame-corner corner-tr"></span>
+        <div class="media-copy"><span class="media-tag">Program form / 03</span><strong class="media-title">A sense of place</strong></div>
+      </div>
+    </div>
+    <p class="media-caption">
+      The visual approach spans long-form documentaries, short portraits,
+      performances, conversations, and sound-led observations of Florida's
+      people and places.
+    </p>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="container promise-inner">
+    <p class="section-label">The principle / Local in outlook. Serious in treatment.</p>
+    <h2>Not content for the feed.<br>A record of the place.</h2>
+    <p>
+      Florida Field &amp; Ocean takes the long view. It draws on the best
+      traditions of arts-and-culture television and place-rooted human
+      stories: attentive observation, strong visual composition, intelligent
+      conversation, and sound that belongs to the subject. The aim is to make
+      Florida's culture, expertise, enterprise, landscapes, and achievements
+      available on demand—not to chase a national attention cycle.
+    </p>
+  </div>
+</section>
+
+<section class="production" id="production">
+  <div class="container production-grid">
+    <div>
+      <p class="section-label">Production / Editorial / Delivery</p>
+      <h2>Experience behind<br>the work.</h2>
+    </div>
+    <div class="production-copy">
+      <p>
+        Florida Field &amp; Ocean is produced through P1Lab's coordinated
+        production operation, combining internal personnel with specialist
+        production and post-production teams assembled according to the
+        requirements of each project.
+      </p>
+      <p>
+        The collective experience available to our productions spans
+        documentary filmmaking, broadcast, editorial, post-production,
+        and digital media delivery. The production model draws on a
+        broad range of professional experience, matching the team and
+        workflow to the subject rather than imposing a single template
+        on every film.
+      </p>
+      <p>
+        Each project is structured around its subject, research and access
+        requirements, intended audience, production scope, and agreed
+        deliverables. Editorial development, filming, sound, post-production,
+        finishing, and delivery are coordinated as parts of a single
+        production process.
+      </p>
+      <p>
+        We place the emphasis on the finished work and the capabilities
+        required to deliver it. Project scope, production requirements,
+        and relevant delivery arrangements are discussed directly with
+        prospective commissioning partners.
+      </p>
+      <div class="production-note">
+        Production teams and specialist resources are assembled to suit
+        individual projects. Relevant capabilities and deliverables can
+        be discussed in the context of a specific commission.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="platform" id="platform">
+  <div class="container">
+    <div class="platform-head">
+      <div>
+        <p class="section-label">The platform / Production plus participation</p>
+        <h2>A documentary.<br>A working business asset.</h2>
+      </div>
+      <p>
+        A commissioning partner helps bring a film into being and receives
+        a defined package of usable media assets. The platform provides a
+        curated on-demand home for the work and a broader editorial context
+        beyond the partner's own website.
+      </p>
+    </div>
+
+    <div class="platform-list">
+      <article>
+        <span class="step">01 / Commission</span>
+        <h3>Make the story worth watching.</h3>
+        <p>
+          We shape a film around a project, place, process, enterprise,
+          or body of expertise. Production is designed around the subject,
+          not a generic corporate-video template.
+        </p>
+      </article>
+      <article>
+        <span class="step">02 / Equip</span>
+        <h3>Give the partner more to use.</h3>
+        <p>
+          Agreed deliverables can include a finished film, shorter edits,
+          stills, a designed publication, and web-ready materials for
+          meetings, presentations, premises, events, and digital communications.
+        </p>
+      </article>
+      <article>
+        <span class="step">03 / Publish</span>
+        <h3>Keep the work available.</h3>
+        <p>
+          With publication and usage rights defined in advance, authorized
+          films can become part of the Florida Field &amp; Ocean catalogue
+          and be presented through a branded, on-demand viewing experience.
+        </p>
+      </article>
+    </div>
+
+    <div class="reach">
+      <div class="reach-head">
+        <div>
+          <p class="section-label">Distribution / Viewing environments</p>
+          <h3>Designed for screens<br>large and small.</h3>
+        </div>
+        <p>
+          The distribution model is designed to support viewing
+          across web browsers, mobile devices, and connected televisions.
+          The intended reach includes the major environments below, subject
+          to app deployment, platform approval, technical requirements,
+          and service availability at launch.
+        </p>
+      </div>
+
+      <div class="reach-groups">
+        <div class="reach-group">
+          <h4>01 / Web</h4>
+          <ul>
+            <li>Desktop browsers</li>
+            <li>Mobile browsers</li>
+            <li>Responsive HTML5 viewing</li>
+          </ul>
+        </div>
+
+        <div class="reach-group">
+          <h4>02 / Mobile</h4>
+          <ul>
+            <li>Apple iPhone and iPad</li>
+            <li>iOS apps</li>
+            <li>Android apps</li>
+          </ul>
+        </div>
+
+        <div class="reach-group">
+          <h4>03 / Connected television</h4>
+          <ul>
+            <li>Apple TV</li>
+            <li>Android TV / Google TV</li>
+            <li>Amazon Fire TV</li>
+            <li>Roku</li>
+            <li>Samsung Tizen TV</li>
+            <li>LG webOS TV</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="reach-caveat">
+        Launching Q1 2027, Florida Field & Ocean is building a connected documentary media platform for web, mobile, and television.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="uses" id="uses">
+  <div class="container">
+    <div class="uses-head">
+      <div>
+        <p class="section-label">Beyond the premiere / Made to be used</p>
+        <h2>Available when<br>the story is needed.</h2>
+      </div>
+      <p>
+        The platform is designed to make documentary work useful to the
+        organizations that commission it—and available within a coherent
+        Florida collection. Its planned model is free-to-view rather than
+        subscription-based.
+      </p>
+    </div>
+
+    <div class="uses-grid">
+      <article>
+        <span>01 / PRESENTATIONS</span>
+        <h3>Bring the work into the room.</h3>
+        <p>Use the film in a client meeting, sales presentation, investor conversation, or project briefing, subject to the agreed rights.</p>
+      </article>
+      <article>
+        <span>02 / PLACES &amp; VENUES</span>
+        <h3>Let people explore.</h3>
+        <p>Make a documentary available in a showroom, visitor space, hotel, reception area, or other suitable setting.</p>
+      </article>
+      <article>
+        <span>03 / WEB &amp; EVENTS</span>
+        <h3>Extend the conversation.</h3>
+        <p>Use approved versions across company websites, events, trade gatherings, partner communications, and follow-up with prospective clients.</p>
+      </article>
+      <article>
+        <span>04 / THE COLLECTION</span>
+        <h3>Give the story a home.</h3>
+        <p>Place the work in a curated documentary context that links individual organizations to the wider story of Florida.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="approach">
+  <div class="container">
+    <div class="process-head">
+      <div>
+        <p class="section-label">From subject to screen</p>
+        <h2>A considered process.<br>A defined result.</h2>
+      </div>
+      <p>
+        Every project begins with a worthwhile subject and a clear
+        understanding of what the commissioning partner needs the
+        finished work to do.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <ol class="process-list">
+        <li>
+          <div>
+            <strong>Define the subject and purpose</strong>
+            <p>Identify the story, the people and places involved, the intended viewers, and the business or institutional uses the production should support.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Develop the editorial treatment</strong>
+            <p>Establish the point of view, interview approach, visual plan, research requirements, access, and production scope.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Produce and finish the work</strong>
+            <p>Coordinate filming, interviews, research, location sound, music, editing, titles, captions, and any companion photography or publication included in the commission.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Deliver, publish, and put it to work</strong>
+            <p>Deliver the agreed assets and publish the authorized version within the platform, with rights, approvals, and permitted uses clearly established.</p>
+          </div>
+        </li>
+      </ol>
+
+      <aside class="process-note">
+        <p class="section-label">A scope built around the story</p>
+        <h3>One film can become a family of assets.</h3>
+        <p>
+          Depending on the project, a commission may include a principal
+          documentary, short-form edits, selected still photography, a
+          designed book, or a dedicated web presentation. Scope is
+          established around the subject and the partner's actual requirements.
+        </p>
+        <p>
+          Factual review, permissions, music and image licenses, source-footage
+          access, platform use, and other rights are addressed as part of
+          the agreement—not left to assumption.
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="partners" id="partners">
+  <div class="container">
+    <div class="partners-head">
+      <div>
+        <p class="section-label">Participation / The people who make the record possible</p>
+        <h2>Built with partners.<br>Made for the long view.</h2>
+      </div>
+      <p>
+        Florida Field &amp; Ocean brings together organizations with
+        meaningful stories and a shared interest in documenting the state
+        well. Participation is structured around commissioned work, clear
+        deliverables, and an editorial platform with a consistent identity.
+      </p>
+    </div>
+
+    <div class="partners-grid">
+      <article class="partner-type">
+        <span class="type-label">01 / Commissioning partners</span>
+        <h3>Businesses with a story to tell.</h3>
+        <p>
+          Developers, yacht builders, hotels, farms, manufacturers,
+          destinations, and other organizations whose projects, knowledge,
+          or work merit a substantial documentary treatment.
+        </p>
+      </article>
+      <article class="partner-type">
+        <span class="type-label">02 / Founding and presenting partners</span>
+        <h3>Organizations with a statewide view.</h3>
+        <p>
+          Companies, institutions, and regional or industry organizations
+          that wish to support a body of programming, a subject collection,
+          or a stronger documentary record of Florida.
+        </p>
+      </article>
+    </div>
+
+    <p class="partner-foot">
+      The aim is not to turn the channel into an inventory of advertisements.
+      Partners fund valuable production; the editorial treatment gives each
+      film a reason to be watched beyond the transaction that made it possible.
+    </p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-inner">
+    <div>
+      <p class="section-label">Florida Field &amp; Ocean / Begin a conversation</p>
+      <h2>What in Florida deserves to be documented?</h2>
+      <p>
+        We welcome conversations with commissioning partners, institutions,
+        and potential founding partners. Start with the subject, project,
+        place, or expertise you believe deserves a considered documentary record.
+      </p>
+    </div>
+    <a class="contact-link" href="mailto:publisher@p1lab.net?subject=Florida%20Field%20%26%20Ocean%20Enquiry">
+      Discuss a Florida Field &amp; Ocean Project →
+    </a>
+  </div>
+</section>
+
+
+<section class="image-disclosure">
+  <div class="container">
+    <p class="section-label">Project status &amp; image disclosure</p>
+
+    <p>
+      Florida Field &amp; Ocean is a P1Lab documentary media initiative
+      devoted to the places, people, environments, and material culture
+      of Florida.
+    </p>
+
+    <p>
+  <strong>For this project, documentary integrity governs the
+  image-making process.</strong> Original image conception, art
+  direction, photography, documentary footage, and visual asset
+  selection are human-directed. Generative tools are used only
+  for defined post-production tasks: compositing, including the
+  creation of backgrounds and the integration of two or more
+  existing images, and mastering. They are not used to originate
+  visual concepts, direct photography, or generate documentary
+  source imagery.
+</p>
+
+    <p>
+      The visual fields shown here communicate the intended composition,
+      subject matter, and presentation of the finished work. Final
+      programming, platform deployment, distribution, and partner
+      participation are established for each production. Viewing
+      availability depends on the selected platforms, technical
+      requirements, applicable approvals, and written agreements.
+      Partner usage rights are defined separately for each production.
+    </p>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">P1Lab</div>
+      <div class="footer-sub">Independent Research &amp; Publishing</div>
+    </div>
+    <div class="footer-meta">
+      <a href="https://p1lab.net/">p1lab.net</a> &nbsp;·&nbsp;
+      <a href="https://p1lab.net/FIELD-INDEX.html">FIELD Collection</a><br>
+      <a href="mailto:publisher@p1lab.net">publisher@p1lab.net</a><br>
+      © 2026 P1Lab
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
