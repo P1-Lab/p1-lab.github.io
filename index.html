@@ -2,1722 +2,1045 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>P1Lab — Independent Research &amp; Publishing | Project Book, FIELD &amp; GrüvType</title>
-
-<meta name="description" content="P1Lab creates focused, image-led books for companies through Project Book, publishes distinctive subjects through its curated FIELD collection, and develops independent research and publishing programs.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-    --paper: #f4f1ea;
-    --ink: #191917;
-    --muted: #6f6c64;
-    --rule: #c9c4ba;
-    --accent: #8b2e24;
-    --max: 1280px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Inter", sans-serif;
-    font-size: 15px;
-    line-height: 1.65;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--accent);
-}
-
-.site {
-    width: min(100% - 48px, var(--max));
-    margin: 0 auto;
-}
-
-/* --------------------------------------------------
-   HEADER
--------------------------------------------------- */
-
-header {
-    border-bottom: 1px solid var(--rule);
-}
-
-.header-inner {
-    min-height: 78px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.brand {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-}
-
-.brand span {
-    font-family: "Inter", sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    margin-left: 12px;
-    color: var(--muted);
-}
-
-nav {
-    display: flex;
-    gap: 28px;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-nav a {
-    border-bottom: 1px solid transparent;
-    padding-bottom: 3px;
-}
-
-nav a:hover {
-    border-color: var(--ink);
-    color: var(--ink);
-}
-
-/* --------------------------------------------------
-   HERO
--------------------------------------------------- */
-
-.hero {
-    padding: 112px 0 105px;
-    border-bottom: 1px solid var(--rule);
-}
-
-.kicker {
-    margin-bottom: 26px;
-    font-size: 11px;
-    line-height: 1;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.hero h1 {
-    max-width: 920px;
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(58px, 8vw, 112px);
-    font-weight: 500;
-    line-height: 0.91;
-    letter-spacing: -0.045em;
-}
-
-.hero h1 span {
-    display: block;
-}
-
-.hero-copy {
-    max-width: 650px;
-    margin-top: 42px;
-    font-size: 18px;
-    line-height: 1.65;
-}
-
-.hero-note {
-    margin-top: 34px;
-    font-size: 11px;
-    line-height: 1.5;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-/* --------------------------------------------------
-   PROJECT BOOK — PRIMARY COMMERCIAL OFFERING
--------------------------------------------------- */
-
-.project-feature {
-    padding: 76px 0 82px;
-    border-bottom: 1px solid var(--rule);
-}
-
-.project-feature-grid {
-    display: grid;
-    grid-template-columns: 100px minmax(0, 1.5fr) minmax(220px, 0.7fr);
-    gap: 38px;
-    align-items: start;
-}
-
-.project-index {
-    padding-top: 8px;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.project-copy .kicker {
-    margin-bottom: 20px;
-}
-
-.project-copy h2 {
-    max-width: 700px;
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(48px, 6vw, 78px);
-    font-weight: 500;
-    line-height: 0.94;
-    letter-spacing: -0.04em;
-}
-
-.project-lead {
-    max-width: 660px;
-    margin: 25px 0 16px;
-    font-size: 18px;
-    line-height: 1.55;
-}
-
-.project-description {
-    max-width: 650px;
-    margin: 0;
-    color: var(--muted);
-}
-
-.project-action {
-    display: inline-block;
-    margin-top: 27px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid var(--ink);
-    font-size: 11px;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-}
-
-.project-action:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-.project-aside {
-    margin-top: 8px;
-    padding: 24px 0 0 27px;
-    border-left: 1px solid var(--rule);
-}
-
-.project-aside .small-label {
-    margin-bottom: 18px;
-}
-
-.project-quote {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(29px, 3vw, 40px);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
-}
-
-.project-aside-note {
-    margin: 20px 0 0;
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-/* --------------------------------------------------
-   FIELD FEATURE
--------------------------------------------------- */
-
-.field-feature {
-    padding: 78px 0 76px;
-    border-bottom: 1px solid var(--rule);
-}
-
-.field-feature-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
-    gap: clamp(36px, 5.5vw, 76px);
-    align-items: center;
-}
-
-.field-visual {
-    min-width: 0;
-}
-
-.field-visual img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    background: var(--paper);
-}
-
-.field-visual-caption {
-    margin-top: 11px;
-    font-size: 10px;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.field-copy .kicker {
-    margin-bottom: 20px;
-}
-
-.field-copy h2 {
-    max-width: 620px;
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(46px, 5.1vw, 72px);
-    font-weight: 500;
-    line-height: .96;
-    letter-spacing: -.04em;
-}
-
-.field-lead {
-    max-width: 570px;
-    margin: 24px 0 14px;
-    font-size: 18px;
-    line-height: 1.55;
-}
-
-.field-description {
-    max-width: 570px;
-    margin: 0;
-    color: var(--muted);
-}
-
-.field-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px 28px;
-    margin-top: 27px;
-}
-
-.field-action {
-    display: inline-block;
-    padding-bottom: 5px;
-    border-bottom: 1px solid var(--ink);
-    font-size: 10px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
-
-.field-action:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-.field-credentials {
-    margin-top: 34px;
-    padding-top: 22px;
-    border-top: 1px solid var(--rule);
-}
-
-.field-credentials .small-label {
-    margin-bottom: 8px;
-}
-
-.field-credentials p {
-    max-width: 590px;
-    margin: 0;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.55;
-}
-
-.field-credentials a {
-    white-space: nowrap;
-    color: var(--ink);
-    border-bottom: 1px solid var(--rule);
-}
-
-.field-credentials a:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-/* --------------------------------------------------
-   EDITORIAL STRUCTURE
--------------------------------------------------- */
-
-.structure {
-    padding: 82px 0 88px;
-    border-bottom: 1px solid var(--rule);
-}
-
-.structure-grid {
-    display: grid;
-    grid-template-columns: 100px repeat(3, minmax(0, 1fr));
-    gap: 32px;
-}
-
-.structure-label {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.structure-block {
-    padding-right: 15px;
-}
-
-.structure-block + .structure-block {
-    border-left: 1px solid var(--rule);
-    padding-left: 30px;
-}
-
-.structure-name {
-    margin: 0 0 8px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 42px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.025em;
-}
-
-.structure-name a {
-    border-bottom: 1px solid transparent;
-}
-
-.structure-name a:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-.structure-type {
-    margin-bottom: 22px;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.structure-block p {
-    max-width: 500px;
-    margin: 0;
-}
-
-.structure-note {
-    grid-column: 2 / 5;
-    max-width: 760px;
-    margin-top: 8px;
-    padding-top: 28px;
-    border-top: 1px solid var(--rule);
-    color: var(--muted);
-}
-
-/* --------------------------------------------------
-   SECTION HEAD
--------------------------------------------------- */
-
-.section {
-    padding: 88px 0;
-    border-bottom: 1px solid var(--rule);
-}
-
-.section-head {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 40px;
-    margin-bottom: 56px;
-}
-
-.section-number {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--muted);
-}
-
-.section-title {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 52px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.025em;
-}
-
-.section-intro {
-    max-width: 650px;
-    margin-top: 18px;
-    color: var(--muted);
-}
-
-/* --------------------------------------------------
-   CURRENT STUDIES
--------------------------------------------------- */
-
-.studies {
-    border-top: 1px solid var(--ink);
-}
-
-.study {
-    display: grid;
-    grid-template-columns: 90px minmax(0, 1fr) 180px;
-    gap: 35px;
-    padding: 34px 0;
-    border-bottom: 1px solid var(--rule);
-    transition: padding-left 0.2s ease;
-}
-
-.study:hover {
-    padding-left: 12px;
-    color: var(--ink);
-}
-
-.study:hover .study-title {
-    color: #35342f;
-}
-
-.study:hover .study-description,
-.study:hover .study-number {
-    color: var(--muted);
-}
-
-.study:hover .study-link {
-    color: var(--ink);
-}
-
-.study-number {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    padding-top: 8px;
-}
-
-.study-title {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 38px;
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-}
-
-.study-description {
-    max-width: 720px;
-    margin-top: 10px;
-    color: var(--muted);
-}
-
-.study-link {
-    align-self: center;
-    justify-self: end;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.study-link::after {
-    content: " ↗";
-}
-
-/* --------------------------------------------------
-   APPROACH
--------------------------------------------------- */
-
-.approach {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 90px;
-}
-
-.approach h3 {
-    margin: 0 0 20px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1.05;
-}
-
-.approach p {
-    max-width: 570px;
-    margin: 0 0 18px;
-}
-
-.pullquote {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 48px;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-}
-
-.small-label {
-    margin-bottom: 18px;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-/* --------------------------------------------------
-   OUTPUTS
--------------------------------------------------- */
-
-.outputs {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--ink);
-    border-left: 1px solid var(--rule);
-}
-
-.output {
-    min-height: 210px;
-    padding: 28px;
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-}
-
-.output h3 {
-    margin: 0 0 16px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 1;
-}
-
-.output p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 14px;
-}
-
-/* --------------------------------------------------
-   FIELD RECORDS
--------------------------------------------------- */
-
-.field-record {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 90px;
-}
-
-.field-record h2 {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 58px;
-    line-height: 0.98;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-}
-
-.field-record p {
-    max-width: 600px;
-}
-
-.field-record-link {
-    display: inline-block;
-    margin-top: 24px;
-    font-size: 11px;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 4px;
-}
-
-.field-record-link:hover {
-    border-color: var(--accent);
-}
-
-/* --------------------------------------------------
-   PLATFORM
--------------------------------------------------- */
-
-.platform {
-    max-width: 900px;
-}
-
-.platform h2 {
-    margin: 0 0 30px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 68px;
-    line-height: 0.95;
-    font-weight: 500;
-    letter-spacing: -0.035em;
-}
-
-.platform p {
-    max-width: 680px;
-    font-size: 18px;
-}
-
-/* --------------------------------------------------
-   CONTACT
--------------------------------------------------- */
-
-.contact {
-    padding: 105px 0 115px;
-}
-
-.contact h2 {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(55px, 7vw, 92px);
-    line-height: 0.92;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-}
-
-.contact-copy {
-    max-width: 560px;
-    margin-top: 32px;
-}
-
-.contact-link {
-    display: inline-block;
-    margin-top: 28px;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 5px;
-}
-
-/* --------------------------------------------------
-   FOOTER
--------------------------------------------------- */
-
-footer {
-    border-top: 1px solid var(--ink);
-}
-
-.footer-inner {
-    min-height: 125px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.footer-brand {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 25px;
-}
-
-.footer-meta {
-    color: var(--muted);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: right;
-}
-
-.footer-meta a:hover {
-    color: var(--accent);
-}
-
-/* --------------------------------------------------
-   RESPONSIVE
--------------------------------------------------- */
-
-@media (max-width: 1100px) {
-    nav {
-        gap: 16px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>P1Lab — Documentary, Media & Publishing</title>
+  <meta name="description" content="P1Lab develops documentary and media projects, editorial publications, and specialist research, with Florida Field & Ocean as its principal media initiative.">
+  <meta name="theme-color" content="#26382e">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #26382e;
+      --green-deep: #1b2922;
+      --green-mid: #42574a;
+      --bone: #f5f2ea;
+      --bone-dark: #e9e4d8;
+      --ink: #242820;
+      --muted: #66695f;
+      --rule: #d5d0c4;
+      --white: #fbfaf6;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+      --max-width: 1200px;
     }
 
-    .project-feature-grid {
-        grid-template-columns: 70px minmax(0, 1.4fr) minmax(190px, .8fr);
-        gap: 25px;
+    * {
+      box-sizing: border-box;
     }
 
-    .structure-grid {
-        grid-template-columns: 75px repeat(3, minmax(0, 1fr));
-        gap: 20px;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
-    .structure-block {
-        padding-right: 8px;
-    }
-
-    .structure-block + .structure-block {
-        padding-left: 18px;
-    }
-
-    .structure-name {
-        font-size: 34px;
-    }
-
-    .structure-type {
-        font-size: 9px;
-    }
-}
-
-@media (max-width: 900px) {
-    .site {
-        width: min(100% - 32px, var(--max));
-    }
-
-    .header-inner {
-        min-height: 68px;
-        flex-wrap: wrap;
-        padding: 14px 0;
-        gap: 16px 28px;
-    }
-
-    nav {
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .hero {
-        padding: 80px 0 78px;
-    }
-
-    .section,
-    .structure {
-        padding: 70px 0;
-    }
-
-    .project-feature {
-        padding: 64px 0;
-    }
-
-    .project-feature-grid {
-        grid-template-columns: 55px minmax(0, 1fr);
-        gap: 25px;
-    }
-
-    .project-aside {
-        grid-column: 2;
-        margin-top: 8px;
-        padding: 20px 0 0;
-        border-left: none;
-        border-top: 1px solid var(--rule);
-    }
-
-    .project-quote {
-        max-width: 580px;
-        font-size: 36px;
-    }
-
-    .section-head {
-        grid-template-columns: 70px 1fr;
-        gap: 25px;
-    }
-
-    .field-feature {
-        padding: 64px 0;
-    }
-
-    .field-feature-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-
-    .field-copy h2 {
-        font-size: clamp(44px, 6vw, 58px);
-    }
-
-    .field-lead {
-        font-size: 16px;
-    }
-
-    .study {
-        grid-template-columns: 60px minmax(0, 1fr);
-        gap: 22px;
-    }
-
-    .study-link {
-        grid-column: 2;
-        justify-self: start;
-        margin-top: 8px;
-    }
-
-    .approach,
-    .field-record {
-        grid-template-columns: 1fr;
-        gap: 55px;
-    }
-
-    .outputs {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 600px) {
     body {
-        font-size: 14px;
+      margin: 0;
+      background: var(--bone);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .site {
-        width: min(100% - 24px, var(--max));
+    img {
+      display: block;
+      max-width: 100%;
     }
 
-    .header-inner {
-        align-items: flex-start;
-        padding: 18px 0;
-        flex-direction: column;
-        gap: 10px;
+    a {
+      color: inherit;
+      text-underline-offset: 4px;
     }
 
-    nav {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 10px 16px;
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 5px;
     }
 
-    .brand span {
-        display: none;
+    .container {
+      width: min(var(--max-width), calc(100% - 72px));
+      margin-inline: auto;
     }
 
-    .hero {
-        padding: 65px 0 62px;
+    /* Site-wide masthead */
+
+    .masthead {
+      position: relative;
+      overflow: hidden;
+      background: var(--green);
+      color: var(--white);
     }
 
-    .hero h1 {
-        font-size: 61px;
+    .masthead-top {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      border-bottom: 1px solid rgba(255,255,255,.19);
     }
 
-    .hero-copy {
-        margin-top: 30px;
-        font-size: 16px;
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      color: var(--white);
+      text-decoration: none;
+      line-height: 1;
+      flex-shrink: 0;
     }
 
-    .hero-note {
-        line-height: 1.8;
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 39px;
+      font-weight: 500;
+      letter-spacing: .035em;
     }
 
-    .project-feature {
-        padding: 54px 0 58px;
+    .brand-description {
+      margin-top: 9px;
+      color: #d1d8ce;
+      font-size: 9px;
+      letter-spacing: .19em;
+      text-transform: uppercase;
     }
 
-    .project-feature-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(15px, 2.5vw, 32px);
     }
 
-    .project-index {
-        padding-top: 0;
+    .main-nav a {
+      color: #f5f3ec;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .09em;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    .project-copy h2 {
-        font-size: 49px;
+    .main-nav a:hover {
+      color: #c8d4c5;
     }
 
-    .project-lead {
-        margin-top: 20px;
-        font-size: 16px;
+    .masthead-title {
+      padding: 64px 0 72px;
     }
 
-    .project-aside {
-        grid-column: auto;
-        margin-top: 10px;
+    .masthead-title .eyebrow {
+      margin: 0 0 20px;
+      color: #c7d2c5;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
     }
 
-    .project-quote {
-        font-size: 35px;
+    .masthead-title h1 {
+      max-width: 1000px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(64px, 9vw, 112px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: .91;
     }
 
-    .section,
-    .structure {
-        padding: 58px 0;
+    .masthead-title .intro {
+      max-width: 680px;
+      margin: 27px 0 0;
+      color: #e1e5dc;
+      font-size: 15px;
+      line-height: 1.9;
     }
 
-    .section-head {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin-bottom: 38px;
+    /* Shared section styles */
+
+    .section {
+      padding: 82px 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 17px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .19em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    h2, h3 {
+      font-weight: 400;
     }
 
     .section-title {
-        font-size: 43px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.4vw, 66px);
+      letter-spacing: -.025em;
+      line-height: 1.02;
     }
 
-    .field-feature {
-        padding: 54px 0 58px;
+    .section-intro {
+      max-width: 610px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.95;
     }
 
-    .field-feature-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 23px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .11em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .text-link::after {
+      content: "→";
+      font-size: 16px;
+      transition: transform .18s ease;
+    }
+
+    .text-link:hover::after {
+      transform: translateX(4px);
+    }
+
+    /* Principal media initiative */
+
+    
+.ffo {
+  padding: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(27, 41, 34, 0.90) 0%,
+      rgba(27, 41, 34, 0.72) 55%,
+      rgba(27, 41, 34, 0.50) 100%
+    ),
+    url("mangrove.jpg") center center / cover no-repeat;
+  color: var(--white);
+}
+
+
+    .ffo-heading {
+      padding: 76px 0 70px;
+    }
+
+    .ffo-heading .eyebrow {
+      color: #c4d0c2;
+    }
+
+    .ffo-heading h2 {
+      max-width: 1050px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(56px, 8vw, 100px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: .94;
+    }
+
+    .ffo-description {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      padding: 34px 0 64px;
+      border-top: 1px solid rgba(255,255,255,.2);
+    }
+
+    .ffo-description p {
+      max-width: 540px;
+      margin: 0;
+      color: #dce2d8;
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    .ffo-description .text-link {
+      color: var(--white);
+      margin-top: 22px;
+    }
+
+    .ffo-bottomline {
+      height: 5px;
+      background: var(--green-mid);
+    }
+
+    /* Production capabilities */
+
+    .capabilities {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .capabilities-heading {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+      margin-bottom: 45px;
+    }
+
+    .capabilities-heading .section-intro {
+      margin: 3px 0 0;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .capability {
+      padding: 28px 28px 30px 0;
+    }
+
+    .capability + .capability {
+      padding-left: 28px;
+      border-left: 1px solid var(--rule);
+    }
+
+    .capability h3 {
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      font-size: 30px;
+      line-height: 1.15;
+    }
+
+    .capability p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    /* FIELD */
+
+    .field {
+      background: var(--bone-dark);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 7vw, 90px);
+      align-items: center;
+    }
+
+    .field-image {
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .field-image a {
+      display: block;
+    }
+
+    .field-image img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
     .field-copy h2 {
-        font-size: 49px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(46px, 6vw, 72px);
+      letter-spacing: -.03em;
+      line-height: .98;
     }
 
-    .field-lead {
-        margin-top: 20px;
-        font-size: 16px;
+    .field-tagline {
+      margin: 18px 0 22px;
+      font-family: var(--serif);
+      font-size: 27px;
+      line-height: 1.25;
     }
 
-    .field-credentials {
-        margin-top: 27px;
+    .field-copy > p:not(.eyebrow):not(.field-tagline) {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.95;
     }
 
-    .structure-grid {
-        grid-template-columns: 1fr;
-        gap: 34px;
+    .field-proof {
+      display: flex;
+      align-items: baseline;
+      gap: 15px;
+      margin-top: 24px;
+      padding-top: 19px;
+      border-top: 1px solid #cbc5b8;
     }
 
-    .structure-block {
-        padding-right: 0;
+    .field-proof strong {
+      font-family: var(--serif);
+      font-size: 37px;
+      font-weight: 500;
     }
 
-    .structure-block + .structure-block {
-        border-left: none;
-        border-top: 1px solid var(--rule);
-        padding-left: 0;
-        padding-top: 30px;
+    .field-proof span {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
     }
 
-    .structure-note {
-        grid-column: auto;
+    /* Publishing links */
+
+    .publishing {
+      background: var(--bone);
     }
 
-    .study {
-        grid-template-columns: 1fr;
-        gap: 5px;
-        padding: 27px 0;
+    .publishing-header {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+      margin-bottom: 36px;
     }
 
-    .study-number {
-        padding-top: 0;
+    .publishing-header .section-intro {
+      margin: 3px 0 0;
     }
 
-    .study-title {
-        font-size: 34px;
+    .publishing-list {
+      border-top: 1px solid var(--rule);
     }
 
-    .study-link {
-        grid-column: auto;
-        margin-top: 12px;
+    .publishing-item {
+      display: grid;
+      grid-template-columns: minmax(210px, .8fr) 1.2fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--rule);
     }
 
-    .outputs {
-        grid-template-columns: 1fr;
+    .publishing-item h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 500;
+      line-height: 1.15;
     }
 
-    .output {
-        min-height: auto;
+    .publishing-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
     }
 
-    .pullquote {
-        font-size: 39px;
+    .publishing-item > a {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    .platform h2 {
-        font-size: 54px;
+    .publishing-item > a::after {
+      content: " ↗";
+      font-size: 13px;
     }
+
+    /* Research catalogue */
+
+    .research {
+      background: var(--white);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .research-heading {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      margin-bottom: 36px;
+    }
+
+    .research-heading .section-intro {
+      margin: 3px 0 0;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 42px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .research-item {
+      padding: 23px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .research-item h3 {
+      margin: 0 0 5px;
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .research-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .research-item a {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .research-item a::after {
+      content: " →";
+      font-size: 13px;
+    }
+
+    /* Contact */
 
     .contact {
-        padding: 70px 0 80px;
+      padding: 76px 0 80px;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .contact .eyebrow {
+      color: #cbd5c8;
+    }
+
+    .contact h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(44px, 6vw, 72px);
+      letter-spacing: -.03em;
+      line-height: .99;
+    }
+
+    .contact-copy p {
+      max-width: 520px;
+      margin: 3px 0 0;
+      color: #e0e5dc;
+      font-size: 13px;
+      line-height: 1.95;
+    }
+
+    .contact-copy a {
+      display: inline-block;
+      margin-top: 23px;
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .11em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .contact-copy a::after {
+      content: " →";
+      font-size: 15px;
+    }
+
+    .footer {
+      padding: 23px 0;
+      background: var(--green-deep);
+      color: #cbd4c8;
+      border-top: 1px solid rgba(255,255,255,.17);
     }
 
     .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 25px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-size: 10px;
+      line-height: 1.7;
     }
 
-    .footer-meta {
-        text-align: left;
+    .footer a {
+      text-decoration: none;
     }
-}
-</style>
+
+    @media (max-width: 800px) {
+      .container {
+        width: calc(100% - 44px);
+      }
+
+      .masthead-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        padding: 21px 0;
+      }
+
+      .main-nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 12px 22px;
+      }
+
+      .masthead-title {
+        padding: 57px 0 61px;
+      }
+
+      .ffo-heading {
+        padding: 58px 0 50px;
+      }
+
+      .ffo-description,
+      .capabilities-heading,
+      .publishing-header,
+      .research-heading,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 23px;
+      }
+
+      .ffo-description {
+        padding: 28px 0 45px;
+      }
+
+      .capability-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .capability,
+      .capability + .capability {
+        padding: 23px 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .capability:last-child {
+        border-bottom: 0;
+      }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .field-image {
+        max-width: 620px;
+      }
+
+      .publishing-item {
+        grid-template-columns: 1fr auto;
+        gap: 8px 18px;
+      }
+
+      .publishing-item p {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .publishing-item > a {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      .brand-name {
+        font-size: 34px;
+      }
+
+      .main-nav a {
+        font-size: 9px;
+      }
+
+      .masthead-title h1 {
+        font-size: 59px;
+      }
+
+      .ffo-heading h2 {
+        font-size: 57px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="site header-inner">
+  <header class="masthead">
+    <div class="container masthead-top">
+      <a class="brand" href="index.html" aria-label="P1Lab home">
+        <span class="brand-name">P1Lab</span>
+        <span class="brand-description">Documentary · Media · Editorial</span>
+      </a>
 
-        <a href="index.html" class="brand">
-            P1Lab
-            <span>Independent Research &amp; Publishing</span>
-        </a>
-
-        <nav aria-label="Main navigation">
-            <a href="Project-Book.html">Project Book</a>
-            <a href="FIELD-INDEX.html">FIELD</a>
-            <a href="#studies">Research</a>
-            <a href="the-record.html">The Record</a>
-            <a href="gruv.html">GrüvType</a>
-            <a href="#approach">Approach</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="Florida-Field-and-Ocean.html">Florida Field &amp; Ocean</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#publishing">Publishing</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-</header>
 
-<main>
-
-<!-- HERO -->
-
-<section class="hero">
-    <div class="site">
-
-        <div class="kicker">
-            Independent Research &amp; Publishing
-        </div>
-
-        <h1>
-            <span>You own a world.</span>
-            <span>We connect it</span>
-            <span>to everyone else.</span>
-        </h1>
-
-        <div class="hero-copy">
-            You know your subject. We spend the time to understand it from the
-            outside, find the connections, and make a way into it for people
-            who do not know it yet.
-        </div>
-
-        <div class="hero-note">
-            Project Books · FIELD Collection · Research Programs · Field Records · Institutional Studies
-        </div>
-
+    <div class="container masthead-title">
+      <p class="eyebrow">Independent production · P1Lab</p>
+      <h1>Documentary.<br>Editorial.<br>Material culture.</h1>
+      <p class="intro">
+        P1Lab develops documentary and editorial projects that bring attention
+        to distinctive places, practices, makers, technologies, and histories.
+        Our principal media initiative is Florida Field &amp; Ocean.
+      </p>
     </div>
-</section>
+  </header>
 
-<!-- PROJECT BOOK: PRIMARY COMMERCIAL OFFERING -->
+  <main>
 
-<section class="project-feature" id="project-book" aria-labelledby="project-heading">
-    <div class="site">
-        <div class="project-feature-grid">
-
-            <div class="project-index">
-                01 / Commissions
-            </div>
-
-            <div class="project-copy">
-                <div class="kicker">
-                    P1Lab Project Book
-                </div>
-
-                <h2 id="project-heading">
-                    Your work.<br>
-                    A book of its own.
-                </h2>
-
-                <p class="project-lead">
-                    A focused, image-led book that gives your company’s work
-                    a more substantial form.
-                </p>
-
-                <p class="project-description">
-                    Project Book is for companies whose work deserves more
-                    than a conventional brochure or presentation. We bring
-                    selected projects, capabilities, specialist knowledge
-                    and the decisions behind the work together in a carefully
-                    edited, professionally designed publication—made to be
-                    read, kept and shared.
-                </p>
-
-                <a class="project-action" href="Project-Book.html">
-                    Explore the Project Book
-                </a>
-            </div>
-
-            <aside class="project-aside">
-                <div class="small-label">
-                    The principle
-                </div>
-
-                <p class="project-quote">
-                    A small book with the visual authority, editorial
-                    intelligence, and considered pacing of a much larger
-                    publication.
-                </p>
-
-                <p class="project-aside-note">
-                    A practical, physical sales tool built around the quality
-                    of the work itself.
-                </p>
-            </aside>
-
-        </div>
-    </div>
-</section>
-
-<!-- FEATURED COLLECTION: FIELD -->
-
-<section class="field-feature" id="field" aria-labelledby="field-heading">
-    <div class="site">
-        <div class="field-feature-grid">
-
-            <div class="field-visual">
-                <img src="FIELD_bookstore_feature.png"
-                     alt="The FIELD collection displayed in a warmly lit independent bookstore: Yacht Design, Millwork, Antique Salvagers, Independent Game Designers, and Florida Farmer’s Markets."
-                     loading="eager">
-                <div class="field-visual-caption">FIELD / A P1LAB COLLECTION</div>
-            </div>
-
-            <div class="field-copy">
-                <div class="kicker">A curated book collection by P1Lab</div>
-
-                <h2 id="field-heading">
-                    Remarkable work.<br>
-                    Worlds worth knowing.
-                </h2>
-
-                <p class="field-lead">
-                    FIELD makes collectible books about distinctive businesses,
-                    makers, places, products, and specialist knowledge.
-                </p>
-
-                <p class="field-description">
-                    Rooted in the tradition of great illustrated print, each
-                    volume brings together expansive documentary photography,
-                    thoughtful storytelling, and useful detail. Approachable
-                    without being simplistic. Considered without being austere.
-                </p>
-
-                <div class="field-actions">
-                    <a class="field-action" href="FIELD-INDEX.html">
-                        Explore the FIELD Collection
-                    </a>
-
-                    <a class="field-action"
-                       href="mailto:publisher@p1lab.net?subject=FIELD%20Book%20Commission">
-                        Discuss a FIELD volume
-                    </a>
-                </div>
-
-                <div class="field-credentials">
-                    <div class="small-label">
-                        Making complex subjects accessible without diminishing them
-                    </div>
-
-                    <p>
-                        Across 31 published books, P1Lab has taken on subjects
-                        ranging from robotics and systems philosophy to theology,
-                        literature, music, historic cooking, and garden history.
-                        The connecting principle is a commitment to making
-                        specialized knowledge accessible without sacrificing its
-                        complexity, rigor, or intrinsic interest. Ten titles
-                        have ranked among Ingram's top ten in their respective
-                        categories, several over multiple years, providing
-                        measurable evidence of the catalogue's reach and the
-                        team's repeatable ability to bring specialized knowledge
-                        to a wider readership.
-                        <a href="the-record.html">Explore the complete publication record →</a>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- EDITORIAL STRUCTURE -->
-
-<section class="structure">
-    <div class="site structure-grid">
-
-        <div class="structure-label">
-            The House
+    <section class="ffo" aria-labelledby="ffo-title">
+      <div class="container">
+        <div class="ffo-heading">
+          <p class="eyebrow">P1Lab's principal media initiative</p>
+          <h2 id="ffo-title">Florida Field<br>&amp; Ocean</h2>
         </div>
 
-        <div class="structure-block">
-            <h2 class="structure-name">P1Lab</h2>
-
-            <div class="structure-type">
-                Independent Research &amp; Publishing
-            </div>
-
+        <div class="ffo-description">
+          <div>
             <p>
-                The parent research and publishing practice. P1Lab develops
-                commissioned books, research programs, field records and
-                publications that make specialist knowledge accessible
-                without reducing its complexity.
+              A Florida-centered documentary and on-demand media initiative
+              exploring the state's landscapes, architecture, foodways, makers,
+              maritime life, and distinctive material culture.
             </p>
-        </div>
+            <a class="text-link" href="Florida-Field-and-Ocean.html">
+              Explore Florida Field &amp; Ocean
+            </a>
+          </div>
 
-        <div class="structure-block">
-            <h2 class="structure-name">
-                <a href="#field">FIELD</a>
-            </h2>
-
-            <div class="structure-type">
-                Curated Book Collection
-            </div>
-
+          <div>
             <p>
-                Collectible, illustrated books about remarkable work and the
-                worlds around it—from skilled trades and specialist businesses
-                to places, products and creative communities.
+              P1Lab is developing the programming and production relationships
+              to bring these subjects to audiences through a dedicated viewing
+              destination. We welcome serious discussions with prospective
+              commissioning, production, and channel partners.
             </p>
+            <a class="text-link" href="Florida-Field-and-Ocean.html">
+              Project overview
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="ffo-bottomline"></div>
+    </section>
+
+    <section class="section capabilities" id="capabilities">
+      <div class="container">
+        <div class="capabilities-heading">
+          <div>
+            <p class="eyebrow">Production capabilities</p>
+            <h2 class="section-title">Research through<br>finished work.</h2>
+          </div>
+
+          <p class="section-intro">
+            Documentary projects often require more than a camera or a script.
+            P1Lab combines subject research, editorial development, visual
+            documentation, and publishing experience, coordinating additional
+            production and post-production resources according to the needs
+            of each project.
+          </p>
         </div>
 
-        <div class="structure-block">
-            <h2 class="structure-name">
-                <a href="gruv.html">GrüvType</a>
-            </h2>
-
-            <div class="structure-type">
-                An Editorial Imprint of P1Lab
-            </div>
-
+        <div class="capability-grid">
+          <article class="capability">
+            <h3>Documentary &amp; visual research</h3>
             <p>
-                GrüvType turns its attention toward the material world people
-                inhabit: gardens, rooms, tools, making, objects, food and the
-                environments we construct around ourselves.
+              Subject development, documentary photography, interviews,
+              location research, and the discovery of stories grounded in
+              actual places and practices.
             </p>
-        </div>
+          </article>
 
-        <div class="structure-note">
-            Different forms, one principle: make a subject accessible without
-            flattening the complexity that makes it worth knowing. P1Lab leads
-            the research and commissioned publishing; FIELD develops its curated
-            book collection; GrüvType explores the material world people inhabit.
-        </div>
-
-    </div>
-</section>
-
-<!-- CURRENT STUDIES -->
-
-<section class="section" id="studies">
-    <div class="site">
-
-        <div class="section-head">
-            <div class="section-number">02</div>
-
-            <div>
-                <h2 class="section-title">
-                    Selected Research &amp; Publishing Programs
-                </h2>
-
-                <p class="section-intro">
-                    Beyond commissioned company books and FIELD, P1Lab
-                    undertakes focused investigations and multi-volume
-                    studies for subjects that require deeper research.
-                </p>
-            </div>
-        </div>
-
-        <div class="studies">
-
-            <a href="florida2.html" class="study">
-                <div class="study-number">I.01</div>
-
-                <div>
-                    <h3 class="study-title">Florida Field Record</h3>
-                    <p class="study-description">
-                        A continuing regional field-record program documenting
-                        Florida's people, places, trades, landscapes, working
-                        environments and material culture.
-                    </p>
-                </div>
-
-                <div class="study-link">View study</div>
-            </a>
-
-            <a href="commissioned-field-records.html" class="study">
-                <div class="study-number">II.01</div>
-
-                <div>
-                    <h3 class="study-title">Commissioned Field Records</h3>
-                    <p class="study-description">
-                        Permanent records of specialized businesses and the
-                        work they actually do: the people, tools, processes,
-                        environments and knowledge that make the operation
-                        what it is.
-                    </p>
-                </div>
-
-                <div class="study-link">View practice</div>
-            </a>
-
-          <a href="pigments.html" class="study">
-                <div class="study-number">III.01</div>
-
-                <div>
-                    <h3 class="study-title">Pigments Trilogy</h3>
-                    <p class="study-description">
-                        An authoritative 3-volume investigation into Arturia Pigments—exploring hybrid engine topology, micro-granular physics, additive overtone matrices, and self-sustaining sound ecologies.
-                    </p>
-                </div>
-
-                <div class="study-link">View study</div>
-            </a>
-
-            <a href="u-he.project.html" class="study">
-                <div class="study-number">IV.01</div>
-
-                <div>
-                    <h3 class="study-title">u-he Sound Design Atlas</h3>
-                    <p class="study-description">
-                        Eight volumes examining synthesis, sound design,
-                        instruments, techniques and the musical practices
-                        built around them.
-                    </p>
-                </div>
-
-                <div class="study-link">View study</div>
-            </a>
-
-            <a href="" class="study">
-                <div class="study-number">V.01</div>
-
-                <div>
-                    <h3 class="study-title">NS Design Electric Cello Study</h3>
-                    <p class="study-description">
-                        A five-volume study of the electric cello:
-                        construction, materials, electronics, mechanics,
-                        performance and the instrument's development.
-                    </p>
-                </div>
-
-                <div class="study-link">Study overview posting 10.21.26</div>
-            </a>
-
-            <a href="Electronic-Organs.html" class="study">
-                <div class="study-number">VI.01</div>
-
-                <div>
-                    <h3 class="study-title">Electronic Organs</h3>
-                    <p class="study-description">
-                        A two-volume study of the electronic organ as
-                        instrument, technology, electrical system,
-                        architecture and musical environment.
-                    </p>
-                </div>
-
-                <div class="study-link">View study</div>
-            </a>
-
-            <a href="Korea.Material.Culture.html" class="study">
-                <div class="study-number">VII.01</div>
-
-                <div>
-                    <h3 class="study-title">Korea: Material Culture Series</h3>
-                    <p class="study-description">
-                        An independent documentary field study beginning in
-                        Seoul, recording selected material systems through
-                        museums, food, craft, architecture, objects, and
-                        everyday physical life.
-                    </p>
-                </div>
-
-                <div class="study-link">View study</div>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-<!-- APPROACH -->
-
-<section class="section" id="approach">
-    <div class="site">
-
-        <div class="section-head">
-            <div class="section-number">03</div>
-
-            <div>
-                <h2 class="section-title">The Approach</h2>
-                <p class="section-intro">
-                    Different subjects. The same basic problem.
-                </p>
-            </div>
-        </div>
-
-        <div class="approach">
-
-            <div>
-                <div class="small-label">Start with the subject</div>
-
-                <h3>You know your world.</h3>
-
-                <p>
-                    A company knows its instruments. A craftsperson knows
-                    the work. A hospital knows its system. A place knows
-                    itself.
-                </p>
-
-                <p>
-                    The difficulty is usually somewhere else: giving
-                    someone from outside enough understanding to see why
-                    that world matters and how its parts connect.
-                </p>
-            </div>
-
-            <div>
-                <div class="small-label">Build the connection</div>
-
-                <h3>We learn it with you.</h3>
-
-                <p>
-                    We enter the subject, ask questions, follow the work,
-                    examine the evidence and pay attention to the
-                    connections.
-                </p>
-
-                <p>
-                    Then we build something that lets another person come
-                    into the subject without having to begin where we did.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- OUTPUTS -->
-
-<section class="section">
-    <div class="site">
-
-        <div class="section-head">
-            <div class="section-number">04</div>
-
-            <div>
-                <h2 class="section-title">The Work</h2>
-                <p class="section-intro">
-                    The form follows the subject.
-                </p>
-            </div>
-        </div>
-
-        <div class="outputs">
-
-            <div class="output">
-                <h3>Project Books</h3>
-                <p>
-                    Focused, image-led company books that bring selected
-                    projects, capabilities and specialist knowledge into
-                    a coherent, professionally designed publication.
-                </p>
-            </div>
-
-            <div class="output">
-                <h3>Field Records</h3>
-                <p>
-                    Detailed records of active operations, specialized
-                    trades, places and working knowledge.
-                </p>
-            </div>
-
-            <div class="output">
-                <h3>Institutional Studies</h3>
-                <p>
-                    Research and publications built with organizations
-                    whose knowledge needs a durable public form.
-                </p>
-            </div>
-
-            <div class="output">
-                <h3>Research Programs</h3>
-                <p>
-                    Sustained investigations developed over multiple
-                    volumes, subjects or stages.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- COMMISSIONED FIELD RECORDS -->
-
-<section class="section">
-    <div class="site">
-
-        <div class="section-head">
-            <div class="section-number">05</div>
-
-            <div>
-                <h2 class="section-title">Commissioned Field Records</h2>
-                <p class="section-intro">
-                    For businesses whose work is worth understanding.
-                </p>
-            </div>
-        </div>
-
-        <div class="field-record">
-
-            <div>
-                <h2>The operation is the subject.</h2>
-            </div>
-
-            <div>
-                <p>
-                    P1Lab works with owner-led businesses in specialized
-                    fields: marine trades, fabrication, woodworking,
-                    restoration, horticulture, construction and other
-                    operations where knowledge is carried in the work itself.
-                </p>
-
-                <p>
-                    A Commissioned Field Record follows the operation as it
-                    actually happens and creates a durable record of the
-                    people, processes, tools, environment and decisions
-                    involved.
-                </p>
-
-                <p>
-                    The result is not promotional media. It is a substantial
-                    record of the business and the knowledge behind it.
-                </p>
-
-                <a href="commissioned-field-records.html" class="field-record-link">
-                    About Commissioned Field Records
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- THE RECORD -->
-
-<section class="section">
-    <div class="site">
-
-        <div class="section-head">
-            <div class="section-number">06</div>
-
-            <div>
-                <h2 class="section-title">Why the Record Matters</h2>
-                <p class="section-intro">
-                    Good work deserves something more durable than a
-                    momentary presentation.
-                </p>
-            </div>
-        </div>
-
-        <div class="approach">
-
-            <div>
-                <div class="small-label">Durable</div>
-
-                <h3>Make something that lasts.</h3>
-
-                <p>
-                    P1Lab's work is designed to remain useful after the
-                    original project, launch, campaign or conversation has
-                    passed.
-                </p>
-
-                <p>
-                    Books, studies and field records become reference
-                    objects: something that can be read, consulted,
-                    circulated and returned to.
-                </p>
-            </div>
-
-            <div>
-                <div class="small-label">Useful</div>
-
-                <h3>Give people a way in.</h3>
-
-                <p>
-                    The record is not simply evidence that something exists.
-                    It gives someone unfamiliar with the subject enough
-                    structure to begin understanding it.
-                </p>
-
-                <p>That is the connection.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- PLATFORM -->
-
-<section class="section">
-    <div class="site">
-
-        <div class="section-head">
-            <div class="section-number">07</div>
-
-            <div>
-                <h2 class="section-title">A Subject Is a Starting Point</h2>
-            </div>
-        </div>
-
-        <div class="platform">
-
-            <h2>Everything can lead somewhere else.</h2>
-
+          <article class="capability">
+            <h3>Editorial development</h3>
             <p>
-                A synthesizer can lead to electrical engineering, industrial
-                design, music, manufacturing and the history of invention.
-                A boatyard can lead to materials, navigation, engineering,
-                craftsmanship and the people who keep those skills alive.
+              Research, narrative structure, writing, image selection, and
+              the development of publications and documentary treatments
+              with a clear editorial point of view.
             </p>
+          </article>
 
+          <article class="capability">
+            <h3>Production &amp; publishing</h3>
             <p>
-                A city, an instrument, a trade, a medical system, a piece of
-                software or a particular way of making something can all be
-                starting points.
+              Project-specific production coordination, specialist resources,
+              editorial design, book production, and preparation of agreed
+              deliverables for their intended use.
             </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="section field" aria-labelledby="field-title">
+      <div class="container field-grid">
+
+        <div class="field-image">
+          <a href="FIELD-INDEX.html" aria-label="Explore the FIELD collection">
+            <img
+              src="FIELD_bookstore_feature.png"
+              alt="FIELD editorial collection"
+              loading="lazy"
+            >
+          </a>
+        </div>
+
+        <div class="field-copy">
+          <p class="eyebrow">An editorial property of P1Lab</p>
+          <h2 id="field-title">FIELD</h2>
+          <p class="field-tagline">Remarkable work.<br>Worlds worth knowing.</p>
+
+          <p>
+            FIELD is P1Lab's collection of monographs and guides documenting
+            distinctive businesses, places, makers, and practices. Its
+            publications combine visual documentation with research and
+            editorial substance.
+          </p>
+
+          <p>
+            FIELD remains an independent publishing property and can also
+            become part of a larger documentary commission, extending a
+            project into a durable printed record.
+          </p>
+
+          <div class="field-proof">
+            <strong>31</strong>
+            <span>
+              Published books across P1Lab's publishing work, with established
+              distribution through the book trade.
+            </span>
+          </div>
+
+          <a class="text-link" href="FIELD-INDEX.html">Explore FIELD</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section publishing" id="publishing">
+      <div class="container">
+        <div class="publishing-header">
+          <div>
+            <p class="eyebrow">Publishing &amp; editorial formats</p>
+            <h2 class="section-title">Other ways<br>to make a record.</h2>
+          </div>
+
+          <p class="section-intro">
+            P1Lab maintains several formats for commissioned publications,
+            reference works, and editorial documentation. They remain
+            available to appropriate projects without competing with the
+            principal media initiative.
+          </p>
+        </div>
+
+        <div class="publishing-list">
+
+          <article class="publishing-item">
+            <h3>Project Book</h3>
             <p>
-                P1Lab follows the subject far enough to discover where it
-                leads.
+              Compact, image-led books for presenting a project, place,
+              practice, or body of work with considered editorial pacing.
             </p>
+            <a href="Project-Book.html">View format</a>
+          </article>
+
+          <article class="publishing-item">
+            <h3>Commissioned Field Records</h3>
+            <p>
+              Subject-specific research, photography, interviews, and
+              editorial documentation, developed as a publication or as
+              part of a broader project.
+            </p>
+            <a href="commissioned-field-records.html">View format</a>
+          </article>
+
+          <article class="publishing-item">
+            <h3>GrüvType</h3>
+            <p>
+              P1Lab's editorial imprint for selected annuals, reference works,
+              and publications devoted to particular material worlds.
+            </p>
+            <a href="gruv.html">Explore GrüvType</a>
+          </article>
+
+          <article class="publishing-item">
+            <h3>The Record</h3>
+            <p>
+              An editorial approach to documenting subjects with enough
+              context, visual evidence, and detail to remain useful beyond
+              the immediate moment.
+            </p>
+            <a href="the-record.html">Explore the record</a>
+          </article>
 
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- CONTACT -->
+    <section class="section research" id="research">
+      <div class="container">
+        <div class="research-heading">
+          <div>
+            <p class="eyebrow">Specialist work</p>
+            <h2 class="section-title">Research &amp;<br>monographs.</h2>
+          </div>
 
-<section class="contact" id="contact">
-    <div class="site">
+          <p class="section-intro">
+            P1Lab's specialist projects range across music technology,
+            instruments, sound, design, and place-based material culture.
+            
+          </p>
+        </div>
 
-        <div class="kicker">P1Lab</div>
+        <div class="research-grid">
 
-        <h2>
-            Have a world<br>
-            worth entering?
-        </h2>
+          <article class="research-item">
+            <h3>Pigments Trilogy</h3>
+            <p>
+              A monograph project examining the sound-design possibilities
+              and synthesis architecture of Arturia Pigments.
+            </p>
+            <a href="pigments.html">View project</a>
+          </article>
+
+          <article class="research-item">
+            <h3>u-he</h3>
+            <p>
+              Specialist editorial research on software instruments,
+              synthesis, and electronic sound.
+            </p>
+            <a href="u-he.project.html">View project</a>
+          </article>
+
+          <article class="research-item">
+            <h3>Electronic Organs</h3>
+            <p>
+              Research into electronic instruments, their design,
+              technologies, and musical applications.
+            </p>
+            <a href="Electronic-Organs.html">View project</a>
+          </article>
+
+          <article class="research-item">
+            <h3>Korean Material Culture</h3>
+            <p>
+              A specialist research and editorial project concerning
+              material culture and its historical context.
+            </p>
+            <a href="Korea.Material.Culture.html">View project</a>
+          </article>
+
+          <article class="research-item">
+            <h3>Florida Field Record</h3>
+            <p>
+              Place-based research into Florida's distinctive environments,
+              landscapes, and material culture.
+            </p>
+            <a href="florida2.html">View project</a>
+          </article>
+
+          <article class="research-item">
+            <h3>FIELD Collection</h3>
+            <p>
+              The broader catalogue of FIELD guides and monographs documenting
+              places, makers, and practices.
+            </p>
+            <a href="FIELD-INDEX.html">Browse the collection</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Commissioning &amp; partnerships</p>
+          <h2>Bring a worthwhile<br>subject forward.</h2>
+        </div>
 
         <div class="contact-copy">
-            If you have a subject, operation, institution or body of
-            knowledge that deserves a serious record, let's talk about it.
+          <p>
+            P1Lab welcomes enquiries about documentary commissions, production
+            partnerships, and selected editorial projects. We begin with the
+            subject, the intended result, the production requirements, and
+            the right form of collaboration.
+          </p>
+          <a href="mailto:publisher@p1lab.net">Contact P1Lab</a>
         </div>
+      </div>
+    </section>
 
-        <a href="mailto:publisher@p1lab.net" class="contact-link">
-            publisher@p1lab.net
-        </a>
+  </main>
 
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 P1Lab. All rights reserved.</span>
+      <span>GrüvType — An Editorial Imprint of P1Lab</span>
     </div>
-</section>
-
-</main>
-
-<footer>
-    <div class="site footer-inner">
-
-        <div class="footer-brand">P1Lab</div>
-
-        <div class="footer-meta">
-            Independent Research &amp; Publishing<br>
-            <a href="gruv.html">GrüvType · An Editorial Imprint of P1Lab</a><br>
-            West Palm Beach, Florida · 2026
-        </div>
-
-    </div>
-</footer>
+  </footer>
 
 </body>
 </html>
