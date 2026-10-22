@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Florida Field &amp; Ocean — P1Lab</title>
-<meta name="description" content="Florida Field & Ocean is a P1Lab documentary initiative exploring the people, places, industries, landscapes, and ideas shaping Florida through original films and carefully curated series.">
+<meta name="description" content="Florida Field & Ocean is an independent film and cultural initiative documenting the people, places, ideas and experiences shaping Florida’s evolving way of life—from architecture and hospitality to art, design, food, yachting and enterprise.">
 <meta name="theme-color" content="#172a29">
 <meta property="og:title" content="Florida Field &amp; Ocean — P1Lab">
-<meta property="og:description" content="Florida, carefully documented. Original documentaries and considered series from P1Lab.">
+<meta property="og:description" content="An evolving portrait of Florida through original films, cultural programming and stories of the people shaping the state.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://p1lab.net/Florida-Field-and-Ocean.html">
 
@@ -97,7 +97,7 @@ a{color:inherit}
       rgba(20,37,35,.68) 43%,
       rgba(20,37,35,.32) 100%
     ),
-    url("mangrove22.jpg") center center / cover no-repeat;
+    url("hero-ffo.jpg") center center / cover no-repeat;
 }.hero:after{
   content:"";
   position:absolute;
@@ -289,6 +289,19 @@ a{color:inherit}
   margin-top:8px!important;
 }
 
+/* Featured property: Florida Below */
+.featured-property{padding:76px 0;background:var(--panel);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.featured-property-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:8%;align-items:center}
+.featured-property-image{position:relative;display:block;overflow:hidden;background:var(--deep);aspect-ratio:16/9;text-decoration:none}
+.featured-property-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.featured-property-image:hover img{transform:scale(1.025)}
+.featured-property-index{position:absolute;left:18px;bottom:16px;color:var(--cream);font-size:9px;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.featured-property-copy h2{font-family:var(--serif);font-size:clamp(42px,5vw,66px);font-weight:400;line-height:1;letter-spacing:-.04em;margin:0 0 18px}
+.featured-property-lead{font-family:var(--serif);font-size:23px;line-height:1.35;margin:0 0 17px}
+.featured-property-copy>p:not(.section-label):not(.featured-property-lead){font-size:13px;line-height:1.75;color:#4c4d47;margin:0 0 15px}
+.featured-property-link{display:inline-flex;gap:14px;align-items:center;margin-top:12px;padding-bottom:9px;border-bottom:1px solid #77786f;text-decoration:none;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.featured-property-link:hover{opacity:.65}
+
 /* Intro */
 .intro{padding:82px 0}
 .intro-grid{
@@ -395,110 +408,6 @@ a{color:inherit}
   color:#d7dbd2;
   margin:0;
 }
-
-
-/* Featured documentary property */
-.featured-property {
-  padding: 76px 0;
-  background: #eae6dd;
-  border-bottom: 1px solid var(--rule);
-}
-
-.featured-property-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
-  gap: 8%;
-  align-items: center;
-}
-
-.featured-property-image {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  background: var(--deep);
-  aspect-ratio: 16 / 9;
-}
-
-.featured-property-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .5s ease;
-}
-
-.featured-property-image:hover img {
-  transform: scale(1.025);
-}
-
-.featured-property-index {
-  position: absolute;
-  left: 18px;
-  bottom: 16px;
-  color: #f4efe4;
-  font-size: 9px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  text-shadow: 0 1px 8px rgba(0,0,0,.7);
-}
-
-.featured-property-copy h2 {
-  font-family: var(--serif);
-  font-size: clamp(42px, 5vw, 66px);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -.04em;
-  margin: 0 0 18px;
-}
-
-.featured-property-lead {
-  font-family: var(--serif);
-  font-size: 23px;
-  line-height: 1.35;
-  margin: 0 0 17px;
-}
-
-.featured-property-copy > p:not(.section-label):not(.featured-property-lead) {
-  font-size: 13px;
-  line-height: 1.75;
-  color: #4c4d47;
-  margin: 0 0 15px;
-}
-
-.featured-property-link {
-  display: inline-flex;
-  gap: 14px;
-  align-items: center;
-  margin-top: 12px;
-  padding-bottom: 9px;
-  border-bottom: 1px solid #77786f;
-  text-decoration: none;
-  font-size: 10px;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
-
-.featured-property-link:hover {
-  opacity: .65;
-}
-
-@media (max-width: 850px) {
-  .featured-property {
-    padding: 58px 0;
-  }
-
-  .featured-property-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .featured-property-image img {
-    transition: none;
-  }
-}
-
 
 /* Production credibility */
 .production{padding:78px 0;background:var(--paper)}
@@ -687,6 +596,8 @@ a{color:inherit}
   .intro,.arts{padding:64px 0}
   .intro-grid,.process-grid,.production-grid,.reach-head{grid-template-columns:1fr;gap:25px}
   .showreel-grid,.arts-grid{grid-template-columns:1fr;gap:25px}
+  .featured-property{padding:58px 0}
+  .featured-property-grid{grid-template-columns:1fr;gap:28px}
   .showreel-frame{min-height:260px}
   .showreel-aside{border-left:0;border-top:1px solid var(--rule);padding:23px 0 0}
   .arts-main-visual{aspect-ratio:16/9;min-height:0}
@@ -728,6 +639,7 @@ a{color:inherit}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  .featured-property-image img{transition:none}
 }
 </style>
 </head>
@@ -752,19 +664,18 @@ a{color:inherit}
 
 <section class="hero" aria-label="Florida Field and Ocean">
   <div class="container hero-inner">
-    <p class="hero-overline">P1Lab / Documentary Media</p>
+    <p class="hero-overline">P1Lab / Original films &amp; cultural programming</p>
     <h1>FLORIDA FIELD <span>&amp; OCEAN</span></h1>
-    <p class="hero-lead">Florida, carefully documented.</p>
+    <p class="hero-lead">Florida, in the making.</p>
     
 
-
 <p class="hero-note">
-  A statewide documentary streaming channel exploring the people, places,
-  industries, landscapes, and ideas that shape Florida through original
-  films and carefully curated series. Serious documentary films and
-  considered programming, available through supported streaming platforms.
+  Across Florida, a distinctive way of life is being made and remade—in its
+  architecture and gardens, hotels and waterfronts, kitchens and studios,
+  workshops and marinas. Florida Field &amp; Ocean follows the people, places
+  and ideas giving the state its character through original films and
+  considered cultural programming.
 </p>
-
 
     <div class="hero-index">A P1Lab initiative / Florida, USA</div>
   </div>
@@ -790,131 +701,74 @@ a{color:inherit}
       <p class="section-label">Moving image / sound / place</p>
       <h2>Documentary, not wallpaper.</h2>
       <p>
-        Films shaped by image, voice, music, natural sound, and the cadence
-        of a place. From major undertakings to small, telling details, each
-        production gives viewers something worth their attention.
+        Original films with the patience to look closely and the ambition to see
+        beyond the obvious. From a remarkable property or a new work of art to
+        a maker’s workshop, a dinner table or life on the water, each film finds
+        the thought, craft and character that make a place worth knowing.
       </p>
       <p class="format-note">
-        Long-form films · Artist portraits · Place-based stories · Sound-led field pieces
+        Original films · Artist portraits · Design &amp; place · Sound-led stories
       </p>
     </aside>
   </div>
 </section>
-
-
-
-
-<!-- FEATURED DOCUMENTARY PROPERTY -->
-<section class="featured-property" id="florida-below">
-  <div class="container featured-property-grid">
-
-    <a class="featured-property-image"
-       href="Florida-below.html"
-       aria-label="Explore Florida Below">
-
-      <img
-        src="springs.png"
-        alt="Clear water revealing the submerged limestone landscape of a Florida spring"
-        loading="lazy"
-        width="2400"
-        height="1350">
-
-      <span class="featured-property-index">
-        P1Lab Original / Documentary Series
-      </span>
-    </a>
-
-    <div class="featured-property-copy">
-  <p class="section-label">
-    Featured Property / Natural History
-  </p>
-
-  <h2>Florida Below</h2>
-
-  <p class="featured-property-lead">
-    Florida isn't a collection of underwater places. It's one connected world.
-  </p>
-
-  <p>
-    A six-film documentary series built around a different way of seeing Florida:
-    tracing the hidden connections between its springs, rivers, mangroves,
-    seagrass meadows and reefs. Beneath the surface, geology and moving water
-    shape where wildlife lives, how it survives, and what happens when one
-    part of the environment changes.
-  </p>
-
-  <p>
-    Rather than presenting underwater destinations one by one, <em>Florida Below</em>
-    follows the relationships that make them part of a larger living landscape.
-    Produced through Florida Field &amp; Ocean, this is a proprietary documentary
-    series designed to reveal not just what lies beneath Florida, but how that
-    world works.
-  </p>
-
-  <a class="featured-property-link" href="Florida-below.html">
-    Explore the Documentary Series <span aria-hidden="true">→</span>
-  </a>
-</div>
-
-  </div>
-</section>
-
-
 
 <section class="intro" id="the-idea">
   <div class="container intro-grid">
     <div>
       <p class="section-label">Florida Field &amp; Ocean / The idea</p>
-      <h2>A place deserves<br>more than a profile.</h2>
+      <h2>A state still<br>becoming.</h2>
       <div class="body-copy">
         <p>
-          Florida is more than a destination or a market. It is a collection
-          of landscapes, communities, industries, crafts, institutions, and
-          ambitions—some celebrated, others rarely documented with the care
-          they deserve.
+          Florida is often reduced to a destination, a market, or a familiar set of
+          images. Yet its character is still being made—in architecture and
+          landscape, hospitality and food, art and design, yacht yards and
+          workshops, ambitious new enterprises and long-rooted communities.
         </p>
         <p>
-          Florida Field &amp; Ocean is a documentary initiative built to make
-          those stories visible. Its films examine the work itself: the
-          decisions, knowledge, people, places, and material details that
-          reveal why something matters.
+          Florida Field &amp; Ocean follows the people shaping that evolving culture.
+          Its films look closely at how places are conceived, how things are
+          made, and what gives a work, a business, or an institution lasting
+          character.
         </p>
         <p>
-          From a major development or a remarkable hotel to a family farm,
-          food producer, custom yacht, or distinctive cultural institution,
-          each subject is approached as a story worth telling properly.
+          From a considered hotel or waterfront estate to an artist’s studio,
+          custom yacht, remarkable garden, food producer, or cultural
+          institution, each subject becomes a window into the tastes, ideas
+          and ambitions shaping life in Florida.
         </p>
       </div>
     </div>
     <aside class="intro-aside">
-      <strong>A statewide documentary lens. An independent editorial identity.</strong>
+      <strong>An independent film initiative for a state in motion.</strong>
       <p>
-        Not a news channel, a video directory, or a stream of short
-        advertisements. Florida Field &amp; Ocean is conceived as a curated
-        home for serious, visually accomplished documentaries and series
-        about the state.
+        Not a tourism reel or a catalogue of promotional videos. Florida
+        Field &amp; Ocean brings visual craft, curiosity and editorial judgment
+        to the people and places shaping how Florida looks, feels and thinks.
       </p>
       <p>
-        Commissioned productions give participating organizations useful
-        media assets while contributing to a wider record of Florida's
-        cultural, commercial, and natural life.
+        Partner productions create substantial, usable films while contributing
+        to a wider portrait of Florida’s cultural, creative and commercial life.
       </p>
-      <a class="inline-link" href="#contact">Discuss a Commission</a>
+      <a class="inline-link" href="#contact">Discuss a Project</a>
     </aside>
   </div>
 </section>
+
+
 
 <section class="collections" id="collections">
   <div class="container">
     <div class="collections-head">
       <div>
-        <p class="section-label">Programming / A state in many dimensions</p>
-        <h2>Many subjects.<br>One sense of place.</h2>
+        <p class="section-label">Programming / A state in motion</p>
+        <h2>Many worlds.<br>A changing Florida.</h2>
       </div>
       <p>
-        The channel is statewide in outlook. Programming can emerge
-        wherever a distinctive story, a compelling subject, or a committed
-        partner makes a worthwhile production possible.
+        From distinctive properties and cultural ambition to the craft and
+        enterprise that sustain them, the programming follows Florida as it
+        changes. Architecture, hospitality, art, food, makers, yachting and
+        new ideas all offer a view into what the state is becoming.
       </p>
     </div>
 
@@ -933,7 +787,7 @@ a{color:inherit}
     </div>
     <span class="collection-number">01 / BUILT ENVIRONMENT</span>
     <h3>Florida Built</h3>
-    <p>Architecture, development, landscape, construction, restoration, distinctive properties, and the ideas that shape the places where Floridians live and work.</p>
+    <p>Architecture, landscape, restoration and distinctive properties—from the vision behind a place to the details that give it lasting character.</p>
   </article>
 
   <article class="collection-card">
@@ -949,7 +803,7 @@ a{color:inherit}
     </div>
     <span class="collection-number">02 / LAND &amp; FOOD</span>
     <h3>Florida Cultivated</h3>
-    <p>Agriculture, specialty crops, farms, food producers, gardens, agritourism, land stewardship, and the knowledge behind what Florida grows and makes.</p>
+    <p>Farms, specialty crops, gardens, food makers and agritourism: the land, knowledge and tastes shaping what Florida grows and brings to the table.</p>
   </article>
 
   <article class="collection-card">
@@ -965,7 +819,7 @@ a{color:inherit}
     </div>
     <span class="collection-number">03 / HOSPITALITY &amp; PLACE</span>
     <h3>Florida Hospitality</h3>
-    <p>Hotels, resorts, destinations, cultural attractions, and distinctive experiences—documented through the people, design, and work that bring them to life.</p>
+    <p>Hotels, resorts, destinations and singular experiences, seen through their architecture, service, design and the people who give them character.</p>
   </article>
 
   <article class="collection-card">
@@ -981,7 +835,7 @@ a{color:inherit}
     </div>
     <span class="collection-number">04 / MAKING &amp; KNOW-HOW</span>
     <h3>Florida Made</h3>
-    <p>Manufacturers, specialist trades, craftspeople, workshops, materials, and technical expertise essential to the state but often unseen.</p>
+    <p>Craft workshops, specialist trades, makers and manufacturers whose materials, techniques and skill give physical form to Florida’s ambitions.</p>
   </article>
 
   <article class="collection-card">
@@ -997,7 +851,7 @@ a{color:inherit}
     </div>
     <span class="collection-number">05 / MARINE &amp; COASTAL</span>
     <h3>Florida on the Water</h3>
-    <p>Yacht construction, refit, restoration, marine engineering, fishing, coastal communities, and the skilled work that connects Florida to the water.</p>
+    <p>Yacht design, construction and refit, marinas, coastal life and the expertise behind Florida’s enduring relationship with the water.</p>
   </article>
 
   <article class="collection-card">
@@ -1013,7 +867,7 @@ a{color:inherit}
     </div>
     <span class="collection-number">06 / ARTS &amp; CULTURE</span>
     <h3>Florida Creates</h3>
-    <p>Visual artists, musicians, performers, writers, designers, architects, craftspeople, and the cultural lives built across the state.</p>
+    <p>Artists, musicians, performers, writers and designers contributing to Florida’s changing cultural life—from established institutions to independent studios and new work.</p>
   </article>
 
   <article class="collection-card">
@@ -1029,16 +883,17 @@ a{color:inherit}
     </div>
     <span class="collection-number">07 / ENTERPRISE &amp; IDEAS</span>
     <h3>Florida Forward</h3>
-    <p>Businesses, institutions, investment, infrastructure, innovation, and the people shaping the state's next chapter.</p>
+    <p>Businesses, institutions, investment and new ideas: the people building ventures and shaping what Florida becomes next.</p>
   </article>
 
 </div>
 
 <p class="collection-foot">
-  The subjects are varied. The standard remains consistent: clear
-  editorial purpose, strong visual storytelling, informed research,
-  and respect for the viewer's attention.
+  Different worlds, one editorial standard: strong images, meaningful sound,
+  informed research, and respect for the viewer’s attention.
 </p>
+  </div>
+</section>
 
 <section class="arts" id="arts">
   <div class="container">
@@ -1054,24 +909,26 @@ a{color:inherit}
       </div>
 
       <div class="arts-copy">
-        <p class="section-label">Florida Creates / Arts &amp; culture</p>
-        <h2>Artists are part of the story of a place.</h2>
+        <p class="section-label">Florida Creates / Arts, ideas &amp; design</p>
+        <h2>Culture is how a place imagines its future.</h2>
         <div class="body-copy">
           <p>
-            Florida Field &amp; Ocean makes room for artists, musicians,
-            performers, writers, architects, designers, and craftspeople
-            whose work gives the state a cultural life as well as an economy.
+            Florida’s cultural life is not an accessory to its economy; it is one of
+            the ways the state understands and expresses itself. Florida Field
+            &amp; Ocean makes room for artists, musicians, performers, writers,
+            architects, designers and craftspeople whose work gives that life
+            its texture, character and direction.
           </p>
           <p>
-            Films can move from a quiet studio visit to a rehearsal, a
-            performance, a conversation, or a portrait of a place through
-            the eyes of the people who make its culture. The treatment is
-            intimate and attentive: strong images, meaningful sound, and
-            enough time for a person and their work to emerge.
+            A film might stay with an artist in the studio, follow a rehearsal,
+            enter a performance, or trace an idea as it takes shape. The
+            treatment is attentive rather than promotional: strong images,
+            meaningful sound, and enough time for the work to emerge on its
+            own terms.
           </p>
           <p>
-            The aim is not celebrity coverage. It is a lasting record of
-            the imagination, skill, and individuality found across Florida.
+            This is not celebrity coverage or an event reel. It is a growing record
+            of imagination, taste, craft and argument as Florida’s culture evolves.
           </p>
         </div>
 
@@ -1102,24 +959,25 @@ a{color:inherit}
       </div>
     </div>
     <p class="media-caption">
-      The visual approach spans long-form documentaries, short portraits,
-      performances, conversations, and sound-led observations of Florida's
-      people and places.
+      The same editorial eye can move between long-form documentaries, short
+      portraits, performances, conversations and sound-led observations of
+      Florida’s people and places.
     </p>
   </div>
 </section>
 
 <section class="promise">
   <div class="container promise-inner">
-    <p class="section-label">The principle / Local in outlook. Serious in treatment.</p>
-    <h2>Not content for the feed.<br>A record of the place.</h2>
+    <p class="section-label">The principle / Ambitious in outlook. Serious in treatment.</p>
+    <h2>Not content for the feed.<br>A living portrait of Florida.</h2>
     <p>
-      Florida Field &amp; Ocean takes the long view. It draws on the best
-      traditions of arts-and-culture television and place-rooted human
-      stories: attentive observation, strong visual composition, intelligent
-      conversation, and sound that belongs to the subject. The aim is to make
-      Florida's culture, expertise, enterprise, landscapes, and achievements
-      available on demand—not to chase a national attention cycle.
+      Florida Field &amp; Ocean takes the long view. It brings the care of arts-and-
+      culture filmmaking to a state whose identity is still unfolding: its
+      architecture, artists, hospitality, enterprise, food, craft and ways of
+      living. Attentive observation, strong visual composition, intelligent
+      conversation and sound that belongs to the subject make the work more
+      than a passing look. The aim is to build a lasting, evolving portrait of
+      Florida—not to chase a national attention cycle.
     </p>
   </div>
 </section>
@@ -1132,36 +990,31 @@ a{color:inherit}
     </div>
     <div class="production-copy">
       <p>
-        Florida Field &amp; Ocean is produced through P1Lab's coordinated
-        production operation, combining internal personnel with specialist
-        production and post-production teams assembled according to the
-        requirements of each project.
+        P1Lab develops Florida Field &amp; Ocean productions by combining editorial
+        direction with specialist production and post-production teams chosen
+        for each subject.
       </p>
       <p>
-        The collective experience available to our productions spans
-        documentary filmmaking, broadcast, editorial, post-production,
-        and digital media delivery. The production model draws on a
-        broad range of professional experience, matching the team and
-        workflow to the subject rather than imposing a single template
-        on every film.
+        Our production experience spans documentary filmmaking, broadcast,
+        editorial, post-production and digital delivery. The collaborators
+        and workflow are matched to the project rather than forcing every
+        story into the same template.
       </p>
       <p>
-        Each project is structured around its subject, research and access
-        requirements, intended audience, production scope, and agreed
-        deliverables. Editorial development, filming, sound, post-production,
-        finishing, and delivery are coordinated as parts of a single
-        production process.
+        Each project is built around its subject, access, audience and intended
+        uses, with research, filming, sound, finishing and delivery managed
+        as a coherent whole.
       </p>
       <p>
-        We place the emphasis on the finished work and the capabilities
-        required to deliver it. Project scope, production requirements,
-        and relevant delivery arrangements are discussed directly with
-        prospective commissioning partners.
+        The emphasis is the finished work: films that hold attention, serve the
+        partner’s needs and can continue to be used under clearly defined
+        rights. Scope and delivery are discussed directly with prospective
+        partners.
       </p>
       <div class="production-note">
-        Production teams and specialist resources are assembled to suit
-        individual projects. Relevant capabilities and deliverables can
-        be discussed in the context of a specific commission.
+        Teams and specialist resources are assembled to suit each project.
+        Capabilities and deliverables are discussed in the context of the
+        specific story and its intended use.
       </div>
     </div>
   </div>
@@ -1375,17 +1228,17 @@ a{color:inherit}
         <h2>Built with partners.<br>Made for the long view.</h2>
       </div>
       <p>
-        Florida Field &amp; Ocean brings together organizations with
-        meaningful stories and a shared interest in documenting the state
-        well. Participation is structured around commissioned work, clear
-        deliverables, and an editorial platform with a consistent identity.
+        Florida Field &amp; Ocean works with organizations whose places, work and
+        ideas help shape the state. Partnerships support original films with
+        value beyond a single campaign: a considered story, useful media
+        assets and a place within a broader portrait of Florida.
       </p>
     </div>
 
     <div class="partners-grid">
       <article class="partner-type">
         <span class="type-label">01 / Commissioning partners</span>
-        <h3>Businesses with a story to tell.</h3>
+        <h3>People building Florida’s next chapter.</h3>
         <p>
           Developers, yacht builders, hotels, farms, manufacturers,
           destinations, and other organizations whose projects, knowledge,
@@ -1394,7 +1247,7 @@ a{color:inherit}
       </article>
       <article class="partner-type">
         <span class="type-label">02 / Founding and presenting partners</span>
-        <h3>Organizations with a statewide view.</h3>
+        <h3>Partners with a broader vision.</h3>
         <p>
           Companies, institutions, and regional or industry organizations
           that wish to support a body of programming, a subject collection,
@@ -1405,9 +1258,39 @@ a{color:inherit}
 
     <p class="partner-foot">
       The aim is not to turn the channel into an inventory of advertisements.
-      Partners fund valuable production; the editorial treatment gives each
-      film a reason to be watched beyond the transaction that made it possible.
+      Partners make ambitious production possible; the editorial treatment
+      gives each film a reason to be watched beyond the transaction that made it possible.
     </p>
+  </div>
+</section>
+
+<section class="featured-property" id="florida-below" aria-labelledby="florida-below-title">
+  <div class="container featured-property-grid">
+    <a class="featured-property-image" href="Florida-below.html" aria-label="Explore Florida Below">
+      <img src="springs.png"
+           alt="Clear water revealing the submerged limestone landscape of a Florida spring"
+           loading="lazy" width="2400" height="1350">
+      <span class="featured-property-index">P1Lab Original / Documentary Series</span>
+    </a>
+    <div class="featured-property-copy">
+      <p class="section-label">Selected Production / Natural History</p>
+      <h2 id="florida-below-title">Florida Below</h2>
+      <p class="featured-property-lead">A different way of seeing Florida.</p>
+      <p>
+        A proprietary six-film documentary series following the connections
+        between Florida’s springs, rivers, mangroves, seagrass meadows and reefs.
+        Rather than treating each place as an isolated destination, the series
+        explores how water, geology and wildlife shape one another across the landscape.
+      </p>
+      <p>
+        One example of Florida Field &amp; Ocean’s production range: a specialist
+        subject, a clear editorial point of view, considered cinematography and
+        scientific depth made compelling on screen.
+      </p>
+      <a class="featured-property-link" href="Florida-below.html">
+        Explore Florida Below <span aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1427,7 +1310,6 @@ a{color:inherit}
     </a>
   </div>
 </section>
-
 
 <section class="image-disclosure">
   <div class="container">
@@ -1462,7 +1344,6 @@ a{color:inherit}
     </p>
   </div>
 </section>
-
 
 </main>
 
