@@ -396,6 +396,110 @@ a{color:inherit}
   margin:0;
 }
 
+
+/* Featured documentary property */
+.featured-property {
+  padding: 76px 0;
+  background: #eae6dd;
+  border-bottom: 1px solid var(--rule);
+}
+
+.featured-property-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+  gap: 8%;
+  align-items: center;
+}
+
+.featured-property-image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--deep);
+  aspect-ratio: 16 / 9;
+}
+
+.featured-property-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.featured-property-image:hover img {
+  transform: scale(1.025);
+}
+
+.featured-property-index {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  color: #f4efe4;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0,0,0,.7);
+}
+
+.featured-property-copy h2 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 5vw, 66px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.04em;
+  margin: 0 0 18px;
+}
+
+.featured-property-lead {
+  font-family: var(--serif);
+  font-size: 23px;
+  line-height: 1.35;
+  margin: 0 0 17px;
+}
+
+.featured-property-copy > p:not(.section-label):not(.featured-property-lead) {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #4c4d47;
+  margin: 0 0 15px;
+}
+
+.featured-property-link {
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #77786f;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.featured-property-link:hover {
+  opacity: .65;
+}
+
+@media (max-width: 850px) {
+  .featured-property {
+    padding: 58px 0;
+  }
+
+  .featured-property-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-property-image img {
+    transition: none;
+  }
+}
+
+
 /* Production credibility */
 .production{padding:78px 0;background:var(--paper)}
 .production-grid{
@@ -696,6 +800,63 @@ a{color:inherit}
     </aside>
   </div>
 </section>
+
+
+
+
+<!-- FEATURED DOCUMENTARY PROPERTY -->
+<section class="featured-property" id="florida-below">
+  <div class="container featured-property-grid">
+
+    <a class="featured-property-image"
+       href="Florida-below.html"
+       aria-label="Explore Florida Below">
+
+      <img
+        src="springs.png"
+        alt="Clear water revealing the submerged limestone landscape of a Florida spring"
+        loading="lazy"
+        width="2400"
+        height="1350">
+
+      <span class="featured-property-index">
+        P1Lab Original / Documentary Series
+      </span>
+    </a>
+
+    <div class="featured-property-copy">
+      <p class="section-label">
+        Featured Property / Natural History
+      </p>
+
+      <h2>Florida Below</h2>
+
+      <p class="featured-property-lead">
+        A world beneath the surface.
+      </p>
+
+      <p>
+        A proprietary six-film natural-history documentary property
+        exploring Florida's extraordinary underwater environments,
+        spring systems, aquatic life, and submerged landscapes.
+      </p>
+
+      <p>
+        Produced through Florida Field &amp; Ocean, the series
+        brings a distinctive natural world into view through
+        considered cinematography, scientific context, and
+        immersive storytelling.
+      </p>
+
+      <a class="featured-property-link" href="Florida-below.html">
+        Explore the Documentary Series <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
 
 <section class="intro" id="the-idea">
   <div class="container intro-grid">
