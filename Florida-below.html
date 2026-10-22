@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Florida Below — P1Lab</title>
-<meta name="description" content="Florida Below: a six-film, six-hour natural-history documentary series exploring Florida's underwater environments. A P1Lab property for Florida Field & Ocean.">
+<meta name="description" content="Florida Below is a six-film documentary series exploring Florida from beneath the surface: limestone springs, river corridors, mangrove roots, seagrass meadows and natural and artificial reefs. Produced by P1Lab for Florida Field &amp; Ocean.">
 
 <style>
 :root {
@@ -42,9 +41,7 @@ a { color: inherit; }
   margin-inline: auto;
 }
 
-.site-header {
-  border-bottom: 1px solid var(--rule);
-}
+.site-header { border-bottom: 1px solid var(--rule); }
 
 .header-inner {
   min-height: 76px;
@@ -93,7 +90,7 @@ a { color: inherit; }
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 510px;
+  min-height: 550px;
   overflow: hidden;
   background: var(--deep);
   color: var(--cream);
@@ -106,8 +103,8 @@ a { color: inherit; }
   background:
     linear-gradient(90deg,
       rgba(15, 31, 30, .94) 0%,
-      rgba(15, 31, 30, .77) 52%,
-      rgba(15, 31, 30, .35) 100%),
+      rgba(15, 31, 30, .78) 47%,
+      rgba(15, 31, 30, .28) 100%),
     url("mangrove22.png") center 52% / cover no-repeat;
 }
 
@@ -136,22 +133,23 @@ a { color: inherit; }
 
 .hero h1 span {
   display: block;
-  margin-top: 24px;
-  font-size: .34em;
+  max-width: 780px;
+  margin-top: 26px;
+  font-size: .31em;
   letter-spacing: .01em;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .hero-lead {
-  max-width: 740px;
-  margin: 0 0 14px;
+  max-width: 760px;
+  margin: 0 0 15px;
   font-family: var(--serif);
-  font-size: clamp(22px, 2.4vw, 30px);
+  font-size: clamp(23px, 2.5vw, 31px);
   line-height: 1.4;
 }
 
 .hero-note {
-  max-width: 650px;
+  max-width: 680px;
   margin: 0;
   color: #cbd0c6;
   font-size: 12px;
@@ -169,9 +167,7 @@ a { color: inherit; }
 
 section { border-bottom: 1px solid var(--rule); }
 
-.section {
-  padding: 74px 0;
-}
+.section { padding: 74px 0; }
 
 .section-label {
   margin: 0 0 17px;
@@ -189,6 +185,8 @@ h2 {
   letter-spacing: -.035em;
   line-height: 1.04;
 }
+
+h3 { color: var(--ink); }
 
 .intro-grid,
 .section-grid {
@@ -260,6 +258,71 @@ h2 {
   text-transform: uppercase;
 }
 
+/* Editorial position */
+
+.editorial {
+  background: #e9e5dc;
+}
+
+.editorial-heading {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 70px;
+  align-items: start;
+  margin-bottom: 43px;
+}
+
+.editorial-lead {
+  max-width: 730px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.4;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #c3beb3;
+  border-left: 1px solid #c3beb3;
+}
+
+.editorial-item {
+  padding: 25px;
+  border-right: 1px solid #c3beb3;
+  border-bottom: 1px solid #c3beb3;
+}
+
+.editorial-number {
+  color: #62635b;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.editorial-item h3 {
+  margin: 17px 0 11px;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.editorial-item p {
+  margin: 0;
+  color: #51524b;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.editorial-principle {
+  max-width: 900px;
+  margin: 28px 0 0;
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.5;
+}
+
 /* Environments */
 
 .environments-heading {
@@ -271,10 +334,11 @@ h2 {
 }
 
 .environments-heading > p {
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 0 5px;
   color: #55564f;
   font-size: 14px;
+  line-height: 1.8;
 }
 
 .environment-grid {
@@ -285,7 +349,7 @@ h2 {
 }
 
 .environment {
-  min-height: 180px;
+  min-height: 190px;
   padding: 24px;
   border-right: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
@@ -307,11 +371,19 @@ h2 {
 }
 
 .environment p {
-  max-width: 310px;
+  max-width: 330px;
   margin: 0;
   color: #585950;
   font-size: 12px;
-  line-height: 1.7;
+  line-height: 1.75;
+}
+
+.environments-note {
+  max-width: 850px;
+  margin: 24px 0 0;
+  color: #585950;
+  font-size: 12px;
+  line-height: 1.8;
 }
 
 /* Partnership */
@@ -322,7 +394,7 @@ h2 {
 }
 
 .partnership-lead {
-  max-width: 690px;
+  max-width: 700px;
   margin: 0;
   font-family: var(--serif);
   font-size: 21px;
@@ -362,6 +434,7 @@ h2 {
   margin: 0;
   color: #51524b;
   font-size: 13px;
+  line-height: 1.75;
 }
 
 .partner-footnote {
@@ -369,7 +442,7 @@ h2 {
   margin: 23px 0 0;
   color: #55564f;
   font-size: 12px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* Production */
@@ -378,9 +451,10 @@ h2 {
   margin: 0 0 16px;
   color: #4f5049;
   font-size: 14px;
+  line-height: 1.8;
 }
 
-.editorial-note {
+.production-copy .editorial-note {
   margin-top: 23px;
   padding: 12px 18px;
   border-left: 2px solid #929388;
@@ -417,6 +491,7 @@ h2 {
   margin: 0;
   color: #d0d1c8;
   font-size: 14px;
+  line-height: 1.8;
 }
 
 .contact-link {
@@ -436,6 +511,10 @@ h2 {
   content: "→";
   font-size: 16px;
 }
+
+.contact-link:hover { background: rgba(255,255,255,.07); }
+
+/* Footer */
 
 .footer {
   padding: 20px 0 24px;
@@ -468,12 +547,12 @@ h2 {
 
   .nav { gap: 17px; }
 
-  .hero { min-height: 460px; }
-
+  .hero { min-height: 480px; }
   .hero-inner { padding: 62px 0 72px; }
 
   .intro-grid,
   .section-grid,
+  .editorial-heading,
   .environments-heading,
   .contact-inner {
     grid-template-columns: 1fr;
@@ -485,9 +564,7 @@ h2 {
   .facts { grid-template-columns: repeat(2, 1fr); }
 
   .fact { padding: 19px 12px 19px 0; }
-
   .fact:not(:first-child) { padding-left: 15px; }
-
   .fact:nth-child(2) { border-right: 0; }
 
   .fact:nth-child(3) {
@@ -498,10 +575,12 @@ h2 {
   .fact:nth-child(4) { border-top: 1px solid var(--rule); }
 
   .environment-grid,
-  .partner-grid { grid-template-columns: repeat(2, 1fr); }
+  .partner-grid,
+  .editorial-grid { grid-template-columns: repeat(2, 1fr); }
 
   .environment,
-  .partner { padding: 20px; }
+  .partner,
+  .editorial-item { padding: 20px; }
 
   .contact-link { justify-self: start; white-space: normal; }
 }
@@ -510,21 +589,27 @@ h2 {
   .container { width: calc(100% - 32px); }
 
   .brand { font-size: 29px; }
-
   .nav { gap: 12px; }
-
   .nav a { font-size: 9px; }
 
   .hero h1 { font-size: 61px; }
+  .hero h1 span { font-size: .32em; }
 
   .environment-grid,
-  .partner-grid { grid-template-columns: 1fr; }
+  .partner-grid,
+  .editorial-grid { grid-template-columns: 1fr; }
 
   .environment { min-height: 0; }
-
   .facts .fact strong { font-size: 31px; }
 
-  .footer-inner { flex-direction: column; gap: 9px; }
+  .footer-inner {
+    flex-direction: column;
+    gap: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 </style>
 </head>
@@ -540,6 +625,7 @@ h2 {
 
     <nav class="nav" aria-label="Main navigation">
       <a href="#series">The series</a>
+      <a href="#editorial">Editorial approach</a>
       <a href="#environments">Environments</a>
       <a href="#partnership">Partnership</a>
       <a href="#contact">Contact</a>
@@ -551,22 +637,22 @@ h2 {
 
 <section class="hero" id="series">
   <div class="container hero-inner">
-    <p class="eyebrow">A P1Lab documentary property · Florida Field &amp; Ocean</p>
+    <p class="eyebrow">A documentary series from P1Lab · Florida Field &amp; Ocean</p>
 
     <h1>
       FLORIDA<br>BELOW
-      <span>Six films. Six hours. The underwater worlds of Florida.</span>
+      <span>Six films. Six hours. The world beneath Florida.</span>
     </h1>
 
     <p class="hero-lead">
-      A natural-history documentary series revealing the living systems beneath Florida’s familiar surface.
+      Florida looks different from below.
     </p>
 
     <p class="hero-note">
-      Freshwater springs and rivers. Mangrove coastlines. Seagrass meadows. Reefs and submerged structures.
+      Beneath the familiar outline of the state is a world of thresholds and hidden passages: water rising through limestone, rivers carrying the interior toward the coast, mangrove roots sheltering life in their shade, seagrass moving with the tide, reefs gathering life in open water.<P>Florida Below follows these places from within, tracing what water makes possible—and what the wildlife living there reveals about the places themselves.</p>
     </p>
 
-    <p class="hero-date">Production window · January–April 2027</p>
+    <p class="hero-date">Filming planned · January–April 2027</p>
   </div>
 </section>
 
@@ -574,16 +660,18 @@ h2 {
   <div class="container">
     <div class="intro-grid">
       <div>
-        <p class="section-label">The project / Natural history</p>
-        <h2>A different view<br>of Florida.</h2>
+        <p class="section-label">The series / Natural history</p>
+        <h2>Florida, seen<br>from within.</h2>
       </div>
 
       <div class="intro-copy">
-        <p><em>Florida Below</em> is a proprietary six-film natural-history documentary property originated, developed and owned by P1Lab for Florida Field &amp; Ocean, P1Lab’s documentary programming initiative.</p>
+        
 
-        <p>Each film explores an underwater environment through its wildlife, habitat and ecological relationships. The series is conceived as natural-history programming—not a tourism campaign or a product-led show.</p>
+        <p>A spring can seem like a world of its own. So can a river, a stand of mangroves or a reef. But underwater, the boundaries are not so simple. Stone, current, light, temperature and tide set the terms; plants and animals find ways to live within them. Florida Below starts with each place as it is, then follows the connections that make it more than scenery.</p>
 
-        <a class="text-link" href="#partnership">Explore partnership opportunities</a>
+        <p>Each film brings close observation together with scientific insight. The story may begin with an animal, a change in the water or the shape of a habitat—but it keeps asking what lies behind the visible moment, and what may change when the conditions change.</p>
+
+        <a class="text-link" href="#editorial">Explore the editorial approach</a>
       </div>
     </div>
 
@@ -594,17 +682,58 @@ h2 {
       </div>
       <div class="fact">
         <strong>6 hours</strong>
-        <span>Total programme length</span>
+        <span>Total running time</span>
       </div>
       <div class="fact">
         <strong>2027</strong>
         <span>Production year</span>
       </div>
       <div class="fact">
-        <strong>Florida</strong>
+        <strong>One world</strong>
         <span>Freshwater to coast</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section editorial" id="editorial">
+  <div class="container">
+    <div class="editorial-heading">
+      <div>
+        <p class="section-label">Editorial position / The approach</p>
+        <h2>A place is never<br>just a place.</h2>
+      </div>
+
+      <div>
+        <p class="editorial-lead">
+          A limestone passage, a manatee in moving water, a maze of mangrove roots, a reef in the current: each belongs to a story larger than the frame. <em>Florida Below</em> lets the physical world lead, then follows the life that has found a way to live in it.
+        </p>
+      </div>
+    </div>
+
+    <div class="editorial-grid">
+      <article class="editorial-item">
+        <span class="editorial-number">01 / Place and process</span>
+        <h3>Begin with the place.</h3>
+        <p>A spring is not just clear water; a river is not simply a route to the sea. Limestone, current, depth, shade and tide shape what each environment can support. The films begin with those physical details and follow where they lead.</p>
+      </article>
+
+      <article class="editorial-item">
+        <span class="editorial-number">02 / Animal lives</span>
+        <h3>Watch what life does.</h3>
+        <p>Where animals feed, shelter, travel or gather can tell us as much as a close portrait. Rather than treating wildlife as a series of spectacular appearances, the films look at behavior in context—and at the demands a place makes on the lives within it.</p>
+      </article>
+
+      <article class="editorial-item">
+        <span class="editorial-number">03 / Field observation</span>
+        <h3>See first. Understand more.</h3>
+        <p>Cinematography brings us close; patient field observation gives a moment time to unfold. Scientific expertise helps interpret what is seen without turning the film into a lecture. The aim is to leave the viewer with more to notice, not less room for wonder.</p>
+      </article>
+    </div>
+
+    <p class="editorial-principle">
+      Each film has its own terrain and its own question. Together, they show a Florida that no single spring, river, shoreline or reef can explain on its own.
+    </p>
   </div>
 </section>
 
@@ -613,51 +742,55 @@ h2 {
     <div class="environments-heading">
       <div>
         <p class="section-label">The environments / Six-film structure</p>
-        <h2>Six windows<br>below the surface.</h2>
+        <h2>Six environments.<br>One connected world.</h2>
       </div>
 
       <p>
-        The series is organized around distinct aquatic environments, from inland freshwater systems to coastal and offshore habitats. Final location selection and filming access will be confirmed during production planning.
+        The series moves from water emerging out of the ground to the shallows and reefs at Florida’s edge. Each environment brings its own physical character, wildlife and questions. Location choices, access and individual storylines will be established as the production is planned.
       </p>
     </div>
 
     <div class="environment-grid">
       <article class="environment">
-        <span class="environment-number">Film 01 / Freshwater</span>
+        <span class="environment-number">Film 01 / Freshwater origins</span>
         <h3>Springs</h3>
-        <p>Clear-water habitats shaped by constant flow, temperature and distinctive aquatic life.</p>
+        <p>Water comes up through Florida’s limestone, bringing an unseen underground landscape into the open. Clarity, flow and temperature help determine what can live in these remarkable freshwater places.</p>
       </article>
 
       <article class="environment">
-        <span class="environment-number">Film 02 / Inland waters</span>
+        <span class="environment-number">Film 02 / Inland connections</span>
         <h3>Rivers</h3>
-        <p>Living corridors connecting springs, wetlands, floodplains and the coast.</p>
+        <p>Rivers carry more than water. Rain, drought, flood, sediment and nutrients leave their mark as the current passes through different landscapes, linking habitats along the way.</p>
       </article>
 
       <article class="environment">
-        <span class="environment-number">Film 03 / Coastal edge</span>
+        <span class="environment-number">Film 03 / The tidal threshold</span>
         <h3>Mangroves</h3>
-        <p>Root systems and tidal margins that shelter aquatic life and connect land and sea.</p>
+        <p>At the meeting of land and sea, mangrove roots form a submerged maze. The incoming tide moves through it; fish, crabs and other animals use its cover, turning a tangle of roots into living space.</p>
       </article>
 
       <article class="environment">
-        <span class="environment-number">Film 04 / Shallow coast</span>
+        <span class="environment-number">Film 04 / Shallow-water habitat</span>
         <h3>Seagrass Meadows</h3>
-        <p>Underwater habitats that support marine life and contribute to coastal ecosystem health.</p>
+        <p>In sunlit shallows, seagrass beds provide feeding grounds and cover close to the seabed. Life moves through the blades and over the sand, while the condition of the meadow reflects the water surrounding it.</p>
       </article>
 
       <article class="environment">
-        <span class="environment-number">Film 05 / Offshore</span>
+        <span class="environment-number">Film 05 / Offshore ecosystems</span>
         <h3>Reefs</h3>
-        <p>Complex communities where structure, current and species interactions sustain diverse life.</p>
+        <p>Crevices, hard surfaces and moving water create a three-dimensional world where animals shelter, compete, feed and hunt. A reef’s story is written in the structure itself and in the lives that gather around it.</p>
       </article>
 
       <article class="environment">
-        <span class="environment-number">Film 06 / Submerged habitat</span>
+        <span class="environment-number">Film 06 / Changing underwater landscapes</span>
         <h3>Artificial Reefs</h3>
-        <p>Submerged structures examined as habitats and as part of Florida’s changing underwater landscape.</p>
+        <p>Human-made structures take on a different life beneath the surface. The questions are practical and ecological: which animals use them, how marine life gathers and changes, and what these built landscapes can—and cannot—tell us.</p>
       </article>
     </div>
+
+    <p class="environments-note">
+      These six environments define the current programme framework. Final film treatments will establish each episode’s central question, principal storylines, scientific contributors and filming requirements.
+    </p>
   </div>
 </section>
 
@@ -666,36 +799,36 @@ h2 {
     <div class="section-grid">
       <div>
         <p class="section-label">Participation / Production partnerships</p>
-        <h2>Make the work<br>possible. Extend its value.</h2>
+        <h2>Put the right tools<br>in the water.</h2>
       </div>
 
       <p class="partnership-lead">
-        We are assembling a focused group of partners whose products, technology or expertise have a genuine role in documenting Florida’s underwater environments.
+        The production needs more than cameras. We are identifying partners whose imaging systems, underwater robotics, vessels, marine electronics, specialist equipment or field expertise can help us reach difficult places and record them well.
       </p>
     </div>
 
     <div class="partner-grid">
       <article class="partner">
         <span class="partner-number">01 / Series-wide</span>
-        <h3>Support the series as a whole.</h3>
-        <p>A principal role across the six-film property, with agreed brand recognition, relevant production integration and defined media rights.</p>
+        <h3>Back the six-film series.</h3>
+        <p>A defined role across the programme, with brand recognition, relevant production integration and media use agreed in advance—not a logo placed beside a film without a reason to be there.</p>
       </article>
 
       <article class="partner">
         <span class="partner-number">02 / Technology &amp; equipment</span>
-        <h3>Bring a capability.</h3>
-        <p>A defined role for underwater robotics, imaging, marine electronics, vessels or other technology used in the production.</p>
+        <h3>Bring a capability to the field.</h3>
+        <p>Underwater robotics, imaging systems, marine electronics, vessels and other equipment may give the production a way to reach a subject, hold a shot, work in difficult conditions or see what would otherwise remain out of view.</p>
       </article>
 
       <article class="partner">
         <span class="partner-number">03 / Film-specific</span>
-        <h3>Align with an environment.</h3>
-        <p>A focused partnership tied to a particular film where the company’s work and the documentary subject genuinely intersect.</p>
+        <h3>Help solve a particular challenge.</h3>
+        <p>A focused partnership tied to one environment, location or filming requirement—where a company’s equipment or expertise has a clear purpose in the work.</p>
       </article>
     </div>
 
     <p class="partner-footnote">
-      Depending on the partnership, participation may include appropriate brand integration, production support, selected original footage and stills, behind-the-scenes material, and licensed media for the partner’s own communications. Deliverables, exclusivity and usage rights are negotiated individually. No partnership or rights are implied by this page.
+      Depending on the agreed role, participation may include brand recognition, production support, selected original footage and stills, behind-the-scenes material, or licensed media for a partner’s own communications. Deliverables, exclusivity and usage rights are negotiated individually. Partners do not direct editorial decisions. This page describes potential participation; it does not imply an existing partnership or grant any rights.
     </p>
   </div>
 </section>
@@ -704,18 +837,20 @@ h2 {
   <div class="container section-grid">
     <div>
       <p class="section-label">Production / Editorial / Delivery</p>
-      <h2>One coordinated<br>production.</h2>
+      <h2>A clear point of view.<br>A practical plan.</h2>
     </div>
 
     <div class="production-copy">
-      <p>P1Lab originates and develops the property, establishes its editorial and commercial architecture, and assembles and coordinates the specialist capabilities required for production.</p>
+      <p>P1Lab originated Florida Below and is developing the series, setting its editorial direction and bringing together the specialist capabilities needed to film it.</p>
 
-      <p>Filming is planned for January–April 2027. Site access, permits, technical requirements and location-specific conditions will be confirmed as production is finalized.</p>
+      <p>Each episode will begin with the character of its environment and what can be learned by spending time there. Field observation, relevant scientific expertise and location-specific planning will shape the stories, with filming designed around the conditions on site.</p>
 
-      <p><em>Florida Below</em> is intended for release through Florida Field &amp; Ocean’s documentary programming initiative. Distribution arrangements and partner usage rights will be defined separately.</p>
+      <p>Filming is planned for January–April 2027. Site access, permits, technical requirements and local conditions will be confirmed as production planning advances.</p>
+
+      <p><em>Florida Below</em> is intended for release through Florida Field &amp; Ocean, P1Lab’s documentary programming initiative. Distribution arrangements and any partner use of footage or other materials will be agreed separately.</p>
 
       <div class="editorial-note">
-        The subject is Florida’s underwater life. Partner integration will be relevant to the work, clearly scoped and secondary to the documentary.
+        The documentary leads. Technology and expertise help us get closer to the story; they do not get to decide what the story is.
       </div>
     </div>
   </div>
@@ -725,9 +860,9 @@ h2 {
   <div class="container contact-inner">
     <div>
       <p class="section-label">Florida Below / Partnership enquiries</p>
-      <h2>Bring a useful capability to the surface.</h2>
+      <h2>What could you bring to the field?</h2>
       <p>
-        For commercial partnerships, production technology, equipment and media-licensing enquiries, contact P1Lab. Further project information and an introductory meeting can be arranged directly.
+        If your company works in underwater imaging, robotics, marine electronics, vessels, specialist equipment or media licensing, contact P1Lab. We can share relevant project details and discuss whether there is a useful fit with the production.
       </p>
     </div>
 
