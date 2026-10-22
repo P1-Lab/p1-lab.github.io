@@ -611,6 +611,17 @@ h3 { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+.nav .nav-back {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.nav .nav-back:hover {
+  opacity: .65;
+}
 </style>
 </head>
 
@@ -624,6 +635,10 @@ h3 { color: var(--ink); }
     </a>
 
     <nav class="nav" aria-label="Main navigation">
+      <a class="nav-back" href="Florida-Field-and-Ocean.html">
+        <span aria-hidden="true">←</span>
+        Back to Florida Field &amp; Ocean
+      </a>
       <a href="#series">The series</a>
       <a href="#editorial">Editorial approach</a>
       <a href="#environments">Environments</a>
