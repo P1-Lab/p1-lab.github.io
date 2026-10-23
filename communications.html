@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Strategic Communications &amp; PR — P1Lab</title>
+
+<meta name="description" content="P1Lab provides strategic communications, public relations, media relations and editorial storytelling for distinctive brands and specialist businesses across beauty, fashion, marine, hospitality, food and selected industries.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #243b32;
+  --green-light: #354c40;
+  --cream: #f5f2e9;
+  --paper: #fbfaf6;
+  --ink: #252a26;
+  --muted: #696d66;
+  --line: #dcd9cf;
+  --max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  background: var(--green);
+  color: #f8f5ec;
+}
+
+.nav {
+  max-width: var(--max);
+  min-height: 66px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  opacity: 0.86;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: clamp(400px, 45vw, 620px);
+  overflow: hidden;
+  background: #d9d7cb;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.intro {
+  background: var(--cream);
+  padding: 61px 30px 69px;
+}
+
+.intro-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 17px;
+  color: var(--green-light);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+h1 {
+  max-width: 900px;
+  margin-bottom: 20px;
+  font-size: clamp(43px, 5.4vw, 68px);
+  letter-spacing: -0.025em;
+}
+
+.lead {
+  max-width: 760px;
+  margin: 0;
+  color: #4d554e;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.section {
+  padding: 78px 30px;
+}
+
+.section-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  margin-bottom: 16px;
+  font-size: clamp(36px, 4vw, 50px);
+}
+
+.section-heading > p:last-child {
+  max-width: 680px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 34px;
+  border-top: 1px solid var(--line);
+}
+
+.service {
+  padding: 27px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.service h3 {
+  margin-bottom: 11px;
+  font-size: 29px;
+}
+
+.service p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.markets-section {
+  background: var(--cream);
+}
+
+.markets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 42px;
+}
+
+.market {
+  padding: 27px 0 31px;
+  border-top: 1px solid #cbc9bd;
+}
+
+.market-number {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--green-light);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.market h3 {
+  margin-bottom: 12px;
+  font-size: 33px;
+}
+
+.market p {
+  max-width: 490px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.approach-grid h2 {
+  margin: 0;
+  font-size: clamp(38px, 4vw, 53px);
+}
+
+.approach-copy p {
+  color: var(--muted);
+}
+
+.approach-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-section {
+  background: var(--green);
+  color: #f8f5ec;
+  padding: 65px 30px 70px;
+}
+
+.contact-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.contact-section .eyebrow {
+  color: #c8d1c4;
+}
+
+.contact-section h2 {
+  max-width: 650px;
+  margin-bottom: 13px;
+  font-size: clamp(38px, 4.5vw, 56px);
+}
+
+.contact-section p {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: #d4d9d1;
+}
+
+.contact-link {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 13px 21px;
+  border: 1px solid #d7ded5;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+
+.contact-link:hover {
+  background: #f8f5ec;
+  color: var(--green);
+}
+
+footer {
+  background: var(--green);
+  color: #cbd1c9;
+  border-top: 1px solid rgba(255,255,255,0.17);
+  padding: 19px 30px;
+  font-size: 11px;
+}
+
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+  }
+
+  .approach-grid {
+    gap: 45px;
+  }
+}
+
+@media (max-width: 650px) {
+  .nav {
+    min-height: 62px;
+    padding: 0 20px;
+  }
+
+  .brand {
+    font-size: 27px;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a:not(:last-child) {
+    display: none;
+  }
+
+  .nav-links a:last-child {
+    font-size: 10px;
+  }
+
+  .hero-image {
+    height: 260px;
+  }
+
+  .intro {
+    padding: 42px 22px 49px;
+  }
+
+  .section {
+    padding: 55px 22px;
+  }
+
+  .services-grid,
+  .markets-grid,
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    column-gap: 0;
+  }
+
+  .approach-grid {
+    gap: 24px;
+  }
+
+  .contact-section {
+    padding: 51px 22px 57px;
+  }
+
+  .contact-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  footer {
+    padding: 17px 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html">P1Lab</a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#services">Services</a>
+      <a href="#markets">Industries</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Replace this placeholder with the final hero image. -->
+  <div class="hero-image">
+    <img
+      src="communicate-.png"
+      alt="Editorial image representing distinctive brands, places and businesses"
+      fetchpriority="high"
+    >
+  </div>
+
+  <section class="intro">
+    <div class="intro-inner">
+      <p class="eyebrow">P1Lab · Strategic Communications</p>
+
+      <h1>Strategic Communications &amp; PR</h1>
+
+      <p class="lead">
+        Distinctive businesses deserve distinctive representation.
+        P1Lab works with ambitious brands and specialist businesses
+        across beauty, fashion, marine, hospitality, food and selected
+        industries. We combine strategic communications, media relations
+        and editorial storytelling to help organizations communicate
+        what makes them matter.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-inner">
+      <div class="section-heading">
+        <p class="eyebrow">What we do</p>
+        <h2>Good stories. Thoughtful representation.</h2>
+        <p>
+          Communications shaped around the business, its audiences
+          and the opportunities that matter—not noise for its own sake.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service">
+          <h3>Public Relations &amp; Media Relations</h3>
+          <p>
+            Media outreach, story development and press engagement
+            designed to build recognition and establish credibility.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Campaigns &amp; Launches</h3>
+          <p>
+            Communications for new products, brand initiatives,
+            openings, events and significant business milestones.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Editorial &amp; Press Materials</h3>
+          <p>
+            Press releases, media backgrounders, company narratives,
+            executive profiles and supporting materials.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Ongoing Communications</h3>
+          <p>
+            Sustained representation and planned media activity
+            aligned with an organization's business objectives.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Documentary Storytelling</h3>
+          <p>
+            Photography and editorial approaches that communicate
+            the people, processes, places and ideas behind a business.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Strategic Positioning</h3>
+          <p>
+            Clarifying the story, identifying relevant audiences
+            and finding credible angles for meaningful coverage.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section markets-section" id="markets">
+    <div class="section-inner">
+      <div class="section-heading">
+        <p class="eyebrow">Selected industries</p>
+        <h2>Different industries. Distinctive stories.</h2>
+        <p>
+          P1Lab's interests span premium consumer brands, marine
+          businesses, hospitality and specialist enterprises. Each
+          engagement begins with understanding the business itself.
+        </p>
+      </div>
+
+      <div class="markets-grid">
+
+        <article class="market">
+          <span class="market-number">01 / CONSUMER BRANDS</span>
+          <h3>Beauty &amp; Fashion</h3>
+          <p>
+            Beauty and personal-care brands, independent fashion labels,
+            designers, premium products and lifestyle businesses.
+            Informed by experience in the fashion and beauty industries.
+          </p>
+        </article>
+
+        <article class="market">
+          <span class="market-number">02 / MARINE</span>
+          <h3>Boating &amp; Fishing</h3>
+          <p>
+            Skiff and boat builders, marine equipment, fishing brands,
+            tackle companies, charter operators and specialist marine
+            businesses.
+          </p>
+        </article>
+
+        <article class="market">
+          <span class="market-number">03 / HOSPITALITY</span>
+          <h3>Boutique Hotels &amp; Food</h3>
+          <p>
+            Independent hotels, distinctive destinations, restaurant
+            groups, culinary businesses and hospitality brands with
+            a clear identity.
+          </p>
+        </article>
+
+        <article class="market">
+          <span class="market-number">04 / SPECIALIST ENTERPRISES</span>
+          <h3>Agriculture &amp; Industry</h3>
+          <p>
+            Agricultural producers, agritourism destinations, food
+            producers, specialist manufacturers and businesses whose
+            value deserves better communication.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="approach">
+    <div class="section-inner">
+      <div class="approach-grid">
+        <div>
+          <p class="eyebrow">Our approach</p>
+          <h2>Substance before noise.</h2>
+        </div>
+
+        <div class="approach-copy">
+          <p>
+            Effective public relations begins with understanding what
+            makes an organization worth paying attention to. The work
+            is to identify that substance, develop the story and bring
+            it to audiences most likely to value it.
+          </p>
+
+          <p>
+            P1Lab draws on experience across publishing, documentary
+            production, photography, editorial development and
+            communications. Our perspective combines the discipline
+            of editorial work with an appreciation for how businesses
+            build recognition and reputation.
+          </p>
+
+          <p>
+            Engagements may be organized around a defined campaign
+            or ongoing representation. Priorities, scope and deliverables
+            are established around the needs of each organization.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div>
+        <p class="eyebrow">Start a conversation</p>
+        <h2>Give your story a wider reach.</h2>
+        <p>
+          Tell us about your organization, what distinguishes it
+          and what you want your communications to accomplish.
+        </p>
+      </div>
+
+      <a
+        class="contact-link"
+        href="mailto:publisher@p1lab.net?subject=Strategic%20Communications%20%26%20PR%20Enquiry"
+      >
+        Contact P1Lab
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 P1Lab. All rights reserved.</span>
+    <span>P1Lab · Strategic Communications &amp; PR</span>
+  </div>
+</footer>
+
+</body>
+</html>
