@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>P1Lab — Documentary, Media & Publishing</title>
-  <meta name="description" content="P1Lab develops documentary and media projects, editorial publications, and specialist research, with Florida Field & Ocean as its principal media initiative.">
+  <title>P1Lab — Documentary, Media, Publishing & Communications</title>
+  <meta name="description" content="P1Lab develops documentary and media projects, editorial publications, specialist research, and strategic communications for distinctive businesses and places.">
   <meta name="theme-color" content="#26382e">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -221,20 +221,18 @@
 
     /* Principal media initiative */
 
-    
-.ffo {
-  padding: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(27, 41, 34, 0.90) 0%,
-      rgba(27, 41, 34, 0.72) 55%,
-      rgba(27, 41, 34, 0.50) 100%
-    ),
-    url("mangrove.jpg") center center / cover no-repeat;
-  color: var(--white);
-}
-
+    .ffo {
+      padding: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(27, 41, 34, 0.90) 0%,
+          rgba(27, 41, 34, 0.72) 55%,
+          rgba(27, 41, 34, 0.50) 100%
+        ),
+        url("mangrove.jpg") center center / cover no-repeat;
+      color: var(--white);
+    }
 
     .ffo-heading {
       padding: 76px 0 70px;
@@ -300,24 +298,25 @@
 
     .capability-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
     }
 
     .capability {
-      padding: 28px 28px 30px 0;
+      padding: 28px 22px 30px 0;
+      min-width: 0;
     }
 
     .capability + .capability {
-      padding-left: 28px;
+      padding-left: 22px;
       border-left: 1px solid var(--rule);
     }
 
     .capability h3 {
       margin: 0 0 12px;
       font-family: var(--serif);
-      font-size: 30px;
+      font-size: 27px;
       line-height: 1.15;
     }
 
@@ -326,6 +325,21 @@
       color: var(--muted);
       font-size: 12px;
       line-height: 1.9;
+    }
+
+    .capability .capability-link {
+      display: inline-block;
+      margin-top: 17px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .capability .capability-link::after {
+      content: " →";
+      font-size: 13px;
     }
 
     /* FIELD */
@@ -591,6 +605,30 @@
       text-decoration: none;
     }
 
+    @media (max-width: 1000px) {
+      .capability-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .capability {
+        padding: 25px 22px 27px 0;
+      }
+
+      .capability + .capability {
+        padding-left: 22px;
+      }
+
+      .capability:nth-child(3) {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--rule);
+      }
+
+      .capability:nth-child(4) {
+        border-top: 1px solid var(--rule);
+      }
+    }
+
     @media (max-width: 800px) {
       .container {
         width: calc(100% - 44px);
@@ -631,21 +669,6 @@
         padding: 28px 0 45px;
       }
 
-      .capability-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .capability,
-      .capability + .capability {
-        padding: 23px 0;
-        border-left: 0;
-        border-bottom: 1px solid var(--rule);
-      }
-
-      .capability:last-child {
-        border-bottom: 0;
-      }
-
       .field-grid {
         grid-template-columns: 1fr;
         gap: 34px;
@@ -677,6 +700,26 @@
       .footer-inner {
         align-items: flex-start;
         flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .capability-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .capability,
+      .capability + .capability,
+      .capability:nth-child(3),
+      .capability:nth-child(4) {
+        padding: 23px 0;
+        border-left: 0;
+        border-top: 0;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .capability:last-child {
+        border-bottom: 0;
       }
     }
 
@@ -797,9 +840,8 @@
           <p class="section-intro">
             Documentary projects often require more than a camera or a script.
             P1Lab combines subject research, editorial development, visual
-            documentation, and publishing experience, coordinating additional
-            production and post-production resources according to the needs
-            of each project.
+            documentation, publishing, and strategic communications experience,
+            coordinating the right resources around each project's objectives.
           </p>
         </div>
 
@@ -829,6 +871,17 @@
               editorial design, book production, and preparation of agreed
               deliverables for their intended use.
             </p>
+          </article>
+
+          <article class="capability">
+            <h3>Strategic Communications &amp; PR</h3>
+            <p>
+              Public relations and communications for distinctive businesses
+              and specialist industries. Media relations, campaign development,
+              press materials, product launches, and editorial storytelling
+              for agriculture, agritourism, food, hospitality, and suppliers.
+            </p>
+            <a class="capability-link" href="communications.html">Explore communications</a>
           </article>
         </div>
       </div>
@@ -950,7 +1003,6 @@
           <p class="section-intro">
             P1Lab's specialist projects range across music technology,
             instruments, sound, design, and place-based material culture.
-            
           </p>
         </div>
 
@@ -1017,16 +1069,16 @@
     <section class="contact" id="contact">
       <div class="container contact-grid">
         <div>
-          <p class="eyebrow">Commissioning &amp; partnerships</p>
+          <p class="eyebrow">Commissioning, communications &amp; partnerships</p>
           <h2>Bring a worthwhile<br>subject forward.</h2>
         </div>
 
         <div class="contact-copy">
           <p>
-            P1Lab welcomes enquiries about documentary commissions, production
-            partnerships, and selected editorial projects. We begin with the
-            subject, the intended result, the production requirements, and
-            the right form of collaboration.
+            P1Lab welcomes enquiries about strategic communications and PR,
+            documentary commissions, production partnerships, and selected
+            editorial projects. We begin with the objectives, audiences,
+            intended results, and the right form of collaboration.
           </p>
           <a href="mailto:publisher@p1lab.net">Contact P1Lab</a>
         </div>
