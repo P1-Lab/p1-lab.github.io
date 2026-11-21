@@ -683,18 +683,32 @@ footer {
     }
 }
 
-    .nav .nav-back {
-  color: var(--muted);
-  font-size: 9px;
-  letter-spacing: .06em;
-  text-transform: none;
-  white-space: nowrap;
+    .nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    letter-spacing: .06em;
+    text-transform: none;
+    white-space: nowrap;
+    transition: opacity .2s ease;
 }
 
-.nav .nav-back:hover {
-  opacity: .65;
+.nav-back:hover {
+    opacity: .65;
 }
-</style>
+
+.isbn {
+    margin: 22px 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: .08em;
+    color: var(--muted);
+}
 
 /* MOBILE */
 
@@ -1366,8 +1380,9 @@ when the occasion calls for it.
 <br><br>
 Each edition becomes a record of the subjects,
 people, places and things selected for that edition.
-    <BR><BR><P>ISBN 978-1-989647-99-8</P>
 </p>
+
+<p class="isbn">ISBN 978-1-989647-99-8</p>
 
 <div class="book-grid">
 
@@ -1463,8 +1478,8 @@ projects and use across other media.
 <h2>Selection is the foundation.</h2>
 
 <p>
-The Field Guide is published by GrüvType, an independent imprint of P1Lab, as an editorial undertaking.
-editorial undertaking. Companies, makers and
+The Field Guide is published by GrüvType, an independent editorial imprint of P1Lab.
+It is an independent editorial undertaking. Companies, makers and
 institutions can provide material, access,
 information and expertise. They cannot buy
 a place in The Field Guide, dictate how a subject
