@@ -683,6 +683,19 @@ footer {
     }
 }
 
+    .nav .nav-back {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.nav .nav-back:hover {
+  opacity: .65;
+}
+</style>
+
 /* MOBILE */
 
 @media (max-width: 720px) {
@@ -804,7 +817,10 @@ footer {
 <header>
 <div class="container header-inner">
 <a href="https://p1lab.net/gruv.html" class="wordmark">GrüvType</a>
-
+<a class="nav-back" href="index.html">
+        <span aria-hidden="true">←</span>
+        Back to P1Lab
+      </a>
 <nav aria-label="Main navigation">
     <a href="#annual">The Field Guide</a>
     <a href="#lineage">Tradition</a>
