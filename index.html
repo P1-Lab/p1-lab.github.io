@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>P1Lab — Independent Research &amp; Publishing</title>
-  <meta name="description" content="P1Lab develops independent publications and undertakes selected commissioned research, editorial development, and publishing projects.">
+  <meta name="description" content="P1Lab develops independent publications, including The Field Guide, forthcoming Winter 2027, and undertakes selected commissioned research, editorial development, and publishing projects.">
   <meta name="theme-color" content="#26382e">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -257,6 +257,74 @@
     }
 
     .home-feature .feature-link::after { content: "  →"; font-size: 15px; }
+
+    /* Scheduled editorial property: The Field Guide */
+    .field-guide-feature {
+      background: var(--bone-dark);
+      border-bottom: 1px solid var(--rule);
+      padding: 54px 0 58px;
+    }
+
+    .field-guide-feature-inner {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: clamp(32px, 5vw, 66px);
+      align-items: center;
+    }
+
+    .field-guide-feature-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .field-guide-feature-label {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .field-guide-feature h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(48px, 5.5vw, 76px);
+      font-weight: 400;
+      letter-spacing: -.04em;
+      line-height: .92;
+    }
+
+    .field-guide-feature-tagline {
+      margin: 16px 0 22px;
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.5vw, 31px);
+      font-style: italic;
+      line-height: 1.2;
+    }
+
+    .field-guide-feature-copy p {
+      max-width: 610px;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+
+    .field-guide-feature-status {
+      display: inline-block;
+      margin-top: 5px;
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
 
     .section { padding: 82px 0; }
 
@@ -710,9 +778,14 @@
       .home-feature { min-height: 230px; }
       .home-feature + .home-feature { border-left: 0; border-top: 1px solid rgba(255,255,255,.55); }
       .section-heading, .field-grid, .record-grid, .below-description, .contact-grid,
-      .field-records-inner {
+      .field-records-inner, .field-guide-feature-inner {
         grid-template-columns: 1fr;
         gap: 25px;
+      }
+      .field-guide-feature-copy {
+        padding: 25px 0 0;
+        border-left: 0;
+        border-top: 1px solid #cbc5b8;
       }
       .field-records-methods { grid-template-columns: 1fr; }
       .field-records-methods > div, .field-records-methods > div + div {
@@ -750,7 +823,12 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
-  </style>
+      @media (max-width: 760px) {
+      .field-guide-feature-inner { grid-template-columns: 1fr; gap: 30px; }
+      .field-guide-feature-image { aspect-ratio: 16 / 10; }
+      .field-guide-feature { padding: 36px 0 42px; }
+    }
+</style>
 </head>
 
 <body>
@@ -762,6 +840,7 @@
       </a>
 
       <nav class="main-nav" aria-label="Main navigation">
+        <a href="gruv.html">The Field Guide</a>
         <a href="#publishing">Publishing</a>
         <a href="commissioned-field-records.html">Field Records</a>
         <a href="the-record.html">The Record</a>
@@ -785,6 +864,24 @@
       </div>
     </div>
   </header>
+
+  <section class="field-guide-feature" aria-labelledby="field-guide-feature-title">
+    <div class="container field-guide-feature-inner">
+      <a href="gruv.html" aria-label="Explore The Field Guide" class="field-guide-feature-image-link">
+        <img class="field-guide-feature-image" src="field-guide-placeholder.png" alt="The Field Guide editorial still life with botanical specimens, field notes and instruments">
+      </a>
+      <div class="field-guide-feature-copy">
+        <p class="field-guide-feature-label">GrüvType · Independent editorial imprint</p>
+        <h2 id="field-guide-feature-title">The Field<br>Guide.</h2>
+        <p class="field-guide-feature-tagline">A catalog of the material world.</p>
+        <p>Useful things. Remarkable things. Things worth knowing. An illustrated annual exploring objects, makers, places, materials, collections, practices and the worlds around them.</p>
+        <p>One annual volume. A world to explore. Research, photography, editorial work and book production are underway for the inaugural edition.</p>
+        <span class="field-guide-feature-status">Forthcoming · Winter 2027</span>
+        <a class="text-link" href="gruv.html">Explore The Field Guide</a>
+      </div>
+    </div>
+  </section>
+
 
   <nav class="home-features" aria-label="Featured work">
     <a class="home-feature" href="the-record.html">
